@@ -1,4 +1,4 @@
-# sdz-components
+# vue-sdz
 
 Basic third-party library component to demonstrate [@nuxt/components](https://github.com/nuxt/components) Nuxt module.
 
@@ -9,20 +9,20 @@ Basic third-party library component to demonstrate [@nuxt/components](https://gi
 Using npm:
 
 ```
-npm i sdz-components
+npm i vue-sdz
 ```
 
 Using yarn:
 
 ```
-yarn add sdz-components
+yarn add vue-sdz
 ```
 
 ### With Nuxt.js
 
 See [examples/with-nuxt](./examples/with-nuxt)
 
-sdz-components is using [@nuxt/components](https://github.com/nuxt/components) to efficently lazy import components by usage.
+vue-sdz is using [@nuxt/components](https://github.com/nuxt/components) to efficently lazy import components by usage.
 
 **Important:** Ensure using nuxt >= 2.13.0 and `components` option is set from `nuxt.config`
 
