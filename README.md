@@ -4,7 +4,7 @@ Basic third-party library component to demonstrate [@nuxt/components](https://gi
 
 ## Usage
 
-### Include Sdz Components into your Nuxt project
+### Include vue-sdz into your Nuxt project
 
 Using npm:
 
@@ -30,7 +30,7 @@ vue-sdz is using [@nuxt/components](https://github.com/nuxt/components) to effic
 export default {
   components: true,
   buildModules: [
-    "vue-sdz/nuxt",
-  ],
+    "vue-sdz/nuxt"
+  ]
 }
 ```
