@@ -1,7 +1,7 @@
 export default {
   components: true,
   buildModules: [
-    'sdz-components/nuxt',
+    'vue-sdz/nuxt',
     '@nuxtjs/tailwindcss'
   ]
 }

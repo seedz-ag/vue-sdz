@@ -1,5 +1,5 @@
 <template>
   <div>
-    <s-counter />
+    teste
   </div>
 </template>

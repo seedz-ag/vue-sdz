@@ -1,7 +1,7 @@
 {
   "name": "vue-sdz",
   "version": "0.1",
-  "repository": "",
+  "repository": "https://github.com/marlonfrontend/vue-sdz",
   "license": "MIT",
   "files": [
     "src",
