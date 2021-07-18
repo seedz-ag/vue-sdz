@@ -1,5 +1,8 @@
 <template>
   <div>
-    teste
+    <s-input label="teste" />
+    <s-alert>
+      Mensagem de alerta
+    </s-alert>
   </div>
 </template>
