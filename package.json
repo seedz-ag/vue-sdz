@@ -1,6 +1,6 @@
 {
   "name": "vue-sdz",
-  "version": "0.1",
+  "version": "0.0.1",
   "repository": "https://github.com/marlonfrontend/vue-sdz",
   "license": "MIT",
   "files": [
@@ -8,17 +8,26 @@
     "nuxt"
   ],
   "scripts": {
-    "postinstall": "yarn link && yarn link vue-sdz",
-    "dev": "yarn nuxt dev examples/with-nuxt"
+    "postbuild": "poi",
+    "build": "rollup -c",
+    "dev": "yarn build && poi --serve examples/main.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
     "@nuxtjs/tailwindcss": "^4.2.1",
+    "@vue/cli-plugin-babel": "^4.5.13",
     "autoprefixer": "^10.3.1",
     "fibers": "^5.0.0",
+    "node-sass": "^6.0.1",
     "nuxt": "^2.14.1",
+    "poi": "^12.10.3",
     "postcss": "^8.3.5",
+    "rollup": "^2.53.3",
+    "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.35.2",
-    "sass-loader": "10",
-    "tailwindcss": "^2.2.4"
+    "sass-loader": "^12.1.0",
+    "tailwindcss": "^2.2.4",
+    "vue": "^2.6.14"
   }
 }

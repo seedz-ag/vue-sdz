@@ -1,13 +1,13 @@
 <template>
-  
+
 </template>
 
 <script>
 export default {
-  name: 'Textarea'
+  name: 'SCard'
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>
