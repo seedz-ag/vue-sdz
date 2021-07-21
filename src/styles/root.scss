@@ -1,0 +1,53 @@
+// Configuração de cores
+$base-text-color:   #121E48;
+$base-background:   #F3F4F6;
+$base-border-color: rgba(#121E48, .1);
+$base-border: 1px solid $base-border-color;
+$base-shadow: 1px 1px 4px 0px rgba(0, 0, 0, .2);
+
+$text-color: (
+  base:    $base-text-color,
+  base-90: rgba($base-text-color, .9),
+  base-80: rgba($base-text-color, .8),
+  base-50: rgba($base-text-color, .5),
+  base-30: rgba($base-text-color, .3),
+  base-20: rgba($base-text-color, .2),
+  base-10: rgba($base-text-color, .1),
+  base-05: rgba($base-text-color, .05),
+  base-02: rgba($base-text-color, .02),
+  base-01: rgba($base-text-color, .01),
+);
+
+$primary-color-map:  (light: #BC4CF7, dark:  #7873EE);
+$positive-color-map: (light: #3CE797, dark:  #37CECD);
+$negative-color-map: (light: #FF7EB3, dark:  #FF7987);
+$alert-color-map:    (light: #F6D365, dark:  #FDA085);
+$disabled-color-map: (light: #E7E9ED, dark: #404A6C);
+
+$primary-color:  map-get($primary-color-map,  light);
+$positive-color: map-get($positive-color-map, light);
+$negative-color: map-get($negative-color-map, dark);
+$alert-color:    map-get($alert-color-map,    light);
+$disabled-color: map-get($disabled-color-map, light);
+
+// Configuração de fonte
+$base-font-family: 'Nunito Sans', sans-serif !default;
+$base-font-weight: 400;
+$base-font-size: 16px;
+
+$title-font-family: 'Ubuntu', sans-serif !default;
+$title-font-weight: 500;
+$title-font-size: 16px;
+$title-font-color: map-get($text-color, base-80);
+
+$box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+$box-shadow-hover: 0 15px 21px -2px rgba(0, 0, 0, 0.125), 3px 3px 6px -1px rgba(0, 0, 0, 0.15);
+
+$base-text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+
+//  Configuração de z-index
+$z-index-1: 10;
+$z-index-2: 20;
+$z-index-3: 30;
+$z-index-4: 40;
+$z-index-5: 50;

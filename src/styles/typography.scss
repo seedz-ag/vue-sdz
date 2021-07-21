@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,500,600,800|Ubuntu:300,400,500');
+
+// Tipografia
+// ---------------------------------------------------------
+// Trata das questões de tipografia da aplicação. Aplica os estilos globais de
+// tipografia conforme o tema, o arquivo ./theme.scss, cria os placeholders e
+// resolve os problemas de padronização dos browsers com relação a tipografia.
+
+// Definição do tamanho das fontes dos elementos.
+h1 { font-size: 1.375rem; }
+h2 { font-size: 1.125rem; }
+h3 { font-size: 1rem; }
+h4, th { font-size: .875rem; }
+h5, th, p { font-size: .75rem; }
+h6 { font-size: .6875rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font-family;
+  font-weight: $title-font-weight;
+  color: $title-font-color;
+}
+
+dt, th {
+  font-family: $title-font-family;
+  font-size: .9375rem;
+}
+
+body {
+  font-size:   $base-font-size;
+  font-weight: $base-font-weight;
+  font-family: $base-font-family;
+}
+
+input, textarea {
+  font-family: $base-font-family;
+}
+
+p {
+  line-height: 1.44;
+  color: $base-text-color;
+}
