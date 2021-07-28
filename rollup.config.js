@@ -1,42 +1,43 @@
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-
-import babel from 'rollup-plugin-babel'
-
 import vue from 'rollup-plugin-vue'
 
 import scss from 'rollup-plugin-scss'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 
+import commonjs from '@rollup/plugin-commonjs'
+import resolve from 'rollup-plugin-node-resolve'
+
 import { terser } from 'rollup-plugin-terser'
 
-const config = {
-  external: ['vue'],
+import babel from 'rollup-plugin-babel'
 
+const config = {
   input: 'src/index.js',
 
   output: [
-    { format: 'cjs', file: 'dist/bundle.cjs.js' },
-    { format: 'esm', file: 'dist/bundle.esm.js' }
+    { format: 'cjs', file: 'dist/js/bundle.cjs.js' },
+    { format: 'esm', file: 'dist/js/bundle.esm.js' }
   ],
 
   plugins: [
+    vue(),
+
+    scss({
+      sourceMap: true,
+      outputStyle: 'compressed',
+      output: 'dist/css/bundle.css',
+      processor: () => postcss([autoprefixer()])
+    }),
+
     resolve(),
     commonjs(),
-    babel({ exclude: 'node_modules/**' }),
-    vue(),
-    // vue({ css: false }),
-    scss({
-      output: 'dist/css/',
-      processor: css => postcss([autoprefixer])
-        .process(css)
-        .then(result => result.css)
-    }),
-    terser()
+
+    terser(),
+
+    babel({ exclude: 'node_modules/**' })
   ],
 
-  external: ['examples']
+  external: ['vue']
 }
 
 export default config

@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang="scss">
-.c-modal {}
+.c-modal { background: blue; }
 </style>
