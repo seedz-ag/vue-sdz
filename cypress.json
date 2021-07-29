@@ -1,0 +1,16 @@
+{
+  "fixturesFolder": "tests/functional/fixtures",
+  "integrationFolder": "tests/functional/tests",
+  "pluginsFile": "tests/functional/plugins/index.js",
+  "screenshotsFolder": "tests/functional/screenshots",
+  "videosFolder": "tests/functional/videos",
+  "supportFile": "tests/functional/commands/index.js",
+  "defaultCommandTimeout": 100000,
+
+  "env": {},
+
+  "chromeWebSecurity": false,
+  "hosts": {
+    "*.localhost": "127.0.0.1"
+  }
+}

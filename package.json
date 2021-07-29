@@ -10,7 +10,9 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "yarn build && poi --serve examples/main.js",
-    "postbuild": "poi"
+    "postbuild": "poi",
+    "test-e2e:run": "cypress run",
+    "test-e2e:open": "cypress open 'tests/e2e/integration/components/*'"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -22,6 +24,8 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "cypress": "^8.0.0",
+    "cypress-rollup-preprocessor": "^0.6.2",
     "eslint": "^7.31.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-vue": "^7.14.0",
