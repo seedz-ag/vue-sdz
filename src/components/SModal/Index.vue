@@ -1,5 +1,5 @@
 <template>
-  <div class="c-modal">
+  <div class="s-modal">
     modal
   </div>
 </template>
@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang="scss">
-.c-modal { background: blue; }
+.s-modal { background: blue; }
 </style>

@@ -12,5 +12,5 @@
 export { default as SCard } from './components/SCard/index'
 export { default as SModal } from './components/SModal/index'
 
-// export { default as SRow } from './layouts/SRow/'
-// export { default as SCol } from './layouts/SCol/'
+// export { default as SRow } from './layouts/SRow/index'
+// export { default as SCol } from './layouts/SCol/index'
