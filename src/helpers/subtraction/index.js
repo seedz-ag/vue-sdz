@@ -1,2 +1,2 @@
-export default (a, b) => console.log('dasdas') || a - b
+export default (a, b) => console.log('dasdasdas') || a - b
 
