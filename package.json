@@ -7,6 +7,11 @@
   "main": "dist/bundle.cjs.js",
   "module": "dist/index.esm.js",
   "private": false,
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'teste'"
+    }
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "yarn build && poi --serve examples/main.js",
@@ -34,6 +39,7 @@
     "eslint": "^7.31.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-vue": "^7.14.0",
+    "husky": "^7.0.1",
     "jest": "26.6.3",
     "node-sass": "^6.0.1",
     "poi": "^12.10.3",
