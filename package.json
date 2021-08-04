@@ -14,14 +14,10 @@
       "yarn test-components --bail --findRelatedTests"
     ]
   },
-  "husky": {
-    "hooks": {
-      "post-commit": "yarn build"
-    }
-  },
   "scripts": {
     "build": "rollup -c",
     "dev": "yarn build && poi --serve examples/main.js",
+    "commit": "git-cz",
     "postbuild": "poi",
     "test-helpers": "jest 'src/helpers'",
     "test-components": "jest 'src/components'",
@@ -31,6 +27,11 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "yarn build"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -47,8 +48,10 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "26.3.0",
     "babel-loader": "^8.2.2",
+    "commitizen": "^4.2.4",
     "cypress": "^8.0.0",
     "cypress-rollup-preprocessor": "^0.6.2",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.31.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-vue": "^7.14.0",
@@ -73,5 +76,10 @@
     "vue-loader": "^16.3.3"
   },
   "license": "MIT",
-  "repository": "https://github.com/marlonfrontend/vue-sdz"
+  "repository": "https://github.com/marlonfrontend/vue-sdz",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
