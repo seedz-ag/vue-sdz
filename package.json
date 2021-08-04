@@ -19,7 +19,8 @@
     "test-helpers": "jest 'src/helpers'",
     "test-components": "jest 'src/components'",
     "test-e2e:run": "cypress run",
-    "test-e2e:open": "cypress open 'tests/e2e/integration/**/*'"
+    "test-e2e:open": "cypress open 'tests/e2e/integration/**/*'",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -39,7 +40,7 @@
     "eslint": "^7.31.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-vue": "^7.14.0",
-    "husky": "^7.0.1",
+    "husky": "^7.0.0",
     "jest": "26.6.3",
     "node-sass": "^6.0.1",
     "poi": "^12.10.3",
