@@ -25,11 +25,6 @@
     "test-e2e:run": "cypress run",
     "test-e2e:open": "cypress open 'tests/e2e/integration/**/*'"
   },
-  "husky": {
-    "hooks": {
-      "post-commit": "yarn build"
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
