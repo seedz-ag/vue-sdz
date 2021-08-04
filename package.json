@@ -10,7 +10,8 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "yarn test-helpers --bail --findRelatedTests"
+      "yarn test-helpers --bail --findRelatedTests",
+      "yarn test-components --bail --findRelatedTests"
     ]
   },
   "scripts": {
