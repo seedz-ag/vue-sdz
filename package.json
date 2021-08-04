@@ -14,6 +14,11 @@
       "yarn test-components --bail --findRelatedTests"
     ]
   },
+  "husky": {
+    "hooks": {
+      "post-commit": "yarn build"
+    }
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "yarn build && poi --serve examples/main.js",
