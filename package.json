@@ -9,7 +9,8 @@
   "private": false,
   "lint-staged": {
     "*.js": [
-      "eslint --fix"
+      "eslint --fix",
+      "yarn test-helpers --bail --findRelatedTests"
     ]
   },
   "scripts": {
