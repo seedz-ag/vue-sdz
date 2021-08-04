@@ -7,11 +7,6 @@
   "main": "dist/bundle.cjs.js",
   "module": "dist/index.esm.js",
   "private": false,
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn build"
-    }
-  },
   "scripts": {
     "build": "rollup -c",
     "dev": "yarn build && poi --serve examples/main.js",
