@@ -31,9 +31,9 @@ if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 export default install
 
 // Register components individually
-export { default as SCard } from './components/SCard/index'
-export { default as SMenu } from './components/SMenu/index'
-export { default as SModal } from './components/SModal/index'
+export { default as SCard } from './components/SCard/Index.vue'
+export { default as SMenu } from './components/SMenu/Index.vue'
+export { default as SModal } from './components/SModal/Index.vue'
 
 // export { default as SRow } from './layouts/SRow/index'
 // export { default as SCol } from './layouts/SCol/index'
