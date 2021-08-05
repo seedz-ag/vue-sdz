@@ -1,20 +1,44 @@
 <template>
   <div id="app">
-    teste
+    <div class="menu">
+      <div
+        :key="component"
+        v-for="component in components"
+        @click="activeComponent = component"
+      >
+        {{ component }}
+      </div>
+    </div>
 
-    <s-card />
-    <s-modal />
+    <component :is="activeComponent" />
   </div>
 </template>
 
 <script>
-import SCard from '../src/components/SCard/Index.vue'
-import SModal from '../src/components/SModal/Index.vue'
+import { defineAsyncComponent } from 'vue'
+
+const SCard = defineAsyncComponent(() => import('../src/components/SCard/Index.vue'))
+const SModal = defineAsyncComponent(() => import('../src/components/SModal/Index.vue'))
 
 export default {
   name: 'Examples',
 
-  components: { SCard, SModal }
+  components: {
+    SCard,
+    SModal
+  },
+
+  data () {
+    return {
+      activeComponent: ''
+    }
+  },
+
+  computed: {
+    components () {
+      return Object.keys(this.$options.components)
+    }
+  }
 }
 </script>
 
