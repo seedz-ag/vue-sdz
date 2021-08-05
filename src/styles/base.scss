@@ -1,0 +1,48 @@
+// Base
+// ---------------------------------------------------------
+// Resolve as inconsistências de estilo padrão dos browsers, algo semelhante ao
+// que o Normalize se propõe a resolver, mas ao invés de definir o padrão de
+// normalizado, implementa nossas regras de estilo.
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html,
+#app {
+  color: $base-text-color;
+  min-width: 100%;
+  min-height: 100%;
+
+  width: 100%;
+  height: 100%;
+}
+
+body { background: $base-background; }
+
+table {
+  border-collapse: collapse;
+  background-color: transparent;
+  margin-bottom:  0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+a { text-decoration: none; }
+
+// Estilização do scrollbar para browsers baseados em webkit
+::-webkit-scrollbar {
+  width: 17px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 5px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 8px;
+  background-color: rgba($base-text-color, 0.15);
+}

@@ -1,10 +1,8 @@
 .DS_Store
 node_modules
+.eslintcache
 /dist
-
-# local env files
-.env.local
-.env.*.local
+/docs
 
 # Log files
 npm-debug.log*
@@ -19,5 +17,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-.nuxt
