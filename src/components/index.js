@@ -1,3 +1,3 @@
 // components
-export * from './SCard/index.js'
-export * from './SModal/index.js'
+export * from './SCard'
+export * from './SModal'

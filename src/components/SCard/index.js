@@ -1,5 +1,4 @@
-import SCard from './Index.vue'
+import SCard from './SCard.vue'
 
-export default Vue => {
-  Vue.component(SCard.name, SCard)
-}
+export { SCard }
+export default SCard

@@ -1,5 +1,4 @@
-import SModal from './Index.vue'
+import SModal from './SModal.vue'
 
-export default Vue => {
-  Vue.component(SModal.name, SModal)
-}
+export { SModal }
+export default SModal
