@@ -15,9 +15,9 @@ const config = {
   input: 'src/index.js',
 
   output: [
-    { format: 'cjs', file: 'dist/js/bundle.cjs.js' },
-    { format: 'esm', file: 'dist/js/bundle.esm.js' }
-  ],
+    { format: 'cjs', file: 'dist/js/bundle.cjs.js', globals: { vue: 'Vue' } },
+    { format: 'esm', file: 'dist/js/bundle.esm.js', globals: { vue: 'Vue' } },
+    { format: 'iife', file: 'dist/js/bundle.min.js', globals: { vue: 'Vue' }, plugins: [terser()] } ],
 
   plugins: [
     vue(),
@@ -31,8 +31,6 @@ const config = {
 
     resolve(),
     commonjs(),
-
-    terser(),
 
     babel({ exclude: 'node_modules/**' })
   ],
