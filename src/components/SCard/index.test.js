@@ -4,7 +4,7 @@ import SCard from './Index.vue'
 describe('SCard', () => {
   it('test example', async () => {
     const wrapper = shallowMount (SCard)
-    console.log('dasdasdasddadsdasdasdasddasddasddasddasddasdasdasddasd')
+    console.log('dasdasdasddadsdasdasdasddasddasddasddasddasdasdasddasddasd')
 
     expect(wrapper.html()).toContain('card')
   })
