@@ -32,7 +32,7 @@ module.exports = {
         'analytics',
         'refactoring',
         'docker',
-        'dep-add',
+        'depAdd',
         'dep-rm',
         'config',
         'i18n',
