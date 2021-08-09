@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import options from '../../config'
-
 export default {
   name: 'SModal',
   props: {

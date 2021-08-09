@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import SCard from './SCard.vue'
+import SCard from './Index.vue'
 
 describe('SCard', () => {
   it('test example', async () => {
