@@ -1,6 +1,8 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
 
+  verbose: true,
+
   rules: {
     'type-enum': [
       2,
@@ -70,7 +72,7 @@ module.exports = {
         'types',
         'seed',
         'flags',
-        'animation',
+        'animation'
       ],
     ],
   }
