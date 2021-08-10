@@ -67,7 +67,8 @@
     "typescript": "^4.3.5",
     "vue": "^3.1.5",
     "vue-jest": "5.0.0-alpha.5",
-    "vue-loader": "^16.3.3"
+    "vue-loader": "^16.3.3",
+    "vue-router": "4.0.11"
   },
   "license": "MIT",
   "repository": "https://github.com/marlonfrontend/vue-sdz",
