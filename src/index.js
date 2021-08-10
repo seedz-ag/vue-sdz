@@ -9,7 +9,7 @@ const requireComponent = require.context(
 )
 
 // For each matching file name...
-const install = Vue => requireComponent.keys().forEach((fileName) => {
+export const install = Vue => requireComponent.keys().forEach((fileName) => {
   // Get the component config
   const componentConfig = requireComponent(fileName)
 
@@ -23,17 +23,16 @@ const install = Vue => requireComponent.keys().forEach((fileName) => {
     .split('/')[0]
 
   // Register component globally
-  Vue.component(componentName, componentConfig.default || componentConfig)
+  Vue && Vue.component(componentName, componentConfig.default || componentConfig)
 })
 
 if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
-
-export default install
 
 // Register components individually
 export { default as SCard } from './components/SCard/Index.vue'
 export { default as SMenu } from './components/SMenu/Index.vue'
 export { default as SModal } from './components/SModal/Index.vue'
+export { default as SButton } from './components/SButton/Index.vue'
 
 // export { default as SRow } from './layouts/SRow/index'
 // export { default as SCol } from './layouts/SCol/index'
