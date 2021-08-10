@@ -24,13 +24,20 @@ module.exports = {
 
     'semi': 'off',
 
-    'indent': ['error', 2],
+    'template-curly-spacing' : 'off',
+
+    'indent': ['error', 2, {
+      'ignoredNodes': ['TemplateLiteral']
+    }],
 
     'arrow-parens': 'off',
+
     'no-confusing-arrow': 'off',
 
     'no-unused-expressions': 'off',
+
     'dot-notation': 'off',
+
     'no-underscore-dangle': 'off',
 
     'no-return-assign': 'off',
@@ -132,7 +139,7 @@ module.exports = {
         'beforeUnmount',
         'unmounted'
       ]
-    }],
+    }]
   },
 
   parserOptions: {
