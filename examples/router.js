@@ -21,10 +21,10 @@ const routes = [
     // name: 'ComponentList',
     component: ComponentList,
     children: [
-      { name: 'SCard', path: '/components/s-card', component: () => load('SCard') },
-      { name: 'SMenu', path: '/components/s-menu', component: () => load('SMenu') },
-      { name: 'SModal', path: '/components/s-modal', component: () => load('SModal') },
-      { name: 'SButton', path: '/components/s-button', component: () => load('SButton') }
+      { name: 'SCard', path: 's-card', component: () => load('SCard') },
+      { name: 'SMenu', path: 's-menu', component: () => load('SMenu') },
+      { name: 'SModal', path: 's-modal', component: () => load('SModal') },
+      { name: 'SButton', path: 's-button', component: () => load('SButton') }
     ]
   }
 ]
