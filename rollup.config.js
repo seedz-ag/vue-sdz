@@ -15,9 +15,16 @@ const config = {
   input: 'src/index.js',
 
   output: [
-    { format: 'cjs', file: 'dist/js/bundle.cjs.js', globals: { vue: 'Vue' } },
-    { format: 'esm', file: 'dist/js/bundle.esm.js', globals: { vue: 'Vue' } },
-    { format: 'iife', file: 'dist/js/bundle.min.js', globals: { vue: 'Vue' }, plugins: [terser()] } ],
+    { format: 'cjs', file: 'dist/js/bundle.cjs.js' },
+    { format: 'esm', file: 'dist/js/bundle.esm.js' },
+    {
+      format: 'iife',
+      file: 'dist/js/bundle.min.js',
+      globals: { vue: 'Vue' },
+      name: 'bundleee',
+      plugins: [terser()]
+    }
+  ],
 
   plugins: [
     vue(),
