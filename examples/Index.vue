@@ -1,42 +1,44 @@
 <template>
   <div id="app">
     <div class="menu">
-      <div
-        :key="component"
-        v-for="component in components"
-        @click="activeComponent = component"
+      <!-- <router-link :to="{ name: 'ComponentList' }">
+        Componentes
+      </router-link> -->
+
+      <router-link
+        :key="name"
+        v-for="name in components"
+        :to="{ name }"
       >
-        {{ component }}
-      </div>
+        {{ name }}
+      </router-link>
     </div>
 
-    <component :is="activeComponent" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+const requireComponent = require.context(
+  // Look for files in the current directory
+  '../src/components',
+  // Do not look in subdirectories
+  true,
+  // Only include "_base-" prefixed .vue files
+  /.*?Index\.vue$/
+)
 
-const SCard = defineAsyncComponent(() => import('../src/components/SCard/Index.vue'))
-const SModal = defineAsyncComponent(() => import('../src/components/SModal/Index.vue'))
+const componentList = requireComponent.keys().map(fileName => fileName
+  .replace(/^\.\//, '')
+  .replace(/\.\w+$/, '')
+  .split('/')[0])
 
 export default {
   name: 'Examples',
 
-  components: {
-    SCard,
-    SModal
-  },
-
-  data () {
-    return {
-      activeComponent: ''
-    }
-  },
-
   computed: {
     components () {
-      return Object.keys(this.$options.components)
+      return componentList
     }
   }
 }
