@@ -2,16 +2,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
 import ComponentList from './components/Index.vue'
-import components from '../examples/components/list'
-
-// TODO: name the chunks
-const load = component => () => import(/* webpackChunkName: "[request]" */ `../src/components/${component}/Index.vue`)
-
-const childrenComponents = components.map(name => ({
-  name,
-  path: `s-${name.toLowerCase()}`,
-  component: load(name)
-}))
+import componentsRoute from './components/routes.js'
 
 const routes = [
   {
@@ -22,7 +13,7 @@ const routes = [
     path: '/components',
     name: 'ComponentList',
     component: ComponentList,
-    children: childrenComponents
+    children: componentsRoute
   }
 ]
 
