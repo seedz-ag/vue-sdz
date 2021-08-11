@@ -11,6 +11,8 @@ import { terser } from 'rollup-plugin-terser'
 
 import babel from 'rollup-plugin-babel'
 
+import replace from '@rollup/plugin-replace'
+
 const config = {
   input: 'src/index.js',
 
@@ -34,6 +36,13 @@ const config = {
       outputStyle: 'compressed',
       output: 'dist/css/bundle.css',
       processor: () => postcss([autoprefixer()])
+    }),
+
+    replace({
+      preventAssignment: true,
+      // 'process.env.NODE_ENV': JSON.stringify('production'),
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: true
     }),
 
     resolve(),
