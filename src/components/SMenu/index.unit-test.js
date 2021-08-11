@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
-import SCard from './Index.vue'
+import SMenu from './Index.vue'
 
-describe('SCard', () => {
+describe('SMenu', () => {
   it('test example', async () => {
-    const wrapper = shallowMount (SCard)
+    const wrapper = shallowMount (SMenu)
 
-    expect(wrapper.html()).toContain('card')
+    expect(wrapper.html()).toContain('menu')
   })
 })
