@@ -31,6 +31,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@rollup/plugin-commonjs": "14.0.0",
+    "@rollup/plugin-replace": "^3.0.0",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-unit-jest": "^4.5.13",
     "@vue/compiler-sfc": "3.0.2",
