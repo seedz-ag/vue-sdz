@@ -5,7 +5,7 @@
     "dist/"
   ],
   "main": "dist/build.cjs.js",
-  "module": "dist/js/bundle.esm.js",
+  "module": "dist/js/build.esm.js",
   "private": false,
   "lint-staged": {
     "*.{js,vue}": [

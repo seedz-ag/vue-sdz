@@ -7,9 +7,9 @@ import autoprefixer from 'autoprefixer'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 
-import { terser } from 'rollup-plugin-terser'
+// import { terser } from 'rollup-plugin-terser'
 
-import babel from 'rollup-plugin-babel'
+// import babel from 'rollup-plugin-babel'
 
 import replace from '@rollup/plugin-replace'
 
@@ -19,13 +19,13 @@ const config = {
   output: [
     { format: 'cjs', file: 'dist/js/build.cjs.js' },
     { format: 'esm', file: 'dist/js/build.esm.js' },
-    {
-      format: 'iife',
-      file: 'dist/js/build.min.js',
-      globals: { vue: 'Vue' },
-      name: 'bundleee',
-      plugins: [terser()]
-    }
+    // {
+    //   format: 'iife',
+    //   file: 'dist/js/build.min.js',
+    //   globals: { vue: 'Vue' },
+    //   name: 'bundleee',
+    //   plugins: [terser()]
+    // }
   ],
 
   plugins: [
@@ -48,7 +48,7 @@ const config = {
     resolve(),
     commonjs(),
 
-    babel({ exclude: 'node_modules/**' })
+    // babel({ exclude: 'node_modules/**' })
   ],
 
   external: ['vue']
