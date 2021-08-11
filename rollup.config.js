@@ -17,11 +17,11 @@ const config = {
   input: 'src/index.js',
 
   output: [
-    { format: 'cjs', file: 'dist/js/bundle.cjs.js' },
-    { format: 'esm', file: 'dist/js/bundle.esm.js' },
+    { format: 'cjs', file: 'dist/js/build.cjs.js' },
+    { format: 'esm', file: 'dist/js/build.esm.js' },
     {
       format: 'iife',
-      file: 'dist/js/bundle.min.js',
+      file: 'dist/js/build.min.js',
       globals: { vue: 'Vue' },
       name: 'bundleee',
       plugins: [terser()]
@@ -34,7 +34,7 @@ const config = {
     scss({
       sourceMap: true,
       outputStyle: 'compressed',
-      output: 'dist/css/bundle.css',
+      output: 'dist/css/build.css',
       processor: () => postcss([autoprefixer()])
     }),
 
