@@ -5,13 +5,15 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 
 import commonjs from '@rollup/plugin-commonjs'
-import resolve from 'rollup-plugin-node-resolve'
+
+// import resolve from 'rollup-plugin-node-resolve'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 
 // import { terser } from 'rollup-plugin-terser'
 
 // import babel from 'rollup-plugin-babel'
 
-import replace from '@rollup/plugin-replace'
+// import replace from '@rollup/plugin-replace'
 
 const config = {
   input: 'src/index.js',
@@ -32,26 +34,27 @@ const config = {
     vue(),
 
     scss({
-      sourceMap: true,
+      // sourceMap: true,
       outputStyle: 'compressed',
       output: 'dist/css/build.css',
       processor: () => postcss([autoprefixer()])
     }),
 
-    replace({
-      preventAssignment: true,
-      // 'process.env.NODE_ENV': JSON.stringify('production'),
-      __VUE_OPTIONS_API__: true,
-      __VUE_PROD_DEVTOOLS__: true
-    }),
+    // replace({
+    //   preventAssignment: true,
+    //   // 'process.env.NODE_ENV': JSON.stringify('production'),
+    //   __VUE_OPTIONS_API__: true,
+    //   __VUE_PROD_DEVTOOLS__: true
+    // }),
 
-    resolve(),
     commonjs(),
+    // resolve(),
+    nodeResolve(),
 
     // babel({ exclude: 'node_modules/**' })
   ],
 
-  external: ['vue']
+  // external: ['vue']
 }
 
 export default config
