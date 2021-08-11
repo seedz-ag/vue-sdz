@@ -3,13 +3,8 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 import ComponentList from './components/Index.vue'
 
-// import SCard from '@/components/SCard/Index.vue'
-// import SMenu from '@/components/SMenu/Index.vue'
-// import SModal from '@/components/SModal/Index.vue'
-// import SButton from '@/components/SButton/Index.vue'
-
 // TODO: name the chunks
-const load = component => import(`@/components/${component}/Index.vue`)
+const load = component => () => import(/* webpackChunkName: "[request]" */ `../src/components/${component}/Index.vue`)
 
 const routes = [
   {
@@ -18,13 +13,13 @@ const routes = [
   },
   {
     path: '/components',
-    // name: 'ComponentList',
+    name: 'ComponentList',
     component: ComponentList,
     children: [
-      { name: 'SCard', path: 's-card', component: () => load('SCard') },
-      { name: 'SMenu', path: 's-menu', component: () => load('SMenu') },
-      { name: 'SModal', path: 's-modal', component: () => load('SModal') },
-      { name: 'SButton', path: 's-button', component: () => load('SButton') }
+      { name: 'SCard', path: 's-card', component: load('SCard') },
+      { name: 'SMenu', path: 's-menu', component: load('SMenu') },
+      { name: 'SModal', path: 's-modal', component: load('SModal') },
+      { name: 'SButton', path: 's-button', component: load('SButton') }
     ]
   }
 ]

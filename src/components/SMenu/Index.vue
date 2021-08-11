@@ -1,15 +1,15 @@
 <template>
-  <div class="s-card">
-    card
+  <div class="s-menu">
+    menu
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SCard'
+  name: 'SMenu'
 }
 </script>
 
 <style lang="scss">
-.c-card { background: red; }
+.c-menu { background: red; }
 </style>
