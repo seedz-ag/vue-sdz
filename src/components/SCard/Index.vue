@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang="scss">
-.c-card { background: red; }
+.s-card { background: red; }
 </style>

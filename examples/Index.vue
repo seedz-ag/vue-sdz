@@ -28,10 +28,12 @@ const requireComponent = require.context(
   /.*?Index\.vue$/
 )
 
-const componentList = requireComponent.keys().map(fileName => fileName
-  .replace(/^\.\//, '')
-  .replace(/\.\w+$/, '')
-  .split('/')[0])
+const componentList = requireComponent
+  .keys()
+  .map(fileName => fileName
+    .replace(/^\.\//, '')
+    .replace(/\.\w+$/, '')
+    .split('/')[0])
 
 export default {
   name: 'Examples',
