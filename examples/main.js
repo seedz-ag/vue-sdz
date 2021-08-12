@@ -1,8 +1,11 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import router from './router'
 
 import Example from './Index.vue'
 
-createApp(Example)
-  .use(router)
-  .mount('#app')
+Vue.config.productionTip = false
+
+export default new Vue({
+  router,
+  render: h => h(Example),
+}).$mount('#app')
