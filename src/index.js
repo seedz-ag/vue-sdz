@@ -28,6 +28,8 @@ export const install = Vue => requireComponent.keys().forEach((fileName) => {
 
 if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 
+export default install
+
 // Register components individually
 export { default as SCard } from './components/SCard/Index.vue'
 export { default as SSidebar } from './components/SSidebar/Index.vue'
