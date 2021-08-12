@@ -1,30 +1,10 @@
-// https://webpack.js.org/guides/dependency-management/#require-context
-const requireComponent = require.context(
-  // Look for files in the current directory
-  '@/src/components',
-  // Do not look in subdirectories
-  true,
-  // Only include "_base-" prefixed .vue files
-  /.*?Index\.vue$/
-)
+import * as SComponents from './components/index.js'
 
-// For each matching file name...
-export const install = Vue => requireComponent.keys().forEach((fileName) => {
-  // Get the component config
-  const componentConfig = requireComponent(fileName)
-
-  // Get the PascalCase version of the component name
-  const componentName = fileName
-    // Remove the "./_" from the beginning
-    .replace(/^\.\//, '')
-    // Remove the file extension from the end
-    .replace(/\.\w+$/, '')
-    // Split up and get name
-    .split('/')[0]
-
-  // Register component globally
-  Vue && Vue.component(componentName, componentConfig.default || componentConfig)
-})
+const install = Vue => {
+  Object
+    .values(SComponents)
+    .forEach(component => Vue.use(component))
+}
 
 if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 
