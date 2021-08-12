@@ -1,7 +1,7 @@
 // https://webpack.js.org/guides/dependency-management/#require-context
 const requireComponent = require.context(
   // Look for files in the current directory
-  '../../src/components',
+  '@/src/components',
   // Do not look in subdirectories
   true,
   // Only include "_base-" prefixed .vue files
@@ -31,9 +31,9 @@ if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 export default install
 
 // Register components individually
-export { default as SCard } from '../../src/components/SCard/Index.vue'
-export { default as SButton } from '../../src/components/SButton/Index.vue'
-export { default as SSidebar } from '../../src/components/SSidebar/Index.vue'
+export { default as SCard } from '@/src/components/SCard/Index.vue'
+export { default as SButton } from '@/src/components/SButton/Index.vue'
+export { default as SSidebar } from '@/src/components/SSidebar/Index.vue'
 
 // export { default as SRow } from './layouts/SRow/index'
 // export { default as SCol } from './layouts/SCol/index'
