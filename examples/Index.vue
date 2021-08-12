@@ -1,10 +1,6 @@
 <template>
   <div id="app">
     <div class="menu">
-      <!-- <router-link :to="{ name: 'ComponentList' }">
-        Componentes
-      </router-link> -->
-
       <router-link
         :key="name"
         v-for="name in components"
