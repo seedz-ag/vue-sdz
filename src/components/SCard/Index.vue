@@ -1,6 +1,6 @@
 <template>
   <div class="s-card">
-    card
+    cardaaa
   </div>
 </template>
 
