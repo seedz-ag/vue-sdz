@@ -1,12 +1,12 @@
 <template>
   <div class="s-card">
-    cardaaa
+    dasd
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SCard'
+  name: 'SCardddd'
 }
 </script>
 
