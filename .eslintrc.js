@@ -12,8 +12,8 @@ module.exports = {
 
   'extends': [
     'eslint:recommended',
-    'plugin:cypress/recommended',
-    'plugin:vue/vue3-strongly-recommended'
+    'plugin:vue/recommended',
+    'plugin:cypress/recommended'
   ],
 
   rules: {
