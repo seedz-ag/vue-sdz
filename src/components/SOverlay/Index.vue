@@ -14,7 +14,7 @@
  * on the screen.
  */
 export default {
-  name: 'COverlay',
+  name: 'SOverlay',
 
   props: {
     /**
@@ -57,7 +57,7 @@ export default {
 <style lang="scss">
 .s-overlay {
   position: fixed;
-  z-index: $z-index-3;
+  // z-index: $z-index-3;
   left: 0;
   top: 0;
 
@@ -69,9 +69,9 @@ export default {
 
   &.-dark {
     opacity: .9;
-    background: linear-gradient(135deg,
-      map-get($text-color, base-90),
-      map-get($text-color, base));
+    // background: linear-gradient(135deg,
+    //   map-get($text-color, base-90),
+    //   map-get($text-color, base));
   }
 }
 
