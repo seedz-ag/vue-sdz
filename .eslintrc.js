@@ -26,6 +26,8 @@ module.exports = {
 
     'template-curly-spacing' : 'off',
 
+    'vue/require-default-prop': 'off',
+
     'indent': ['error', 2, {
       'ignoredNodes': ['TemplateLiteral']
     }],
