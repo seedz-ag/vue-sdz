@@ -1,12 +1,14 @@
 import vue from 'rollup-plugin-vue'
 
 import scss from 'rollup-plugin-scss'
+
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 
+
 import commonjs from '@rollup/plugin-commonjs'
 
-// import { terser } from 'rollup-plugin-terser'
+import { terser } from 'rollup-plugin-terser'
 
 import { babel } from '@rollup/plugin-babel'
 
@@ -26,13 +28,17 @@ const config = {
   ],
 
   plugins: [
-    vue(),
-
     scss({
+      // eslint-disable-next-line quotes
+      // prefix: `@import "src/styles/index.scss";`,
       output: 'dist/css/build.css',
       outputStyle: 'compressed',
       processor: () => postcss([autoprefixer()])
     }),
+
+    terser(),
+
+    vue({ css: false }),
 
     commonjs(),
 
