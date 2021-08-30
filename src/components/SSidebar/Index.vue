@@ -1,6 +1,6 @@
 <template>
   <div class="s-sidebar">
-    menu
+    menu-teste
   </div>
 </template>
 
