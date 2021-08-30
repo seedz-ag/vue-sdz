@@ -1,6 +1,6 @@
 <template>
   <div class="s-card">
-    dasd
+    test-victor
   </div>
 </template>
 
