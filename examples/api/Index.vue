@@ -3,8 +3,8 @@
     <div class="menu">
       <router-link
         :key="name"
-        v-for="name in components"
-        :to="{ name: `component-${name}` }"
+        v-for="name in apis"
+        :to="{ name: `api-${name}` }"
       >
         {{ name }}
       </router-link>
@@ -17,7 +17,7 @@
 <script>
 const requireComponent = require.context('./', true, /.*?Index\.vue$/)
 
-const componentList = requireComponent
+const apiList = requireComponent
   .keys()
   .filter(component => component !== './Index.vue')
   .map(fileName => fileName
@@ -26,11 +26,11 @@ const componentList = requireComponent
     .split('/')[0])
 
 export default {
-  name: 'Components',
+  name: 'Apis',
 
   computed: {
-    components () {
-      return componentList
+    apis () {
+      return apiList
     }
   }
 }
