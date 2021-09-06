@@ -1,8 +1,9 @@
-const load = component => () => import(/* webpackChunkName: "[request]" */ `../../src/components/${component}/Index.vue`)
+// const load = component => () => import(/* webpackChunkName: "[request]" */ `../../src/components/${component}/Index.vue`)
+const load = component => () => import(/* webpackChunkName: "[request]" */ `./${component}/Index.vue`)
 
 const requireComponent = require.context(
   // Look for files in the current directory
-  '../../src/components',
+  './',
   // Do not look in subdirectories
   true,
   // Only include "_base-" prefixed .vue files
@@ -17,7 +18,7 @@ const components = requireComponent
     .split('/')[0])
 
 export default components.map(name => ({
-  name,
+  name: `component-${name}`,
   path: `s-${name.toLowerCase()}`,
   component: load(name)
 }))

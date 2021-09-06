@@ -2,18 +2,23 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import ComponentList from './components/Index.vue'
-import componentsRoute from './components/routes.js'
+import ComponentsRoute from './components/routes.js'
+
+import APIList from './api/Index.vue'
+import APIsRoute from './api/routes.js'
 
 const routes = [
   {
-    path: '/',
-    redirect: '/components'
+    path: '/components',
+    name: 'components',
+    component: ComponentList,
+    children: ComponentsRoute
   },
   {
-    path: '/components',
-    name: 'ComponentList',
-    component: ComponentList,
-    children: componentsRoute
+    path: '/api',
+    name: 'api',
+    component: APIList,
+    children: APIsRoute
   }
 ]
 
