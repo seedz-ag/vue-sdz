@@ -29,9 +29,16 @@ export default {
           icon: 'zzz',
           redirect: '/coe',
           child: [
-            { name: 'Filho coe', redirect: '/filho-coe' },
+            { name: 'Filho coe', redirect: '/filho-coe', disabled: true },
             { name: 'Filho coe-2', redirect: '/filho-coe-2' },
-            { name: 'Filho coe-3', redirect: '/filho-coe-3' },
+            {
+              name: 'Filho coe-3',
+              redirect: '/filho-coe-3',
+              child: [
+                { name: 'Mane', redirect: '/mane-coe' },
+                { name: 'Mane-3', redirect: '/mane-coe-3' }
+              ]
+            }
           ]
         }
       ]
