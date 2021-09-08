@@ -94,13 +94,15 @@ module.exports = {
 
     'quote-props': 'off',
 
+    'vue/max-attributes-per-line': 'off',
+
     'vue/attributes-order': [2, {
       'order': [
         'DEFINITION',
         'GLOBAL',
-        'UNIQUE',
         'CONDITIONALS',
         'LIST_RENDERING',
+        'UNIQUE',
         'OTHER_ATTR',
         'TWO_WAY_BINDING',
         'EVENTS',
