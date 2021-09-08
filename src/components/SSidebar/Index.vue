@@ -11,13 +11,10 @@
         <div class="content" @click="onActiveItem(item, index)">
           <span v-if="item.icon" class="icon">{{ item.icon }}</span>
           <span class="name">{{ item.name }}</span>
-          <span class="action">-</span>
+          <span v-if="!item.child" class="action">-</span>
         </div>
 
-        <ul
-          :style="{ height: getListHeight(index) }"
-          class="item-list"
-        >
+        <ul :style="{ height: getListHeight(index) }" class="item-list">
           <li
             v-for="(child, childIndex) in item.child"
             :key="childIndex"

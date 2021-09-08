@@ -13,11 +13,11 @@ export default {
   data () {
     return {
       items: [
-        { name: 's-button', redirect: '/components/s-button' },
+        { name: 's-button', icon: 'xxx', redirect: '/components/s-button' },
         { name: 's-card', redirect: '/components/s-card', disabled: true },
         {
           name: 'Teste',
-          icon: 'xxx',
+          icon: 'yyy',
           redirect: '/teste',
           child: [
             { name: 'Filho teste', redirect: '/filho-teste' },
@@ -26,7 +26,7 @@ export default {
         },
         {
           name: 'Coe',
-          icon: 'xxx',
+          icon: 'zzz',
           redirect: '/coe',
           child: [
             { name: 'Filho coe', redirect: '/filho-coe' },
