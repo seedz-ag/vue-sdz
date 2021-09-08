@@ -6,7 +6,7 @@
       <li
         v-for="(item, index) in items"
         :key="index"
-        :class="itemClasses(index)"
+        :class="itemClasses(item, index)"
       >
         <div class="content" @click="onActiveItem(item, index)">
           <span v-if="item.icon" class="icon">{{ item.icon }}</span>
@@ -21,7 +21,7 @@
           <li
             v-for="(child, childIndex) in item.child"
             :key="childIndex"
-            :class="childClasses(childIndex)"
+            :class="childClasses(child, childIndex)"
           >
             <div class="content" @click="onActiveChild(child, childIndex)">
               <span class="name">{{ child.name }}</span>
@@ -73,25 +73,31 @@ export default {
   },
 
   methods: {
-    itemClasses (index) {
+    itemClasses (item, index) {
       return ['item', {
+        '--is-disabled': item.disabled,
         '--is-active-item': this.activeItem === index
       }]
     },
 
-    childClasses (index) {
+    childClasses (item, index) {
       return ['item', {
+        '--is-disabled': item.disabled,
         '--is-active-child': this.activeChild === index
       }]
     },
 
     onActiveItem (item, index) {
+      if (item.disabled) return
       if (item.child && this.activeItem === index) return this.activeItem = null
 
       this.activeItem = index
+      this.activeChild = null
     },
 
     onActiveChild (item, index) {
+      if (item.disabled) return
+
       this.activeChild = index
     },
 
@@ -117,8 +123,8 @@ export default {
   flex-direction: column;
 
   .item-list {
-    margin: 0;
-    padding: 10px 0;
+    padding: 0;
+    margin: 5px 0;
     list-style: none;
     overflow: hidden;
     transition: height .3s ease-in-out;
@@ -127,6 +133,7 @@ export default {
       margin: 0 10px;
       padding: 0 10px;
       cursor: pointer;
+      border-radius: 5px;
 
       & > .content {
         display: flex;
@@ -154,15 +161,18 @@ export default {
         padding: 0;
 
         & > .--is-active-child {
-          border-radius: 5px;
           background-color: #299d8d;
         }
       }
     }
 
     & > .--is-active-item {
-      border-radius: 5px;
       background-color: #004a4f;
+    }
+
+    & > .--is-disabled {
+      cursor: not-allowed;
+      background-color: #868e96;
     }
   }
 }
