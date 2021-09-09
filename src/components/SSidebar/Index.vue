@@ -60,15 +60,17 @@ export default {
 
 <style lang="scss">
 .s-sidebar {
-  left: 0;
-  position: absolute;
+  // left: 0;
+  // position: absolute;
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 285px;
-  background-color: #3a7b80;
 
   display: flex;
   flex-direction: column;
+
+  background-color: #3a7b80;
+  box-shadow: 3px 0px 10px 0px rgba(0,0,0,0.2);
 }
 </style>
