@@ -19,6 +19,6 @@ const components = requireComponent
 
 export default components.map(name => ({
   name: `component-${name}`,
-  path: `s-${name.toLowerCase()}`,
+  path: name.toLowerCase(),
   component: load(name)
 }))

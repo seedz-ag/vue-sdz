@@ -2,8 +2,8 @@
   <div id="app">
     <div class="menu">
       <router-link
-        :key="name"
         v-for="name in components"
+        :key="name"
         :to="{ name }"
       >
         {{ name }}

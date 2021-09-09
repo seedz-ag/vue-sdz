@@ -74,12 +74,14 @@ export default {
 
       this.$emit('active-item', index)
       this.$emit('active-child', null)
+      this.$emit('redirect', item.redirect)
     },
 
     onActiveChild (item, index) {
       if (item.disabled) return
 
       this.$emit('active-child', index)
+      this.$emit('redirect', item.redirect)
     },
 
     getListHeight (index) {
@@ -93,14 +95,14 @@ export default {
 
 <style lang="scss">
 .s-sidebar-item {
+  margin: 0;
   padding: 0;
-  margin: 5px 0;
   list-style: none;
   overflow: hidden;
   transition: height .3s ease-in-out;
 
   & > .item {
-    margin: 0 10px;
+    margin: 5px 10px;
     padding: 0 10px;
     cursor: pointer;
     border-radius: 5px;

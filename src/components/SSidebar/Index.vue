@@ -4,6 +4,7 @@
 
     <s-sidebar-item
       v-for="(item, index) in items"
+      v-bind="$attrs"
 
       :key="index"
       :item="item"
@@ -12,6 +13,7 @@
       :active-child="activeChild"
       :active-children="activeChildren"
 
+      v-on="$listeners"
       @active-item="index => activeItem = index"
       @active-child="index => activeChild = index"
     />
@@ -62,6 +64,7 @@ export default {
   position: absolute;
 
   width: 100%;
+  height: 100%;
   max-width: 285px;
   background-color: #3a7b80;
 
