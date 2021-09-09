@@ -4,7 +4,7 @@
       <div class="content" @click="onActiveItem(item, index)">
         <span v-if="item.icon" class="icon">{{ item.icon }}</span>
         <span class="name">{{ item.name }}</span>
-        <span v-if="!item.child" class="action">-</span>
+        <span v-if="item.child" class="action">-</span>
       </div>
 
       <ul :style="{ height: getListHeight(index) }" class="s-sidebar-item">
