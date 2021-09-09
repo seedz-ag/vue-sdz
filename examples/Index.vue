@@ -1,15 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div class="menu">
-      <router-link
-        v-for="name in components"
-        :key="name"
-        :to="{ name }"
-      >
-        {{ name }}
-      </router-link>
-    </div> -->
-
     <s-sidebar :items="items" @redirect="onRedirect" />
 
     <router-view />
@@ -28,6 +18,11 @@ export default {
     return {
       items: [
         {
+          name: 'Getting Started',
+          icon: 'aaa',
+          redirect: '/getting-started'
+        },
+        {
           name: 'components',
           icon: 'xxx',
           child: [
@@ -44,12 +39,6 @@ export default {
           ]
         }
       ]
-    }
-  },
-
-  computed: {
-    components () {
-      return ['components', 'api']
     }
   },
 
