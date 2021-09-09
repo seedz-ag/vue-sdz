@@ -46,6 +46,15 @@ export default {
     }
   },
 
+  mounted () {
+    setTimeout(() => {
+      const path = this.$route.path
+
+      this.setActiveItem(path)
+      this.setActiveChild(path)
+    }, 0)
+  },
+
   computed: {
     activeChildren () {
       const activeItem = this.items.find(({ child }, index) => index === this.activeItem && child)
@@ -53,6 +62,28 @@ export default {
       if (!activeItem) return []
 
       return activeItem.child
+    }
+  },
+
+  methods: {
+    setActiveItem (path) {
+      if (!path) return
+
+      this.activeItem = this.items
+        .findIndex(item => {
+          if (item.redirect === path) return true
+
+          return item.child && item.child.find(child => child.redirect === path)
+        })
+    },
+
+    setActiveChild (path) {
+      if (!path) return
+
+      this.activeChild = this.items
+        .find((_item, index) => index === this.activeItem)
+        .child
+        .findIndex(child => child.redirect === path)
     }
   }
 }
