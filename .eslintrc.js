@@ -96,6 +96,8 @@ module.exports = {
 
     'vue/max-attributes-per-line': 'off',
 
+    'vue/singleline-html-element-content-newline': 'off',
+
     'vue/attributes-order': [2, {
       'order': [
         'DEFINITION',
