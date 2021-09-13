@@ -1,0 +1,53 @@
+export const cols = [
+  { label: 'Nome', row: 'name' },
+  { label: 'E-mail', row: 'email' },
+  { label: 'Idade', row: 'age' },
+  { label: 'Malícia', row: 'malice', hasTotal: true },
+  { label: 'Sagacidade', row: 'sagacity', hasTotal: true },
+  { label: 'Coisas', row: 'stuff', hasTotal: true }
+]
+
+export const rows = [
+  { name: 'coe1', email: 'coe1@gmail.com', age: 6, malice: 3, sagacity: 3 },
+  { name: 'coe2', email: 'coe2@gmail.com', age: 3, malice: 3, sagacity: 3 },
+  { name: 'coe3', email: 'coe3@gmail.com', age: 2, malice: 3, sagacity: 3 },
+  { name: 'coe4', email: 'coe4@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe5', email: 'coe5@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe6', email: 'coe6@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe7', email: 'coe7@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe8', email: 'coe8@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe9', email: 'coe9@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe10', email: 'coe10@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe11', email: 'coe11@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe12', email: 'coe12@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe13', email: 'coe13@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe14', email: 'coe14@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe15', email: 'coe15@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe16', email: 'coe16@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe17', email: 'coe17@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe18', email: 'coe18@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe19', email: 'coe19@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe20', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe21', email: 'coe21@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe22', email: 'coe22@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe22', email: 'coe22@gmail.com', age: 2, malice: 20, sagacity: 3 },
+  { name: 'coe23', email: 'coe23@gmail.com', age: 2, malice: 20, sagacity: 3 },
+  { name: 'coe24', email: 'coe24@gmail.com', age: 2, malice: 20, sagacity: 3 },
+  { name: 'coe25', email: 'coe25@gmail.com', age: 2, malice: 20, sagacity: 3 },
+  { name: 'coe26', email: 'coe26@gmail.com', age: 2, malice: 20, sagacity: 3 },
+  { name: 'coe27', email: 'coe27@gmail.com', age: 2, malice: 20, sagacity: 3 },
+  { name: 'coe28', email: 'coe28@gmail.com', age: 2, malice: 20, sagacity: 3 },
+  { name: 'coe29', email: 'coe29@gmail.com', age: 2, malice: 10, sagacity: 3 },
+  { name: 'coe30', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe31', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe32', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe33', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe34', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe34', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe35', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe36', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe37', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
+  { name: 'coe38', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 }
+]
+
+export const total = { label: 'Total', colPosition: 'email' }

@@ -1,4 +1,6 @@
 export default (el, strings = '', keys = []) => {
+  if (!el || !strings) return ''
+
   const terms = strings.toLowerCase().split(' ')
 
   return keys.some(key => {
