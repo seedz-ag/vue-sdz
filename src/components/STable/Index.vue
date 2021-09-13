@@ -1,8 +1,8 @@
 i<template>
-  <div id="app" v-if="hasValid" class="c-table-builder">
-    <slot name="actions">
+  <div v-if="hasValid" class="c-table-builder">
+    <!-- <slot name="actions">
       <filters label="Filtrar por: " :search="search" v-on="$listeners" />
-    </slot>
+    </slot> -->
 
     <div v-if="!isEmpty" class="table-container">
       <table class="table">
@@ -30,19 +30,21 @@ i<template>
           </tr>
         </thead>
 
-        <tbody ref="tbody" :class="tbodyClass" :style="style">
-          <tr v-for="(row, index) in _rows" :key="index" class="tr-row">
-            <td v-if="selectable" class="td-row-selectable">
-              <input type="checkbox" :value="row" v-model="checkeds" @change="$selected(row)">
-            </td>
-
-            <slot name="row" :rows="row" :cols="cols">
-              <td v-for="(_, _index) in cols.length" :key="_index" ref="" class="td-row">
-                <span class="row">{{ getRow(row, _index) }}</span>
+        <s-shadowed>
+          <tbody ref="tbody" class="tbody">
+            <tr v-for="(row, index) in _rows" :key="index" class="tr-row">
+              <td v-if="selectable" class="td-row-selectable">
+                <input type="checkbox" :value="row" v-model="checkeds" @change="$selected(row)">
               </td>
-            </slot>
-          </tr>
-        </tbody>
+
+              <slot name="row" :rows="row" :cols="cols">
+                <td v-for="(_, _index) in cols.length" :key="_index" ref="" class="td-row">
+                  <span class="row">{{ getRow(row, _index) }}</span>
+                </td>
+              </slot>
+            </tr>
+          </tbody>
+        </s-shadowed>
 
         <slot name="total">
           <tfoot class="tfoot">
@@ -64,6 +66,7 @@ i<template>
         @to-last="toLast"
       />
     </div>
+
     <div v-else>
       EMPTY STATE
     </div>
@@ -78,8 +81,9 @@ i<template>
 
 <script>
 // components
+import SShadowed from '../SShadowed/Index.vue'
+// import Filters from './components/Filters.vue'
 import Pagination from './components/Pagination.vue'
-import Filters from './components/Filters.vue'
 
 // mixins
 import warnings from './mixins/warnings'
@@ -95,7 +99,11 @@ import removeGaps from './helpers/removeGaps'
 export default {
   name: 'STable',
 
-  components: { Pagination, Filters },
+  components: {
+    SShadowed,
+    Pagination,
+    // Filters
+  },
 
   mixins: [ warnings, sortable, selectable, paginable, scroll ],
 
@@ -132,21 +140,6 @@ export default {
       const rowsWithoutGaps = removeGaps(this.dataTable)
 
       return rowsWithoutGaps
-    },
-
-    tbodyClass () {
-      return ['tbody', {
-        '-max-heigth': this.maxHeight,
-        '-has-top-shadow': !this.paginable && !!this.maxHeight && !this.hasTopShadow,
-        '-has-bottom-shadow': !this.paginable && !!this.maxHeight && !this.hasBottomShadow
-      }]
-    },
-
-    style () {
-      return {
-        'maxHeight': this.maxHeight + 'px',
-        '--tbody-bottom': (this.maxHeight - 15) + 'px'
-      }
     },
 
     totals () {
@@ -193,51 +186,14 @@ export default {
 
 <style lang="scss">
 .c-table-builder > .table-container {
-  @mixin shadow {
-    content: "";
-    display: block;
-
-    position: absolute;
-    left: 0px;
-
-    width: 97.5%;
-    height: 45px;
-
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 85%);
-  }
-
   @mixin table-config {
-    display: table;
     width: 100vh;
+    display: table;
     table-layout: fixed;
-  }
-
-  @mixin lateral-responsiveness {
-    overflow: auto;
-    display: block;
-
-    background:
-      radial-gradient(ellipse, rgba(0,0,0, .3) 0%, rgba(0,0,0, 0) 75%),
-      radial-gradient(ellipse, rgba(0,0,0, .3) 0%, rgba(0,0,0, 0) 75%);
-    background-size: 10px 100%, 10px 100%;
-    background-position: -3px center, calc(100% + 3px) center;
-    background-repeat: no-repeat;
-    background-color: #fff;
-  }
-
-  @mixin lateral-pagination {
-    background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-repeat: no-repeat;
-    background-size: 20px 100%;
   }
 
   & > .table {
     position: relative;
-
-    // fix - max-width must be the size of the table
-    @media only screen and (max-width: 677px) {
-      @include lateral-responsiveness;
-    }
 
     & > .thead {
       @include table-config;
@@ -256,56 +212,36 @@ export default {
       }
     }
 
-    & > .tbody {
-      display: block;
-
-      width: 100vh;
-
-      & > .tr-row {
-        @include table-config;
-        width: 100%;
-        border: 1px solid black;
-
-        & > .td-row-selectable {
-          width: 50px;
-          text-align: center;
-
-          &:first-child {
-            background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-            background-repeat: no-repeat;
-            background-size: 20px 100%;
-          }
-        }
-        & > .td-row {
-          text-align: center;
-
-          &:first-child {
-            @include lateral-pagination;
-          }
-
-          &:last-child {
-            @include lateral-pagination;
-            background-position: 100% 0;
-          }
-
-          // & > .row { color: $text-color; }
-        }
-      }
-
-      &.-has-top-shadow::before {
-        @include shadow;
-        top: 10px;
-      }
-
-      &.-has-bottom-shadow::after {
-        @include shadow;
-        top: var(--tbody-bottom);
-      }
-    }
-
-    & .-max-heigth {
+    & > .shadowed {
       overflow-y: scroll;
       overflow-x: hidden;
+      max-height: 600px;
+
+      & > .tbody {
+        width: 100vh;
+        display: block;
+
+
+        & > .tr-row {
+          @include table-config;
+
+          width: 100%;
+          border: 1px solid black;
+
+          & > .td-row-selectable {
+            width: 50px;
+            text-align: center;
+
+            &:first-child {
+              background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+              background-repeat: no-repeat;
+              background-size: 20px 100%;
+            }
+          }
+
+          & > .td-row { text-align: center; }
+        }
+      }
     }
 
     & > .tfoot {

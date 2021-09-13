@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="s-table-example">
     <s-table
       :cols="cols"
       :rows="rows"
@@ -76,3 +76,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.s-table-example {
+  max-height: 600px;
+  padding: 50px;
+  margin: 0 auto;
+  // overflow-y: scroll;
+}
+</style>
