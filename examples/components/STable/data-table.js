@@ -2,9 +2,9 @@ export const cols = [
   { label: 'Nome', row: 'name' },
   { label: 'E-mail', row: 'email' },
   { label: 'Idade', row: 'age' },
-  { label: 'Malícia', row: 'malice', hasTotal: true },
-  { label: 'Sagacidade', row: 'sagacity', hasTotal: true },
-  { label: 'Coisas', row: 'stuff', hasTotal: true }
+  { label: 'Malícia', row: 'malice' },
+  { label: 'Sagacidade', row: 'sagacity' },
+  { label: 'Coisas', row: 'stuff' }
 ]
 
 export const rows = [
@@ -49,5 +49,3 @@ export const rows = [
   { name: 'coe37', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 },
   { name: 'coe38', email: 'coe20@gmail.com', age: 1, malice: 10, sagacity: 3 }
 ]
-
-export const total = { label: 'Total', colPosition: 'email' }

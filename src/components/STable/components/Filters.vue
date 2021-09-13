@@ -4,7 +4,7 @@
       class="filter"
       v-bind="$attrs"
       :value="search"
-      @input="value => $emit('search', value)"
+      @input="event => $emit('filter', event.target.value)"
     >
   </div>
 </template>

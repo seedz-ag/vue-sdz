@@ -1,4 +1,4 @@
-import toggleOrder from '../helpers/order'
+// import toggleOrder from '../helpers/order'
 
 const sortable = {
   props: {
@@ -12,10 +12,18 @@ const sortable = {
   },
 
   methods: {
-    $handlerSort (row) {
-      this.iconToSort === '▼' ? this.iconToSort = '▲' : this.iconToSort = '▼'
+    $handlerSort (item) {
+      this.iconToSort === '▼'
+        ? this.iconToSort = '▲'
+        : this.iconToSort = '▼'
+      console.log(this.iconToSort)
 
-      return this._rows.sort(toggleOrder(row, this.iconToSort))
+      // const data = this.rows.sort(toggleOrder(item, this.iconToSort))
+
+      this.$emit('sort', {
+        item,
+        type: '▼' === this.iconToSort ? 'decrease' : 'increase'
+      })
     }
   }
 }

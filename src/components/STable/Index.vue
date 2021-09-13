@@ -1,8 +1,8 @@
 i<template>
   <div v-if="hasValid" class="c-table-builder">
-    <!-- <slot name="actions">
+    <slot name="actions">
       <filters label="Filtrar por: " :search="search" v-on="$listeners" />
-    </slot> -->
+    </slot>
 
     <div v-if="!isEmpty" class="table-container">
       <table class="table">
@@ -18,7 +18,6 @@ i<template>
                 :key="index"
                 class="th-col"
               >
-                <!-- to do -->
                 <slot name="icon-sortable">
                   <span v-if="sortable" class="icon-sortable-all" @click="$handlerSort(row)">
                     {{ iconToSort }}
@@ -30,9 +29,9 @@ i<template>
           </tr>
         </thead>
 
-        <s-shadowed>
+        <s-shadowed target="tbody" :has-bottom-shadow="false">
           <tbody ref="tbody" class="tbody">
-            <tr v-for="(row, index) in _rows" :key="index" class="tr-row">
+            <tr v-for="(row, index) in rows" :key="index" class="tr-row">
               <td v-if="selectable" class="td-row-selectable">
                 <input type="checkbox" :value="row" v-model="checkeds" @change="$selected(row)">
               </td>
@@ -46,15 +45,7 @@ i<template>
           </tbody>
         </s-shadowed>
 
-        <slot name="total">
-          <tfoot class="tfoot">
-            <tr v-if="total" class="tr-totalizator">
-              <th v-for="(total, index) in totals" :key="index" class="th-totalizator">
-                <span>{{ total }}</span>
-              </th>
-            </tr>
-          </tfoot>
-        </slot>
+        <slot name="tfoot" />
       </table>
 
       <pagination
@@ -82,7 +73,7 @@ i<template>
 <script>
 // components
 import SShadowed from '../SShadowed/Index.vue'
-// import Filters from './components/Filters.vue'
+import Filters from './components/Filters.vue'
 import Pagination from './components/Pagination.vue'
 
 // mixins
@@ -90,34 +81,27 @@ import warnings from './mixins/warnings'
 import sortable from './mixins/sortable'
 import selectable from './mixins/selectable'
 import paginable from './mixins/paginable'
-import scroll from './mixins/scroll'
-
-// helpers
-import findBy from '../../helpers/findBy'
-import removeGaps from './helpers/removeGaps'
 
 export default {
   name: 'STable',
 
-  components: {
-    SShadowed,
-    Pagination,
-    // Filters
-  },
+  components: { SShadowed, Pagination, Filters },
 
-  mixins: [ warnings, sortable, selectable, paginable, scroll ],
+  mixins: [ warnings, sortable, selectable, paginable ],
 
   props: {
     cols: {
       type: Array,
       required: true
     },
+
     rows: {
       type: Array,
       required: true
     },
-    total: Object,
+
     search: String,
+
     searchParams: {
       // array of strings
       // required if paginable
@@ -136,37 +120,8 @@ export default {
       return !this.pages.length && this.search
     },
 
-    _rows () {
-      const rowsWithoutGaps = removeGaps(this.dataTable)
-
-      return rowsWithoutGaps
-    },
-
-    totals () {
-      const sum = prop => (total, obj) => (typeof obj[prop] === 'number' && total + (+(obj[prop]) || 0)) || '-'
-
-      const makeSum = prop => this.dataTable.reduce(sum(prop), 0)
-
-      const makeLabel = row => (row === this.total.colPosition && this.total.label) || null
-
-      const total = ({ row, hasTotal }) => hasTotal ? makeSum(row) : makeLabel(row)
-
-      if (this.selectable) {
-        const totals = this.cols.map(total)
-        // append a position in columns to fix alignment
-        totals.unshift(null)
-
-        return totals
-      } else {
-        return this.cols.map(total)
-      }
-    },
-
     dataTable () {
-      const filtereds = findBy(this.rows, this.search, this.searchParams)
-      const filteredRows = this.search && this.searchParams ? filtereds : this.rows
-
-      return this.paginable ? this.pagination.data : filteredRows
+      return this.paginable ? this.pagination.data : this.rows
     }
   },
 
@@ -187,18 +142,19 @@ export default {
 <style lang="scss">
 .c-table-builder > .table-container {
   @mixin table-config {
-    width: 100vh;
+    width: 100%;
     display: table;
     table-layout: fixed;
   }
 
   & > .table {
     position: relative;
+    width: 100%;
 
     & > .thead {
       @include table-config;
       border: 1px solid black;
-
+      width: 100%;
       & > .tr-col {
         background-color: white;
 
@@ -213,14 +169,11 @@ export default {
     }
 
     & > .shadowed {
-      overflow-y: scroll;
-      overflow-x: hidden;
-      max-height: 600px;
 
       & > .tbody {
-        width: 100vh;
+        overflow-y: scroll;
         display: block;
-
+        height: 600px;
 
         & > .tr-row {
           @include table-config;
@@ -243,22 +196,6 @@ export default {
         }
       }
     }
-
-    & > .tfoot {
-      @include table-config;
-
-      & > .tr-totalizator {
-        // color: $text-color;
-        // background-color: $background-color;
-
-        & > .th-totalizator {
-          // fix - make dynamic based on prop selectable
-          &:first-child { width: 50px; }
-        }
-      }
-    }
   }
-
-  & > .empty-state {}
 }
 </style>

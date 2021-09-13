@@ -2,40 +2,29 @@
   <section class="s-table-example">
     <s-table
       :cols="cols"
-      :rows="rows"
-      :total="total"
+      :rows="tableRows"
       :search="search"
       :search-params="['name']"
       :checkeds.sync="checkeds"
       :current-page="2"
       :per-page="5"
-      max-height="300"
       selectable
       sortable
       pagination-type="ellipsised"
-      @search="synchronizeSearch"
+      @sort="onSort"
+      @filter="synchronizeSearch"
     >
-      <tfoot slot="total" class="tfoot">
-        <tr class="tr-totalizator">
-          <th class="th-totalizator"><span>-</span></th>
-          <th class="th-totalizator"><span>-</span></th>
-          <th class="th-totalizator"><span>-</span></th>
-          <th class="th-totalizator"><span>{{ ageTotal }}</span></th>
-          <th class="th-totalizator"><span>{{ maliceTotal }}</span></th>
-          <th class="th-totalizator"><span>{{ sagacityTotal }}</span></th>
-          <th class="th-totalizator"><span /></th>
-        </tr>
-      </tfoot>
-    </s-table>
     <!-- paginable
     max-height="300" -->
+    </s-table>
   </section>
 </template>
 
 <script>
 import STable from '../../../src/components/STable/Index.vue'
+import findByInclusive from '../../../src/helpers/findByInclusive'
 
-import { cols, rows, total } from './data-table'
+import { cols, rows } from './data-table'
 
 export default {
   name: 'STableExample',
@@ -45,23 +34,16 @@ export default {
     return {
       cols,
       rows,
-      total,
       search: '',
       checkeds: []
     }
   },
 
   computed: {
-    ageTotal () {
-      return this.getTotal(this.rows, 'age')
-    },
+    tableRows () {
+      if (!this.search) return this.rows
 
-    maliceTotal () {
-      return this.getTotal(this.rows, 'malice')
-    },
-
-    sagacityTotal () {
-      return this.getTotal(this.rows, 'sagacity')
+      return findByInclusive(this.rows, this.search, 'name')
     }
   },
 
@@ -70,8 +52,9 @@ export default {
       this.search = value
     },
 
-    getTotal (data, prop) {
-      return data.reduce((total, item) => total + item[prop], 0)
+    onSort (data) {
+      console.log(data)
+      this.rows = data
     }
   }
 }
@@ -79,9 +62,8 @@ export default {
 
 <style lang="scss">
 .s-table-example {
-  max-height: 600px;
+  height: 600px;
   padding: 50px;
   margin: 0 auto;
-  // overflow-y: scroll;
 }
 </style>

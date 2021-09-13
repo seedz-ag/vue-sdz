@@ -1,4 +1,4 @@
-import findBy from '../../../helpers/findBy'
+// import findBy from '../../../helpers/findBy'
 
 const paginable = {
   props: {
@@ -47,8 +47,9 @@ const paginable = {
 
   computed: {
     pagination () {
-      const filtereds = findBy(this.rows, this.search, this.searchParams)
-      const dataTable = this.search && this.searchParams ? filtereds : this.rows
+      // const filtereds = findBy(this.rows, this.search, this.searchParams)
+      // const dataTable = this.search && this.searchParams ? filtereds : this.rows
+      const dataTable = this.rows
 
       const data = dataTable.slice((this.page - 1) * this.perPage, this.perPage * this.page)
       const from = ((this.page - 1) * this.perPage) + 1

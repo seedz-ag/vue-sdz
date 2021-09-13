@@ -20,7 +20,7 @@ const selectable = {
         this.allChecked = true
         this.checkeds = this.rows
 
-        this.$emit('selected-all', { page: this._rows, table: this.rows })
+        this.$emit('selected-all', { page: this.rows, table: this.rows })
       } else {
         this.allChecked = false
         this.checkeds = []
