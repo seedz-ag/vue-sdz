@@ -16,7 +16,6 @@ const sortable = {
       this.iconToSort === '▼'
         ? this.iconToSort = '▲'
         : this.iconToSort = '▼'
-      console.log(this.iconToSort)
 
       // const data = this.rows.sort(toggleOrder(item, this.iconToSort))
 
