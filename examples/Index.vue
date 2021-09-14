@@ -30,6 +30,7 @@ export default {
             { name: 'card', redirect: '/components/scard' },
             { name: 'table', redirect: '/components/stable' },
             { name: 'shadowed', redirect: '/components/sshadowed' },
+            { name: 'icon', redirect: '/components/sicon' }
           ]
         },
         {
@@ -39,7 +40,8 @@ export default {
             { name: 'button', redirect: '/api/sbutton' },
             { name: 'card', redirect: '/api/scard' },
             { name: 'table', redirect: '/api/stable' },
-            { name: 'shadowed', redirect: '/components/sshadowed' },
+            { name: 'shadowed', redirect: '/api/sshadowed' },
+            { name: 'icon', redirect: '/api/sicon' }
           ]
         }
       ]
