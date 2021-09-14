@@ -42,6 +42,7 @@
     "cypress": "^8.0.0",
     "cypress-rollup-preprocessor": "^0.6.2",
     "cz-coenvencional": "^1.0.8",
+    "cz-conventional-changelog-emoji": "^0.1.0",
     "eslint": "^7.31.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-vue": "^7.16.0",
@@ -67,7 +68,7 @@
   "repository": "https://github.com/marlonfrontend/vue-sdz",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-coenvencional"
+      "path": "cz-conventional-changelog-emoji"
     }
   }
 }

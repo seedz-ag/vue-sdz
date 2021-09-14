@@ -30,7 +30,7 @@ i<template>
           </tr>
         </thead>
 
-        <s-shadowed>
+        <s-shadowed target="tbody">
           <tbody ref="tbody" class="tbody">
             <tr v-for="(row, index) in _rows" :key="index" class="tr-row">
               <td v-if="selectable" class="td-row-selectable">
@@ -161,7 +161,6 @@ export default {
         return this.cols.map(total)
       }
     },
-
     dataTable () {
       const filtereds = findBy(this.rows, this.search, this.searchParams)
       const filteredRows = this.search && this.searchParams ? filtereds : this.rows
@@ -187,18 +186,19 @@ export default {
 <style lang="scss">
 .c-table-builder > .table-container {
   @mixin table-config {
-    width: 100vh;
+    width: 100%;
     display: table;
     table-layout: fixed;
   }
 
   & > .table {
     position: relative;
+    width: 100%;
 
     & > .thead {
       @include table-config;
       border: 1px solid black;
-
+      width: 100%;
       & > .tr-col {
         background-color: white;
 
@@ -213,14 +213,11 @@ export default {
     }
 
     & > .shadowed {
-      overflow-y: scroll;
-      overflow-x: hidden;
-      max-height: 600px;
 
       & > .tbody {
-        width: 100vh;
+        overflow-y: scroll;
         display: block;
-
+        height: 600px;
 
         & > .tr-row {
           @include table-config;

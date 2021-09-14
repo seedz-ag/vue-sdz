@@ -16,6 +16,10 @@ export default {
     hasBottomShadow: {
       type: Boolean,
       default: true
+    },
+    target: {
+      type: String,
+      default: ''
     }
   },
 
@@ -38,12 +42,16 @@ export default {
         '-upper-shadow': this.hasUpperShadow && this.upperShadow,
         '-bottom-shadow': this.hasBottomShadow && this.bottomShadow
       }]
+    },
+    elementTarget () {
+      if (this.target) return document.querySelector(this.target)
+      return this.$refs.shadowed
     }
   },
 
   methods: {
     setShadow () {
-      const { scrollTop, scrollHeight, clientHeight } = this.$refs.shadowed
+      const { scrollTop, scrollHeight, clientHeight } = this.elementTarget
 
       if (this.hasUpperShadow) this.upperShadow = !!scrollTop
 
@@ -54,17 +62,17 @@ export default {
 
     initObservers () {
       this.observer = new MutationObserver(this.setShadow)
-      this.observer.observe(this.$refs.shadowed, { childList: true })
+      this.observer.observe(this.elementTarget, { childList: true })
 
       // window.addEventListener('resize', this.setShadow)
-      this.$refs.shadowed.addEventListener('scroll', this.setShadow)
+      this.elementTarget.addEventListener('scroll', this.setShadow)
     }
   },
 
   beforeDestroy () {
     this.observer.disconnect()
     // window.removeEventListener('resize', this.setShadow)
-    this.$refs.shadowed.removeEventListener('scroll', this.setShadow)
+    this.elementTarget.removeEventListener('scroll', this.setShadow)
   }
 }
 </script>
@@ -78,10 +86,11 @@ $background: linear-gradient(0deg, $shadow-color1 0%, $shadow-color2 100%);
 %shadow {
   opacity: 0;
   left: 0;
+  right: 0;
   z-index: 1;
   content: "";
   display: block;
-  position: fixed;
+  position: absolute;
   height: $shadow-size;
   width: calc(100% - 7px);
   pointer-events: none;
@@ -93,8 +102,12 @@ $background: linear-gradient(0deg, $shadow-color1 0%, $shadow-color2 100%);
   position: relative;
   &::before, &::after { @extend %shadow; }
 
+  &::before { top: 0 }
+  &::after { bottom: 0; transform: scaleY(-1); }
+
   &.-upper-shadow::before,
   &.-bottom-shadow::after { opacity: 1; }
-  &.-bottom-shadow::after { bottom: 0; transform: scaleY(-1); }
+
+  &.-bottom-shadow::after { bottom: 0; }
 }
 </style>

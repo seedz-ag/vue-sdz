@@ -69,5 +69,8 @@ html, body, #app {
   padding: 0;
 }
 
-#app { display: flex; }
+#app {
+  display: flex;
+  // flex-direction: column;
+}
 </style>
