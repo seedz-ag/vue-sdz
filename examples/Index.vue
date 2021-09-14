@@ -28,7 +28,8 @@ export default {
           child: [
             { name: 'button', redirect: '/components/sbutton' },
             { name: 'card', redirect: '/components/scard' },
-            { name: 'table', redirect: '/components/stable' }
+            { name: 'table', redirect: '/components/stable' },
+            { name: 'shadowed', redirect: '/components/sshadowed' },
           ]
         },
         {
@@ -38,6 +39,7 @@ export default {
             { name: 'button', redirect: '/api/sbutton' },
             { name: 'card', redirect: '/api/scard' },
             { name: 'table', redirect: '/api/stable' },
+            { name: 'shadowed', redirect: '/components/sshadowed' },
           ]
         }
       ]
