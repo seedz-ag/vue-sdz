@@ -29,7 +29,7 @@ i<template>
           </tr>
         </thead>
 
-        <s-shadowed target="tbody" :has-bottom-shadow="false">
+        <s-shadowed :has-bottom-shadow="false">
           <tbody ref="tbody" class="tbody">
             <tr v-for="(row, index) in rows" :key="index" class="tr-row">
               <td v-if="selectable" class="td-row-selectable">
@@ -155,6 +155,7 @@ export default {
       @include table-config;
       border: 1px solid black;
       width: 100%;
+
       & > .tr-col {
         background-color: white;
 

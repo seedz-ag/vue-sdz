@@ -45,13 +45,14 @@ export default {
     element () {
       if (this.target) return document.querySelector(this.target)
 
-      return this.$refs.shadowed
+      return this.$slots.default[0]?.elm
     }
   },
 
   methods: {
     setShadow () {
       if (!this.element) return
+
       const { scrollTop, scrollHeight, clientHeight } = this.element
 
       if (this.hasUpperShadow) this.upperShadow = !!scrollTop
@@ -65,14 +66,12 @@ export default {
       this.observer = new MutationObserver(this.setShadow)
       this.observer.observe(this.element, { childList: true })
 
-      // window.addEventListener('resize', this.setShadow)
       this.element.addEventListener('scroll', this.setShadow)
     }
   },
 
   beforeDestroy () {
     this.observer.disconnect()
-    // window.removeEventListener('resize', this.setShadow)
     this.element.removeEventListener('scroll', this.setShadow)
   }
 }
