@@ -4,7 +4,7 @@ function getWords (query) {
 
 function getMatches (word, words) {
   return word
-    ? words.toLowerCase().split(word.toLowerCase()).length - 1
+    ? words.toLowerCase().split(word.toLowerCase())?.length - 1
     : 0
 }
 

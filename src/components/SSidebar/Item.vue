@@ -42,8 +42,8 @@ export default {
 
   computed: {
     itemsSize () {
-      const items = this.activeChildren.length * 40
-      const margin = (this.activeChildren.length + 1) * 10
+      const items = this.activeChildren?.length * 40
+      const margin = (this.activeChildren?.length + 1) * 10
 
       return (items + margin) + 'px'
     }
@@ -85,7 +85,7 @@ export default {
     },
 
     getListHeight (index) {
-      if (!this.activeChildren.length || this.activeItem !== index) return 0
+      if (!this.activeChildren?.length || this.activeItem !== index) return 0
 
       return this.itemsSize
     }
