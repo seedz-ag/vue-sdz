@@ -49,9 +49,6 @@ export default {
 
 <style lang="scss">
 .s-shadowed-example {
-  padding: 50px;
-  margin: 0 auto;
-
   & > .example-1 {
     & > .wrapper {
       height: 400px;
