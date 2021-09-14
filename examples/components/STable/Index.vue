@@ -63,7 +63,5 @@ export default {
 <style lang="scss">
 .s-table-example {
   height: 600px;
-  padding: 50px;
-  margin: 0 auto;
 }
 </style>

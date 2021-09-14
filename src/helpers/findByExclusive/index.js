@@ -19,7 +19,7 @@ function getMatches (words, word) {
 
   return words
     .map(str => normalizeDiacritics(str))
-    .filter(x => normalizedWord.includes(normalizeDiacritics(x))).length
+    .filter(x => normalizedWord.includes(normalizeDiacritics(x)))?.length
 }
 
 function calcHits (validKeys, data, words) {
