@@ -1,37 +1,21 @@
 <template>
-  <div>
-    <div class="menu">
-      <router-link
-        :key="name"
-        v-for="name in apis"
-        :to="{ name: `api-${name}` }"
-      >
-        {{ name }}
-      </router-link>
-    </div>
-
+  <div class="container">
     <router-view />
   </div>
 </template>
 
 <script>
-const requireComponent = require.context('./', true, /.*?Index\.vue$/)
-
-const apiList = requireComponent
-  .keys()
-  .filter(component => component !== './Index.vue')
-  .map(fileName => fileName
-    .replace(/^\.\//, '')
-    .replace(/\.\w+$/, '')
-    .split('/')[0])
-
 export default {
-  name: 'Apis',
-
-  computed: {
-    apis () {
-      return apiList
-    }
-  }
+  name: 'Components'
 }
 </script>
+
+<style lang="scss">
+.container {
+  width: 100%;
+  height: 100%;
+
+  padding: 50px;
+  margin: 0 auto;
+}
+</style>
