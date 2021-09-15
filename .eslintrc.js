@@ -98,6 +98,8 @@ module.exports = {
 
     'vue/singleline-html-element-content-newline': 'off',
 
+    'vue/no-v-html': 'off',
+
     'vue/attributes-order': [2, {
       'order': [
         'DEFINITION',
