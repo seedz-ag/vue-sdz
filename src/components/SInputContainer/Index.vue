@@ -1,20 +1,16 @@
 <template>
   <div :class="classes">
-    <label v-if="label || labelIcon" class="label">
+    <label v-if="label" class="label">
       <span v-if="required" class="required">*</span>
 
-      <s-icon
-        v-if="labelIcon"
-        :size="labelIconSize"
-        :icon="labelIcon"
-        class="icon"
-      />
+      <s-icon v-if="leftIcon" :icon="leftIcon" class="left-icon" />
 
       <span v-else class="text">{{ label }}</span>
     </label>
 
-    <!-- @slot The default slot for the form field. -->
     <slot />
+
+    <s-icon v-if="rightIcon" v-bind="$attrs" class="right-icon" />
 
     <transition name="fade">
       <div v-if="!!validation" class="validation">
@@ -37,15 +33,12 @@ export default {
   props: {
     label: {
       type: String,
-      default: ''
+      required: true
     },
 
-    labelIcon: String,
+    leftIcon: String,
 
-    labelIconSize: {
-      type: [String, Number],
-      default: 24
-    },
+    rightIcon: String,
 
     validation: String,
 
@@ -55,8 +48,8 @@ export default {
   computed: {
     classes () {
       return [ 's-input-container', {
-        '-label': this.label,
-        '-validation': this.validation
+        '--label': this.label,
+        '--validation': this.validation
       }]
     }
   }
@@ -69,31 +62,28 @@ export default {
 .s-input-container {
   position: relative;
 
-  &.-label:not(.-label-left) {
-    margin-top: 22px;
-  }
-
   & > .label {
     position: absolute;
     top: -20px;
+
     font-size: 11px;
+    font-weight: 500;
     margin-bottom: 5px;
     padding-right: 10px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-family: $title-font-family;
+    color: map-get($text-color, base-50);
 
     & > .required { color: $negative-color; margin-top: 5px; }
   }
 
   & > .validation {
-    overflow: hidden;
-    height: 17px;
+    bottom: -15px;
     position: absolute;
-    bottom: -23px;
 
     & > .message {
-      color: $negative-color;
       font-weight: 600;
+      color: $negative-color;
       -webkit-font-smoothing: antialiased;
 
       & > .text > b { -webkit-font-smoothing: antialiased; }
@@ -101,13 +91,9 @@ export default {
   }
 
   & > .fade-enter-active,
-  & > .fade-leave-active {
-     transition: opacity .3s !important;
-   }
+  & > .fade-leave-active { transition: opacity .3s !important; }
 
   & > .fade-enter,
-  & > .fade-leave-to {
-    opacity: 0 !important;
-  }
+  & > .fade-leave-to { opacity: 0 !important; }
 }
 </style>

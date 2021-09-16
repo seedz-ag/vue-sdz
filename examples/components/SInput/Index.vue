@@ -1,45 +1,49 @@
 <template>
   <div class="s-input-example">
     <s-input
+      label="mask"
       :mask="['####-####']"
-      :value="inputData"
-      @input="value => inputData = value"
+      :value="inputMask"
+      @input="value => inputMask = value"
     />
 
     <s-input
+      label="money"
       is-money
-      :value="inputData"
-      @input="value => inputData = value"
+      :value="inputMoney"
+      @input="onInputMoney"
     />
 
     <s-input
+      label="rounded"
       round
-      :value="inputData"
-      @input="value => inputData = value"
+      :value="inputRounded"
+      @input="value => inputRounded = value"
     />
 
-    <s-input
+    <!-- <s-input
+      label="textarea"
       text-area
-      :value="inputData"
-      @input="value => inputData = value"
-    />
+      :value="inputTextArea"
+      @input="value => inputTextArea = value"
+    /> -->
 
     <s-input
+      label="disabled"
       disabled
-      :value="inputData"
-      @input="value => inputData = value"
     />
 
     <s-input
-      :validation="'error'"
-      :value="inputData"
-      @input="value => inputData = value"
+      label="error"
+      :validation="inputDataError ? '' : 'error msg'"
+      :value="inputDataError"
+      @input="value => inputDataError = value"
     />
 
     <s-input
-      label="teste 1"
-      :value="inputData"
-      @input="value => inputData = value"
+      label="teste"
+      :value="inputTeste"
+      @input="value => inputTeste = value"
     />
   </div>
 </template>
@@ -52,15 +56,23 @@ export default {
 
   data () {
     return {
-      inputData: ''
+      inputMask: '',
+      inputMoney: '',
+      inputRounded: '',
+      // inputTextArea: '',
+      inputDataError: '',
+      inputTeste: ''
+    }
+  },
+
+  methods: {
+    onInputMoney (value) {
+      this.inputMoney = value
     }
   }
 }
 </script>
 
 <style lang="scss">
-.c-input {
-  width: 300px;
-  margin-bottom: 40px;
-}
+.s-input-container { margin-bottom: 30px; }
 </style>
