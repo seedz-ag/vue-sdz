@@ -44,6 +44,8 @@ export default {
 
   methods: {
     onRedirect (link) {
+      if (!link || link === this.$route.path) return
+
       this.$router.push(link)
     }
   }
