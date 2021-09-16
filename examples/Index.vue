@@ -26,24 +26,22 @@ export default {
           name: 'components',
           icon: 'xxx',
           child: [
-            { name: 'button', redirect: '/components/sbutton' },
-            { name: 'card', redirect: '/components/scard' },
-            { name: 'table', redirect: '/components/stable' },
-            { name: 'shadowed', redirect: '/components/sshadowed' },
-            { name: 'icon', redirect: '/components/sicon' },
-            { name: 'input', redirect: '/components/sinput' },
+            { name: 'button', redirect: '/components/button' },
+            { name: 'card', redirect: '/components/card' },
+            { name: 'table', redirect: '/components/table' },
+            { name: 'shadowed', redirect: '/components/shadowed' },
+            { name: 'icon', redirect: '/components/icon' }
           ]
         },
         {
           name: 'api',
           icon: 'yyy',
           child: [
-            { name: 'button', redirect: '/api/sbutton' },
-            { name: 'card', redirect: '/api/scard' },
-            { name: 'table', redirect: '/api/stable' },
-            { name: 'shadowed', redirect: '/api/sshadowed' },
-            { name: 'icon', redirect: '/api/sicon' },
-            { name: 'input', redirect: '/api/sinput' },
+            { name: 'button', redirect: '/api/button' },
+            { name: 'card', redirect: '/api/card' },
+            { name: 'table', redirect: '/api/table' },
+            { name: 'shadowed', redirect: '/api/shadowed' },
+            { name: 'icon', redirect: '/api/icon' }
           ]
         }
       ]
@@ -52,6 +50,8 @@ export default {
 
   methods: {
     onRedirect (link) {
+      if (!link || link === this.$route.path) return
+
       this.$router.push(link)
     }
   }

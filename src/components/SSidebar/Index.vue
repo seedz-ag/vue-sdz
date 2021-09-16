@@ -52,7 +52,7 @@ export default {
 
       this.setActiveItem(path)
       this.setActiveChild(path)
-    }, 0)
+    }, 100)
   },
 
   computed: {
@@ -82,8 +82,8 @@ export default {
 
       this.activeChild = this.items
         .find((_item, index) => index === this.activeItem)
-        .child
-        .findIndex(child => child.redirect === path)
+        ?.child
+        ?.findIndex(child => child.redirect === path)
     }
   }
 }
