@@ -1,0 +1,89 @@
+// Media queries helpers
+$breakpoints: (
+  xs-mobile:  0px,
+  mobile: 576px,
+  tablet:  1024px,
+  desktop: 1280px
+);
+
+@mixin xs-mobile {
+  @media only screen and (max-width: #{map-get($breakpoints, mobile) - 1px}) { @content; }
+}
+
+@mixin mobile {
+  @media only screen and (min-width: #{map-get($breakpoints, mobile)})
+    and (max-width: #{map-get($breakpoints, tablet) - 1px}) { @content; }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: #{map-get($breakpoints, tablet)})
+    and (max-width: #{map-get($breakpoints, desktop) - 1px}) { @content; }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{map-get($breakpoints, desktop)}) { @content; }
+}
+
+@mixin responsive ($media1, $media2) {
+  @if $media1 == xs-mobile and $media2 == mobile {
+    @media only screen and (max-width: #{map-get($breakpoints, tablet) - 1px})
+    { @content; }
+  } @else if $media1 == xs-mobile and $media2 == tablet {
+    @media only screen and (max-width: #{map-get($breakpoints, desktop) - 1px})
+    { @content; }
+  } @else if $media1 == mobile and $media2 == tablet {
+    @media only screen and (min-width: #{map-get($breakpoints, mobile)})
+      and (max-width: #{map-get($breakpoints, desktop) - 1px}) { @content; }
+  } @else if $media1 == mobile and $media2 == desktop {
+    @media only screen and (min-width: #{map-get($breakpoints, mobile)})
+    { @content; }
+  } @else if  $media1 == tablet and $media2 == desktop {
+    @media only screen and (min-width: #{map-get($breakpoints, tablet)})
+    { @content; }
+  }
+}
+
+@function set-linear-gradient($direction: horizontal, $color: $primary-color-map, $light-start: 0%, $dark-start: 100%) {
+  $light-color: map-get($color, light);
+  $dark-color: map-get($color, dark);
+  $degree: $direction;
+
+  @if $direction == horizontal {
+    $degree: 90deg;
+  } @else if $direction == diagonal {
+    $degree: 135deg;
+  } @else if $direction == vertical {
+    $degree: 180deg;
+  }
+
+  @return linear-gradient($degree, $light-color $light-start, $dark-color $dark-start);
+}
+
+@mixin hover ($color: $primary-color) {
+  box-shadow:
+    0 0 0 1px $color,
+    0px 0px 3px 1px rgba($color, 0.55),
+    inset 0px 0px 3px 0px rgba($color, 0.55);
+}
+
+// material Design elevations (box-shadow).
+@mixin elevation ($level: 0) {
+  $box-shadow-levels: (
+    0: none,
+    1: (0  0  2px 1px rgba(#8E92A7, .05)),
+    2: (0  0  2px 1px rgba(#8E92A7, .10)),
+    3: (0  1px  3px rgba(#000, .12), 0  1px  2px rgba(#000, .24)),
+    4: (0  3px  6px rgba(#000, .16), 0  3px  6px rgba(#000, .23)),
+    5: (0 10px 20px rgba(#000, .19), 0  6px  6px rgba(#000, .23)),
+    6: (0 14px 28px rgba(#000, .25), 0 10px 10px rgba(#000, .22)),
+    7: (0 19px 38px rgba(#000, .30), 0 15px 12px rgba(#000, .22))
+  );
+
+  $box-shadow: map-get($box-shadow-levels, $level);
+
+  @if ($box-shadow == null) {
+    @error 'There are no elevation level "' + $level + '".';
+  }
+
+  box-shadow: $box-shadow;
+}
