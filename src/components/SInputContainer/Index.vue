@@ -64,11 +64,9 @@ export default {
 
   & > .label {
     position: absolute;
-    top: -20px;
 
     font-size: 11px;
     font-weight: 500;
-    margin-bottom: 5px;
     padding-right: 10px;
     text-transform: uppercase;
     font-family: $title-font-family;

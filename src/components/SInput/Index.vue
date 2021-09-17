@@ -1,20 +1,6 @@
 <template>
-  <s-input-container
-    v-bind="$attrs"
-    :validation="validation"
-    :class="['s-input', {
-      '--has-icon': icon,
-      '--is-money': isMoney,
-      '--is-not-empty': !!value,
-      '--is-textarea': textArea
-    }
-    ]"
-  >
-    <s-icon
-      v-if="icon"
-      :icon="icon"
-      class="left-icon"
-    />
+  <s-input-container v-bind="$attrs" :validation="validation" :class="sInputClasses">
+    <s-icon v-if="icon" :icon="icon" class="left-icon" />
 
     <component
       :is="componentType"
@@ -26,16 +12,12 @@
       v-html="textArea && value"
 
       :value="value"
-      :class="classes"
+      :class="inputClasses"
 
       v-on="listeners"
     />
 
-    <s-icon
-      v-if="rightIcon"
-      :icon="rightIcon"
-      class="right-icon"
-    />
+    <s-icon v-if="rightIcon" :icon="rightIcon" class="right-icon" />
   </s-input-container>
 </template>
 
@@ -78,6 +60,8 @@ export default {
 
     isMoney: Boolean,
 
+    isFloatLabel: Boolean,
+
     moneyMask: {
       type: Object,
       default: () => ({
@@ -96,7 +80,19 @@ export default {
   },
 
   computed: {
-    classes () {
+    sInputClasses () {
+      return [
+        's-input', {
+          '--has-icon': this.icon,
+          '--is-money': this.isMoney,
+          '--is-not-empty': !!this.value,
+          '--is-textarea': this.textArea,
+          '--is-float-label': this.isFloatLabel,
+        }
+      ]
+    },
+
+    inputClasses () {
       return [
         'input',
         {
@@ -152,41 +148,16 @@ $icon-position: 8px;
   display: flex;
   flex-direction: column;
 
-  &:focus-within > .label,
-  &.--is-money > .label,
-  &.--is-not-empty > .label {
-    font-size: 11px;
-    transform: translateY(30px);
-  }
-
-  &.--has-icon {
-    & > .label { left: 25px; }
-    & > .input { padding-left: 44px; }
-  }
-
-  & > .left-icon, & > .right-icon {
-    position: absolute;
-    top: 50%;
-
-    padding-right: 5px;
-    box-sizing: content-box;
-    transform: translateY(-50%);
-  }
-
-  & > .right-icon { right: $icon-position; }
-  & > .left-icon { left: $icon-position; }
-
   & > .input {
     outline: 0;
     width: 100%;
     height: 50px;
     font-size: 14px;
     text-indent: 20px;
-    padding-top: 20px;
     border-radius: 5px;
     border: $base-border;
-    transition: box-shadow .3s ease;
     color: map-get($text-color, base-80);
+    transition: color .3s, border-color .3s;
 
     &::placeholder { color: map-get($text-color, base-30); }
 
@@ -202,15 +173,47 @@ $icon-position: 8px;
   }
 
   & > .label {
-    transform: translateY(35px);
+    top: -25px;
 
     font-size: 14px;
-    padding: 0 20px;
     pointer-events: none;
     font-family: $base-font-family;
     color: map-get($text-color, base-30);
-    transition: top .3s, font-size .3s, transform .3s;
-    transition: font-size .3s, transform .3s ease-out;
+    transition: font-size .3s, transform .3s;
+  }
+
+  &.--has-icon {
+    & > .label { left: 25px; }
+    & > .input { padding-left: 44px; }
+  }
+
+  & > .left-icon, & > .right-icon {
+    top: 50%;
+    position: absolute;
+
+    padding-right: 5px;
+    box-sizing: content-box;
+    transform: translateY(-50%);
+  }
+
+  & > .right-icon { right: $icon-position; }
+  & > .left-icon { left: $icon-position; }
+
+  &.--is-float-label {
+    & > label {
+      top: -20px;
+      padding: 0 20px;
+      transform: translateY(35px);
+    }
+
+    & > .input { padding-top: 20px; }
+
+    &:focus-within > .label,
+    &.--is-money > .label,
+    &.--is-not-empty > .label {
+      font-size: 11px;
+      transform: translateY(30px);
+    }
   }
 
   &.--validation {
@@ -219,34 +222,16 @@ $icon-position: 8px;
     & > .input {
       box-shadow: none;
       padding-right: 50px;
-      border-color: rgba($negative-color, .2);
-      color: map-get($negative-color-map, light);
-
-      $background: (
-        light: rgba(map-get($negative-color-map, light), 0.2),
-        dark:  rgba(map-get($negative-color-map, dark), 0.2)
-      );
-      background: set-linear-gradient(315deg, $background);
+      color: $negative-color;
+      border-color: $negative-color !important;
     }
 
-    & > .label { color: map-get($negative-color-map, light); }
+    & > .label { color: $negative-color !important; }
   }
 
-  @include xs-mobile {
-    &:not(.--is-textarea) { height: 50px; }
-
-    & > .label { padding: 0 15px; }
-
-    &:focus-within > .label,
-    &.--is-not-empty > .label { top: 6px; }
-
-    & > .input {
-      padding: {
-        top: 10px;
-        left: 15px;
-        right: 15px;
-      }
-    }
+  &:focus-within {
+    & > .label { color: $primary-color; }
+    & > .input { border-color: $primary-color; }
   }
 }
 </style>

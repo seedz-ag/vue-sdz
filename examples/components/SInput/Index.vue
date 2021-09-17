@@ -45,6 +45,13 @@
       :value="inputTeste"
       @input="value => inputTeste = value"
     />
+
+    <s-input
+      label="is float label"
+      is-float-label
+      :value="inputFloatLabel"
+      @input="value => inputFloatLabel = value"
+    />
   </div>
 </template>
 
@@ -61,7 +68,8 @@ export default {
       inputRounded: '',
       // inputTextArea: '',
       inputDataError: '',
-      inputTeste: ''
+      inputTeste: '',
+      inputFloatLabel: ''
     }
   },
 
@@ -74,5 +82,5 @@ export default {
 </script>
 
 <style lang="scss">
-.s-input-container { margin-bottom: 30px; }
+.s-input-container { margin-bottom: 40px; }
 </style>
