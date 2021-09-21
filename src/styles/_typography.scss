@@ -17,7 +17,6 @@ h6 { font-size: .6875rem; }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family;
   font-weight: $font-weight-regular;
-  color: $base-text-color;
 }
 
 dt, th {
@@ -37,5 +36,4 @@ input, textarea {
 
 p {
   line-height: 1.44;
-  color: $base-text-color;
 }

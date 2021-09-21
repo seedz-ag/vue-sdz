@@ -1,22 +1,3 @@
-$base-text-color: #121E48;
-$background-color:#F3F4F6;
-
-$border-color: rgba($base-text-color, .1);
-$border: 1px solid $border-color;
-
-$text-color: (
-  base:    $base-text-color,
-  base-90: rgba($base-text-color, .9),
-  base-80: rgba($base-text-color, .8),
-  base-50: rgba($base-text-color, .5),
-  base-30: rgba($base-text-color, .3),
-  base-20: rgba($base-text-color, .2),
-  base-10: rgba($base-text-color, .1),
-  base-05: rgba($base-text-color, .05),
-  base-02: rgba($base-text-color, .02),
-  base-01: rgba($base-text-color, .01),
-);
-
 $primary-color:  #1E7A75;
 $primary-light-color: #46BC8F;
 $primary-medium-color: #0F5E58;

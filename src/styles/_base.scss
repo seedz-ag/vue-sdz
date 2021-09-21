@@ -16,6 +16,7 @@
 
 * {
   font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
 }
 
 body,
@@ -27,10 +28,8 @@ html,
   min-width: 100%;
   min-height: 100%;
 
-  color: $base-text-color;
+  color: $base-color;
 }
-
-body { background: $background-color; }
 
 table {
   border-collapse: collapse;
@@ -50,6 +49,5 @@ a { text-decoration: none; }
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-clip: padding-box;
-  background-color: $background-color;
   border: 5px solid rgba(0, 0, 0, 0);
 }
