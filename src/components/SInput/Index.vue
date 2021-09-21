@@ -13,6 +13,7 @@
 
       :value="value"
       :class="inputClasses"
+      :placeholder="isFloatLabel ? '' : placeholder"
 
       v-on="listeners"
     />
@@ -56,6 +57,8 @@ export default {
 
     validation: String,
 
+    placeholder: String,
+
     value: [String, Number, Object],
 
     isMoney: Boolean,
@@ -87,6 +90,7 @@ export default {
           '--is-money': this.isMoney,
           '--is-not-empty': !!this.value,
           '--is-textarea': this.textArea,
+          '--is-disabled': this.disabled,
           '--is-float-label': this.isFloatLabel,
         }
       ]
@@ -98,7 +102,6 @@ export default {
         {
           '--has-icon': this.icon,
           '--is-rounded': this.round,
-          '--is-disabled': this.disabled,
           '--is-textarea': this.textArea,
           '--has-right-icon': this.rightIcon
         }
@@ -154,22 +157,16 @@ $icon-position: 8px;
     height: 50px;
     font-size: 14px;
     text-indent: 20px;
-    border-radius: 5px;
-    border: $border;
-    color: map-get($text-color, base-80);
+    border: 1px solid $base-color;
+    border-radius: $border-radius-sm;
     transition: color .3s, border-color .3s;
 
-    &::placeholder { color: map-get($text-color, base-30); }
+    &::placeholder { color: $base-light-color; }
 
     &.--has-icon { text-indent: 35px; }
     &.--is-textarea { padding-top: 30px; }
     &.--has-right-icon { padding-right: 40px; }
-    &.--is-rounded { border-radius: 20px; border: $border; }
-    &.--is-disabled {
-      cursor: default;
-      border: 1px solid map-get($text-color, base-01);
-      background-color: map-get($text-color, base-05);
-    }
+    &.--is-rounded { border-radius: 20px; border: 1px solid $base-color; }
   }
 
   & > .label {
@@ -178,7 +175,6 @@ $icon-position: 8px;
     font-size: 14px;
     pointer-events: none;
     font-family: $font-family;
-    color: map-get($text-color, base-30);
     transition: font-size .3s, transform .3s;
   }
 
@@ -214,6 +210,17 @@ $icon-position: 8px;
       font-size: 11px;
       transform: translateY(30px);
     }
+  }
+
+  &.--is-disabled {
+    cursor: default;
+    & > .input {
+      border-color: $neutral-medium-color;
+    }
+
+     & > .label {
+       color: $neutral-medium-color;
+     }
   }
 
   &.--validation {
