@@ -65,25 +65,20 @@ export default {
   & > .label {
     position: absolute;
 
-    font-size: 11px;
-    font-weight: 500;
     padding-right: 10px;
     text-transform: uppercase;
-    color: map-get($text-color, base-50);
+    font-size: $font-size-xxxs;
 
     & > .required { color: $negative-color; margin-top: 5px; }
   }
 
   & > .validation {
-    bottom: -15px;
+    bottom: -18px;
     position: absolute;
 
     & > .message {
-      font-weight: 600;
       color: $negative-color;
-      -webkit-font-smoothing: antialiased;
-
-      & > .text > b { -webkit-font-smoothing: antialiased; }
+      font-weight: $font-weight-medium;
     }
   }
 
