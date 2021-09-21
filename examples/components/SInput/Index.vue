@@ -43,6 +43,7 @@
     <s-input
       label="teste"
       :value="inputTeste"
+      placeholder="ex: Teste"
       @input="value => inputTeste = value"
     />
 
