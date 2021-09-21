@@ -26,7 +26,7 @@
 import SIcon from '../SIcon'
 
 export default {
-  name: 'CInputContainer',
+  name: 'SInputContainer',
 
   components: { SIcon },
 
@@ -69,7 +69,6 @@ export default {
     font-weight: 500;
     padding-right: 10px;
     text-transform: uppercase;
-    font-family: $title-font-family;
     color: map-get($text-color, base-50);
 
     & > .required { color: $negative-color; margin-top: 5px; }

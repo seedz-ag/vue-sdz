@@ -78,6 +78,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "./src/styles/_index.scss";
+
 $shadow-size: 100px;
 $shadow-color1: rgba(243, 244, 246, 0);
 $shadow-color2: #F3F4F6;

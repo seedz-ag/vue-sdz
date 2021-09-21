@@ -4,7 +4,7 @@
     v-bind="$attrs"
     :width="'' + size"
     :height="'' + size"
-    :src="require(`../../assets/icons/${image}.svg`)"
+    :src="getImage()"
   >
 </template>
 
@@ -24,6 +24,12 @@ export default {
     },
 
     backgroundColor: String
+  },
+
+  methods: {
+    getImage () {
+      return new URL(`../../assets/icons/${this.image}.svg`, import.meta.url).href
+    }
   }
 }
 </script>

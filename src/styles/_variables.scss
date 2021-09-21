@@ -1,9 +1,8 @@
-// Configuração de cores
-$base-text-color:   #121E48;
-$base-background:   #F3F4F6;
-$base-border-color: rgba(#121E48, .1);
-$base-border: 1px solid $base-border-color;
-$base-shadow: 1px 1px 4px 0px rgba(0, 0, 0, .2);
+$base-text-color: #121E48;
+$background-color:#F3F4F6;
+
+$border-color: rgba($base-text-color, .1);
+$border: 1px solid $border-color;
 
 $text-color: (
   base:    $base-text-color,
@@ -18,32 +17,72 @@ $text-color: (
   base-01: rgba($base-text-color, .01),
 );
 
-$primary-color-map:  (light: #BC4CF7, dark:  #7873EE);
-$positive-color-map: (light: #3CE797, dark:  #37CECD);
-$negative-color-map: (light: #FF7EB3, dark:  #FF7987);
-$alert-color-map:    (light: #F6D365, dark:  #FDA085);
-$disabled-color-map: (light: #E7E9ED, dark: #404A6C);
+$primary-color:  #1E7A75;
+$primary-light-color: #46BC8F;
+$primary-medium-color: #0F5E58;
+$primary-dark-color: #00403B;
 
-$primary-color:  map-get($primary-color-map,  light);
-$positive-color: map-get($positive-color-map, light);
-$negative-color: map-get($negative-color-map, dark);
-$alert-color:    map-get($alert-color-map,    light);
-$disabled-color: map-get($disabled-color-map, light);
+$secondary-color: #FCD800;
+$secondary-light-color: #FFF4B1;
+$secondary-medium-color: #FFEB71;
+$secondary-dark-color: #E5C400;
 
-// Configuração de fonte
-$base-font-family: 'Nunito Sans', sans-serif !default;
-$base-font-weight: 400;
-$base-font-size: 16px;
+$base-color: #252525;
+$base-light-color: #909090;
+$base-medium-color: #666666;
+$base-dark-color: #292929;
 
-$title-font-family: 'Ubuntu', sans-serif !default;
-$title-font-weight: 500;
-$title-font-size: 16px;
-$title-font-color: map-get($text-color, base-80);
+$neutral-color: #FFFFFF;
+$neutral-light-color: #F0F0F0;
+$neutral-medium-color: #E0E0E0;
+$neutral-dark-color: #CCCCCC;
+
+$positive-color: #2BB673;
+$positive-light-color: #B1EACF;
+$positive-medium-color: #7ADBAC;
+$positive-dark-color: #0C8E50;
+
+$negative-color: #EB5757;
+$negative-light-color: #FFD8D8;
+$negative-medium-color: #EE9393;
+$negative-dark-color: #DE2F2F;
+
+$font-family: 'Montserrat', sans-serif !default;
+
+$font-weight-regular: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+
+$font-size-xxxs: 12px;
+$font-size-xxs: 14px;
+$font-size-xs: 16px;
+$font-size-sm: 20px;
+$font-size-md: 24px;
+$font-size-ld: 32px;
+$font-size-xl: 40px;
+$font-size-xxl: 48px;
+
+$border-radius-none: 0;
+$border-radius-sm: 8px;
+$border-radius-md: 16px;
+$border-radius-lg: 24px;
+$border-radius-circular: 50%;
+
+$opacity-semiopaque: 0.80;
+$opacity-intense: 0.64;
+$opacity-medium: 0.32;
+$opacity-light: 0.16;
+$opacity-semitransparent: 0.08;
+
+$shadow-1: 0 4px 8px rgb(0 0 0 / 20%);
+$shadow-2: 0 8px 24px rgb(0 0 0 / 20%);
+$shadow-3: 0 16px 32px rgb(0 0 0 / 20%);
+$shadow-4: 0 16px 48px rgb(0 0 0 / 20%);
 
 $box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
 $box-shadow-hover: 0 15px 21px -2px rgba(0, 0, 0, 0.125), 3px 3px 6px -1px rgba(0, 0, 0, 0.15);
 
-$base-text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+$text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 
 //  Configuração de z-index
 $z-index-1: 10;

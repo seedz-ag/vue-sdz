@@ -155,7 +155,7 @@ $icon-position: 8px;
     font-size: 14px;
     text-indent: 20px;
     border-radius: 5px;
-    border: $base-border;
+    border: $border;
     color: map-get($text-color, base-80);
     transition: color .3s, border-color .3s;
 
@@ -164,7 +164,7 @@ $icon-position: 8px;
     &.--has-icon { text-indent: 35px; }
     &.--is-textarea { padding-top: 30px; }
     &.--has-right-icon { padding-right: 40px; }
-    &.--is-rounded { border-radius: 20px; border: $base-border; }
+    &.--is-rounded { border-radius: 20px; border: $border; }
     &.--is-disabled {
       cursor: default;
       border: 1px solid map-get($text-color, base-01);
@@ -177,7 +177,7 @@ $icon-position: 8px;
 
     font-size: 14px;
     pointer-events: none;
-    font-family: $base-font-family;
+    font-family: $font-family;
     color: map-get($text-color, base-30);
     transition: font-size .3s, transform .3s;
   }
