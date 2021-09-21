@@ -1,5 +1,4 @@
 @import './_variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,500,600,800|Ubuntu:300,400,500');
 
 // Tipografia
 // ---------------------------------------------------------
@@ -16,24 +15,24 @@ h5, th, p { font-size: .75rem; }
 h6 { font-size: .6875rem; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $title-font-family;
-  font-weight: $title-font-weight;
-  color: $title-font-color;
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+  color: $base-text-color;
 }
 
 dt, th {
-  font-family: $title-font-family;
+  font-family: $font-family;
   font-size: .9375rem;
 }
 
 body {
-  font-size:   $base-font-size;
-  font-weight: $base-font-weight;
-  font-family: $base-font-family;
+  font-size: $font-size-xs;
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
 }
 
 input, textarea {
-  font-family: $base-font-family;
+  font-family: $font-family;
 }
 
 p {

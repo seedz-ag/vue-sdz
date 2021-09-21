@@ -2,8 +2,8 @@
 $breakpoints: (
   xs-mobile:  0px,
   mobile: 576px,
-  tablet:  1024px,
-  desktop: 1280px
+  tablet:  992px,
+  desktop: 1200px
 );
 
 @mixin xs-mobile {
@@ -41,22 +41,6 @@ $breakpoints: (
     @media only screen and (min-width: #{map-get($breakpoints, tablet)})
     { @content; }
   }
-}
-
-@function set-linear-gradient($direction: horizontal, $color: $primary-color-map, $light-start: 0%, $dark-start: 100%) {
-  $light-color: map-get($color, light);
-  $dark-color: map-get($color, dark);
-  $degree: $direction;
-
-  @if $direction == horizontal {
-    $degree: 90deg;
-  } @else if $direction == diagonal {
-    $degree: 135deg;
-  } @else if $direction == vertical {
-    $degree: 180deg;
-  }
-
-  @return linear-gradient($degree, $light-color $light-start, $dark-color $dark-start);
 }
 
 @mixin hover ($color: $primary-color) {

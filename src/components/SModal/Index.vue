@@ -348,7 +348,7 @@ $spacing-bottom: 80px;
       border-top: 1px solid rgba(0, 0, 0, 0.0);
 
       &.-shadow-top {
-        border-top: $base-border;
+        border-top: $border;
         &::before { box-shadow: 0px 4px 17px 0 rgba(0, 0, 0, 0.30); }
       }
 
