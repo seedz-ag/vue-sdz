@@ -13,7 +13,7 @@ export default {
   name: 'SIcon',
 
   props: {
-    image: {
+    icon: {
       type: String,
       required: true
     },
@@ -28,7 +28,7 @@ export default {
 
   methods: {
     getImage () {
-      return new URL(`../../assets/icons/${this.image}.svg`, import.meta.url).href
+      return new URL(`../../assets/icons/${this.icon}.svg`, import.meta.url).href
     }
   }
 }

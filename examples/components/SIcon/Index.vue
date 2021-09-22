@@ -1,8 +1,8 @@
 <template>
   <div class="s-icon-example">
-    <s-icon image="plus" size="30" />
+    <s-icon icon="plus" size="30" />
 
-    <s-icon :image="image" size="40" @click.native="changeImage" />
+    <s-icon :icon="icon" size="40" @click.native="changeIcon" />
   </div>
 </template>
 
@@ -14,13 +14,13 @@ export default {
 
   data () {
     return {
-      image: 'heart'
+      icon: 'heart'
     }
   },
 
   methods: {
-    changeImage () {
-      this.image = 'plus'
+    changeIcon () {
+      this.icon = 'plus'
     }
   }
 }
