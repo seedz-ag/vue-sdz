@@ -31,6 +31,7 @@ export default {
             { name: 'table', redirect: '/components/table' },
             { name: 'shadowed', redirect: '/components/shadowed' },
             { name: 'icon', redirect: '/components/icon' },
+            { name: 'modal', redirect: '/components/modal' },
             { name: 'input', redirect: '/components/input' }
           ]
         },
@@ -43,6 +44,7 @@ export default {
             { name: 'table', redirect: '/api/table' },
             { name: 'shadowed', redirect: '/api/shadowed' },
             { name: 'icon', redirect: '/api/icon' },
+            { name: 'modal', redirect: '/api/modal' },
             { name: 'input', redirect: '/api/input' }
           ]
         }
