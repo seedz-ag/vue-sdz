@@ -1,58 +1,22 @@
 <template>
-  <transition
-    v-if="isOpened"
-    name="s-modal-fade"
-    appear
-  >
+  <transition v-if="isOpened" name="s-modal-fade" appear>
     <div class="s-modal">
-      <s-overlay
-        v-if="isOpened && !noOverlay"
-        show
-        @close="emit"
-      />
+      <s-overlay v-if="isOpened && !noOverlay" show @close="emit" />
 
-      <div
-        :class="classes"
-        v-click-outside="onClickOutside"
-      >
+      <div :class="classes" @focusout="onClickOutside">
         <div class="header">
-          <!-- @slot The content of the modal's header. Displays a CTitle
-               element by default
-            -->
-          <slot
-            v-if="!noHeader"
-            name="header"
-          >
-            <div class="title">
-              <!-- <c-title v-bind="titleProps">
-                {{ title }}
-              </c-title> -->
-            </div>
+          <slot v-if="!noHeader" name="header">
+            <div class="title">{{ title }}</div>
           </slot>
 
           <div class="actions">
-            <!-- @slot The actions (buttons) to display in the modal's header section.
-                 These are not removed when the prop `noHeader` is present, or
-                 when the `header` slot is used.
-            -->
             <slot name="actions" />
-
-            <button
-              v-if="!noClose"
-              :disabled="disabled"
-              @click="$emit('close')"
-            >
-              X
-            </button>
+            <s-button icon="plus" :disabled="disabled" @click="$emit('close')" />
           </div>
         </div>
 
         <div :class="['wrapper-content', { '-shadow-top': showScrollShadow }]">
-          <div
-            ref="content"
-            class="content"
-            @scroll="toggleScrollShadow"
-          >
+          <div ref="content" class="content" @scroll="toggleScrollShadow">
             <slot />
           </div>
         </div>
@@ -63,28 +27,16 @@
 
 <script>
 import SOverlay from '../SOverlay/Index.vue'
-
-/**
- * Creates a validator function that checks is value is included in values.
- * @param {Array} values
- * @returns {function(*):boolean}
- */
-const includes = values => value => values.includes(value)
+import SButton from '../SButton/Index.vue'
 
 const ALIGNMENTS = ['right', 'left', 'center']
+const includes = values => value => values.includes(value)
+const isAlignment = includes(ALIGNMENTS)
 
-/**
- * Checks if value is an alignment.
- */
-export const isAlignment = includes(ALIGNMENTS)
-
-/**
- * Our standard modal component.
- */
 export default {
   name: 'SModal',
 
-  components: { SOverlay },
+  components: { SOverlay, SButton },
 
   props: {
     /**
@@ -228,11 +180,6 @@ export default {
     },
 
     emit () {
-      /**
-       * Emitted when the user either presses the close button, clicks
-       * outside the modal window, or presses the ESC key.
-       * @event
-       */
       this.$emit('close')
       this.close()
     },
@@ -279,7 +226,7 @@ $spacing-bottom: 80px;
     opacity: 1;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
 
-    // @include responsive (xs-mobile, mobile) { width: 100vw; height: 100vh; }
+    @include responsive (xs-mobile, mobile) { width: 100vw; height: 100vh; }
 
     background:linear-gradient(180deg, #FFF, rgba(255, 255, 255, .83) 100%);
     &.-scroll-shadow { background: #FFF; }
@@ -293,15 +240,15 @@ $spacing-bottom: 80px;
     &:not(.-fullscreen) {
       border-radius: 4px;
 
-      // @include responsive(tablet, desktop) {
-      //   top: $spacing-top;
-      //   width: 100%;
+      @include responsive(tablet, desktop) {
+        top: $spacing-top;
+        width: 100%;
 
-      //   min-height: 250px;
+        min-height: 250px;
 
-      //   max-width: 580px;
-      //   max-height: calc(100vh - (#{$spacing-top + $spacing-bottom}))
-      // }
+        max-width: 580px;
+        max-height: calc(100vh - (#{$spacing-top + $spacing-bottom}))
+      }
     }
 
     &.-fullscreen {
@@ -321,8 +268,6 @@ $spacing-bottom: 80px;
 
       & > .title {
         margin-right: auto;
-
-        // & > .c-title > .text { color: map-get($text-color, base-80); }
       }
 
       & > .actions {
@@ -348,7 +293,6 @@ $spacing-bottom: 80px;
       border-top: 1px solid rgba(0, 0, 0, 0.0);
 
       &.-shadow-top {
-        // border-top: $border;
         &::before { box-shadow: 0px 4px 17px 0 rgba(0, 0, 0, 0.30); }
       }
 
