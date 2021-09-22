@@ -1,8 +1,19 @@
 <template>
   <div class="s-button-example">
-    <s-button />
-    <s-button />
-    <s-button />
+    <s-button outlined />
+    <s-button primary />
+    <s-button success />
+    <s-button error />
+    <s-button disabled />
+    <s-button icon="plus" />
+
+    <s-button outlined>outlined</s-button>
+    <s-button primary>primary</s-button>
+    <s-button success>success</s-button>
+    <s-button error>error</s-button>
+    <s-button disabled>disabled</s-button>
+    <s-button full-width>full-width</s-button>
+    <s-button icon="plus">icon</s-button>
   </div>
 </template>
 
@@ -14,6 +25,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.s-button-example {
+  & > .s-button { margin-bottom: 30px; }
+}
 </style>
