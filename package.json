@@ -15,6 +15,7 @@
     "prepare": "husky install",
     "build": "rollup -c",
     "dev": "vite",
+    "doc": "vite build",
     "commit": "git-cz",
     "test-helpers": "jest 'src/helpers'",
     "test-components": "jest 'src/components'",
