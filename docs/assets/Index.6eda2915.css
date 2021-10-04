@@ -1,0 +1,1 @@
+.s-overlay{position:fixed;left:0;top:0;height:100vh;width:100vw;opacity:1}.s-overlay:not(.-transparent){background-color:#00000080}.s-overlay.-dark{opacity:.9}.s-overlay-fade-enter-active,.s-overlay-fade-leave-active{transition:opacity .3s ease!important}.s-overlay-fade-enter,.s-overlay-fade-leave-to{opacity:0!important}

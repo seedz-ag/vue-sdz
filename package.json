@@ -6,7 +6,7 @@
   "private": false,
   "lint-staged": {
     "*.{js,vue}": [
-      "eslint --cache --fix",
+      "eslint --ignore-pattern '.docs/*' --cache --fix",
       "yarn test-helpers --bail --findRelatedTests",
       "yarn test-components --bail --findRelatedTests"
     ]
