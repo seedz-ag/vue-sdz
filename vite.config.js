@@ -9,6 +9,8 @@ export default defineConfig({
     outDir: path.join(__dirname, 'docs')
   },
 
+  base: './',
+
   plugins: [  createVuePlugin() ],
 
   server: { port: 8080 }
