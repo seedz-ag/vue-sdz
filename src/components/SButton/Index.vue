@@ -236,8 +236,8 @@ export default {
     & > .text { color: $primary-color; }
     & > .loader {}
 
-    &:hover { background: $primary-light-color; }
-    &:active { background: $primary-medium-color; }
+    &:hover { background: $neutral-light-color; }
+    // &:active { background: $neutral-medium-color; }
   }
 
   &.-disabled {
