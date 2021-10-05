@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: '/vue-sdz/'
+  publicPath: process.env.NODE_ENV === 'production'
+    ? 'https://seedz-ag.github.io/vue-sdz/'
+    : '/vue-sdz/'
 }
