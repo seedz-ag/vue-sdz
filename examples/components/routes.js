@@ -12,5 +12,5 @@ const components = Object
 export default components.map(name => ({
   component: load(name),
   name: `component-${name}`,
-  path: 'vue-sdz/' + name.toLowerCase().slice(1)
+  path: '/vue-sdz/components/' + name.toLowerCase().slice(1)
 }))

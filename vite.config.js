@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
 
 export default defineConfig({
-  base: 'https://seedz-ag.github.io/vue-sdz/',
+  // base: 'https://seedz-ag.github.io/vue-sdz/',
 
   root: path.join(__dirname, '/'),
 
