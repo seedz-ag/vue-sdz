@@ -20,7 +20,7 @@ export default {
         {
           name: 'Getting Started',
           icon: 'aaa',
-          redirect: '/getting-started'
+          redirect: '/vue-sdz/getting-started'
         },
         {
           name: 'components',
@@ -63,21 +63,16 @@ export default {
 </script>
 
 <style lang="scss">
-html, body, #app {
-  min-width: 100%;
-  min-height: 100%;
+#app { display: flex; }
 
+.container {
   width: 100%;
   height: 100%;
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  padding: 50px;
+  margin: 0 auto;
 
-#app { display: flex; }
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 </style>

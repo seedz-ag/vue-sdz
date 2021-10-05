@@ -11,7 +11,7 @@ import APIsRoute from './api/routes.js'
 
 const routes = [
   {
-    path: '/getting-started',
+    path: '/vue-sdz/getting-started',
     name: 'getting-started',
     component: GettingStarted
   },
