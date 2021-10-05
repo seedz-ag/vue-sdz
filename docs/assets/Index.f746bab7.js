@@ -1,0 +1,1 @@
+import{n as t}from"./index.2427ac9a.js";import"./vendor.86f0ea26.js";const n={};var e=t({},(function(){var t=this,n=t.$createElement;return(t._self._c||n)("div",{staticClass:"s-button-example"},[t._v(" btn api ")])}),[],!1,r,null,null,null);function r(t){for(let e in n)this[e]=n[e]}var a=function(){return e.exports}();export{a as default};
