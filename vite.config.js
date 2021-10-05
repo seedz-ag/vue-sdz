@@ -9,7 +9,7 @@ export default defineConfig({
     outDir: path.join(__dirname, 'docs')
   },
 
-  base: './',
+  base: '/vue-sdz/',
 
   plugins: [  createVuePlugin() ],
 
