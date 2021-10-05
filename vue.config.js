@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: 'https://seedz-ag.github.io/vue-sdz/'
+  publicPath: 'seedz-ag.github.io/vue-sdz/'
 }
