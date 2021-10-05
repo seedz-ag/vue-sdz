@@ -39,13 +39,13 @@ export default {
           name: 'api',
           icon: 'yyy',
           child: [
-            { name: 'button', redirect: '/api/button' },
-            { name: 'card', redirect: '/api/card' },
-            { name: 'table', redirect: '/api/table' },
-            { name: 'shadowed', redirect: '/api/shadowed' },
-            { name: 'icon', redirect: '/api/icon' },
-            { name: 'modal', redirect: '/api/modal' },
-            { name: 'input', redirect: '/api/input' }
+            { name: 'button', redirect: '/vue-sdz/api/button' },
+            { name: 'card', redirect: '/vue-sdz/api/card' },
+            { name: 'table', redirect: '/vue-sdz/api/table' },
+            { name: 'shadowed', redirect: '/vue-sdz/api/shadowed' },
+            { name: 'icon', redirect: '/vue-sdz/api/icon' },
+            { name: 'modal', redirect: '/vue-sdz/api/modal' },
+            { name: 'input', redirect: '/vue-sdz/api/input' }
           ]
         }
       ]
@@ -69,7 +69,6 @@ html, body, #app {
 
   width: 100%;
   height: 100%;
-  background-color: blue;
 }
 
 *,

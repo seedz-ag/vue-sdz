@@ -1,1 +1,0 @@
-import{n as t}from"./index.2427ac9a.js";import"./vendor.86f0ea26.js";const n={};var r=t({},(function(){var t=this,n=t.$createElement;return(t._self._c||n)("div",{staticClass:"s-card-example"},[t._v(" card api ")])}),[],!1,a,null,null,null);function a(t){for(let r in n)this[r]=n[r]}var e=function(){return r.exports}();export{e as default};
