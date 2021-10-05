@@ -26,13 +26,13 @@ export default {
           name: 'components',
           icon: 'xxx',
           child: [
-            { name: 'button', redirect: '/components/button' },
-            { name: 'card', redirect: '/components/card' },
-            { name: 'table', redirect: '/components/table' },
-            { name: 'shadowed', redirect: '/components/shadowed' },
-            { name: 'icon', redirect: '/components/icon' },
-            { name: 'modal', redirect: '/components/modal' },
-            { name: 'input', redirect: '/components/input' }
+            { name: 'button', redirect: '/vue-sdz/components/button' },
+            { name: 'card', redirect: '/vue-sdz/components/card' },
+            { name: 'table', redirect: '/vue-sdz/components/table' },
+            { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
+            { name: 'icon', redirect: '/vue-sdz/components/icon' },
+            { name: 'modal', redirect: '/vue-sdz/components/modal' },
+            { name: 'input', redirect: '/vue-sdz/components/input' }
           ]
         },
         {
