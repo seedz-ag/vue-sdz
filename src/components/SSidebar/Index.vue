@@ -95,7 +95,6 @@ export default {
   // position: absolute;
 
   width: 100%;
-  height: 100vh;
   max-width: 285px;
 
   display: flex;
