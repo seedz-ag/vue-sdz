@@ -2,6 +2,7 @@
   <s-link
     ref="btn"
 
+    :link="link"
     :class="classes"
     :disabled="disabled"
 
@@ -76,6 +77,7 @@ export default {
     classes () {
       return [ 's-button',
         {
+          '-link': this.link,
           '-error': this.error,
           '-primary': this.primary,
           '-success': this.success,
@@ -202,25 +204,53 @@ export default {
     border-radius: $border-radius-circular;
   }
 
+  &.-link {
+    display: inline-flex;
+    padding: 0;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    background-color: $neutral-color;
+
+    &:hover, &:active {
+      text-decoration: underline;
+      text-decoration-color: $primary-color;
+      }
+
+    & > .text {
+      color: $primary-color;
+    }
+  }
+
   &.-primary {
-    background: $primary-color;
+    background-color: $primary-color;
 
     & > .border { border-color: $primary-color; }
-    &::before { background: $primary-color; }
+
+    &::before { background-color: $primary-color; }
+    &:hover { background-color: $primary-medium-color; }
+    &:active { background-color: $primary-dark-color !important; }
   }
 
   &.-success {
     background: $positive-color;
 
     & > .border { border-color: $positive-color; }
-    &::before { background: $positive-color; }
+
+    &::before { background-color: $positive-color; }
+    &:hover { background-color: $positive-medium-color; }
+    &:active { background-color: $positive-dark-color !important; }
   }
 
   &.-error {
     background: $negative-color;
 
     & > .border { border-color: $negative-color; }
-    &::before { background: $negative-color; }
+
+    &::before { background-color: $negative-color; }
+    &:hover { background-color: $negative-medium-color; }
+    &:active { background-color: $negative-dark-color !important; }
   }
 
   &.-full-width { width: 100%; }
@@ -242,7 +272,7 @@ export default {
 
   &.-disabled {
     cursor: default;
-    background: $base-light-color;
+    background: $neutral-dark-color;
 
     &::before, &::after { opacity: 0; }
 

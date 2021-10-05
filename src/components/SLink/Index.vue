@@ -34,6 +34,8 @@ export default {
       default: () => null
     },
 
+    link: Boolean,
+
     /**
      * Whether the link is external or not
      */
@@ -53,6 +55,8 @@ export default {
 
   computed: {
     type () {
+      if (this.link) return 'a'
+
       return !this.to
         ? 'button' : this.external
           ? 'a' : this.nuxt
