@@ -63,7 +63,8 @@
     "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.8",
     "vue-router": "^3.5.2",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vuex": "^3.6.2"
   },
   "license": "MIT",
   "repository": "https://github.com/seedz-ag/vue-sdz",
@@ -74,6 +75,7 @@
   },
   "dependencies": {
     "v-money": "^0.8.1",
+    "vue-coe-feedback": "^0.1.5",
     "vue-the-mask": "^0.11.1"
   }
 }
