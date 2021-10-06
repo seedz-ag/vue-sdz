@@ -32,6 +32,7 @@ export default {
             { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
             { name: 'icon', redirect: '/vue-sdz/components/icon' },
             { name: 'modal', redirect: '/vue-sdz/components/modal' },
+            { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'input', redirect: '/vue-sdz/components/input' }
           ]
         },
@@ -45,6 +46,7 @@ export default {
             { name: 'shadowed', redirect: '/vue-sdz/api/shadowed' },
             { name: 'icon', redirect: '/vue-sdz/api/icon' },
             { name: 'modal', redirect: '/vue-sdz/api/modal' },
+            { name: 'feedbacks', redirect: '/vue-sdz/api/feedbacks' },
             { name: 'input', redirect: '/vue-sdz/api/input' }
           ]
         }
@@ -74,5 +76,7 @@ export default {
 
   overflow-y: auto;
   overflow-x: hidden;
+
+
 }
 </style>
