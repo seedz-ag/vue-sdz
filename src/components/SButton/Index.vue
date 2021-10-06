@@ -64,6 +64,8 @@ export default {
 
     success: Boolean,
 
+    grey: Boolean,
+
     error: Boolean,
 
     link: Boolean,
@@ -78,6 +80,7 @@ export default {
       return [ 's-button',
         {
           '-link': this.link,
+          '-grey': this.grey,
           '-error': this.error,
           '-primary': this.primary,
           '-success': this.success,
@@ -221,6 +224,16 @@ export default {
     & > .text {
       color: $primary-color;
     }
+  }
+
+  &.-grey {
+    background-color: $base-light-color;
+
+    & > .border { border-color: $base-light-color; }
+
+    &::before { background-color: $base-light-color; }
+    &:hover { background-color: $base-medium-color; }
+    &:active { background-color: $base-dark-color !important; }
   }
 
   &.-primary {
