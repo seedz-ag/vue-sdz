@@ -38,9 +38,10 @@
           <div
             v-for="(option, index) in options"
             :key="index"
-            class="item"
             :class="itemClasses(option, index)"
+
             aria-hidden="true"
+
             @click.stop="selected = index"
             @mouseenter.self="pointerSet(index)"
           >
@@ -236,11 +237,11 @@ export default {
 
   methods: {
     itemClasses (option, index) {
-      return [
+      return ['item',
         {
-          '-selected': this.isSelected(option, index),
+          '--is-disabled': this.errors,
           '-active': index === this.pointer,
-          '--is-disabled': this.errors
+          '-selected': this.isSelected(option, index)
         }
       ]
     },
