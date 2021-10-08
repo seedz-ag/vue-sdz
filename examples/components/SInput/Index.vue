@@ -21,6 +21,14 @@
       @input="value => inputRounded = value"
     />
 
+    <s-input
+      round
+      icon="plus"
+      :value="inputSearch"
+      :placeholder="'Search'"
+      @input="value => inputSearch = value"
+    />
+
     <!-- <s-input
       label="textarea"
       text-area
@@ -67,6 +75,7 @@ export default {
       inputMask: '',
       inputMoney: '',
       inputRounded: '',
+      inputSearch: '',
       // inputTextArea: '',
       inputDataError: '',
       inputTeste: '',

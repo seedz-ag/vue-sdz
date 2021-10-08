@@ -157,7 +157,7 @@ $icon-position: 8px;
     height: 50px;
     font-size: 14px;
     text-indent: 20px;
-    border: 1px solid $base-color;
+    border: 1px solid $base-light-color;
     border-radius: $border-radius-sm;
     transition: color .3s, border-color .3s;
 
@@ -166,28 +166,30 @@ $icon-position: 8px;
     &.--has-icon { text-indent: 35px; }
     &.--is-textarea { padding-top: 30px; }
     &.--has-right-icon { padding-right: 40px; }
-    &.--is-rounded { border-radius: 20px; border: 1px solid $base-color; }
+    &.--is-rounded { border-radius: 50px; border: 1px solid $base-light-color; }
   }
 
   & > .label {
     top: -25px;
 
     font-size: 14px;
+    font-weight: 500;
     pointer-events: none;
+    color: $base-color;
     font-family: $font-family;
     transition: font-size .3s, transform .3s;
   }
 
   &.--has-icon {
     & > .label { left: 25px; }
-    & > .input { padding-left: 44px; }
+    & > .input { padding-left: 10px; }
   }
 
   & > .left-icon, & > .right-icon {
     top: 50%;
     position: absolute;
-
     padding-right: 5px;
+    padding-left: 5px;
     box-sizing: content-box;
     transform: translateY(-50%);
   }
@@ -237,7 +239,6 @@ $icon-position: 8px;
   }
 
   &:focus-within {
-    & > .label { color: $primary-color; }
     & > .input { border-color: $primary-color; }
   }
 }
