@@ -1,6 +1,6 @@
 <template>
   <div class="s-collapsible-example">
-    <s-button outlined @click="inscreaseContent()">increase content</s-button>
+    <s-button outlined @click="increased()">increase content</s-button>
 
     <s-collapsible :is-opened="isOpened" @toggle="v => isOpened = v">
       <s-button class="header" slot="header">header toggle</s-button>
@@ -22,13 +22,13 @@ export default {
   data () {
     return {
       isOpened: true,
-      content: 'aaaaaaaaa'
+      content: 'initial content!'
     }
   },
 
   methods: {
-    inscreaseContent () {
-      this.content = this.content + '<br /> inscreased...'
+    increased () {
+      this.content = this.content + '<br /> dynamic content...'
     }
   }
 }
