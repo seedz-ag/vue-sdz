@@ -32,22 +32,21 @@ html,
 }
 
 table {
-  border-collapse: collapse;
-  background-color: transparent;
-  margin-bottom:  0px;
   width: 100%;
   max-width: 100%;
+  margin-bottom:  0px;
+  border-collapse: collapse;
+  background-color: transparent;
 }
 
 a { text-decoration: none; }
 
 // Estilização do scrollbar para browsers baseados em webkit
-// ::-webkit-scrollbar {
-//   width: 17px;
-// }
+::-webkit-scrollbar { width: 17px; }
 
-// ::-webkit-scrollbar-thumb {
-//   border-radius: 8px;
-//   background-clip: padding-box;
-//   border: 5px solid rgba(0, 0, 0, 0);
-// }
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-clip: padding-box;
+  background-color: darkgrey;
+  border: 5px solid rgba(0, 0, 0, 0);
+}
