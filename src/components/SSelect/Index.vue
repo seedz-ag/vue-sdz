@@ -13,6 +13,7 @@
           </span>
 
           <input
+            v-if="!validation"
             ref="searchable"
             :class="['input', { '-placeholder': selected === placeholder || !selected }]"
             :value="searchableValue"
@@ -36,7 +37,7 @@
             no-header
 
             :height="contentHeight"
-            :is-opened="!!(isOpened && options.length)"
+            :is-opened="!!(isOpened && options.length) && !validation"
 
             @target="target => contentHeight = (target.childElementCount) * 50"
           >
@@ -475,6 +476,12 @@ export default {
       & > .icon { color: $neutral-dark-color; }
       & > .selections > .input { color: $neutral-dark-color; }
     }
+  }
+
+  &.--has-error > .select > .field {
+    border-bottom: 2px solid $primary-color;
+    border-bottom-left-radius: $border-radius-sm;
+    border-bottom-right-radius: $border-radius-sm;
   }
 
   &.--is-empty-search > .select > .field {

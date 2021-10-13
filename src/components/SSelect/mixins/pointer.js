@@ -26,9 +26,7 @@ const pointer = {
       if (this.items.length > 0 && key === 'Enter') {
         this.selected = this.pointer
 
-        this.$nextTick(() => {
-          this.outside()
-        })
+        this.$nextTick(() => this.outside())
       }
     }
   }

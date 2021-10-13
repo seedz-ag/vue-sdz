@@ -7,18 +7,11 @@ const searchable = {
 
   computed: {
     searchableValue () {
+      if (this.searchQuery) return this.searchQuery
       if (this.focused && !this.searchQuery) return ''
-      if ((!this.value || !this.value.length) && !this.searchQuery) return [ this.placeholder ]
+      if ((!this.value || !this.value?.length) && !this.searchQuery) return [ this.placeholder ]
 
-      if (!this.searchQuery) {
-        if (this.multiple) {
-          return (!this.selecteds.length && '') || ''
-        } else {
-          return this.value
-        }
-      } else {
-        return this.searchQuery
-      }
+      return this.multiple ? '' : this.value
     }
   },
 
