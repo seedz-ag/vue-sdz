@@ -5,7 +5,6 @@
       display="slug"
       display-by="name"
       placeholder="Selecione uma opção"
-      :clear-on-select="false"
       :items="items"
       v-model="data1"
     />
@@ -39,11 +38,20 @@
       label="multiple with validation ( >=3 )"
       display="slug"
       display-by="name"
-      placeholder="Selecione uma opção"
-      :validation="data4.length >= 3 && `Máximo de 3 opções selecionadas`"
+      placeholder="Selecione uma opçãoooooooooooooooooo"
+      :validation="data4.length >= 3 ? `Máximo de 3 opções selecionadas` : ''"
       multiple
       :items="items"
       v-model="data4"
+    />
+
+    <s-select
+      label="disabled"
+      display="slug"
+      display-by="name"
+      placeholder="Selecione uma opção"
+      disabled
+      :items="items"
     />
   </div>
 </template>
@@ -59,16 +67,16 @@ export default {
       data1: '',
       data2: '',
       data3: [
-        { slug: 'slug_boladao2', name: 'coe2' }
+        { slug: '2', name: 'coe2' }
       ],
       data4: [],
       items: [
-        { slug: 'slug_boladao1', name: 'coe1' },
-        { slug: 'slug_boladao2', name: 'coe2' },
-        { slug: 'slug_boladao3', name: 'coe3' },
-        { slug: 'slug_boladao4', name: 'coe4' },
-        { slug: 'slug_boladao5', name: 'coe5' },
-        { slug: 'slug_boladao6', name: 'coe6' }
+        { slug: 'item 1', name: 'name item 1' },
+        { slug: 'item 2', name: 'name item 2' },
+        { slug: 'itemmmmmmmmmmmmmmmmmm 3', name: 'name itemmmmmmmmmmmmmmmmmm 3' },
+        { slug: '4', name: 'name 4' },
+        { slug: '5', name: 'name 5' },
+        { slug: '666666666666666666666666666666', name: 'name 666666666666666666666666666666' }
       ]
     }
   }
