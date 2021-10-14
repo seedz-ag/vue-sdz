@@ -28,6 +28,7 @@ export default {
           child: [
             { name: 'button', redirect: '/vue-sdz/components/button' },
             { name: 'card', redirect: '/vue-sdz/components/card' },
+            { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
             { name: 'table', redirect: '/vue-sdz/components/table' },
             { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
             { name: 'icon', redirect: '/vue-sdz/components/icon' },
@@ -44,6 +45,7 @@ export default {
           child: [
             { name: 'button', redirect: '/vue-sdz/api/button' },
             { name: 'card', redirect: '/vue-sdz/api/card' },
+            { name: 'checkbox', redirect: '/vue-sdz/api/checkbox' },
             { name: 'table', redirect: '/vue-sdz/api/table' },
             { name: 'shadowed', redirect: '/vue-sdz/api/shadowed' },
             { name: 'icon', redirect: '/vue-sdz/api/icon' },
