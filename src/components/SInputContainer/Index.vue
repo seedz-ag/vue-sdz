@@ -4,7 +4,6 @@
       <span v-if="required" class="required">*</span>
 
       <s-icon v-if="leftIcon" :icon="leftIcon" class="left-icon" />
-
       <span v-else class="text">{{ label }}</span>
     </label>
 
@@ -63,11 +62,10 @@ export default {
   position: relative;
 
   & > .label {
-    position: absolute;
 
-    padding-right: 10px;
     text-transform: uppercase;
     font-size: $font-size-xxxs;
+    padding: { right: 10px; bottom: 5px; }
 
     & > .required { color: $negative-color; margin-top: 5px; }
   }

@@ -90,6 +90,8 @@ module.exports = {
 
     'object-shorthand': 'off',
 
+    'no-unused-vars': 'off',
+
     'func-names': 'off',
 
     'quote-props': 'off',
