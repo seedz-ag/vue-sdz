@@ -78,10 +78,10 @@ export default {
     }
 
     & > .icon {
-      opacity: 0.2;
       font-size: 18px;
-      font-weight: bold;
       color: transparent;
+      opacity: $opacity-light;
+      font-weight: $font-weight-bold;
       transition: opacity .3s .1s ease-in-out;
     }
   }
@@ -99,8 +99,8 @@ export default {
 
     & > .icon {
       opacity: 1;
-      color: white;
       transform: scale(0);
+      color: $neutral-color;
       animation: icon .3s ease-in-out .1s forwards;
     }
   }
@@ -120,8 +120,8 @@ export default {
   }
 
   @keyframes check {
-    0% { opacity: .3; }
-    50% { opacity: .5; }
+    0% { opacity: $opacity-medium; }
+    50% { opacity: $opacity-intense; }
     100% { opacity: 1; }
   }
 
