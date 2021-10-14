@@ -1,10 +1,12 @@
 <template>
   <div class="s-checkbox-example">
-    <s-checkbox label="positive check" v-model="data1" />
+    <s-checkbox v-model="data0" />
 
-    <!-- <s-checkbox negative v-model="data2" />
+    <s-checkbox label="positive" v-model="data1" />
 
-    <s-checkbox disabled v-model="data3" /> -->
+    <s-checkbox label="negative" negative v-model="data2" />
+
+    <s-checkbox label="disabled" disabled v-model="data3" />
   </div>
 </template>
 
@@ -16,6 +18,7 @@ export default {
 
   data () {
     return {
+      data0: false,
       data1: true,
       data2: true,
       data3: true
@@ -25,5 +28,5 @@ export default {
 </script>
 
 <style lang="scss">
-// .s-checkbox-example > .s-checkbox > .check { margin-bottom: 60px; }
+.s-checkbox-example > .s-checkbox > .check { margin-bottom: 60px; }
 </style>

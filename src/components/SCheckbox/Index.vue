@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes">
+  <label :class="classes">
     <input
       class="input"
       type="checkbox"
@@ -14,8 +14,8 @@
       <i class="icon sdz-check" />
     </span>
 
-    <!-- <label class="text">{{ label }}</label> -->
-  </div>
+    <span class="text">{{ label }}</span>
+  </label>
 </template>
 
 <script>
@@ -91,7 +91,7 @@ export default {
     font-size: $font-size-xs;
   }
 
-  & > .input + .check { transition: all .6s ease; }
+  & > .input + .check { transition: background-color .6s ease; }
 
   & > .input:checked + .check {
     background-color: $positive-color;
@@ -105,19 +105,19 @@ export default {
     }
   }
 
-  // &.--is-checked {
-  //   & > .check { border-color: $positive-color; }
-  // }
+  &.--is-checked {
+    & > .check { border-color: $positive-color; }
+  }
 
-  // &.--is-negative {
-  //   & > .check { border-color: $negative-color; }
-  //   & > .input:checked + .check { background-color: $negative-color; }
-  // }
+  &.--is-negative {
+    & > .check { border-color: $negative-color; }
+    & > .input:checked + .check { background-color: $negative-color; }
+  }
 
-  // &.--is-disabled {
-  //   & > .check { border-color: $neutral-dark-color; }
-  //   & > .input:checked + .check { background-color: $neutral-dark-color; }
-  // }
+  &.--is-disabled {
+    & > .check { border-color: $neutral-dark-color; }
+    & > .input:checked + .check { background-color: $neutral-dark-color; }
+  }
 
   @keyframes check {
     0% { opacity: .3; }
