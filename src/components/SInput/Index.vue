@@ -226,7 +226,7 @@ $icon-position: 8px;
   }
 
   &.--validation {
-    display: block;
+    // display: block;
 
     & > .input {
       box-shadow: none;
@@ -235,7 +235,7 @@ $icon-position: 8px;
       border-color: $negative-color !important;
     }
 
-    & > .label { color: $negative-color !important; }
+    & > .label { font-weight: 500; color: $negative-color !important; }
   }
 
   &:focus-within {
