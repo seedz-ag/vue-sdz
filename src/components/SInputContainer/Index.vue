@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import SIcon from '../SIcon'
+import SIcon from '../SIcon/Index.vue'
 
 export default {
   name: 'SInputContainer',
