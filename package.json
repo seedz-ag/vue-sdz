@@ -1,6 +1,6 @@
 {
   "name": "vue-sdz",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "main": "dist/js/build.cjs.js",
   "module": "dist/js/build.esm.js",
   "private": false,
@@ -54,7 +54,7 @@
     "rollup": "^2.53.3",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-vue": "^6.0.0",
+    "rollup-plugin-vue": "5.0.0",
     "sass": "^1.36.0",
     "sass-loader": "10",
     "vite": "^2.5.7",
