@@ -43,6 +43,8 @@ export default {
   },
 
   props: {
+    small: Boolean,
+
     icon: String,
 
     rightIcon: String,
@@ -86,6 +88,7 @@ export default {
     sInputClasses () {
       return [
         's-input', {
+          '--small': this.small,
           '--has-icon': this.icon,
           '--is-money': this.isMoney,
           '--is-not-empty': !!this.value,
@@ -170,8 +173,6 @@ $icon-position: 8px;
   }
 
   & > .label {
-    top: -25px;
-
     font-size: 14px;
     font-weight: 500;
     pointer-events: none;
@@ -179,6 +180,8 @@ $icon-position: 8px;
     font-family: $font-family;
     transition: font-size .3s, transform .3s;
   }
+
+  &.--small > .input { height: 35px; }
 
   &.--has-icon {
     & > .label { left: 25px; }
@@ -199,7 +202,6 @@ $icon-position: 8px;
 
   &.--is-float-label {
     & > label {
-      top: -20px;
       padding: 0 20px;
       transform: translateY(35px);
     }
@@ -210,7 +212,7 @@ $icon-position: 8px;
     &.--is-money > .label,
     &.--is-not-empty > .label {
       font-size: 11px;
-      transform: translateY(30px);
+      transform: translateY(25px);
     }
   }
 

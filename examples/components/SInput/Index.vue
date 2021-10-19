@@ -37,6 +37,11 @@
     /> -->
 
     <s-input
+      label="small"
+      small
+    />
+
+    <s-input
       label="disabled"
       disabled
     />
