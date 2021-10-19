@@ -55,6 +55,7 @@ export default {
       type: [String, Number],
       default: '20'
     },
+    
 
     fullWidth: Boolean,
 
@@ -135,7 +136,7 @@ export default {
     width: 93%;
     height: 75%;
 
-    filter: blur(8px);
+    // filter: blur(8px);
     opacity: $opacity-intense;
     transition: filter .3s, opacity .3s;
     transform: translateX(-50%) translateY(-50%) translateZ(-1px);
@@ -158,8 +159,8 @@ export default {
 
   &:hover {
     &::before {
-      filter: blur(14px);
       opacity: 1;
+      // filter: blur(14px);
     }
 
     &::after { opacity: 0.1; }
