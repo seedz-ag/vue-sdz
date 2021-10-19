@@ -62,7 +62,7 @@
 
     <s-input
       label="is float label"
-      is-float-label
+      float-label
       :value="inputFloatLabel"
       @input="value => inputFloatLabel = value"
     />
@@ -97,5 +97,5 @@ export default {
 </script>
 
 <style lang="scss">
-.s-input-container { margin-bottom: 40px; }
+.s-input-container { margin-bottom: 60px; }
 </style>

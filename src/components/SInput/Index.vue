@@ -13,7 +13,7 @@
 
       :value="value"
       :class="inputClasses"
-      :placeholder="isFloatLabel ? '' : placeholder"
+      :placeholder="floatLabel ? '' : placeholder"
 
       v-on="listeners"
     />
@@ -65,7 +65,7 @@ export default {
 
     isMoney: Boolean,
 
-    isFloatLabel: Boolean,
+    floatLabel: Boolean,
 
     moneyMask: {
       type: Object,
@@ -94,7 +94,7 @@ export default {
           '--is-not-empty': !!this.value,
           '--is-textarea': this.textArea,
           '--is-disabled': this.disabled,
-          '--is-float-label': this.isFloatLabel,
+          '--is-float-label': this.floatLabel,
         }
       ]
     },
@@ -173,6 +173,9 @@ $icon-position: 8px;
   }
 
   & > .label {
+    top: -25px;
+    position: absolute;
+
     font-size: 14px;
     font-weight: 500;
     pointer-events: none;
@@ -202,6 +205,8 @@ $icon-position: 8px;
 
   &.--is-float-label {
     & > label {
+      top: -20px;
+
       padding: 0 20px;
       transform: translateY(35px);
     }
@@ -212,7 +217,7 @@ $icon-position: 8px;
     &.--is-money > .label,
     &.--is-not-empty > .label {
       font-size: 11px;
-      transform: translateY(25px);
+      transform: translateY(30px);
     }
   }
 
