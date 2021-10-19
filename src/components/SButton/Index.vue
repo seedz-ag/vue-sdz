@@ -22,22 +22,23 @@
     </span>
 
     <transition name="loading">
-      <div v-if="loading" size="25" class="loader" />
+      <s-loader v-if="loading" size="25" class="loader" />
     </transition>
   </s-link>
 </template>
 
 <script>
-import SLink from '../SLink/Index.vue'
-import SIcon from '../SIcon/Index.vue'
-
 /**
  * The standard button used throught convenia projects.
  */
 export default {
   name: 'SButton',
 
-  components: { SIcon, SLink },
+  components: {
+    SIcon: () => import('../SIcon/Index.vue'),
+    SLink: () => import('../SLink/Index.vue'),
+    SLoader: () => import('../SLoader/Index.vue')
+  },
 
   props: {
     size: {
@@ -55,7 +56,7 @@ export default {
       type: [String, Number],
       default: '20'
     },
-    
+
     small: Boolean,
 
     large: Boolean,
@@ -319,8 +320,10 @@ export default {
 
   &.--loading {
     pointer-events: none;
+    background-color: $neutral-light-color;
 
     & > .text, .icon { visibility: hidden; }
+    // & > .loader > .loader > path { fill: white; }
   }
 
   // loading transitions

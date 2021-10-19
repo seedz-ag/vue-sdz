@@ -16,7 +16,8 @@
     <s-button small>small</s-button>
     <s-button default>default</s-button>
     <s-button large>large</s-button>
-    
+
+    <s-button loading>loading</s-button>
     <s-button outlined>outlined</s-button>
     <s-button primary>primary</s-button>
     <s-button success>success</s-button>
