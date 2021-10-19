@@ -188,7 +188,7 @@ export default {
     color: #FFF;
     white-space: nowrap;
     text-transform: uppercase;
-    font-size: $font-size-xxxs;
+    font-size: $font-size-xs;
 
     transition: color 300ms ease, opacity .3s;
 
@@ -235,12 +235,16 @@ export default {
     height: 35px;
     min-width: 35px;
     min-height: 35px;
+
+    & > .text { font-size: $font-size-xxs; }
   }
 
   &.--large {
     height: 60px;
     min-width: 60px;
     min-height: 60px;
+
+    & > .text { font-size: $font-size-sm; }
   }
 
   &.--grey {
