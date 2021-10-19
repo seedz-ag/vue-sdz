@@ -13,6 +13,10 @@
     <br>
     <s-button link icon="plus" to="https://www.google.com">link icon</s-button>
 
+    <s-button small>small</s-button>
+    <s-button default>default</s-button>
+    <s-button large>large</s-button>
+    
     <s-button outlined>outlined</s-button>
     <s-button primary>primary</s-button>
     <s-button success>success</s-button>

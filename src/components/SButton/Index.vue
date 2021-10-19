@@ -56,6 +56,9 @@ export default {
       default: '20'
     },
     
+    small: Boolean,
+
+    large: Boolean,
 
     fullWidth: Boolean,
 
@@ -80,17 +83,19 @@ export default {
     classes () {
       return [ 's-button',
         {
-          '-link': this.link,
-          '-grey': this.grey,
-          '-error': this.error,
-          '-primary': this.primary,
-          '-success': this.success,
-          '-loading': this.loading,
-          '-disabled': this.disabled,
-          '-outlined': this.outlined,
-          '-full-width': this.fullWidth,
-          '-icon-only': !this.$slots.default,
-          '-has-icon': this.icon && this.$slots.default
+          '--link': this.link,
+          '--grey': this.grey,
+          '--small': this.small,
+          '--large': this.large,
+          '--error': this.error,
+          '--primary': this.primary,
+          '--success': this.success,
+          '--loading': this.loading,
+          '--disabled': this.disabled,
+          '--outlined': this.outlined,
+          '--full-width': this.fullWidth,
+          '--icon-only': !this.$slots.default,
+          '--has-icon': this.icon && this.$slots.default
         }
       ]
     }
@@ -106,9 +111,9 @@ export default {
   align-items: center;
   justify-content: center;
 
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
 
   outline: none;
   cursor: pointer;
@@ -122,40 +127,39 @@ export default {
   transition: border .3s,
               border .3s,
               opacity .3s,
-              box-shadow .3s,
               background-color .3s;
 
-  &::before {
-    content: '';
-    display: block;
+  // &::before {
+  //   content: '';
+  //   display: block;
 
-    position: absolute;
-    left: 50%;
-    top: calc(50% + 4px);
+  //   position: absolute;
+  //   left: 50%;
+  //   top: calc(50% + 4px);
 
-    width: 93%;
-    height: 75%;
+  //   width: 93%;
+  //   height: 75%;
 
-    // filter: blur(8px);
-    opacity: $opacity-intense;
-    transition: filter .3s, opacity .3s;
-    transform: translateX(-50%) translateY(-50%) translateZ(-1px);
-  }
+  //   filter: blur(8px);
+  //   opacity: $opacity-intense;
+  //   transition: filter .3s, opacity .3s;
+  //   transform: translateX(-50%) translateY(-50%) translateZ(-1px);
+  // }
 
-  &::after {
-    content: '';
-    display: block;
+  // &::after {
+  //   content: '';
+  //   display: block;
 
-    position: absolute;
-    top: 0;
-    left: 0;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
 
-    width: 100%;
-    height: 100%;
+  //   width: 100%;
+  //   height: 100%;
 
-    opacity: 0;
-    transition: opacity .3s;
-  }
+  //   opacity: 0;
+  //   transition: opacity .3s;
+  // }
 
   &:hover {
     &::before {
@@ -174,7 +178,7 @@ export default {
     filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, .3));
   }
 
-  &.-has-icon {
+  &.--has-icon {
     & > .icon { left: 20px; }
     & > .text { padding-left: 10px; }
   }
@@ -200,7 +204,7 @@ export default {
     flex: 1;
   }
 
-  &.-icon-only {
+  &.--icon-only {
     padding-left: 0;
     padding-right: 0;
     align-items: center;
@@ -208,7 +212,7 @@ export default {
     border-radius: $border-radius-circular;
   }
 
-  &.-link {
+  &.--link {
     display: inline-flex;
     padding: 0;
     width: auto;
@@ -227,7 +231,19 @@ export default {
     }
   }
 
-  &.-grey {
+  &.--small {
+    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
+  }
+
+  &.--large {
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+  }
+
+  &.--grey {
     background-color: $base-light-color;
 
     & > .border { border-color: $base-light-color; }
@@ -237,7 +253,7 @@ export default {
     &:active { background-color: $base-dark-color !important; }
   }
 
-  &.-primary {
+  &.--primary {
     background-color: $primary-color;
 
     & > .border { border-color: $primary-color; }
@@ -247,7 +263,7 @@ export default {
     &:active { background-color: $primary-dark-color !important; }
   }
 
-  &.-success {
+  &.--success {
     background: $positive-color;
 
     & > .border { border-color: $positive-color; }
@@ -257,7 +273,7 @@ export default {
     &:active { background-color: $positive-dark-color !important; }
   }
 
-  &.-error {
+  &.--error {
     background: $negative-color;
 
     & > .border { border-color: $negative-color; }
@@ -267,9 +283,9 @@ export default {
     &:active { background-color: $negative-dark-color !important; }
   }
 
-  &.-full-width { width: 100%; }
+  &.--full-width { width: 100%; }
 
-  &.-outlined {
+  &.--outlined {
     opacity: 1;
     background: $neutral-color;
     border: 1px solid $primary-color;
@@ -284,7 +300,7 @@ export default {
     // &:active { background: $neutral-medium-color; }
   }
 
-  &.-disabled {
+  &.--disabled {
     cursor: default;
     background: $neutral-dark-color;
 
@@ -297,7 +313,7 @@ export default {
     }
   }
 
-  &.-loading {
+  &.--loading {
     pointer-events: none;
 
     & > .text, .icon { visibility: hidden; }
