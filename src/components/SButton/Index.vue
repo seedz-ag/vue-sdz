@@ -35,9 +35,9 @@ export default {
   name: 'SButton',
 
   components: {
-    SIcon: () => import('../SIcon/Index.vue'),
-    SLink: () => import('../SLink/Index.vue'),
-    SLoader: () => import('../SLoader/Index.vue')
+    SIcon: () => import('../SIcon/Index.vue').then(c => c.default),
+    SLink: () => import('../SLink/Index.vue').then(c => c.default),
+    SLoader: () => import('../SLoader/Index.vue').then(c => c.default)
   },
 
   props: {
@@ -129,6 +129,12 @@ export default {
               border .3s,
               opacity .3s,
               background-color .3s;
+
+  & > .border { border-color: $primary-color; }
+
+  &::before { background-color: $primary-color; }
+  &:hover { background-color: $primary-medium-color; }
+  &:active { background-color: $primary-dark-color !important; }
 
   // &::before {
   //   content: '';
@@ -258,15 +264,15 @@ export default {
     &:active { background-color: $base-dark-color !important; }
   }
 
-  &.--primary {
-    background-color: $primary-color;
+  // &.--primary {
+  //   background-color: $primary-color;
 
-    & > .border { border-color: $primary-color; }
+  //   & > .border { border-color: $primary-color; }
 
-    &::before { background-color: $primary-color; }
-    &:hover { background-color: $primary-medium-color; }
-    &:active { background-color: $primary-dark-color !important; }
-  }
+  //   &::before { background-color: $primary-color; }
+  //   &:hover { background-color: $primary-medium-color; }
+  //   &:active { background-color: $primary-dark-color !important; }
+  // }
 
   &.--success {
     background: $positive-color;
