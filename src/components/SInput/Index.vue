@@ -203,6 +203,8 @@ $icon-position: 8px;
   & > .right-icon { right: $icon-position; }
   & > .left-icon { left: $icon-position; }
 
+  &:not(.--is-float-label) { margin-top: 30px; }
+
   &.--is-float-label {
     & > label {
       top: -20px;
