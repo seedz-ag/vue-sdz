@@ -35,9 +35,9 @@ export default {
   name: 'SButton',
 
   components: {
-    SIcon: () => async () => (await import('../SIcon/Index.vue')).default,
-    SLink: () => async () => (await import('../SIcon/SLink.vue')).default,
-    SLoader: () => async () => (await import('../SIcon/SLoader.vue')).default
+    SIcon: () => import('../SIcon/Index.vue').then(c => c.default),
+    SLink: () => import('../SLink/Index.vue').then(c => c.default),
+    SLoader: () => import('../SLoader/Index.vue').then(c => c.default)
   },
 
   props: {
