@@ -313,6 +313,8 @@ export default {
 
   &.--disabled {
     cursor: default;
+    user-select: none;
+    pointer-events: none;
     background: $neutral-dark-color;
 
     &::before, &::after { opacity: 0; }
