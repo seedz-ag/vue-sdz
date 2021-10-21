@@ -10363,6 +10363,11 @@ vue-coe-feedback@^0.1.5:
     "@vue/test-utils" "^1.0.0-beta.25"
     vuex "^3.0.1"
 
+vue-coerousel@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-coerousel/-/vue-coerousel-1.0.0.tgz#800c674f5e7c2384ee295e5d3fab2493391fe70b"
+  integrity sha512-P75r+mrKWYqvDXTcjY+vmsO5SbmzS1kMc0ikf7gllAM32Jwnzx2ZccqhY7v8eQsnqu8tfvdWuJMC44i+6N253w==
+
 vue-eslint-parser@^7.10.0:
   version "7.10.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.10.0.tgz#ea4e4b10fd10aa35c8a79ac783488d8abcd29be8"

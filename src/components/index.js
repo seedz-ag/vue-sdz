@@ -1,6 +1,7 @@
 export { default as SButton } from './SButton/Index.vue'
 export { default as SCard } from './SCard/Index.vue'
 export { default as SCheckbox } from './SCheckbox/Index.vue'
+export { default as SCarousel } from './SCarousel/Index.vue'
 export { default as SCollapsible } from './SCollapsible/Index.vue'
 export { default as SFeedbacks } from './SFeedbacks/Index.vue'
 export { default as SIcon } from './SIcon/Index.vue'
