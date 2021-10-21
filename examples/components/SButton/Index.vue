@@ -21,6 +21,7 @@
     <s-button outlined>outlined</s-button>
     <s-button primary>primary</s-button>
     <s-button success>success</s-button>
+    <s-button grey>grey</s-button>
     <s-button error>error</s-button>
     <s-button disabled>disabled</s-button>
     <s-button full-width>full-width</s-button>

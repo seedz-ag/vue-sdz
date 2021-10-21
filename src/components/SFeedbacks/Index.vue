@@ -75,15 +75,15 @@ export default {
     box-shadow: -1px -1px 4px 0 rgba(0,0,0,0.2);
 
     &.--is-negative {
-      background-color: $negative-light-color !important;
+      background-color: color(negative, dark) !important;
 
-      & > .message-container > .message, .highlighted { color: $negative-color !important; }
+      & > .message-container > .message, .highlighted { color: $neutral-color !important; }
     }
 
     &.--is-positive {
-      background-color: $primary-light-color !important;
+      background-color: color(primary, light) !important;
 
-      & > .message-container > .message, .highlighted  { color: $primary-color !important; }
+      & > .message-container > .message, .highlighted  { color: $neutral-color !important; }
     }
 
     &:last-child { margin-bottom: 20px; }
@@ -94,7 +94,7 @@ export default {
       flex-direction: column;
 
       font-weight: unset;
-      color: $primary-color !important;
+      color: color(primary, base) !important;
 
       & > .message { font-weight: $font-weight-bold; }
       & > .highlighted { font-weight: $font-weight-regular; }

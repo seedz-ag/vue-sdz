@@ -47,7 +47,7 @@ export default {
     -moz-animation: loading 2s linear infinite;
     -webkit-animation: loading 2s linear infinite;
 
-    & > path { fill: $primary-color; }
+    & > path { fill: color(primary, base); }
   }
 
   @keyframes loading {

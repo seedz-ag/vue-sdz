@@ -1,0 +1,58 @@
+$primary-color:  #1E7A75;
+$secondary-color:  #46BC8F;
+$highlight-color:  #FBD700;
+$base-color: #202B36;
+$neutral-color: #F5F7F9;
+$positive-color: #2BB673;
+$negative-color: #EB5757;
+
+$palettes:(
+  primary:(
+    base:   $primary-color,
+    light:  darken($primary-color, 8%),
+    medium: darken($primary-color, 12%),
+    dark:   darken($primary-color, 16%),
+  ),
+
+  secondary:(
+    base:   $secondary-color,
+    light:  darken($secondary-color, 8%),
+    medium: darken($secondary-color, 12%),
+    dark:   darken($secondary-color, 16%),
+  ),
+
+  highlight:(
+    base:   $highlight-color,
+    light:  rgba($highlight-color, .08),
+    medium: rgba($highlight-color, .32),
+    dark:   rgba($highlight-color, .64)
+  ),
+
+  base:(
+    base:   $base-color,
+    light:  lighten($base-color, 35%),
+    medium: lighten($base-color, 20%),
+    dark:   darken($base-color, 8%),
+  ),
+
+  neutral:(
+    base:   #FFFFFF,
+    light:  darken($neutral-color, 4%),
+    medium: darken($neutral-color, 8%),
+    dark:   darken($neutral-color, 12%)
+  ),
+
+  positive:(
+    base:   $positive-color,
+    light:  rgba($positive-color, .08),
+    medium: rgba($positive-color, .32),
+    dark:   rgba($positive-color, .64)
+  ),
+
+  negative:(
+    base:   $negative-color,
+    light:  rgba($negative-color, .08),
+    medium: rgba($negative-color, .32),
+    dark:   rgba($negative-color, .64)
+  )
+);

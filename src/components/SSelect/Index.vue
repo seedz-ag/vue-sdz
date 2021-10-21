@@ -326,7 +326,7 @@ export default {
       font-size: $font-size-xs;
       background-color: white;
       border-radius: $border-radius-sm;
-      border: 2px solid $base-light-color;
+      border: 1px solid color(base, light);
       transition: border-radius .3s ease-in-out,
                   border-color .3s ease-in-out,
                   box-shadow .3s ease-in-out;
@@ -334,8 +334,8 @@ export default {
       &:hover,
       &:active,
       &:focus {
-        border-color: $primary-color;
-        box-shadow: 0 0 0 0 $primary-color;
+        border-color: color(primary, base);
+        box-shadow: 0 0 0 0 color(primary, base);
       }
 
       & > .selections {
@@ -354,7 +354,7 @@ export default {
           max-height: 30px;
           color: $neutral-color;
           border-radius: $border-radius-sm;
-          background-color: $primary-color;
+          background-color: color(primary, base);
           padding: { left: 10px; right: 35px; top: 2px; bottom: 2px; }
 
           &:after {
@@ -369,12 +369,12 @@ export default {
           width: 150px;
           border: unset;
           outline: none;
-          color: $base-color;
           font-size: $font-size-xxs;
+          color: color(base, base);
 
           &.-placeholder {
-            color: $base-light-color;
             font-size: $font-size-xxs;
+            color: color(base, light);
           }
         }
       }
@@ -401,7 +401,7 @@ export default {
       border-top: none;
 
       & > .s-collapsible > .wrapper {
-        border: 2px solid $primary-color;
+        border: 2px solid color(primary, base);
         border-top: none;
 
         transition: opacity .3s ease-in-out,
@@ -414,7 +414,7 @@ export default {
           align-items: center;
 
           &.-selected { font-weight: 700; }
-          &.-active { background-color: $primary-color; }
+          &.-active { background-color: color(primary, base); }
 
           // &:first-child {
           //   border-top-left-radius: 5px;
@@ -446,7 +446,7 @@ export default {
       & > .field {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        border: 2px solid $primary-color;
+        border: 2px solid color(primary, base);
         border-bottom: none;
 
         &:hover { box-shadow: unset; }
@@ -459,33 +459,33 @@ export default {
   }
 
   &.--is-focused > .select > .field > .selections > .input {
-    border-bottom: 2px solid $primary-color;
+    border-bottom: 2px solid color(primary, base);
   }
 
   &.--is-disabled {
     cursor: default;
     pointer-events: none;
 
-    & > .label { color: $neutral-dark-color; }
+    & > .label { color: color(neutral, dark); }
 
     & > .select > .field {
-      border-color: $neutral-dark-color;
+      border-color: color(neutral, dark);
 
       pointer-events: none;
 
-      & > .icon { color: $neutral-dark-color; }
-      & > .selections > .input { color: $neutral-dark-color; }
+      & > .icon { color: color(neutral, dark); }
+      & > .selections > .input { color: color(neutral, dark); }
     }
   }
 
   &.--has-error > .select > .field {
-    border-bottom: 2px solid $primary-color;
+    border-bottom: 2px solid color(primary, base);
     border-bottom-left-radius: $border-radius-sm;
     border-bottom-right-radius: $border-radius-sm;
   }
 
   &.--is-empty-search > .select > .field {
-    border-bottom: 2px solid $primary-color;
+    border-bottom: 2px solid color(primary, base);
     border-bottom-left-radius: $border-radius-sm;
     border-bottom-right-radius: $border-radius-sm;
   }

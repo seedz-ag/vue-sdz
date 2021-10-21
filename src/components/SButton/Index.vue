@@ -65,7 +65,7 @@ export default {
 
     disabled: Boolean,
 
-    primary: Boolean,
+    // primary: Boolean,
 
     success: Boolean,
 
@@ -89,7 +89,7 @@ export default {
           '--small': this.small,
           '--large': this.large,
           '--error': this.error,
-          '--primary': this.primary,
+          // '--primary': this.primary,
           '--success': this.success,
           '--loading': this.loading,
           '--disabled': this.disabled,
@@ -120,7 +120,7 @@ export default {
   cursor: pointer;
   padding: 0 40px;
   transform-style: preserve-3d;
-  background-color: $primary-color;
+  background-color: color(primary, base);
 
   border: $border-radius-none;
   border-radius: $border-radius-sm;
@@ -130,11 +130,12 @@ export default {
               opacity .3s,
               background-color .3s;
 
-  & > .border { border-color: $primary-color; }
+  & > .border { border-color: color(primary, base); }
 
-  &::before { background-color: $primary-color; }
-  &:hover { background-color: $primary-medium-color; }
-  &:active { background-color: $primary-dark-color !important; }
+  &::before { background-color: color(primary, base); }
+  &:hover { background-color: color(primary, light); }
+  &:active { background-color: color(primary, dark); }
+  // &:active { background-color: map-get($primary-color, base-48) !important; }
 
   // &::before {
   //   content: '';
@@ -194,7 +195,6 @@ export default {
     flex: 1;
     color: #FFF;
     white-space: nowrap;
-    text-transform: uppercase;
     font-size: $font-size-xs;
 
     transition: color 300ms ease, opacity .3s;
@@ -226,15 +226,15 @@ export default {
     height: auto;
     min-width: auto;
     min-height: auto;
-    background-color: $neutral-color;
+    background-color: color(neutral, base);
 
     &:hover, &:active {
       text-decoration: underline;
-      text-decoration-color: $primary-color;
+      text-decoration-color: color(primary, base);
       }
 
     & > .text {
-      color: $primary-color;
+      color: color(primary, base);
     }
   }
 
@@ -255,67 +255,67 @@ export default {
   }
 
   &.--grey {
-    background-color: $base-light-color;
+    background-color: color(neutral, light);
 
-    & > .border { border-color: $base-light-color; }
+    & > .border { border-color: color(neutral, light); }
 
-    &::before { background-color: $base-light-color; }
-    &:hover { background-color: $base-medium-color; }
-    &:active { background-color: $base-dark-color !important; }
+    &::before { background-color: color(neutral, light); }
+    &:hover { background-color: color(neutral, medium); }
+    &:active { background-color: color(neutral, dark) !important; }
   }
 
   // &.--primary {
-  //   background-color: $primary-color;
+  //   background-color: color(primary, base);
 
-  //   & > .border { border-color: $primary-color; }
+  //   & > .border { border-color: color(primary, base); }
 
-  //   &::before { background-color: $primary-color; }
-  //   &:hover { background-color: $primary-medium-color; }
-  //   &:active { background-color: $primary-dark-color !important; }
+  //   &::before { background-color: color(primary, base); }
+  //   &:hover { background-color: color(primary, light); }
+  //   &:active { background-color: map-get($primary-color, base-48) !important; }
   // }
 
   &.--success {
-    background: $positive-color;
+    background: color(positive, base);
 
-    & > .border { border-color: $positive-color; }
+    & > .border { border-color: color(positive, base); }
 
-    &::before { background-color: $positive-color; }
-    &:hover { background-color: $positive-medium-color; }
-    &:active { background-color: $positive-dark-color !important; }
+    &::before { background-color: color(positive, base); }
+    &:hover { background-color: color(positive, medium); }
+    &:active { background-color: color(positive, dark) !important; }
   }
 
   &.--error {
-    background: $negative-color;
+    background: color(negative, base);
 
-    & > .border { border-color: $negative-color; }
+    & > .border { border-color: color(negative, base); }
 
-    &::before { background-color: $negative-color; }
-    &:hover { background-color: $negative-medium-color; }
-    &:active { background-color: $negative-dark-color !important; }
+    &::before { background-color: color(negative, base); }
+    &:hover { background-color: color(negative, medium); }
+    &:active { background-color: color(negative, dark) !important; }
   }
 
   &.--full-width { width: 100%; }
 
   &.--outlined {
     opacity: 1;
-    background: $neutral-color;
-    border: 1px solid $primary-color;
+    background: color(neutral, base);
+    border: 1px solid color(primary, base);
 
     &::before, &::after { display: none; }
 
     & > .icon { filter: unset; }
-    & > .text { color: $primary-color; }
+    & > .text { color: color(primary, base); }
     & > .loader {}
 
-    &:hover { background: $neutral-light-color; }
-    // &:active { background: $neutral-medium-color; }
+    &:hover { background: color(neutral, light); }
+    // &:active { background: color(neutral, medium); }
   }
 
   &.--disabled {
     cursor: default;
     user-select: none;
     pointer-events: none;
-    background: $neutral-dark-color;
+    background: color(neutral, dark);
 
     &::before, &::after { opacity: 0; }
 
@@ -328,7 +328,7 @@ export default {
 
   &.--loading {
     pointer-events: none;
-    background-color: $neutral-light-color;
+    background-color: color(neutral, light);
 
     & > .text, .icon { visibility: hidden; }
     // & > .loader > .loader > path { fill: white; }

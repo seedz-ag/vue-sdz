@@ -67,14 +67,14 @@ export default {
 
     border-width: 1px;
     border-style: solid;
-    border-color: $base-light-color;
     border-radius: $border-radius-sm;
+    border-color: color(neutral, light);
 
-    background-color: $neutral-color;
+    background-color: color(neutral, base);
 
     &:hover {
       border-width: 2px;
-      border-color: $positive-color;
+      border-color: color(positive, base);
     }
 
     & > .icon {
@@ -94,29 +94,29 @@ export default {
   & > .input + .check { transition: background-color .6s ease; }
 
   & > .input:checked + .check {
-    background-color: $positive-color;
     animation: check;
+    background-color: color(positive, base);
 
     & > .icon {
       opacity: 1;
       transform: scale(0);
-      color: $neutral-color;
+      color: color(neutral, base);
       animation: icon .3s ease-in-out .1s forwards;
     }
   }
 
   &.--is-checked {
-    & > .check { border-color: $positive-color; }
+    & > .check { border-color: color(positive, base); }
   }
 
   &.--is-negative {
-    & > .check { border-color: $negative-color; }
-    & > .input:checked + .check { background-color: $negative-color; }
+    & > .check { border-color: color(negative, base); }
+    & > .input:checked + .check { background-color: color(negative, base); }
   }
 
   &.--is-disabled {
-    & > .check { border-color: $neutral-dark-color; }
-    & > .input:checked + .check { background-color: $neutral-dark-color; }
+    & > .check { border-color: color(neutral, dark); }
+    & > .input:checked + .check { background-color: color(neutral, dark); }
   }
 
   @keyframes check {
