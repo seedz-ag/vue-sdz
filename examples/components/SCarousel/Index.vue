@@ -59,8 +59,8 @@ export default {
         // transition:         all .4s cubic-bezier(0.47, 0, 0.745, 0.715);
         & > .carousel-item {
           & > .ball {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             margin: 0 auto;
             border-radius: 50%;
           }

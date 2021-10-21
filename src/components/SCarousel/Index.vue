@@ -28,5 +28,9 @@ export default {
 </script>
 
 <style lang="scss">
-.s-carousel {}
+.s-carousel {
+  & > .wrapper {
+    background: transparent;
+  }
+}
 </style>
