@@ -160,16 +160,16 @@ $icon-position: 8px;
     height: 50px;
     font-size: 14px;
     text-indent: 20px;
-    border: 1px solid $base-light-color;
+    border: 1px solid color(base, light);
     border-radius: $border-radius-sm;
     transition: color .3s, border-color .3s;
 
-    &::placeholder { color: $base-light-color; }
+    &::placeholder { color: color(base, light); }
 
     &.--has-icon { text-indent: 35px; }
     &.--is-textarea { padding-top: 30px; }
     &.--has-right-icon { padding-right: 40px; }
-    &.--is-rounded { border-radius: 50px; border: 1px solid $base-light-color; }
+    &.--is-rounded { border-radius: 50px; border: 1px solid color(base, light); }
   }
 
   & > .label {
@@ -179,7 +179,7 @@ $icon-position: 8px;
     font-size: 14px;
     font-weight: 500;
     pointer-events: none;
-    color: $base-color;
+    color: color(base, base);
     font-family: $font-family;
     transition: font-size .3s, transform .3s;
   }
@@ -203,6 +203,8 @@ $icon-position: 8px;
   & > .right-icon { right: $icon-position; }
   & > .left-icon { left: $icon-position; }
 
+  &:not(.--is-float-label) { margin-top: 30px; }
+
   &.--is-float-label {
     & > label {
       top: -20px;
@@ -223,13 +225,8 @@ $icon-position: 8px;
 
   &.--is-disabled {
     cursor: default;
-    & > .input {
-      border-color: $neutral-medium-color;
-    }
-
-     & > .label {
-       color: $neutral-medium-color;
-     }
+    & > .input { border-color: color(neutral, medium); }
+    & > .label { color: color(neutral, medium); }
   }
 
   &.--validation {
@@ -238,15 +235,15 @@ $icon-position: 8px;
     & > .input {
       box-shadow: none;
       padding-right: 50px;
-      color: $negative-color;
-      border-color: $negative-color !important;
+      color: color(negative, base);
+      border-color: color(negative, base) !important;
     }
 
-    & > .label { font-weight: 500; color: $negative-color !important; }
+    & > .label { font-weight: 500; color: color(negative, base) !important; }
   }
 
   &:focus-within {
-    & > .input { border-color: $primary-color; }
+    & > .input { border-color: color(primary, base); }
   }
 }
 </style>

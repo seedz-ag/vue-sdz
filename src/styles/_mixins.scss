@@ -43,7 +43,7 @@ $breakpoints: (
   }
 }
 
-@mixin hover ($color: $primary-color) {
+@mixin hover ($color: map-get($primary-color, base)) {
   box-shadow:
     0 0 0 1px $color,
     0px 0px 3px 1px rgba($color, 0.55),

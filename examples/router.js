@@ -3,6 +3,9 @@ import Router from 'vue-router'
 
 import GettingStarted from './GettingStarted.vue'
 
+import StylesList from './styles/Index.vue'
+import StylesRoute from './styles/routes.js'
+
 import ComponentList from './components/Index.vue'
 import ComponentsRoute from './components/routes.js'
 
@@ -14,6 +17,12 @@ const routes = [
     path: '/vue-sdz/getting-started',
     name: 'getting-started',
     component: GettingStarted
+  },
+  {
+    path: '/styles',
+    name: 'styles',
+    component: StylesList,
+    children: StylesRoute
   },
   {
     path: '/components',

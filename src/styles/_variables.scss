@@ -1,32 +1,4 @@
-$primary-color:  #1E7A75;
-$primary-light-color: #46BC8F;
-$primary-medium-color: #0F5E58;
-$primary-dark-color: #00403B;
-
-$secondary-color: #FCD800;
-$secondary-light-color: #FFF4B1;
-$secondary-medium-color: #FFEB71;
-$secondary-dark-color: #E5C400;
-
-$base-color: #252525;
-$base-light-color: #909090;
-$base-medium-color: #666666;
-$base-dark-color: #292929;
-
-$neutral-color: #FFFFFF;
-$neutral-light-color: #F0F0F0;
-$neutral-medium-color: #E0E0E0;
-$neutral-dark-color: #CCCCCC;
-
-$positive-color: #2BB673;
-$positive-light-color: #EBFFF5;
-$positive-medium-color: #ADFFD8;
-$positive-dark-color: #0C8E50;
-
-$negative-color: #EB5757;
-$negative-light-color: #FFF2F2;
-$negative-medium-color: #FFCBCB;
-$negative-dark-color: #DE2F2F;
+@import './functions.scss';
 
 $font-family: 'Montserrat', sans-serif !default;
 
@@ -62,8 +34,6 @@ $shadow-4: 0 16px 48px rgb(0, 0, 0, 20%);
 
 $box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
 $box-shadow-hover: 0 15px 21px -2px rgba(0, 0, 0, 0.125), 3px 3px 6px -1px rgba(0, 0, 0, 0.15);
-
-$text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 
 //  Configuração de z-index
 $z-index-1: 10;

@@ -30,10 +30,7 @@ export default {
   components: { SIcon },
 
   props: {
-    label: {
-      type: String,
-      required: true
-    },
+    label: String,
 
     leftIcon: String,
 
@@ -67,7 +64,7 @@ export default {
     font-size: $font-size-xxxs;
     padding: { right: 10px; bottom: 5px; }
 
-    & > .required { color: $negative-color; margin-top: 5px; }
+    & > .required { color: color(negative, base); margin-top: 5px; }
   }
 
   & > .validation {
@@ -75,7 +72,7 @@ export default {
     position: absolute;
 
     & > .message {
-      color: $negative-color;
+      color: color(negative, base);
       font-weight: $font-weight-medium;
     }
   }

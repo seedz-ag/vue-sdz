@@ -23,6 +23,14 @@ export default {
           redirect: '/vue-sdz/getting-started'
         },
         {
+          name: 'styles',
+          icon: 'plus',
+          child: [
+            { name: 'palettes', redirect: '/vue-sdz/styles/palettes' }
+          ]
+        },
+
+        {
           name: 'components',
           icon: 'xxx',
           child: [
@@ -41,6 +49,7 @@ export default {
             { name: 'input', redirect: '/vue-sdz/components/input' }
           ]
         },
+
         {
           name: 'api',
           icon: 'yyy',
