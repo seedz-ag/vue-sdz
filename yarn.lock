@@ -10364,9 +10364,9 @@ vue-coe-feedback@^0.1.5:
     vuex "^3.0.1"
 
 vue-coerousel@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-coerousel/-/vue-coerousel-1.0.0.tgz#800c674f5e7c2384ee295e5d3fab2493391fe70b"
-  integrity sha512-P75r+mrKWYqvDXTcjY+vmsO5SbmzS1kMc0ikf7gllAM32Jwnzx2ZccqhY7v8eQsnqu8tfvdWuJMC44i+6N253w==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-coerousel/-/vue-coerousel-1.0.1.tgz#ca4b300ea654e560fcfcf38e9741d88fa0d47155"
+  integrity sha512-/JdYavUNZAhRB2UrR+H2cb1qNIkCOC2fUwgKqlS55JdvIh5pQqO35m4mRNbDzSm9J26N3KUK8jB6z5YZnzjwNw==
 
 vue-eslint-parser@^7.10.0:
   version "7.10.0"
