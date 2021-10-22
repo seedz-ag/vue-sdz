@@ -1,6 +1,7 @@
 <template>
   <div class="s-carousel-example">
     <s-carousel
+      controllers
       :items="items"
       :per-page="2"
       :is-loopable="false"
