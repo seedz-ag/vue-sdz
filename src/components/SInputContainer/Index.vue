@@ -59,8 +59,6 @@ export default {
   position: relative;
 
   & > .label {
-
-    text-transform: uppercase;
     font-size: $font-size-xxxs;
     padding: { right: 10px; bottom: 5px; }
 
