@@ -63,12 +63,10 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-card {
-  $border-radius: 5px;
-
   position: relative;
   box-shadow: $shadow-1;
   transition: all .3s ease;
-  border-radius: $border-radius;
+  border-radius: $border-radius-sm;
 
   &:hover { box-shadow: $shadow-2; }
 
