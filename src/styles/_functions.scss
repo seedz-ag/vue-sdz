@@ -1,19 +1,23 @@
-@function color($color, $tone){
+@function color($color, $opacity){
   // @warn map-get($palettes, $color);
 
   @if map-has-key($palettes, $color){
     $color: map-get($palettes, $color);
 
-      @if map-has-key($color, $tone){
-        $tone: map-get($color, $tone);
+      @if map-has-key($color, $opacity){
+        $opacity: map-get($color, $opacity);
 
-        @return $tone;
+        @return $opacity;
       }
 
-      @warn "unknown tone `#{$tone}` in color";
+      @warn "unknown opacity `#{$opacity}` in color";
       @return null;        
   }
   
   @warn "unknown color `#{$color}` in palette";
   @return null;
 }
+
+// @function dark($variable, $opacity) {
+//   @return unquote('linear-gradient(to top,rgba(0, 0, 0,'+ $opacity +'), rgba(0, 0, 0,' + $opacity + '))' + $variable);
+// }

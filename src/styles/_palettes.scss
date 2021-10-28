@@ -1,3 +1,5 @@
+@import './functions.scss';
+
 $primary-color:  #1E7A75;
 $secondary-color:  #46BC8F;
 $highlight-color:  #FBD700;
@@ -6,9 +8,23 @@ $neutral-color: #F5F7F9;
 $positive-color: #2BB673;
 $negative-color: #EB5757;
 
+:root {
+  --primary-color:  #{$primary-color};
+  --secondary-color:  #{$secondary-color};
+  --highlight-color:  #{$highlight-color};
+  --base-color: #{$base-color};
+  --neutral-color: #{$neutral-color};
+  --positive-color: #{$positive-color};
+  --negative-color: #{$negative-color};
+
+  --percentage: 25;
+  --opacity: calc(var(--percentage) * 0.01)
+}
+
 $palettes:(
   primary:(
-    base:   $primary-color,
+    base:   var(--primary-color),
+    // light: dark(var(--primary-color), .2),
     light:  darken($primary-color, 8%),
     medium: darken($primary-color, 12%),
     dark:   darken($primary-color, 16%),
