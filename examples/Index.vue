@@ -34,6 +34,7 @@ export default {
           name: 'components',
           icon: 'xxx',
           child: [
+            { name: 'alert', redirect: '/vue-sdz/components/alert' },
             { name: 'button', redirect: '/vue-sdz/components/button' },
             { name: 'card', redirect: '/vue-sdz/components/card' },
             { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
@@ -54,6 +55,7 @@ export default {
           name: 'api',
           icon: 'yyy',
           child: [
+            { name: 'alert', redirect: '/vue-sdz/api/alert' },
             { name: 'button', redirect: '/vue-sdz/api/button' },
             { name: 'card', redirect: '/vue-sdz/api/card' },
             { name: 'checkbox', redirect: '/vue-sdz/api/checkbox' },
