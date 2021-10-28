@@ -80,8 +80,8 @@ export default {
     height: 100%;
     min-width: 4px;
     width: 4px;
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
+    border-top-left-radius: $border-radius-sm;
+    border-bottom-left-radius: $border-radius-sm;
   }
 
   &.-no-hover:hover { box-shadow: $shadow-1; }
