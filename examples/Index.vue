@@ -26,7 +26,7 @@ export default {
           name: 'styles',
           icon: 'plus',
           child: [
-            { name: 'palettes', redirect: '/vue-sdz/styles/palettes' }
+            { name: 'style-palettes', redirect: '/vue-sdz/styles/palettes' }
           ]
         },
 
