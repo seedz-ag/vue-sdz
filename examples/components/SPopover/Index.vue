@@ -61,6 +61,8 @@ export default {
   flex-direction: column;
   justify-content: center;
 
+  width: 700px;
+
   & > .buttons {
     display: flex;
     flex-wrap: wrap;
