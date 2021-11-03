@@ -16,9 +16,6 @@ $negative-color: #EB5757;
   --neutral-color: #{$neutral-color};
   --positive-color: #{$positive-color};
   --negative-color: #{$negative-color};
-
-  --percentage: 25;
-  --opacity: calc(var(--percentage) * 0.01)
 }
 
 $palettes:(
