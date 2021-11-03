@@ -24,51 +24,50 @@ $negative-color: #EB5757;
 $palettes:(
   primary:(
     base:   var(--primary-color),
-    // light: dark(var(--primary-color), .2),
-    light:  darken($primary-color, 8%),
-    medium: darken($primary-color, 12%),
-    dark:   darken($primary-color, 16%),
+    light: dark(var(--primary-color), 12%),
+    medium: dark(var(--primary-color), 32%),
+    dark:   dark(var(--primary-color), 48%),
   ),
 
   secondary:(
-    base:   $secondary-color,
-    light:  darken($secondary-color, 8%),
-    medium: darken($secondary-color, 12%),
-    dark:   darken($secondary-color, 16%),
+    base:   var(--secondary-color),
+    light:  dark(var(--secondary-color), 12%),
+    medium: dark(var(--secondary-color), 32%),
+    dark:   dark(var(--secondary-color), 48%),
   ),
 
   highlight:(
-    base:   $highlight-color,
-    light:  rgba($highlight-color, .08),
-    medium: rgba($highlight-color, .32),
-    dark:   rgba($highlight-color, .64)
+    base:   var(--highlight-color),
+    light:  light(var(--highlight-color), 88%),
+    medium: light(var(--highlight-color), 64%),
+    dark:   dark(var(--highlight-color), 32%)
   ),
 
   base:(
-    base:   $base-color,
-    light:  lighten($base-color, 35%),
-    medium: lighten($base-color, 20%),
-    dark:   darken($base-color, 8%),
+    base:   var(--base-color),
+    light:  light(var(--base-color), 48%),
+    medium: light(var(--base-color), 4%),
+    dark:   dark(var(--base-color), 72%),
   ),
 
   neutral:(
     base:   #FFFFFF,
-    light:  darken($neutral-color, 4%),
-    medium: darken($neutral-color, 8%),
-    dark:   darken($neutral-color, 12%)
+    light:  dark(var(--neutral-color), 1%),
+    medium: dark(var(--neutral-color), 5%),
+    dark:   dark(var(--neutral-color), 10%)
   ),
 
   positive:(
-    base:   $positive-color,
-    light:  rgba($positive-color, .08),
-    medium: rgba($positive-color, .32),
-    dark:   rgba($positive-color, .64)
+    base:   var(--positive-color),
+    light:  light(var(--positive-color), 88%),
+    medium: light(var(--positive-color), 64%),
+    dark:   dark(var(--positive-color), 32%)
   ),
 
   negative:(
-    base:   $negative-color,
-    light:  rgba($negative-color, .08),
-    medium: rgba($negative-color, .32),
-    dark:   rgba($negative-color, .64)
+    base:   var(--negative-color),
+    light:  light(var(--negative-color), 88%),
+    medium: light(var(--negative-color), 64%),
+    dark:   dark(var(--negative-color), 32%)
   )
 );
