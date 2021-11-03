@@ -42,7 +42,6 @@ export default {
 
 .s-alert {
   padding: 16px;
-  max-width: 335px;
   text-align: center;
   border-radius: $border-radius-sm;
 
