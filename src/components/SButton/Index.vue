@@ -11,9 +11,14 @@
   >
     <s-icon
       v-if="icon"
+
+      class="icon"
+
+      :primary-color="primaryIconColor"
+      :secondary-color="secondaryIconColor"
+
       :icon="icon"
       :size="iconSize"
-      class="icon"
     />
 
     <span v-if="$slots.default" class="text">
@@ -28,9 +33,6 @@
 </template>
 
 <script>
-/**
- * The standard button used throught convenia projects.
- */
 export default {
   name: 'SButton',
 
@@ -56,6 +58,10 @@ export default {
       type: [String, Number],
       default: '20'
     },
+
+    primaryIconColor: Boolean,
+
+    secondaryIconColor: Boolean,
 
     small: Boolean,
 
@@ -120,7 +126,7 @@ export default {
   cursor: pointer;
   padding: 0 40px;
   transform-style: preserve-3d;
-  background-color: color(primary, base);
+  background: color(primary, base);
 
   border: $border-radius-none;
   border-radius: $border-radius-sm;
@@ -128,14 +134,11 @@ export default {
   transition: border .3s,
               border .3s,
               opacity .3s,
-              background-color .3s;
+              background .3s;
 
-  & > .border { border-color: color(primary, base); }
-
-  &::before { background-color: color(primary, base); }
-  &:hover { background-color: color(primary, light); }
-  &:active { background-color: color(primary, dark); }
-  // &:active { background-color: map-get($primary-color, base-48) !important; }
+  &::before { background: color(primary, base); }
+  &:hover { background: color(primary, light); }
+  &:active { background: color(primary, dark); }
 
   // &::before {
   //   content: '';
@@ -226,15 +229,15 @@ export default {
     height: auto;
     min-width: auto;
     min-height: auto;
-    background-color: color(neutral, base);
-
-    &:hover, &:active {
-      text-decoration: underline;
-      text-decoration-color: color(primary, base);
-      }
+    background: color(neutral, base);
 
     & > .text {
       color: color(primary, base);
+
+      &:hover, &:active {
+        text-decoration: underline;
+        text-decoration-color: color(primary, base);
+      }
     }
   }
 
@@ -255,43 +258,35 @@ export default {
   }
 
   &.--grey {
-    background-color: color(neutral, light);
+    background: color(neutral, light);
 
-    & > .border { border-color: color(neutral, light); }
-
-    &::before { background-color: color(neutral, light); }
-    &:hover { background-color: color(neutral, medium); }
-    &:active { background-color: color(neutral, dark) !important; }
+    &::before { background: color(neutral, light); }
+    &:hover { background: color(neutral, medium); }
+    &:active { background: color(neutral, dark) !important; }
   }
 
   // &.--primary {
-  //   background-color: color(primary, base);
+  //   background: color(primary, base);
 
-  //   & > .border { border-color: color(primary, base); }
-
-  //   &::before { background-color: color(primary, base); }
-  //   &:hover { background-color: color(primary, light); }
-  //   &:active { background-color: map-get($primary-color, base-48) !important; }
+  //   &::before { background: color(primary, base); }
+  //   &:hover { background: color(primary, light); }
+  //   &:active { background: map-get($primary-color, base-48) !important; }
   // }
 
   &.--success {
     background: color(positive, base);
 
-    & > .border { border-color: color(positive, base); }
-
-    &::before { background-color: color(positive, base); }
-    &:hover { background-color: color(positive, medium); }
-    &:active { background-color: color(positive, dark) !important; }
+    &::before { background: color(positive, base); }
+    &:hover { background: color(positive, medium); }
+    &:active { background: color(positive, dark) !important; }
   }
 
   &.--error {
     background: color(negative, base);
 
-    & > .border { border-color: color(negative, base); }
-
-    &::before { background-color: color(negative, base); }
-    &:hover { background-color: color(negative, medium); }
-    &:active { background-color: color(negative, dark) !important; }
+    &::before { background: color(negative, base); }
+    &:hover { background: color(negative, medium); }
+    &:active { background: color(negative, dark) !important; }
   }
 
   &.--full-width { width: 100%; }
@@ -301,6 +296,13 @@ export default {
     background: color(neutral, base);
     border: 1px solid color(primary, base);
 
+    &.--disabled {
+      background: color(neutral, base);
+      border-color: color(neutral, light);
+
+      & > .text { color: color(neutral, light); }
+    }
+
     &::before, &::after { display: none; }
 
     & > .icon { filter: unset; }
@@ -308,14 +310,15 @@ export default {
     & > .loader {}
 
     &:hover { background: color(neutral, light); }
-    // &:active { background: color(neutral, medium); }
+    &:active { background: color(neutral, medium); }
   }
 
   &.--disabled {
-    cursor: default;
     user-select: none;
     pointer-events: none;
+    // cursor: not-allowed;
     background: color(neutral, dark);
+    border-color: color(neutral, light);
 
     &::before, &::after { opacity: 0; }
 
@@ -328,7 +331,7 @@ export default {
 
   &.--loading {
     pointer-events: none;
-    background-color: color(neutral, light);
+    background: color(neutral, light);
 
     & > .text, .icon { visibility: hidden; }
     // & > .loader > .loader > path { fill: white; }
