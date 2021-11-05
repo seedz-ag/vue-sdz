@@ -1,5 +1,8 @@
 <template>
-  <i :class="`s-icon icon ${icon}`" :style="{ 'font-size': size + 'px' }" />
+  <i
+    :class="classes"
+    :style="{ 'font-size': size + 'px' }"
+  />
 </template>
 
 <script>
@@ -15,6 +18,23 @@ export default {
     size: {
       type: [String, Number],
       default: 20
+    },
+
+    primaryColor: Boolean,
+
+    secondaryColor: Boolean
+  },
+
+  computed: {
+    classes () {
+      return [
+        `s-icon icon ${this.icon}`,
+
+        {
+          '--primary': this.primaryColor,
+          '--secondary': this.secondaryColor
+        }
+      ]
     }
   }
 
@@ -27,7 +47,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./src/styles/_index.scss";
+
 .s-icon {
   display: inline-block;
+
+  &.--primary { color: color(primary, base); }
+  &.--secondary { color: color(secondary, base); }
 }
 </style>
