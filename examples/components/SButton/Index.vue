@@ -11,7 +11,7 @@
     <br>
     <s-button link to="https://www.google.com">link route</s-button>
     <br>
-    <s-button link icon="plus" to="https://www.google.com">link icon</s-button>
+    <s-button link icon="sdz-check" secondary-icon-color to="https://www.google.com">link icon</s-button>
 
     <s-button small>small</s-button>
     <s-button default>default</s-button>
@@ -19,13 +19,14 @@
 
     <s-button loading>loading</s-button>
     <s-button outlined>outlined</s-button>
+    <s-button outlined disabled>outlined disabled</s-button>
     <s-button primary>primary</s-button>
     <s-button success>success</s-button>
     <s-button grey>grey</s-button>
     <s-button error>error</s-button>
     <s-button disabled>disabled</s-button>
     <s-button full-width>full-width</s-button>
-    <s-button icon="plus">icon</s-button>
+    <s-button icon="sdz-check">icon</s-button>
   </div>
 </template>
 

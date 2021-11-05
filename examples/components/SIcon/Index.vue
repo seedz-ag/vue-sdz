@@ -1,6 +1,10 @@
 <template>
   <div class="s-icon-example">
-    <s-icon v-for="icon in icons" :key="icon" :icon="icon" size="40" />
+    <div v-for="icon in icons" :key="icon" class="icons">
+      <s-icon :icon="icon" size="40" />
+
+      <span>{{ icon }}</span>
+    </div>
   </div>
 </template>
 
@@ -70,7 +74,18 @@ export default {
 </script>
 
 <style lang="scss">
-.s-icon-example > .s-icon { padding: 20px; }
+.s-icon-example {
+  display: flex;
+  flex-direction: column;
+
+  & > .icons {
+    display: flex;
+    align-items: center;
+
+    & > .s-icon { padding: 10px; }
+    & > span { margin-left: 10px; }
+  }
+}
 </style>
 
 
