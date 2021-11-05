@@ -32,7 +32,7 @@ const config = {
       // eslint-disable-next-line quotes
       // prefix: `@import "src/styles/index.scss";`,
       output: 'dist/css/build.css',
-      outputStyle: 'compressed',
+      // outputStyle: 'compressed',
       processor: () => postcss([autoprefixer()])
     }),
 
