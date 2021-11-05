@@ -11,7 +11,7 @@
 
           <div class="actions">
             <slot name="actions" />
-            <s-button icon="plus" :disabled="disabled" @click="$emit('close')" />
+            <s-button icon="sdz-close" :disabled="disabled" @click="$emit('close')" />
           </div>
         </div>
 
