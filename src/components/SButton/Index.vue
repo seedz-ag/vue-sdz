@@ -190,8 +190,8 @@ export default {
   }
 
   &.--has-icon {
-    & > .icon { left: 20px; }
     & > .text { padding-left: 10px; }
+    & > .icon { position: absolute; left: 20px; }
   }
 
   & > .text {
@@ -230,6 +230,8 @@ export default {
     min-width: auto;
     min-height: auto;
     background: color(neutral, base);
+
+    & > .icon { position: unset; }
 
     & > .text {
       color: color(primary, base);
