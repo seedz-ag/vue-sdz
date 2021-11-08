@@ -7,7 +7,7 @@
         <span v-if="item.child" class="action">-</span>
       </div>
 
-      <ul :style="{ height: getListHeight(index) }" class="s-sidebar-item">
+      <s-collapsible no-header :is-opened="activeItem === index">
         <li
           v-for="(child, childIndex) in item.child"
           :key="childIndex"
@@ -17,53 +17,54 @@
             <span class="name">{{ child.name }}</span>
           </div>
         </li>
-      </ul>
+      </s-collapsible>
     </li>
   </ul>
 </template>
 
 <script>
+import SCollapsible from '../SCollapsible/Index.vue'
+
 export default {
   name: 'SSidebarItem',
+
+  components: { SCollapsible },
 
   props: {
     item: {
       type: Object,
       required: true
     },
+
     activeChildren: {
       type: Array,
       required: true,
     },
+
     index: Number,
+
     activeItem: Number,
-    activeChild: Number,
-  },
 
-  computed: {
-    itemsSize () {
-      const items = this.activeChildren?.length * 40
-      const margin = (this.activeChildren?.length + 1) * 10
-
-      return (items + margin) + 'px'
-    }
+    activeChild: Number
   },
 
   methods: {
-    defaultClasses (item) {
-      return ['item', { '--is-disabled': item.disabled }]
+    disabledClass (item) {
+      return { '--is-disabled': item.disabled }
     },
 
     itemClasses (item, index) {
       return [
-        ...this.defaultClasses(item),
+        'item',
+        this.disabledClass(item),
         { '--is-active-item': this.activeItem === index }
       ]
     },
 
     childClasses (item, index) {
       return [
-        ...this.defaultClasses(item),
+        'item-child',
+        this.disabledClass(item),
         { '--is-active-child': this.activeChild === index }
       ]
     },
@@ -82,18 +83,41 @@ export default {
 
       this.$emit('active-child', index)
       this.$emit('redirect', item.redirect)
-    },
-
-    getListHeight (index) {
-      if (!this.activeChildren?.length || this.activeItem !== index) return 0
-
-      return this.itemsSize
     }
   }
 }
 </script>
 
 <style lang="scss">
+%sidebar-item {
+  margin: 5px 10px;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  & > .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 40px;
+
+    & > .icon {
+      margin-right: 30px;
+    }
+
+    & > .name {
+      width: 100%;
+      color: white;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: Roboto, sans-serif;
+    }
+
+    & > .action {}
+  }
+}
+
 .s-sidebar-item {
   margin: 0;
   padding: 0;
@@ -102,38 +126,18 @@ export default {
   transition: height .3s ease-in-out;
 
   & > .item {
-    margin: 5px 10px;
-    padding: 0 10px;
-    cursor: pointer;
-    border-radius: 5px;
+    @extend %sidebar-item;
 
-    & > .content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      min-height: 40px;
-
-      & > .icon {
-        margin-right: 30px;
-      }
-
-      & > .name {
-        width: 100%;
-        color: white;
-        font-size: 14px;
-        font-weight: 400;
-        font-family: Roboto, sans-serif;
-      }
-
-      & > .action {}
-    }
-
-    & > .s-sidebar-item {
+    & > .s-collapsible {
       padding: 0;
 
-      & .item { margin: 10px; }
-      & > .--is-active-child { background-color: #299d8d; }
+      & > .wrapper {
+        & > .item-child {
+          @extend %sidebar-item;
+        }
+
+        & > .--is-active-child { background-color: #299d8d; }
+      }
     }
   }
 
