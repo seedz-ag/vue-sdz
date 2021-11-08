@@ -23,7 +23,7 @@
 
     <s-input
       round
-      icon="plus"
+      icon="sdz-eye-off"
       :value="inputSearch"
       :placeholder="'Search'"
       @input="value => inputSearch = value"
