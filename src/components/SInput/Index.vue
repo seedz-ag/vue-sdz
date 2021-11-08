@@ -160,16 +160,21 @@ $icon-position: 8px;
     height: 50px;
     font-size: 14px;
     text-indent: 20px;
-    border: 1px solid color(base, light);
+
+    border-width: 1px;
+    border-style: solid;
+    border-image-slice: 1;
     border-radius: $border-radius-sm;
+    border-image-source: color(base, light);
+
     transition: color .3s, border-color .3s;
 
     &::placeholder { color: color(base, light); }
 
     &.--has-icon { text-indent: 35px; }
     &.--is-textarea { padding-top: 30px; }
+    &.--is-rounded { border-radius: 50px; }
     &.--has-right-icon { padding-right: 40px; }
-    &.--is-rounded { border-radius: 50px; border: 1px solid color(base, light); }
   }
 
   & > .label {
