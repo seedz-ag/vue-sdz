@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 import GettingStarted from './GettingStarted.vue'
 
-import StylesList from './styles/Index.vue'
-import StylesRoute from './styles/routes.js'
+import StylesList from './styless/Index.vue'
+import StylesRoute from './styless/routes.js'
 
 import ComponentList from './components/Index.vue'
 import ComponentsRoute from './components/routes.js'
