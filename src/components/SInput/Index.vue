@@ -29,7 +29,9 @@ import { mask } from 'vue-the-mask'
 import SIcon from '../SIcon/Index.vue'
 import SInputContainer from '../SInputContainer/Index.vue'
 
-const convertToRaw = data => data.replace(/[^\w\s]/gi, '')
+const convertToRaw = data => data
+  .replace(/[^\w\s]/gi, '')
+  .replace(/\s/g, '')
 
 export default {
   name: 'SInput',
