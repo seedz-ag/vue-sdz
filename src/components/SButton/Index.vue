@@ -191,12 +191,16 @@ export default {
 
   &.--has-icon {
     & > .text { padding-left: 10px; }
-    & > .icon { position: absolute; left: 20px; }
+    & > .icon {
+      position: absolute;
+      left: 20px;
+      color: color(neutral, base);
+    }
   }
 
   & > .text {
     flex: 1;
-    color: #FFF;
+    color: color(neutral, base);
     white-space: nowrap;
     font-size: $font-size-xs;
 
@@ -231,7 +235,10 @@ export default {
     min-height: auto;
     background: color(neutral, base);
 
-    & > .icon { position: unset; }
+    & > .icon {
+      position: unset;
+      color: color(primary, base);
+    }
 
     & > .text {
       color: color(primary, base);
