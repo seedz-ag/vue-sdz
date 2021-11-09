@@ -1,11 +1,21 @@
 <template>
   <div class="s-modal-example">
-    <s-button @click="show = true">open modal</s-button>
+    <s-button @click="showSimpleModal = true">open simple modal</s-button>
 
     <s-modal
       title="header modal"
-      :is-opened="show"
-      @close="show = false"
+      :is-opened="showSimpleModal"
+      @close="showSimpleModal = false"
+    >
+      modal content
+    </s-modal>
+
+    <s-button @click="showNoHeaderModal = true">open no header modal</s-button>
+
+    <s-modal
+      no-header
+      :is-opened="showNoHeaderModal"
+      @close="showNoHeaderModal = false"
     >
       modal content
     </s-modal>
@@ -21,12 +31,15 @@ export default {
 
   data () {
     return {
-      show: false
+      showSimpleModal: false,
+      showNoHeaderModal: false
     }
   }
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.s-modal-example {
+  & > .s-button { margin-bottom: 30px; }
+}
 </style>

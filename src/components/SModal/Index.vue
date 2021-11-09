@@ -4,8 +4,8 @@
       <s-overlay v-if="isOpened && !noOverlay" show @close="emit" />
 
       <div :class="classes" @focusout="onClickOutside">
-        <div class="header">
-          <slot v-if="!noHeader" name="header">
+        <div v-if="!noHeader" class="header">
+          <slot name="header">
             <div class="title">{{ title }}</div>
           </slot>
 
