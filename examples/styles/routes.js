@@ -1,4 +1,4 @@
-const load = component => () => import(/* webpackChunkName: "[request]" */ `./${component}.vue`)
+const load = component => () => import(`./${component}.vue`)
 
 export default [
   {
