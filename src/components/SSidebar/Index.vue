@@ -52,7 +52,7 @@ export default {
 
       this.setActiveItem(path)
       this.setActiveChild(path)
-    }, 200)
+    }, 350)
   },
 
   computed: {
