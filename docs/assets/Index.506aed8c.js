@@ -1,1 +1,0 @@
-import{n as t,a as e}from"./index.715d8a9a.js";import"./vendor.5affd582.js";const n={};var s=t({components:{SSidebar:e}},(function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"s-sidebar-example"},[e("s-sidebar")],1)}),[],!1,a,null,null,null);function a(t){for(let e in n)this[e]=n[e]}var r=function(){return s.exports}();export{r as default};
