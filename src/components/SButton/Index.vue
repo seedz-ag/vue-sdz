@@ -325,13 +325,7 @@ export default {
     border: 1px solid color(primary, base);
 
     &.--has-icon {
-      & > .icon {
-        color: color(primary, base);
-        // color: transparent;
-        // background-clip: text;
-        // background: color(neutral, dark);
-        // -webkit-background-clip: text;
-      }
+      & > .icon { color: color(primary, base); }
     }
 
     &.--disabled {
@@ -339,6 +333,12 @@ export default {
       border-color: color(neutral, light);
 
       & > .text { color: color(neutral, light); }
+      & > .icon {
+        color: transparent;
+        background-clip: text;
+        background: color(neutral, dark);
+        -webkit-background-clip: text;
+      }
     }
 
     &::before, &::after { display: none; }

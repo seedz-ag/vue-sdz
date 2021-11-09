@@ -29,6 +29,7 @@
     <s-button outlined>outlined</s-button>
     <s-button outlined disabled>outlined disabled</s-button>
     <s-button outlined icon="sdz-check">outlined icon</s-button>
+    <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>
 
     <s-button loading>loading</s-button>
     <s-button primary>primary</s-button>
