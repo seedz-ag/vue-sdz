@@ -1,8 +1,8 @@
-const load = component => () => import(`./${component}.vue`)
+import Palettes from './Palettes.vue'
 
 export default [
   {
-    component: load('Palettes'),
+    component: Palettes,
     name: 'style-palettes',
     path: '/vue-sdz/styles/palettes'
   }
