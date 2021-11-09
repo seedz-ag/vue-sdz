@@ -25,9 +25,12 @@
     <s-button default>default</s-button>
     <s-button large>large</s-button>
 
-    <s-button loading>loading</s-button>
+
     <s-button outlined>outlined</s-button>
     <s-button outlined disabled>outlined disabled</s-button>
+    <s-button outlined icon="sdz-check">outlined icon</s-button>
+
+    <s-button loading>loading</s-button>
     <s-button primary>primary</s-button>
     <s-button success>success</s-button>
     <s-button grey>grey</s-button>

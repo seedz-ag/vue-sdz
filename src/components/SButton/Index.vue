@@ -324,6 +324,16 @@ export default {
     background: color(neutral, base);
     border: 1px solid color(primary, base);
 
+    &.--has-icon {
+      & > .icon {
+        color: color(primary, base);
+        // color: transparent;
+        // background-clip: text;
+        // background: color(neutral, dark);
+        // -webkit-background-clip: text;
+      }
+    }
+
     &.--disabled {
       background: color(neutral, base);
       border-color: color(neutral, light);
