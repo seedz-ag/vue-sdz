@@ -261,8 +261,8 @@ $spacing-bottom: 80px;
 
     & > .header {
       display: flex;
-      align-items: flex-start;
       flex-shrink: 0;
+      align-items: center;
 
       padding: 20px 20px 15px;
 
