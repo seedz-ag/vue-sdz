@@ -9,8 +9,16 @@
 
     <s-button link external to="https://www.google.com">link external</s-button>
     <br>
+
+    <s-button link disabled>link disabled</s-button>
+    <br>
+
+    <s-button link icon="sdz-check" disabled>link icon disabled</s-button>
+    <br>
+
     <s-button link to="https://www.google.com">link route</s-button>
     <br>
+
     <s-button link icon="sdz-check" secondary-icon-color to="https://www.google.com">link icon</s-button>
 
     <s-button small>small</s-button>

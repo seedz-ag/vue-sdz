@@ -235,6 +235,25 @@ export default {
     min-height: auto;
     background: color(neutral, base);
 
+    &.--disabled {
+      background: transparent;
+
+      & > .icon {
+        color: transparent;
+        background-clip: text;
+        background: color(neutral, dark);
+        -webkit-background-clip: text;
+      }
+
+      & > .text {
+        color: transparent;
+        background-clip: text;
+        background: color(neutral, dark);
+        -webkit-background-clip: text;
+        // https://codyhouse.co/nuggets/text-gradients
+      }
+    }
+
     & > .icon {
       position: unset;
       color: color(primary, base);
