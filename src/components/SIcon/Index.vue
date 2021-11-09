@@ -20,6 +20,8 @@ export default {
       default: 20
     },
 
+    disabled: Boolean,
+
     primaryColor: Boolean,
 
     secondaryColor: Boolean
@@ -31,6 +33,7 @@ export default {
         `s-icon icon ${this.icon}`,
 
         {
+          '--disabled': this.disabled,
           '--primary': this.primaryColor,
           '--secondary': this.secondaryColor
         }
@@ -51,6 +54,13 @@ export default {
 
 .s-icon {
   display: inline-block;
+
+  &.--disabled {
+    color: transparent;
+    background-clip: text;
+    background: color(neutral, dark);
+    -webkit-background-clip: text;
+  }
 
   &.--primary { color: color(primary, base); }
   &.--secondary { color: color(secondary, base); }

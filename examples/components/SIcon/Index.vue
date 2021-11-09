@@ -1,5 +1,9 @@
 <template>
   <div class="s-icon-example">
+    disabled
+    <s-icon disabled icon="sdz-key" size="40" />
+    <br>
+
     <div v-for="icon in icons" :key="icon" class="icons">
       <s-icon :icon="icon" size="40" />
 
