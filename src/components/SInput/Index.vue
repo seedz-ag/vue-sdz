@@ -29,6 +29,8 @@ import { mask } from 'vue-the-mask'
 import SIcon from '../SIcon/Index.vue'
 import SInputContainer from '../SInputContainer/Index.vue'
 
+const convertToRaw = data => data.replace(/[^\w\s]/gi, '')
+
 export default {
   name: 'SInput',
 
@@ -81,6 +83,8 @@ export default {
       default: ''
     },
 
+    raw: Boolean,
+
     positiveOnly: Boolean
   },
 
@@ -122,7 +126,11 @@ export default {
         ...this.$listeners,
 
         input: e => {
-          this.$emit('input', this.isMoney ? e : e?.target?.value)
+          const v = e?.target?.value
+
+          this.$emit('input', this.isMoney
+            ? e
+            : this.raw ? convertToRaw(v) : v)
         },
 
         focus: e => {
