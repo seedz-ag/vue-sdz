@@ -29,10 +29,6 @@
 import SOverlay from '../SOverlay/Index.vue'
 import SButton from '../SButton/Index.vue'
 
-const ALIGNMENTS = ['right', 'left', 'center']
-const includes = values => value => values.includes(value)
-const isAlignment = includes(ALIGNMENTS)
-
 export default {
   name: 'SModal',
 
@@ -53,16 +49,6 @@ export default {
     title: {
       type: String,
       default: ''
-    },
-
-    /**
-     * Positioning of the modal on the screen,
-     * one of: ['right', 'left', 'center'].
-     */
-    position: {
-      type: String,
-      default: 'center',
-      validator: isAlignment
     },
 
     /**
@@ -135,7 +121,7 @@ export default {
   computed: {
     classes () {
       return [ 'modal',
-        `-${this.position}`, {
+        {
           '-fullscreen': this.fullscreen,
           '-scroll-shadow': this.hasScrollShadow
         }]
@@ -203,61 +189,48 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-$spacing-top: 80px;
-$spacing-bottom: 80px;
-
 .s-modal {
   position: fixed;
-  z-index: $z-index-5;
-  bottom: 0;
-  right: 0;
-  left: 0;
   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100vw;
   height: 100vh;
+  z-index: $z-index-5;
 
   & > .modal {
+    opacity: 1;
+    display: flex;
+    margin: 0 auto;
     position: fixed;
     z-index: $z-index-3;
-    display: flex;
     flex-direction: column;
-    max-width: 100%;
-    margin: 0 auto;
-    opacity: 1;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.16);
+    background:linear-gradient(180deg, #FFF, rgba(255, 255, 255, .83) 100%);
 
+    max-width: 100%;
     @include responsive (xs-mobile, mobile) { width: 100vw; height: 100vh; }
 
-    background:linear-gradient(180deg, #FFF, rgba(255, 255, 255, .83) 100%);
     &.-scroll-shadow { background: #FFF; }
 
-    &.-center {
-      right: 0;
-      left: 0;
-      top: 0;
-    }
-
     &:not(.-fullscreen) {
-      border-radius: 4px;
+      border-radius: $border-radius-md;
 
       @include responsive(tablet, desktop) {
-        top: $spacing-top;
         width: 100%;
-
         min-height: 250px;
 
         max-width: 580px;
-        max-height: calc(100vh - (#{$spacing-top + $spacing-bottom}))
+        max-height: 100vh;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
 
-    &.-fullscreen {
-      max-width: 100vw;
-      height: 100vh;
-
-      &.-left { left: 0px; }
-      &.-right { right: 0px; }
-    }
+    &.-fullscreen { height: 100vh; max-width: 100vw; }
 
     & > .header {
       display: flex;
@@ -266,9 +239,7 @@ $spacing-bottom: 80px;
 
       padding: 20px 20px 15px;
 
-      & > .title {
-        margin-right: auto;
-      }
+      & > .title { margin-right: auto; }
 
       & > .actions {
         display: flex;
@@ -277,18 +248,16 @@ $spacing-bottom: 80px;
         margin-left: auto;
 
         & > a:not(:last-child),
-        & > button:not(:last-child) {
-          margin-right: 10px;
-        }
+        & > button:not(:last-child) { margin-right: 10px; }
       }
     }
 
     & > .wrapper-content {
-      display: flex;
       flex-grow: 1;
+      display: flex;
 
-      position: relative;
       overflow: hidden;
+      position: relative;
 
       border-top: 1px solid rgba(0, 0, 0, 0.0);
 
@@ -300,16 +269,16 @@ $spacing-bottom: 80px;
         content: "";
         position: absolute;
         top: -17px;
-        z-index: 50;
         left: 2.5%;
+        z-index: 50;
 
         width: 95%;
         height: 17px;
 
         border-radius: 50%;
 
-        box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.0);
         transition: box-shadow 350ms ease-in-out;
+        box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.0);
       }
 
       & > .content {
@@ -335,10 +304,7 @@ $spacing-bottom: 80px;
 
     & > .modal {
       opacity: 0;
-
-      &:not(.-right, .-left) { transform: scale(0.3); }
-      &.-right { transform: translateX(100%); }
-      &.-left { transform: translateX(-100%); }
+      transform: scale(0.3);
     }
   }
 }
