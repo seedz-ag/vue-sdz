@@ -1,6 +1,7 @@
 <template>
   <div class="s-input-example">
     <s-input
+      raw
       label="mask"
       :mask="['####-####']"
       :value="inputMask"
@@ -46,6 +47,7 @@
       disabled
     />
 
+    <s-button @click="inputDataError = ''">reset</s-button>
     <s-input
       label="error"
       :validation="inputDataError ? '' : 'error msg'"
@@ -53,12 +55,20 @@
       @input="value => inputDataError = value"
     />
 
+    <s-button @click="inputTeste = ''">reset</s-button>
     <s-input
       label="teste"
       :value="inputTeste"
       placeholder="ex: Teste"
       @input="value => inputTeste = value"
     />
+
+    <input
+      label="teste"
+      :value="inputTeste"
+      placeholder="ex: Teste"
+      @input="value => e = value.target.value"
+    >
 
     <s-input
       label="is float label"
@@ -71,9 +81,10 @@
 
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
+import SButton from '../../../src/components/SButton/Index.vue'
 
 export default {
-  components: { SInput },
+  components: { SInput, SButton },
 
   data () {
     return {

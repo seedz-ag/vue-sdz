@@ -4,6 +4,7 @@
 
     <component
       :is="componentType"
+      :key="id"
 
       ref="input"
 
@@ -90,6 +91,14 @@ export default {
     positiveOnly: Boolean
   },
 
+  data: () => ({ id: 0 }),
+
+  watch: {
+    value (newV, oldV) {
+      if (oldV && !newV) this.id++
+    }
+  },
+
   computed: {
     sInputClasses () {
       return [
@@ -119,8 +128,9 @@ export default {
 
     componentType () {
       if (this.isMoney) return 'money'
+      if (this.textArea) return 'textarea'
 
-      return this.textArea ? 'textarea' : 'input'
+      return 'input'
     },
 
     listeners () {
