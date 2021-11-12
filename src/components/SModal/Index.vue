@@ -206,8 +206,8 @@ export default {
     position: fixed;
     z-index: $z-index-3;
     flex-direction: column;
+    background: color(neutral, base);
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.16);
-    background:linear-gradient(180deg, #FFF, rgba(255, 255, 255, .83) 100%);
 
     max-width: 100%;
     @include responsive (xs-mobile, mobile) { width: 100vw; height: 100vh; }
