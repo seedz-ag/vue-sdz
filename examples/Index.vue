@@ -19,12 +19,12 @@ export default {
       items: [
         {
           name: 'Getting Started',
-          icon: 'aaa',
+          icon: 'sdz-star',
           redirect: '/vue-sdz/getting-started'
         },
         {
           name: 'styles',
-          icon: 'plus',
+          icon: 'sdz-search',
           child: [
             { name: 'style-palettes', redirect: '/vue-sdz/styles/palettes' }
           ]
@@ -32,7 +32,7 @@ export default {
 
         {
           name: 'components',
-          icon: 'xxx',
+          icon: 'sdz-clock',
           child: [
             { name: 'alert', redirect: '/vue-sdz/components/alert' },
             { name: 'button', redirect: '/vue-sdz/components/button' },
@@ -56,7 +56,7 @@ export default {
 
         {
           name: 'api',
-          icon: 'yyy',
+          icon: 'sdz-mail',
           child: [
             { name: 'alert', redirect: '/vue-sdz/api/alert' },
             { name: 'button', redirect: '/vue-sdz/api/button' },

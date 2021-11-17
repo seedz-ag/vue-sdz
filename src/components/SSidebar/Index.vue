@@ -100,6 +100,8 @@ export default {
   display: flex;
   flex-direction: column;
 
+  overflow: auto;
+  padding-bottom: 20px;
   background-color: #3a7b80;
   box-shadow: 3px 0px 10px 0px rgba(0,0,0,0.2);
 }

@@ -33,7 +33,7 @@ export default {
       setTimeout(() => {
         this.$emit('target', target)
         this.contentHeight = target.scrollHeight
-      }, 100)
+      }, 200)
     })
 
     this.observer = new MutationObserver(callback)

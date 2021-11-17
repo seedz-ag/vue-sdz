@@ -1,10 +1,10 @@
 <template>
-  <ul class="s-sidebar-item">
+  <ul :class="['s-sidebar-item', { '--is-opened': item.child && index === activeItem }]">
     <li :class="itemClasses(item, index)">
       <div class="content" @click="onActiveItem(item, index)">
-        <span v-if="item.icon" class="icon">{{ item.icon }}</span>
+        <s-icon v-if="item.icon" :icon="item.icon" class="icon" />
         <span class="name">{{ item.name }}</span>
-        <span v-if="item.child" class="action">-</span>
+        <s-icon v-if="item.child" icon="sdz-chevron-up" class="action" />
       </div>
 
       <s-collapsible no-header :is-opened="activeItem === index">
@@ -23,12 +23,13 @@
 </template>
 
 <script>
+import SIcon from '../SIcon/Index.vue'
 import SCollapsible from '../SCollapsible/Index.vue'
 
 export default {
   name: 'SSidebarItem',
 
-  components: { SCollapsible },
+  components: { SCollapsible, SIcon },
 
   props: {
     item: {
@@ -102,9 +103,7 @@ export default {
 
     min-height: 40px;
 
-    & > .icon {
-      margin-right: 30px;
-    }
+    & > .icon { margin-right: 30px; }
 
     & > .name {
       width: 100%;
@@ -114,7 +113,7 @@ export default {
       font-family: Roboto, sans-serif;
     }
 
-    & > .action {}
+    & > .action { transition: transform .3s ease-in-out; }
   }
 }
 
@@ -122,8 +121,10 @@ export default {
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
   transition: height .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+
+  &.--is-opened > .item > .content > .action { transform: rotate(180deg); }
 
   & > .item {
     @extend %sidebar-item;
