@@ -47,6 +47,7 @@ export default {
             { name: 'modal', redirect: '/vue-sdz/components/modal' },
             { name: 'popover', redirect: '/vue-sdz/components/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
+            { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
             { name: 'select', redirect: '/vue-sdz/components/select' },
             { name: 'collapsible', redirect: '/vue-sdz/components/collapsible' },
             { name: 'input', redirect: '/vue-sdz/components/input' }
@@ -70,6 +71,7 @@ export default {
             { name: 'modal', redirect: '/vue-sdz/api/modal' },
             { name: 'popover', redirect: '/vue-sdz/api/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/api/feedbacks' },
+            { name: 'tabber', redirect: '/vue-sdz/api/tabber' },
             { name: 'select', redirect: '/vue-sdz/api/select' },
             { name: 'collapsible', redirect: '/vue-sdz/api/collapsible' },
             { name: 'input', redirect: '/vue-sdz/api/input' }
