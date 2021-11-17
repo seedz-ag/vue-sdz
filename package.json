@@ -1,6 +1,6 @@
 {
   "name": "vue-sdz",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "main": "dist/js/build.cjs.js",
   "module": "dist/js/build.esm.js",
   "private": false,
