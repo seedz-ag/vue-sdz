@@ -11,7 +11,7 @@
 
           <div class="actions">
             <slot name="actions" />
-            <s-button icon="sdz-close" :disabled="disabled" @click="$emit('close')" />
+            <s-icon icon="sdz-close" :disabled="disabled" primary-color @click.native="$emit('close')" />
           </div>
         </div>
 
@@ -27,12 +27,12 @@
 
 <script>
 import SOverlay from '../SOverlay/Index.vue'
-import SButton from '../SButton/Index.vue'
+import SIcon from '../SIcon/Index.vue'
 
 export default {
   name: 'SModal',
 
-  components: { SOverlay, SButton },
+  components: { SOverlay, SIcon },
 
   props: {
     /**
@@ -246,6 +246,8 @@ export default {
         align-items: center;
 
         margin-left: auto;
+
+        & > .icon { cursor: pointer; }
 
         & > a:not(:last-child),
         & > button:not(:last-child) { margin-right: 10px; }
