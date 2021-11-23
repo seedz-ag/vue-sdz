@@ -1,7 +1,8 @@
 <template>
   <div class="palettes">
+    <h1 class="h1">Colors</h1>
     <div v-for="color in colors" :key="color" :class="color">
-      <h1>{{ color }}</h1>
+      <h2 class="h2">{{ color }}</h2>
       <div class="palette">base</div>
       <div class="palette">light</div>
       <div class="palette">medium</div>
@@ -35,14 +36,12 @@ export default {
 
 .palettes {
   @mixin palettes ($color) {
-    & > :nth-child(1) { text-align: center; }
+    /*& > :nth-child(1) { text-align: center; }*/
     & > :nth-child(2) { background: color($color, base); }
     & > :nth-child(3) { background: color($color, light); }
     & > :nth-child(4) { background: color($color, medium); }
     & > :nth-child(5) { background: color($color, dark); }
   }
-
-  & > h1 { text-align: center; }
 
   & > div { margin-bottom: 50px; }
 
@@ -69,5 +68,9 @@ export default {
   & > .positive { @include palettes(positive) }
 
   & > .negative { @include palettes(negative) }
+
+  .neutral> .palette, .highlight > .palette, .positive > .palette, .negative > .palette{
+    color: #000;
+  }
 }
 </style>

@@ -19,44 +19,61 @@ export default {
       items: [
         {
           name: 'Getting Started',
-          icon: 'sdz-star',
-          redirect: '/vue-sdz/getting-started'
-        },
-        {
-          name: 'styles',
-          icon: 'sdz-search',
+          icon: 'aaa',
           child: [
-            { name: 'style-palettes', redirect: '/vue-sdz/styles/palettes' }
+            { name: 'home', redirect: '/vue-sdz/getting-started' }
           ]
         },
-
         {
-          name: 'components',
-          icon: 'sdz-clock',
+          name: 'Styles',
+          icon: 'plus',
           child: [
-            { name: 'alert', redirect: '/vue-sdz/components/alert' },
-            { name: 'button', redirect: '/vue-sdz/components/button' },
-            { name: 'card', redirect: '/vue-sdz/components/card' },
-            { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
-            { name: 'carousel', redirect: '/vue-sdz/components/carousel' },
+            { name: 'Colors', redirect: '/vue-sdz/styles/palettes' }
+          ]
+        },
+        {
+          name: 'Content',
+          icon: 'xxx',
+          child: [
             { name: 'table', redirect: '/vue-sdz/components/table' },
             { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
-            { name: 'icon', redirect: '/vue-sdz/components/icon' },
-            { name: 'image', redirect: '/vue-sdz/components/image' },
+            { name: 'image', redirect: '/vue-sdz/components/image' }
+          ]
+        },
+        {
+          name: 'Forms',
+          icon: 'xxx',
+          child: [
+            { name: 'input', redirect: '/vue-sdz/components/input' },
+            { name: 'button', redirect: '/vue-sdz/components/button' },
+            { name: 'select', redirect: '/vue-sdz/components/select' },
+            { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' }
+          ]
+        },
+        {
+          name: 'Components',
+          icon: 'xxx',
+          child: [
+            { name: 'alert', redirect: '/vue-sdz/components/alert' },
+            { name: 'card', redirect: '/vue-sdz/components/card' },
+            { name: 'carousel', redirect: '/vue-sdz/components/carousel' },
             { name: 'loader', redirect: '/vue-sdz/components/loader' },
             { name: 'modal', redirect: '/vue-sdz/components/modal' },
             { name: 'popover', redirect: '/vue-sdz/components/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
-            { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
-            { name: 'select', redirect: '/vue-sdz/components/select' },
-            { name: 'collapsible', redirect: '/vue-sdz/components/collapsible' },
-            { name: 'input', redirect: '/vue-sdz/components/input' }
+            { name: 'collapse', redirect: '/vue-sdz/components/collapsible' }
           ]
         },
-
+        {
+          name: 'Extented',
+          icon: 'xxx',
+          child: [
+            { name: 'icon', redirect: '/vue-sdz/components/icon' }
+          ]
+        },
         {
           name: 'api',
-          icon: 'sdz-mail',
+          icon: 'yyy', 
           child: [
             { name: 'alert', redirect: '/vue-sdz/api/alert' },
             { name: 'button', redirect: '/vue-sdz/api/button' },
@@ -71,7 +88,6 @@ export default {
             { name: 'modal', redirect: '/vue-sdz/api/modal' },
             { name: 'popover', redirect: '/vue-sdz/api/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/api/feedbacks' },
-            { name: 'tabber', redirect: '/vue-sdz/api/tabber' },
             { name: 'select', redirect: '/vue-sdz/api/select' },
             { name: 'collapsible', redirect: '/vue-sdz/api/collapsible' },
             { name: 'input', redirect: '/vue-sdz/api/input' }
@@ -103,7 +119,48 @@ export default {
 
   overflow-y: auto;
   overflow-x: hidden;
+}
 
+.main{
+  width: 70%;
+  margin: 30px auto;
+}
 
+.h1{
+  font-size: 1.80rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.h2{
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.main-text p{
+    line-height: 2;
+}
+
+.box{
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 30px;
+  margin-bottom: 60px;
+}
+
+.flex-inline{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-line{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center{
+  align-items: center;
 }
 </style>
