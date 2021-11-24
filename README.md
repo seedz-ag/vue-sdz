@@ -15,7 +15,9 @@
 **Install**
 ```javascript
 import Vue from 'vue'
+
 import VueSdz from 'vue-sdz'
+
 
 Vue.use(VueSdz)
 ```
