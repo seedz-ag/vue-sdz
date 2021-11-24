@@ -1,12 +1,25 @@
 <template>
   <div class="s-checkbox-example">
-    <s-checkbox v-model="data0" />
+    <h1 class="h1">Check and Radio</h1>
 
-    <s-checkbox label="positive" v-model="data1" />
+    <h2 class="h2">Default</h2>
+    <div class="box">
+      <s-checkbox v-model="data0" label="Default Checkbox" />
+      <br>
+      <s-checkbox v-model="data2" label="Checked Checkbox"/>
+    </div>
 
-    <s-checkbox label="negative" negative v-model="data2" />
+    <h2 class="h2">Stats</h2>
+    <div class="box">
+      <s-checkbox label="Positive" v-model="data1" />
+      <br>
+      <s-checkbox label="Negative" negative v-model="data2" />
+    </div>
 
-    <s-checkbox label="disabled" disabled v-model="data3" />
+    <h2 class="h2">Disabled</h2>
+    <div class="box">
+      <s-checkbox label="disabled" disabled v-model="data1" />
+    </div>
   </div>
 </template>
 

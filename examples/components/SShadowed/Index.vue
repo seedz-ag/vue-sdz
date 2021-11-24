@@ -1,5 +1,6 @@
 <template>
   <div class="s-shadowed-example">
+    <h1 class="h1">Shadowed</h1>
     <s-shadowed class="example-1">
       <div class="wrapper">
         AAA <br>

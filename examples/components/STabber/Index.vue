@@ -1,17 +1,20 @@
 <template>
   <div class="s-tabber-example">
-    <s-tabber
-      :tabs="tabs"
-      :active-tab="activeTab"
-      @change-tab="tab => activeTab = tab"
-    />
+    <h1 class="h1">Tabber</h1>
+    <div class="box">
+      <s-tabber
+        :tabs="tabs"
+        :active-tab="activeTab"
+        @change-tab="tab => activeTab = tab"
+      />
 
-    <s-tabber
-      alternative
-      :tabs="tabs"
-      :active-tab="activeTab"
-      @change-tab="tab => activeTab = tab"
-    />
+      <s-tabber
+        alternative
+        :tabs="tabs"
+        :active-tab="activeTab"
+        @change-tab="tab => activeTab = tab"
+      />
+    </div>
   </div>
 </template>
 

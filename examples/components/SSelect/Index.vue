@@ -1,58 +1,71 @@
 <template>
   <div class="s-select-example">
-    <s-select
-      label="simple"
-      display="slug"
-      display-by="name"
-      placeholder="Selecione uma opção"
-      :items="items"
-      v-model="data1"
-    />
+    <h1 class="h1">Select</h1>
 
-    <s-select
-      label="with slots"
-      display="slug"
-      display-by="name"
-      placeholder="Selecione uma opção"
-      clear-on-select
-      :items="items"
-      v-model="data2"
-    >
-      <div slot="option" slot-scope="{ option }">
-        {{ option['slug'] }} - {{ option['name'] }}
-      </div>
-    </s-select>
+    <h2 class="h2">Default</h2>
+      <div class="box">
+        <s-select
+        label="Simple"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        :items="items"
+        v-model="data1"
+      />
 
-    <s-select
-      label="multiple"
-      display="slug"
-      display-by="name"
-      placeholder="Selecione uma opção"
-      multiple
-      hide-selected
-      :items="items"
-      v-model="data3"
-    />
+      <s-select
+        label="With slots"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        clear-on-select
+        :items="items"
+        v-model="data2"
+      >
+        <div slot="option" slot-scope="{ option }">
+          {{ option['slug'] }} - {{ option['name'] }}
+        </div>
+      </s-select>
+    </div>
+    
 
-    <s-select
-      label="multiple with validation ( >=3 )"
-      display="slug"
-      display-by="name"
-      placeholder="Selecione uma opçãoooooooooooooooooo"
-      :validation="data4.length >= 3 ? `Máximo de 3 opções selecionadas` : ''"
-      multiple
-      :items="items"
-      v-model="data4"
-    />
+    <h2 class="h2">Multiples</h2>
+    <div class="box">
+      <s-select
+        label="Multiple"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        multiple
+        hide-selected
+        :items="items"
+        v-model="data3"
+      />
 
-    <s-select
-      label="disabled"
-      display="slug"
-      display-by="name"
-      placeholder="Selecione uma opção"
-      disabled
-      :items="items"
-    />
+      <s-select
+        label="Multiple with validation ( >=3 )"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        :validation="data4.length >= 3 ? `Máximo de 3 opções selecionadas` : ''"
+        multiple
+        :items="items"
+        v-model="data4"
+      />
+    </div>
+    
+    <h2 class="h2">Disabled</h2>
+    <div class="box">
+      <s-select
+        label="Disabled"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        disabled
+        :items="items"
+      />
+    </div>
+    
   </div>
 </template>
 

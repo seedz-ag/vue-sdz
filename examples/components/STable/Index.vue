@@ -1,22 +1,25 @@
 <template>
   <section class="s-table-example">
-    <s-table
-      :cols="cols"
-      :rows="tableRows"
-      :search="search"
-      :search-params="['name']"
-      :checkeds.sync="checkeds"
-      :current-page="2"
-      :per-page="5"
-      selectable
-      sortable
-      pagination-type="ellipsised"
-      @sort="onSort"
-      @filter="synchronizeSearch"
-    >
-    <!-- paginable
-    max-height="300" -->
-    </s-table>
+    <h1 class="h1">Table</h1>
+    <div class="box">
+      <s-table
+        :cols="cols"
+        :rows="tableRows"
+        :search="search"
+        :search-params="['name']"
+        :checkeds.sync="checkeds"
+        :current-page="2"
+        :per-page="5"
+        selectable
+        sortable
+        pagination-type="ellipsised"
+        @sort="onSort"
+        @filter="synchronizeSearch"
+      >
+      <!-- paginable
+      max-height="300" -->
+      </s-table>
+    </div>
   </section>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
-  <div class="s-loader-example">
-    <s-loader />
+  <div class="s-loader-example flex-line">
+    <h1 class="h1">Loader</h1>
+    <div class="box">
+      <s-loader />
+    </div>
   </div>
 </template>
 
@@ -17,4 +20,5 @@ export default {
   display: flex;
   justify-content: center;
 }
+.box{width:100%;}
 </style>

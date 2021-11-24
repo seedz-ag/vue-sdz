@@ -1,12 +1,15 @@
 <template>
   <div class="s-collapsible-example">
-    <s-button outlined @click="increased()">increase content</s-button>
+    <h1 class="h1">Collapse</h1>
+    <div class="box flex-inline flex-center">
+      <s-button outlined @click="increased()">increase content</s-button>
 
-    <s-collapsible :is-opened="isOpened" @toggle="v => isOpened = v">
-      <s-button class="header" slot="header">header toggle</s-button>
+      <s-collapsible :is-opened="isOpened" @toggle="v => isOpened = v">
+        <s-button class="header" slot="header">header toggle</s-button>
 
-      <div v-html="content" />
-    </s-collapsible>
+        <div v-html="content" />
+      </s-collapsible>
+    </div>
   </div>
 </template>
 
@@ -37,14 +40,17 @@ export default {
 
 <style lang="scss">
 .s-collapsible-example {
-  & > .s-button {
-    margin: 0 auto;
-    margin-bottom: 50px;
+  & > .box{
+    & > .s-button {
+      margin-bottom: 50px;
+      margin-right: 20px;
+    }
+
+    & > .s-collapsible > .wrapper {
+      margin-top: 5px;
+      border: 1px solid black;
+    }
   }
 
-  & > .s-collapsible > .wrapper {
-    margin-top: 5px;
-    border: 1px solid black;
-  }
 }
 </style>

@@ -161,6 +161,7 @@ export default {
 }
 
 .flex-center{
-  align-items: center;
+  // align-items: center;
+  justify-content: center;
 }
 </style>
