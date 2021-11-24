@@ -40,4 +40,5 @@ export default {
 
 <style lang="scss">
 .s-tabber-example > .s-tabber { margin-bottom: 60px; }
+.s-tabber.-alternative {margin-top: 30px}
 </style>

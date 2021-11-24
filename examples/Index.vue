@@ -61,7 +61,8 @@ export default {
             { name: 'modal', redirect: '/vue-sdz/components/modal' },
             { name: 'popover', redirect: '/vue-sdz/components/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
-            { name: 'collapse', redirect: '/vue-sdz/components/collapsible' }
+            { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
+            { name: 'tabber', redirect: '/vue-sdz/components/tabber' }
           ]
         },
         {
