@@ -26,7 +26,7 @@ export default {
         },
         {
           name: 'Styles',
-          icon: 'plus',
+          icon: 'sdz-search',
           child: [
             { name: 'Colors', redirect: '/vue-sdz/styles/palettes' }
           ]
