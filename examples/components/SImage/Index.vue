@@ -49,14 +49,23 @@ export default {
 <style lang="scss">
 .s-image-example {
   margin: 0 auto;
+  & > .box{
+    & > .s-image { width: 250px; }
 
-  & > .s-image { width: 250px; }
+    .alter-image{
+      width:50%;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
 
-  .alter-image{
-    width:50%;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    & > .flex-inline{
+      & > .s-button { margin-left: 15px; }
+    }
+    
+
+
   }
+  
 }
 
 
