@@ -1,14 +1,14 @@
 <h1 align="center">vue seedz components ✅</h1>
 
 <p align="center">
-  <p align="center">.....</p>
-</p>
-
-<p align="center">
   <a href="#"><img src="https://img.shields.io/npm/l/vuelidation.svg" alt="License" target="_blank"></a>
 </p>
 
-Welcome to the Vue Seedz Components library for the web!
+<p align="center">
+  <p align="center">.....</p>
+</p>
+
+<b>Welcome to the Vue Seedz Components library for the web!</b>
 
 Our library has a set of ready-to-use components, such as: Inputs, collapses, layout structures and more. Check it all out by <a href="https://seedz-ag.github.io/vue-sdz/components/input" target="blank">clicking here</a>.
 
