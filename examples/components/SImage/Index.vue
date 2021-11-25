@@ -10,11 +10,11 @@
           fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg"
         />
       </div>
-      <div class="flex-inline">
+      <div class="flex-inline flex-center">
         <s-button primary @click="changeImage('chaves')">chaves</s-button>
-        <button @click="changeImage('seumadruga')">seu madruga</button>
-        <button @click="changeImage('nhonho')">nhonho</button>
-        <button @click="changeImage('victao')">victao</button>
+        <s-button primary @click="changeImage('seumadruga')">seu madruga</s-button>
+        <s-button primary @click="changeImage('nhonho')">nhonho</s-button>
+        <s-button primary @click="changeImage('victao')">victao</s-button>
       </div>
     </div>
 
@@ -26,8 +26,7 @@ import SButton from '../../../src/components/SButton/Index.vue'
 import SImage from '../../../src/components/SImage/Index.vue'
 
 export default {
-  components: { SButton },
-  components: { SImage },
+  components: { SButton, SImage },
 
   data () {
     return {
@@ -52,7 +51,13 @@ export default {
   margin: 0 auto;
 
   & > .s-image { width: 250px; }
+
+  .alter-image{
+    width:50%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 }
 
-.alter-image{width:50%;}
+
 </style>

@@ -29,7 +29,7 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SModal from '../../../src/components/SModal/Index.vue'
 
-export default {
+export default { 
   components: { SButton, SModal },
 
   data () {
