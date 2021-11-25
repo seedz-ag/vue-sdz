@@ -92,6 +92,10 @@ export default {
 
   & > .box{
 
+    & > .flex-inline{
+      flex-flow: wrap;
+    }
+
     & > .box-icons{
       width: 90%;
 
