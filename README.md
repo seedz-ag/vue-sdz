@@ -8,6 +8,8 @@
   <p align="center">.....</p>
 </p>
 
+## Welcome!
+
 <b>Welcome to the Vue Seedz Components library for the web!</b>
 
 Our library has a set of ready-to-use components, such as: Inputs, collapses, layout structures and more. Check it all out by <a href="https://seedz-ag.github.io/vue-sdz/components/input" target="blank">clicking here</a>.
