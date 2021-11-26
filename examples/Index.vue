@@ -144,13 +144,6 @@ export default {
     line-height: 2;
 }
 
-.box{
-  border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
-  padding: 30px;
-  margin-bottom: 60px;
-}
-
 .flex-inline{
   display: flex;
   flex-direction: row;

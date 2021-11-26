@@ -1,7 +1,7 @@
 <template>
   <div class="s-collapsible-example">
     <h1 class="h1">Collapse</h1>
-    <div class="box flex-inline flex-center">
+    <s-box class="flex-inline flex-center">
       <s-button outlined @click="increased()">increase content</s-button>
 
       <s-collapsible :is-opened="isOpened" @toggle="v => isOpened = v">
@@ -9,18 +9,19 @@
 
         <div v-html="content" />
       </s-collapsible>
-    </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
 import SCollapsible from '../../../src/components/SCollapsible/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
   name: 'SCollapsibleExample',
 
-  components: { SButton, SCollapsible },
+  components: { SButton, SCollapsible, SBox },
 
   data () {
     return {
@@ -40,7 +41,7 @@ export default {
 
 <style lang="scss">
 .s-collapsible-example {
-  & > .box{
+  & > .s-box{
     & > .s-button {
       margin-bottom: 50px;
       margin-right: 20px;

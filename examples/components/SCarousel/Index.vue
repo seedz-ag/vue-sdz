@@ -1,7 +1,7 @@
 <template>
   <div class="s-carousel-example">
     <h1 class="h1">Carousel</h1>
-    <div class="box">
+    <s-box>
       <s-carousel
         controllers
         :items="items"
@@ -13,17 +13,19 @@
           <!-- {{ item }} -->
         </div>
       </s-carousel>
-    </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import SCarousel from '../../../src/components/SCarousel/Index.vue'
+import SBox from '../../commons/box.vue'
+
 
 export default {
   name: 'SCarouselExample',
 
-  components: { SCarousel },
+  components: { SCarousel, SBox },
 
   data () {
     return {
@@ -56,7 +58,7 @@ export default {
 
 <style lang="scss">
 .s-carousel-example {
-  & > .box{
+  & > .s-box{
     & > .s-carousel {
       width: 90%;
       margin-left: 40px;

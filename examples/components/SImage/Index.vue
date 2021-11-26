@@ -2,7 +2,7 @@
   <div class="s-image-example">
     <h1 class="h1">Image</h1>
 
-    <div class="box flex-center">
+    <s-box class="flex-center">
       <div class="alter-image">
         <s-image
           :src="src"
@@ -16,17 +16,17 @@
         <s-button primary @click="changeImage('nhonho')">nhonho</s-button>
         <s-button primary @click="changeImage('victao')">victao</s-button>
       </div>
-    </div>
-
+    </s-box>
   </div>
 </template>
 
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
 import SImage from '../../../src/components/SImage/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SButton, SImage },
+  components: { SButton, SImage, SBox },
 
   data () {
     return {
@@ -49,24 +49,15 @@ export default {
 <style lang="scss">
 .s-image-example {
   margin: 0 auto;
-  & > .box{
-    & > .s-image { width: 250px; }
 
-    .alter-image{
-      width:50%;
-      margin: 0 auto;
-      margin-bottom: 50px;
-    }
+  & > .s-image { width: 250px; }
 
-    & > .flex-inline{
-      & > .s-button { margin-left: 15px; }
-    }
-    
-
-
+  .alter-image{
+    width:50%;
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
-  
+
+  & > .s-button { margin-left: 15px; }
 }
-
-
 </style>

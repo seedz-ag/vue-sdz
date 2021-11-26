@@ -3,7 +3,7 @@
     <h1 class="h1">Inputs</h1>
 
     <h2 class="h2">States</h2>
-    <div class="box">
+    <s-box>
       <s-input
         label="Default"
       />
@@ -34,10 +34,10 @@
         :value="inputTextArea"
         @input="value => inputTextArea = value"
       />
-    </div>
+    </s-box>
 
     <h2 class="h2">Sizing</h2>
-    <div class="box">
+    <s-box>
       <s-input
         label="small"
         small
@@ -45,20 +45,20 @@
       <s-input
         label="Default"
       />
-    </div>
+    </s-box>
 
     <h2 class="h2">Rounded</h2>
-    <div class="box">
+    <s-box>
       <s-input
         label="rounded"
         round
         :value="inputRounded"
         @input="value => inputRounded = value"
       />
-    </div>
+    </s-box>
 
     <h2 class="h2">Masked Input</h2>
-    <div class="box">
+    <s-box>
       <s-input
         raw
         label="Phone"
@@ -72,13 +72,10 @@
         :value="inputMoney"
         @input="onInputMoney"
       />
-    </div> 
+    </s-box> 
 
-    
-
-    
     <h2 class="h2">Enhancers</h2>
-    <div class="box">
+    <s-box>
       <s-input
         round
         icon="sdz-eye-off"
@@ -100,19 +97,17 @@
         placeholder="ex: Teste"
         @input="value => e = value.target.value"
       >
-    </div>
-    
-
-
+    </s-box>
   </div>
 </template>
 
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
 import SButton from '../../../src/components/SButton/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SInput, SButton },
+  components: { SInput, SButton, SBox },
 
   data () {
     return {

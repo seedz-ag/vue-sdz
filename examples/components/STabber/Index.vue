@@ -1,7 +1,7 @@
 <template>
   <div class="s-tabber-example">
     <h1 class="h1">Tabber</h1>
-    <div class="box">
+    <s-box>
       <s-tabber
         :tabs="tabs"
         :active-tab="activeTab"
@@ -14,15 +14,16 @@
         :active-tab="activeTab"
         @change-tab="tab => activeTab = tab"
       />
-    </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import STabber from '../../../src/components/STabber/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { STabber },
+  components: { STabber, SBox },
 
   data () {
     return {

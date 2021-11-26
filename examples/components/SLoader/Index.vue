@@ -1,17 +1,18 @@
 <template>
   <div class="s-loader-example flex-line">
     <h1 class="h1">Loader</h1>
-    <div class="box">
+    <s-box class="flex-inline flex-center">
       <s-loader />
-    </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import SLoader from '../../../src/components/SLoader/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SLoader }
+  components: { SLoader, SBox }
 }
 </script>
 
@@ -20,5 +21,5 @@ export default {
   display: flex;
   justify-content: center;
 }
-.box{width:100%;}
+.s-box{width:100%;}
 </style>

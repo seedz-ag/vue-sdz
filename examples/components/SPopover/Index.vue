@@ -1,7 +1,7 @@
 <template>
   <div class="s-popover-example">
     <h1 class="h1">Popover</h1>
-    <div class="box">
+    <s-box>
       <div class="example-popover flex-line flex-center">
         <s-popover
           v-if="showPopover"
@@ -31,16 +31,17 @@
           <s-button @click.stop="openPopover({ position: 'bottom', align: 'right' })">bottom right</s-button>
       </div>
       
-    </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
 import SPopover from '../../../src/components/SPopover/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SPopover, SButton },
+  components: { SPopover, SButton, SBox },
 
   data () {
     return {
@@ -62,7 +63,7 @@ export default {
 
 <style lang="scss">
 .s-popover-example {
-  & > .box{
+  & > .s-box{
     & > .buttons {
       margin-top: 70px;
 

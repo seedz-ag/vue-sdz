@@ -3,8 +3,8 @@
     <h1 class="h1">Select</h1>
 
     <h2 class="h2">Default</h2>
-      <div class="box">
-        <s-select
+    <s-box>
+      <s-select
         label="Simple"
         display="slug"
         display-by="name"
@@ -14,23 +14,23 @@
       />
 
       <s-select
-        label="With slots"
-        display="slug"
-        display-by="name"
-        placeholder="Selecione uma opção"
-        clear-on-select
-        :items="items"
-        v-model="data2"
-      >
+          label="With slots"
+          display="slug"
+          display-by="name"
+          placeholder="Selecione uma opção"
+          clear-on-select
+          :items="items"
+          v-model="data2"
+        >
         <div slot="option" slot-scope="{ option }">
           {{ option['slug'] }} - {{ option['name'] }}
         </div>
       </s-select>
-    </div>
+    </s-box>
     
 
     <h2 class="h2">Multiples</h2>
-    <div class="box">
+    <s-box>
       <s-select
         label="Multiple"
         display="slug"
@@ -52,10 +52,10 @@
         :items="items"
         v-model="data4"
       />
-    </div>
+    </s-box>
     
     <h2 class="h2">Disabled</h2>
-    <div class="box">
+    <s-box>
       <s-select
         label="Disabled"
         display="slug"
@@ -64,16 +64,17 @@
         disabled
         :items="items"
       />
-    </div>
+    </s-box>
     
   </div>
 </template>
 
 <script>
 import SSelect from '../../../src/components/SSelect/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SSelect },
+  components: { SSelect, SBox },
 
   data () {
     return {
@@ -97,5 +98,5 @@ export default {
 </script>
 
 <style lang="scss">
-.s-select-example > .s-select { margin-bottom: 60px; }
+.s-select-example > .s-box > .s-select { margin-bottom: 60px; }
 </style>

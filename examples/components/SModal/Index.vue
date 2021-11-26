@@ -1,7 +1,7 @@
 <template>
   <div class="s-modal-example">
     <h1 class="h1">Modal</h1>
-    <div class="box flex-inline">
+    <s-box class="flex-inline flex-center">
       <s-button @click="showSimpleModal = true">open simple modal</s-button>
 
       <s-modal
@@ -21,16 +21,17 @@
       >
         modal content
       </s-modal>
-    </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
 import SModal from '../../../src/components/SModal/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default { 
-  components: { SButton, SModal },
+  components: { SButton, SModal, SBox },
 
   data () {
     return {
@@ -43,7 +44,7 @@ export default {
 
 <style lang="scss">
 .s-modal-example {
-  & > .box{
+  & > .s-box{
     & > .s-button { margin-right: 30px; }
   }
 }

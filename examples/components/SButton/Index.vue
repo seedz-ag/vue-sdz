@@ -3,7 +3,7 @@
     <h1 class="h1">Buttons</h1>
 
     <h2 class="h2">Stats</h2>
-    <div class="box">
+    <s-box>
       <div class="flex-inline">
         <s-button primary>primary</s-button>
         <s-button grey>Secondary</s-button>
@@ -16,10 +16,10 @@
       <div class="flex-line">
         <s-button full-width>full-width</s-button>
       </div>
-    </div>
+    </s-box>
 
     <h2 class="h2">Links</h2>
-    <div class="box flex-line flex-center">
+    <s-box class="flex-line flex-center">
       <s-button link external to="https://www.google.com">link external</s-button>
       <br>
       <s-button link disabled>link disabled</s-button>
@@ -29,36 +29,37 @@
       <s-button link to="https://www.google.com">link route</s-button>
       <br>
       <s-button link icon="sdz-check" secondary-icon-color to="https://www.google.com">link icon</s-button>
-    </div>
+    </s-box>
     
     <h2 class="h2">Sizes</h2>
-    <div class="box flex-inline">
+    <s-box class="flex-inline">
       <s-button small>small</s-button>
       <s-button default>default</s-button>
       <s-button large>large</s-button>
-    </div>
+    </s-box>
 
     <h2 class="h2">Outlined</h2>
-    <div class="box flex-inline">
+    <s-box class="flex-inline">
       <s-button outlined>outlined</s-button>
       <s-button outlined disabled>outlined disabled</s-button>
       <s-button outlined icon="sdz-check">outlined icon</s-button>
       <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>
-    </div>
+    </s-box>
 
     <h2 class="h2">Enhancers</h2>
-    <div class="box">
+    <s-box>
       <s-button icon="sdz-check">icon</s-button>
-    </div>  
+    </s-box>  
 
   </div>
 </template>
 
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SButton }
+  components: { SButton, SBox }
 }
 </script>
 

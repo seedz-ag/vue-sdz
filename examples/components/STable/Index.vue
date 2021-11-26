@@ -1,7 +1,7 @@
 <template>
   <section class="s-table-example">
     <h1 class="h1">Table</h1>
-    <div class="box">
+    <s-box>
       <s-table
         :cols="cols"
         :rows="tableRows"
@@ -19,20 +19,21 @@
       <!-- paginable
       max-height="300" -->
       </s-table>
-    </div>
+    </s-box>
   </section>
 </template>
 
 <script>
 import STable from '../../../src/components/STable/Index.vue'
 import findByInclusive from '../../../src/helpers/findByInclusive'
+import SBox from '../../commons/box.vue'
 
 import { cols, rows } from './data-table'
 
 export default {
   name: 'STableExample',
 
-  components: { STable },
+  components: { STable, SBox },
   data () {
     return {
       cols,

@@ -2,7 +2,7 @@
   <div class="s-icon-example">
     <h1 class="h1">Icons</h1>
 
-    <div class="box">
+    <s-box>
       <div class="box-icons flex-inline">
         <div class="icons">
           <s-icon disabled icon="sdz-key" size="40" /> <span>disabled</span>
@@ -16,16 +16,17 @@
           <span>{{ icon }}</span>
         </div>
       </div>
-    </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import '../../../node_modules/sdz-icons/index.css'
 import SIcon from '../../../src/components/SIcon/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SIcon },
+  components: { SIcon, SBox },
 
   data () {
     return {
@@ -90,7 +91,7 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & > .box{
+  & > .s-box{
 
     & > .flex-inline{
       flex-flow: wrap;
