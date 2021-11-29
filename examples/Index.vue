@@ -47,7 +47,9 @@ export default {
             { name: 'input', redirect: '/vue-sdz/components/input' },
             { name: 'button', redirect: '/vue-sdz/components/button' },
             { name: 'select', redirect: '/vue-sdz/components/select' },
-            { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' }
+            { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
+            { name: 'radiobox', redirect: '/vue-sdz/components/radiobox' },
+            { name: 'switch', redirect: '/vue-sdz/components/switch' }
           ]
         },
         {
@@ -57,7 +59,7 @@ export default {
             { name: 'alert', redirect: '/vue-sdz/components/alert' },
             { name: 'card', redirect: '/vue-sdz/components/card' },
             { name: 'carousel', redirect: '/vue-sdz/components/carousel' },
-            { name: 'loader', redirect: '/vue-sdz/components/loader' },
+            { name: 'Spinner', redirect: '/vue-sdz/components/loader' },
             { name: 'modal', redirect: '/vue-sdz/components/modal' },
             { name: 'popover', redirect: '/vue-sdz/components/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
@@ -109,6 +111,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./src/styles/_index.scss";
+
 #app { display: flex; }
 
 .container {
@@ -133,11 +137,28 @@ export default {
   margin-bottom: 30px;
 }
 
+.h1:after{
+  content: "";
+  height: 2px;
+  width: 80px;
+  background-color: #000;
+  display: block;
+  margin-top: 30px;
+}
+
 .h2{
   font-size: 1.4rem;
   font-weight: 500;
   margin-top: 3rem;
   margin-bottom: 1rem;
+}
+
+.subtitle{
+  font-size: 1rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .main-text p{
