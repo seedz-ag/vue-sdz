@@ -50,6 +50,8 @@ export default {
   props: {
     small: Boolean,
 
+    larger: Boolean,
+
     icon: String,
 
     rightIcon: String,
@@ -104,6 +106,7 @@ export default {
       return [
         's-input', {
           '--small': this.small,
+          '--larger': this.larger,
           '--has-icon': this.icon,
           '--is-money': this.isMoney,
           '--is-not-empty': !!this.value,
@@ -210,6 +213,8 @@ $icon-position: 8px;
   }
 
   &.--small > .input { height: 35px; }
+
+  &.--larger > .input { height: 60px; }
 
   &.--has-icon {
     & > .label { left: 25px; }
