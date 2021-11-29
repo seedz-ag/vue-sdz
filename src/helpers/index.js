@@ -1,0 +1,5 @@
+export { default as isCpf } from './isCpf/index.js'
+export { default as isCnpj } from './isCnpj/index.js'
+export { default as isName } from './isName/index.js'
+export { default as isEmail } from './isEmail/index.js'
+export { default as isPhone } from './isPhone/index.js'
