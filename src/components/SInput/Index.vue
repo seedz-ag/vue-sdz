@@ -60,8 +60,6 @@ export default {
 
     round: Boolean,
 
-    disabled: Boolean,
-
     textArea: Boolean,
 
     validation: String,

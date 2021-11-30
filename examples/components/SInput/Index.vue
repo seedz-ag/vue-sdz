@@ -2,18 +2,31 @@
   <div class="s-input-example">
     <h1 class="h1">Inputs</h1>
 
+    <p class="subtitle">
+      Input Text permite a pessoa usuária interagir e inserir conteúdo e dados. Pode ser usado para entradas de formulários longos e curtos.
+      <br><br>
+      Use em formulários para permitir as pessoas inserirem informações;
+      <br><br>
+      Podem fazer parte de componentes como modais no caso de um modal de login, por exemplo;
+      <br><br>
+      Os tipos de entrada de texto comuns incluem: nomes de pessoas usuárias, descrições, URLs, e-mails, endereços e qualquer outra forma de inserção de informação.
+      <br><br>
+      Considerar Input Text sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
+    </p>
+
     <h2 class="h2">States</h2>
     <s-box>
       <s-input
         label="Default"
       />
+
       <s-input
         placeholder="Disabled input"
-        disabled
+        disabled = "disabled"
       />
       <s-input
         placeholder="Disabled readonly input"
-        disabled
+        readonly="readonly"
       />
       <!-- <s-button @click="inputDataError = ''">reset</s-button> -->
       <s-input
@@ -37,13 +50,17 @@
     </s-box>
 
     <h2 class="h2">Sizing</h2>
-    <s-box>
+    <s-box class="sizing flex-inline">
       <s-input
-        label="small"
+        label="Small"
         small
       />
       <s-input
         label="Default"
+      />
+      <s-input
+        label="Larger"
+        larger
       />
     </s-box>
 
@@ -58,11 +75,23 @@
     </s-box>
 
     <h2 class="h2">Masked Input</h2>
+    <p class="subtitle">
+      CPF: 000.000.000-00<br>
+      CNPJ: 00.000.000/0000-00<br>
+      Telefone: (00) 00000-0000<br>
+    </p>
     <s-box>
       <s-input
         raw
+        label="CPF"
+        :mask="['###.###.###-##']"
+        :value="inputMask"
+        @input="value => inputMask = value"
+      />
+      <s-input
+        raw
         label="Phone"
-        :mask="['####-####']"
+        :mask="['(##) ####-####']"
         :value="inputMask"
         @input="value => inputMask = value"
       />
@@ -132,4 +161,5 @@ export default {
 
 <style lang="scss">
 .s-input-container { margin-bottom: 60px; }
+.sizing.flex-inline .s-input-container{margin-right: 30px;}
 </style>

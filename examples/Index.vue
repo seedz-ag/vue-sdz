@@ -45,11 +45,12 @@ export default {
           icon: 'xxx',
           child: [
             { name: 'input', redirect: '/vue-sdz/components/input' },
-            { name: 'button', redirect: '/vue-sdz/components/button' },
+            { name: 'password', redirect: '/vue-sdz/components/password' },
             { name: 'select', redirect: '/vue-sdz/components/select' },
             { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
             { name: 'radiobox', redirect: '/vue-sdz/components/radiobox' },
-            { name: 'switch', redirect: '/vue-sdz/components/switch' }
+            { name: 'switch', redirect: '/vue-sdz/components/switch' },
+            { name: 'button', redirect: '/vue-sdz/components/button' }
           ]
         },
         {
