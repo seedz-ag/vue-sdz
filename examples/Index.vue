@@ -46,6 +46,7 @@ export default {
           child: [
             { name: 'input', redirect: '/vue-sdz/components/input' },
             { name: 'password', redirect: '/vue-sdz/components/password' },
+            { name: 'search', redirect: '/vue-sdz/components/search' },
             { name: 'select', redirect: '/vue-sdz/components/select' },
             { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
             { name: 'radiobox', redirect: '/vue-sdz/components/radiobox' },
