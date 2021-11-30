@@ -51,6 +51,22 @@
       <s-button icon="sdz-check">icon</s-button>
     </s-box>  
 
+    <h2 class="h2">Button Group</h2>
+    <p class="subtitle">
+      Button Group é um conjunto de botões onde uma das ações é a mais prioritária, isso fica visualmente evidente através dos seus diferentes pesos.
+      <br><br>
+      Não utilizar o botão primário mais de uma vez.
+      <br><br>
+      Regras de aplicação:
+    </p>
+    
+    <s-box>
+      <div class="flex-inline">
+        <s-button outlined>Cancelar</s-button>
+        <s-button primary>Salvar</s-button>
+      </div>
+    </s-box>
+
   </div>
 </template>
 
