@@ -107,7 +107,7 @@
     <s-box>
       <s-input
         round
-        icon="sdz-eye-off"
+        icon="sdz-search"
         :value="inputSearch"
         :placeholder="'Search'"
         @input="value => inputSearch = value"

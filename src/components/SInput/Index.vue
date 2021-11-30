@@ -272,6 +272,7 @@ $icon-position: 8px;
 
   &:focus-within {
     & > .input { border-color: color(primary, base); }
+    & > .s-icon {color: color(primary, base);}
   }
 }
 </style>
