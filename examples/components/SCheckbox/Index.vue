@@ -2,6 +2,18 @@
   <div class="s-checkbox-example">
     <h1 class="h1">Checkbox</h1>
 
+    <p class="subtitle">
+      Input Checkbox é uma caixa de seleção que a pessoa usuária pode marcar ou desmarcar para aceitar alguma ação. Podendo usar um ou mais checkboxs seguidos.
+    </p>
+    <h2 class="h2">Quando usar</h2>
+    <p class="subtitle">
+      Use as caixas de seleção quando as pessoas usuárias devem selecionar uma ou mais opções de uma lista de itens relacionados;
+      <br><br>
+      Pode ser usado para filtrar dados em uma página, em um menu ou em um componente e em uma ação explícita na qual é necessária para aplicar as configurações;
+      <br><br>
+      Podem ser utilizados em alguns componentes como: Modais, Formulários, Tabelas, Termos e Condições.
+    </p>
+
     <h2 class="h2">Default</h2>
     <s-box>
       <s-checkbox v-model="data0" label="Default Checkbox" />
