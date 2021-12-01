@@ -2,6 +2,16 @@
   <div class="s-select-example">
     <h1 class="h1">Select</h1>
 
+    <p class="subtitle">
+      Input Select é um dropdown onde a pessoa usuária pode selecionar uma opção em uma lista de opções. Hoje trazemos a visualização dos itens de forma nativa por uma questão de acessibilidade.
+    </p>
+    <h2 class="h2">Quando usar</h2>  
+    <p class="subtitle">
+      Utilizar quando você tem ao menos 3 opções de escolha.
+      <br><br>
+      Considerar Input Select sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
+    </p>
+
     <h2 class="h2">Default</h2>
     <s-box>
       <s-select
