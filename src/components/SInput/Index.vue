@@ -54,6 +54,8 @@ export default {
 
     icon: String,
 
+    disabled: Boolean,
+
     rightIcon: String,
 
     iconColor: String,
@@ -193,9 +195,9 @@ $icon-position: 8px;
     &::placeholder { color: color(base, light); }
 
     &.--has-icon { text-indent: 35px; }
-    &.--is-textarea { padding-top: 30px; }
     &.--is-rounded { border-radius: 50px; }
     &.--has-right-icon { padding-right: 40px; }
+    &.--is-textarea { padding-top: 30px; height: unset;}
   }
 
   & > .label {

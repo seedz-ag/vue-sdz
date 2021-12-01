@@ -129,11 +129,6 @@ export default {
   overflow-x: hidden;
 }
 
-.main{
-  width: 70%;
-  margin: 30px auto;
-}
-
 .h1{
   font-size: 1.80rem;
   font-weight: 700;
@@ -162,10 +157,7 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
-}
-
-.main-text p{
-    line-height: 2;
+  line-height: 1.5;
 }
 
 .flex-inline{
@@ -179,7 +171,6 @@ export default {
 }
 
 .flex-center{
-  // align-items: center;
   justify-content: center;
 }
 </style>

@@ -16,21 +16,21 @@
 
     <h2 class="h2">Default</h2>
     <s-box>
-      <s-checkbox v-model="data0" label="Default Checkbox" />
+      <s-checkbox label="Default Checkbox" v-model="data0" />
       <br>
-      <s-checkbox v-model="data2" label="Checked Checkbox"/>
+      <s-checkbox label="Checked Checkbox" v-model="data1" />
     </s-box>
 
     <h2 class="h2">Stats</h2>
     <s-box>
-      <s-checkbox label="Positive" v-model="data1" />
+      <s-checkbox label="Positive" v-model="data2" />
       <br>
-      <s-checkbox label="Negative" negative v-model="data2" />
+      <s-checkbox label="Negative" negative v-model="data3" />
     </s-box>
 
     <h2 class="h2">Disabled</h2>
     <s-box>
-      <s-checkbox label="disabled" disabled v-model="data1" />
+      <s-checkbox label="disabled" disabled v-model="data4" />
     </s-box>
   </div>
 </template>
@@ -47,7 +47,8 @@ export default {
       data0: false,
       data1: true,
       data2: true,
-      data3: true
+      data3: true,
+      data4: true
     }
   }
 }

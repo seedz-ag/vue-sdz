@@ -14,21 +14,22 @@
 
     <h2 class="h2">Default</h2>
     <s-box>
-      <s-radiobox v-model="data0" label="Default Radiobox" />
+      <s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
+      <s-radiobox id="nao" label="Default Radiobox" name="dafault" value="não" v-model="data0" />
       <br>
-      <s-radiobox v-model="data2" label="Checked Radiobox"/>
+      <s-radiobox label="Checked Radiobox" v-model="data2" />
     </s-box>
 
     <h2 class="h2">Stats</h2>
     <s-box>
-      <s-radiobox label="Positive" v-model="data1" />
+      <s-radiobox label="Positive" v-model="data3" />
       <br>
-      <s-radiobox label="Negative" negative v-model="data2" />
+      <s-radiobox label="Negative" negative v-model="data4" />
     </s-box>
 
     <h2 class="h2">Disabled</h2>
     <s-box>
-      <s-radiobox label="disabled" disabled />
+      <s-radiobox label="disabled" disabled v-model="data5" />
     </s-box>
   </div>
 </template>
@@ -45,7 +46,9 @@ export default {
       data0: false,
       data1: true,
       data2: true,
-      data3: true
+      data3: true,
+      data4: true,
+      data5: true
     }
   }
 }

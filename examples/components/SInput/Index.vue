@@ -106,20 +106,6 @@
         :placeholder="'Search'"
         @input="value => inputSearch = value"
       />
-
-      <s-button @click="inputTeste = ''">reset</s-button>
-      <s-input
-        label="teste"
-        :value="inputTeste"
-        placeholder="ex: Teste"
-        @input="value => inputTeste = value"
-      />
-      <input
-        label="teste"
-        :value="inputTeste"
-        placeholder="ex: Teste"
-        @input="value => e = value.target.value"
-      >
     </s-box>
   </div>
 </template>

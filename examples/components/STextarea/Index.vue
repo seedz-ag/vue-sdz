@@ -15,6 +15,7 @@
       <s-input
         label="textarea"
         rows="20"
+        cols="5"
         text-area
         :value="inputTextArea"
         @input="value => inputTextArea = value"
@@ -36,7 +37,7 @@
     <s-box>
       <s-input
         label="Disabled"
-        disabled="disabled"
+        disabled
         text-area
         :value="inputTextArea"
         @input="value => inputTextArea = value"
