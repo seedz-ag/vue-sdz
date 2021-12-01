@@ -41,12 +41,6 @@
         :value="inputFloatLabel"
         @input="value => inputFloatLabel = value"
       />
-      <s-input
-        label="textarea"
-        text-area
-        :value="inputTextArea"
-        @input="value => inputTextArea = value"
-      />
     </s-box>
 
     <h2 class="h2">Sizing</h2>
