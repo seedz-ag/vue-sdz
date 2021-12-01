@@ -45,6 +45,7 @@ export default {
           icon: 'xxx',
           child: [
             { name: 'input', redirect: '/vue-sdz/components/input' },
+            { name: 'text area', redirect: '/vue-sdz/components/textarea' },
             { name: 'password', redirect: '/vue-sdz/components/password' },
             { name: 'search', redirect: '/vue-sdz/components/search' },
             { name: 'select', redirect: '/vue-sdz/components/select' },
