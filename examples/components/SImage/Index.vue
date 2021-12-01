@@ -1,23 +1,32 @@
 <template>
   <div class="s-image-example">
-    <s-image
-      :src="src"
-      :duration="100"
-      fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg"
-    />
+    <h1 class="h1">Image</h1>
 
-    <button @click="changeImage('chaves')">chaves</button>
-    <button @click="changeImage('seumadruga')">seu madruga</button>
-    <button @click="changeImage('nhonho')">nhonho</button>
-    <button @click="changeImage('victao')">victao</button>
+    <s-box class="flex-center">
+      <div class="alter-image">
+        <s-image
+          :src="src"
+          :duration="100"
+          fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg"
+        />
+      </div>
+      <div class="flex-inline flex-center">
+        <s-button primary @click="changeImage('chaves')">chaves</s-button>
+        <s-button primary @click="changeImage('seumadruga')">seu madruga</s-button>
+        <s-button primary @click="changeImage('nhonho')">nhonho</s-button>
+        <s-button primary @click="changeImage('victao')">victao</s-button>
+      </div>
+    </s-box>
   </div>
 </template>
 
 <script>
+import SButton from '../../../src/components/SButton/Index.vue'
 import SImage from '../../../src/components/SImage/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SImage },
+  components: { SButton, SImage, SBox },
 
   data () {
     return {
@@ -42,5 +51,13 @@ export default {
   margin: 0 auto;
 
   & > .s-image { width: 250px; }
+
+  .alter-image{
+    width:50%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  & > .s-button { margin-left: 15px; }
 }
 </style>

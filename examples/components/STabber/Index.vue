@@ -1,25 +1,29 @@
 <template>
   <div class="s-tabber-example">
-    <s-tabber
-      :tabs="tabs"
-      :active-tab="activeTab"
-      @change-tab="tab => activeTab = tab"
-    />
+    <h1 class="h1">Tabber</h1>
+    <s-box>
+      <s-tabber
+        :tabs="tabs"
+        :active-tab="activeTab"
+        @change-tab="tab => activeTab = tab"
+      />
 
-    <s-tabber
-      alternative
-      :tabs="tabs"
-      :active-tab="activeTab"
-      @change-tab="tab => activeTab = tab"
-    />
+      <s-tabber
+        alternative
+        :tabs="tabs"
+        :active-tab="activeTab"
+        @change-tab="tab => activeTab = tab"
+      />
+    </s-box>
   </div>
 </template>
 
 <script>
 import STabber from '../../../src/components/STabber/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { STabber },
+  components: { STabber, SBox },
 
   data () {
     return {
@@ -37,4 +41,5 @@ export default {
 
 <style lang="scss">
 .s-tabber-example > .s-tabber { margin-bottom: 60px; }
+.s-tabber.-alternative {margin-top: 30px}
 </style>

@@ -51,15 +51,17 @@ export default {
   props: {
     small: Boolean,
 
+    larger: Boolean,
+
     icon: String,
+
+    disabled: Boolean,
 
     rightIcon: String,
 
     iconColor: String,
 
     round: Boolean,
-
-    disabled: Boolean,
 
     textArea: Boolean,
 
@@ -105,6 +107,7 @@ export default {
       return [
         's-input', {
           '--small': this.small,
+          '--larger': this.larger,
           '--has-icon': this.icon,
           '--is-money': this.isMoney,
           '--is-not-empty': !!this.value,
@@ -193,9 +196,9 @@ $icon-position: 8px;
     &::placeholder { color: color(base, light); }
 
     &.--has-icon { text-indent: 35px; }
-    &.--is-textarea { padding-top: 30px; }
     &.--is-rounded { border-radius: 50px; }
     &.--has-right-icon { padding-right: 40px; }
+    &.--is-textarea { padding-top: 30px; height: unset;}
   }
 
   & > .label {
@@ -211,6 +214,8 @@ $icon-position: 8px;
   }
 
   &.--small > .input { height: 35px; }
+
+  &.--larger > .input { height: 60px; }
 
   &.--has-icon {
     & > .label { left: 25px; }
@@ -270,6 +275,7 @@ $icon-position: 8px;
 
   &:focus-within {
     & > .input { border-color: color(primary, base); }
+    & > .s-icon {color: color(primary, base);}
   }
 }
 </style>

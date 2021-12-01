@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import GettingStarted from './GettingStarted.vue'
+import GettingStarted from './commons/GettingStarted.vue'
 
 import StylesList from './styless/Index.vue'
 import StylesRoute from './styless/routes.js'
@@ -14,7 +14,7 @@ import APIsRoute from './api/routes.js'
 
 const routes = [
   {
-    path: '/vue-sdz/getting-started',
+    path: '/commons/GettingStarted.vue',
     name: 'getting-started',
     component: GettingStarted
   },

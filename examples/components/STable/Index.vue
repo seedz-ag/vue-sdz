@@ -1,35 +1,39 @@
 <template>
   <section class="s-table-example">
-    <s-table
-      :cols="cols"
-      :rows="tableRows"
-      :search="search"
-      :search-params="['name']"
-      :checkeds.sync="checkeds"
-      :current-page="2"
-      :per-page="5"
-      selectable
-      sortable
-      pagination-type="ellipsised"
-      @sort="onSort"
-      @filter="synchronizeSearch"
-    >
-    <!-- paginable
-    max-height="300" -->
-    </s-table>
+    <h1 class="h1">Table</h1>
+    <s-box>
+      <s-table
+        :cols="cols"
+        :rows="tableRows"
+        :search="search"
+        :search-params="['name']"
+        :checkeds.sync="checkeds"
+        :current-page="2"
+        :per-page="5"
+        selectable
+        sortable
+        pagination-type="ellipsised"
+        @sort="onSort"
+        @filter="synchronizeSearch"
+      >
+      <!-- paginable
+      max-height="300" -->
+      </s-table>
+    </s-box>
   </section>
 </template>
 
 <script>
 import STable from '../../../src/components/STable/Index.vue'
 import findByInclusive from '../../../src/helpers/findByInclusive'
+import SBox from '../../commons/box.vue'
 
 import { cols, rows } from './data-table'
 
 export default {
   name: 'STableExample',
 
-  components: { STable },
+  components: { STable, SBox },
   data () {
     return {
       cols,

@@ -1,23 +1,36 @@
 <template>
   <div class="s-icon-example">
-    disabled
-    <s-icon disabled icon="sdz-key" size="40" />
-    <br>
+    <h1 class="h1">Icons</h1>
 
-    <div v-for="icon in icons" :key="icon" class="icons">
-      <s-icon :icon="icon" size="40" />
+    <p class="subtitle">
+      Nossa biblioteca de ícones foi criada a partir da biblioteca open source Feather Icons com alguns exclusivos criados para a plataforma.
+    </p>
 
-      <span>{{ icon }}</span>
-    </div>
+    <s-box>
+      <div class="box-icons flex-inline">
+        <div class="icons">
+          <s-icon disabled icon="sdz-key" size="40" /> <span>disabled</span>
+        </div>
+      
+        <br>
+
+        <div v-for="icon in icons" :key="icon" class="icons">
+          <s-icon :icon="icon" size="40" />
+
+          <span>{{ icon }}</span>
+        </div>
+      </div>
+    </s-box>
   </div>
 </template>
 
 <script>
 import '../../../node_modules/sdz-icons/index.css'
 import SIcon from '../../../src/components/SIcon/Index.vue'
+import SBox from '../../commons/box.vue'
 
 export default {
-  components: { SIcon },
+  components: { SIcon, SBox },
 
   data () {
     return {
@@ -82,13 +95,27 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & > .icons {
-    display: flex;
-    align-items: center;
+  & > .s-box{
 
-    & > .s-icon { padding: 10px; }
-    & > span { margin-left: 10px; }
+    & > .flex-inline{
+      flex-flow: wrap;
+    }
+
+    & > .box-icons{
+      width: 90%;
+
+      & > .icons {
+        display: flex;
+        align-items: center;
+        width: 33%;
+
+        & > .s-icon { padding: 10px;}
+        & > span { margin-left: 10px; }
+      }
+    }
   }
+
+  
 }
 </style>
 

@@ -1,26 +1,31 @@
 <template>
   <div class="s-carousel-example">
-    <s-carousel
-      controllers
-      :items="items"
-      :per-page="2"
-      :is-loopable="false"
-      :breakpoints="breakpoints"
-    >
-      <div slot-scope="{ item }" class="ball" :style="{ backgroundColor: item.color }">
-        <!-- {{ item }} -->
-      </div>
-    </s-carousel>
+    <h1 class="h1">Carousel</h1>
+    <s-box>
+      <s-carousel
+        controllers
+        :items="items"
+        :per-page="2"
+        :is-loopable="false"
+        :breakpoints="breakpoints"
+      >
+        <div slot-scope="{ item }" class="ball" :style="{ backgroundColor: item.color }">
+          <!-- {{ item }} -->
+        </div>
+      </s-carousel>
+    </s-box>
   </div>
 </template>
 
 <script>
 import SCarousel from '../../../src/components/SCarousel/Index.vue'
+import SBox from '../../commons/box.vue'
+
 
 export default {
   name: 'SCarouselExample',
 
-  components: { SCarousel },
+  components: { SCarousel, SBox },
 
   data () {
     return {
@@ -53,17 +58,21 @@ export default {
 
 <style lang="scss">
 .s-carousel-example {
-  & > .s-carousel {
-    & > .wrapper {
-      & > .inner {
-        // -webkit-transition: all .4s cubic-bezier(0.47, 0, 0.745, 0.715);
-        // transition:         all .4s cubic-bezier(0.47, 0, 0.745, 0.715);
-        & > .carousel-item {
-          & > .ball {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            border-radius: 50%;
+  & > .s-box{
+    & > .s-carousel {
+      width: 90%;
+      margin-left: 40px;
+      & > .wrapper {
+        & > .inner {
+          // -webkit-transition: all .4s cubic-bezier(0.47, 0, 0.745, 0.715);
+          // transition:         all .4s cubic-bezier(0.47, 0, 0.745, 0.715);
+          & > .carousel-item {
+            & > .ball {
+              width: 200px;
+              height: 200px;
+              margin: 0 auto;
+              border-radius: 50%;
+            }
           }
         }
       }
