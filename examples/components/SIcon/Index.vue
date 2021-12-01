@@ -2,6 +2,10 @@
   <div class="s-icon-example">
     <h1 class="h1">Icons</h1>
 
+    <p class="subtitle">
+      Nossa biblioteca de ícones foi criada a partir da biblioteca open source Feather Icons com alguns exclusivos criados para a plataforma.
+    </p>
+
     <s-box>
       <div class="box-icons flex-inline">
         <div class="icons">
