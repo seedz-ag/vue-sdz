@@ -1,6 +1,6 @@
 <template>
   <div class="s-image-example">
-    <h1 class="h1">Image</h1>
+    <s-title class="h1" title="Image" />
 
     <s-box class="flex-center">
       <div class="alter-image">
@@ -24,9 +24,10 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SImage from '../../../src/components/SImage/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SButton, SImage, SBox },
+  components: { SButton, SImage, SBox, STitle },
 
   data () {
     return {
@@ -50,14 +51,19 @@ export default {
 .s-image-example {
   margin: 0 auto;
 
-  & > .s-image { width: 250px; }
+  & > .s-box{
+    & > .s-image { width: 250px; }
 
-  .alter-image{
-    width:50%;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    .alter-image{
+      width:50%;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+
+    .s-button {
+      margin-top: 10px;
+      margin-left: 15px;
+    }
   }
-
-  & > .s-button { margin-left: 15px; }
 }
 </style>

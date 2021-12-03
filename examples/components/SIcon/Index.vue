@@ -1,6 +1,6 @@
 <template>
   <div class="s-icon-example">
-    <h1 class="h1">Icons</h1>
+    <s-title class="h1" title="Icons" />
 
     <p class="subtitle">
       Nossa biblioteca de ícones foi criada a partir da biblioteca open source Feather Icons com alguns exclusivos criados para a plataforma.
@@ -11,7 +11,7 @@
         <div class="icons">
           <s-icon disabled icon="sdz-key" size="40" /> <span>disabled</span>
         </div>
-      
+
         <br>
 
         <div v-for="icon in icons" :key="icon" class="icons">
@@ -28,9 +28,10 @@
 import '../../../node_modules/sdz-icons/index.css'
 import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SIcon, SBox },
+  components: { SIcon, SBox, STitle },
 
   data () {
     return {
@@ -115,7 +116,7 @@ export default {
     }
   }
 
-  
+
 }
 </style>
 

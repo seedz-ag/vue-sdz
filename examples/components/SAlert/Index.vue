@@ -1,8 +1,8 @@
 <template>
   <div class="s-alert-example">
-    <h1 class="h1">Alerts</h1>
+    <s-title class-title="h1" title="Alerts" />
 
-    <h2 class="h2">Default</h2>
+    <s-title class-title="h2" title="Default" />
     <s-box>
       <s-alert positive>
         <div slot="header">Titulo do Alerta Positivo</div>
@@ -16,7 +16,7 @@
       />
     </s-box>
 
-    <h2 class="h2">Examples</h2>
+    <s-title class-title="h2" title="Examples" />
     <s-box>
       <s-alert
         positive
@@ -28,7 +28,7 @@
         negative
         header="CPF/CNPJ ou senha inválidos"
         msg="Fique atento! Caso erre novamente, sua conta será bloqueada e será necessário redefinir a senha."
-      /> 
+      />
     </s-box>
   </div>
 </template>
@@ -36,9 +36,10 @@
 <script>
 import SAlert from '../../../src/components/SAlert/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SAlert, SBox }
+  components: { SAlert, SBox, STitle }
 }
 </script>
 
