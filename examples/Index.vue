@@ -67,6 +67,7 @@ export default {
             { name: 'popover', redirect: '/vue-sdz/components/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
+            { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
             { name: 'tabber', redirect: '/vue-sdz/components/tabber' }
           ]
         },
@@ -79,7 +80,7 @@ export default {
         },
         {
           name: 'api',
-          icon: 'sdz-mail', 
+          icon: 'sdz-mail',
           child: [
             { name: 'alert', redirect: '/vue-sdz/api/alert' },
             { name: 'button', redirect: '/vue-sdz/api/button' },
