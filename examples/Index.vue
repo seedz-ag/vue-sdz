@@ -69,7 +69,8 @@ export default {
             { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
             { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
             { name: 'progress bar', redirect: '/vue-sdz/components/progressbar' },
-            { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' }
+            { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
+            { name: 'stepper', redirect: '/vue-sdz/components/stepper' }
           ]
         },
         {

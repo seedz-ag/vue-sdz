@@ -13,6 +13,7 @@
       v-html="textArea && value"
 
       :value="value"
+      :disabled="disabled"
       :class="inputClasses"
       :placeholder="floatLabel ? '' : placeholder"
 
