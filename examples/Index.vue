@@ -67,7 +67,9 @@ export default {
             { name: 'popover', redirect: '/vue-sdz/components/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
-            { name: 'tabber', redirect: '/vue-sdz/components/tabber' }
+            { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
+            { name: 'progress bar', redirect: '/vue-sdz/components/progressbar' },
+            { name: 'progress steps', redirect: '/vue-sdz/components/progresssteps' }
           ]
         },
         {
