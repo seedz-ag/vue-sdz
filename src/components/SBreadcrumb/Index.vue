@@ -1,118 +1,25 @@
 <template>
-  <label :class="classes">
-    <input
-      class="input"
-      type="radio"
-
-      :checked="value"
-      :disabled="disabled"
-
-      @input="ev => $emit('input', ev.target.checked)"
-    >
-
-    <span class="radio">
-      
-    </span>
-
-    <span class="text">{{ label }}</span>
-  </label>
+  <div class="s-breadcrumb">
+    <ul>
+      <li><a href="#">Parent Page</a></li>
+      <li><a href="#">Sub-Parent Page</a></li>
+      <li><a href="#">Sub-Parent Page</a></li>
+      <li>Current Page</li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'SRadiobox',
-
-  props: {
-    value: {
-      type: Boolean,
-      required: true
-    },
-
-    label: String,
-
-    negative: Boolean,
-
-    disabled: Boolean
-  },
-
-  computed: {
-    classes () {
-      return ['s-radiobox', {
-        '--is-checked': this.value,
-        '--is-negative': this.negative,
-        '--is-disabled': this.disabled
-      }]
-    }
-  }
+  name: 'SBreadcrumb'
 }
 </script>
 
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-.s-radiobox {
+.s-breadcrumb {
   display: flex;
-
-  & > .input { display: none; }
-
-  & > .radio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    transition: border-width .1s ease;
-
-    border-width: 1px;
-    border-style: solid;
-    border-radius: $border-radius-circular;
-    border-color: color(neutral, light);
-
-    background-color: color(neutral, base);
-
-    &:hover {
-      border-width: 2px;
-      border-color: color(positive, base);
-    }
-  }
-
-  & > .text {
-    margin-left: 10px;
-    font-size: $font-size-xs;
-  }
-
-  & > .input + .radio { transition: background-color .6s ease; }
-
-  & > .input:checked + .radio {
-    animation: check;
-    background-color: color(neutral, base);
-
-    border-width: 7px;
-    border-style: solid;
-    border-color: color(primary, base);
-  }
-
-  &.--is-checked {
-    & > .radio { border-color: color(positive, base); }
-  }
-
-  &.--is-negative {
-    & > .radio { border-color: color(negative, base); }
-    & > .input:checked + .radio { border: color(negative, base) 7px solid; }
-  }
-
-  &.--is-disabled {
-    & > .radio { border-color: color(neutral, light); }
-    & > .input:checked + .radio { background-color: color(neutral, light); }
-  }
-
-  @keyframes check {
-    0% { opacity: $opacity-medium; }
-    50% { opacity: $opacity-intense; }
-    100% { opacity: 1; }
-  }
 
 }
 </style>

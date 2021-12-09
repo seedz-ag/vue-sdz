@@ -1,9 +1,19 @@
 <template>
   <div class="s-progressbar-example flex-line">
-    <s-title class="h1" title="Progress Bar" />
+    <s-title class="h1" title="Breadcrumbs" />
 
     <p class="subtitle">
-      Progrees Bar Indica um tempo de espera por ações - dentro de um fluxo de experiência ou dados de carregamento.
+      Breadcrumbs são os indicadores que representam o caminho percorrido pelo visitante dentro de uma navegação.
+    </p>
+    <s-title class="h2" title="Regras de aplicação" />
+    <p class="subtitle">
+      Não utilizar link para a página atual em que o usuário está;
+    </p>
+    <p class="subtitle">
+      Utilizar links somente para as páginas parent e sub-parent;
+    </p>
+    <p class="subtitle">
+      Na versão On Color, deve-se utilizar os links com sublinhado.
     </p>
 
     <s-box class="flex-inline flex-center">
