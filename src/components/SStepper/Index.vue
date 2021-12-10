@@ -1,20 +1,24 @@
 <template>
-  <ul class="c-stepper">
-    <li
-      v-for="(item, stepIndex) in items"
+  <div class="s-stepper">
+    <div class="line" />
 
-      :key="stepIndex"
-      :class="getClasses(item, stepIndex)"
+    <ul class="stepper">
+      <li
+        v-for="(item, stepIndex) in items"
 
-      @click="$emit('select', item)"
-    >
-      <div class="content">
-        <label>{{ item.label }}</label>
+        :key="stepIndex"
+        :class="getClasses(item, stepIndex)"
 
-        <s-icon v-if="item.icon" :icon="item.icon" v-bind="$attrs" />
-      </div>
-    </li>
-  </ul>
+        @click="$emit('select', item)"
+      >
+        <div class="content">
+          <label>{{ item.label }}</label>
+
+          <s-icon v-if="item.icon" :icon="item.icon" v-bind="$attrs" />
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -50,7 +54,7 @@ export default {
     incrementStep () {
       setTimeout(() => {
         if (this.progressiveStep <= this.step) this.progressiveStep++
-      }, 500)
+      }, 1000)
     },
 
     getClasses (item, stepIndex) {
@@ -69,114 +73,120 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-.c-stepper {
-  @keyframes bounce {
-    from { width: 0%; }
-    to { width: 100%; }
-  }
-
-  margin: 0;
-  width: 100%;
-  display: flex;
-  counter-reset: step;
-  align-items: baseline;
-  justify-content: space-between;
-
-  & > .step {
-    width: 100%;
-    font-size: 12px;
+.s-stepper {
+  & > .line {
     position: relative;
-    text-align: center;
-    list-style-type: none;
-
-    & > .content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      & > label {
-        font-size: 12px;
-        transition: opacity .7s ease;
-      }
-    }
 
     &::after {
       content: '';
-      z-index: -1;
+      z-index: -2;
 
       width: 100%;
       height: 2px;
 
       top: 15px;
-      left: -50%;
+      // left: -50%;
       position: absolute;
 
       background: color(base, light);
     }
-
-    &::before {
-      width: 30px;
-      height: 30px;
-
-      display: block;
-
-      content: counter(step);
-      counter-increment: step;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-width: 2px;
-      border-radius: 50%;
-      border-style: solid;
-
-      margin: 0 auto -55px auto;
-      background-color: color(neutral, base);
-      transition: border-color .3s ease-in-out;
-    }
-
-    &:first-child:after { content: none; }
   }
 
-  .--is-active {
-    &::before {
-      color: color(primary, base);
-      border-color: color(primary, base);
+  & > .stepper {
+    @keyframes bounce {
+      from { width: 0%; }
+      to { width: 100%; }
     }
 
-    &::after {
-      content: '';
-      z-index: -1;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    counter-reset: step;
+    align-items: baseline;
+    justify-content: space-between;
 
+    & > .step {
       width: 100%;
-      height: 2px;
+      font-size: 12px;
+      position: relative;
+      text-align: center;
+      list-style-type: none;
 
-      top: 15px;
-      left: -50%;
-      position: absolute;
+      & > .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      background-color: color(primary, base);
-      transition: background-color .3s ease-in-out;
+        & > label {
+          font-size: 12px;
+          transition: opacity .7s ease;
+        }
+      }
 
-      animation: bounce 0.7s;
+      &::before {
+        width: 30px;
+        height: 30px;
+
+        display: block;
+
+        content: counter(step);
+        counter-increment: step;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-width: 2px;
+        border-radius: 50%;
+        border-style: solid;
+
+        margin: 0 auto -55px auto;
+        background-color: color(neutral, base);
+        transition: border-color .3s ease-in-out;
+      }
+
+      &:first-child:after { content: none; }
     }
 
-    & > .content:last-child { color: color(primary, base); }
-  }
+    .--is-active {
+      &::before {
+        color: color(primary, base);
+        border-color: color(primary, base);
+      }
 
-  .--is-disabled {
-    cursor: not-allowed;
+      &::after {
+        content: '';
+        z-index: -1;
 
-    & > .content { color: gray !important; }
+        width: 100%;
+        height: 2px;
 
-    &::before {
-      // color: color(neutral, light) !important;
-      // border-color: color(neutral, light) !important;
-      color: gray !important;
-      border-color: gray !important;
+        top: 15px;
+        left: -50%;
+        position: absolute;
+
+        background-color: color(primary, base);
+        transition: background-color .3s ease-in-out;
+
+        animation: bounce 0.7s;
+      }
+
+      & > .content:last-child { color: color(primary, base); }
     }
+
+    .--is-disabled {
+      cursor: not-allowed;
+
+      & > .content { color: gray !important; }
+
+      &::before {
+        // color: color(neutral, light) !important;
+        // border-color: color(neutral, light) !important;
+        color: gray !important;
+        border-color: gray !important;
+      }
+    }
+    .--is-current-step > .content { font-weight: 800; }
   }
-  .--is-current-step > .content { font-weight: 800; }
 }
 </style>
