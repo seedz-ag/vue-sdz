@@ -1,15 +1,18 @@
 <template>
   <ul class="c-stepper">
-    {{ progressiveStep }}
     <li
       v-for="(item, stepIndex) in items"
 
       :key="stepIndex"
-      :class="getClasses(stepIndex)"
+      :class="getClasses(item, stepIndex)"
 
       @click="$emit('select', item)"
     >
-      <label>{{ item }}</label>
+      <div class="content">
+        <label>{{ item.label }}</label>
+
+        <s-icon v-if="item.icon" :icon="item.icon" v-bind="$attrs" />
+      </div>
     </li>
   </ul>
 </template>
@@ -17,6 +20,10 @@
 <script>
 export default {
   name: 'SStepper',
+
+  components: {
+    SIcon: () => import('../SIcon/Index.vue').then(c => c.default)
+  },
 
   props: {
     step: Number,
@@ -43,16 +50,17 @@ export default {
     incrementStep () {
       setTimeout(() => {
         if (this.progressiveStep <= this.step) this.progressiveStep++
-      }, 1200)
+      }, 500)
     },
 
-    getClasses (stepIndex) {
+    getClasses (item, stepIndex) {
       const isActive = stepIndex <= (this.progressiveStep - 1)
 
-      return {
+      return ['step', {
         '--is-active': isActive,
+        '--is-disabled': item.disabled,
         '--is-current-step': isActive && this.step === stepIndex
-      }
+      }]
     }
   }
 }
@@ -74,32 +82,36 @@ export default {
   align-items: baseline;
   justify-content: space-between;
 
-  li {
+  & > .step {
     width: 100%;
     font-size: 12px;
-    color: #7d7d7d;
     position: relative;
     text-align: center;
     list-style-type: none;
 
-    label {
-      font-size: 12px;
-      transition: opacity .7s ease;
+    & > .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      // &:before {
-      //   content: '';
-      //   z-index: -1;
+      & > label {
+        font-size: 12px;
+        transition: opacity .7s ease;
+      }
+    }
 
-      //   width: 100%;
-      //   height: 1px;
+    &::after {
+      content: '';
+      z-index: -1;
 
-      //   top: 15px;
-      //   left: -50%;
-      //   position: absolute;
+      width: 100%;
+      height: 2px;
 
-      //   background: color(primary, light);
-      // }
-      // &:first-child:before { content: none; }
+      top: 15px;
+      left: -50%;
+      position: absolute;
+
+      background: color(base, light);
     }
 
     &::before {
@@ -115,12 +127,11 @@ export default {
       align-items: center;
       justify-content: center;
 
-      border-radius: 50%;
       border-width: 2px;
+      border-radius: 50%;
       border-style: solid;
-      border-color: color(base, light);
 
-      margin: 0 auto -50px auto;
+      margin: 0 auto -55px auto;
       background-color: color(neutral, base);
       transition: border-color .3s ease-in-out;
     }
@@ -128,13 +139,12 @@ export default {
     &:first-child:after { content: none; }
   }
 
-  li > label::after:not(:first-child) { content: none; }
-
   .--is-active {
-    // circle bocer
-    &::before { border-color: color(primary, base); }
+    &::before {
+      color: color(primary, base);
+      border-color: color(primary, base);
+    }
 
-    // line before circle
     &::after {
       content: '';
       z-index: -1;
@@ -151,8 +161,22 @@ export default {
 
       animation: bounce 0.7s;
     }
+
+    & > .content:last-child { color: color(primary, base); }
   }
 
-  .--is-current-step > label { font-weight: 800; }
+  .--is-disabled {
+    cursor: not-allowed;
+
+    & > .content { color: gray !important; }
+
+    &::before {
+      // color: color(neutral, light) !important;
+      // border-color: color(neutral, light) !important;
+      color: gray !important;
+      border-color: gray !important;
+    }
+  }
+  .--is-current-step > .content { font-weight: 800; }
 }
 </style>

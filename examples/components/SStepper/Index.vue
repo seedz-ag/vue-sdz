@@ -13,7 +13,13 @@ export default {
   data () {
     return {
       activeStep: 2,
-      items: ['item 1', 'item 2', 'item 3', 'item 4', 'item 5']
+      items: [
+        { label: 'item 1', icon: 'sdz-dollar-sign', disabled: false },
+        { label: 'item 2', icon: 'sdz-link', disabled: false },
+        { label: 'item 3', icon: 'sdz-shield', disabled: false },
+        { label: 'item 4', icon: 'sdz-shield-off', disabled: true },
+        { label: 'item 5', icon: 'sdz-cart', disabled: false }
+      ]
     }
   }
 }
