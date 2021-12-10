@@ -1,17 +1,30 @@
 <template>
   <div class="s-breadcrumb">
-    <ul>
-      <li><a href="#">Parent Page</a></li>
-      <li><a href="#">Sub-Parent Page</a></li>
-      <li><a href="#">Sub-Parent Page</a></li>
-      <li>Current Page</li>
+    <ul :class="['list', color]">
+      <li v-for="{text, current, to, external} in items" :key="text" class="item">
+        <a v-if="!current" :href="to" :target="external ? '_blank' : '_self' " class="parent">
+          {{ text }}
+        </a>
+        <span v-else>{{ text }}</span>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SBreadcrumb'
+  name: 'SBreadcrumb',
+
+  props: {
+    color: {
+      type: String,
+      validator: function (value) {
+        return ['light', 'dark'].indexOf(value) !== -1
+      }
+    },
+
+    items: { type: Array, required: true }
+  }
 }
 </script>
 
@@ -19,7 +32,30 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-breadcrumb {
-  display: flex;
 
+  & > .list{
+    list-style-type: none;
+    display: flex;
+  }
+
+  & > .list > .item{
+    display: inline-flex;
+    font-size: .8rem;
+    color: color(base, light);
+  }
+
+  & > .list > .item:not(:first-child):before{
+    content: ">";
+    margin: 0 12px;
+  }
+
+  & > .list > .item> .parent{
+    text-decoration: underline;
+    color: color(primary, base);
+  }
+
+  & > .list.dark > .item, & > .list.dark > .item > .parent{
+    color: color(neutral, base);
+  }
 }
 </style>

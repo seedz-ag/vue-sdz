@@ -1,5 +1,5 @@
 <template>
-  <div class="s-progressbar-example flex-line">
+  <div class="s-breadcrumb-example flex-line">
     <s-title class="h1" title="Breadcrumbs" />
 
     <p class="subtitle">
@@ -17,33 +17,69 @@
     </p>
 
     <s-box class="flex-inline flex-center">
-      <s-progressbar percent="width: 1%" />
-      <s-progressbar percent="width: 50%" />
-      <s-progressbar percent="width: 100%" />
+      <s-breadcrumb color="light" :items="items" />
+    </s-box>
+
+    <s-box class="flex-inline flex-center color-dark">
+      <s-breadcrumb color="dark" :items="items" />
     </s-box>
   </div>
 </template>
 
 <script>
-import SProgressbar from '../../../src/components/SProgressbar/Index.vue'
+import SBreadcrumb from '../../../src/components/SBreadcrumb/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SProgressbar, SBox, STitle }
+  components: { SBreadcrumb, SBox, STitle },
+
+  data () {
+    return {
+      items: [
+        {
+          disabled: true,
+          current: false,
+          text: 'Parent Page',
+          to: '#',
+          external: false
+        },
+        {
+          disabled: true,
+          current: false,
+          text: 'Sub-Parent Page',
+          to: '#',
+          external: false
+        },
+        {
+          disabled: true,
+          current: false,
+          text: 'Sub-Parent Page',
+          to: '#',
+          external: false
+        },
+        {
+          disabled: true,
+          current: true,
+          text: 'Parent Page',
+          to: '',
+          external: false
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-.s-progressbar-example {
+@import "./src/styles/_index.scss";
+
+.s-breadcrumb-example {
   display: flex;
   justify-content: center;
 
-  & > .s-box{
-    & > .s-progressbar{
-      margin-bottom: 15px;
-    }
+  & > .s-box.color-dark{
+    background: color(primary, base);
   }
-
 }
 </style>

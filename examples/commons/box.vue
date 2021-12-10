@@ -1,13 +1,13 @@
 <template>
   <div class="s-box">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'SBox'
-  }
+export default {
+  name: 'SBox'
+}
 </script>
 
 <style lang="scss">

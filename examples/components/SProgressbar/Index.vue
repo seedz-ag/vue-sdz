@@ -7,9 +7,9 @@
     </p>
 
     <s-box class="flex-inline flex-center">
-      <s-progressbar percent="width: 1%" />
-      <s-progressbar percent="width: 50%" />
-      <s-progressbar percent="width: 100%" />
+      <s-progressbar :value="progress1" />
+      <s-progressbar :value="progress2" />
+      <s-progressbar :value="progress3" />
     </s-box>
   </div>
 </template>
@@ -20,7 +20,21 @@ import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SProgressbar, SBox, STitle }
+  components: { SProgressbar, SBox, STitle },
+
+  data(){
+    return {
+      progress1: 0,
+      progress2: 0,
+      progress3: 0
+    }
+  },
+
+  created(){
+    setTimeout(() => this.progress1 = 5, 300)
+    setTimeout(() => this.progress2 = 50, 600)
+    setTimeout(() => this.progress3 = 100, 900)
+  }
 }
 </script>
 
@@ -30,7 +44,7 @@ export default {
   justify-content: center;
 
   & > .s-box{
-    & > .s-progressbar{
+    & > .s-progress-bar{
       margin-bottom: 15px;
     }
   }

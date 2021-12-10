@@ -1,6 +1,6 @@
 <template>
-  <div class="s-progressbar">
-    <div class="progress" :style="percent" />
+  <div class="s-progress-bar">
+    <div class="progress" :style="{ width: value + '%' }" />
   </div>
 </template>
 
@@ -9,7 +9,11 @@ export default {
   name: 'SProgressbar',
 
   props: {
-    percent: Number
+    value: {
+      type: Number,
+      required: true,
+      validator: val => val >= 0 && val <= 100
+    }
   }
 }
 </script>
@@ -17,9 +21,9 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-.s-progressbar {
+.s-progress-bar {
   display: flex;
-  background-color: #ECEDEF;
+  background: color(neutral, medium);
   height: 8px;
   width: 100%;
   border-radius: 8px;
@@ -27,6 +31,8 @@ export default {
   & > .progress{
     background-color: color(positive, base);
     border-radius: 8px;
+    transition: width .9s ease-in;
   }
+
 }
 </style>
