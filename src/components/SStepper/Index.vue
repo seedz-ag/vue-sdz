@@ -1,6 +1,6 @@
 <template>
   <div class="s-stepper">
-    <div class="line" />
+    <div class="tracker" />
 
     <ul class="stepper">
       <li
@@ -54,7 +54,7 @@ export default {
     incrementStep () {
       setTimeout(() => {
         if (this.progressiveStep <= this.step) this.progressiveStep++
-      }, 1000)
+      }, 1200)
     },
 
     getClasses (item, stepIndex) {
@@ -74,18 +74,18 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-stepper {
-  & > .line {
+  & > .tracker {
     position: relative;
 
     &::after {
       content: '';
       z-index: -2;
 
-      width: 100%;
       height: 2px;
+      width: calc(100% - 20%);
 
       top: 15px;
-      // left: -50%;
+      left: 10%;
       position: absolute;
 
       background: color(base, light);
@@ -150,6 +150,7 @@ export default {
 
     .--is-active {
       &::before {
+        border-width: 3px;
         color: color(primary, base);
         border-color: color(primary, base);
       }
@@ -159,14 +160,16 @@ export default {
         z-index: -1;
 
         width: 100%;
-        height: 2px;
+        height: 3px;
 
-        top: 15px;
+        top: 14px;
         left: -50%;
         position: absolute;
 
         background-color: color(primary, base);
-        transition: background-color .3s ease-in-out;
+        transition: color .3s ease-in-out,
+                    border-width .3s ease-in-out,
+                    background-color .3s ease-in-out;
 
         animation: bounce 0.7s;
       }
