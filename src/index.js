@@ -1,3 +1,4 @@
+import * as mixins from './mixins'
 import * as helpers from './helpers'
 import * as SComponents from './components/index.js'
 
@@ -10,7 +11,7 @@ const install = Vue => {
 if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 
 
-export default { ...install, ...helpers }
+export default { ...install, ...mixins, ...helpers }
 
 // Register components individually
 export { default as SAlert } from './components/SAlert/Index.vue'
@@ -29,6 +30,7 @@ export { default as SLoader } from './components/SLoader/Index.vue'
 export { default as SModal } from './components/SModal/Index.vue'
 export { default as SPopover } from './components/SPopover/Index.vue'
 export { default as SOverlay } from './components/SOverlay/Index.vue'
+export { default as SPagination } from './components/SPagination/Index.vue'
 export { default as SSelect } from './components/SSelect/Index.vue'
 export { default as SShadowed } from './components/SShadowed/Index.vue'
 export { default as SSidebar } from './components/SSidebar/Index.vue'

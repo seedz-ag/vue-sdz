@@ -1,5 +1,5 @@
 i<template>
-  <div v-if="hasValid" class="c-table-builder">
+  <div v-if="hasValid" class="s-table">
     <slot name="actions">
       <filters label="Filtrar por: " :search="search" v-on="$listeners" />
     </slot>
@@ -131,16 +131,12 @@ export default {
 
       return row[props[index]] || ''
     }
-  },
-
-  install (Vue, { name = 'vue-coe-table' } = {}) {
-    Vue.component(name, this)
   }
 }
 </script>
 
 <style lang="scss">
-.c-table-builder > .table-container {
+.s-table > .table-container {
   @mixin table-config {
     width: 100%;
     display: table;
