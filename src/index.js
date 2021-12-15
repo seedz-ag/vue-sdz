@@ -1,3 +1,4 @@
+import * as mixins from './mixins'
 import * as helpers from './helpers'
 import * as SComponents from './components/index.js'
 
@@ -10,7 +11,7 @@ const install = Vue => {
 if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 
 
-export default { ...install, ...helpers }
+export default { ...install, ...mixins, ...helpers }
 
 // Register components individually
 export { default as SAlert } from './components/SAlert/Index.vue'
