@@ -68,7 +68,8 @@ export default {
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
             { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
-            { name: 'tabber', redirect: '/vue-sdz/components/tabber' }
+            { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
+            { name: 'pagination', redirect: '/vue-sdz/components/pagination' }
           ]
         },
         {
