@@ -1,19 +1,35 @@
 <template>
   <div class="s-stepper-example">
-    <s-stepper :step="activeStep" :items="items" @select="newStep => activeStep = newStep" />
+    <s-title class="h1" title="Progress Stepper" />
+
+    <p class="subtitle">
+      Progrees Steps no Design System são usadas para denotar o progresso em estágios de uma ação ou atividade. Esse tipo de lista fornece ao usuário uma noção do progresso e das etapas restantes.
+    </p>
+
+    <s-box>
+      <s-stepper :step="activeStep" :items="items" @select="newStep => activeStep = newStep" />
+    </s-box>
   </div>
 </template>
 
 <script>
 import SStepper from '../../../src/components/SStepper/Index.vue'
+import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SStepper },
+  components: { SStepper, SBox, STitle },
 
   data () {
     return {
       activeStep: 2,
-      items: ['item 1', 'item 2', 'item 3', 'item 4', 'item 5']
+      items: [
+        { label: 'item 1', icon: 'sdz-dollar-sign', disabled: false },
+        { label: 'item 2', icon: 'sdz-link', disabled: false },
+        { label: 'item 3', icon: 'sdz-shield', disabled: false },
+        { label: 'item 4', icon: 'sdz-shield-off', disabled: true },
+        { label: 'item 5', icon: 'sdz-cart', disabled: false }
+      ]
     }
   }
 }
@@ -21,6 +37,8 @@ export default {
 
 <style lang="scss">
 .s-stepper-example {
-
+  .s-box{
+    padding: 50px 20px;
+  }
 }
 </style>

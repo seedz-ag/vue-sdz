@@ -41,7 +41,7 @@ export default {
   & > .list > .item{
     display: inline-flex;
     font-size: .8rem;
-    color: color(base, light);
+    color: color(base, medium);
   }
 
   & > .list > .item:not(:first-child):before{
@@ -50,8 +50,12 @@ export default {
   }
 
   & > .list > .item> .parent{
+    //text-decoration: underline;
+    color: color(base, medium);
+  }
+
+  & > .list > .item> .parent:hover{
     text-decoration: underline;
-    color: color(primary, base);
   }
 
   & > .list.dark > .item, & > .list.dark > .item > .parent{

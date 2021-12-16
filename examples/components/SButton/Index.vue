@@ -7,28 +7,14 @@
       <div class="flex-inline">
         <s-button primary>primary</s-button>
         <s-button grey>Secondary</s-button>
-        <s-button success>success</s-button>
-        <s-button error>error</s-button>
         <s-button loading>loading</s-button>
         <s-button disabled>disabled</s-button>
+        <s-button link>link button</s-button>
       </div>
       <br><br>
       <div class="flex-line">
         <s-button full-width>full-width</s-button>
       </div>
-    </s-box>
-
-    <s-title class="h2" title="Links" />
-    <s-box class="flex-line flex-center">
-      <s-button link external to="https://www.google.com">link external</s-button>
-      <br>
-      <s-button link disabled>link disabled</s-button>
-      <br>
-      <s-button link icon="sdz-check" disabled>link icon disabled</s-button>
-      <br>
-      <s-button link to="https://www.google.com">link route</s-button>
-      <br>
-      <s-button link icon="sdz-check" secondary-icon-color to="https://www.google.com">link icon</s-button>
     </s-box>
 
     <s-title class="h2" title="Sizes" />
@@ -44,6 +30,14 @@
       <s-button outlined disabled>outlined disabled</s-button>
       <s-button outlined icon="sdz-check">outlined icon</s-button>
       <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>
+    </s-box>
+
+    <s-title class="h2" title="Rounded" />
+    <s-box class="flex-inline">
+      <s-button rounded>outlined</s-button>
+      <s-button rounded disabled>rounded disabled</s-button>
+      <s-button rounded icon="sdz-check">rounded icon</s-button>
+      <s-button rounded icon="sdz-check" disabled>rounded disabled icon</s-button>
     </s-box>
 
     <s-title class="h2" title="Enhancers" />

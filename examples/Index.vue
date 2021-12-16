@@ -52,7 +52,8 @@ export default {
             { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
             { name: 'radiobox', redirect: '/vue-sdz/components/radiobox' },
             { name: 'switch', redirect: '/vue-sdz/components/switch' },
-            { name: 'button', redirect: '/vue-sdz/components/button' }
+            { name: 'button', redirect: '/vue-sdz/components/button' },
+            { name: 'link', redirect: '/vue-sdz/components/link' },
           ]
         },
         {
