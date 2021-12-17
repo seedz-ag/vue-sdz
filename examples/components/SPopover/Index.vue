@@ -1,6 +1,7 @@
 <template>
   <div class="s-popover-example">
-    <h1 class="h1">Popover</h1>
+    <s-title class="h1" title="Popover" />
+
     <s-box>
       <div class="example-popover flex-line flex-center">
         <s-popover
@@ -20,17 +21,16 @@
 
         <div ref="teste" class="target">popover target</div>
       </div>
-      
-      <div class="buttons flex-inline">
-          <s-button @click.stop="openPopover({ position: 'top', align: 'left' })">top left</s-button>
-          <s-button @click.stop="openPopover({ position: 'top', align: 'center' })">top center</s-button>
-          <s-button @click.stop="openPopover({ position: 'top', align: 'right' })">top right</s-button>
 
-          <s-button @click.stop="openPopover({ position: 'bottom', align: 'left' })">bottom left</s-button>
-          <s-button @click.stop="openPopover({ position: 'bottom', align: 'center' })">bottom center</s-button>
-          <s-button @click.stop="openPopover({ position: 'bottom', align: 'right' })">bottom right</s-button>
+      <div class="buttons flex-inline">
+        <s-button @click.stop="openPopover({ position: 'top', align: 'left' })">top left</s-button>
+        <s-button @click.stop="openPopover({ position: 'top', align: 'center' })">top center</s-button>
+        <s-button @click.stop="openPopover({ position: 'top', align: 'right' })">top right</s-button>
+
+        <s-button @click.stop="openPopover({ position: 'bottom', align: 'left' })">bottom left</s-button>
+        <s-button @click.stop="openPopover({ position: 'bottom', align: 'center' })">bottom center</s-button>
+        <s-button @click.stop="openPopover({ position: 'bottom', align: 'right' })">bottom right</s-button>
       </div>
-      
     </s-box>
   </div>
 </template>
@@ -39,9 +39,10 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SPopover from '../../../src/components/SPopover/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SPopover, SButton, SBox },
+  components: { SPopover, SButton, SBox, STitle },
 
   data () {
     return {
@@ -69,6 +70,7 @@ export default {
 
       & > .s-button{
         margin-right: 15px;
+        margin-bottom: 10px;
       }
     }
 
@@ -79,7 +81,7 @@ export default {
         margin-top: 30px;
       }
     }
-    
+
   }
 
 }

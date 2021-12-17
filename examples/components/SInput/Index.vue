@@ -1,20 +1,24 @@
 <template>
   <div class="s-input-example">
-    <h1 class="h1">Inputs</h1>
+    <s-title class="h1" title="Inputs" />
 
     <p class="subtitle">
       Input Text permite a pessoa usuária interagir e inserir conteúdo e dados. Pode ser usado para entradas de formulários longos e curtos.
-      <br><br>
+    </p>
+    <p class="subtitle">
       Use em formulários para permitir as pessoas inserirem informações;
-      <br><br>
+    </p>
+    <p class="subtitle">
       Podem fazer parte de componentes como modais no caso de um modal de login, por exemplo;
-      <br><br>
+    </p>
+    <p class="subtitle">
       Os tipos de entrada de texto comuns incluem: nomes de pessoas usuárias, descrições, URLs, e-mails, endereços e qualquer outra forma de inserção de informação.
-      <br><br>
+    </p>
+    <p class="subtitle">
       Considerar Input Text sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
     </p>
 
-    <h2 class="h2">States</h2>
+    <s-title class="h2" title="Stats" />
     <s-box>
       <s-input
         label="Default"
@@ -22,7 +26,7 @@
 
       <s-input
         placeholder="Disabled input"
-        disabled = "disabled"
+        disabled="disabled"
       />
       <s-input
         placeholder="Disabled readonly input"
@@ -43,7 +47,7 @@
       />
     </s-box>
 
-    <h2 class="h2">Sizing</h2>
+    <s-title class="h2" title="Sizing" />
     <s-box class="sizing flex-inline">
       <s-input
         label="Small"
@@ -58,7 +62,7 @@
       />
     </s-box>
 
-    <h2 class="h2">Rounded</h2>
+    <s-title class="h2" title="Rounded" />
     <s-box>
       <s-input
         label="rounded"
@@ -68,7 +72,7 @@
       />
     </s-box>
 
-    <h2 class="h2">Masked Input</h2>
+    <s-title class="h2" title="Masked Input" />
     <p class="subtitle">
       CPF: 000.000.000-00<br>
       CNPJ: 00.000.000/0000-00<br>
@@ -95,9 +99,9 @@
         :value="inputMoney"
         @input="onInputMoney"
       />
-    </s-box> 
+    </s-box>
 
-    <h2 class="h2">Enhancers</h2>
+    <s-title class="h2" title="Enhancers" />
     <s-box>
       <s-input
         round
@@ -112,11 +116,11 @@
 
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
-import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SInput, SButton, SBox },
+  components: { SInput, SBox, STitle },
 
   data () {
     return {

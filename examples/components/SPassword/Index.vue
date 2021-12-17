@@ -1,18 +1,21 @@
 <template>
   <div class="s-input-example">
-    <h1 class="h1">Password</h1>
+    <s-title class-title="h1" title="Password" />
 
     <p class="subtitle">
-      Input Password tem como objetivo permitir que a pessoa usuária coloque e/ou cadastre uma senha dentro do sistema. Possui uma máscara que por default fica habilitada, mas a pessoa usuária pode desabilitar para consegui ver os caracteres. 
-      <br><br>
+      Input Password tem como objetivo permitir que a pessoa usuária coloque e/ou cadastre uma senha dentro do sistema. Possui uma máscara que por default fica habilitada, mas a pessoa usuária pode desabilitar para consegui ver os caracteres.
+    </p>
+    <p class="subtitle">
       Utilizar o Input Password em fluxos de login ou de cadastro de senha e perfil.
-      <br><br>
+    </p>
+    <p class="subtitle">
       Utilizar mensagens de erro que ajudam a pessoa usuário a solucionar o problema.
-      <br><br>
+    </p>
+    <p class="subtitle">
       Considerar Input Password sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
     </p>
 
-    <h2 class="h2">Default</h2>
+    <s-title class-title="h2" title="Default" />
     <s-box>
       <s-input
         label="Password"
@@ -20,18 +23,18 @@
       />
     </s-box>
 
-    <h2 class="h2">Error</h2>
+    <s-title class-title="h2" title="Error" />
     <s-box>
       <s-input
         label="Password Error"
         :validation="inputDataError ? '' : 'error msg'"
         :value="inputDataError"
-        @input="value => inputDataError = value"
         type="password"
+        @input="value => inputDataError = value"
       />
     </s-box>
 
-    <h2 class="h2">Disabled</h2>
+    <s-title class-title="h2" title="Disabled" />
     <s-box>
       <s-input
         placeholder="Disabled input"
@@ -52,9 +55,10 @@
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SInput, SBox },
+  components: { SInput, SBox, STitle },
 
   data () {
     return {

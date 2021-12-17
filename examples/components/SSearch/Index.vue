@@ -1,18 +1,19 @@
 <template>
   <div class="s-input-example">
-    <h1 class="h1">Search</h1>
+    <s-title class="h1" title="Search" />
 
     <p class="subtitle">
       Input Search é um campo de busca e permite que a pessoa usuária encontre um conteúdo de forma rápida. Hoje é um componente de input simples, no futuro a ideia é que contemple também comportamentos como autocomplete.
     </p>
-    <h2 class="h2">Quando usar</h2>
+    <s-title class="h2" title="Quando usar" />
     <p class="subtitle">
       É utilizado quando a pessoa usuária deseja encontrar um conteúdo disponível;
-      <br><br>
+    </p>
+    <p class="subtitle">
       Pode ser adicionado a outros componentes, como por exemplo o Header.
     </p>
 
-    <h2 class="h2">Default</h2>
+    <s-title class="h2" title="Default" />
     <s-box>
       <s-input
         round
@@ -27,11 +28,11 @@
 
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
-import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SInput, SButton, SBox },
+  components: { SInput, SBox, STitle },
 
   data () {
     return {

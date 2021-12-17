@@ -1,6 +1,9 @@
 <template>
   <div class="palettes">
-    <h1 class="h1">Colors</h1>
+    <s-title class="h1" title="Colors" />
+    <p class="subtitle">
+      OBS: Para gerar as variações, aplicamos uma porcentagem de lighten ou dark, que pode ser simulado conforme link a seguir: https://codepen.io/3ana/pen/QxJBWj
+    </p>
     <div v-for="color in colors" :key="color" :class="color">
       <h2 class="h2">{{ color }}</h2>
       <div class="palette">base</div>
@@ -12,8 +15,10 @@
 </template>
 
 <script>
+import STitle from '../commons/title.vue'
+
 export default {
-  name: 'Palettes',
+  components: { STitle },
 
   data () {
     return {

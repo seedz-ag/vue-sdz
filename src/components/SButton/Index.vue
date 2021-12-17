@@ -75,6 +75,8 @@ export default {
 
     success: Boolean,
 
+    dark: Boolean,
+
     grey: Boolean,
 
     error: Boolean,
@@ -82,6 +84,8 @@ export default {
     link: Boolean,
 
     outlined: Boolean,
+
+    rounded: Boolean,
 
     loading: Boolean
   },
@@ -95,8 +99,10 @@ export default {
           '--small': this.small,
           '--large': this.large,
           '--error': this.error,
+          '--dark': this.dark,
           // '--primary': this.primary,
           '--success': this.success,
+          '--rounded': this.rounded,
           '--loading': this.loading,
           '--disabled': this.disabled,
           '--outlined': this.outlined,
@@ -233,7 +239,7 @@ export default {
     height: auto;
     min-width: auto;
     min-height: auto;
-    background: color(neutral, base);
+    background: transparent;
 
     &.--disabled {
       background: transparent;
@@ -248,8 +254,9 @@ export default {
       & > .text {
         color: transparent;
         background-clip: text;
-        background: color(neutral, dark);
+        background: color(base, light);
         -webkit-background-clip: text;
+        font-weight: 500;
         // https://codyhouse.co/nuggets/text-gradients
       }
     }
@@ -259,12 +266,26 @@ export default {
       color: color(primary, base);
     }
 
+    &.--dark > .icon {
+      color: color(neutral, base);
+    }
+
     & > .text {
       color: color(primary, base);
+      font-weight: 500;
 
       &:hover, &:active {
         text-decoration: underline;
         text-decoration-color: color(primary, base);
+      }
+    }
+
+    &.--dark > .text {
+      color: color(neutral, base);
+
+      &:hover, &:active {
+        text-decoration: underline;
+        text-decoration-color: color(neutral, base);
       }
     }
   }
@@ -323,6 +344,39 @@ export default {
     opacity: 1;
     background: color(neutral, base);
     border: 1px solid color(primary, base);
+
+    &.--has-icon {
+      & > .icon { color: color(primary, base); }
+    }
+
+    &.--disabled {
+      background: color(neutral, base);
+      border-color: color(neutral, light);
+
+      & > .text { color: color(neutral, light); }
+      & > .icon {
+        color: transparent;
+        background-clip: text;
+        background: color(neutral, dark);
+        -webkit-background-clip: text;
+      }
+    }
+
+    &::before, &::after { display: none; }
+
+    & > .icon { filter: unset; }
+    & > .text { color: color(primary, base); }
+    & > .loader {}
+
+    &:hover { background: color(neutral, light); }
+    &:active { background: color(neutral, medium); }
+  }
+
+&.--rounded {
+    opacity: 1;
+    background: color(neutral, base);
+    border: 1px solid color(primary, base);
+    border-radius: 50px;
 
     &.--has-icon {
       & > .icon { color: color(primary, base); }

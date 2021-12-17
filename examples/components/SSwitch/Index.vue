@@ -1,27 +1,29 @@
 <template>
   <div class="s-switch-example">
     <h1 class="h1">Switch</h1>
+    <s-title class="h1" title="Switch" />
 
     <p class="subtitle">
       Switch tem como objetivo possibilitar a pessoa usuária habilitar ou desabilitar algo como um alternador binário de "on/off".
     </p>
 
-    <h2 class="h2">Regras de aplicação</h2> 
+    <s-title class="h2" title="Regras de aplicação" />
 
     <p class="subtitle">
       Podem ser utilizados para habilitar ou desabilitar configurações como "receber ou não" push notifications;
-      <br><br>
+    </p>
+    <p class="subtitle">
       Não deve ser usado em cenários onde é interessante a pessoa usuária conseguir confirmar as opções selecionadas antes das ações serem aplicadas. Nesses casos deve-se utilizar o checkbox.
     </p>
 
-    <h2 class="h2">Default</h2>
+    <s-title class="h2" title="Default" />
     <s-box>
-      <s-switch v-model="data0" label="Default Switch" />
+      <s-switch label="Default Switch" v-model="data0" />
       <br>
-      <s-switch v-model="data2" label="Checked Switch"/>
+      <s-switch label="Checked Switch" v-model="data2" />
     </s-box>
 
-    <h2 class="h2">Disabled</h2>
+    <s-title class="h2" title="Disabled" />
     <s-box>
       <s-switch label="disabled" disabled />
     </s-box>
@@ -31,9 +33,10 @@
 <script>
 import SSwitch from '../../../src/components/SSwitch/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SSwitch, SBox },
+  components: { SSwitch, SBox, STitle },
 
   data () {
     return {

@@ -35,7 +35,6 @@ export default {
     },
 
     link: Boolean,
-    dark: Boolean,
 
     /**
      * Whether the link is external or not
@@ -62,14 +61,6 @@ export default {
         ? 'button' : this.external
           ? 'a' : this.nuxt
             ? 'nuxt-link' : 'router-link'
-    },
-
-    classes () {
-      return [ 'c-link',
-        {
-          '--dark': this.color
-        }
-      ]
     }
   }
 }
