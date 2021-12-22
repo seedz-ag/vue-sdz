@@ -1,6 +1,6 @@
 <template>
   <div class="s-feedbacks-example">
-    <h1 class="h1">Feedbacks</h1>
+    <s-title class="h1" title="Feedbacks" />
     <s-box>
       <s-feedbacks :dismissible="dismissible" :feedbacks="$feedback.list" @close="feedback => $feedback.remove(feedback)" />
 
@@ -11,7 +11,6 @@
         <s-button error @click="onError">show feedback error</s-button>
         <s-button success @click="onSucces">show feedback success</s-button>
       </div>
-      
     </s-box>
   </div>
 </template>
@@ -20,9 +19,10 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SFeedbacks from '../../../src/components/SFeedbacks/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SButton, SFeedbacks, SBox },
+  components: { SButton, SFeedbacks, SBox, STitle },
 
   data () {
     return {
@@ -53,6 +53,7 @@ export default {
 
   & > .s-button{
     margin-right: 20px;
+    margin-top: 10px;
   }
 }
 </style>

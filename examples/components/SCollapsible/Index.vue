@@ -1,6 +1,6 @@
 <template>
   <div class="s-collapsible-example">
-    <h1 class="h1">Collapse</h1>
+    <s-title class="h1" title="Collapse" />
     <s-box class="flex-inline flex-center">
       <s-button outlined @click="increased()">increase content</s-button>
 
@@ -17,11 +17,12 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SCollapsible from '../../../src/components/SCollapsible/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
   name: 'SCollapsibleExample',
 
-  components: { SButton, SCollapsible, SBox },
+  components: { SButton, SCollapsible, SBox, STitle },
 
   data () {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div class="s-shadowed-example">
-    <h1 class="h1">Shadowed</h1>
+    <s-title class="h1" title="Shadowed" />
     <s-shadowed class="example-1">
       <div class="wrapper">
         AAA <br>
@@ -42,9 +42,10 @@
 
 <script>
 import SShadowed from '../../../src/components/SShadowed/Index.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SShadowed }
+  components: { SShadowed, STitle }
 }
 </script>
 

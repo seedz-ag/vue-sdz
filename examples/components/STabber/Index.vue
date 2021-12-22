@@ -1,6 +1,6 @@
 <template>
   <div class="s-tabber-example">
-    <h1 class="h1">Tabber</h1>
+    <s-title class="h1" title="Tabber" />
     <s-box>
       <s-tabber
         :tabs="tabs"
@@ -21,9 +21,10 @@
 <script>
 import STabber from '../../../src/components/STabber/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { STabber, SBox },
+  components: { STabber, SBox, STitle },
 
   data () {
     return {

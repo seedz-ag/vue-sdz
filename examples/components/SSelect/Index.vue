@@ -1,18 +1,19 @@
 <template>
   <div class="s-select-example">
-    <h1 class="h1">Select</h1>
+    <s-title class="h1" title="Select" />
 
     <p class="subtitle">
       Input Select é um dropdown onde a pessoa usuária pode selecionar uma opção em uma lista de opções. Hoje trazemos a visualização dos itens de forma nativa por uma questão de acessibilidade.
     </p>
-    <h2 class="h2">Quando usar</h2>  
+    <s-title class="h2" title="Quando usar" />
     <p class="subtitle">
       Utilizar quando você tem ao menos 3 opções de escolha.
-      <br><br>
+    </p>
+    <p class="subtitle">
       Considerar Input Select sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
     </p>
 
-    <h2 class="h2">Default</h2>
+    <s-title class="h2" title="Default" />
     <s-box>
       <s-select
         label="Simple"
@@ -24,22 +25,21 @@
       />
 
       <s-select
-          label="With slots"
-          display="slug"
-          display-by="name"
-          placeholder="Selecione uma opção"
-          clear-on-select
-          :items="items"
-          v-model="data2"
-        >
+        label="With slots"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        clear-on-select
+        :items="items"
+        v-model="data2"
+      >
         <div slot="option" slot-scope="{ option }">
           {{ option['slug'] }} - {{ option['name'] }}
         </div>
       </s-select>
     </s-box>
-    
 
-    <h2 class="h2">Multiples</h2>
+    <s-title class="h2" title="Multiples" />
     <s-box>
       <s-select
         label="Multiple"
@@ -63,8 +63,8 @@
         v-model="data4"
       />
     </s-box>
-    
-    <h2 class="h2">Disabled</h2>
+
+    <s-title class="h2" title="Disabled" />
     <s-box>
       <s-select
         label="Disabled"
@@ -75,16 +75,16 @@
         :items="items"
       />
     </s-box>
-    
   </div>
 </template>
 
 <script>
 import SSelect from '../../../src/components/SSelect/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SSelect, SBox },
+  components: { SSelect, SBox, STitle },
 
   data () {
     return {

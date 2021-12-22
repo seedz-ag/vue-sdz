@@ -21,7 +21,7 @@ export default {
           name: 'Getting Started',
           icon: 'sdz-star',
           child: [
-            { name: 'home', redirect: '/vue-sdz/getting-started' }
+            { name: 'home', redirect: '/vue-sdz/commons/getting-started' }
           ]
         },
         {
@@ -52,7 +52,8 @@ export default {
             { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
             { name: 'radiobox', redirect: '/vue-sdz/components/radiobox' },
             { name: 'switch', redirect: '/vue-sdz/components/switch' },
-            { name: 'button', redirect: '/vue-sdz/components/button' }
+            { name: 'button', redirect: '/vue-sdz/components/button' },
+            { name: 'link', redirect: '/vue-sdz/components/link' },
           ]
         },
         {
@@ -62,13 +63,15 @@ export default {
             { name: 'alert', redirect: '/vue-sdz/components/alert' },
             { name: 'card', redirect: '/vue-sdz/components/card' },
             { name: 'carousel', redirect: '/vue-sdz/components/carousel' },
-            { name: 'Spinner', redirect: '/vue-sdz/components/loader' },
+            { name: 'spinner', redirect: '/vue-sdz/components/loader' },
             { name: 'modal', redirect: '/vue-sdz/components/modal' },
             { name: 'popover', redirect: '/vue-sdz/components/popover' },
             { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
-            { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
             { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
+            { name: 'progress bar', redirect: '/vue-sdz/components/progressbar' },
+            { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
+            { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
             { name: 'pagination', redirect: '/vue-sdz/components/pagination' }
           ]
         },
@@ -131,40 +134,19 @@ export default {
   overflow-x: hidden;
 }
 
-.h1{
-  font-size: 1.80rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.h1:after{
-  content: "";
-  height: 2px;
-  width: 80px;
-  background-color: #000;
-  display: block;
-  margin-top: 30px;
-}
-
-.h2{
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-
 .subtitle{
   font-size: 1rem;
   line-height: 20px;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   line-height: 1.5;
 }
 
 .flex-inline{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .flex-line{

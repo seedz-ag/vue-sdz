@@ -103,6 +103,8 @@ export default {
     & > .previous {
       cursor: pointer;
       padding-right: 10px;
+      transform: rotate(-90deg);
+      margin-top: -10px;
     }
 
     & > .page {
@@ -142,6 +144,8 @@ export default {
     & > .next {
       cursor: pointer;
       padding-left: 10px;
+      transform: rotate(90deg);
+      margin-top: -10px;
     }
   }
 }

@@ -1,16 +1,16 @@
 <template>
   <div class="s-input-example">
-    <h1 class="h1">Input Text Area</h1>
+    <s-title class="h1" title="Input Text Area" />
 
     <p class="subtitle">
       Input Text Area permite que a pessoa usuária insira textos longos em um campo.
     </p>
-    <h2 class="h2">Quando usar</h2>  
+    <s-title class="h2" title="Quanto usar" />
     <p class="subtitle">
       Representa um controle de edição de texto simples de várias linhas, útil quando você deseja permitir que as pessoas usuárias insiram uma quantidade considerável de texto de formato livre, por exemplo, um comentário em um formulário de revisão ou feedback;
     </p>
 
-    <h2 class="h2">Default</h2>
+    <s-title class="h2" title="Default" />
     <s-box>
       <s-input
         label="textarea"
@@ -22,18 +22,18 @@
       />
     </s-box>
 
-    <h2 class="h2">Negative</h2>
+    <s-title class="h2" title="Negative" />
     <s-box>
       <s-input
         label="textarea"
         text-area
         :value="inputDataError"
-        @input="value => inputDataError = value"
         :validation="inputDataError ? '' : 'error msg'"
+        @input="value => inputDataError = value"
       />
     </s-box>
 
-    <h2 class="h2">Disabled</h2>
+    <s-title class="h2" title="Disabled" />
     <s-box>
       <s-input
         label="Disabled"
@@ -48,11 +48,11 @@
 
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
-import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SInput, SButton, SBox },
+  components: { SInput, SBox, STitle },
 
   data () {
     return {

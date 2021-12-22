@@ -1,10 +1,12 @@
 <template>
   <div class="s-loader-example flex-line">
-    <h1 class="h1">Spinner</h1>
+    <s-title class="h1" title="Spinner" />
     <p class="subtitle">
       Spinners fornecem uma indicação visual de que uma ação está sendo processada, aguardando um curso de mudança ou um resultado.
     </p>
-    <h2 class="h2">Quando usar</h2> 
+
+    <s-title class="h2" title="Quando usar" />
+
     <p class="subtitle">
       Deve ser usado substituindo o label dos botões primários ao salvar ou validar dados. Ao salvar ou validar dados, o botão deve ficar no estado disabled e respeitando a cor neutra mais clara configurada neste documento.
     </p>
@@ -17,9 +19,10 @@
 <script>
 import SLoader from '../../../src/components/SLoader/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SLoader, SBox }
+  components: { SLoader, SBox, STitle }
 }
 </script>
 

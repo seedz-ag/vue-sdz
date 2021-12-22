@@ -1,6 +1,6 @@
 <template>
   <div class="s-carousel-example">
-    <h1 class="h1">Carousel</h1>
+    <s-title class="h1" title="Carousel" />
     <s-box>
       <s-carousel
         controllers
@@ -20,12 +20,13 @@
 <script>
 import SCarousel from '../../../src/components/SCarousel/Index.vue'
 import SBox from '../../commons/box.vue'
+import STitle from '../../commons/title.vue'
 
 
 export default {
   name: 'SCarouselExample',
 
-  components: { SCarousel, SBox },
+  components: { SCarousel, SBox, STitle },
 
   data () {
     return {

@@ -168,8 +168,8 @@ export default {
 
         background-color: color(primary, base);
         transition: color .3s ease-in-out,
-                    border-width .3s ease-in-out,
-                    background-color .3s ease-in-out;
+        border-width .3s ease-in-out,
+        background-color .3s ease-in-out;
 
         animation: bounce 0.7s;
       }
