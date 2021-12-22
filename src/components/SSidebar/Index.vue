@@ -95,7 +95,7 @@ export default {
   // position: absolute;
 
   width: 100%;
-  max-width: 285px;
+  max-width: 245px;
 
   display: flex;
   flex-direction: column;

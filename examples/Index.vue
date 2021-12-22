@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <s-sidebar :items="items" @redirect="onRedirect" />
+    <s-header />
 
-    <router-view />
+    <div class="conteudo" style="display:flex">
+      <s-sidebar :items="items" @redirect="onRedirect" />
+
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
 import SSidebar from '../src/components/SSidebar/Index.vue'
+import SHeader from '../src/components/SHeader/Index.vue'
 
 export default {
   name: 'Examples',
 
-  components: { SSidebar },
+  components: { SSidebar, SHeader },
 
   data () {
     return {
@@ -121,7 +126,8 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-#app { display: flex; }
+body, html, #app {width: 100% !important}
+#app { display: flex; flex-direction: column; }
 
 .container {
   width: 100%;
