@@ -1,5 +1,5 @@
-import * as mixins from './mixins'
-import * as helpers from './helpers'
+import * as mixins from './mixins/index.js'
+import * as helpers from './helpers/index.js'
 import * as SComponents from './components/index.js'
 
 const install = Vue => {
