@@ -104,7 +104,8 @@ export default {
             { name: 'progress bar', redirect: '/vue-sdz/components/progressbar' },
             { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
             { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
-            { name: 'pagination', redirect: '/vue-sdz/components/pagination' }
+            { name: 'pagination', redirect: '/vue-sdz/components/pagination' },
+            { name: 'avatar', redirect: '/vue-sdz/components/avatar' }
           ]
         },
         {

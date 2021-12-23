@@ -6,7 +6,11 @@
 
 <script>
 export default {
+<<<<<<< HEAD
   name: 'SAvatar',
+=======
+  name: 'SAvatar'
+>>>>>>> feature-examples-avatar
 
   // props: {
   //   value: {
@@ -22,6 +26,7 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-avatar {
+<<<<<<< HEAD
   display: flex;
   background: color(neutral, medium);
   height: 8px;
@@ -34,5 +39,16 @@ export default {
     transition: width .9s ease-in;
   }
 
+=======
+  border-radius: 100px;
+  display: flex;
+  background: color(primary, base);
+  height: 40px;
+  width: 40px;
+
+  & > .icon{
+
+  }
+>>>>>>> feature-examples-avatar
 }
 </style>
