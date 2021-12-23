@@ -30,10 +30,10 @@ export default {
     align-items: center;
     justify-content: space-around;
 
-    padding: 0 30px;
+    padding: 0 15px;
     border-radius: 10px 10px;
-    box-shadow: 0px 6px 19px -18px #000000;
-    -webkit-box-shadow: 0px 6px 12px -5px #000000;
+    box-shadow: 0px 6px 17px -12px color(base, base);
+    -webkit-box-shadow: 0px 6px 17px -12px color(base, base);
 
     & > .logo {
       width: 100%;
