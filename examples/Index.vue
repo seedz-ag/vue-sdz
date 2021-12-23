@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <s-header>
+    <s-header :class="classes" is-opened :height="isOpened ? 100 : 60">
       <div class="logo">
-        <img src="../dist/image/logo.svg">
+        <!-- <img src="../dist/image/logo.svg"> -->
       </div>
 
       <div class="search">
@@ -24,7 +24,10 @@
       </div>
     </s-header>
 
-    <div class="conteudo" style="display:flex">
+    <!-- :style="{ 'margin-top': isOpened ? 0 : '100px' }" -->
+    <div
+      class="content"
+    >
       <s-sidebar :items="items" @redirect="onRedirect" />
 
       <router-view />
@@ -45,6 +48,8 @@ export default {
 
   data () {
     return {
+      isOpened: true,
+
       inputSearch: '',
 
       items: [
@@ -141,7 +146,21 @@ export default {
     }
   },
 
+  created () {
+    document.addEventListener('wheel', this.headerHandler)
+  },
+
+  computed: {
+    classes () {
+      return ['header', { '--is-opened': this.isOpened }]
+    }
+  },
+
   methods: {
+    headerHandler ({ wheelDelta }) {
+      this.isOpened = wheelDelta > 0
+    },
+
     onRedirect (link) {
       if (!link || link === this.$route.path) return
 
@@ -151,6 +170,10 @@ export default {
     documentacao () {
       window.open('https://github.com/seedz-ag/vue-sdz')
     }
+  },
+
+  beforeDestroy () {
+    document.removeEventListener('wheel', this.headerHandler)
   }
 }
 </script>
@@ -158,8 +181,19 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-body, html, #app {width: 100% !important}
-#app { display: flex; flex-direction: column; }
+#app {
+  display: flex;
+  flex-direction: column;
+
+  & > .header { transition: height .6s ease-in-out; }
+
+  &:not(.--is-opened) {}
+
+  & > .content {
+    height: 100%;
+    // transition: margin-top .6s ease;
+  }
+}
 
 .container {
   width: 100%;
