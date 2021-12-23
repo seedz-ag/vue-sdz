@@ -1,6 +1,6 @@
 <template>
   <div class="s-radiobox-example">
-    <s-title class="h1" title="Raidobox" />
+    <s-title class="h1" title="Radiobox" />
 
     <p class="subtitle">
       Input Radio Button tem como objetivo possibilitar que a pessoa usuária escolha uma opção dentro da interface.

@@ -1,6 +1,28 @@
 <template>
   <div id="app">
-    <s-header />
+    <s-header>
+      <div class="logo">
+        <img src="../dist/image/logo.svg">
+      </div>
+
+      <div class="search">
+        <s-input
+          round
+          icon="sdz-search"
+          :value="inputSearch"
+          :placeholder="'Search'"
+          @input="value => inputSearch = value"
+        />
+      </div>
+
+      <div class="icons">
+        <s-icon icon="sdz-star" @click.native="documentacao" />
+
+        <s-icon icon="sdz-user" @click.native="example1" />
+
+        <s-icon icon="sdz-bell" @click.native="example2" />
+      </div>
+    </s-header>
 
     <div class="conteudo" style="display:flex">
       <s-sidebar :items="items" @redirect="onRedirect" />
@@ -12,15 +34,19 @@
 
 <script>
 import SSidebar from '../src/components/SSidebar/Index.vue'
+import SIcon from '../src/components/SIcon/Index.vue'
+import SInput from '../src/components/SInput/Index.vue'
 import SHeader from '../src/components/SHeader/Index.vue'
 
 export default {
   name: 'Examples',
 
-  components: { SSidebar, SHeader },
+  components: { SSidebar, SIcon, SInput, SHeader },
 
   data () {
     return {
+      inputSearch: '',
+
       items: [
         {
           name: 'Getting Started',
@@ -40,9 +66,10 @@ export default {
           name: 'Content',
           icon: 'sdz-clock',
           child: [
-            { name: 'table', redirect: '/vue-sdz/components/table' },
+            { name: 'grid', redirect: '/vue-sdz/components/grid' },
+            { name: 'image', redirect: '/vue-sdz/components/image' },
             { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
-            { name: 'image', redirect: '/vue-sdz/components/image' }
+            { name: 'table', redirect: '/vue-sdz/components/table' }
           ]
         },
         {
@@ -118,6 +145,10 @@ export default {
       if (!link || link === this.$route.path) return
 
       this.$router.push(link)
+    },
+
+    documentacao () {
+      window.open('https://github.com/seedz-ag/vue-sdz')
     }
   }
 }

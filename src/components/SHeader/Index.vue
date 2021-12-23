@@ -1,37 +1,22 @@
 <template>
-  <div class="s-header">
-    <div class="logo">
-      <img src="../../../dist/image/logo.svg">
-    </div>
-
-    <div class="search">
-      <s-input
-        round
-        icon="sdz-search"
-        :value="inputSearch"
-        :placeholder="'Search'"
-        @input="value => inputSearch = value"
-      />
-    </div>
-
-    <div class="icons">
-      <s-button link secondary-icon-color to="https://www.google.com"><i class="icon s-icon icon sdz-star" /></s-button>
-
-      <s-button link secondary-icon-color to="https://www.google.com"><i class="icon s-icon icon sdz-user" /></s-button>
-
-      <s-button link secondary-icon-color to="https://www.google.com"><i class="icon s-icon icon sdz-bell" /></s-button>
-    </div>
-  </div>
+  <s-collapsible no-header :is-opened="isOpened" class="s-header" @toggle="v => isOpened = v">
+    <slot />
+  </s-collapsible>
 </template>
 
 <script>
+import SCollapsible from '../../../src/components/SCollapsible/Index.vue'
+
 export default {
   name: 'SHeader',
 
-  components: {
-    SIcon: () => import('../SIcon/Index.vue').then(c => c.default),
-    SButton: () => import('../SButton/Index.vue').then(c => c.default),
-    SInput: () => import('../SInput/Index.vue').then(c => c.default)
+  components: {SCollapsible},
+
+  data () {
+    return {
+      isOpened: true,
+      content: 'initial content!'
+    }
   }
 }
 </script>
@@ -39,9 +24,9 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-.s-header{
+.s-header > .wrapper{
   display: flex;
-  height: 100px;
+  height: 100px !important;
   padding: 30px 20px;
   border-radius: 10px 10px;
   -webkit-box-shadow: 0px 6px 12px -5px #000000;
@@ -72,16 +57,16 @@ export default {
     justify-content: flex-end;
     width: 30%;
 
-    & > .s-button {
-      margin-right: 20px;
+    & >.s-icon{
+      cursor: pointer;
+      color: color(primary, base);
+      font-size: 25px !important;
+      margin-right: 15px;
+      margin-top: 5px;
 
-      &:last-child {
+      &:last-child{
         margin-right: 0px;
       }
-    }
-
-    & > .s-button > .text > .s-icon{
-      font-size: 30px;
     }
   }
 }
