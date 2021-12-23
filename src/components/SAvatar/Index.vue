@@ -1,20 +1,48 @@
 <template>
-  <div class="s-avatar">
+  <div :class="classes">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SAvatar'
+  name: 'SAvatar',
 
-  // props: {
-  //   value: {
-  //     type: Number,
-  //     required: true,
-  //     validator: val => val >= 0 && val <= 100
-  //   }
-  // }
+  props: {
+    size: {
+      type: String,
+      validator: function (value) {
+        return ['p', 'm', 'g'].indexOf(value) !== -1
+      },
+      default: 'm'
+    },
+
+    color: {
+      type: String,
+      validator: function (value) {
+        return ['p', 'm', 'g'].indexOf(value) !== -1
+      },
+      default: 'm'
+    }
+
+    // value: {
+    //   type: String,
+    //   validator: function (value) {
+    //     return ['p', 'm', 'g'].indexOf(value) !== -1
+    //   }
+    // }
+  },
+
+  computed:{
+    classes(){
+      return [
+        's-avatar',
+        `--is-size-${this.size}`,
+        `--is-color-${this.color}`
+      ]
+    }
+  }
+
 }
 </script>
 
@@ -29,7 +57,11 @@ export default {
   width: 40px;
 
   & > .icon{
+    color: color(base, neutral)
+  }
 
+  & .dark{
+    background: color(base, neutral);
   }
 }
 </style>

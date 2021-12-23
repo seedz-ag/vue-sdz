@@ -17,23 +17,36 @@
     </p>
 
     <s-box class="flex-inline flex-center">
-      <s-avatar :size="p" />
-      <s-avatar />
-      <s-avatar :size="g" />
+      <s-avatar size="p"><s-icon icon="sdz-bell" /></s-avatar>
+      <s-avatar><s-icon icon="sdz-bell" /></s-avatar>
+      <s-avatar size="g"><s-icon icon="sdz-bell" /></s-avatar>
+    </s-box>
+
+    <s-box class="flex-inline flex-center">
+      <s-avatar size="p" color="dark"><s-icon icon="sdz-bell" /></s-avatar>
+      <s-avatar><s-icon icon="sdz-bell" /></s-avatar>
+      <s-avatar size="g" color="dark"><s-icon icon="sdz-bell" /></s-avatar>
     </s-box>
   </div>
 </template>
 
 <script>
 import SAvatar from '../../../src/components/SAvatar/Index.vue'
+import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 
 export default {
-  components: { SAvatar, SBox, STitle }
+  components: { SAvatar, SIcon, SBox, STitle }
 }
 </script>
 
 <style lang="scss">
+.s-avatar{
+  margin-right: 20px;
 
+  &:last-child{
+    margin-right: 0px;
+  }
+}
 </style>
