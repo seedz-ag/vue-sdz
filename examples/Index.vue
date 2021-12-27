@@ -1,21 +1,57 @@
 <template>
   <div id="app">
-    <s-sidebar :items="items" @redirect="onRedirect" />
+    <s-header :class="classes" is-opened :height="isOpened ? 100 : 60">
+      <div class="logo">
+        <img src="../dist/image/logo.svg">
+      </div>
 
-    <router-view />
+      <div class="search">
+        <s-input
+          round
+          icon="sdz-search"
+          :value="inputSearch"
+          :placeholder="'Search'"
+          @input="value => inputSearch = value"
+        />
+      </div>
+
+      <div class="icons">
+        <s-icon icon="sdz-star" @click.native="documentacao" />
+
+        <s-icon icon="sdz-user" @click.native="example1" />
+
+        <s-icon icon="sdz-bell" @click.native="example2" />
+      </div>
+    </s-header>
+
+    <!-- :style="{ 'margin-top': isOpened ? 0 : '100px' }" -->
+    <div
+      class="content"
+    >
+      <s-sidebar :items="items" @redirect="onRedirect" />
+
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
 import SSidebar from '../src/components/SSidebar/Index.vue'
+import SIcon from '../src/components/SIcon/Index.vue'
+import SInput from '../src/components/SInput/Index.vue'
+import SHeader from '../src/components/SHeader/Index.vue'
 
 export default {
   name: 'Examples',
 
-  components: { SSidebar },
+  components: { SSidebar, SIcon, SInput, SHeader },
 
   data () {
     return {
+      isOpened: true,
+
+      inputSearch: '',
+
       items: [
         {
           name: 'Getting Started',
@@ -35,9 +71,10 @@ export default {
           name: 'Content',
           icon: 'sdz-clock',
           child: [
-            { name: 'table', redirect: '/vue-sdz/components/table' },
+            { name: 'grid', redirect: '/vue-sdz/components/grid' },
+            { name: 'image', redirect: '/vue-sdz/components/image' },
             { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
-            { name: 'image', redirect: '/vue-sdz/components/image' }
+            { name: 'table', redirect: '/vue-sdz/components/table' }
           ]
         },
         {
@@ -72,7 +109,8 @@ export default {
             { name: 'progress bar', redirect: '/vue-sdz/components/progressbar' },
             { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
             { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
-            { name: 'pagination', redirect: '/vue-sdz/components/pagination' }
+            { name: 'pagination', redirect: '/vue-sdz/components/pagination' },
+            { name: 'avatar', redirect: '/vue-sdz/components/avatar' }
           ]
         },
         {
@@ -108,12 +146,34 @@ export default {
     }
   },
 
+  created () {
+    document.addEventListener('wheel', this.headerHandler)
+  },
+
+  computed: {
+    classes () {
+      return ['header', { '--is-opened': this.isOpened }]
+    }
+  },
+
   methods: {
+    headerHandler ({ wheelDelta }) {
+      this.isOpened = wheelDelta > 0
+    },
+
     onRedirect (link) {
       if (!link || link === this.$route.path) return
 
       this.$router.push(link)
+    },
+
+    documentacao () {
+      window.open('https://github.com/seedz-ag/vue-sdz')
     }
+  },
+
+  beforeDestroy () {
+    document.removeEventListener('wheel', this.headerHandler)
   }
 }
 </script>
@@ -121,7 +181,20 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-#app { display: flex; }
+#app {
+  display: flex;
+  flex-direction: column;
+
+  & > .header { transition: height .6s ease-in-out; }
+
+  &:not(.--is-opened) {}
+
+  & > .content {
+    height: 100%;
+    display: flex;
+    // transition: margin-top .6s ease;
+  }
+}
 
 .container {
   width: 100%;

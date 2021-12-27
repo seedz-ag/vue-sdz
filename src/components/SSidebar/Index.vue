@@ -52,7 +52,7 @@ export default {
 
       this.setActiveItem(path)
       this.setActiveChild(path)
-    }, 500)
+    }, 600)
   },
 
   computed: {
@@ -95,7 +95,8 @@ export default {
   // position: absolute;
 
   width: 100%;
-  max-width: 285px;
+  height: 100%;
+  max-width: 245px;
 
   display: flex;
   flex-direction: column;
