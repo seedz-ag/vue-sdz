@@ -20,17 +20,10 @@ export default {
     color: {
       type: String,
       validator: function (value) {
-        return ['p', 'm', 'g'].indexOf(value) !== -1
+        return ['light', 'dark'].indexOf(value) !== -1
       },
-      default: 'm'
+      default: 'light'
     }
-
-    // value: {
-    //   type: String,
-    //   validator: function (value) {
-    //     return ['p', 'm', 'g'].indexOf(value) !== -1
-    //   }
-    // }
   },
 
   computed:{
@@ -52,16 +45,41 @@ export default {
 .s-avatar {
   border-radius: 100px;
   display: flex;
-  background: color(primary, base);
-  height: 40px;
-  width: 40px;
+  justify-content: center;
+  align-items: center;
+  color: color(neutral, base);
+  overflow: hidden;
 
-  & > .icon{
-    color: color(base, neutral)
+  .s-image {
+    margin-top: 4px;
   }
 
-  & .dark{
-    background: color(base, neutral);
+  &.--is-size-p{
+    height: 24px;
+    width: 24px;
+
+    & > .s-icon{
+      font-size: 0.9rem !important
+    }
+  }
+
+  &.--is-size-m{
+    height: 40px;
+    width: 40px;
+  }
+
+  &.--is-size-g{
+    height: 64px;
+    width: 64px;
+  }
+
+  &.--is-color-light{
+    background: color(primary, base);
+  }
+
+  &.--is-color-dark{
+    background: color(neutral, base);
+    color: color(primary, base);
   }
 }
 </style>
