@@ -110,7 +110,8 @@ export default {
             { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
             { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
             { name: 'pagination', redirect: '/vue-sdz/components/pagination' },
-            { name: 'avatar', redirect: '/vue-sdz/components/avatar' }
+            { name: 'avatar', redirect: '/vue-sdz/components/avatar' },
+            { name: 'badge', redirect: '/vue-sdz/components/badge' },
           ]
         },
         {
