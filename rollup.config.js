@@ -5,7 +5,6 @@ import scss from 'rollup-plugin-scss'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 
-
 import commonjs from '@rollup/plugin-commonjs'
 
 import { terser } from 'rollup-plugin-terser'
@@ -17,7 +16,7 @@ const config = {
 
   output: [
     { format: 'cjs', file: 'dist/js/build.cjs.js' },
-    { format: 'esm', file: 'dist/js/build.esm.js' },
+    // { format: 'esm', file: 'dist/js/build.esm.js' },
     // {
     //   format: 'iife',
     //   file: 'dist/js/build.min.js',
@@ -42,9 +41,7 @@ const config = {
 
     commonjs(),
 
-    babel({
-      babelHelpers: 'bundled'
-    })
+    babel({ babelHelpers: 'bundled' })
   ],
 
   // external: ['vue']

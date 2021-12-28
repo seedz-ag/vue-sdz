@@ -103,7 +103,13 @@ export default {
 
     min-height: 40px;
 
-    & > .icon { margin-right: 30px; }
+    & > .icon {
+      margin-right: 30px;
+
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
 
     & > .name {
       width: 100%;
