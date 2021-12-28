@@ -1,0 +1,91 @@
+{
+    "title":"",
+    "subtitle":"",
+    "imports":[
+        {"name":"vue","as":"* as Vue"}
+    ],
+    "component":{"name":"SInput","as":""},
+    "props":[
+        {
+            "name":"placeholder",
+            "values":["Digite aqui"],
+            "default":"Digite aqui",
+            "placeholder":"",
+            "type":"string"
+        },
+        {
+            "name":"disabled",
+            "values":["true","false"],
+            "default":"",
+            "placeholder":"",
+            "type":"boolean"
+        },
+        {
+          "name":"validation",
+          "values":[""],
+          "default":"",
+          "placeholder":"error msg",
+          "type":"string",
+          "description":"Esta validação é exibida quando não for nula"
+        },
+        {
+          "name":"float-label",
+          "values":["true","false"],
+          "default":"",
+          "placeholder":"",
+          "type":"boolean"
+        },
+        {
+            "name":"size",
+            "values":["small","larger",""],
+            "default":"",
+            "placeholder":"",
+            "type":"prop"
+        },
+        {
+          "name":"round",
+          "values":["true","false"],
+          "default":"",
+          "placeholder":"",
+          "type":"boolean"
+        },
+        {
+            "name":"label",
+            "values":["Label Input"],
+            "default":"Label Input",
+            "placeholder":"",
+            "type":"string"
+        },
+        {
+            "name":":value",
+            "values":[""],
+            "default":"inputValue",
+            "type":"string",
+            "placeholder":"",
+            "basic":true
+        },
+        {
+          "name":"icon",
+          "values":[""],
+          "default":"",
+          "placeholder":"sdz-search",
+          "type":"string"
+         
+        },
+        {
+          "name":"is-money",
+          "values":["true","false"],
+          "default":"",
+          "placeholder":"",
+          "type":"boolean"
+        },
+        {
+          "name":"mask",
+          "values":[""],
+          "default":"",
+          "placeholder":"['###.###.###-##']",
+          "type":"string"
+        }
+    ],
+    "value":""
+}
