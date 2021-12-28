@@ -10,15 +10,12 @@ export default {
   name: 'SBadge',
 
   props: {
-    dot: {
-      type: Boolean,
-      default: false
-    },
-
     primary: {
       type: Boolean,
       default: true
     },
+
+    dot: Boolean,
 
     icon: String,
 
