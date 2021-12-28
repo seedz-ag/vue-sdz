@@ -1,0 +1,1 @@
+import{n as t}from"./index.78b82f7f.js";const n={};var e=t({name:"SBox"},(function(){var t=this,n=t.$createElement;return(t._self._c||n)("div",{staticClass:"s-box"},[t._t("default")],2)}),[],!1,r,null,null,null);function r(t){for(let e in n)this[e]=n[e]}var s=function(){return e.exports}();export{s as S};
