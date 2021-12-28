@@ -2,7 +2,7 @@
   <div id="app">
     <s-header :class="classes" is-opened :height="isOpened ? 100 : 60">
       <div class="logo">
-        <img src="../dist/image/logo.svg">
+        <!-- <img src="../dist/image/logo.svg"> -->
       </div>
 
       <div class="search">
