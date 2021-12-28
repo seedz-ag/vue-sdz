@@ -6,13 +6,12 @@
 
       :checked="value"
       :disabled="disabled"
-
-      @input="ev => $emit('input', ev.target.checked)"
+      :name="name"
+      
+      @change="$emit('change', value)"
     >
 
-    <span class="radio">
-      
-    </span>
+    <span class="radio" />
 
     <span class="text">{{ label }}</span>
   </label>
@@ -22,9 +21,14 @@
 export default {
   name: 'SRadiobox',
 
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
+
   props: {
     value: {
-      type: Boolean,
+      type: String,
       required: true
     },
 
@@ -32,7 +36,9 @@ export default {
 
     negative: Boolean,
 
-    disabled: Boolean
+    disabled: Boolean,
+    
+    name: String
   },
 
   computed: {
