@@ -1,11 +1,7 @@
 <template>
   <div class="s-badge">
-    <div v-if="status === 'alert' " class="--is-alert">
-      <slot />
-    </div>
-    <div v-if="status === 'number'" class="--is-alert-number">
-      <slot /><div class="--is-number">{{ number }}</div>
-    </div>
+    <div :class="classes">{{ content }}</div>
+    <slot />
   </div>
 </template>
 
@@ -14,17 +10,30 @@ export default {
   name: 'SBadge',
 
   props: {
-    status: {
-      type: String,
-      validator: function (value) {
-        return ['alert', 'number'].indexOf(value) !== -1
-      },
-      default: 'alert'
+    dot: {
+      type: Boolean,
+      default: false
     },
 
-    number: {
-      type: Number,
-      default: 1
+    primary: {
+      type: Boolean,
+      default: true
+    },
+
+    icon: String,
+
+    content: String
+
+  },
+
+  computed: {
+    classes () {
+      return [ 'content',
+        {
+          '--dot': this.dot,
+          '--primary': this.primary
+        }
+      ]
     }
   }
 }
@@ -37,30 +46,28 @@ export default {
   color: color(base, light);
   position: relative;
 
-  & > .--is-alert{
-    &::after{
-      content: '';
-      position: absolute;
-      right: 0px;
-      top: -2px;
-      height: 8px;
-      width: 8px;
-      background: color(highlight, base);
-      border-radius: 50px;
-    }
-  }
-
-  & > .--is-alert-number > .--is-number{
+  & > .content {
     position: absolute;
     right: -12px;
     top: -11px;
     padding: 3px 8px;
-    background: color(highlight, base);
     border-radius: 50px;
 
     font-size: 12px;
     line-height: 15px;
     font-weight: 500;
+
+    &.--dot{
+      height: 8px;
+      width: 8px;
+      padding: unset;
+      top: 0;
+      right: -2px;
+    }
+
+    &.--primary{
+      background: color(highlight, base);
+    }
   }
 }
 </style>
