@@ -72,7 +72,7 @@
     }
   },
   "dependencies": {
-    "sdz-icons": "^0.0.2",
+    "sdz-icons": "^0.0.5",
     "v-money": "^0.8.1",
     "vue-coe-feedback": "^0.1.5",
     "vue-coe-image": "^0.2.1",
