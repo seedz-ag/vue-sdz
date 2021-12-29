@@ -79,5 +79,7 @@ export default {
 </script>
 
 <style lang="scss">
-.s-input-container { margin-bottom: 60px; }
+.s-input-example{
+  & > .s-input-container { margin-bottom: 60px; }
+}
 </style>

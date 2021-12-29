@@ -147,6 +147,8 @@ export default {
 </script>
 
 <style lang="scss">
-.s-input-container { margin-bottom: 60px; }
-.sizing.flex-inline .s-input-container{margin-right: 30px;}
+.s-input-example{
+  & > .s-input-container { margin-bottom: 60px; }
+  & > .sizing.flex-inline .s-input-container{margin-right: 30px;}
+}
 </style>

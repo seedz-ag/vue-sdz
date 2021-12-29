@@ -2,7 +2,7 @@
   <div id="app">
     <s-header :class="classes" is-opened :height="isOpened ? 100 : 60">
       <div class="logo">
-        <img src="../dist/image/logo.svg">
+        <img src="../src/assets/images/logo.svg">
       </div>
 
       <div class="search">
@@ -110,7 +110,8 @@ export default {
             { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
             { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
             { name: 'pagination', redirect: '/vue-sdz/components/pagination' },
-            { name: 'avatar', redirect: '/vue-sdz/components/avatar' }
+            { name: 'avatar', redirect: '/vue-sdz/components/avatar' },
+            { name: 'badge', redirect: '/vue-sdz/components/badge' },
           ]
         },
         {
