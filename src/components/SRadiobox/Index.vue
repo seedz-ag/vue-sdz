@@ -58,7 +58,8 @@ export default {
 
 .s-radiobox {
   display: flex;
-
+  align-items:center;
+  margin: 4px 0;
   & > .input { display: none; }
 
   & > .radio {
