@@ -15,6 +15,8 @@
       Considerar Input Password sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
     </p>
 
+    <source-code file="SPasswordExample" comp="SInput" />
+
     <s-title class-title="h2" title="Default" />
     <s-box>
       <s-input
@@ -56,9 +58,10 @@
 import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle },
+  components: { SInput, SBox, STitle, SourceCode },
 
   data () {
     return {

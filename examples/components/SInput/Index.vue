@@ -18,7 +18,7 @@
       Considerar Input Text sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
     </p>
 
-    <source-code file="InputExample" comp="SInput" />
+    <source-code file="SInputExample" comp="SInput" />
 
     <s-title class="h2" title="Stats" />
     <s-box>
