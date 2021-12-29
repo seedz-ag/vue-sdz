@@ -1,0 +1,67 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SInput }"},
+  "props":[
+      {
+          "name":"placeholder",
+          "values":["Digite aqui"],
+          "default":"Digite aqui",
+          "placeholder":"",
+          "type":"string",
+          "description":"Coloque uma breve descrição sobre o dado a ser inserido"
+      },
+      {
+          "name":"disabled",
+          "values":["true","false"],
+          "default":"",
+          "placeholder":"",
+          "type":"boolean",
+          "description":"Desabilita o textarea"
+      },
+      {
+        "name":"validation",
+        "values":[""],
+        "default":"",
+        "placeholder":"error msg",
+        "type":"string",
+        "description":"Esta validação é exibida quando não for nula"
+      },
+     
+      {
+          "name":"label",
+          "values":["Label Textarea"],
+          "default":"Label Textarea",
+          "placeholder":"",
+          "type":"string",
+          "description":"Label do textarea"
+      },
+      {
+          "name":":value",
+          "values":[""],
+          "default":"inputValue",
+          "type":"string",
+          "placeholder":"",
+          "description":"Armazena as informações digitadas no textarea"
+      },
+      {
+        "name":"text-area",
+        "values":["text-area"],
+        "default":"text-area",
+        "placeholder":"",
+        "type":"prop",
+        "description":"Transforma o input em um textarea"
+      },
+      {
+        "name":"rows",
+        "values":[""],
+        "default":"3",
+        "type":"string",
+        "placeholder":"3",
+        "description":"Quantidade de linhas que o textarea terá"
+      }
+      
+  ],
+  "value":""
+}

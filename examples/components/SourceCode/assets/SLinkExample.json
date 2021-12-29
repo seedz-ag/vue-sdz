@@ -1,0 +1,66 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SButton }"},
+  "props":[
+      {
+        "name":"type",
+        "values":["link"],
+        "default":"link",
+        "placeholder":"",
+        "type":"prop",
+        "description":"Tipo link"
+      },
+      {
+        "name":"external",
+        "values":["true","false"],
+        "default":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Irá abrir o link em outra aba"
+      },
+      {
+        "name":"to",
+        "values":[""],
+        "default":"https://seedz.ag",
+        "placeholder":"",
+        "type":"string",
+        "description":"Caminho do link"
+      },
+      {
+        "name":"disabled",
+        "values":["true","false"],
+        "default":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Desabilita o button"
+      },
+      {
+        "name":"icon",
+        "values":[""],
+        "default":"",
+        "placeholder":"sdz-check",
+        "type":"string",
+        "description":"Adiciona um icone no link lado esquerdo"
+      },
+      {
+        "name":"secondary-icon-color",
+        "values":["true","false"],
+        "default":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Irá abrir o link em outra aba"
+      },
+      {
+        "name":"dark",
+        "values":["true","false"],
+        "default":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Para fundo escuro, altera a cor do link"
+      }
+      
+  ],
+  "value":""
+}

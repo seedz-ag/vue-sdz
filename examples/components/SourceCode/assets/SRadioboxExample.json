@@ -1,0 +1,58 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SRadiobox }"},
+  "props":[
+      {
+        "name":"label",
+        "values":["Label Radiobox"],
+        "default":"Label Radiobox",
+        "placeholder":"",
+        "type":"string",
+        "description":"Label do radiobox"
+      },
+      {
+          "name":"disabled",
+          "values":["true","false"],
+          "default":"",
+          "placeholder":"",
+          "type":"boolean",
+          "description":"Desabilita o radiobox"
+      },     
+      {
+        "name":"negative",
+        "values":["true","false"],
+        "default":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Altera o visual do radiobox"
+    },
+      {
+          "name":"v-model",
+          "values":[""],
+          "default":"data1",
+          "type":"string",
+          "placeholder":"",
+          "description":"Armazena a seleção do radiobox"
+      },
+      {
+        "name":"name",
+        "values":[""],
+        "default":"name1",
+        "type":"string",
+        "placeholder":"",
+        "description":"Nome do conjunto de radiobox"
+    },
+    {
+      "name":"value",
+      "values":[""],
+      "default":"sim",
+      "type":"string",
+      "placeholder":"",
+      "description":"Valor do radiobox"
+  }
+      
+  ],
+  "value":""
+}
