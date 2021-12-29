@@ -29,7 +29,7 @@
       class="content"
     >
       <s-sidebar :items="items" @redirect="onRedirect" />
-
+     
       <router-view />
     </div>
   </div>
@@ -201,10 +201,17 @@ export default {
   height: 100%;
 
   padding: 50px;
-  margin: 0 auto;
+  // margin: 0 auto;
 
   overflow-y: auto;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  & div{
+    max-width:800px;
+  }
 }
 
 .subtitle{
