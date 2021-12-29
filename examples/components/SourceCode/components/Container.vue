@@ -3,7 +3,7 @@
     <h1 v-if="title">{{ title }}</h1>
     <h2 v-if="subtitle" class="subtitle">{{ subtitle }}</h2>
     <div class="header-source-code">
-      Preview
+      <p>Preview</p>
       <slot name="header" />
     </div>
     <div class="body">
@@ -33,23 +33,27 @@ export default {
         margin-top:10px;
     }
     .body{
+      width: 600px;
+      background-color: rgba(0,0,0,0.03);
+      border-radius: 10px;
+      padding: 10px;
+      #prop{
         display: flex;  
         flex-wrap: wrap;
-        width: 600px;
-        background-color: rgba(0,0,0,0.03);
-        border-radius: 10px;
-        padding: 10px;
-     
+        width: 100%;
         justify-content:space-around;
-        
+      }
     }
     .header-source-code{
       width: 600px;
       border: 2px solid #F1F1F1;
-      padding: 10px;
+      padding: 10px 20px 20px 20px;
       border-radius: 10px;
-      height: 135px;
-      margin-bottom:10px;
+      height:auto;
+      margin-bottom:15px;
+      p{
+        margin-bottom:10px;
+      }
     }
 
 </style>
