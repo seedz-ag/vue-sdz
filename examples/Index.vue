@@ -197,6 +197,10 @@ export default {
   }
 }
 
+.s-sidebar-item > .item > .content > .s-icon{
+  color: color(neutral,base);
+}
+
 .container {
   width: 100%;
   height: 100%;
