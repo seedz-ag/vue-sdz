@@ -45,8 +45,9 @@ export default {
   }
 
   & > .list > .item:not(:first-child):before{
-    content: ">";
-    margin: 0 12px;
+    content: "\ea4f";
+    font: normal normal normal 1em/1 'Seedz Icons';
+    margin: 2px 12px;
   }
 
   & > .list > .item> .parent{

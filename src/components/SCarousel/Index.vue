@@ -1,12 +1,12 @@
 <template>
   <coerousel class="s-carousel" v-bind="$attrs">
-    <s-icon slot="previous" class="previous" icon="chevron-left" size="15" />
+    <s-icon slot="previous" class="previous" icon="sdz-chevron-left" size="15" />
 
     <coerousel-item v-for="(item, index) in items" :key="index">
       <slot :item="item" />
     </coerousel-item>
 
-    <s-icon slot="next" class="next" icon="chevron-right" size="15" />
+    <s-icon slot="next" class="next" icon="sdz-chevron-right" size="15" />
   </coerousel>
 </template>
 
@@ -42,21 +42,27 @@ export default {
 
     & > .previous {
       position: absolute;
-      top: 50%;
-      left: 15px;
+      top: 49%;
+      left: 13px;
       transform: translateY(-50%);
+      font-size: 20px !important;
     }
 
     & > .next {
       position: absolute;
-      top: 50%;
-      right: 15px;
+      top: 49%;
+      right: 13px;
       transform: translateY(-50%);
+      font-size: 20px !important;
     }
   }
 
-  & > .previous { left: -60px; }
-  & > .next { right: -60px; }
+  & > .previous {
+    left: -60px;
+  }
+  & > .next {
+    right: -60px;
+  }
 
 
   & > .wrapper { background: transparent; }
