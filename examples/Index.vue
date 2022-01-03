@@ -25,9 +25,7 @@
     </s-header>
 
     <!-- :style="{ 'margin-top': isOpened ? 0 : '100px' }" -->
-    <div
-      class="content"
-    >
+    <div class="content">
       <s-sidebar :items="items" @redirect="onRedirect" />
 
       <router-view />
@@ -62,14 +60,14 @@ export default {
         },
         {
           name: 'Styles',
-          icon: 'sdz-search',
+          icon: 'sdz-painting-roller',
           child: [
             { name: 'Colors', redirect: '/vue-sdz/styles/palettes' }
           ]
         },
         {
           name: 'Content',
-          icon: 'sdz-clock',
+          icon: 'sdz-archive',
           child: [
             { name: 'grid', redirect: '/vue-sdz/components/grid' },
             { name: 'image', redirect: '/vue-sdz/components/image' },
@@ -79,7 +77,7 @@ export default {
         },
         {
           name: 'Forms',
-          icon: 'xxx',
+          icon: 'sdz-file-text',
           child: [
             { name: 'input', redirect: '/vue-sdz/components/input' },
             { name: 'text area', redirect: '/vue-sdz/components/textarea' },
@@ -95,7 +93,7 @@ export default {
         },
         {
           name: 'Components',
-          icon: 'xxx',
+          icon: 'sdz-box',
           child: [
             { name: 'alert', redirect: '/vue-sdz/components/alert' },
             { name: 'card', redirect: '/vue-sdz/components/card' },
@@ -116,14 +114,14 @@ export default {
         },
         {
           name: 'Extented',
-          icon: 'xxx',
+          icon: 'sdz-globe',
           child: [
             { name: 'icon', redirect: '/vue-sdz/components/icon' }
           ]
         },
         {
           name: 'api',
-          icon: 'sdz-mail',
+          icon: 'sdz-monitor',
           child: [
             { name: 'alert', redirect: '/vue-sdz/api/alert' },
             { name: 'button', redirect: '/vue-sdz/api/button' },
