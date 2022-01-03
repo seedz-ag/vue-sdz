@@ -54,7 +54,7 @@ export default {
 
   data () {
     return {
-      src: '../../dist/image/avatar-example.png'
+      src: '../src/assets/images/avatar-example.png'
     }
   }
 }

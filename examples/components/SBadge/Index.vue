@@ -24,8 +24,11 @@
     </p>
 
     <s-box class="flex-inline flex-center">
-      <s-badge status="alert"><s-icon icon="sdz-bell" /></s-badge>
-      <s-badge status="number" number="3"><s-icon icon="sdz-cart" /></s-badge>
+      <s-badge dot><s-icon icon="sdz-bell" /></s-badge>
+      <s-badge content="3"><s-icon icon="sdz-cart" /></s-badge>
+
+      <s-badge dot>testando</s-badge>
+      <s-badge content="3">testando</s-badge>
     </s-box>
   </div>
 </template>
