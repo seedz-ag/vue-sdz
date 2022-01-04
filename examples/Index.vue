@@ -186,7 +186,7 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & > .header { transition: height .6s ease-in-out; }
+  & > .header { transition: height .6s ease-in-out; z-index:10 }
 
   &:not(.--is-opened) {}
 
@@ -210,7 +210,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content:center;
-  & div{
+  & > div{
     max-width:800px;
   }
 }
@@ -218,8 +218,6 @@ export default {
 .subtitle{
   font-size: 1rem;
   line-height: 20px;
-  display: flex;
-  align-items: center;
   margin-bottom: 25px;
   line-height: 1.5;
 }
