@@ -1,0 +1,37 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SAlert }"},
+  "props":[
+      {
+          "name":"border-color",
+          "values":[""],
+          "default":"",
+          "value":"",
+          "placeholder":"red, #FF0",
+          "type":"string",
+          "description":"Adiciona cor a borda lateral esqueda do card"
+      },     
+      {
+          "name":"background-color",
+          "values":[""],
+          "default":"",
+          "value":"",
+          "placeholder":"red, #FF0",
+          "type":"string",
+          "description":"Preenche o fundo do card com a cor informada"
+      },
+      {
+        "name":"no-hover",
+        "values":["true","false"],
+        "default":"false",
+        "value":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Desabilita a sombra no hover do card"
+      }
+      
+  ],
+  "value":""
+}
