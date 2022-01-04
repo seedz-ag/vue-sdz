@@ -2,7 +2,7 @@
   <div class="s-button-example">
     <s-title class="h1" title="Buttons" />
 
-    <source-code file="SButtonExample" comp="SButton" />
+    <source-code file="SButtonExample" comp="SButton">Example</source-code>
 
     <s-title class="h2" title="Stats" />
     <s-box>

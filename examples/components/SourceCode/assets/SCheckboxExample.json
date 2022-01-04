@@ -8,6 +8,7 @@
         "name":"label",
         "values":["Label Checkbox"],
         "default":"Label Checkbox",
+        "value":"",
         "placeholder":"",
         "type":"string",
         "description":"Label do checkbox"
@@ -15,7 +16,8 @@
       {
           "name":"disabled",
           "values":["true","false"],
-          "default":"",
+          "default":"false",
+          "value":"",
           "placeholder":"",
           "type":"boolean",
           "description":"Desabilita o checkbox"
@@ -23,7 +25,8 @@
       {
         "name":"negative",
         "values":["true","false"],
-        "default":"",
+        "default":"false",
+        "value":"",
         "placeholder":"",
         "type":"boolean",
         "description":"Altera o visual do checkbox"
@@ -32,6 +35,7 @@
           "name":"v-model",
           "values":[""],
           "default":"data1",
+          "value":"",
           "type":"string",
           "placeholder":"",
           "description":"Armazena a seleção do checkbox"

@@ -1,6 +1,9 @@
 <template>
   <div class="s-modal-example">
     <s-title class="h1" title="Modal" />
+
+    <source-code file="SModalExample" comp="SModal" />
+
     <s-box class="flex-inline flex-center">
       <s-button @click="showSimpleModal = true">open simple modal</s-button>
 
@@ -30,9 +33,10 @@ import SButton from '../../../src/components/SButton/Index.vue'
 import SModal from '../../../src/components/SModal/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SButton, SModal, SBox, STitle },
+  components: { SButton, SModal, SBox, STitle, SourceCode },
 
   data () {
     return {

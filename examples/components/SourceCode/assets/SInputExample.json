@@ -8,6 +8,7 @@
             "name":"placeholder",
             "values":["Digite aqui"],
             "default":"Digite aqui",
+            "value":"",
             "placeholder":"",
             "type":"string",
             "description":"Coloque uma breve descrição sobre o dado a ser inserido"
@@ -16,6 +17,7 @@
             "name":"disabled",
             "values":["true","false"],
             "default":"",
+            "value":"",
             "placeholder":"",
             "type":"boolean",
             "description":"Desabilita o input"
@@ -24,6 +26,7 @@
           "name":"validation",
           "values":[""],
           "default":"",
+          "value":"",
           "placeholder":"error msg",
           "type":"string",
           "description":"Esta validação é exibida quando não for nula"
@@ -32,6 +35,7 @@
           "name":"float-label",
           "values":["true","false"],
           "default":"",
+          "value":"",
           "placeholder":"",
           "type":"boolean",
           "description":"Altera a forma do input, tranzendo a label para dentro do input"
@@ -40,6 +44,7 @@
             "name":"size",
             "values":["small","larger",""],
             "default":"",
+            "value":"",
             "placeholder":"",
             "type":"prop",
             "description":"Altera a altura do input"
@@ -48,6 +53,7 @@
           "name":"round",
           "values":["true","false"],
           "default":"",
+          "value":"",
           "placeholder":"",
           "type":"boolean",
           "description":"Arredonda as bordas do input"
@@ -56,6 +62,7 @@
             "name":"label",
             "values":["Label Input"],
             "default":"Label Input",
+            "value":"",
             "placeholder":"",
             "type":"string",
             "description":"Label do input"
@@ -64,6 +71,7 @@
             "name":":value",
             "values":[""],
             "default":"inputValue",
+            "value":"",
             "type":"string",
             "placeholder":"",
             "description":"Armazena as informações digitadas no input"
@@ -72,6 +80,7 @@
           "name":"icon",
           "values":[""],
           "default":"",
+          "value":"",
           "placeholder":"sdz-search",
           "type":"string",
           "description":"Adiciona um icone dentro do input lado esquerdo"
@@ -81,6 +90,7 @@
           "name":"is-money",
           "values":["true","false"],
           "default":"",
+          "value":"",
           "placeholder":"",
           "type":"boolean",
           "description":"Adiciona a mascara monetária ao input"
@@ -89,6 +99,7 @@
           "name":"mask",
           "values":[""],
           "default":"",
+          "value":"",
           "placeholder":"###.###.###-##",
           "type":"string",
           "description":"Adiciona uma mascara ao input"

@@ -1,6 +1,9 @@
 <template>
   <div class="s-card-example">
     <s-title class="h1" title="Cards" />
+
+    <source-code file="SCardExample" comp="SCard">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse reprehenderit alias nisi amet! Quia, sed? Ut eos sequi eligendi doloremque nihil ratione earum id doloribus magnam! Consequuntur</source-code>
+
     <s-box>
       <s-card>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse reprehenderit alias nisi amet! Quia, sed? Ut eos sequi eligendi doloremque nihil ratione earum id doloribus magnam! Consequuntur nulla porro incidunt?</s-card>
       <s-card no-hover>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse reprehenderit alias nisi amet! Quia, sed? Ut eos sequi eligendi doloremque nihil ratione earum id doloribus magnam! Consequuntur nulla porro incidunt?</s-card>
@@ -14,9 +17,10 @@
 import SCard from '../../../src/components/SCard/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SCard, SBox, STitle }
+  components: { SCard, SBox, STitle, SourceCode }
 }
 </script>
 

@@ -8,6 +8,7 @@
           "name":"placeholder",
           "values":["Digite aqui"],
           "default":"Digite aqui",
+          "value":"",
           "placeholder":"",
           "type":"string",
           "description":"Coloque uma breve descrição sobre o dado a ser inserido"
@@ -15,7 +16,8 @@
       {
           "name":"disabled",
           "values":["true","false"],
-          "default":"",
+          "default":"false",
+          "value":"",
           "placeholder":"",
           "type":"boolean",
           "description":"Desabilita o select"
@@ -24,6 +26,7 @@
           "name":"label",
           "values":["Label Select"],
           "default":"Label Select",
+          "value":"",
           "placeholder":"",
           "type":"string",
           "description":"Label do select"
@@ -32,6 +35,7 @@
           "name":"v-model",
           "values":[""],
           "default":"data1",
+          "value":"",
           "type":"string",
           "placeholder":"",
           "description":"Armazena os dado(s) selecionado(s) no select"
@@ -40,6 +44,7 @@
         "name":"display",
         "values":[""],
         "default":"slug",
+        "value":"",
         "type":"string",
         "placeholder":"Nome da chave",
         "description":"Nome da chave do objeto que será passado em items"
@@ -48,6 +53,7 @@
         "name":"display-by",
         "values":[""],
         "default":"name",
+        "value":"",
         "type":"string",
         "placeholder":"Nome do valor",
         "description":"Nome do valor do objeto que será exibido"
@@ -56,6 +62,7 @@
         "name":"items",
         "values":[""],
         "default":"[{ \"slug\": \"item 1\", \"name\": \"name item 1\" },{ \"slug\": \"item 2\", \"name\": \"name item 2\"}]",
+        "value":"",
         "type":"array",
         "placeholder":"Itens do select",
         "description":"Itens do select que serão exibidos"
