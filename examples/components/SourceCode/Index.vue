@@ -2,7 +2,7 @@
   <div>
     <container :title="structure.title" :subtitle="structure.subtitle">
       <template #header>
-        <component :is="currentComponent" v-bind="getObject" v-if="structure"><span v-if="comp=='SButton'">Example</span></component>
+        <component :is="currentComponent" v-bind="getObject" v-if="structure"><slot /></component>
       </template>
       <template #content>
         <button class="tab" :class="tab == 'prop'?'active':null" @click="tab = 'prop'">Props</button>
@@ -13,16 +13,16 @@
               <s-input
                 small
                 :label="prop.name"
-                :value="prop.default"
+                :value="prop.value"
                 :placeholder="prop.placeholder"
-                @input="value => prop.default = value"
+                @input="value => prop.value = value"
               />
             </div>
 
             <div v-if="prop.type=='boolean'">
               <label>{{ prop.name }}</label>
-              <s-radiobox :name="prop.name" label="Sim" :value="prop.values[0]" @change="e => prop.default = e" />
-              <s-radiobox :name="prop.name" label="Não" :value="prop.values[1]" @change="e => prop.default = e" />
+              <s-radiobox :name="prop.name" label="Sim" :value="prop.values[0]" @change="e => prop.value = e" />
+              <s-radiobox :name="prop.name" label="Não" :value="prop.values[1]" @change="e => prop.value = e" />
             </div>
 
             <div v-if="prop.values.length>1 && prop.type!='boolean'">
@@ -33,7 +33,7 @@
                 placeholder="Selecione uma opção"
                 small
                 :items="prop.values.map(v => ({name:(v||'none'), slug:v}))"
-                v-model="prop.default"
+                v-model="prop.value"
               >
                 <div slot="option" slot-scope="{ option }">
                   {{ option['name'] }}
@@ -47,6 +47,7 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Default</th>
                 <th>Type</th>
                 <th>Description</th>
               </tr>
@@ -54,6 +55,7 @@
             <tbody>
               <tr v-for="prop in structure.props" :key="prop.name">
                 <td><code class="codespan">{{ prop.name }}</code></td>
+                <td>{{ prop.default }}</td>
                 <td>{{ prop.type }}</td>
                 <td>{{ prop.description }}</td>
               </tr>
@@ -70,9 +72,7 @@
                 :display_language="false"
                 v-model="code"
     />-->
-    <pre class="pre">
-      <code>{{ code }}</code>
-    </pre>
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -83,6 +83,7 @@ import Container from './components/Container.vue'
 import SInput from '../../../src/components/SInput/Index.vue'
 import SSelect from '../../../src/components/SSelect/Index.vue'
 import SRadiobox from '../../../src/components/SRadiobox/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
   name: 'SourceCode',
@@ -91,7 +92,8 @@ export default {
     Container,
     SInput,
     SRadiobox,
-    SSelect
+    SSelect,
+    PreCode
   },
   props:{
     file: {type: String, required: true},
@@ -115,8 +117,9 @@ export default {
       value +=`<template>\n\t<${this.renderName(true)}\n`;
       
       this.structure.props.map(e => {
-        if(e.default.length){
-          let p = this.renderValueProp(e.type, e.default)
+        e.value = e.value?e.value:e.default
+        if(e.value){
+          let p = this.renderValueProp(e.type, e.value)
           if(e.type == 'prop')
             value += `\t\t${p}\n`
           else if(p!='false')
@@ -137,22 +140,24 @@ export default {
       return ''
     },
     loader() {
-      return () => import(`./assets/${this.file}.json`);
+      if(this.file)
+        return () => import(`./assets/${this.file}.json`);
+      else return ''
     },
     getObject() {
 
       let data = {items:[]}
       this.structure.props.map(p => {
-
-        if(p.default && p.type != 'prop'){
+        p.value = p.value?p.value:p.default
+        if(p.value && p.type != 'prop'){
           if(p.type != 'boolean')
-            data[p.name] = (p.type=='array')?JSON.parse(p.default):p.default
+            data[p.name] = (p.type=='array')?JSON.parse(p.value):p.value
           else{
-            if(p.default == 'true')
+            if(p.value == 'true')
               data[p.name] = true
           } 
-        }else if(p.default && p.type == 'prop'){
-          let key = (typeof p.default === 'string')?p.default:p.default.slug
+        }else if(p.value && p.type == 'prop'){
+          let key = (typeof p.value === 'string')?p.value:p.value.slug
           if(key)
             data[key] = true
         }
@@ -197,22 +202,6 @@ export default {
   text-align: left;
 }
 
-.pre{
-  border-radius: 12px;
-  font-size: 17px;
-  color:#abb2bf;
-  code{
-    background-color:#282c34;
-    padding:20px;
-    width: 600px;
-    height: auto;
-    border-radius: 12px;
-    box-sizing: border-box;
-    display: block;
-    border: none;
-    margin: 0;
-  }
-}
 .tab{
   background-color: #FFF;
   padding: 10px 20px;
