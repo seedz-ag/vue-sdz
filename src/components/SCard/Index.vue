@@ -44,7 +44,7 @@ export default {
     cardStyles () {
       return {
         background: this.backgroundColor,
-        borderLeft: `4px solid ${this.borderColor}`
+        borderLeft: this.borderColor?`4px solid ${this.borderColor}`:'none'
       }
     },
 
