@@ -33,7 +33,7 @@ export default {
         margin-top:10px;
     }
     .body{
-      width: 600px;
+      width: 100%;
       background-color: rgba(0,0,0,0.03);
       border-radius: 10px;
       padding: 10px;
@@ -45,7 +45,7 @@ export default {
       }
     }
     .header-source-code{
-      width: 600px;
+      width: 100%;
       border: 2px solid #F1F1F1;
       padding: 10px 20px 20px 20px;
       border-radius: 10px;
