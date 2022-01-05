@@ -1,6 +1,5 @@
 <template>
   <div class="s-switch-example">
-    <h1 class="h1">Switch</h1>
     <s-title class="h1" title="Switch" />
 
     <p class="subtitle">

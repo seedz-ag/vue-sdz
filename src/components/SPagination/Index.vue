@@ -13,7 +13,7 @@
           :is="num === '...' ? 's-icon' : 's-button'"
           v-for="(num, index) in pages"
           :key="index"
-          :icon="num === '...' ? 'sdz-info' : ''"
+          :icon="num === '...' ? 'sdz-more-horizzontal' : ''"
           :class="['page', { '--is-active': num === page }]"
           @click="changePage(num, 'set')"
         >
@@ -133,6 +133,10 @@ export default {
       }
 
       &:focus { outline: unset; }
+    }
+
+    & > .s-icon.sdz-more-horizzontal{
+      padding-top: 10px;
     }
 
     & .--is-active {

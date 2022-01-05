@@ -118,28 +118,6 @@ export default {
           child: [
             { name: 'icon', redirect: '/vue-sdz/components/icon' }
           ]
-        },
-        {
-          name: 'api',
-          icon: 'sdz-monitor',
-          child: [
-            { name: 'alert', redirect: '/vue-sdz/api/alert' },
-            { name: 'button', redirect: '/vue-sdz/api/button' },
-            { name: 'card', redirect: '/vue-sdz/api/card' },
-            { name: 'checkbox', redirect: '/vue-sdz/api/checkbox' },
-            { name: 'carousel', redirect: '/vue-sdz/api/carousel' },
-            { name: 'table', redirect: '/vue-sdz/api/table' },
-            { name: 'shadowed', redirect: '/vue-sdz/api/shadowed' },
-            { name: 'icon', redirect: '/vue-sdz/api/icon' },
-            { name: 'image', redirect: '/vue-sdz/api/image' },
-            { name: 'loader', redirect: '/vue-sdz/api/loader' },
-            { name: 'modal', redirect: '/vue-sdz/api/modal' },
-            { name: 'popover', redirect: '/vue-sdz/api/popover' },
-            { name: 'feedbacks', redirect: '/vue-sdz/api/feedbacks' },
-            { name: 'select', redirect: '/vue-sdz/api/select' },
-            { name: 'collapsible', redirect: '/vue-sdz/api/collapsible' },
-            { name: 'input', redirect: '/vue-sdz/api/input' }
-          ]
         }
       ]
     }
@@ -193,6 +171,10 @@ export default {
     display: flex;
     // transition: margin-top .6s ease;
   }
+}
+
+.s-sidebar-item > .item > .content > .s-icon{
+  color: color(neutral,base);
 }
 
 .container {
