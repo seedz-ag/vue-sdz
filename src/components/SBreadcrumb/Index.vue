@@ -34,7 +34,6 @@ export default {
   methods: {
     isLast(index){
       const position = this.items.length - 1;
-      console.log(index, position);
       return position === index;
     }
   }
