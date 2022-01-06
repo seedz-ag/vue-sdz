@@ -90,6 +90,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./src/styles/_index.scss";
+
 %sidebar-item {
   margin: 5px 10px;
   padding: 0 10px;
@@ -145,6 +147,10 @@ export default {
 
         & > .--is-active-child { background-color: #299d8d; }
       }
+    }
+
+    & > .content > .icon{
+      color: color(neutral,base);
     }
   }
 
