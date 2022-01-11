@@ -170,6 +170,10 @@ export default {
       }
     }
 
+    & > .s-icon.sdz-more-horizzontal{
+      padding-top: 10px;
+    }
+
     & .--is-active {
       & > .text { color: color(neutral, base); }
 

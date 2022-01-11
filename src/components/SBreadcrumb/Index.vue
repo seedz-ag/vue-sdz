@@ -1,11 +1,12 @@
 <template>
   <div class="s-breadcrumb">
     <ul :class="['list', color]">
-      <li v-for="{text, current, to, external} in items" :key="text" class="item">
+      <li v-for="({text, current, to, external}, index) in items" :key="index" class="item">
         <a v-if="!current" :href="to" :target="external ? '_blank' : '_self' " class="parent">
           {{ text }}
         </a>
         <span v-else>{{ text }}</span>
+        <s-icon v-if="!isLast(index)" icon="sdz-chevron-right" size="14" />
       </li>
     </ul>
   </div>
@@ -14,6 +15,10 @@
 <script>
 export default {
   name: 'SBreadcrumb',
+
+  components: {
+    SIcon: () => import('../SIcon/Index.vue').then(c => c.default)
+  },
 
   props: {
     color: {
@@ -24,6 +29,13 @@ export default {
     },
 
     items: { type: Array, required: true }
+  },
+
+  methods: {
+    isLast(index){
+      const position = this.items.length - 1;
+      return position === index;
+    }
   }
 }
 </script>
@@ -42,12 +54,12 @@ export default {
     display: inline-flex;
     font-size: .8rem;
     color: color(base, medium);
+
+    & > .s-icon{
+      margin: 2px 12px;
+    }
   }
 
-  & > .list > .item:not(:first-child):before{
-    content: ">";
-    margin: 0 12px;
-  }
 
   & > .list > .item> .parent{
     //text-decoration: underline;
