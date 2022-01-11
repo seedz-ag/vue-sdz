@@ -105,6 +105,7 @@ export default {
 
     & > .icon {
       margin-right: 30px;
+      color: white;
 
       &:last-child{
         margin-right: 0px;
@@ -120,6 +121,9 @@ export default {
     }
 
     & > .action { transition: transform .3s ease-in-out; }
+  }
+  &:hover{
+    background-color: rgba(0,0,0,0.1);
   }
 }
 
@@ -148,7 +152,7 @@ export default {
     }
   }
 
-  & > .--is-active-item { background-color: #004a4f; }
+  & > .--is-active-item { background-color: #004a4f !important; }
 
   & > .--is-disabled {
     cursor: not-allowed;

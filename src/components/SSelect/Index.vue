@@ -325,8 +325,15 @@ export default {
       min-height: 50px;
       font-size: $font-size-xs;
       background-color: white;
+
+      border-width: 1px;
+      border-style: solid;
+      border-image-slice: 1;
       border-radius: $border-radius-sm;
-      border: 1px solid color(base, light);
+      border-image-source: color(base, light);
+
+      // border-radius: $border-radius-sm;
+      // border: 1px solid color(base, light);
       transition: border-radius .3s ease-in-out,
                   border-color .3s ease-in-out,
                   box-shadow .3s ease-in-out;
@@ -372,10 +379,10 @@ export default {
           font-size: $font-size-xxs;
           color: color(base, base);
 
-          &.-placeholder {
-            font-size: $font-size-xxs;
-            color: color(base, light);
-          }
+          // &.-placeholder {
+          //   font-size: $font-size-xxs;
+          //   color: color(base, light);
+          // }
         }
       }
 
@@ -385,28 +392,26 @@ export default {
       }
     }
 
-    .items {
+    & > .items {
       width: 100%;
       max-height: 300px;
-
+      margin-top: 12px;
       z-index: 0;
       border-radius: $border-radius-sm;
-      background-color: $neutral-color;
+      background-color: white;
 
       position: absolute;
       left: 0;
 
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
       border-top: none;
+      box-shadow:none;
 
       & > .s-collapsible > .wrapper {
-        border: 2px solid color(primary, base);
-        border-top: none;
-
+        
+        box-shadow: $shadow-2;
         transition: opacity .3s ease-in-out,
                     height .3s ease-in-out !important;
-
+        border-radius: 8px;
         & > .item {
           display: flex;
           cursor: pointer;
@@ -415,11 +420,6 @@ export default {
 
           &.-selected { font-weight: 700; }
           &.-active { background-color: color(primary, base); }
-
-          // &:first-child {
-          //   border-top-left-radius: 5px;
-          //   border-top-right-radius: 5px;
-          // }
 
           &:last-child {
             border-bottom-left-radius: 5px;
@@ -434,20 +434,26 @@ export default {
             font-size: $font-size-xxs;
 
             & > .text { padding-left: 10px; }
-            & > .disclaimer { padding-right: 10px; }
+            & > .disclaimer { padding-right: 10px; font-style: italic; }
           }
         }
       }
     }
   }
 
+  & > .label {
+    font-size: 14px;
+    font-weight: 500;
+    pointer-events: none;
+    color: color(base, base);
+    font-family: $font-family;
+    transition: font-size .3s, transform .3s;
+  }
+
   &.--is-opened {
     & > .select {
       & > .field {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border: 2px solid color(primary, base);
-        border-bottom: none;
+        border: 1px solid color(primary, base);
 
         &:hover { box-shadow: unset; }
 
@@ -465,16 +471,17 @@ export default {
   &.--is-disabled {
     cursor: default;
     pointer-events: none;
-
+    
     & > .label { color: color(neutral, dark); }
 
     & > .select > .field {
-      border-color: color(neutral, dark);
-
+     // border-color: color(neutral, dark);
+      border-color: #E1E2E4;
+      background-color: #F5F7F9;
       pointer-events: none;
 
-      & > .icon { color: color(neutral, dark); }
-      & > .selections > .input { color: color(neutral, dark); }
+      & > .icon { color: color(base, dark); }
+      & > .selections > .input { background-color: transparent; color: color(neutral, dark); }
     }
   }
 

@@ -13,8 +13,8 @@
           :is="num === '...' ? 's-icon' : 's-button'"
           v-for="(num, index) in pages"
           :key="index"
-          :icon="num === '...' ? 'sdz-info' : ''"
-          :class="['page', { '--is-active': num === page }]"
+          :icon="num === '...' ? 'sdz-more-horizzontal' : ''"
+          :class="['page', (num === '...') ? 'page-icon' : '', { '--is-active': num === page }]"
           @click="changePage(num, 'set')"
         >
           {{ num === '...' ? '' : num }}
@@ -57,12 +57,41 @@ export default {
       validator: limit => limit > 3
     }
   },
-
   computed: {
     pages () {
-      return Array.from({ length: this.totalPage }, (xs, i) => {
-        if ((i + 1) === 2 && this.page > 3) return '...'
-        if ((i + 1) === this.totalPage - 1 && this.page <= (this.totalPage - 3)) return '...'
+      
+      if(this.totalPage < 7)
+        return Array.from({ length: this.totalPage }, (xs, i) => ( i + 1 ))
+
+      let limit = (this.page>=this.totalPage-2)?6:7;
+
+      return Array.from({ length: limit }, (xs, i) => {
+
+        if(this.page > 3){
+          if ((i + 1) === 2) return '...'
+
+          if ((i + 1) === 3) {
+            if(this.page == (this.totalPage - 1)) return this.page-2
+            if(this.page == this.totalPage) return this.page-3
+            return this.page-1
+          }
+
+          if ((i + 1) === 4) {
+            if(this.page == (this.totalPage - 1)) return this.page-1
+            if(this.page == this.totalPage) return this.page-2
+            return this.page
+          }
+
+          if ((i + 1) === 5) {
+            if(this.page == (this.totalPage - 1)) return this.page
+            if(this.page == this.totalPage) return this.page-1
+            return this.page+1
+          }
+        }
+        
+        if ((i + 1) === limit - 1 && this.page <= (this.totalPage - 3)) return '...'
+
+        if ((i + 1) === limit) return parseInt(this.totalPage)
 
         return i + 1
       })
@@ -108,7 +137,7 @@ export default {
     }
 
     & > .page {
-      width: 32px;
+     // width: 32px;
       height: 32px;
       min-width: 32px;
       min-height: 32px;
@@ -116,6 +145,7 @@ export default {
       display: flex;
       margin: 0 5px;
       padding: 0;
+      padding: 0 6px;
       cursor: pointer;
       transition: unset;
       align-items: center;
@@ -133,6 +163,11 @@ export default {
       }
 
       &:focus { outline: unset; }
+
+      &.page-icon{
+        font-size: 26px !important;
+        cursor: default;
+      }
     }
 
     & .--is-active {
