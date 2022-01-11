@@ -49,6 +49,8 @@
       />
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-title class="h2" title="Sizing" />
     <s-box class="sizing flex-inline">
       <s-input
@@ -64,6 +66,8 @@
       />
     </s-box>
 
+    <pre-code :code="code2" />
+
     <s-title class="h2" title="Rounded" />
     <s-box>
       <s-input
@@ -73,6 +77,8 @@
         @input="value => inputRounded = value"
       />
     </s-box>
+
+    <pre-code :code="code3" />
 
     <s-title class="h2" title="Masked Input" />
     <p class="subtitle">
@@ -103,6 +109,8 @@
       />
     </s-box>
 
+    <pre-code :code="code4" />
+
     <s-title class="h2" title="Enhancers" />
     <s-box>
       <s-input
@@ -113,6 +121,8 @@
         @input="value => inputSearch = value"
       />
     </s-box>
+
+    <pre-code :code="code5" />
   </div>
 </template>
 
@@ -121,9 +131,10 @@ import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle, SourceCode },
+  components: { SInput, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {
@@ -134,7 +145,72 @@ export default {
       // inputTextArea: '',
       inputDataError: '',
       inputTeste: '',
-      inputFloatLabel: ''
+      inputFloatLabel: '',
+      code1: `<s-input label="Default" />\n
+    <s-input
+      placeholder="Disabled input"
+      disabled="disabled"
+    />\n
+    <s-input
+      placeholder="Disabled readonly input"
+      readonly="readonly"
+    />\n
+    <s-input
+      label="error"
+      :validation="inputDataError ? '' : 'error msg'"
+      :value="inputDataError"
+      @input="value => inputDataError = value"
+    />\n
+    <s-input
+      label="is float label"
+      float-label
+      :value="inputFloatLabel"
+      @input="value => inputFloatLabel = value"
+    />`,
+      code2:`<s-input
+        label="Small"
+        small
+      />
+      <s-input
+        label="Default"
+      />
+      <s-input
+        label="Larger"
+        larger
+      />`,
+      code3:`<s-input
+        label="rounded"
+        round
+        :value="inputRounded"
+        @input="value => inputRounded = value"
+      />`,
+      code4:`<s-input
+        raw
+        label="CPF"
+        :mask="['###.###.###-##']"
+        :value="inputMask"
+        @input="value => inputMask = value"
+      />
+      <s-input
+        raw
+        label="Phone"
+        :mask="['(##) ####-####']"
+        :value="inputMask"
+        @input="value => inputMask = value"
+      />
+      <s-input
+        label="money"
+        is-money
+        :value="inputMoney"
+        @input="onInputMoney"
+      />`,
+      code5: `<s-input
+        round
+        icon="sdz-search"
+        :value="inputSearch"
+        :placeholder="'Search'"
+        @input="value => inputSearch = value"
+      />`
     }
   },
 

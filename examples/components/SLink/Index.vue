@@ -38,6 +38,8 @@
       <s-button link icon="sdz-check" disabled>link icon disabled</s-button>
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-box class="flex-line flex-center box-dark">
       <s-button dark link external to="https://www.google.com">link external</s-button>
       <br>
@@ -45,6 +47,8 @@
       <br>
       <s-button dark link icon="sdz-check" secondary-icon-color to="https://www.google.com">link icon</s-button>
     </s-box>
+
+    <pre-code :code="code2" />
   </div>
 </template>
 
@@ -53,9 +57,28 @@ import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SButton, SBox, STitle, SourceCode }
+  components: { SButton, SBox, STitle, SourceCode, PreCode },
+  data(){
+    return{
+      code1:`<s-button link external to="https://www.google.com">link external</s-button>
+
+      <s-button link to="https://www.google.com">link route</s-button>
+
+      <s-button link icon="sdz-check" secondary-icon-color to="https://www.google.com">link icon</s-button>
+
+      <s-button link disabled>link disabled</s-button>
+
+      <s-button link icon="sdz-check" disabled>link icon disabled</s-button>`,
+      code2:`<s-button dark link external to="https://www.google.com">link external</s-button>
+
+      <s-button dark link to="https://www.google.com">link route</s-button>
+      
+      <s-button dark link icon="sdz-check" secondary-icon-color to="https://www.google.com">link icon</s-button>`
+    }
+  }
 }
 </script>
 

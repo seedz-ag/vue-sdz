@@ -25,6 +25,8 @@
       />
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-title class-title="h2" title="Error" />
     <s-box>
       <s-input
@@ -35,6 +37,8 @@
         @input="value => inputDataError = value"
       />
     </s-box>
+
+    <pre-code :code="code2" />
 
     <s-title class-title="h2" title="Disabled" />
     <s-box>
@@ -51,6 +55,8 @@
         type="password"
       />
     </s-box>
+
+    <pre-code :code="code3" />
   </div>
 </template>
 
@@ -59,14 +65,38 @@ import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle, SourceCode },
+  components: { SInput, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {
       inputDataError: '',
-      inputTeste: ''
+      inputTeste: '',
+      code1:`<s-input
+        label="Password"
+        type="password"
+      />`,
+      code2:`<s-input
+        label="Password Error"
+        :validation="inputDataError ? '' : 'error msg'"
+        :value="inputDataError"
+        type="password"
+        @input="value => inputDataError = value"
+      />`,
+      code3:`<s-input
+        placeholder="Disabled input"
+        disabled="disabled"
+        type="password"
+        value="1234"
+        label="Password Disabled"
+      />
+      <s-input
+        placeholder="Password disabled readonly"
+        readonly="readonly"
+        type="password"
+      />`
     }
   },
 

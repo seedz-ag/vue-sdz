@@ -25,10 +25,14 @@
       <s-switch label="Checked Switch" v-model="data2" />
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-title class="h2" title="Disabled" />
     <s-box>
       <s-switch label="disabled" disabled />
     </s-box>
+
+    <pre-code :code="code2" />
   </div>
 </template>
 
@@ -37,16 +41,21 @@ import SSwitch from '../../../src/components/SSwitch/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
+
 
 export default {
-  components: { SSwitch, SBox, STitle, SourceCode },
+  components: { SSwitch, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {
       data0: false,
       data1: true,
       data2: true,
-      data3: true
+      data3: true,
+      code1:`<s-switch label="Default Switch" v-model="data0" />
+<s-switch label="Checked Switch" v-model="data2" />`,
+      code2:'<s-switch label="disabled" disabled />'
     }
   }
 }

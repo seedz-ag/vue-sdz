@@ -24,6 +24,8 @@
       />
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-title class="h2" title="Negative" />
     <s-box>
       <s-input
@@ -35,6 +37,8 @@
       />
     </s-box>
 
+    <pre-code :code="code2" />
+
     <s-title class="h2" title="Disabled" />
     <s-box>
       <s-input
@@ -45,6 +49,8 @@
         @input="value => inputTextArea = value"
       />
     </s-box>
+
+    <pre-code :code="code3" />
   </div>
 </template>
 
@@ -53,15 +59,38 @@ import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle, SourceCode },
+  components: { SInput, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {
       inputTextArea: '',
       inputDataError: '',
-      inputFloatLabel: ''
+      inputFloatLabel: '',
+      code1:`<s-input
+        label="textarea"
+        rows="20"
+        cols="5"
+        text-area
+        :value="inputTextArea"
+        @input="value => inputTextArea = value"
+      />`,
+      code2:`<s-input
+        label="textarea"
+        text-area
+        :value="inputDataError"
+        :validation="inputDataError ? '' : 'error msg'"
+        @input="value => inputDataError = value"
+      />`,
+      code3:`<s-input
+        label="Disabled"
+        disabled
+        text-area
+        :value="inputTextArea"
+        @input="value => inputTextArea = value"
+      />`
     }
   },
 

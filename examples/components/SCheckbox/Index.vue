@@ -27,6 +27,8 @@
       <s-checkbox label="Checked Checkbox" v-model="data1" />
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-title class="h2" title="Stats" />
     <s-box>
       <s-checkbox label="Positive" v-model="data2" />
@@ -34,10 +36,14 @@
       <s-checkbox label="Negative" negative v-model="data3" />
     </s-box>
 
+    <pre-code :code="code2" />
+
     <s-title class="h2" title="Disabled" />
     <s-box>
       <s-checkbox label="disabled" disabled v-model="data4" />
     </s-box>
+
+    <pre-code :code="code3" />
   </div>
 </template>
 
@@ -46,9 +52,10 @@ import SCheckbox from '../../../src/components/SCheckbox/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SCheckbox, SBox, STitle, SourceCode },
+  components: { SCheckbox, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {
@@ -56,7 +63,12 @@ export default {
       data1: true,
       data2: true,
       data3: true,
-      data4: true
+      data4: true,
+      code1:`<s-checkbox label="Default Checkbox" v-model="data0" />
+      <s-checkbox label="Checked Checkbox" v-model="data1" />`,
+      code2:`<s-checkbox label="Positive" v-model="data2" />
+      <s-checkbox label="Negative" negative v-model="data3" />`,
+      code3:'<s-checkbox label="disabled" disabled v-model="data4" />'
     }
   }
 }
