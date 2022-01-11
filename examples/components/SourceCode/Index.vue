@@ -198,22 +198,9 @@ export default {
 
 <style lang="scss">
 
-.source-code{
-
-  .source-code-container{
-    & .tabprop{
-      display: flex;  
-      flex-wrap: wrap;
-      width: 100%;
-      justify-content:space-around;
-      & > .item{
-        width: 250px;
-        height: 90px;
-        text-align: left;
-      }
-    }
-    
-    & .tab{
+.source-code > .source-code-container{
+  & > .body{
+    & > .tab{
       background-color: #FFF;
       padding: 10px 20px;
       color: #222;
@@ -228,30 +215,48 @@ export default {
       }
     }
 
-    & .table-api{
+    & > .tabprop{
+      display: flex;  
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content:space-around;
+      & > .item{
+        width: 250px;
+        height: 90px;
+        text-align: left;
+      }
+    }
+    
+    & > .tabapi > .table-api{
       width:100%;
       background-color:#FFF;
-      & th{
-        padding:10px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+      & > thead > tr{
+        & > th{
+          padding:10px;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
       }
-      & td{
-        padding:15px 10px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        font-size:13px;
-      }
-      & tr:nth-child(even) {
-        background-color: rgba(0,0,0,0.04);
-      }
-      & .codespan{
-        font-family:Consolas,"courier new";
-        font-size:15px;
-        color:crimson;
-        background-color:#f1f1f1;
-        padding:4px;
-        border-radius:4px;
+      & > tbody > tr{
+        & > td{
+          padding:15px 10px;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+          font-size:13px;
+          & > .codespan{
+            font-family:Consolas,"courier new";
+            font-size:15px;
+            color:crimson;
+            background-color:#f1f1f1;
+            padding:4px;
+            border-radius:4px;
+          }
+        }
+        & > tr:nth-child(even) {
+          background-color: rgba(0,0,0,0.04);
+        }
+        
       }
     }
   }
 }
+
 </style>
