@@ -24,6 +24,8 @@
       Não devem ser usados para destacar uma ação importante como “Adicionar”, “Fechar”, “Cancelar” ou “Salvar”, nesse contexto utiliza-se o componente button;
     </p>
 
+    <source-code file="SLinkExample" comp="SButton" />
+
     <s-box class="flex-line flex-center">
       <s-button link external to="https://www.google.com">link external</s-button>
       <br>
@@ -50,9 +52,10 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SButton, SBox, STitle }
+  components: { SButton, SBox, STitle, SourceCode }
 }
 </script>
 

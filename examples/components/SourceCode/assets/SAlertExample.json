@@ -1,0 +1,37 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SAlert }"},
+  "props":[
+      {
+        "name":"header",
+        "values":[""],
+        "default":"Titulo do alert",
+        "value":"",
+        "placeholder":"",
+        "type":"string",
+        "description":"Titulo do alert"
+      },
+      {
+          "name":"msg",
+          "values":[""],
+          "default":"Mensagem de texto do alert",
+          "value":"",
+          "placeholder":"",
+          "type":"string",
+          "description":"Mensagem do alert"
+      },     
+      {
+        "name":"type",
+        "values":["negative","positive"],
+        "default":"positive",
+        "value":"",
+        "placeholder":"",
+        "type":"prop",
+        "description":"Altera o visual do alert"
+    }
+      
+  ],
+  "value":""
+}

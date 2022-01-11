@@ -2,6 +2,8 @@
   <div class="s-button-example">
     <s-title class="h1" title="Buttons" />
 
+    <source-code file="SButtonExample" comp="SButton">Example</source-code>
+
     <s-title class="h2" title="Stats" />
     <s-box>
       <div class="flex-inline">
@@ -69,9 +71,10 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SButton, SBox, STitle }
+  components: { SButton, SBox, STitle, SourceCode }
 }
 </script>
 

@@ -27,7 +27,7 @@
     <!-- :style="{ 'margin-top': isOpened ? 0 : '100px' }" -->
     <div class="content">
       <s-sidebar :items="items" @redirect="onRedirect" />
-
+     
       <router-view />
     </div>
   </div>
@@ -162,7 +162,7 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & > .header { transition: height .6s ease-in-out; }
+  & > .header { transition: height .6s ease-in-out; z-index:10 }
 
   &:not(.--is-opened) {}
 
@@ -178,17 +178,22 @@ export default {
   height: 100%;
 
   padding: 50px;
-  margin: 0 auto;
+  // margin: 0 auto;
 
   overflow-y: auto;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  & > div{
+    max-width:800px;
+  }
 }
 
 .subtitle{
   font-size: 1rem;
   line-height: 20px;
-  display: flex;
-  align-items: center;
   margin-bottom: 25px;
   line-height: 1.5;
 }

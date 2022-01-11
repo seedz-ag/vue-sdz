@@ -1,0 +1,55 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SButton }"},
+  "props":[
+      {
+        "name":"type",
+        "values":["primary","grey","loading","link","outlined","rounded"],
+        "default":"primary",
+        "value":"",
+        "placeholder":"",
+        "type":"prop",
+        "description":"Tipo do botão"
+      },
+      {
+        "name":"full-width",
+        "values":["true","false"],
+        "default":"false",
+        "value":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Deixa o button com largura máxima"
+      },
+      {
+        "name":"size",
+        "values":["small","default","large"],
+        "default":"default",
+        "value":"",
+        "placeholder":"",
+        "type":"prop",
+        "description":"Altera a altura do botão"
+      },
+      {
+        "name":"disabled",
+        "values":["true","false"],
+        "default":"false",
+        "value":"",
+        "placeholder":"",
+        "type":"boolean",
+        "description":"Desabilita o button"
+      },
+      {
+        "name":"icon",
+        "values":[""],
+        "default":"",
+        "value":"",
+        "placeholder":"sdz-check",
+        "type":"string",
+        "description":"Adiciona um icone dentro do button lado esquerdo"
+      }
+      
+  ],
+  "value":""
+}

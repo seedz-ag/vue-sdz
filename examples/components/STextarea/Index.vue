@@ -10,6 +10,8 @@
       Representa um controle de edição de texto simples de várias linhas, útil quando você deseja permitir que as pessoas usuárias insiram uma quantidade considerável de texto de formato livre, por exemplo, um comentário em um formulário de revisão ou feedback;
     </p>
 
+    <source-code file="STextareaExample" comp="SInput" />
+
     <s-title class="h2" title="Default" />
     <s-box>
       <s-input
@@ -50,9 +52,10 @@
 import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle },
+  components: { SInput, SBox, STitle, SourceCode },
 
   data () {
     return {

@@ -13,6 +13,8 @@
       Considerar Input Select sem label em casos específicos, mas com a utilização obrigatório do placehold como texto orientador.
     </p>
 
+    <source-code file="SSelectExample" comp="SSelect" />
+
     <s-title class="h2" title="Default" />
     <s-box>
       <s-select
@@ -82,9 +84,10 @@
 import SSelect from '../../../src/components/SSelect/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SSelect, SBox, STitle },
+  components: { SSelect, SBox, STitle, SourceCode },
 
   data () {
     return {

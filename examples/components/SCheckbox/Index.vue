@@ -18,6 +18,8 @@
       Podem ser utilizados em alguns componentes como: Modais, Formulários, Tabelas, Termos e Condições.
     </p>
 
+    <source-code file="SCheckboxExample" comp="SCheckbox" />
+
     <s-title class="h2" title="Default" />
     <s-box>
       <s-checkbox label="Default Checkbox" v-model="data0" />
@@ -43,9 +45,10 @@
 import SCheckbox from '../../../src/components/SCheckbox/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SCheckbox, SBox, STitle },
+  components: { SCheckbox, SBox, STitle, SourceCode },
 
   data () {
     return {

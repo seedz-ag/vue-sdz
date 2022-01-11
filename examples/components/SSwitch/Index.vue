@@ -15,6 +15,8 @@
       Não deve ser usado em cenários onde é interessante a pessoa usuária conseguir confirmar as opções selecionadas antes das ações serem aplicadas. Nesses casos deve-se utilizar o checkbox.
     </p>
 
+    <source-code file="SSwitchExample" comp="SSwitch" />
+
     <s-title class="h2" title="Default" />
     <s-box>
       <s-switch label="Default Switch" v-model="data0" />
@@ -33,9 +35,10 @@
 import SSwitch from '../../../src/components/SSwitch/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SSwitch, SBox, STitle },
+  components: { SSwitch, SBox, STitle, SourceCode },
 
   data () {
     return {

@@ -1,0 +1,27 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SModal }"},
+  "props":[
+    {
+      "name":"no-header",
+      "values":["true","false"],
+      "default":"false",
+      "value":"",
+      "placeholder":"",
+      "type":"boolean",
+      "description":"Remove o cabeçalho do Modal"
+    },
+    {
+      "name":"is-opened",
+      "values":["true","false"],
+      "default":"false",
+      "value":"",
+      "placeholder":"",
+      "type":"boolean",
+      "description":"Abre e fecha o Modal"
+    }
+  ],
+  "value":""
+}

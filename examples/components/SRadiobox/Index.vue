@@ -15,6 +15,8 @@
       Não deve ser usado se mais de uma opção puder ser selecionada, nesse cenário devemos utilizar o checkbox.
     </p>
 
+    <source-code file="SRadioboxExample" comp="SRadiobox" />
+
     <s-title class="h2" title="Default" />
     <s-box>
       <s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
@@ -41,9 +43,10 @@
 import SRadiobox from '../../../src/components/SRadiobox/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SRadiobox, SBox, STitle },
+  components: { SRadiobox, SBox, STitle, SourceCode },
 
   data () {
     return {

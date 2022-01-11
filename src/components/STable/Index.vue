@@ -1,4 +1,4 @@
-i<template>
+<template>
   <div v-if="hasValid" class="s-table">
     <slot name="actions">
       <filters label="Filtrar por: " :search="search" v-on="$listeners" />
