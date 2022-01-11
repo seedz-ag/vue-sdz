@@ -9,6 +9,8 @@
     <s-box>
       <s-stepper :step="activeStep" :items="items" @select="newStep => activeStep = newStep" />
     </s-box>
+
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -16,12 +18,14 @@
 import SStepper from '../../../src/components/SStepper/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SStepper, SBox, STitle },
+  components: { SStepper, SBox, STitle, PreCode },
 
   data () {
     return {
+      code:'<s-stepper :step="activeStep" :items="items" @select="newStep => activeStep = newStep" />',
       activeStep: 2,
       items: [
         { label: 'item 1', icon: 'sdz-dollar-sign', disabled: false },

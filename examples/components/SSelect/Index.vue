@@ -41,6 +41,8 @@
       </s-select>
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-title class="h2" title="Multiples" />
     <s-box>
       <s-select
@@ -66,6 +68,8 @@
       />
     </s-box>
 
+    <pre-code :code="code2" />
+
     <s-title class="h2" title="Disabled" />
     <s-box>
       <s-select
@@ -77,6 +81,8 @@
         :items="items"
       />
     </s-box>
+
+    <pre-code :code="code3" />
   </div>
 </template>
 
@@ -85,9 +91,10 @@ import SSelect from '../../../src/components/SSelect/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SSelect, SBox, STitle, SourceCode },
+  components: { SSelect, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {
@@ -104,7 +111,58 @@ export default {
         { slug: '4', name: 'name 4' },
         { slug: '5', name: 'name 5' },
         { slug: '666666666666666666666666666666', name: 'name 666666666666666666666666666666' }
-      ]
+      ],
+      code1:`<s-select
+        label="Simple"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        :items="items"
+        v-model="data1"
+      />
+
+      <s-select
+        label="With slots"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        clear-on-select
+        :items="items"
+        v-model="data2"
+      >
+        <div slot="option" slot-scope="{ option }">
+          {{ option['slug'] }} - {{ option['name'] }}
+        </div>
+      </s-select>`,
+      code2:`<s-select
+        label="Multiple"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        multiple
+        hide-selected
+        :items="items"
+        v-model="data3"
+      />
+
+      <s-select
+        label="Multiple with validation ( >=3 )"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        :validation="data4.length >= 3 ? 'Máximo de 3 opções selecionadas' : ''"
+        multiple
+        :items="items"
+        v-model="data4"
+      />`,
+      code3:`<s-select
+        label="Disabled"
+        display="slug"
+        display-by="name"
+        placeholder="Selecione uma opção"
+        disabled
+        :items="items"
+      />`
     }
   }
 }

@@ -19,12 +19,16 @@
       </div>
     </s-box>
 
+    <pre-code :code="code1" />
+
     <s-title class="h2" title="Sizes" />
     <s-box class="flex-inline">
       <s-button small>small</s-button>
       <s-button default>default</s-button>
       <s-button large>large</s-button>
     </s-box>
+
+    <pre-code :code="code2" />
 
     <s-title class="h2" title="Outlined" />
     <s-box class="flex-inline">
@@ -34,6 +38,8 @@
       <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>
     </s-box>
 
+    <pre-code :code="code3" />
+
     <s-title class="h2" title="Rounded" />
     <s-box class="flex-inline">
       <s-button rounded>outlined</s-button>
@@ -42,10 +48,14 @@
       <s-button rounded icon="sdz-check" disabled>rounded disabled icon</s-button>
     </s-box>
 
+    <pre-code :code="code4" />
+
     <s-title class="h2" title="Enhancers" />
     <s-box>
       <s-button icon="sdz-check">icon</s-button>
     </s-box>
+
+    <pre-code :code="code5" />
 
     <s-title class="h2" title="Button Group" />
     <p class="subtitle">
@@ -64,6 +74,8 @@
         <s-button primary>Salvar</s-button>
       </div>
     </s-box>
+
+    <pre-code :code="code6" />
   </div>
 </template>
 
@@ -72,9 +84,41 @@ import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SButton, SBox, STitle, SourceCode }
+  components: { SButton, SBox, STitle, SourceCode, PreCode },
+  data(){
+    return{
+      code1:`<div class="flex-inline">
+        <s-button primary>primary</s-button>
+        <s-button grey>Secondary</s-button>
+        <s-button loading>loading</s-button>
+        <s-button disabled>disabled</s-button>
+        <s-button link>link button</s-button>
+      </div>
+
+      <div class="flex-line">
+        <s-button full-width>full-width</s-button>
+      </div>`,
+      code2:`<s-button small>small</s-button>
+      <s-button default>default</s-button>
+      <s-button large>large</s-button>`,
+      code3:`<s-button outlined>outlined</s-button>
+      <s-button outlined disabled>outlined disabled</s-button>
+      <s-button outlined icon="sdz-check">outlined icon</s-button>
+      <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>`,
+      code4:`<s-button rounded>outlined</s-button>
+      <s-button rounded disabled>rounded disabled</s-button>
+      <s-button rounded icon="sdz-check">rounded icon</s-button>
+      <s-button rounded icon="sdz-check" disabled>rounded disabled icon</s-button>`,
+      code5:'<s-button icon="sdz-check">icon</s-button>',
+      code6:`<div class="flex-inline">
+        <s-button outlined>Cancelar</s-button>
+        <s-button primary>Salvar</s-button>
+      </div>`
+    }
+  }
 }
 </script>
 

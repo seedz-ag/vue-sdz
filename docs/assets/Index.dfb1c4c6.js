@@ -1,0 +1,1 @@
+import{n as _}from"./index.259ac129.js";import"./vendor.edd272bb.js";var s=function(){var e=this,n=e.$createElement,r=e._self._c||n;return r("div",{staticClass:"s-button-example"},[e._v(" btn api ")])},a=[];const o={},t={};var l=_(o,s,a,!1,i,null,null,null);function i(e){for(let n in t)this[n]=t[n]}var u=function(){return l.exports}();export{u as default};

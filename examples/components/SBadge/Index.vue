@@ -30,6 +30,8 @@
       <s-badge dot>testando</s-badge>
       <s-badge content="3">testando</s-badge>
     </s-box>
+
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -38,9 +40,20 @@ import SBadge from '../../../src/components/SBadge/Index.vue'
 import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SBadge, SIcon, SBox, STitle }
+  components: { SBadge, SIcon, SBox, STitle, PreCode },
+  data(){
+    return{
+      code:`
+      <s-badge dot><s-icon icon="sdz-bell" /></s-badge>
+      <s-badge content="3"><s-icon icon="sdz-cart" /></s-badge>
+
+      <s-badge dot>testando</s-badge>
+      <s-badge content="3">testando</s-badge>`
+    }
+  }
 }
 </script>
 

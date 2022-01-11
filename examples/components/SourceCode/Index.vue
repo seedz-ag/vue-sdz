@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <container :title="structure.title" :subtitle="structure.subtitle">
+  <div class="source-code">
+    <source-code-container :title="structure.title" :subtitle="structure.subtitle">
       <template #header>
         <component :is="currentComponent" v-bind="getObject" v-if="structure"><slot /></component>
       </template>
       <template #content>
         <button class="tab" :class="tab == 'prop'?'active':null" @click="tab = 'prop'">Props</button>
         <button class="tab" :class="tab == 'api'?'active':null" @click="tab = 'api'">API</button>
-        <div id="prop" v-show="tab=='prop'">
+        <div v-show="tab=='prop'" class="tabprop">
           <div v-for="prop in structure.props" :key="prop.name" class="item">
             <div v-if="prop.values.length<=1">
               <s-input
@@ -21,8 +21,8 @@
 
             <div v-if="prop.type=='boolean'">
               <label>{{ prop.name }}</label>
-              <s-radiobox :name="prop.name" label="Sim" :value="prop.values[0]" @change="e => prop.value = e" />
-              <s-radiobox :name="prop.name" label="Não" :value="prop.values[1]" @change="e => prop.value = e" />
+              <s-radiobox :name="prop.name" label="Sim" value="true" @change="e => prop.value = e" />
+              <s-radiobox :name="prop.name" label="Não" value="false" @change="e => prop.value = e" />
             </div>
 
             <div v-if="prop.values.length>1 && prop.type!='boolean'">
@@ -42,7 +42,7 @@
             </div>
           </div>
         </div>
-        <div id="api" v-show="tab=='api'">
+        <div v-show="tab=='api'" class="tabapi">
           <table class="table-api">
             <thead>
               <tr>
@@ -63,7 +63,7 @@
           </table>
         </div>
       </template>
-    </container>
+    </source-code-container>
 
 
     <!--<CodeEditor :read_only="false" 
@@ -79,7 +79,7 @@
 <script>
 
 //import CodeEditor from 'simple-code-editor'
-import Container from './components/Container.vue'
+import SourceCodeContainer from './components/SourceCodeContainer.vue'
 import SInput from '../../../src/components/SInput/Index.vue'
 import SSelect from '../../../src/components/SSelect/Index.vue'
 import SRadiobox from '../../../src/components/SRadiobox/Index.vue'
@@ -89,7 +89,7 @@ export default {
   name: 'SourceCode',
   components: {
     //CodeEditor,
-    Container,
+    SourceCodeContainer,
     SInput,
     SRadiobox,
     SSelect,
@@ -115,9 +115,9 @@ export default {
       let value = ''
       
       value +=`<template>\n\t<${this.renderName(true)}\n`;
-      
+      //colocar redulce
       this.structure.props.map(e => {
-        e.value = e.value?e.value:e.default
+        e.value = e.value||e.default
         if(e.value){
           let p = this.renderValueProp(e.type, e.value)
           if(e.type == 'prop')
@@ -134,34 +134,32 @@ export default {
       return value;
     },
     currentComponent () {
-      if (this.comp) {
-        return () => import('../../../src/components/' + this.comp + '/Index.vue')
-      }
-      return ''
+      if (!this.comp) return ''
+      return () => import('../../../src/components/' + this.comp + '/Index.vue')
     },
     loader() {
-      if(this.file)
-        return () => import(`./assets/${this.file}.json`);
-      else return ''
+      if(!this.file)return ''
+      return () => import(`./assets/${this.file}.json`);
     },
     getObject() {
 
       let data = {items:[]}
+
       this.structure.props.map(p => {
-        p.value = p.value?p.value:p.default
-        if(p.value && p.type != 'prop'){
+        p.value = p.value||p.default
+        if(!p.value) return data
+        if(p.type != 'prop'){
           if(p.type != 'boolean')
-            data[p.name] = (p.type=='array')?JSON.parse(p.value):p.value
-          else{
-            if(p.value == 'true')
-              data[p.name] = true
-          } 
-        }else if(p.value && p.type == 'prop'){
-          let key = (typeof p.value === 'string')?p.value:p.value.slug
-          if(key)
-            data[key] = true
+            return data[p.name] = (p.type=='array') ? JSON.parse(p.value) : p.value
+          if(p.value == 'true')
+            return data[p.name] = true
         }
+        const isSelectInput = typeof p.value !== 'string'
+        let key = (isSelectInput) ? p.value.slug : p.value
+        if(key)
+          data[key] = true
       })
+
       return data
     }
   },
@@ -188,59 +186,77 @@ export default {
       return String(value);
     },
     renderName(clear){
-      return this.structure.component?(this.structure.component.as?((clear)?this.structure.component.as.replace(/[^a-zA-Z]/g,'').trim():this.structure.component.as):this.structure.component.name):''
+      return this.structure.component 
+        ? (this.structure.component.as
+          ?((clear)?this.structure.component.as.replace(/[^a-zA-Z]/g,'').trim():this.structure.component.as)
+          :this.structure.component.name):
+        ''
     }
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
-.item{
-  width: 250px;
-  height: 90px;
-  text-align: left;
-}
+.source-code > .source-code-container{
+  & > .body{
+    & > .tab{
+      background-color: #FFF;
+      padding: 10px 20px;
+      color: #222;
+      border: none;
+      cursor:pointer;
+      margin-bottom:10px;
+      &:hover{
+        background-color:rgba(0,0,0,0.02)
+      }
+      &.active{
+        font-weight:600;
+      }
+    }
 
-.tab{
-  background-color: #FFF;
-  padding: 10px 20px;
-  color: #222;
-  border: none;
-  cursor:pointer;
-  margin-bottom:10px;
-  &:hover{
-    background-color:rgba(0,0,0,0.02)
+    & > .tabprop{
+      display: flex;  
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content:space-around;
+      & > .item{
+        width: 250px;
+        height: 90px;
+        text-align: left;
+      }
+    }
+    
+    & > .tabapi > .table-api{
+      width:100%;
+      background-color:#FFF;
+      & > thead > tr{
+        & > th{
+          padding:10px;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+      }
+      & > tbody > tr{
+        & > td{
+          padding:15px 10px;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+          font-size:13px;
+          & > .codespan{
+            font-family:Consolas,"courier new";
+            font-size:15px;
+            color:crimson;
+            background-color:#f1f1f1;
+            padding:4px;
+            border-radius:4px;
+          }
+        }
+        & > tr:nth-child(even) {
+          background-color: rgba(0,0,0,0.04);
+        }
+        
+      }
+    }
   }
-  &.active{
-    font-weight:600;
-  }
-}
-
-.table-api{
-  width:100%;
-  background-color:#FFF;
-  & th{
-    padding:10px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-  }
-  & td{
-    padding:15px 10px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    font-size:13px;
-  }
-  & tr:nth-child(even) {
-    background-color: rgba(0,0,0,0.04);
-  }
-}
-
-.codespan{
-  font-family:Consolas,"courier new";
-  font-size:15px;
-  color:crimson;
-  background-color:#f1f1f1;
-  padding:4px;
-  border-radius:4px;
 }
 
 </style>

@@ -11,6 +11,8 @@
       <s-progressbar :value="progress2" />
       <s-progressbar :value="progress3" />
     </s-box>
+
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -18,12 +20,14 @@
 import SProgressbar from '../../../src/components/SProgressbar/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SProgressbar, SBox, STitle },
+  components: { SProgressbar, SBox, STitle, PreCode },
 
   data(){
     return {
+      code:'<s-progressbar :value="45" />',
       progress1: 0,
       progress2: 0,
       progress3: 0

@@ -55,7 +55,7 @@ export default {
           name: 'Getting Started',
           icon: 'sdz-star',
           child: [
-            { name: 'home', redirect: '/vue-sdz/commons/getting-started' }
+            { name: 'Home', redirect: '/vue-sdz/commons/getting-started' }
           ]
         },
         {
@@ -69,54 +69,55 @@ export default {
           name: 'Content',
           icon: 'sdz-archive',
           child: [
-            { name: 'grid', redirect: '/vue-sdz/components/grid' },
-            { name: 'image', redirect: '/vue-sdz/components/image' },
-            { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
-            { name: 'table', redirect: '/vue-sdz/components/table' }
+            { name: 'Grid', redirect: '/vue-sdz/components/grid' },
+            { name: 'Image', redirect: '/vue-sdz/components/image' },
+            { name: 'Shadowed', redirect: '/vue-sdz/components/shadowed' },
+            { name: 'Table', redirect: '/vue-sdz/components/table' }
           ]
         },
         {
           name: 'Forms',
           icon: 'sdz-file-text',
           child: [
-            { name: 'input', redirect: '/vue-sdz/components/input' },
-            { name: 'text area', redirect: '/vue-sdz/components/textarea' },
-            { name: 'password', redirect: '/vue-sdz/components/password' },
-            { name: 'search', redirect: '/vue-sdz/components/search' },
-            { name: 'select', redirect: '/vue-sdz/components/select' },
-            { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
-            { name: 'radiobox', redirect: '/vue-sdz/components/radiobox' },
-            { name: 'switch', redirect: '/vue-sdz/components/switch' },
-            { name: 'button', redirect: '/vue-sdz/components/button' },
-            { name: 'link', redirect: '/vue-sdz/components/link' },
+            { name: 'Input', redirect: '/vue-sdz/components/input' },
+            { name: 'Textarea', redirect: '/vue-sdz/components/textarea' },
+            { name: 'Password', redirect: '/vue-sdz/components/password' },
+            { name: 'Search', redirect: '/vue-sdz/components/search' },
+            { name: 'Select', redirect: '/vue-sdz/components/select' },
+            { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
+            { name: 'Radiobox', redirect: '/vue-sdz/components/radiobox' },
+            { name: 'Switch', redirect: '/vue-sdz/components/switch' },
+            { name: 'Button', redirect: '/vue-sdz/components/button' },
+            { name: 'Link', redirect: '/vue-sdz/components/link' },
           ]
         },
         {
           name: 'Components',
           icon: 'sdz-box',
           child: [
-            { name: 'alert', redirect: '/vue-sdz/components/alert' },
-            { name: 'card', redirect: '/vue-sdz/components/card' },
-            { name: 'carousel', redirect: '/vue-sdz/components/carousel' },
-            { name: 'spinner', redirect: '/vue-sdz/components/loader' },
-            { name: 'modal', redirect: '/vue-sdz/components/modal' },
-            { name: 'popover', redirect: '/vue-sdz/components/popover' },
-            { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
-            { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
-            { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
-            { name: 'progress bar', redirect: '/vue-sdz/components/progressbar' },
-            { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
-            { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
-            { name: 'pagination', redirect: '/vue-sdz/components/pagination' },
-            { name: 'avatar', redirect: '/vue-sdz/components/avatar' },
-            { name: 'badge', redirect: '/vue-sdz/components/badge' },
+            { name: 'Alert', redirect: '/vue-sdz/components/alert' },
+            { name: 'Card', redirect: '/vue-sdz/components/card' },
+            { name: 'Carousel', redirect: '/vue-sdz/components/carousel' },
+            { name: 'Spinner', redirect: '/vue-sdz/components/loader' },
+            { name: 'Modal', redirect: '/vue-sdz/components/modal' },
+            { name: 'Popover', redirect: '/vue-sdz/components/popover' },
+            { name: 'Feedbacks', redirect: '/vue-sdz/components/feedbacks' },
+            { name: 'Collapse', redirect: '/vue-sdz/components/collapsible' },
+            { name: 'Tabber', redirect: '/vue-sdz/components/tabber' },
+            { name: 'Progress bar', redirect: '/vue-sdz/components/progressbar' },
+            { name: 'Breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
+            { name: 'Stepper', redirect: '/vue-sdz/components/stepper' },
+            { name: 'Pagination', redirect: '/vue-sdz/components/pagination' },
+            { name: 'Avatar', redirect: '/vue-sdz/components/avatar' },
+            { name: 'Badge', redirect: '/vue-sdz/components/badge' },
+            { name: 'Skeleton', redirect: '/vue-sdz/components/skeleton' },
           ]
         },
         {
           name: 'Extented',
           icon: 'sdz-globe',
           child: [
-            { name: 'icon', redirect: '/vue-sdz/components/icon' }
+            { name: 'Icon', redirect: '/vue-sdz/components/icon' }
           ]
         }
       ]

@@ -14,6 +14,8 @@
         </div>
       </s-carousel>
     </s-box>
+
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -21,15 +23,26 @@
 import SCarousel from '../../../src/components/SCarousel/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
-
+import PreCode from '../PreCode/Index.vue'
 
 export default {
   name: 'SCarouselExample',
 
-  components: { SCarousel, SBox, STitle },
+  components: { SCarousel, SBox, STitle, PreCode },
 
   data () {
     return {
+      code:`<s-carousel
+        controllers
+        :items="items"
+        :per-page="2"
+        :is-loopable="false"
+        :breakpoints="breakpoints"
+      >
+        <div slot-scope="{ item }" class="ball" :style="{ backgroundColor: item.color }">
+          <!-- {{ item }} -->
+        </div>
+      </s-carousel>`,
       items: [
         { color: 'blue' },
         { color: 'yellow' },

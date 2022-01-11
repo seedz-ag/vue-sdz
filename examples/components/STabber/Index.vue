@@ -15,6 +15,7 @@
         @change-tab="tab => activeTab = tab"
       />
     </s-box>
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -22,12 +23,26 @@
 import STabber from '../../../src/components/STabber/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { STabber, SBox, STitle },
+  components: { STabber, SBox, STitle, PreCode },
 
   data () {
     return {
+      code:`
+      <s-tabber
+        :tabs="tabs"
+        :active-tab="activeTab"
+        @change-tab="tab => activeTab = tab"
+      />
+
+      <s-tabber
+        alternative
+        :tabs="tabs"
+        :active-tab="activeTab"
+        @change-tab="tab => activeTab = tab"
+      />`,
       activeTab: 'seumadruga',
       tabs: [
         { name: 'Chaves', value: 'chaves', icon: 'sdz-share' },
