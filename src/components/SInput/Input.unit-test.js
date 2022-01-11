@@ -4,10 +4,29 @@ import SInput from './Index.vue'
 
 /* eslint-disable */
 describe('SInput', () => {
-  test('is instantiated', () => {
-    const wrapper = shallowMount(SInput)
+  let cmp;
 
-    expect(wrapper.exists()).toBeTruthy()
+  beforeEach(() => {
+    cmp = shallowMount(SInput, {
+      propsData: {
+        small: true,
+        placeholder: 'Digite aqui',
+        value: 'Nova informacao do input',
+        round: true,
+        validation: 'Com mensagem',
+        positiveOnly:true
+      }
+    });
+  });
+
+
+  test('is instantiated', () => {
+    expect(cmp.exists()).toBeTruthy()
+  })
+  
+
+  test("has the expected html structure", () => {
+    expect(cmp.element).toMatchSnapshot();
   })
 
   test('label', () => {
@@ -90,4 +109,5 @@ describe('SInput', () => {
 
     expect(input.attributes('placeholder')).toBe('Digite o nome')
   })
+
 })
