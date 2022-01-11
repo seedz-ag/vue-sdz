@@ -19,7 +19,11 @@ export default {
     /**
      * Skeleton width in percentage.
      */
-    size: Number,
+    size: {
+      type: Number,
+      validator: (s) => s && s <= 100,
+      default: 100
+    },
 
     /**
      * Skeleton row in percentage.
