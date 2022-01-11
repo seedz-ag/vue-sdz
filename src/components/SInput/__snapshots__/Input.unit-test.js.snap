@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SInput has the expected html structure 1`] = `
+<s-input-container-stub
+  class="s-input --small --is-not-empty"
+  validation="Com mensagem"
+>
+  <!---->
+   
+  <input
+    class="input --is-rounded"
+    placeholder="Digite aqui"
+    value="Nova informacao do input"
+  >
+    false
+  </input>
+   
+  <!---->
+</s-input-container-stub>
+`;

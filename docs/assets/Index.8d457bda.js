@@ -1,0 +1,2 @@
+import{n as _}from"./index.259ac129.js";import"./vendor.edd272bb.js";var o=function(){var e=this,n=e.$createElement,r=e._self._c||n;return r("pre",{staticClass:"pre"},[e._v("    "),r("code",[e._v(e._s(e.code))]),e._v(`
+  `)])},s=[];const c={name:"PreCode",props:{code:String}},t={};var a=_(c,o,s,!1,v,"724b3fc7",null,null);function v(e){for(let n in t)this[n]=t[n]}var l=function(){return a.exports}();export{l as default};

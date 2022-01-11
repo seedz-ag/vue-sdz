@@ -13,6 +13,8 @@
       Pode ser adicionado a outros componentes, como por exemplo o Header.
     </p>
 
+    <source-code file="SSearchExample" comp="SInput" />
+
     <s-title class="h2" title="Default" />
     <s-box>
       <s-input
@@ -23,6 +25,8 @@
         @input="value => inputSearch = value"
       />
     </s-box>
+
+    <pre-code :code="code1" />
   </div>
 </template>
 
@@ -30,9 +34,11 @@
 import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle },
+  components: { SInput, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {
@@ -43,7 +49,14 @@ export default {
       // inputTextArea: '',
       inputDataError: '',
       inputTeste: '',
-      inputFloatLabel: ''
+      inputFloatLabel: '',
+      code1:`<s-input
+        round
+        icon="sdz-search"
+        :value="inputSearch"
+        :placeholder="'Search'"
+        @input="value => inputSearch = value"
+      />`
     }
   },
 

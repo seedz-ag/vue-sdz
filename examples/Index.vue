@@ -55,68 +55,69 @@ export default {
           name: 'Getting Started',
           icon: 'sdz-star',
           child: [
-            { name: 'home', redirect: '/vue-sdz/commons/getting-started' }
+            { name: 'Home', redirect: '/vue-sdz/commons/getting-started' }
           ]
         },
         {
           name: 'Styles',
           icon: 'sdz-painting-roller',
           child: [
-            { name: 'colors', redirect: '/vue-sdz/styles/palettes' }
+            { name: 'Colors', redirect: '/vue-sdz/styles/palettes' }
           ]
         },
         {
           name: 'Content',
           icon: 'sdz-archive',
           child: [
-            { name: 'grid', redirect: '/vue-sdz/components/grid' },
-            { name: 'image', redirect: '/vue-sdz/components/image' },
-            { name: 'shadowed', redirect: '/vue-sdz/components/shadowed' },
-            { name: 'table', redirect: '/vue-sdz/components/table' }
+            { name: 'Grid', redirect: '/vue-sdz/components/grid' },
+            { name: 'Image', redirect: '/vue-sdz/components/image' },
+            { name: 'Shadowed', redirect: '/vue-sdz/components/shadowed' },
+            { name: 'Table', redirect: '/vue-sdz/components/table' }
           ]
         },
         {
           name: 'Forms',
           icon: 'sdz-file-text',
           child: [
-            { name: 'button', redirect: '/vue-sdz/components/button' },
-            { name: 'checkbox', redirect: '/vue-sdz/components/checkbox' },
-            { name: 'input', redirect: '/vue-sdz/components/input' },
-            { name: 'link', redirect: '/vue-sdz/components/link' },
-            { name: 'password', redirect: '/vue-sdz/components/password' },
-            { name: 'radiobox', redirect: '/vue-sdz/components/radiobox' },
-            { name: 'search', redirect: '/vue-sdz/components/search' },
-            { name: 'select', redirect: '/vue-sdz/components/select' },
-            { name: 'switch', redirect: '/vue-sdz/components/switch' },
-            { name: 'text area', redirect: '/vue-sdz/components/textarea' },
+            { name: 'Button', redirect: '/vue-sdz/components/button' },
+            { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
+            { name: 'Input', redirect: '/vue-sdz/components/input' },
+            { name: 'Link', redirect: '/vue-sdz/components/link' },
+            { name: 'Password', redirect: '/vue-sdz/components/password' },
+            { name: 'Radiobox', redirect: '/vue-sdz/components/radiobox' },
+            { name: 'Search', redirect: '/vue-sdz/components/search' },
+            { name: 'Select', redirect: '/vue-sdz/components/select' },
+            { name: 'Switch', redirect: '/vue-sdz/components/switch' },
+            { name: 'Text area', redirect: '/vue-sdz/components/textarea' },
           ]
         },
         {
           name: 'Components',
           icon: 'sdz-box',
           child: [
-            { name: 'alert', redirect: '/vue-sdz/components/alert' },
-            { name: 'avatar', redirect: '/vue-sdz/components/avatar' },
-            { name: 'badge', redirect: '/vue-sdz/components/badge' },
-            { name: 'breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
-            { name: 'card', redirect: '/vue-sdz/components/card' },
-            { name: 'carousel', redirect: '/vue-sdz/components/carousel' },
-            { name: 'collapse', redirect: '/vue-sdz/components/collapsible' },
-            { name: 'feedbacks', redirect: '/vue-sdz/components/feedbacks' },
-            { name: 'modal', redirect: '/vue-sdz/components/modal' },
-            { name: 'pagination', redirect: '/vue-sdz/components/pagination' },
-            { name: 'popover', redirect: '/vue-sdz/components/popover' },
-            { name: 'progress bar', redirect: '/vue-sdz/components/progressbar' },
-            { name: 'spinner', redirect: '/vue-sdz/components/loader' },
-            { name: 'stepper', redirect: '/vue-sdz/components/stepper' },
-            { name: 'tabber', redirect: '/vue-sdz/components/tabber' },
+            { name: 'Alert', redirect: '/vue-sdz/components/alert' },
+            { name: 'Avatar', redirect: '/vue-sdz/components/avatar' },
+            { name: 'Badge', redirect: '/vue-sdz/components/badge' },
+            { name: 'Breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
+            { name: 'Card', redirect: '/vue-sdz/components/card' },
+            { name: 'Carousel', redirect: '/vue-sdz/components/carousel' },
+            { name: 'Collapse', redirect: '/vue-sdz/components/collapsible' },
+            { name: 'Feedbacks', redirect: '/vue-sdz/components/feedbacks' },
+            { name: 'Modal', redirect: '/vue-sdz/components/modal' },
+            { name: 'Pagination', redirect: '/vue-sdz/components/pagination' },
+            { name: 'Popover', redirect: '/vue-sdz/components/popover' },
+            { name: 'Progress bar', redirect: '/vue-sdz/components/progressbar' },
+            { name: 'Spinner', redirect: '/vue-sdz/components/loader' },
+            { name: 'Stepper', redirect: '/vue-sdz/components/stepper' },
+            { name: 'Tabber', redirect: '/vue-sdz/components/tabber' },
+            { name: 'Skeleton', redirect: '/vue-sdz/components/skeleton' },
           ]
         },
         {
           name: 'Extented',
           icon: 'sdz-globe',
           child: [
-            { name: 'icon', redirect: '/vue-sdz/components/icon' }
+            { name: 'Icon', redirect: '/vue-sdz/components/icon' }
           ]
         }
       ]
@@ -162,7 +163,7 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & > .header { transition: height .6s ease-in-out; }
+  & > .header { transition: height .6s ease-in-out; z-index:10 }
 
   &:not(.--is-opened) {}
 
@@ -178,17 +179,22 @@ export default {
   height: 100%;
 
   padding: 50px;
-  margin: 0 auto;
+  // margin: 0 auto;
 
   overflow-y: auto;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  & > div{
+    max-width:800px;
+  }
 }
 
 .subtitle{
   font-size: 1rem;
   line-height: 20px;
-  display: flex;
-  align-items: center;
   margin-bottom: 25px;
   line-height: 1.5;
 }

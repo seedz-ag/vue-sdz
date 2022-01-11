@@ -23,6 +23,7 @@
     <s-box class="flex-inline flex-center color-dark">
       <s-breadcrumb color="dark" :items="items" />
     </s-box>
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -30,12 +31,45 @@
 import SBreadcrumb from '../../../src/components/SBreadcrumb/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SBreadcrumb, SBox, STitle },
+  components: { SBreadcrumb, SBox, STitle, PreCode },
 
   data () {
     return {
+      code:`
+      <s-breadcrumb color="light" :items="[
+        {
+          disabled: true,
+          current: false,
+          text: 'Parent Page',
+          to: '#',
+          external: false
+        },
+        {
+          disabled: true,
+          current: false,
+          text: 'Sub-Parent Page',
+          to: '#',
+          external: false
+        }]" />
+        
+      <s-breadcrumb color="dark" :items="[
+        {
+          disabled: true,
+          current: false,
+          text: 'Parent Page',
+          to: '#',
+          external: false
+        },
+        {
+          disabled: true,
+          current: false,
+          text: 'Sub-Parent Page',
+          to: '#',
+          external: false
+        }]" />`,
       items: [
         {
           disabled: true,

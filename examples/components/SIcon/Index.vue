@@ -21,6 +21,8 @@
         </div>
       </div>
     </s-box>
+
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -29,12 +31,14 @@ import '../../../node_modules/sdz-icons/index.css'
 import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SIcon, SBox, STitle },
+  components: { SIcon, SBox, STitle, PreCode },
 
   data () {
     return {
+      code: '<s-icon :icon="sdz-zeedz" size="40" />',
       icons: [
         'sdz-alert-triangle',
         'sdz-zoom-out',

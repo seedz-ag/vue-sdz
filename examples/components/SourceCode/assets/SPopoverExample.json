@@ -1,0 +1,55 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SPopover }"},
+  "props":[
+    {
+      "name":"align",
+      "values":["left","center","right"],
+      "default":"left",
+      "value":"",
+      "placeholder":"",
+      "type":"string",
+      "description":"Alinha o conteudo do Popover"
+    },
+    {
+      "name":"position",
+      "values":["top","bottom"],
+      "default":"top",
+      "value":"",
+      "placeholder":"",
+      "type":"string",
+      "description":"Posição do Popover"
+    },
+    {
+      "name":"element-spacing",
+      "values":[""],
+      "default":"5",
+      "value":"",
+      "placeholder":"",
+      "type":"string",
+      "description":"Espaço do Popover"
+    },
+    {
+      "name":":target",
+      "values":[""],
+      "default":"$refs['teste']",
+      "value":"",
+      "placeholder":"",
+      "type":"string",
+      "description":"Nome da referência que irá exibir o Popover"
+    },
+    {
+      "name":"v-if",
+      "values":["true","false"],
+      "default":"false",
+      "value":"",
+      "placeholder":"",
+      "type":"boolean",
+      "description":"Exibe/Esconde o Popover"
+    }
+    
+  ],
+  "value":""
+}

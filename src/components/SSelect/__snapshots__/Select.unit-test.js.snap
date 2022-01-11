@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SSelect has the expected html structure 1`] = `
+<s-input-container-stub
+  class="s-select"
+>
+  <div
+    class="select"
+  >
+    <div
+      class="field"
+      tabindex="0"
+    >
+      <div
+        class="selections"
+      >
+         
+        <input
+          class="input"
+        />
+      </div>
+       
+      <i
+        class="icon sdz-chevron-down"
+      />
+    </div>
+     
+    <div
+      class="items"
+    >
+      <s-collapsible-stub
+        noheader="true"
+      >
+        <div
+          aria-hidden="true"
+          class="item"
+        >
+          <div
+            class="option-container"
+          >
+            <span
+              class="text"
+            >
+              opcao1
+            </span>
+             
+            <span
+              class="disclaimer"
+            >
+              
+                  Press enter to select
+                
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="item"
+        >
+          <div
+            class="option-container"
+          >
+            <span
+              class="text"
+            >
+              opcao2
+            </span>
+             
+            <span
+              class="disclaimer"
+            >
+              
+                  Press enter to select
+                
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="item"
+        >
+          <div
+            class="option-container"
+          >
+            <span
+              class="text"
+            >
+              opcao2
+            </span>
+             
+            <span
+              class="disclaimer"
+            >
+              
+                  Press enter to select
+                
+            </span>
+          </div>
+        </div>
+      </s-collapsible-stub>
+    </div>
+  </div>
+</s-input-container-stub>
+`;

@@ -1,1 +1,0 @@
-import{n as t}from"./index.c90c6057.js";import"./vendor.8161f9ef.js";const n={};var e=t({},(function(){var t=this,n=t.$createElement;return(t._self._c||n)("div",{staticClass:"s-modal-example"},[t._v(" modal api ")])}),[],!1,r,null,null,null);function r(t){for(let e in n)this[e]=n[e]}var l=function(){return e.exports}();export{l as default};

@@ -1,0 +1,46 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SSwitch }"},
+  "props":[
+      {
+        "name":"label",
+        "values":["Label Switch"],
+        "default":"Label Switch",
+        "value":"",
+        "placeholder":"",
+        "type":"string",
+        "description":"Label do switch"
+      },
+      {
+          "name":"disabled",
+          "values":["true","false"],
+          "default":"false",
+          "value":"",
+          "placeholder":"",
+          "type":"boolean",
+          "description":"Desabilita o switch"
+      }, 
+      {
+          "name":"v-model",
+          "values":[""],
+          "default":"data1",
+          "value":"",
+          "type":"string",
+          "placeholder":"",
+          "description":"Armazena a seleção do switch"
+      },
+      {
+        "name":"value",
+        "values":[""],
+        "default":"teste",
+        "value":"",
+        "type":"string",
+        "placeholder":"",
+        "description":"Valor do switch"
+      }
+      
+  ],
+  "value":""
+}
