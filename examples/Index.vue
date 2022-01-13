@@ -62,7 +62,8 @@ export default {
           name: 'Styles',
           icon: 'sdz-painting-roller',
           child: [
-            { name: 'Colors', redirect: '/vue-sdz/styles/palettes' }
+            { name: 'Breakpoints', redirect: '/vue-sdz/styles/breakpoints' },
+            { name: 'Colors', redirect: '/vue-sdz/styles/palettes' },
           ]
         },
         {
