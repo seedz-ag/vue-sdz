@@ -13,6 +13,7 @@
     </p>
 
     <s-box>
+      <!-- TO DO - Component Table -->
       <table>
         <tr>
           <td><b>Small Mobile</b></td>
@@ -44,49 +45,17 @@ export default {
   data () {
     return {
       code1:`
-      $breakpoints: (
-        xs-mobile:  0px,
-        mobile: 576px,
-        tablet:  992px,
-        desktop: 1200px
-      );
+        @include mobile { ... }
+        @include tablet { ... }
+        @include desktop { ... }
+        @include responsive(x, ) { ... }
 
-      @mixin xs-mobile {
-        @media only screen and (max-width: #{map-get($breakpoints, mobile) - 1px}) { @content; }
-      }
-
-      @mixin mobile {
-        @media only screen and (min-width: #{map-get($breakpoints, mobile)})
-          and (max-width: #{map-get($breakpoints, tablet) - 1px}) { @content; }
-      }
-
-      @mixin tablet {
-        @media only screen and (min-width: #{map-get($breakpoints, tablet)})
-          and (max-width: #{map-get($breakpoints, desktop) - 1px}) { @content; }
-      }
-
-      @mixin desktop {
-        @media only screen and (min-width: #{map-get($breakpoints, desktop)}) { @content; }
-      }
-
-      @mixin responsive ($media1, $media2) {
-        @if $media1 == xs-mobile and $media2 == mobile {
-          @media only screen and (max-width: #{map-get($breakpoints, tablet) - 1px})
-          { @content; }
-        } @else if $media1 == xs-mobile and $media2 == tablet {
-          @media only screen and (max-width: #{map-get($breakpoints, desktop) - 1px})
-          { @content; }
-        } @else if $media1 == mobile and $media2 == tablet {
-          @media only screen and (min-width: #{map-get($breakpoints, mobile)})
-            and (max-width: #{map-get($breakpoints, desktop) - 1px}) { @content; }
-        } @else if $media1 == mobile and $media2 == desktop {
-          @media only screen and (min-width: #{map-get($breakpoints, mobile)})
-          { @content; }
-        } @else if  $media1 == tablet and $media2 == desktop {
-          @media only screen and (min-width: #{map-get($breakpoints, tablet)})
-          { @content; }
+        .examples{
+          padding: 10px;
+          @include tablet { padding: 15px; }
+          @include desktop { padding: 20px; }
         }
-      }`
+      `
     }
   }
 }
