@@ -1,6 +1,6 @@
 <template>
   <div class="s-shadowed-example">
-    <s-title class="h1" title="Shadowed" />
+    <s-typography class="title-1" title="Shadowed" />
     <s-shadowed class="example-1">
       <div class="wrapper">
         AAA <br>
@@ -42,7 +42,7 @@
 
 <script>
 import SShadowed from '../../../src/components/SShadowed/Index.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 
 export default {
   components: { SShadowed, STitle }

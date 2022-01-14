@@ -9,9 +9,6 @@ import StylesRoute from './styless/routes.js'
 import ComponentList from './components/Index.vue'
 import ComponentsRoute from './components/routes.js'
 
-import APIList from './api/Index.vue'
-import APIsRoute from './api/routes.js'
-
 const routes = [
   {
     path: '/commons/GettingStarted.vue',
@@ -29,12 +26,6 @@ const routes = [
     name: 'components',
     component: ComponentList,
     children: ComponentsRoute
-  },
-  {
-    path: '/api',
-    name: 'api',
-    component: APIList,
-    children: APIsRoute
   }
 ]
 

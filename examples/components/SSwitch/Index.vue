@@ -1,12 +1,12 @@
 <template>
   <div class="s-switch-example">
-    <s-title class="h1" title="Switch" />
+    <s-typography class="title-1" title="Switch" />
 
     <p class="subtitle">
       Switch tem como objetivo possibilitar a pessoa usuária habilitar ou desabilitar algo como um alternador binário de "on/off".
     </p>
 
-    <s-title class="h2" title="Regras de aplicação" />
+    <s-typography class="title-2" title="Regras de aplicação" />
 
     <p class="subtitle">
       Podem ser utilizados para habilitar ou desabilitar configurações como "receber ou não" push notifications;
@@ -17,7 +17,7 @@
 
     <source-code file="SSwitchExample" comp="SSwitch" />
 
-    <s-title class="h2" title="Default" />
+    <s-typography class="title-2" title="Default" />
     <s-box>
       <s-switch label="Default Switch" v-model="data0" />
       <br>
@@ -26,7 +26,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-typography class="title-2" title="Disabled" />
     <s-box>
       <s-switch label="disabled" disabled />
     </s-box>
@@ -38,13 +38,13 @@
 <script>
 import SSwitch from '../../../src/components/SSwitch/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 
 export default {
-  components: { SSwitch, SBox, STitle, SourceCode, PreCode },
+  components: { SSwitch, SBox, STypography, SourceCode, PreCode },
 
   data () {
     return {

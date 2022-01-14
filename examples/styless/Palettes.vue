@@ -1,6 +1,6 @@
 <template>
   <div class="palettes">
-    <s-title class="h1" title="Colors" />
+    <s-typography class="title-1" title="Colors" />
     <p class="subtitle">
       OBS: Para gerar as variações, aplicamos uma porcentagem de lighten ou dark, que pode ser simulado conforme link a seguir: <s-button link external to="https://codepen.io/3ana/pen/QxJBWj">CodePen</s-button>
     </p>
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import STitle from '../commons/title.vue'
+import STypography from '../commons/typography.vue'
 import SButton from '../../src/components/SButton/Index.vue'
 
 export default {
-  components: { STitle, SButton },
+  components: { STypography, SButton },
 
   data () {
     return {

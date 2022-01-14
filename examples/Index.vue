@@ -64,6 +64,7 @@ export default {
           child: [
             { name: 'Breakpoints', redirect: '/vue-sdz/styles/breakpoints' },
             { name: 'Colors', redirect: '/vue-sdz/styles/palettes' },
+            { name: 'Typography', redirect: '/vue-sdz/styles/typography' },
           ]
         },
         {

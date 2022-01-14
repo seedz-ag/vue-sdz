@@ -1,6 +1,6 @@
 <template>
   <section class="s-table-example">
-    <s-title class="h1" title="Table" />
+    <s-typography class="title-1" title="Table" />
     <s-box>
       <s-table
         :cols="cols"
@@ -27,7 +27,7 @@
 import STable from '../../../src/components/STable/Index.vue'
 import findByInclusive from '../../../src/helpers/findByInclusive'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 
 import { cols, rows } from './data-table'
 

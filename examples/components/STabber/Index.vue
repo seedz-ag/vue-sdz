@@ -1,6 +1,6 @@
 <template>
   <div class="s-tabber-example">
-    <s-title class="h1" title="Tabber" />
+    <s-typography class="title-1" title="Tabber" />
     <s-box>
       <s-tabber
         :tabs="tabs"
@@ -22,11 +22,11 @@
 <script>
 import STabber from '../../../src/components/STabber/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { STabber, SBox, STitle, PreCode },
+  components: { STabber, SBox, STypography, PreCode },
 
   data () {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div class="s-progressbar-example flex-line">
-    <s-title class="h1" title="Progress Bar" />
+    <s-typography class="title-1" title="Progress Bar" />
 
     <p class="subtitle">
       Progrees Bar Indica um tempo de espera por ações - dentro de um fluxo de experiência ou dados de carregamento.
@@ -19,11 +19,11 @@
 <script>
 import SProgressbar from '../../../src/components/SProgressbar/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SProgressbar, SBox, STitle, PreCode },
+  components: { SProgressbar, SBox, STypography, PreCode },
 
   data(){
     return {

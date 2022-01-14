@@ -1,6 +1,6 @@
 <template>
   <div class="s-radiobox-example">
-    <s-title class="h1" title="Radiobox" />
+    <s-typography class="title-1" title="Radiobox" />
 
     <p class="subtitle">
       Input Radio Button tem como objetivo possibilitar que a pessoa usuária escolha uma opção dentro da interface.
@@ -17,7 +17,7 @@
 
     <source-code file="SRadioboxExample" comp="SRadiobox" />
 
-    <s-title class="h2" title="Default" />
+    <s-typography class="title-2" title="Default" />
     <s-box>
       <s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
       <s-radiobox id="nao" label="Default Radiobox" name="dafault" value="não" v-model="data0" />
@@ -27,7 +27,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Stats" />
+    <s-typography class="title-2" title="Stats" />
     <s-box>
       <s-radiobox label="Positive" v-model="data3" />
       <br>
@@ -36,7 +36,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-typography class="title-2" title="Disabled" />
     <s-box>
       <s-radiobox label="disabled" disabled v-model="data5" />
     </s-box>
@@ -48,12 +48,12 @@
 <script>
 import SRadiobox from '../../../src/components/SRadiobox/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SRadiobox, SBox, STitle, SourceCode, PreCode },
+  components: { SRadiobox, SBox, STypography, SourceCode, PreCode },
 
   data () {
     return {

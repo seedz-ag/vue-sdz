@@ -1,6 +1,6 @@
 <template>
   <div class="breakpoints">
-    <s-title class="h1" title="Breakpoints" />
+    <s-typography class="title-1" title="Breakpoints" />
 
     <p class="subtitle">
       Os breakpoints são paradas que o código faz em cada ponto do código de acordo com a resolução
@@ -36,11 +36,11 @@
 
 <script>
 import SBox from '../commons/box.vue'
-import STitle from '../commons/title.vue'
+import STypography from '../commons/typography.vue'
 import PreCode from '../components/PreCode/Index.vue'
 
 export default {
-  components: { SBox, STitle, PreCode },
+  components: { SBox, STypography, PreCode },
 
   data () {
     return {

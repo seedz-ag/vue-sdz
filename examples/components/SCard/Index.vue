@@ -1,6 +1,6 @@
 <template>
   <div class="s-card-example">
-    <s-title class="h1" title="Cards" />
+    <s-typography class="title-1" title="Cards" />
 
     <source-code file="SCardExample" comp="SCard">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse reprehenderit alias nisi amet! Quia, sed? Ut eos sequi eligendi doloremque nihil ratione earum id doloribus magnam! Consequuntur</source-code>
 
@@ -16,11 +16,11 @@
 <script>
 import SCard from '../../../src/components/SCard/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SCard, SBox, STitle, SourceCode }
+  components: { SCard, SBox, STypography, SourceCode }
 }
 </script>
 

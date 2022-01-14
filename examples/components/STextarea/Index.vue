@@ -1,18 +1,18 @@
 <template>
   <div class="s-input-example">
-    <s-title class="h1" title="Input Text Area" />
+    <s-typography class="title-1" title="Input Text Area" />
 
     <p class="subtitle">
       Input Text Area permite que a pessoa usuária insira textos longos em um campo.
     </p>
-    <s-title class="h2" title="Quanto usar" />
+    <s-typography class="title-2" title="Quanto usar" />
     <p class="subtitle">
       Representa um controle de edição de texto simples de várias linhas, útil quando você deseja permitir que as pessoas usuárias insiram uma quantidade considerável de texto de formato livre, por exemplo, um comentário em um formulário de revisão ou feedback;
     </p>
 
     <source-code file="STextareaExample" comp="SInput" />
 
-    <s-title class="h2" title="Default" />
+    <s-typography class="title-2" title="Default" />
     <s-box>
       <s-input
         label="textarea"
@@ -26,7 +26,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Negative" />
+    <s-typography class="title-2" title="Negative" />
     <s-box>
       <s-input
         label="textarea"
@@ -39,7 +39,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-typography class="title-2" title="Disabled" />
     <s-box>
       <s-input
         label="Disabled"
@@ -57,12 +57,12 @@
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle, SourceCode, PreCode },
+  components: { SInput, SBox, STypography, SourceCode, PreCode },
 
   data () {
     return {

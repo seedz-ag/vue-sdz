@@ -1,12 +1,12 @@
 <template>
   <div>
-    <s-title class="h1" title="Badge" />
+    <s-typography class="title-1" title="Badge" />
 
     <p class="subtitle">
       Um badge é um indicador visual para notificações e para valores numéricos, como contagens e pontuações.
     </p>
 
-    <s-title class="h2" title="Como e onde utilizar" />
+    <s-typography class="title-2" title="Como e onde utilizar" />
 
     <p class="subtitle">
       O badge é utilizado em conjunto com alguns ícones dentro do fluxo, deve ser utilizado a cor highlight, de acordo com o brand tokens deste Design System.
@@ -39,11 +39,11 @@
 import SBadge from '../../../src/components/SBadge/Index.vue'
 import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SBadge, SIcon, SBox, STitle, PreCode },
+  components: { SBadge, SIcon, SBox, STypography, PreCode },
   data(){
     return{
       code:`

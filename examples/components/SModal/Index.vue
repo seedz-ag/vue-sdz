@@ -1,6 +1,6 @@
 <template>
   <div class="s-modal-example">
-    <s-title class="h1" title="Modal" />
+    <s-typography class="title-1" title="Modal" />
 
     <source-code file="SModalExample" comp="SModal" />
 
@@ -32,11 +32,11 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SModal from '../../../src/components/SModal/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SButton, SModal, SBox, STitle, SourceCode },
+  components: { SButton, SModal, SBox, STypography, SourceCode },
 
   data () {
     return {

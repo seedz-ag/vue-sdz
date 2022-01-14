@@ -1,12 +1,12 @@
 <template>
   <div>
-    <s-title class="h1" title="Avatar" />
+    <s-typography class="title-1" title="Avatar" />
 
     <p class="subtitle">
       Avatar é uma representação em miniatura de uma pessoa usuária, para representar uma organização, use o componente "brand".
     </p>
 
-    <s-title class="h2" title="Quando usar" />
+    <s-typography class="title-2" title="Quando usar" />
 
     <p class="subtitle">
       Esse componente pode ser usado em lugares onde existe o upload de uma foto da pessoa usuária;
@@ -53,11 +53,11 @@ import SAvatar from '../../../src/components/SAvatar/Index.vue'
 import SIcon from '../../../src/components/SIcon/Index.vue'
 import SImage from '../../../src/components/SImage/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SAvatar, SIcon, SImage, SBox, STitle, PreCode },
+  components: { SAvatar, SIcon, SImage, SBox, STypography, PreCode },
 
   data () {
     return {

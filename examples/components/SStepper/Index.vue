@@ -1,6 +1,6 @@
 <template>
   <div class="s-stepper-example">
-    <s-title class="h1" title="Progress Stepper" />
+    <s-typography class="title-1" title="Progress Stepper" />
 
     <p class="subtitle">
       Progrees Steps no Design System são usadas para denotar o progresso em estágios de uma ação ou atividade. Esse tipo de lista fornece ao usuário uma noção do progresso e das etapas restantes.
@@ -17,11 +17,11 @@
 <script>
 import SStepper from '../../../src/components/SStepper/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SStepper, SBox, STitle, PreCode },
+  components: { SStepper, SBox, STypography, PreCode },
 
   data () {
     return {

@@ -1,11 +1,11 @@
 <template>
   <div class="s-breadcrumb-example flex-line">
-    <s-title class="h1" title="Breadcrumbs" />
+    <s-typography class="title-1" title="Breadcrumbs" />
 
     <p class="subtitle">
       Breadcrumbs são os indicadores que representam o caminho percorrido pelo visitante dentro de uma navegação.
     </p>
-    <s-title class="h2" title="Regras de aplicação" />
+    <s-typography class="title-2" title="Regras de aplicação" />
     <p class="subtitle">
       Não utilizar link para a página atual em que o usuário está;
     </p>
@@ -30,11 +30,11 @@
 <script>
 import SBreadcrumb from '../../../src/components/SBreadcrumb/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SBreadcrumb, SBox, STitle, PreCode },
+  components: { SBreadcrumb, SBox, STypography, PreCode },
 
   data () {
     return {
@@ -54,7 +54,7 @@ export default {
           to: '#',
           external: false
         }]" />
-        
+
       <s-breadcrumb color="dark" :items="[
         {
           disabled: true,

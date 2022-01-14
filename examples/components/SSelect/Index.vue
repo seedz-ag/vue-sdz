@@ -1,11 +1,11 @@
 <template>
   <div class="s-select-example">
-    <s-title class="h1" title="Select" />
+    <s-typography class="title-1" title="Select" />
 
     <p class="subtitle">
       Input Select é um dropdown onde a pessoa usuária pode selecionar uma opção em uma lista de opções. Hoje trazemos a visualização dos itens de forma nativa por uma questão de acessibilidade.
     </p>
-    <s-title class="h2" title="Quando usar" />
+    <s-typography class="title-2" title="Quando usar" />
     <p class="subtitle">
       Utilizar quando você tem ao menos 3 opções de escolha.
     </p>
@@ -15,7 +15,7 @@
 
     <source-code file="SSelectExample" comp="SSelect" />
 
-    <s-title class="h2" title="Default" />
+    <s-typography class="title-2" title="Default" />
     <s-box>
       <s-select
         label="Simple"
@@ -43,7 +43,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Multiples" />
+    <s-typography class="title-2" title="Multiples" />
     <s-box>
       <s-select
         label="Multiple"
@@ -70,7 +70,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-typography class="title-2" title="Disabled" />
     <s-box>
       <s-select
         label="Disabled"
@@ -89,12 +89,12 @@
 <script>
 import SSelect from '../../../src/components/SSelect/Index.vue'
 import SBox from '../../commons/box.vue'
-import STitle from '../../commons/title.vue'
+import STypography from '../../commons/typography.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SSelect, SBox, STitle, SourceCode, PreCode },
+  components: { SSelect, SBox, STypography, SourceCode, PreCode },
 
   data () {
     return {
