@@ -15,6 +15,7 @@
     "build": "rollup -c",
     "dev": "vite",
     "doc": "vite build",
+    "commit": "git-cz",
     "test-helpers": "jest 'src/helpers'",
     "test-components": "jest 'src/components'",
     "test-e2e:run": "cypress run",
