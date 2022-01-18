@@ -2,7 +2,7 @@
   <div class="palettes">
     <s-title class="h1" title="Colors" />
     <p class="subtitle">
-      OBS: Para gerar as variações, aplicamos uma porcentagem de lighten ou dark, que pode ser simulado conforme link a seguir: https://codepen.io/3ana/pen/QxJBWj
+      OBS: Para gerar as variações, aplicamos uma porcentagem de lighten ou dark, que pode ser simulado conforme link a seguir: <s-button link external to="https://codepen.io/3ana/pen/QxJBWj">CodePen</s-button>
     </p>
     <div v-for="color in colors" :key="color" :class="color">
       <h2 class="h2">{{ color }}</h2>
@@ -16,9 +16,10 @@
 
 <script>
 import STitle from '../commons/title.vue'
+import SButton from '../../src/components/SButton/Index.vue'
 
 export default {
-  components: { STitle },
+  components: { STitle, SButton },
 
   data () {
     return {

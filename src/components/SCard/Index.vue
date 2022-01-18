@@ -44,7 +44,7 @@ export default {
     cardStyles () {
       return {
         background: this.backgroundColor,
-        borderLeft: `4px solid ${this.borderColor}`
+        borderLeft: this.borderColor?`4px solid ${this.borderColor}`:'none'
       }
     },
 
@@ -67,7 +67,8 @@ export default {
   box-shadow: $shadow-1;
   transition: all .3s ease;
   border-radius: $border-radius-sm;
-
+  padding: 16px;
+  
   &:hover { box-shadow: $shadow-2; }
 
   &::before {

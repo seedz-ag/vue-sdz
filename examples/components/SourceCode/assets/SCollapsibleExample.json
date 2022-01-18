@@ -1,0 +1,27 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SCollapsible }"},
+  "props":[
+    {
+      "name":"is-opened",
+      "values":["true","false"],
+      "default":"false",
+      "value":"",
+      "placeholder":"",
+      "type":"boolean",
+      "description":"Remove o cabeçalho do Modal"
+    },
+    {
+      "name":"@toggle",
+      "values":[""],
+      "default":"",
+      "value":"",
+      "placeholder":"v => isOpened = v",
+      "type":"function",
+      "description":"Abre e fecha o Modal"
+    }
+  ],
+  "value":""
+}

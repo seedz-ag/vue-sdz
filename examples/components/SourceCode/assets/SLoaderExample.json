@@ -1,0 +1,8 @@
+{
+  "title":"",
+  "subtitle":"",
+  "imports":[],
+  "component":{"name":"vue-sdz","as":"{ SLoader }"},
+  "props":[],
+  "value":""
+}

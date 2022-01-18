@@ -10,6 +10,9 @@
     <p class="subtitle">
       Deve ser usado substituindo o label dos botões primários ao salvar ou validar dados. Ao salvar ou validar dados, o botão deve ficar no estado disabled e respeitando a cor neutra mais clara configurada neste documento.
     </p>
+
+    <source-code file="SLoaderExample" comp="SLoader" />
+
     <s-box class="flex-inline flex-center">
       <s-loader />
     </s-box>
@@ -20,9 +23,10 @@
 import SLoader from '../../../src/components/SLoader/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SLoader, SBox, STitle }
+  components: { SLoader, SBox, STitle, SourceCode }
 }
 </script>
 

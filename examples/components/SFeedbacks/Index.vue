@@ -12,6 +12,8 @@
         <s-button success @click="onSucces">show feedback success</s-button>
       </div>
     </s-box>
+
+    <pre-code :code="code" />
   </div>
 </template>
 
@@ -20,12 +22,16 @@ import SButton from '../../../src/components/SButton/Index.vue'
 import SFeedbacks from '../../../src/components/SFeedbacks/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
+import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SButton, SFeedbacks, SBox, STitle },
+  components: { SButton, SFeedbacks, SBox, STitle, PreCode },
 
   data () {
     return {
+      code:`<s-button @click="onInfo">show feedback</s-button>
+      <s-button error @click="onError">show feedback error</s-button>
+      <s-button success @click="onSucces">show feedback success</s-button>`,
       dismissible: true
     }
   },
