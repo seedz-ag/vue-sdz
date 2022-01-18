@@ -47,7 +47,7 @@
     <s-box>
       <p>Paragraph Large</p>
       <br>
-      <p class="small">Paragraph Small</p>
+      <p class="sm">Paragraph Small</p>
       <br>
       <caption>Caption</caption>
     </s-box>
@@ -86,7 +86,7 @@ export default {
       code2:`
         <p>Paragraph Large</p>
 
-        <p class="small">Paragraph Small</p>
+        <p class="sm">Paragraph Small</p>
 
         <caption>Caption</caption>
       `
