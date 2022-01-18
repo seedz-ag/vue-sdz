@@ -55,7 +55,6 @@
     "rollup-plugin-vue": "5.0.0",
     "sass": "^1.36.0",
     "sass-loader": "10",
-    "postcss": "^8.2.13",
     "simple-code-editor": "^1.1.1",
     "vite": "^2.5.7",
     "vite-plugin-vue2": "^1.8.2",
