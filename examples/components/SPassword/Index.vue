@@ -1,6 +1,6 @@
 <template>
   <div class="s-input-example">
-    <s-typography class-title="h1" title="Password" />
+    <s-title size="title-1">Password</s-title>
 
     <p class="subtitle">
       Input Password tem como objetivo permitir que a pessoa usuária coloque e/ou cadastre uma senha dentro do sistema. Possui uma máscara que por default fica habilitada, mas a pessoa usuária pode desabilitar para consegui ver os caracteres.
@@ -17,7 +17,7 @@
 
     <source-code file="SPasswordExample" comp="SInput" />
 
-    <s-typography class-title="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-input
         label="Password"
@@ -27,7 +27,7 @@
 
     <pre-code :code="code1" />
 
-    <s-typography class-title="h2" title="Error" />
+    <s-title size="title-2">Error</s-title>
     <s-box>
       <s-input
         label="Password Error"
@@ -40,7 +40,7 @@
 
     <pre-code :code="code2" />
 
-    <s-typography class-title="h2" title="Disabled" />
+    <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-input
         placeholder="Disabled input"
@@ -63,12 +63,12 @@
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STypography, SourceCode, PreCode },
+  components: { SInput, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div class="s-image-example">
-    <s-typography class="title-1" title="Image" />
+    <s-title size="title-1">Image</s-title>
 
     <s-box class="flex-center">
       <div class="alter-image">
@@ -24,7 +24,7 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SImage from '../../../src/components/SImage/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 
 export default {
   components: { SButton, SImage, SBox, STitle },

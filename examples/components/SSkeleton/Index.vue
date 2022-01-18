@@ -1,6 +1,6 @@
 <template>
   <div class="s-skeleton-example flex-line">
-    <s-typography class="title-1" title="Skeleton" />
+    <s-title size="title-1">Skeleton</s-title>
 
     <p class="subtitle">
       Skeleton é uma versão em branco de um componente que ainda não foi carregado. Ao contrário dos Loaders, uma tela de esqueleto informa visualmente aos usuários o que esperar e faz com que eles se concentrem no progresso, em vez do tempo de espera.
@@ -22,11 +22,11 @@
 <script>
 import SSkeleton from '../../../src/components/SSkeleton/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SSkeleton, SBox, STypography, PreCode },
+  components: { SSkeleton, SBox, STitle, PreCode },
 
   data(){
     return {

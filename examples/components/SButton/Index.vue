@@ -1,10 +1,11 @@
 <template>
   <div class="s-button-example">
-    <s-typography class="title-1" title="Buttons" />
+    <s-title size="title-1">Buttons</s-title>
 
     <source-code file="SButtonExample" comp="SButton">Example</source-code>
 
-    <s-typography class="title-2" title="Stats" />
+    <s-title size="title-2">Stats</s-title>
+
     <s-box>
       <div class="flex-inline">
         <s-button primary>primary</s-button>
@@ -21,7 +22,8 @@
 
     <pre-code :code="code1" />
 
-    <s-typography class="title-2" title="Sizes" />
+    <s-title size="title-2">Sizes</s-title>
+
     <s-box class="flex-inline">
       <s-button small>small</s-button>
       <s-button default>default</s-button>
@@ -30,7 +32,8 @@
 
     <pre-code :code="code2" />
 
-    <s-typography class="title-2" title="Outlined" />
+    <s-title size="title-2">Outlined</s-title>
+
     <s-box class="flex-inline">
       <s-button outlined>outlined</s-button>
       <s-button outlined disabled>outlined disabled</s-button>
@@ -40,7 +43,7 @@
 
     <pre-code :code="code3" />
 
-    <s-typography class="title-2" title="Rounded" />
+    <s-title size="title-2">Rounded</s-title>
     <s-box class="flex-inline">
       <s-button rounded>outlined</s-button>
       <s-button rounded disabled>rounded disabled</s-button>
@@ -50,14 +53,14 @@
 
     <pre-code :code="code4" />
 
-    <s-typography class="title-2" title="Enhancers" />
+    <s-title size="title-2">Enhancers</s-title>
     <s-box>
       <s-button icon="sdz-check">icon</s-button>
     </s-box>
 
     <pre-code :code="code5" />
 
-    <s-typography class="title-2" title="Button Group" />
+    <s-title size="title-2">Button Group</s-title>
     <p class="subtitle">
       Button Group é um conjunto de botões onde uma das ações é a mais prioritária, isso fica visualmente evidente através dos seus diferentes pesos.
     </p>
@@ -82,12 +85,12 @@
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SButton, SBox, STypography, SourceCode, PreCode },
+  components: { SButton, SBox, STitle, SourceCode, PreCode },
   data(){
     return{
       code1:`<div class="flex-inline">

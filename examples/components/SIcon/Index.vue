@@ -1,6 +1,6 @@
 <template>
   <div class="s-icon-example">
-    <s-typography class="title-1" title="Icons" />
+    <s-title size="title-1">Icons</s-title>
 
     <p class="subtitle">
       Nossa biblioteca de ícones foi criada a partir da biblioteca open source Feather Icons com alguns exclusivos criados para a plataforma.
@@ -30,11 +30,11 @@
 import '../../../node_modules/sdz-icons/index.css'
 import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SIcon, SBox, STypography, PreCode },
+  components: { SIcon, SBox, STitle, PreCode },
 
   data () {
     return {

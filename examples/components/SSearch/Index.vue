@@ -1,11 +1,13 @@
 <template>
   <div class="s-input-example">
-    <s-typography class="title-1" title="Search" />
+    <s-title size="title-1">Search</s-title>
 
     <p class="subtitle">
       Input Search é um campo de busca e permite que a pessoa usuária encontre um conteúdo de forma rápida. Hoje é um componente de input simples, no futuro a ideia é que contemple também comportamentos como autocomplete.
     </p>
-    <s-typography class="title-2" title="Quando usar" />
+
+    <s-title size="title-2">Quando usar</s-title>
+
     <p class="subtitle">
       É utilizado quando a pessoa usuária deseja encontrar um conteúdo disponível;
     </p>
@@ -15,7 +17,7 @@
 
     <source-code file="SSearchExample" comp="SInput" />
 
-    <s-typography class="title-2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-input
         round
@@ -33,12 +35,12 @@
 <script>
 import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SInput, SBox, STypography, SourceCode, PreCode },
+  components: { SInput, SBox, STitle, SourceCode, PreCode },
 
   data () {
     return {

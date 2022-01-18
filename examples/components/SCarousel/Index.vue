@@ -1,6 +1,6 @@
 <template>
   <div class="s-carousel-example">
-    <s-typography class="title-1" title="Carousel" />
+    <s-title size="title-1">Carousel</s-title>
     <s-box>
       <s-carousel
         controllers
@@ -22,13 +22,13 @@
 <script>
 import SCarousel from '../../../src/components/SCarousel/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
   name: 'SCarouselExample',
 
-  components: { SCarousel, SBox, STypography, PreCode },
+  components: { SCarousel, SBox, STitle, PreCode },
 
   data () {
     return {

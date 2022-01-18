@@ -35,5 +35,16 @@ input, textarea {
 }
 
 p {
-  line-height: 1.44;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+p.small{
+  font-size: 14px;
+  line-height: 17px;
+}
+
+caption{
+  font-size: 12px;
+  line-height: 15px;
 }

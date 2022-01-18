@@ -1,6 +1,7 @@
 <template>
   <div class="s-feedbacks-example">
-    <s-typography class="title-1" title="Feedbacks" />
+    <s-title size="title-1">Feedbacks</s-title>
+
     <s-box>
       <s-feedbacks :dismissible="dismissible" :feedbacks="$feedback.list" @close="feedback => $feedback.remove(feedback)" />
 
@@ -21,11 +22,11 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SFeedbacks from '../../../src/components/SFeedbacks/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SButton, SFeedbacks, SBox, STypography, PreCode },
+  components: { SButton, SFeedbacks, SBox, STitle, PreCode },
 
   data () {
     return {

@@ -1,55 +1,55 @@
 <template>
   <div class="typography">
-    <s-typography class="title-1" title="Typography" />
+    <s-title size="title-1">Typography</s-title>
 
     <p class="subtitle">
       A tipografia transmite nossas definições para o uso apropriado em textos e deve ser usada de acordo com a hierarquia dos elementos na interface.
     </p>
 
-    <s-typography class="title-2" title="Font Family" />
+    <s-title size="title-2">Font Family</s-title>
     <s-box>
       <span>Montserrat</span>
     </s-box>
 
-    <s-typography class="title-2" title="Font Weight" />
+    <s-title size="title-2">Font Weight</s-title>
     <s-box>
       <b>Bold</b>
       <br>
       Regular
     </s-box>
 
-    <s-typography class="title-2" title="Heading" />
+    <s-title size="title-2">Heading</s-title>
     <p class="subtitle">
       Os Heading e Subtitles possuem responsividade, ou seja, os tamanhos das fontes mudam de acordo com os breakpoints. A tabela abaixo mostra os tamanhos em pixels desses dois componentes para as versões desktop e seus tamanhos correspondentes para a versão mobile. Em Paragraph e Caption os valores são mantidos em ambas as versões.
     </p>
 
     <s-box>
-      <s-typography class="h1" title="Heading Display" />
+      <s-title size="hd">Heading Display</s-title>
       <br>
-      <s-typography class="h2" title="Heading X-Large" />
+      <s-title size="hxl">Heading X-Large</s-title>
       <br>
-      <s-typography class="h3" title="Heading Large" />
+      <s-title size="hl">Heading Large</s-title>
       <br>
-      <s-typography class="h4" title="Heading Medium" />
+      <s-title size="hm">Heading Medium</s-title>
       <br>
-      <s-typography class="h5" title="Heading Small" />
+      <s-title size="hs">Heading Small</s-title>
       <br>
-      <s-typography class="h6" title="Heading X-Small" />
+      <s-title size="hxs">Heading X-Small</s-title>
       <br>
-      <s-typography class="subtitle-1" title="Subtitle Large" />
+      <s-title size="sub-l">Subtitle Large</s-title>
       <br>
-      <s-typography class="subtitle-2" title="Subtitle Small" />
+      <s-title size="sub-s">Subtitle Small</s-title>
     </s-box>
 
     <pre-code :code="code1" />
 
-    <s-typography class="title-2" title="Paragraph" />
+    <s-title size="title-2">Paragraph</s-title>
     <s-box>
-      <s-typography class="paragraph-1" title="Paragraph Large" />
+      <p>Paragraph Large</p>
       <br>
-      <s-typography class="paragraph-2" title="Paragraph Small" />
+      <p class="small">Paragraph Small</p>
       <br>
-      <s-typography class="caption" title="Caption" />
+      <caption>Caption</caption>
     </s-box>
 
     <pre-code :code="code2" />
@@ -58,40 +58,40 @@
 
 <script>
 import SBox from '../commons/box.vue'
-import STypography from '../commons/typography.vue'
+import STitle from '../commons/title.vue'
 import PreCode from '../components/PreCode/Index.vue'
 
 export default {
-  components: { SBox, STypography, PreCode },
+  components: { SBox, STitle, PreCode },
 
   data () {
     return {
       code1:`
-        <s-typography class="h1" title="Heading Display" />
+        <s-title size="hd">Heading Display</s-title>
 
-        <s-typography class="h2" title="Heading X-Large" />
+        <s-title size="hxl">Heading X-Large</s-title>
 
-        <s-typography class="h3" title="Heading Large" />
+        <s-title size="hl">Heading Large</s-title>
 
-        <s-typography class="h4" title="Heading Medium" />
+        <s-title size="hm">Heading Medium</s-title>
 
-        <s-typography class="h5" title="Heading Small" />
+        <s-title size="hs">Heading Small</s-title>
 
-        <s-typography class="h6" title="Heading X-Small" />
+        <s-title size="hxs">Heading X-Small</s-title>
 
-        <s-typography class="subtitle-1" title="Subtitle Large" />
+        <s-title size="sub-l">Subtitle Large</s-title>
 
-        <s-typography class="subtitle-2" title="Subtitle Small" />
+        <s-title size="sub-s">Subtitle Small</s-title>
       `,
-
       code2:`
-        <s-typography class="paragraph-1" title="Paragraph Large" />
+        <p>Paragraph Large</p>
 
-        <s-typography class="paragraph-2" title="Paragraph Small" />
+        <p class="small">Paragraph Small</p>
 
-        <s-typography class="caption" title="Caption" />
+        <caption>Caption</caption>
       `
     }
+
   }
 }
 </script>

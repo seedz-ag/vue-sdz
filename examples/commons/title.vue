@@ -1,14 +1,20 @@
 <template>
-  <div class="s-typography" :class="classTitle">{{ title }}</div>
+  <div :class="['title', size]">
+    <slot /><!-- {{ title }} -->
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'STypography',
+  name: 'STitle',
 
   props: {
-    classTitle: String,
-    title: String
+    size: {
+      type: String,
+      validator: function (value) {
+        return ['title-1', 'title-2','hd', 'hxl', 'hl', 'hm', 'hs', 'hxs', 'sub-l', 'sub-s'].indexOf(value) !== -1
+      }
+    }
   }
 }
 </script>
@@ -16,7 +22,7 @@ export default {
 <style lang="scss">
   @import "./src/styles/_index.scss";
 
-.s-typography{
+.s-title{
   color: color(base,base);
 }
 
@@ -42,55 +48,69 @@ export default {
   margin-bottom: 1rem;
 }
 
-.h1{
+.hd{
   font-size: 34px;
   font-weight: bold;
+
+  @include mobile {
+    font-size: 30px;
+  }
 }
 
-.h2{
+.hxl{
   font-size: 30px;
   font-weight: bold;
+  @include mobile {
+    font-size: 26px;
+  }
 }
 
-.h3{
+.hl{
   font-size: 28px;
   font-weight: bold;
+  @include mobile {
+    font-size: 24px;
+  }
 }
 
-.h4{
+.hm{
   font-size: 24px;
   font-weight: bold;
+  @include mobile {
+    font-size: 22px;
+    font-weight: 600;
+  }
 }
 
-.h5{
+.hs{
   font-size: 20px;
   font-weight: bold;
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
-.h6{
+.hxs{
   font-size: 14px;
   font-weight: bold;
+  @include mobile {
+    font-size: 14px;
+  }
 }
 
-.subtitle-1{
+.sub-l{
   font-weight: 500;
   font-size: 28px;
+  @include mobile {
+    font-size: 24px;
+  }
 }
 
-.subtitle-2{
+.sub-s{
   font-weight: 500;
   font-size: 24px;
-}
-
-.paragraph-1{
-  font-size: 16px;
-}
-
-.paragraph-2{
-  font-size: 14px;
-}
-
-.caption{
-  font-size: 12px;
+  @include mobile {
+    font-size: 20px;
+  }
 }
 </style>

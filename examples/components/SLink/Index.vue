@@ -1,12 +1,12 @@
 <template>
   <div class="s-button-example">
-    <s-typography class="title-1" title="Links" />
+    <s-title size="title-1">Links</s-title>
 
     <p class="subtitle">
       Links são elementos clicáveis que destacam-se no fluxo. São usados principalmente para navegação entre elementos ou páginas.
     </p>
 
-    <s-typography class="title-2" title="Quando usar" />
+    <s-title size="title-2">Quando usar</s-title>
 
     <p class="subtitle">
       Podem aparecer no fim de um bloco de texto;
@@ -18,7 +18,7 @@
       Aplicamos os links também em rodapés ou para indicar termos de uso;
     </p>
 
-    <s-typography class="title-2" title="Quando não usar" />
+    <s-title size="title-2">Quando não usar</s-title>
 
     <p class="subtitle">
       Não devem ser usados para destacar uma ação importante como “Adicionar”, “Fechar”, “Cancelar” ou “Salvar”, nesse contexto utiliza-se o componente button;
@@ -55,12 +55,12 @@
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
-  components: { SButton, SBox, STypography, SourceCode, PreCode },
+  components: { SButton, SBox, STitle, SourceCode, PreCode },
   data(){
     return{
       code1:`<s-button link external to="https://www.google.com">link external</s-button>

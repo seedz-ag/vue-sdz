@@ -1,10 +1,10 @@
 <template>
   <div class="s-alert-example">
-    <s-typography class-title="h1" title="Alerts" />
+    <s-title size="title-1">Alerts</s-title>
 
     <source-code file="SAlertExample" comp="SAlert" />
 
-    <s-typography class-title="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-alert positive>
         <div slot="header">Titulo do Alerta Positivo</div>
@@ -18,7 +18,7 @@
       />
     </s-box>
 
-    <s-typography class-title="h2" title="Examples" />
+    <s-title size="title-2">Examples</s-title>
     <s-box>
       <s-alert
         positive
@@ -38,11 +38,11 @@
 <script>
 import SAlert from '../../../src/components/SAlert/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SAlert, SBox, STypography, SourceCode }
+  components: { SAlert, SBox, STitle, SourceCode }
 }
 </script>
 

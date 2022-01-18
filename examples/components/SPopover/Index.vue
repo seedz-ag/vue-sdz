@@ -1,6 +1,6 @@
 <template>
   <div class="s-popover-example">
-    <s-typography class="title-1" title="Popover" />
+    <s-title size="title-1">Popover</s-title>
 
     <source-code file="SPopoverExample" comp="SPopover" />
 
@@ -41,11 +41,11 @@
 import SButton from '../../../src/components/SButton/Index.vue'
 import SPopover from '../../../src/components/SPopover/Index.vue'
 import SBox from '../../commons/box.vue'
-import STypography from '../../commons/typography.vue'
+import STitle from '../../commons/title.vue'
 import SourceCode from '../SourceCode/Index.vue'
 
 export default {
-  components: { SPopover, SButton, SBox, STypography, SourceCode },
+  components: { SPopover, SButton, SBox, STitle, SourceCode },
 
   data () {
     return {
