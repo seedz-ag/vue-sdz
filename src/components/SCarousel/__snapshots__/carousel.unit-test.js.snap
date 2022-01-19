@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SCarousel has the expected html structure 1`] = `
+<div
+  breakpoints="[object Object]"
+  class="vue-coerousel s-carousel"
+>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="inner"
+      style="transform: translateX(0%);"
+    >
+       
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+      <div
+        class="carousel-item"
+        style="flex: 1 0 100%;"
+      />
+       
+    </div>
+  </div>
+  <div
+    class="pagination"
+    style="--width: 230px;"
+  >
+    <div
+      class="option -active"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+    <div
+      class="option"
+    />
+  </div>
+</div>
+`;
