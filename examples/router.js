@@ -11,7 +11,7 @@ import ComponentsRoute from './components/routes.js'
 
 const routes = [
   {
-    path: '/commons/GettingStarted.vue',
+    path: '/vue-sdz/getting-started',
     name: 'getting-started',
     component: GettingStarted
   },
