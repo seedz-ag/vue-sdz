@@ -2,21 +2,14 @@
   <s-input-container v-bind="$attrs" :validation="validation" :class="sInputClasses">
     <s-icon v-if="icon" :icon="icon" class="left-icon" />
 
+    <!-- value.prop motivation: https://github.com/vuejs/vue/issues/7393 -->
     <component
       :is="componentType"
-      :key="id"
-
-      ref="input"
+      :value.prop="value"
 
       v-mask="mask"
       v-bind="inputAttrs"
       v-html="textArea && value"
-
-      :value="value"
-      :disabled="disabled"
-      :class="inputClasses"
-      :placeholder="floatLabel ? '' : placeholder"
-
       v-on="listeners"
     />
 
@@ -94,14 +87,6 @@ export default {
     positiveOnly: Boolean
   },
 
-  data: () => ({ id: 0 }),
-
-  watch: {
-    value (newV, oldV) {
-      if (oldV && !newV) this.id++
-    }
-  },
-
   computed: {
     sInputClasses () {
       return [
@@ -162,7 +147,11 @@ export default {
     inputAttrs () {
       return {
         ...this.$attrs,
-        ...(this.isMoney ? this.moneyMask : {})
+        ...(this.isMoney ? this.moneyMask : {}),
+
+        disabled: this.disabled,
+        class: this.inputClasses,
+        placeholder: this.floatLabel ? '' : this.placeholder
       }
     }
   }
