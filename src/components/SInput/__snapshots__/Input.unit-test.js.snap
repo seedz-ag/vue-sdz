@@ -10,7 +10,6 @@ exports[`SInput has the expected html structure 1`] = `
   <input
     class="input --is-rounded"
     placeholder="Digite aqui"
-    value="Nova informacao do input"
   >
     false
   </input>
