@@ -27,7 +27,7 @@
     <!-- :style="{ 'margin-top': isOpened ? 0 : '100px' }" -->
     <div class="content">
       <s-sidebar :items="items" @redirect="onRedirect" />
-     
+
       <router-view />
     </div>
   </div>
@@ -62,7 +62,8 @@ export default {
           name: 'Styles',
           icon: 'sdz-painting-roller',
           child: [
-            { name: 'Colors', redirect: '/vue-sdz/styles/palettes' }
+            { name: 'Breakpoints', redirect: '/vue-sdz/styles/breakpoints' },
+            { name: 'Colors', redirect: '/vue-sdz/styles/palettes' },
           ]
         },
         {
@@ -79,16 +80,16 @@ export default {
           name: 'Forms',
           icon: 'sdz-file-text',
           child: [
+            { name: 'Button', redirect: '/vue-sdz/components/button' },
+            { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
             { name: 'Input', redirect: '/vue-sdz/components/input' },
-            { name: 'Textarea', redirect: '/vue-sdz/components/textarea' },
+            { name: 'Link', redirect: '/vue-sdz/components/link' },
             { name: 'Password', redirect: '/vue-sdz/components/password' },
+            { name: 'Radiobox', redirect: '/vue-sdz/components/radiobox' },
             { name: 'Search', redirect: '/vue-sdz/components/search' },
             { name: 'Select', redirect: '/vue-sdz/components/select' },
-            { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
-            { name: 'Radiobox', redirect: '/vue-sdz/components/radiobox' },
             { name: 'Switch', redirect: '/vue-sdz/components/switch' },
-            { name: 'Button', redirect: '/vue-sdz/components/button' },
-            { name: 'Link', redirect: '/vue-sdz/components/link' },
+            { name: 'Text area', redirect: '/vue-sdz/components/textarea' },
           ]
         },
         {
@@ -96,20 +97,20 @@ export default {
           icon: 'sdz-box',
           child: [
             { name: 'Alert', redirect: '/vue-sdz/components/alert' },
-            { name: 'Card', redirect: '/vue-sdz/components/card' },
-            { name: 'Carousel', redirect: '/vue-sdz/components/carousel' },
-            { name: 'Spinner', redirect: '/vue-sdz/components/loader' },
-            { name: 'Modal', redirect: '/vue-sdz/components/modal' },
-            { name: 'Popover', redirect: '/vue-sdz/components/popover' },
-            { name: 'Feedbacks', redirect: '/vue-sdz/components/feedbacks' },
-            { name: 'Collapse', redirect: '/vue-sdz/components/collapsible' },
-            { name: 'Tabber', redirect: '/vue-sdz/components/tabber' },
-            { name: 'Progress bar', redirect: '/vue-sdz/components/progressbar' },
-            { name: 'Breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
-            { name: 'Stepper', redirect: '/vue-sdz/components/stepper' },
-            { name: 'Pagination', redirect: '/vue-sdz/components/pagination' },
             { name: 'Avatar', redirect: '/vue-sdz/components/avatar' },
             { name: 'Badge', redirect: '/vue-sdz/components/badge' },
+            { name: 'Breadcrumb', redirect: '/vue-sdz/components/breadcrumb' },
+            { name: 'Card', redirect: '/vue-sdz/components/card' },
+            { name: 'Carousel', redirect: '/vue-sdz/components/carousel' },
+            { name: 'Collapse', redirect: '/vue-sdz/components/collapsible' },
+            { name: 'Feedbacks', redirect: '/vue-sdz/components/feedbacks' },
+            { name: 'Modal', redirect: '/vue-sdz/components/modal' },
+            { name: 'Pagination', redirect: '/vue-sdz/components/pagination' },
+            { name: 'Popover', redirect: '/vue-sdz/components/popover' },
+            { name: 'Progress bar', redirect: '/vue-sdz/components/progressbar' },
+            { name: 'Spinner', redirect: '/vue-sdz/components/loader' },
+            { name: 'Stepper', redirect: '/vue-sdz/components/stepper' },
+            { name: 'Tabber', redirect: '/vue-sdz/components/tabber' },
             { name: 'Skeleton', redirect: '/vue-sdz/components/skeleton' },
           ]
         },
