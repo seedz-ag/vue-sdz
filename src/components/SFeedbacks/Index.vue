@@ -17,7 +17,7 @@
         <s-button
           v-if="dismissible"
           grey
-          icon="plus"
+          icon="sdz-close"
           class="button"
           @click="$emit('close', feedback)"
         />
@@ -75,15 +75,15 @@ export default {
     box-shadow: -1px -1px 4px 0 rgba(0,0,0,0.2);
 
     &.--is-negative {
-      background-color: color(negative, dark) !important;
+      background-color: color(negative, dark);
 
-      & > .message-container > .message, .highlighted { color: $neutral-color !important; }
+      & > .message-container > .message, .highlighted { color: $neutral-color; }
     }
 
     &.--is-positive {
-      background-color: color(primary, light) !important;
+      background-color: color(primary, light);
 
-      & > .message-container > .message, .highlighted  { color: $neutral-color !important; }
+      & > .message-container > .message, .highlighted  { color: $neutral-color; }
     }
 
     &:last-child { margin-bottom: 20px; }
@@ -94,7 +94,7 @@ export default {
       flex-direction: column;
 
       font-weight: unset;
-      color: color(primary, base) !important;
+      color: color(primary, base);
 
       & > .message { font-weight: $font-weight-bold; }
       & > .highlighted { font-weight: $font-weight-regular; }
@@ -109,17 +109,17 @@ export default {
       min-height: unset !important;
       border-radius: 50% !important;
       border: 1px solid rgba(#FFF, .3);
+      background-color: transparent !important;
 
       & > .icon {
-        fill: rgba(#FFF, .3);
+        color: color(neutral, light);
         margin: 0 !important;
-        width: 14px !important;
-        height: 14px !important;
+        font-size: 14px !important;
       }
 
       &:hover {
         border-color: rgba(#FFF, .8);
-        & > .icon { fill: rgba(#FFF, .8) }
+        & > .icon { color: color(neutral, base);}
       }
     }
   }

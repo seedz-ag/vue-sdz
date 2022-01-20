@@ -239,23 +239,23 @@ export default {
     height: auto;
     min-width: auto;
     min-height: auto;
-    background: transparent;
+    background: transparent !important;
 
     &.--disabled {
-      background: transparent;
+      background: transparent !important;
 
       & > .icon {
-        color: transparent;
-        background-clip: text;
-        background: color(neutral, dark);
-        -webkit-background-clip: text;
+        color: color(neutral, dark);
+        //background-clip: text;
+        //background: color(neutral, dark);
+        //-webkit-background-clip: text;
       }
 
       & > .text {
-        color: transparent;
-        background-clip: text;
-        background: color(base, light);
-        -webkit-background-clip: text;
+        color: color(base, light);
+       // background-clip: text;
+        //background: color(base, light);
+        //-webkit-background-clip: text;
         font-weight: 500;
         // https://codyhouse.co/nuggets/text-gradients
       }
@@ -355,10 +355,10 @@ export default {
 
       & > .text { color: color(neutral, light); }
       & > .icon {
-        color: transparent;
-        background-clip: text;
-        background: color(neutral, dark);
-        -webkit-background-clip: text;
+        color: color(neutral, dark);
+        //background-clip: text;
+        //background: color(neutral, dark);
+        //-webkit-background-clip: text;
       }
     }
 
@@ -388,10 +388,10 @@ export default {
 
       & > .text { color: color(neutral, light); }
       & > .icon {
-        color: transparent;
-        background-clip: text;
-        background: color(neutral, dark);
-        -webkit-background-clip: text;
+        color: color(neutral, dark);
+        //background-clip: text;
+        //background: color(neutral, dark);
+        //-webkit-background-clip: text;
       }
     }
 
