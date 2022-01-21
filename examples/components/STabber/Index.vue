@@ -1,6 +1,6 @@
 <template>
   <div class="s-tabber-example">
-    <s-title class="h1" title="Tabber" />
+    <s-title size="title-1">Tabber</s-title>
     <s-box>
       <s-tabber
         :tabs="tabs"

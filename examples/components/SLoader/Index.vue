@@ -1,11 +1,12 @@
 <template>
   <div class="s-loader-example flex-line">
-    <s-title class="h1" title="Spinner" />
+    <s-title size="title-1">Spinner</s-title>
+
     <p class="subtitle">
       Spinners fornecem uma indicação visual de que uma ação está sendo processada, aguardando um curso de mudança ou um resultado.
     </p>
 
-    <s-title class="h2" title="Quando usar" />
+    <s-title size="title-2">Quando usar</s-title>
 
     <p class="subtitle">
       Deve ser usado substituindo o label dos botões primários ao salvar ou validar dados. Ao salvar ou validar dados, o botão deve ficar no estado disabled e respeitando a cor neutra mais clara configurada neste documento.

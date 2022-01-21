@@ -1,6 +1,6 @@
 <template>
   <div class="s-skeleton-example flex-line">
-    <s-title class="h1" title="Skeleton" />
+    <s-title size="title-1">Skeleton</s-title>
 
     <p class="subtitle">
       Skeleton é uma versão em branco de um componente que ainda não foi carregado. Ao contrário dos Loaders, uma tela de esqueleto informa visualmente aos usuários o que esperar e faz com que eles se concentrem no progresso, em vez do tempo de espera.
@@ -11,7 +11,7 @@
       <s-skeleton :size="45" />
       <s-skeleton :size="30" />
       <s-skeleton :size="10" />
-     
+
       <s-skeleton :size="7.8" :rows="3" round />
     </s-box>
 
@@ -35,7 +35,7 @@ export default {
       <s-skeleton :size="45" />
       <s-skeleton :size="30" />
       <s-skeleton :size="10" />
-     
+
       <s-skeleton :size="7.8" :rows="3" round />`
     }
   }

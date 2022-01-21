@@ -1,6 +1,6 @@
 <template>
   <div class="breakpoints">
-    <s-title class="h1" title="Breakpoints" />
+    <s-title size="title-1">Breakpoints</s-title>
 
     <p class="subtitle">
       Os breakpoints são paradas que o código faz em cada ponto do código de acordo com a resolução

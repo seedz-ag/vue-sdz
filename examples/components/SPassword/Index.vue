@@ -1,6 +1,6 @@
 <template>
   <div class="s-input-example">
-    <s-title class-title="h1" title="Password" />
+    <s-title size="title-1">Password</s-title>
 
     <p class="subtitle">
       Input Password tem como objetivo permitir que a pessoa usuária coloque e/ou cadastre uma senha dentro do sistema. Possui uma máscara que por default fica habilitada, mas a pessoa usuária pode desabilitar para consegui ver os caracteres.
@@ -17,7 +17,7 @@
 
     <source-code file="SPasswordExample" comp="SInput" />
 
-    <s-title class-title="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-input
         label="Password"
@@ -27,7 +27,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class-title="h2" title="Error" />
+    <s-title size="title-2">Error</s-title>
     <s-box>
       <s-input
         label="Password Error"
@@ -40,7 +40,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class-title="h2" title="Disabled" />
+    <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-input
         placeholder="Disabled input"

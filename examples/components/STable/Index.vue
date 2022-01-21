@@ -1,6 +1,6 @@
 <template>
   <section class="s-table-example">
-    <s-title class="h1" title="Table" />
+    <s-title size="title-1">Table</s-title>
     <s-box>
       <s-table
         :cols="cols"

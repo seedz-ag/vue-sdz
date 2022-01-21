@@ -1,6 +1,6 @@
 <template>
   <div class="s-carousel-example">
-    <s-title class="h1" title="Carousel" />
+    <s-title size="title-1">Carousel</s-title>
     <s-box>
       <s-carousel
         controllers

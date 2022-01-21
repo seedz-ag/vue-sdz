@@ -1,6 +1,6 @@
 <template>
   <div class="s-stepper-example">
-    <s-title class="h1" title="Progress Stepper" />
+    <s-title size="title-1">Progress Stepper</s-title>
 
     <p class="subtitle">
       Progrees Steps no Design System são usadas para denotar o progresso em estágios de uma ação ou atividade. Esse tipo de lista fornece ao usuário uma noção do progresso e das etapas restantes.

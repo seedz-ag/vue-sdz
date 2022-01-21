@@ -1,6 +1,6 @@
 <template>
   <div class="s-shadowed-example">
-    <s-title class="h1" title="Shadowed" />
+    <s-title size="title-1">Shadowed</s-title>
     <s-shadowed class="example-1">
       <div class="wrapper">
         AAA <br>

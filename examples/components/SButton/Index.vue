@@ -1,10 +1,11 @@
 <template>
   <div class="s-button-example">
-    <s-title class="h1" title="Buttons" />
+    <s-title size="title-1">Buttons</s-title>
 
     <source-code file="SButtonExample" comp="SButton">Example</source-code>
 
-    <s-title class="h2" title="Stats" />
+    <s-title size="title-2">Stats</s-title>
+
     <s-box>
       <div class="flex-inline">
         <s-button primary>primary</s-button>
@@ -21,7 +22,8 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Sizes" />
+    <s-title size="title-2">Sizes</s-title>
+
     <s-box class="flex-inline">
       <s-button small>small</s-button>
       <s-button default>default</s-button>
@@ -30,7 +32,8 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Outlined" />
+    <s-title size="title-2">Outlined</s-title>
+
     <s-box class="flex-inline">
       <s-button outlined>outlined</s-button>
       <s-button outlined disabled>outlined disabled</s-button>
@@ -40,7 +43,7 @@
 
     <pre-code :code="code3" />
 
-    <s-title class="h2" title="Rounded" />
+    <s-title size="title-2">Rounded</s-title>
     <s-box class="flex-inline">
       <s-button rounded>outlined</s-button>
       <s-button rounded disabled>rounded disabled</s-button>
@@ -50,14 +53,14 @@
 
     <pre-code :code="code4" />
 
-    <s-title class="h2" title="Enhancers" />
+    <s-title size="title-2">Enhancers</s-title>
     <s-box>
       <s-button icon="sdz-check">icon</s-button>
     </s-box>
 
     <pre-code :code="code5" />
 
-    <s-title class="h2" title="Button Group" />
+    <s-title size="title-2">Button Group</s-title>
     <p class="subtitle">
       Button Group é um conjunto de botões onde uma das ações é a mais prioritária, isso fica visualmente evidente através dos seus diferentes pesos.
     </p>

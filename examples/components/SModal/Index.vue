@@ -1,6 +1,6 @@
 <template>
   <div class="s-modal-example">
-    <s-title class="h1" title="Modal" />
+    <s-title size="title-1">Modal</s-title>
 
     <source-code file="SModalExample" comp="SModal" />
 

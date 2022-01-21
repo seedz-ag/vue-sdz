@@ -1,5 +1,6 @@
 import Palettes from './Palettes.vue'
 import Breakpoints from './Breakpoints.vue'
+import Typography from './Typography.vue'
 
 export default [
   {
@@ -11,5 +12,10 @@ export default [
     component: Breakpoints,
     name: 'style-breakpoint',
     path: '/vue-sdz/styles/breakpoints'
+  },
+  {
+    component: Typography,
+    name: 'style-typography',
+    path: '/vue-sdz/styles/typography'
   }
 ]

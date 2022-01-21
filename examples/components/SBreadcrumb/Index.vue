@@ -1,11 +1,13 @@
 <template>
   <div class="s-breadcrumb-example flex-line">
-    <s-title class="h1" title="Breadcrumbs" />
+    <s-title size="title-1">Breadcrumbs</s-title>
 
     <p class="subtitle">
       Breadcrumbs são os indicadores que representam o caminho percorrido pelo visitante dentro de uma navegação.
     </p>
-    <s-title class="h2" title="Regras de aplicação" />
+
+    <s-title size="title-2">Regras de aplicação</s-title>
+
     <p class="subtitle">
       Não utilizar link para a página atual em que o usuário está;
     </p>
@@ -54,7 +56,7 @@ export default {
           to: '#',
           external: false
         }]" />
-        
+
       <s-breadcrumb color="dark" :items="[
         {
           disabled: true,

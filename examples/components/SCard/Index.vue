@@ -1,6 +1,6 @@
 <template>
   <div class="s-card-example">
-    <s-title class="h1" title="Cards" />
+    <s-title size="title-1">Cards</s-title>
 
     <source-code file="SCardExample" comp="SCard">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse reprehenderit alias nisi amet! Quia, sed? Ut eos sequi eligendi doloremque nihil ratione earum id doloribus magnam! Consequuntur</source-code>
 

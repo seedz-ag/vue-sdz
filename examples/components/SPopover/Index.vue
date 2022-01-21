@@ -1,6 +1,6 @@
 <template>
   <div class="s-popover-example">
-    <s-title class="h1" title="Popover" />
+    <s-title size="title-1">Popover</s-title>
 
     <source-code file="SPopoverExample" comp="SPopover" />
 
