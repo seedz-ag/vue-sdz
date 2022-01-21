@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton has the expected html structure 1`] = `
+<div
+  class="s-skeleton-container"
+>
+  <div
+    class="s-skeleton"
+    style="width: 65%; height: 60px;"
+  >
+    <div
+      class="skeleton-background"
+      style="height: 60px; border-radius: $border-radius-sm;"
+    />
+  </div>
+</div>
+`;

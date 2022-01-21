@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SPagination has the expected html structure 1`] = `
+<div
+  class="s-pagination"
+>
+  <div
+    class="pages"
+  >
+    <i
+      class="previous s-icon icon sdz-chevron-up"
+      style="font-size: 20px;"
+    />
+     
+    <button
+      class="c-link s-button page"
+    >
+      <!---->
+       
+      <span
+        class="text"
+      >
+        
+        1
+      
+      </span>
+       
+      <transition-stub
+        name="loading"
+      >
+        <!---->
+      </transition-stub>
+    </button>
+    <i
+      class="s-icon icon sdz-more-horizzontal page page-icon"
+      style="font-size: 20px;"
+    />
+    <button
+      class="c-link s-button page"
+    >
+      <!---->
+       
+      <span
+        class="text"
+      >
+        
+        7
+      
+      </span>
+       
+      <transition-stub
+        name="loading"
+      >
+        <!---->
+      </transition-stub>
+    </button>
+    <button
+      class="c-link s-button page --is-active"
+    >
+      <!---->
+       
+      <span
+        class="text"
+      >
+        
+        8
+      
+      </span>
+       
+      <transition-stub
+        name="loading"
+      >
+        <!---->
+      </transition-stub>
+    </button>
+    <button
+      class="c-link s-button page"
+    >
+      <!---->
+       
+      <span
+        class="text"
+      >
+        
+        9
+      
+      </span>
+       
+      <transition-stub
+        name="loading"
+      >
+        <!---->
+      </transition-stub>
+    </button>
+    <i
+      class="s-icon icon sdz-more-horizzontal page page-icon"
+      style="font-size: 20px;"
+    />
+    <button
+      class="c-link s-button page"
+    >
+      <!---->
+       
+      <span
+        class="text"
+      >
+        
+        25
+      
+      </span>
+       
+      <transition-stub
+        name="loading"
+      >
+        <!---->
+      </transition-stub>
+    </button>
+     
+    <i
+      class="next s-icon icon sdz-chevron-up"
+      style="font-size: 20px;"
+    />
+  </div>
+</div>
+`;

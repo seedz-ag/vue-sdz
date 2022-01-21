@@ -7,13 +7,14 @@ describe('SSelect', () => {
   let cmp;
 
   beforeEach(() => {
-    cmp = shallowMount(SSelect, {
+    cmp = mount(SSelect, {
       propsData: {
         display: "name",
         displayBy: "value",
         items: [{name:"opcao 1", value:"opcao1"},{name:"opcao 2", value:"opcao2"},{name:"opcao 2", value:"opcao2"}],
         required: true,
-
+        label: 'Nome da label',
+        disabled: true
       }
     });
   });
@@ -29,20 +30,20 @@ describe('SSelect', () => {
   })
 
   test('label', () => {
-    const wrapper = mount(SSelect, { propsData: { label: 'teste', items: [{name:"opcao 1", value:"opcao1"},{name:"opcao 2", value:"opcao2"},{name:"opcao 2", value:"opcao2"}], } })
 
-    const label = wrapper.find('.label > .text')
+    const label = cmp.find('.label > .text')
     expect(label.exists()).toBe(true)
-    expect(label.text()).toBe('teste')
+    expect(label.text()).toBe('Nome da label')
+
   })
 
 
   test('disabled', () => {
-    const wrapper = mount(SSelect, { propsData: { disabled: true, items: [{name:"opcao 1", value:"opcao1"},{name:"opcao 2", value:"opcao2"},{name:"opcao 2", value:"opcao2"}], } })
 
-    expect(wrapper.classes('--is-disabled')).toBe(true)
-    expect(wrapper.classes()).toContain('--is-disabled')
-    // expect(wrapper.attributes('disabled')).toBe('disabled')
+    expect(cmp.classes('--is-disabled')).toBe(true)
+    expect(cmp.classes()).toContain('--is-disabled')
+
   })
+
 
 })

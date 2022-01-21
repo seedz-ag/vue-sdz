@@ -2,8 +2,8 @@ import vue from 'rollup-plugin-vue'
 
 import scss from 'rollup-plugin-scss'
 
-import postcss from 'postcss'
-import autoprefixer from 'autoprefixer'
+// import postcss from 'postcss'
+// import autoprefixer from 'autoprefixer'
 
 import commonjs from '@rollup/plugin-commonjs'
 
@@ -32,7 +32,7 @@ const config = {
       // prefix: `@import "src/styles/index.scss";`,
       output: 'dist/css/build.css',
       // outputStyle: 'compressed',
-      processor: () => postcss([autoprefixer()])
+      // processor: () => postcss([autoprefixer()])
     }),
 
     terser(),
