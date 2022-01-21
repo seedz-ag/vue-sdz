@@ -1,9 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SSelect has the expected html structure 1`] = `
-<s-input-container-stub
-  class="s-select"
+<div
+  class="s-input-container --label s-select --is-disabled"
+  label="Nome da label"
 >
+  <label
+    class="label"
+  >
+    <!---->
+     
+    <span
+      class="text"
+    >
+      Nome da label
+    </span>
+  </label>
+   
   <div
     class="select"
   >
@@ -28,77 +41,96 @@ exports[`SSelect has the expected html structure 1`] = `
     <div
       class="items"
     >
-      <s-collapsible-stub
-        noheader="true"
+      <div
+        class="s-collapsible"
       >
         <div
-          aria-hidden="true"
-          class="item"
+          class="header"
         >
-          <div
-            class="option-container"
-          >
-            <span
-              class="text"
-            >
-              opcao1
-            </span>
-             
-            <span
-              class="disclaimer"
-            >
-              
-                  Press enter to select
-                
-            </span>
-          </div>
+          <!---->
         </div>
+         
         <div
-          aria-hidden="true"
-          class="item"
+          class="wrapper"
+          style="opacity: 0; height: 0px;"
         >
           <div
-            class="option-container"
+            aria-hidden="true"
+            class="item"
           >
-            <span
-              class="text"
+            <div
+              class="option-container"
             >
-              opcao2
-            </span>
-             
-            <span
-              class="disclaimer"
-            >
-              
+              <span
+                class="text"
+              >
+                opcao1
+              </span>
+               
+              <span
+                class="disclaimer"
+              >
+                
                   Press enter to select
                 
-            </span>
+              </span>
+            </div>
           </div>
-        </div>
-        <div
-          aria-hidden="true"
-          class="item"
-        >
           <div
-            class="option-container"
+            aria-hidden="true"
+            class="item"
           >
-            <span
-              class="text"
+            <div
+              class="option-container"
             >
-              opcao2
-            </span>
-             
-            <span
-              class="disclaimer"
-            >
-              
+              <span
+                class="text"
+              >
+                opcao2
+              </span>
+               
+              <span
+                class="disclaimer"
+              >
+                
                   Press enter to select
                 
-            </span>
+              </span>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="item"
+          >
+            <div
+              class="option-container"
+            >
+              <span
+                class="text"
+              >
+                opcao2
+              </span>
+               
+              <span
+                class="disclaimer"
+              >
+                
+                  Press enter to select
+                
+              </span>
+            </div>
           </div>
         </div>
-      </s-collapsible-stub>
+      </div>
     </div>
   </div>
-</s-input-container-stub>
+   
+  <!---->
+   
+  <transition-stub
+    name="fade"
+  >
+    <!---->
+  </transition-stub>
+</div>
 `;

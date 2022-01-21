@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SBreadcrumb has the expected html structure 1`] = `
+<div
+  class="s-breadcrumb"
+>
+  <ul
+    class="list light"
+  >
+    <li
+      class="item"
+    >
+      <a
+        class="parent"
+        href="#"
+        target="_self"
+      >
+        
+        Parent Page
+      
+      </a>
+       
+      <i
+        class="s-icon icon sdz-chevron-right"
+        style="font-size: 14px;"
+      />
+    </li>
+    <li
+      class="item"
+    >
+      <a
+        class="parent"
+        href="#"
+        target="_self"
+      >
+        
+        Sub-Parent Page 1
+      
+      </a>
+       
+      <i
+        class="s-icon icon sdz-chevron-right"
+        style="font-size: 14px;"
+      />
+    </li>
+    <li
+      class="item"
+    >
+      <span>
+        Sub-Parent Page 2
+      </span>
+       
+      <!---->
+    </li>
+  </ul>
+</div>
+`;

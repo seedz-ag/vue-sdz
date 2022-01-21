@@ -1,19 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SInput has the expected html structure 1`] = `
-<s-input-container-stub
-  class="s-input --small --is-not-empty"
-  validation="Com mensagem"
+<div
+  class="s-input-container --label --validation s-input --small --has-icon --is-not-empty --is-disabled"
+  label="teste"
 >
-  <!---->
+  <label
+    class="label"
+  >
+    <!---->
+     
+    <span
+      class="text"
+    >
+      teste
+    </span>
+  </label>
+   
+  <i
+    class="left-icon s-icon icon sdz-eye-off"
+    style="font-size: 20px;"
+  />
    
   <input
-    class="input --is-rounded"
-    placeholder="Digite aqui"
+    class="input --has-icon --is-rounded"
+    disabled="disabled"
+    label="teste"
+    placeholder="Digite o nome"
   >
     false
   </input>
    
   <!---->
-</s-input-container-stub>
+   
+  <!---->
+   
+  <transition-stub
+    name="fade"
+  >
+    <div
+      class="validation"
+    >
+      <p
+        class="message"
+      >
+        <span
+          class="text"
+        >
+          Com mensagem
+        </span>
+      </p>
+    </div>
+  </transition-stub>
+</div>
 `;

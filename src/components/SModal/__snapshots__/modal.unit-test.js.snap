@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SModal has the expected html structure 1`] = `
+<transition-stub
+  appear="true"
+  name="s-modal-fade"
+>
+  <div
+    class="s-modal"
+  >
+    <transition-stub
+      name="s-overlay-fade"
+    >
+      <div
+        class="s-overlay"
+      />
+    </transition-stub>
+     
+    <div
+      class="modal"
+    >
+      <div
+        class="header"
+      >
+        <div
+          class="title"
+        >
+          Novo titulo para o modal
+        </div>
+         
+        <div
+          class="actions"
+        >
+           
+          <i
+            class="s-icon icon sdz-close --primary"
+            style="font-size: 20px;"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="wrapper-content"
+      >
+        <div
+          class="content"
+        >
+          Conteudo do modal
+        </div>
+      </div>
+    </div>
+  </div>
+</transition-stub>
+`;

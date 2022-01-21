@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SHeader has the expected html structure 1`] = `
+<div
+  class="s-collapsible s-header"
+  isopened="true"
+>
+  <div
+    class="header"
+  >
+    <!---->
+  </div>
+   
+  <div
+    class="wrapper"
+    style="opacity: 1; height: 0px;"
+  >
+    <div>
+      Item da Header
+    </div>
+  </div>
+</div>
+`;

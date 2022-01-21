@@ -182,8 +182,8 @@ $icon-position: 8px;
 
     transition: color .3s, border-color .3s;
 
-    // &::placeholder { color: color(light, light); }
-    // &::-webkit-input-placeholder { color: color(light, light); }
+    &::placeholder { color: color(base, light); }
+    &::-webkit-input-placeholder { color: color(base, light); }
 
     &.--has-icon { text-indent: 35px; }
     &.--is-rounded { border-radius: 50px; }
