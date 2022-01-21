@@ -17,14 +17,29 @@ module.exports = {
   ],
 
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-
     'no-extra-semi': 'error',
 
-    'semi': 'off',
+    'semi': ['error', 'never'],
 
-    'template-curly-spacing' : 'off',
+    'space-before-function-paren': ['error', {
+      'anonymous': 'always',
+      'named': 'always',
+      'asyncArrow': 'always'
+    }],
+
+    'space-infix-ops': 'error',
+
+    'space-before-blocks': 'error',
+
+    'object-curly-spacing': ['error', 'always'],
+
+    'block-spacing': 'error',
+
+    'key-spacing': ['error', { 'afterColon': true }],
+
+    'keyword-spacing': ['error', { 'after': true, 'before': true }],
+
+    'template-curly-spacing': 'off',
 
     'vue/require-default-prop': 'off',
 
@@ -59,8 +74,6 @@ module.exports = {
     'eol-last': 'off',
 
     'no-param-reassign': 'off',
-
-    'key-spacing': 'off',
 
     'quotes': ['error', 'single'],
 

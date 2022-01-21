@@ -27,7 +27,6 @@ exports[`SInput has the expected html structure 1`] = `
     disabled="disabled"
     label="teste"
     placeholder="Digite o nome"
-    value="Nova informacao do input"
   >
     false
   </input>
