@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <s-header :class="classes" is-opened :height="isOpened ? 100 : 60">
+    <s-header :class="classes" is-opened :height="isOpened ? 70 : 0">
       <div class="logo">
         <img src="../src/assets/images/logo.svg">
       </div>
@@ -15,12 +15,10 @@
         />
       </div>
 
-      <div class="icons">
-        <s-icon icon="sdz-star" @click.native="documentacao" />
-
-        <s-icon icon="sdz-user" @click.native="example1" />
-
-        <s-icon icon="sdz-bell" @click.native="example2" />
+      <div class="links">
+        <s-button link @click.native="documentacao">Sobre</s-button>
+        <s-button link @click.native="example1">Design Tokens</s-button>
+        <s-button link @click.native="example2">Componentes</s-button>
       </div>
     </s-header>
 
@@ -35,14 +33,13 @@
 
 <script>
 import SSidebar from '../src/components/SSidebar/Index.vue'
-import SIcon from '../src/components/SIcon/Index.vue'
 import SInput from '../src/components/SInput/Index.vue'
 import SHeader from '../src/components/SHeader/Index.vue'
 
 export default {
   name: 'Examples',
 
-  components: { SSidebar, SIcon, SInput, SHeader },
+  components: { SSidebar, SInput, SHeader },
 
   data () {
     return {
@@ -54,9 +51,7 @@ export default {
         {
           name: 'Getting Started',
           icon: 'sdz-star',
-          child: [
-            { name: 'Home', redirect: '/vue-sdz/commons/getting-started' }
-          ]
+          redirect: '/vue-sdz/getting-started'
         },
         {
           name: 'Styles',
@@ -174,7 +169,71 @@ export default {
     display: flex;
     // transition: margin-top .6s ease;
   }
+
+  & > .s-header{
+    background: color(primary, base);
+
+    & > .wrapper {
+      justify-content: space-between;
+
+      & > .logo{
+        max-width: 250px;
+      }
+
+      & > .search {
+        width: 30%;
+
+        & > .s-input > .s-icon{
+          color: color(neutral, base);
+        }
+
+        & > .s-input > input {
+          background: color(primary, light);
+          border: 0px;
+          color: color(neutral, base);
+        }
+
+        & > .s-input > input::-webkit-input-placeholder{
+          color: color(neutral, base);
+        }
+      }
+
+      & > .links {
+        display: inline-flex;
+        justify-content: flex-end!important;
+        margin-left: 10%;
+
+        & > s-button {
+          color: white;
+          cursor: pointer;
+        }
+
+        & > s-button:not(:last-child) {
+          margin-right: 35px;
+        }
+      }
+    }
+  }
+
+  & > .content > .s-sidebar {
+    background: color(neutral, light);
+    box-shadow: unset;
+
+    & > .s-sidebar-item.--is-opened > .item.--is-active-item, & > .s-sidebar-item > .item.--is-active-item {
+      background-color: color(neutral, light) !important;
+
+      & > .content > .name, & > .s-collapsible > .wrapper > .item-child > .content > .name {
+        color: color(base, medium);
+      }
+    }
+
+    & > .s-sidebar-item > .item > .content > .name, & > .s-sidebar-item > .item > .content > .icon {
+      color: color(base, light);
+      font-weight: bold;
+    }
+  }
 }
+
 
 .container {
   width: 100%;
