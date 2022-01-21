@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SPagination has the expected html structure 1`] = `
+<div
+  class="s-popover -bottom"
+  style="--right: 15px; --border-bottom-color: white; --border-right-color: white; --border-left-color: white; --border-top-color: white; --box-shadow: 2px 2px 2px 0.5px rgba(0, 0, 0, 0.2);"
+  vif="true"
+>
+  <div>
+    Content Popover
+  </div>
+</div>
+`;

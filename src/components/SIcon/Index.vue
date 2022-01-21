@@ -56,10 +56,10 @@ export default {
   display: inline-block;
 
   &.--disabled {
-    color: transparent;
-    background-clip: text;
-    background: color(neutral, dark);
-    -webkit-background-clip: text;
+    color: color(neutral, dark);;
+    //background-clip: text;
+    //background: color(neutral, dark);
+    //-webkit-background-clip: text;
   }
 
   &.--primary { color: color(primary, base); }

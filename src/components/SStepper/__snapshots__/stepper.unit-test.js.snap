@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SStepper has the expected html structure 1`] = `
+<div
+  class="s-stepper"
+>
+  <div
+    class="tracker"
+  />
+   
+  <ul
+    class="stepper"
+  >
+    <li
+      class="step --is-active"
+    >
+      <div
+        class="content"
+      >
+        <label>
+          item 1
+        </label>
+         
+        <i
+          class="s-icon icon sdz-dollar-sign"
+          style="font-size: 20px;"
+        />
+      </div>
+    </li>
+    <li
+      class="step"
+    >
+      <div
+        class="content"
+      >
+        <label>
+          item 2
+        </label>
+         
+        <i
+          class="s-icon icon sdz-link"
+          style="font-size: 20px;"
+        />
+      </div>
+    </li>
+    <li
+      class="step"
+    >
+      <div
+        class="content"
+      >
+        <label>
+          item 3
+        </label>
+         
+        <i
+          class="s-icon icon sdz-shield"
+          style="font-size: 20px;"
+        />
+      </div>
+    </li>
+    <li
+      class="step --is-disabled"
+    >
+      <div
+        class="content"
+      >
+        <label>
+          item 4
+        </label>
+         
+        <i
+          class="s-icon icon sdz-shield-off"
+          style="font-size: 20px;"
+        />
+      </div>
+    </li>
+    <li
+      class="step"
+    >
+      <div
+        class="content"
+      >
+        <label>
+          item 5
+        </label>
+         
+        <i
+          class="s-icon icon sdz-cart"
+          style="font-size: 20px;"
+        />
+      </div>
+    </li>
+  </ul>
+</div>
+`;

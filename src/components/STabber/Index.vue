@@ -264,16 +264,16 @@ export default {
     &.-active > .content > .text { color: color(positive, base); }
 
     &.-disabled > .content > .icon {
-      color: transparent;
-      background-clip: text;
-      background: color(neutral, dark);
-      -webkit-background-clip: text;
+      color: color(neutral, dark);
+      //background-clip: text;
+      //background: color(neutral, dark);
+      //-webkit-background-clip: text;
     }
     &.-disabled > .content > .text {
-      color: transparent;
-      background-clip: text;
-      background: color(neutral, dark);
-      -webkit-background-clip: text;
+      color: color(neutral, dark);
+      //background-clip: text;
+      //background: color(neutral, dark);
+      //-webkit-background-clip: text;
     }
 
     &:not(.-active):not(.-disabled):hover > .content {
@@ -300,7 +300,7 @@ export default {
       &.-active:not(.-disabled) > .content > .icon { fill: rgba(#FFF, .9); }
       &.-active:not(.-disabled) > .content > .text {
         font-weight: 500;
-        color: #FFF;
+        color: #FFF !important;
         -webkit-font-smoothing: antialiased;
       }
     }

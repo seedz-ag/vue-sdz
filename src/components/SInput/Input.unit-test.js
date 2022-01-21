@@ -7,14 +7,17 @@ describe('SInput', () => {
   let cmp;
 
   beforeEach(() => {
-    cmp = shallowMount(SInput, {
+    cmp = mount(SInput, {
       propsData: {
         small: true,
-        placeholder: 'Digite aqui',
         value: 'Nova informacao do input',
         round: true,
         validation: 'Com mensagem',
-        positiveOnly:true
+        positiveOnly:true,
+        label: 'teste',
+        icon: 'sdz-eye-off',
+        placeholder: 'Digite o nome',
+        disabled: true
       }
     });
   });
@@ -30,53 +33,40 @@ describe('SInput', () => {
   })
 
   test('label', () => {
-    const wrapper = mount(SInput, { propsData: { label: 'teste' } })
 
-    const label = wrapper.find('.label > .text')
+    const label = cmp.find('.label > .text')
     expect(label.exists()).toBe(true)
     expect(label.text()).toBe('teste')
   })
 
-  // test('is float label', () => {
-  //   const wrapper = mount(SInput, { propsData: { label: 'teste', floatLabel: true } })
-
-  //   const label = wrapper.find('.label')
-  //   expect(label.element.style.transform).toBe('translateY(35px)')
-  //   expect(wrapper.find(".label").attributes().style).toBe("transform: translateY(35px)")
-  // })
-
   test('icon', () => {
-    const wrapper = mount(SInput, { propsData: { icon: 'sdz-eye-off' } })
 
-    const icon = wrapper.find('.icon')
+    const icon = cmp.find('.icon')
 
     expect(icon.exists()).toBe(true)
     expect(icon.classes()).toContain('sdz-eye-off')
   })
 
   test('validation', () => {
-    const wrapper = mount(SInput, { propsData: { validation: 'error msg' } })
 
-    const div = wrapper.find('.validation > .message > .text')
+    const div = cmp.find('.validation > .message > .text')
     expect(div.exists()).toBe(true)
-    expect(div.text()).toBe('error msg')
+    expect(div.text()).toBe('Com mensagem')
+
   })
 
   test('rounded', () => {
-    const wrapper = mount(SInput, { propsData: { round: true } })
 
-    const input = wrapper.find('.input')
+    const input = cmp.find('.input')
 
     expect(input.classes('--is-rounded')).toBe(true)
     expect(input.classes()).toContain('--is-rounded')
   })
 
   test('disabled', () => {
-    const wrapper = mount(SInput, { propsData: { disabled: true } })
 
-    expect(wrapper.classes('--is-disabled')).toBe(true)
-    expect(wrapper.classes()).toContain('--is-disabled')
-    // expect(wrapper.attributes('disabled')).toBe('disabled')
+    expect(cmp.classes('--is-disabled')).toBe(true)
+    expect(cmp.classes()).toContain('--is-disabled')
   })
 
   test('money', async () => {
@@ -91,23 +81,29 @@ describe('SInput', () => {
     expect(input.element.value).toBe('R$ 4,20')
   })
 
-  // test('mask', async () => {
-  //   const wrapper = mount(SInput, { propsData: { mask: '####-####', value: '23213213' } })
+  test('mask', async () => {
+    const wrapper = mount(SInput, { propsData: { mask: '####-####', value: '23213213' } })
 
-  //   expect(wrapper.vm.value).toBe('2321-3213')
-
-  //   const input = wrapper.find('.input')
-  //   await input.setValue('23213213')
-
-  //   expect(input.element.value).toBe('2321-3213')
-  // })
-
-  test('placeholder', () => {
-    const wrapper = mount(SInput, { propsData: { placeholder: 'Digite o nome' } })
+    expect(wrapper.vm.value).toBe('23213213')
 
     const input = wrapper.find('.input')
+    await input.setValue('14213213')
+    expect(input.element.value).toBe('14213213')
+  })
+
+  test('placeholder', () => {
+
+    const input = cmp.find('.input')
 
     expect(input.attributes('placeholder')).toBe('Digite o nome')
   })
+
+  test("emits input event when set value", () => {
+    const handleInput = jest.fn();
+    const wrapper = shallowMount(SInput, { listeners: { input: handleInput }});
+
+    wrapper.find("input").setValue('Algo');
+    expect(handleInput).toHaveBeenCalled();
+  });
 
 })

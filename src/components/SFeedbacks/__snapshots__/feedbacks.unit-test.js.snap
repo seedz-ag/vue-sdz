@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SFeedbacks has the expected html structure 1`] = `
+<transition-group-stub
+  class="coe-feedbacks"
+  name="feedback"
+  tag="ul"
+>
+  <div
+    class="s-card feedback"
+    style="background: white;"
+  >
+    <div
+      class="message-container"
+    >
+      <span
+        class="message"
+      >
+        teste 
+      </span>
+       
+      <span
+        class="highlighted"
+      >
+        
+          
+        
+      </span>
+    </div>
+     
+    <button
+      class="c-link button s-button --grey --icon-only"
+    >
+      <i
+        class="icon s-icon icon sdz-close"
+        style="font-size: 20px;"
+      />
+       
+      <!---->
+       
+      <transition-stub
+        name="loading"
+      >
+        <!---->
+      </transition-stub>
+    </button>
+  </div>
+  <div
+    class="s-card feedback"
+    style="background: white;"
+  >
+    <div
+      class="message-container"
+    >
+      <span
+        class="message"
+      >
+        Nova informação 
+      </span>
+       
+      <span
+        class="highlighted"
+      >
+        
+          
+        
+      </span>
+    </div>
+     
+    <button
+      class="c-link button s-button --grey --icon-only"
+    >
+      <i
+        class="icon s-icon icon sdz-close"
+        style="font-size: 20px;"
+      />
+       
+      <!---->
+       
+      <transition-stub
+        name="loading"
+      >
+        <!---->
+      </transition-stub>
+    </button>
+  </div>
+</transition-group-stub>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SButton has the expected html structure 1`] = `
+<button
+  class="c-link s-button --success --disabled --full-width --has-icon"
+  disabled="disabled"
+>
+  <i
+    class="icon s-icon icon sdz-check"
+    style="font-size: 20px;"
+  />
+   
+  <span
+    class="text"
+  >
+    Novo botão
+  </span>
+   
+  <transition-stub
+    name="loading"
+  >
+    <!---->
+  </transition-stub>
+</button>
+`;

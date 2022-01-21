@@ -379,10 +379,10 @@ export default {
           font-size: $font-size-xxs;
           color: color(base, base);
 
-          // &.-placeholder {
-          //   font-size: $font-size-xxs;
-          //   color: color(base, light);
-          // }
+          &.-placeholder {
+            font-size: $font-size-xxs;
+            color: color(base, light) !important;
+          }
         }
       }
 

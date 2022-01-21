@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SLink has the expected html structure 1`] = `
+<a
+  class="c-link"
+  to="https://seedz.ag"
+>
+  Nome do Link
+</a>
+`;
