@@ -1,5 +1,5 @@
 import * as mixins from './mixins/index.js'
-import * as helpers from './helpers/index.js'
+// import * as helpers from './helpers/index.js'
 import * as SComponents from './components/index.js'
 
 const install = Vue => {
@@ -11,7 +11,11 @@ const install = Vue => {
 if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 
 
-export default { ...install, ...mixins, ...helpers }
+export default {
+  ...mixins,
+  ...install
+  // ...helpers
+}
 
 // Register components individually
 export { default as SAvatar } from './components/SAvatar/Index.vue'
