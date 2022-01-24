@@ -26,8 +26,8 @@ export default {
     }
   },
 
-  computed:{
-    classes(){
+  computed: {
+    classes () {
       return [
         's-avatar',
         `--is-size-${this.size}`,
