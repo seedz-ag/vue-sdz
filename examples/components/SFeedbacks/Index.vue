@@ -1,6 +1,7 @@
 <template>
   <div class="s-feedbacks-example">
-    <s-title class="h1" title="Feedbacks" />
+    <s-title size="title-1">Feedbacks</s-title>
+
     <s-box>
       <s-feedbacks :dismissible="dismissible" :feedbacks="$feedback.list" @close="feedback => $feedback.remove(feedback)" />
 

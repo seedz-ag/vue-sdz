@@ -1,12 +1,12 @@
 <template>
   <div class="s-checkbox-example">
-    <s-title class="h1" title="Checkbox" />
+    <s-title size="title-1">Checkbox</s-title>
 
     <p class="subtitle">
       Input Checkbox é uma caixa de seleção que a pessoa usuária pode marcar ou desmarcar para aceitar alguma ação. Podendo usar um ou mais checkboxs seguidos.
     </p>
 
-    <s-title class="h2" title="Quando usar" />
+    <s-title size="title-2">Quando Usar</s-title>
 
     <p class="subtitle">
       Use as caixas de seleção quando as pessoas usuárias devem selecionar uma ou mais opções de uma lista de itens relacionados;
@@ -20,7 +20,8 @@
 
     <source-code file="SCheckboxExample" comp="SCheckbox" />
 
-    <s-title class="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
+
     <s-box>
       <s-checkbox label="Default Checkbox" v-model="data0" />
       <br>
@@ -29,7 +30,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Stats" />
+    <s-title size="title-2">Stats</s-title>
     <s-box>
       <s-checkbox label="Positive" v-model="data2" />
       <br>
@@ -38,7 +39,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-checkbox label="disabled" disabled v-model="data4" />
     </s-box>

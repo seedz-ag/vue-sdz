@@ -1,6 +1,7 @@
 <template>
   <div class="s-progressbar-example flex-line">
-    <s-title class="h1" title="Progress Bar" />
+    <s-title size="title-1">Progress Bar</s-title>
+
 
     <p class="subtitle">
       Progrees Bar Indica um tempo de espera por ações - dentro de um fluxo de experiência ou dados de carregamento.

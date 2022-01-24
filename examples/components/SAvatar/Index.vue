@@ -1,12 +1,12 @@
 <template>
   <div>
-    <s-title class="h1" title="Avatar" />
+    <s-title size="title-1">Avatar</s-title>
 
     <p class="subtitle">
       Avatar é uma representação em miniatura de uma pessoa usuária, para representar uma organização, use o componente "brand".
     </p>
 
-    <s-title class="h2" title="Quando usar" />
+    <s-title size="title-2">Quando Usar</s-title>
 
     <p class="subtitle">
       Esse componente pode ser usado em lugares onde existe o upload de uma foto da pessoa usuária;

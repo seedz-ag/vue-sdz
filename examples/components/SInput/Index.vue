@@ -1,6 +1,6 @@
 <template>
   <div class="s-input-example">
-    <s-title class="h1" title="Inputs" />
+    <s-title size="title-1">Inputs</s-title>
 
     <p class="subtitle">
       Input Text permite a pessoa usuária interagir e inserir conteúdo e dados. Pode ser usado para entradas de formulários longos e curtos.
@@ -20,7 +20,7 @@
 
     <source-code file="SInputExample" comp="SInput" />
 
-    <s-title class="h2" title="Stats" />
+    <s-title size="title-2">Stats</s-title>
     <s-box>
       <s-input
         label="Default"
@@ -51,7 +51,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Sizing" />
+    <s-title size="title-2">Sizing</s-title>
     <s-box class="sizing flex-inline">
       <s-input
         label="Small"
@@ -68,7 +68,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Rounded" />
+    <s-title size="title-2">Rounded</s-title>
     <s-box>
       <s-input
         label="rounded"
@@ -80,7 +80,7 @@
 
     <pre-code :code="code3" />
 
-    <s-title class="h2" title="Masked Input" />
+    <s-title size="title-2">Masked Input</s-title>
     <p class="subtitle">
       CPF: 000.000.000-00<br>
       CNPJ: 00.000.000/0000-00<br>
@@ -111,7 +111,7 @@
 
     <pre-code :code="code4" />
 
-    <s-title class="h2" title="Enhancers" />
+    <s-title size="title-2">Enhancers</s-title>
     <s-box>
       <s-input
         round

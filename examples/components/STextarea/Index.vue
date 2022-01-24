@@ -1,18 +1,20 @@
 <template>
   <div class="s-input-example">
-    <s-title class="h1" title="Input Text Area" />
+    <s-title size="title-1">Text Area</s-title>
 
     <p class="subtitle">
       Input Text Area permite que a pessoa usuária insira textos longos em um campo.
     </p>
-    <s-title class="h2" title="Quanto usar" />
+
+    <s-title size="title-2">Quando usar</s-title>
+
     <p class="subtitle">
       Representa um controle de edição de texto simples de várias linhas, útil quando você deseja permitir que as pessoas usuárias insiram uma quantidade considerável de texto de formato livre, por exemplo, um comentário em um formulário de revisão ou feedback;
     </p>
 
     <source-code file="STextareaExample" comp="SInput" />
 
-    <s-title class="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-input
         label="textarea"
@@ -26,7 +28,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Negative" />
+    <s-title size="title-2">Negative</s-title>
     <s-box>
       <s-input
         label="textarea"
@@ -39,7 +41,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-input
         label="Disabled"

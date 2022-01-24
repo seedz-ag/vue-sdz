@@ -1,12 +1,12 @@
 <template>
   <div>
-    <s-title class="h1" title="Badge" />
+    <s-title size="title-1">Badge</s-title>
 
     <p class="subtitle">
       Um badge é um indicador visual para notificações e para valores numéricos, como contagens e pontuações.
     </p>
 
-    <s-title class="h2" title="Como e onde utilizar" />
+    <s-title size="title-2">Como e onde utilizar</s-title>
 
     <p class="subtitle">
       O badge é utilizado em conjunto com alguns ícones dentro do fluxo, deve ser utilizado a cor highlight, de acordo com o brand tokens deste Design System.

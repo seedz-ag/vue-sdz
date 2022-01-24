@@ -1,11 +1,13 @@
 <template>
   <div class="s-select-example">
-    <s-title class="h1" title="Select" />
+    <s-title size="title-1">Select</s-title>
 
     <p class="subtitle">
       Input Select é um dropdown onde a pessoa usuária pode selecionar uma opção em uma lista de opções. Hoje trazemos a visualização dos itens de forma nativa por uma questão de acessibilidade.
     </p>
-    <s-title class="h2" title="Quando usar" />
+
+    <s-title size="title-2">Quando usar</s-title>
+
     <p class="subtitle">
       Utilizar quando você tem ao menos 3 opções de escolha.
     </p>
@@ -15,7 +17,7 @@
 
     <source-code file="SSelectExample" comp="SSelect" />
 
-    <s-title class="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-select
         label="Simple"
@@ -43,7 +45,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Multiples" />
+    <s-title size="title-2">Multiples</s-title>
     <s-box>
       <s-select
         label="Multiple"
@@ -70,7 +72,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-select
         label="Disabled"

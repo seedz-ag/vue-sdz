@@ -1,6 +1,6 @@
 <template>
   <div class="s-grid-example">
-    <s-title class="h1" title="Grid" />
+    <s-title size="title-1">Grid</s-title>
 
     <p class="subtitle">
       O grid que usamos hoje pode ser considerado um grid híbrido. Ele é fluído nos  breakpoints até 1440px, onde essa passa a ser ter largura fixa. Essa definição é para garantir que a responsividade dos componentes em telas muito grandes não se torne um problema ou minimamente difícil de se administrar.

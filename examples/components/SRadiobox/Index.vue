@@ -1,6 +1,6 @@
 <template>
   <div class="s-radiobox-example">
-    <s-title class="h1" title="Radiobox" />
+    <s-title size="title-1">Radiobox</s-title>
 
     <p class="subtitle">
       Input Radio Button tem como objetivo possibilitar que a pessoa usuária escolha uma opção dentro da interface.
@@ -17,7 +17,7 @@
 
     <source-code file="SRadioboxExample" comp="SRadiobox" />
 
-    <s-title class="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
       <s-radiobox id="nao" label="Default Radiobox" name="dafault" value="não" v-model="data0" />
@@ -27,7 +27,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Stats" />
+    <s-title size="title-2">Stats</s-title>
     <s-box>
       <s-radiobox label="Positive" v-model="data3" />
       <br>
@@ -36,7 +36,7 @@
 
     <pre-code :code="code2" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-radiobox label="disabled" disabled v-model="data5" />
     </s-box>

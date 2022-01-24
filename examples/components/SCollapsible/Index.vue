@@ -1,6 +1,6 @@
 <template>
   <div class="s-collapsible-example">
-    <s-title class="h1" title="Collapse" />
+    <s-title size="title-1">Collapse</s-title>
 
     <source-code file="SCollapsibleExample" comp="SCollapsible">
       <s-button class="header" slot="header">header toggle</s-button>

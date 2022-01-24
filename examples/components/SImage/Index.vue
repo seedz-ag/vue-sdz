@@ -1,6 +1,6 @@
 <template>
   <div class="s-image-example">
-    <s-title class="h1" title="Image" />
+    <s-title size="title-1">Image</s-title>
 
     <s-box class="flex-center">
       <div class="alter-image">

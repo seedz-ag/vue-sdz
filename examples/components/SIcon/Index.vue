@@ -1,6 +1,6 @@
 <template>
   <div class="s-icon-example">
-    <s-title class="h1" title="Icons" />
+    <s-title size="title-1">Icons</s-title>
 
     <p class="subtitle">
       Nossa biblioteca de ícones foi criada a partir da biblioteca open source Feather Icons com alguns exclusivos criados para a plataforma.

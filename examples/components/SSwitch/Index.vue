@@ -1,12 +1,12 @@
 <template>
   <div class="s-switch-example">
-    <s-title class="h1" title="Switch" />
+    <s-title size="title-1">Switch</s-title>
 
     <p class="subtitle">
       Switch tem como objetivo possibilitar a pessoa usuária habilitar ou desabilitar algo como um alternador binário de "on/off".
     </p>
 
-    <s-title class="h2" title="Regras de aplicação" />
+    <s-title size="title-2">Regras de aplicação</s-title>
 
     <p class="subtitle">
       Podem ser utilizados para habilitar ou desabilitar configurações como "receber ou não" push notifications;
@@ -17,7 +17,7 @@
 
     <source-code file="SSwitchExample" comp="SSwitch" />
 
-    <s-title class="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-switch label="Default Switch" v-model="data0" />
       <br>
@@ -26,7 +26,7 @@
 
     <pre-code :code="code1" />
 
-    <s-title class="h2" title="Disabled" />
+    <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-switch label="disabled" disabled />
     </s-box>

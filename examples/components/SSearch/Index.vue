@@ -1,11 +1,13 @@
 <template>
   <div class="s-input-example">
-    <s-title class="h1" title="Search" />
+    <s-title size="title-1">Search</s-title>
 
     <p class="subtitle">
       Input Search é um campo de busca e permite que a pessoa usuária encontre um conteúdo de forma rápida. Hoje é um componente de input simples, no futuro a ideia é que contemple também comportamentos como autocomplete.
     </p>
-    <s-title class="h2" title="Quando usar" />
+
+    <s-title size="title-2">Quando usar</s-title>
+
     <p class="subtitle">
       É utilizado quando a pessoa usuária deseja encontrar um conteúdo disponível;
     </p>
@@ -15,7 +17,7 @@
 
     <source-code file="SSearchExample" comp="SInput" />
 
-    <s-title class="h2" title="Default" />
+    <s-title size="title-2">Default</s-title>
     <s-box>
       <s-input
         round
