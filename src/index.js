@@ -14,6 +14,7 @@ if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 export default { ...install, ...mixins, ...helpers }
 
 // Register components individually
+export { default as SAvatar } from './components/SAvatar/Index.vue'
 export { default as SAlert } from './components/SAlert/Index.vue'
 export { default as SButton } from './components/SButton/Index.vue'
 export { default as SCard } from './components/SCard/Index.vue'
