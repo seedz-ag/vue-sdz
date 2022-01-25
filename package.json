@@ -76,7 +76,7 @@
     "sdz-icons": "^0.0.5",
     "v-money": "^0.8.1",
     "vue-coe-feedback": "^0.1.5",
-    "vue-coe-image": "^0.2.2",
+    "vue-coe-image": "^0.2.3",
     "vue-coerousel": "^1.0.0",
     "vue-the-mask": "^0.11.1"
   }
