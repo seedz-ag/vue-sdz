@@ -35,11 +35,12 @@
 import SSidebar from '../src/components/SSidebar/Index.vue'
 import SInput from '../src/components/SInput/Index.vue'
 import SHeader from '../src/components/SHeader/Index.vue'
+import SButton from '../src/components/SButton/Index.vue'
 
 export default {
   name: 'Examples',
 
-  components: { SSidebar, SInput, SHeader },
+  components: { SSidebar, SInput, SHeader, SButton },
 
   data () {
     return {
