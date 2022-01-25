@@ -1,3 +1,5 @@
+import '../node_modules/sdz-icons/index.css'
+
 import * as mixins from './mixins/index.js'
 // import * as helpers from './helpers/index.js'
 import * as SComponents from './components/index.js'
