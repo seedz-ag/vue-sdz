@@ -10416,9 +10416,9 @@ vue-coe-feedback@^0.1.5:
     vuex "^3.0.1"
 
 vue-coe-image@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/vue-coe-image/-/vue-coe-image-0.2.1.tgz#58e8042a3eb3aa98a49e568606494d51f8d1d830"
-  integrity sha512-J7Ao+vpGc9YemBoYLU9NUvwlf5yBs6C7t5fixAZsDUBMOI9eVfOOoe+B/FJ7NqCfFYOOeDG2gHjGaKyrYHgmfg==
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/vue-coe-image/-/vue-coe-image-0.2.2.tgz#1cd13685a036ce52cd505444ca6a9eef7b213bbc"
+  integrity sha512-LfvpF79Qf2klxrbhPODjBV+cBD3rPAVSqQXWu2Z3BzWLGY+NZPTCjHCKOZ70beI3025NmbgZkXPW3t8s/IrqzQ==
 
 vue-coerousel@^1.0.0:
   version "1.0.1"
