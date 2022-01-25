@@ -10415,10 +10415,10 @@ vue-coe-feedback@^0.1.5:
     "@vue/test-utils" "^1.0.0-beta.25"
     vuex "^3.0.1"
 
-vue-coe-image@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/vue-coe-image/-/vue-coe-image-0.2.2.tgz#1cd13685a036ce52cd505444ca6a9eef7b213bbc"
-  integrity sha512-LfvpF79Qf2klxrbhPODjBV+cBD3rPAVSqQXWu2Z3BzWLGY+NZPTCjHCKOZ70beI3025NmbgZkXPW3t8s/IrqzQ==
+vue-coe-image@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/vue-coe-image/-/vue-coe-image-0.2.3.tgz#b5fa0279339f54b741eddc1314340f178f374c9f"
+  integrity sha512-EkTgbFjssdXtT2Wa4APvmw7cqgsd3UfIe2iPsDDfTWN/IFrtGNYiIkAh+EH3G4RF2ftLdaATBdtEzDXV2NiQFg==
 
 vue-coerousel@^1.0.0:
   version "1.0.1"
