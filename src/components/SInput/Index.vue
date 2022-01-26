@@ -195,10 +195,10 @@ $icon-position: 8px;
     top: -25px;
     position: absolute;
 
-    font-size: 14px;
     font-weight: 500;
     pointer-events: none;
     color: color(base, base);
+    font-size: $font-size-xxs;
     font-family: $font-family;
     transition: font-size .3s, transform .3s;
   }
@@ -224,7 +224,7 @@ $icon-position: 8px;
   & > .right-icon { right: $icon-position; }
   & > .left-icon { left: $icon-position; }
 
-  &:not(.--is-float-label) { margin-top: 30px; }
+  // &:not(.--is-float-label) { margin-top: 30px; }
 
   &.--is-float-label {
     & > label {

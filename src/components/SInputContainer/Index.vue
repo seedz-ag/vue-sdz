@@ -65,6 +65,8 @@ export default {
     & > .required { color: color(negative, base); margin-top: 5px; }
   }
 
+  &.--label { margin-top: 30px; }
+
   & > .validation {
     bottom: -18px;
     position: absolute;

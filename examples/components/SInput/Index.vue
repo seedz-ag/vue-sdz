@@ -22,17 +22,17 @@
 
     <s-title size="title-2">Stats</s-title>
     <s-box>
-      <s-input
-        label="Default"
-      />
+      <s-input label="Default" />
+
+      <s-input placeholder="Input without label" />
 
       <s-input
-        placeholder="Disabled input"
         disabled="disabled"
+        placeholder="Disabled input"
       />
       <s-input
-        placeholder="Disabled readonly input"
         readonly="readonly"
+        placeholder="Disabled readonly input"
       />
       <!-- <s-button @click="inputDataError = ''">reset</s-button> -->
       <s-input
@@ -167,7 +167,7 @@ export default {
       :value="inputFloatLabel"
       @input="value => inputFloatLabel = value"
     />`,
-      code2:`<s-input
+      code2: `<s-input
         label="Small"
         small
       />
@@ -178,13 +178,13 @@ export default {
         label="Larger"
         larger
       />`,
-      code3:`<s-input
+      code3: `<s-input
         label="rounded"
         round
         :value="inputRounded"
         @input="value => inputRounded = value"
       />`,
-      code4:`<s-input
+      code4: `<s-input
         raw
         label="CPF"
         :mask="['###.###.###-##']"
@@ -224,7 +224,7 @@ export default {
 
 <style lang="scss">
 .s-input-example{
-  & > .s-input-container { margin-bottom: 60px; }
-  & > .sizing.flex-inline .s-input-container{margin-right: 30px;}
+  & > .s-box > div { margin-top: 45px; }
+  & > .sizing.flex-inline > .box > .s-input-container { margin-right: 30px; }
 }
 </style>
