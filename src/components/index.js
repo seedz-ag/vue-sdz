@@ -1,5 +1,6 @@
 export { default as SAvatar } from './SAvatar/Index.vue'
 export { default as SAlert } from './SAlert/Index.vue'
+export { default as SBadge } from './SBadge/Index.vue'
 export { default as SButton } from './SButton/Index.vue'
 export { default as SCard } from './SCard/Index.vue'
 export { default as SCarousel } from './SCarousel/Index.vue'

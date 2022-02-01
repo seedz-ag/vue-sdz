@@ -23,6 +23,7 @@ export default {
 export { default as SAvatar } from './components/SAvatar/Index.vue'
 export { default as SAlert } from './components/SAlert/Index.vue'
 export { default as SButton } from './components/SButton/Index.vue'
+export { default as SBadge } from './components/SBadge/Index.vue'
 export { default as SCard } from './components/SCard/Index.vue'
 export { default as SCarousel } from './components/SCarousel/Index.vue'
 export { default as SCheckbox } from './components/SCheckbox/Index.vue'
