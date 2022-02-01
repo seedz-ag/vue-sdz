@@ -1,76 +1,54 @@
-const breakpoints = {
-  small: 334,
-  medium: 770,
-  large: 1024,
-  veryLarge: 1224
-}
-
 export default {
   data () {
     return {
-      smallScreen: window.matchMedia(`screen and (max-width: ${breakpoints.small}px)`),
-      mediumScreen: window.matchMedia(`screen and (min-width: ${breakpoints.small + 1}px) and (max-width: ${breakpoints.medium}px)`),
-      largeScreen: window.matchMedia(`screen and (min-width: ${breakpoints.medium + 1}px) and (max-width: ${breakpoints.large}px)`),
-      veryLargeScreen: window.matchMedia(`screen and (min-width: ${breakpoints.large + 1}px)`),
-
-      isSmallScreen: false,
-      isMediumScreen: false,
-      isLargeScreen: false,
-      isVeryLargeScreen: false,
-
-      isMounted: false
+      xsMobileMedia: window.matchMedia('screen and (max-width: 576px)'),
+      mobileMedia: window.matchMedia('screen and (max-width: 992px)'),
+      isXsMobile: false,
+      isMobile: false
     }
   },
 
   methods: {
     setBreakpoint () {
-      this.isSmallScreen = !!this.smallScreen?.matches
-      this.isMediumScreen = !!this.mediumScreen?.matches
-      this.isLargeScreen = !!this.largeScreen?.matches
-      this.isVeryLargeScreen = !!this.veryLargeScreen?.matches
+      this.isMobile = this.mobileMedia && this.mobileMedia.matches
+      this.isXsMobile = this.xsMobileMedia && this.xsMobileMedia.matches
     },
 
-    getIsSmallScreen () {
-      return this.isSmallScreen
+    getIsXsMobile () {
+      return this.isXsMobile
     },
 
-    getIsMediumScreen () {
-      return this.isMediumScreen
+    getIsMobile () {
+      return this.isMobile
     },
 
-    getIsLargeScreen () {
-      return this.isLargeScreen
-    },
-
-    getIsVeryLargeScreen () {
-      return this.isVeryLargeScreen
+    onOrientationChange () {
+      window.addEventListener('resize', () => {
+        const matchMedia = window.matchMedia || (() => {})
+        if ((matchMedia('(orientation: portrait)') || {}).matches) {
+          setTimeout(() => window.scrollTo(0, 1), 400)
+        }
+      }, { once: true })
     }
   },
 
   beforeDestroy () {
-    this.smallScreen.removeListener(this.setBreakpoint)
-    this.mediumScreen.removeListener(this.setBreakpoint)
-    this.largeScreen.removeListener(this.setBreakpoint)
-    this.veryLargeScreen.removeListener(this.setBreakpoint)
+    this.mobileMedia.removeListener(this.setBreakpoint)
+    this.xsMobileMedia.removeListener(this.setBreakpoint)
+    window.removeEventListener('orientationchange', this.onOrientationChange)
   },
 
   mounted () {
-    this.smallScreen.addListener(this.setBreakpoint)
-    this.mediumScreen.addListener(this.setBreakpoint)
-    this.largeScreen.addListener(this.setBreakpoint)
-    this.veryLargeScreen.addListener(this.setBreakpoint)
-
+    this.mobileMedia.addListener(this.setBreakpoint)
+    this.xsMobileMedia.addListener(this.setBreakpoint)
+    window.addEventListener('orientationchange', this.onOrientationChange)
     this.setBreakpoint()
-
-    this.isMounted = true
   },
 
   provide () {
     return {
-      getIsSmallScreen: this.getIsSmallScreen,
-      getIsMediumScreen: this.getIsMediumScreen,
-      getIsLargeScreen: this.getIsLargeScreen,
-      getIsVeryLargeScreen: this.getIsVeryLargeScreen
+      getIsXsMobile: this.getIsXsMobile,
+      getIsMobile: this.getIsMobile
     }
   }
 }

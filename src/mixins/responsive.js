@@ -1,21 +1,13 @@
 export default {
-  inject: ['getIsSmallScreen', 'getIsMediumScreen', 'getIsLargeScreen', 'getIsVeryLargeScreen'],
+  inject: [ 'getIsXsMobile', 'getIsMobile' ],
 
   computed: {
-    isSmallScreen () {
-      return this.getIsSmallScreen()
+    isXsMobile () {
+      return this.getIsXsMobile()
     },
 
-    isMediumScreen () {
-      return this.getIsMediumScreen()
-    },
-
-    isLargeScreen () {
-      return this.getIsLargeScreen()
-    },
-
-    isVeryLargeScreen () {
-      return this.getIsVeryLargeScreen()
+    isMobile () {
+      return this.getIsMobile()
     }
   }
 }
