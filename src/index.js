@@ -44,3 +44,6 @@ export { default as SShadowed } from './components/SShadowed/Index.vue'
 export { default as SSidebar } from './components/SSidebar/Index.vue'
 export { default as STable } from './components/STable/Index.vue'
 export { default as SSkeleton } from './components/SSkeleton/Index.vue'
+
+export { default as responsive } from './mixins/responsive.js'
+export { default as setupResponsive } from './mixins/setupResponsive.js'
