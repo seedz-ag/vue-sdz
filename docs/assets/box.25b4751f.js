@@ -1,1 +1,0 @@
-import{n as r}from"./index.259ac129.js";var o=function(){var e=this,n=e.$createElement,_=e._self._c||n;return _("div",{staticClass:"s-box"},[e._t("default")],2)},s=[];const a={name:"SBox"},t={};var l=r(a,o,s,!1,c,null,null,null);function c(e){for(let n in t)this[n]=t[n]}var u=function(){return l.exports}();export{u as S};
