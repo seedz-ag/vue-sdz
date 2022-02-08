@@ -1,5 +1,5 @@
 <template>
-  <div class="s-input-example">
+  <div class="s-search-example">
     <s-title size="title-1">Search</s-title>
 
     <p class="subtitle">
@@ -15,64 +15,34 @@
       Pode ser adicionado a outros componentes, como por exemplo o Header.
     </p>
 
-    <source-code file="SSearchExample" comp="SInput" />
-
     <s-title size="title-2">Default</s-title>
+
     <s-box>
-      <s-input
-        round
-        icon="sdz-search"
-        :value="inputSearch"
-        :placeholder="'Search'"
-        @input="value => inputSearch = value"
+      <s-search
+        :categories="['Resgate', 'Acumule']"
+        v-model="data"
       />
     </s-box>
-
-    <pre-code :code="code1" />
   </div>
 </template>
 
 <script>
-import SInput from '../../../src/components/SInput/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
-import SourceCode from '../SourceCode/Index.vue'
-import PreCode from '../PreCode/Index.vue'
+import SSearch from '../../../src/components/SSearch/Index.vue'
 
 export default {
-  components: { SInput, SBox, STitle, SourceCode, PreCode },
+  components: { SSearch, SBox, STitle },
 
   data () {
     return {
-      inputMask: '',
-      inputMoney: '',
-      inputRounded: '',
-      inputSearch: '',
-      // inputTextArea: '',
-      inputDataError: '',
-      inputTeste: '',
-      inputFloatLabel: '',
-      code1:`<s-input
-        round
-        icon="sdz-search"
-        :value="inputSearch"
-        :placeholder="'Search'"
-        @input="value => inputSearch = value"
-      />`
-    }
-  },
-
-  methods: {
-    onInputMoney (value) {
-      this.inputMoney = value
+      data: ''
     }
   }
 }
 </script>
 
 <style lang="scss">
-.s-input-example{
-  & > .s-input-container { margin-bottom: 60px; }
-  & > .sizing.flex-inline .s-input-container{margin-right: 30px;}
+.s-search-example {
 }
 </style>
