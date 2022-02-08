@@ -308,6 +308,7 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-select {
+  width: 100%;
   // position: unset;
 
   & > .select {
@@ -326,14 +327,9 @@ export default {
       font-size: $font-size-xs;
       background-color: white;
 
-      border-width: 1px;
-      border-style: solid;
-      border-image-slice: 1;
       border-radius: $border-radius-sm;
-      border-image-source: color(base, light);
+      border: 1px solid color(base, light);
 
-      // border-radius: $border-radius-sm;
-      // border: 1px solid color(base, light);
       transition: border-radius .3s ease-in-out,
                   border-color .3s ease-in-out,
                   box-shadow .3s ease-in-out;
@@ -407,7 +403,7 @@ export default {
       box-shadow:none;
 
       & > .s-collapsible > .wrapper {
-        
+
         box-shadow: $shadow-2;
         transition: opacity .3s ease-in-out,
                     height .3s ease-in-out !important;
@@ -471,7 +467,7 @@ export default {
   &.--is-disabled {
     cursor: default;
     pointer-events: none;
-    
+
     & > .label { color: color(neutral, dark); }
 
     & > .select > .field {
