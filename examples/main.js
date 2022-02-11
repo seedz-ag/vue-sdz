@@ -4,9 +4,9 @@ import router from './router'
 
 import Example from './Index.vue'
 
-import { VueCoeFeedback } from 'vue-coe-feedback'
-
 import '../src/styles/_index.scss'
+import '../node_modules/sdz-icons/index.css'
+import { VueCoeFeedback } from 'vue-coe-feedback'
 
 Vue.config.productionTip = false
 Vue.use(VueCoeFeedback, store, { delay: 3000 })
