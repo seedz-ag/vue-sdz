@@ -14,7 +14,7 @@ export default [
 
   {
     name: 'button',
-    button: true,
+    button: 'editar',
     buttonIcon: 'sdz-star',
     component: 'SInput',
     label: 'button',
