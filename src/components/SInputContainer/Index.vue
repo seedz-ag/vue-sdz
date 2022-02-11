@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes">
+  <div :class="classes" v-bind="$attrs">
     <label v-if="label" class="label">
       <span v-if="required" class="required">*</span>
 
@@ -12,10 +12,8 @@
     <s-icon v-if="rightIcon" v-bind="$attrs" class="right-icon" />
 
     <transition name="fade">
-      <div v-if="!!validation" class="validation">
-        <p class="message">
-          <span class="text" v-html="validation" />
-        </p>
+      <div v-if="validation" class="validation">
+        <p class="message">{{ validationMessage }}</p>
       </div>
     </transition>
   </div>
@@ -36,7 +34,7 @@ export default {
 
     rightIcon: String,
 
-    validation: String,
+    validation: [Array, String],
 
     required: Boolean
   },
@@ -47,6 +45,12 @@ export default {
         '--label': this.label,
         '--validation': this.validation
       }]
+    },
+
+    validationMessage () {
+      if (Array.isArray(this.validation)) return this.validation[0]
+
+      return this.validation
     }
   }
 }
@@ -70,10 +74,17 @@ export default {
   & > .validation {
     bottom: -18px;
     position: absolute;
+    width: calc(100% - 20px);
 
     & > .message {
+      font-size: 10px;
       color: color(negative, base);
       font-weight: $font-weight-medium;
+
+      // truncate
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 
