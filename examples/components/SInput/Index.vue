@@ -141,7 +141,7 @@ export default {
   data () {
     return {
       inputMask: '',
-      inputMoney: '',
+      inputMoney: 0,
       inputRounded: '',
       inputSearch: '',
       // inputTextArea: '',
