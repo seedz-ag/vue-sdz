@@ -18,10 +18,7 @@
     <s-title size="title-2">Default</s-title>
 
     <s-box>
-      <s-search
-        :categories="['Resgate', 'Acumule']"
-        v-model="data"
-      />
+      <s-search :categories="['Resgate', 'Acumule']" v-model="data" @category="c => category = c" />
     </s-box>
   </div>
 </template>
@@ -36,7 +33,8 @@ export default {
 
   data () {
     return {
-      data: ''
+      data: '',
+      category: ''
     }
   }
 }
