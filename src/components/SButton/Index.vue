@@ -196,7 +196,7 @@ export default {
   }
 
   &.--has-icon {
-    & > .text { padding-left: 10px; }
+    & > .text { margin-left: 15px; }
     & > .icon {
       position: absolute;
       left: 20px;

@@ -79,6 +79,7 @@ export default {
           child: [
             { name: 'Button', redirect: '/vue-sdz/components/button' },
             { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
+            { name: 'FormBuilder', redirect: '/vue-sdz/components/formbuilder' },
             { name: 'Input', redirect: '/vue-sdz/components/input' },
             { name: 'Link', redirect: '/vue-sdz/components/link' },
             { name: 'Password', redirect: '/vue-sdz/components/password' },
@@ -100,6 +101,7 @@ export default {
             { name: 'Card', redirect: '/vue-sdz/components/card' },
             { name: 'Carousel', redirect: '/vue-sdz/components/carousel' },
             { name: 'Collapse', redirect: '/vue-sdz/components/collapsible' },
+            { name: 'Drawer', redirect: '/vue-sdz/components/drawer' },
             { name: 'Feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'Modal', redirect: '/vue-sdz/components/modal' },
             { name: 'Pagination', redirect: '/vue-sdz/components/pagination' },

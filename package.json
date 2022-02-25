@@ -1,6 +1,6 @@
 {
   "name": "vue-sdz",
-  "version": "0.0.57",
+  "version": "0.0.60",
   "main": "dist/js/build.cjs.js",
   "private": false,
   "lint-staged": {
@@ -73,6 +73,9 @@
     }
   },
   "dependencies": {
+    "@vue/composition-api": "^1.4.6",
+    "@vuelidate/core": "^2.0.0-alpha.34",
+    "@vuelidate/validators": "^2.0.0-alpha.26",
     "sdz-icons": "^0.0.5",
     "v-money": "^0.8.1",
     "vue-coe-feedback": "^0.1.5",

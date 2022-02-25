@@ -24,6 +24,8 @@
     <s-box>
       <s-input label="Default" />
 
+      <s-input label="With Button" button="Alterar" button-icon="sdz-check" outlined />
+
       <s-input placeholder="Input without label" />
 
       <s-input
@@ -139,7 +141,7 @@ export default {
   data () {
     return {
       inputMask: '',
-      inputMoney: '',
+      inputMoney: 0,
       inputRounded: '',
       inputSearch: '',
       // inputTextArea: '',

@@ -31,7 +31,7 @@ const warnings = {
         return false
       }
 
-      if (!(this.dataTable || this.$scopedSlots.row)) {
+      if (!(this.rows || this.$scopedSlots.row)) {
         console.error('you must set the array of rows')
 
         return false
