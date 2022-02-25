@@ -232,9 +232,11 @@ $s-popover-border: 1px solid black;
   display: block;
   position: fixed;
   border-radius: 5px;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   z-index: $z-index-1;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
 }
+
+.s-popover { background: color(neutral, base); }
 
 .s-popover:not(.-bottom) {
   @extend %base;

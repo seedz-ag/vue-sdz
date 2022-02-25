@@ -1,23 +1,42 @@
 <template>
   <section class="s-table-example">
-    <s-title size="title-1">Table</s-title>
+    <s-title size="title-1">Table (simple)</s-title>
     <s-box>
       <s-table
+        paginable
+        selectable
+
         :cols="cols"
         :rows="tableRows"
-        :search="search"
-        :search-params="['name']"
-        :checkeds.sync="checkeds"
-        :current-page="2"
-        :per-page="5"
-        selectable
-        sortable
-        pagination-type="ellipsised"
-        @sort="onSort"
-        @filter="synchronizeSearch"
-      >
-      <!-- paginable
-      max-height="300" -->
+        :page="page"
+        :per-page="perPage"
+        :sortable="['name', 'sagacity']"
+        :actions="[{ label: 'Editar' }, { label: 'Remover' }]"
+
+        @next="page++"
+        @previous="page--"
+        @change:page="v => page = v"
+
+        @sort="sort"
+        @action="action"
+        @change:per-page="v => perPage = v"
+
+        @selected="v => selecteds = v"
+      />
+    </s-box>
+
+    <s-title size="title-1">Table (scoped)</s-title>
+    <s-box>
+      <s-table :cols="cols" :rows="tableRows">
+        <template slot="row" slot-scope="{ row }">
+          <td class="td-row"><span class="row">{{ row.name }}</span></td>
+
+          <td class="td-row"><span class="row">{{ row.email }}</span></td>
+
+          <td class="td-row"><span class="row">{{ row.malice }}</span></td>
+
+          <td class="td-row"><span class="row">{{ row.sagacity }}</span></td>
+        </template>
       </s-table>
     </s-box>
   </section>
@@ -34,13 +53,20 @@ import { cols, rows } from './data-table'
 export default {
   name: 'STableExample',
 
-  components: { STable, SBox, STitle },
+  components: {
+    STable,
+    SBox,
+    STitle
+  },
+
   data () {
     return {
       cols,
       rows,
+      page: 1,
+      perPage: 10,
       search: '',
-      checkeds: []
+      selecteds: []
     }
   },
 
@@ -57,9 +83,23 @@ export default {
       this.search = value
     },
 
+    getRow (row, index) {
+      const props = this.cols.map(({ row }) => row)
+
+      return row[props[index]] || ''
+    },
+
     onSort (data) {
       console.log(data)
       this.rows = data
+    },
+
+    action ({ action, row }) {
+      console.log(action, row)
+    },
+
+    sort ({ row, type }) {
+      console.log(row, type)
     }
   }
 }
