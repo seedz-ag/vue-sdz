@@ -1,11 +1,14 @@
 <template>
-  <s-input-container v-bind="$attrs" :validation="validation" :class="sInputClasses">
+  <s-input-container v-bind="$attrs" :class="inputClasses">
     <s-icon v-if="icon" :icon="icon" class="left-icon" />
 
     <!-- value.prop motivation: https://github.com/vuejs/vue/issues/7393 -->
     <component
       :is="componentType"
       :value.prop="value"
+
+      class="input"
+      autocomplete="new-password"
 
       v-mask="mask"
       v-bind="inputAttrs"
@@ -14,6 +17,17 @@
     />
 
     <s-icon v-if="rightIcon" :icon="rightIcon" class="right-icon" />
+
+    <s-button
+      v-if="button"
+
+      :icon="buttonIcon"
+
+      v-bind="$attrs"
+      v-on="$listeners"
+    >
+      {{ button }}
+    </s-button>
   </s-input-container>
 </template>
 
@@ -21,7 +35,6 @@
 import { Money } from 'v-money'
 import { mask } from 'vue-the-mask'
 
-import SIcon from '../SIcon/Index.vue'
 import SInputContainer from '../SInputContainer/Index.vue'
 
 const convertToRaw = data => data
@@ -31,7 +44,12 @@ const convertToRaw = data => data
 export default {
   name: 'SInput',
 
-  components: { SInputContainer, SIcon, Money },
+  components: {
+    Money,
+    SInputContainer,
+    SIcon: () => import('../SIcon/Index.vue'),
+    SButton: () => import('../SButton/Index.vue')
+  },
 
   directives: {
     mask (el, binding) {
@@ -54,11 +72,13 @@ export default {
 
     iconColor: String,
 
+    button: String,
+
+    buttonIcon: String,
+
     round: Boolean,
 
     textArea: Boolean,
-
-    validation: String,
 
     placeholder: String,
 
@@ -88,29 +108,20 @@ export default {
   },
 
   computed: {
-    sInputClasses () {
+    inputClasses () {
       return [
         's-input', {
           '--small': this.small,
           '--larger': this.larger,
           '--has-icon': this.icon,
+          '--has-button': this.button,
           '--is-money': this.isMoney,
+          '--is-rounded': this.round,
           '--is-not-empty': !!this.value,
           '--is-textarea': this.textArea,
           '--is-disabled': this.disabled,
+          '--has-right-icon': this.rightIcon,
           '--is-float-label': this.floatLabel,
-        }
-      ]
-    },
-
-    inputClasses () {
-      return [
-        'input',
-        {
-          '--has-icon': this.icon,
-          '--is-rounded': this.round,
-          '--is-textarea': this.textArea,
-          '--has-right-icon': this.rightIcon
         }
       ]
     },
@@ -149,8 +160,8 @@ export default {
         ...this.$attrs,
         ...(this.isMoney ? this.moneyMask : {}),
 
+        value: this.value,
         disabled: this.disabled,
-        class: this.inputClasses,
         placeholder: this.floatLabel ? '' : this.placeholder
       }
     }
@@ -165,7 +176,7 @@ $icon-position: 8px;
 
 .s-input {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
 
   & > .input {
     outline: 0;
@@ -188,7 +199,7 @@ $icon-position: 8px;
     &.--has-icon { text-indent: 35px; }
     &.--is-rounded { border-radius: 50px; }
     &.--has-right-icon { padding-right: 40px; }
-    &.--is-textarea { padding-top: 30px; height: unset;}
+    &.--is-textarea { padding-top: 15px; height: unset; }
   }
 
   & > .label {
@@ -207,8 +218,19 @@ $icon-position: 8px;
 
   &.--larger > .input { height: 60px; }
 
+  &.--has-button {
+    & > .input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    & > .s-button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
   &.--has-icon {
-    & > .label { left: 25px; }
     & > .input { padding-left: 10px; }
   }
 
@@ -250,18 +272,18 @@ $icon-position: 8px;
     & > .label { color: color(neutral, medium); }
   }
 
-  &.--validation {
-    // display: block;
+  // &.--validation {
+  //   // display: block;
 
-    & > .input {
-      box-shadow: none;
-      padding-right: 50px;
-      color: color(negative, base);
-      border-color: color(negative, base) !important;
-    }
+  //   & > .input {
+  //     box-shadow: none;
+  //     padding-right: 50px;
+  //     color: color(negative, base);
+  //     border-color: color(negative, base) !important;
+  //   }
 
-    & > .label { font-weight: 500; color: color(negative, base) !important; }
-  }
+  //   & > .label { font-weight: 500; color: color(negative, base) !important; }
+  // }
 
   &:focus-within {
     & > .input { border-color: color(primary, base); }
