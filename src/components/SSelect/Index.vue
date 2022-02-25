@@ -1,5 +1,6 @@
 <template>
-  <s-input-container v-bind="$attrs" :validation="error || validation" :class="containerClasses">
+  <!-- :validation="error || validation" -->
+  <s-input-container v-bind="$attrs" :class="containerClasses">
     <div class="select">
       <div class="field" :tabindex="tabindex" @click.capture="openingHandler" v-click-outside="outside">
         <div class="selections">
@@ -12,8 +13,8 @@
             {{ selecteds[index] }}
           </span>
 
+          <!-- v-if="!validation" -->
           <input
-            v-if="!validation"
             ref="searchable"
             :class="['input', { '-placeholder': selected === placeholder || !selected }]"
             :value="searchableValue"
@@ -33,11 +34,12 @@
 
       <div class="items">
         <slot :options="options" name="options">
+          <!-- :is-opened="!!(isOpened && options.length) && !validation" -->
           <s-collapsible
             no-header
 
             :height="contentHeight"
-            :is-opened="!!(isOpened && options.length) && !validation"
+            :is-opened="!!(isOpened && options.length)"
 
             @target="target => contentHeight = (target.childElementCount) * 50"
           >
@@ -104,7 +106,7 @@ export default {
 
     displayBy: String,
 
-    validation: String,
+    // validation: String,
 
     multiple: Boolean,
 
@@ -137,7 +139,7 @@ export default {
         {
           '--is-opened': this.isOpened,
           '--is-disabled': this.disabled,
-          '--has-error': this.error || this.validation,
+          // '--has-error': this.error || this.validation,
           '--is-focused': this.focused || this.searchQuery,
           '--is-empty-search': this.searchQuery && !this.options.length
         }
@@ -407,7 +409,7 @@ export default {
       box-shadow:none;
 
       & > .s-collapsible > .wrapper {
-        
+
         box-shadow: $shadow-2;
         transition: opacity .3s ease-in-out,
                     height .3s ease-in-out !important;
@@ -471,7 +473,7 @@ export default {
   &.--is-disabled {
     cursor: default;
     pointer-events: none;
-    
+
     & > .label { color: color(neutral, dark); }
 
     & > .select > .field {

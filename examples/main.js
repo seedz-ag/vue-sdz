@@ -6,7 +6,9 @@ import Example from './Index.vue'
 
 import { VueCoeFeedback } from 'vue-coe-feedback'
 
+import 'sdz-icons/index.css'
 import '../src/styles/_index.scss'
+// import '../node_modules/sdz-icons/index.css'
 
 Vue.config.productionTip = false
 Vue.use(VueCoeFeedback, store, { delay: 3000 })

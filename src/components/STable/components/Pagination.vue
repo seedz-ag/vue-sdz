@@ -1,35 +1,64 @@
 <template>
   <div class="pagination">
-    <slot name="pagination" :pages="pages">
+    <slot name="pagination">
       <div class="pages">
-        <span class="first" @click="$emit('to-first')">«</span>
+        <s-input
+          :mask="['##########']"
+          :value="page"
 
-        <button
-          v-for="(_, index) in pages"
-          :key="index + '…'"
-          :class="['page', { '-page': index + 1 === page }]"
-          @click="$emit('change-page', _)"
-        >
-          {{ _.handler || _.page }}
-        </button>
+          @input="v => $emit('change:page', v)"
+        />
 
-        <span class="last" @click="$emit('to-last')">»</span>
+        / {{ rows.length }}
+
+        <s-icon
+          size="23"
+          class="previous"
+          icon="sdz-chevron-left"
+
+          :disabled="!canBack"
+
+          @click.native="canBack && $emit('previous')"
+        />
+
+        <s-icon
+          size="23"
+          class="next"
+          icon="sdz-chevron-right"
+
+          :disabled="!canGo"
+
+          @click.native="canGo && $emit('next')"
+        />
       </div>
     </slot>
   </div>
 </template>
 
 <script>
+import SIcon from '../../SIcon/Index.vue'
+import SInput from '../../SInput/Index.vue'
+
 export default {
   name: 'Pagination',
+
+  components: { SIcon, SInput },
+
   props: {
-    pages: {
-      type: Array,
-      required: true
+    page: [Number, String],
+
+    perPage: [Number, String],
+
+    rows: { type: Array, required: true }
+  },
+
+  computed: {
+    canBack () {
+      return +this.page !== 1
     },
-    page: {
-      type: Number,
-      required: true
+
+    canGo () {
+      return +this.page < Math.ceil(this.rows.length / this.perPage)
     }
   }
 }
@@ -38,40 +67,23 @@ export default {
 <style lang="scss">
 .pagination {
   display: flex;
-  margin-top: 20px;
   justify-content: center;
+
   & > .pages {
     display: flex;
     max-width: 500px;
     align-items: center;
-    & > .first {
-      cursor: pointer;
-      padding-right: 10px;
+
+    & > .previous { margin-left: 20px; cursor: pointer; }
+
+    & > .s-input > .input {
+      width: 50px;
+      height: 30px;
+      text-indent: 10px;
+      margin-right: 15px;
     }
-    & > .page {
-      width: 25px;
-      height: 25px;
-      display: flex;
-      margin: 0 5px;
-      border-radius: 15px;
-      justify-content: center;
-      &:hover {
-        color: white;
-        background-color: black;
-      }
-      &:focus { outline: unset; }
-    }
-    & .-page {
-      background-color: red;
-      &:hover {
-        color: white;
-        background-color: red;
-      }
-    }
-    & > .last {
-      cursor: pointer;
-      padding-left: 10px;
-    }
+
+    & > .next { margin-left: 10px; cursor: pointer; }
   }
 }
 </style>

@@ -1,61 +1,153 @@
 <template>
   <div v-if="hasValid" class="s-table">
     <slot name="actions">
-      <filters label="Filtrar por: " :search="search" v-on="$listeners" />
+      <filters v-if="searchable" label="Filtrar por: " :search="search" v-on="$listeners" />
     </slot>
 
-    <div v-if="!isEmpty" class="table-container">
+    <div v-if="rows.length" class="table-container">
       <table class="table">
         <thead class="thead">
           <tr class="tr-col">
             <th v-if="selectable" class="th-col-selectable">
-              <input type="checkbox" @click="$selectedAll">
+              <input type="checkbox" @change="selectedAll">
             </th>
 
             <slot name="col" :cols="cols">
               <th
-                v-for="({ label, row }, index) in cols"
+                v-for="({ text, row, sortable }, index) in cols"
                 :key="index"
+
                 class="th-col"
               >
                 <slot name="icon-sortable">
-                  <span v-if="sortable" class="icon-sortable-all" @click="$handlerSort(row)">
-                    {{ iconToSort }}
-                  </span>
+                  <div class="td-col-container">
+                    <span class="label">{{ text }}</span>
+
+                    <s-icon
+                      v-if="sortable"
+
+                      size="16"
+                      :icon="assortment[row] === 'increase' ? 'sdz-chevron-up' : 'sdz-chevron-down'"
+
+                      @click.native="sort(row)"
+                    />
+                  </div>
                 </slot>
-                <span>{{ label }}</span>
               </th>
             </slot>
+
+            <th class="actions" />
           </tr>
         </thead>
 
-        <s-shadowed :has-bottom-shadow="false">
-          <tbody ref="tbody" class="tbody">
-            <tr v-for="(row, index) in rows" :key="index" class="tr-row">
-              <td v-if="selectable" class="td-row-selectable">
-                <input type="checkbox" :value="row" v-model="checkeds" @change="$selected(row)">
+        <tbody class="tbody">
+          <tr
+            v-for="(row, index) in dataRows"
+
+            :key="index"
+            :class="classTrRow(index)"
+
+            @mouseleave="hoverLine = null"
+            @mouseenter="hoverLine = index"
+          >
+            <td v-if="selectable" class="td-row selectable">
+              <input type="checkbox" :value="row" v-model="checkeds" @change="$emit('selected', checkeds)">
+              <!-- <s-checkbox :value="row" v-model="checkeds" @input="$selected(row)" /> -->
+            </td>
+
+            <slot name="row" :row="row">
+              <td
+                v-for="(field, fieldIndex) in Object.keys(row)"
+
+                :key="fieldIndex"
+                :cols="cols"
+
+                class="td-row"
+
+                v-bind="$attrs"
+              >
+                <span class="row">{{ row[field] }}</span>
               </td>
+            </slot>
 
-              <slot name="row" :rows="row" :cols="cols">
-                <td v-for="(_, _index) in cols.length" :key="_index" ref="" class="td-row">
-                  <span class="row">{{ getRow(row, _index) }}</span>
-                </td>
-              </slot>
-            </tr>
-          </tbody>
-        </s-shadowed>
+            <td class="actions">
+              <s-icon
+                v-show="actions.length && hoverLine === index"
 
-        <slot name="tfoot" />
+                ref="action"
+                size="25"
+                icon="sdz-more-horizzontal"
+
+                @click.native.stop="activeAction = index"
+              />
+
+              <s-popover
+                v-if="activeAction === index"
+
+                align="left"
+                class="popover"
+
+                :target="$refs['action'][index]"
+
+                @handler="activeAction = null"
+              >
+                <div
+                  v-for="action in actions"
+
+                  :key="action.label"
+
+                  class="action"
+
+                  @click="$emit('action', { action: action.label, row }); activeAction = null"
+                >
+                  <s-icon v-if="action.icon" :icon="action.icon" />
+                  <span class="label">{{ action.label }}</span>
+                </div>
+              </s-popover>
+            </td>
+          </tr>
+        </tbody>
+
+        <slot name="tfoot">
+          <div v-if="paginable" class="tfoot">
+            <div class="per-page">
+              Linhas por página: {{ perPage }}
+
+              <s-icon ref="target" icon="sdz-chevron-up" @click.native="showPages = true" />
+
+              <s-popover
+                v-if="showPages"
+
+                class="popover"
+
+                align="center"
+                position="top"
+
+                :arrow-spacing="10"
+                :target="$refs['target']"
+
+                @handler="showPages = false"
+              >
+                <div
+                  v-for="n in [100, 75, 50, 25, 10]"
+                  :key="n"
+                  @click="changePerPage(n)"
+                >
+                  Mostrar {{ n }}
+                </div>
+              </s-popover>
+            </div>
+
+            <pagination
+              :rows="rows"
+              :page="page"
+              :per-page="perPage"
+
+              v-on="$listeners"
+            />
+          </div>
+        </slot>
       </table>
-
-      <pagination
-        v-if="paginable"
-        :pages="pages"
-        :page="page"
-        @to-first="toFirst"
-        @change-page="changePage"
-        @to-last="toLast"
-      />
     </div>
 
     <div v-else>
@@ -71,23 +163,27 @@
 </template>
 
 <script>
-// components
-import SShadowed from '../SShadowed/Index.vue'
-import Filters from './components/Filters.vue'
+import SPopover from '../SPopover/Index.vue'
 import Pagination from './components/Pagination.vue'
+// import SCheckbox from '../SCheckbox/Index.vue'
+// import Filters from './components/Filters.vue'
 
-// mixins
+import toggleOrder from './helpers/sort.js'
 import warnings from './mixins/warnings'
-import sortable from './mixins/sortable'
-import selectable from './mixins/selectable'
-import paginable from './mixins/paginable'
+// import sortable from './mixins/sortable'
 
 export default {
   name: 'STable',
 
-  components: { SShadowed, Pagination, Filters },
+  components: {
+    SPopover,
+    Pagination,
+    // Filters,
+    // SCheckbox,
+    SIcon: () => import('../SIcon/Index.vue').then(c => c.default)
+  },
 
-  mixins: [ warnings, sortable, selectable, paginable ],
+  mixins: [ warnings ],
 
   props: {
     cols: {
@@ -100,42 +196,107 @@ export default {
       required: true
     },
 
-    search: String,
+    actions: {
+      type: Array,
+      default: () => []
+    },
 
-    searchParams: {
-      // array of strings
-      // required if paginable
-      type: Array
-    }
+    paginable: Boolean,
+
+    selectable: Boolean,
+
+    searchable: Boolean,
+
+    page: {
+      type: [Number, String],
+      validator: (page) => !!page,
+      default: 1
+    },
+
+    perPage: {
+      type: [Number, String],
+      validator: limit => limit > 2,
+      default: 10
+    },
   },
 
   data () {
     return {
-      iconToSort: '▼'
+      internalRows: [],
+
+      checkeds: [],
+      allChecked: false,
+
+      assortment: {},
+
+      hoverLine: null,
+      showPages: false,
+      activeAction: null
     }
   },
 
-  computed: {
-    isEmpty () {
-      return !this.pages.length && this.search
-    },
+  created () {
+    this.internalRows = this.rows
 
-    dataTable () {
-      return this.paginable ? this.pagination.data : this.rows
+    this.assortment = this.cols.reduce((acc, item) => {
+      if (!item.sortable) return acc
+
+      acc[item.row] = 'increase'
+
+      return acc
+    }, {})
+  },
+
+  computed: {
+    dataRows () {
+      if (!this.paginable) return this.internalRows
+
+      return this.getPerPage(this.internalRows)
     }
   },
 
   methods: {
-    getRow (row, index) {
-      const props = this.cols.map(({ row }) => row)
+    getPerPage (data) {
+      return data.slice((this.page - 1) * (this.perPage + 1), (this.perPage + 1) * this.page)
+    },
 
-      return row[props[index]] || ''
+    classTrRow (row) {
+      return ['tr-row', { '--is-active-row': row === this.hoverLine }]
+    },
+
+    changePerPage (page) {
+      this.showPages = false
+      this.$emit('change:page', 1)
+      this.$emit('change:per-page', page)
+
+      // TODO: move to table top
+      // window.scrollBy({ top: 0, behavior: 'smooth' })
+    },
+
+    selectedAll () {
+      if (!this.allChecked) {
+        this.allChecked = true
+        this.checkeds = this.rows
+      } else {
+        this.allChecked = false
+        this.checkeds = []
+      }
+
+      this.$emit('selected', this.checkeds)
+    },
+
+    sort (row) {
+      this.assortment[row] = this.assortment[row] === 'increase' ? 'decrease' : 'increase'
+
+      this.internalRows = this.getPerPage(this.internalRows).sort(toggleOrder(row, this.assortment[row]))
     }
   }
 }
 </script>
 
 <style lang="scss">
+@import "./src/styles/_index.scss";
+
 .s-table > .table-container {
   @mixin table-config {
     width: 100%;
@@ -144,52 +305,121 @@ export default {
   }
 
   & > .table {
-    position: relative;
     width: 100%;
+    position: relative;
 
     & > .thead {
       @include table-config;
-      border: 1px solid black;
+
       width: 100%;
+      border-bottom: 1px solid color(base, light);
 
       & > .tr-col {
-        background-color: white;
+        background-color: color(neutral, base);
+        border-top: 1px solid color(base, light);
 
-        & > .th-col-selectable { width: 50px; }
+        & > .th-col-selectable { width: 30px; }
+
         & > .th-col {
+          padding: 15px;
           min-width: 100px;
 
-          & > .icon-sortable-all { cursor: pointer; }
-          & > .icon-sortable-one { cursor: pointer; }
+          & > .td-col-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & > .label {
+              margin-right: 10px;
+              font-size: $font-size-xxxs;
+              font-weight: $font-weight-bold;
+            }
+
+            & > .icon { cursor: pointer; }
+
+            // & > .icon-sortable-all { cursor: pointer; }
+            // & > .icon-sortable-one { cursor: pointer; }
+          }
+        }
+
+        & > .actions {
+          width: 10px;
         }
       }
     }
 
-    & > .shadowed {
+    & > .tbody {
+      overflow-y: scroll;
 
-      & > .tbody {
-        overflow-y: scroll;
-        display: block;
-        height: 600px;
+      & > .tr-row {
+        position: relative;
+        @include table-config;
 
-        & > .tr-row {
-          @include table-config;
+        // margin: 5px;
+        border-bottom: 1px solid color(base, light);
 
-          width: 100%;
-          border: 1px solid black;
+        & > .td-row {
+          padding: 10px 0;
+          text-align: center;
+          font-size: $font-size-xxs;
+        }
 
-          & > .td-row-selectable {
-            width: 50px;
-            text-align: center;
+        & > .actions {
+          width: 30px;
+          cursor: pointer;
 
-            &:first-child {
-              background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-              background-repeat: no-repeat;
-              background-size: 20px 100%;
+          & > .popover {
+            & > .action {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              cursor: pointer;
+              padding: 15px 30px;
+
+              &:hover {
+                color: color(primary, base);
+                background: color(neutral, light);
+              }
+
+              & > .label { margin-left: 10px; }
             }
           }
+        }
 
-          & > .td-row { text-align: center; }
+        & > .selectable {
+          width: 30px;
+
+          &:first-child {
+            background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+            background-repeat: no-repeat;
+            background-size: 20px 100%;
+          }
+        }
+      }
+
+      & > .--is-active-row { background: color(neutral, light); }
+    }
+
+    & > .tfoot {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 30px;
+
+      & > .per-page {
+        color: color(base, light);
+        font-size: $font-size-xxs;
+        font-weight: $font-weight-medium;
+
+        & > .popover > div {
+          padding: 10px;
+          cursor: pointer;
+
+          &:hover {
+            color: color(primary, base);
+            background: color(neutral, light);
+          }
         }
       }
     }
