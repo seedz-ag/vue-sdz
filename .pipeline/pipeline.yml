@@ -10,3 +10,5 @@ resources:
 
 extends:
   template: node/node.github.v1.yml@template
+  parameters:
+    RUN_HORUSEC: false
