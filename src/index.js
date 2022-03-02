@@ -48,7 +48,7 @@ export { default as STabber } from './components/STabber/Index.vue'
 export { default as SSkeleton } from './components/SSkeleton/Index.vue'
 export { default as SSearch } from './components/SSearch/Index.vue'
 export { default as SDrawer } from './components/SDrawer/Index.vue'
-export { default as SFormBuilder } from './components/SFormBuilder/Index.vue'
+// export { default as SFormBuilder } from './components/SFormBuilder/Index.vue'
 
 export { default as responsive } from './mixins/responsive.js'
 export { default as setupResponsive } from './mixins/setupResponsive.js'
