@@ -78,7 +78,7 @@ import Searchable from './mixins/searchable'
 
 import clickOutside from '../../directives/clickOutside'
 
-import matches from '../../helpers/matches'
+import matches from '../../helpers/matches/index.js'
 
 export default {
   components: { SCollapsible, SInputContainer },
