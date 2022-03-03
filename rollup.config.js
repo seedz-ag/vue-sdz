@@ -14,8 +14,10 @@ import { babel } from '@rollup/plugin-babel'
 const config = {
   input: 'src/index.js',
 
+  inlineDynamicImports: true,
+
   output: [
-    { format: 'cjs', file: 'dist/js/build.cjs.js' },
+    { format: 'cjs', file: 'dist/js/build.js', plugins: [terser()] },
     // { format: 'esm', file: 'dist/js/build.esm.js' },
     // {
     //   format: 'iife',
@@ -35,7 +37,7 @@ const config = {
       // processor: () => postcss([autoprefixer()])
     }),
 
-    terser(),
+    // terser(),
 
     vue({ css: false }),
 
