@@ -1,23 +1,24 @@
 import '../node_modules/sdz-icons/index.css'
 
-import * as mixins from './mixins/index.js'
-// import * as helpers from './helpers/index.js'
-import * as SComponents from './components/index.js'
+// import * as mixins from './mixins/index.js'
+// // import * as helpers from './helpers/index.js'
+// import * as SComponents from './components/index.js'
+// // remove components/index and replace to import.meta.glob approach
 
-const install = Vue => {
-  Object
-    .values(SComponents)
-    .forEach(component => Vue.use(component))
-}
+// const install = Vue => {
+//   Object
+//     .values(SComponents)
+//     .forEach(component => Vue.use(component))
+// }
 
-if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
+// if (typeof window !== 'undefined' && window.Vue) install(window.Vue)
 
 
-export default {
-  ...mixins,
-  ...install
-  // ...helpers
-}
+// export default {
+//   ...mixins,
+//   ...install
+//   // ...helpers
+// }
 
 // Register components individually
 export { default as SAvatar } from './components/SAvatar/Index.vue'
@@ -46,9 +47,9 @@ export { default as SSidebar } from './components/SSidebar/Index.vue'
 export { default as STable } from './components/STable/Index.vue'
 export { default as STabber } from './components/STabber/Index.vue'
 export { default as SSkeleton } from './components/SSkeleton/Index.vue'
+export { default as SFormBuilder } from './components/SFormBuilder/Index.vue'
 export { default as SSearch } from './components/SSearch/Index.vue'
 export { default as SDrawer } from './components/SDrawer/Index.vue'
-// export { default as SFormBuilder } from './components/SFormBuilder/Index.vue'
 
 export { default as responsive } from './mixins/responsive.js'
 export { default as setupResponsive } from './mixins/setupResponsive.js'
