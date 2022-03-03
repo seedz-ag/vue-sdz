@@ -7,7 +7,7 @@ import scss from 'rollup-plugin-scss'
 
 import commonjs from '@rollup/plugin-commonjs'
 
-import { terser } from 'rollup-plugin-terser'
+// import { terser } from 'rollup-plugin-terser'
 
 import { babel } from '@rollup/plugin-babel'
 
@@ -17,8 +17,16 @@ const config = {
   inlineDynamicImports: true,
 
   output: [
-    { format: 'cjs', file: 'dist/js/build.js', plugins: [terser()] },
-    // { format: 'esm', file: 'dist/js/build.esm.js' },
+    // {
+    //   format: 'cjs',
+    //   file: 'dist/js/build.cjs.js',
+    //   plugins: [terser()]
+    // },
+    {
+      format: 'esm',
+      file: 'dist/js/build.esm.js',
+      // plugins: [terser()]
+    },
     // {
     //   format: 'iife',
     //   file: 'dist/js/build.min.js',

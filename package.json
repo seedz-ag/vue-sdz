@@ -1,7 +1,7 @@
 {
   "name": "vue-sdz",
-  "version": "0.0.62",
-  "main": "dist/js/build.cjs.js",
+  "version": "0.0.63",
+  "main": "dist/js/build.esm.js",
   "private": false,
   "lint-staged": {
     "*.{js,vue}": [
