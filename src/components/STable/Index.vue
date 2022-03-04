@@ -235,6 +235,10 @@ export default {
     }
   },
 
+  watch: {
+    rows: { handler: 'setRows', immediate: true }
+  },
+
   created () {
     this.internalRows = this.rows
 
@@ -256,6 +260,10 @@ export default {
   },
 
   methods: {
+    setRows () {
+      this.internalRows = this.rows
+    },
+
     getPerPage (data) {
       return data.slice((this.page - 1) * (this.perPage + 1), (this.perPage + 1) * this.page)
     },
