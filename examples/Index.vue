@@ -79,7 +79,7 @@ export default {
           child: [
             { name: 'Button', redirect: '/vue-sdz/components/button' },
             { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
-            { name: 'FormBuilder', redirect: '/vue-sdz/components/formbuilder' },
+            // { name: 'FormBuilder', redirect: '/vue-sdz/components/formbuilder' },
             { name: 'Input', redirect: '/vue-sdz/components/input' },
             { name: 'Link', redirect: '/vue-sdz/components/link' },
             { name: 'Password', redirect: '/vue-sdz/components/password' },
