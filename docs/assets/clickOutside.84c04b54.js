@@ -1,0 +1,1 @@
+const e={"click-outside":{bind:function(t,n){const c=i=>{!t.contains(i.target)&&t!==i.target&&n.value(i)};t.__vueClickOutside__=c,document.addEventListener("click",c)},unbind:function(t){document.removeEventListener("click",t.__vueClickOutside__),t.__vueClickOutside__=null}}};export{e as c};
