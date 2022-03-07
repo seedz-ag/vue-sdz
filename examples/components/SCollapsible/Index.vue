@@ -1,19 +1,34 @@
 <template>
   <div class="s-collapsible-example">
-    <s-title size="title-1">Collapse</s-title>
-
-    <source-code file="SCollapsibleExample" comp="SCollapsible">
+    <!-- <source-code file="SCollapsibleExample" comp="SCollapsible">
       <s-button class="header" slot="header">header toggle</s-button>
       <div v-html="content" />
-    </source-code>
+    </source-code> -->
 
+    <s-title size="title-1">Collapse</s-title>
     <s-box class="flex-inline flex-center">
       <s-button outlined @click="increased()">increase content</s-button>
 
-      <s-collapsible :is-opened="isOpened" @toggle="v => isOpened = v">
+      <s-collapsible :is-opened="isOpened1" @toggle="v => isOpened1 = v">
         <s-button class="header" slot="header">header toggle</s-button>
 
         <div v-html="content" />
+      </s-collapsible>
+    </s-box>
+
+    <s-title size="title-1">Collapse Without Header</s-title>
+    <s-box class="flex-inline flex-center">
+      <s-button outlined @click="increased()">increase content</s-button>
+
+      <s-button @click="isOpened2 = !isOpened2">header toggle</s-button>
+      <s-collapsible no-header :is-opened="isOpened2" @toggle="v => isOpened2 = v">
+        <s-button class="header" slot="header">header toggle</s-button>
+
+        <div class="item">11111</div>
+        <div class="item">22222</div>
+        <div class="item">33333</div>
+        <div class="item">44444</div>
+        <div class="item">55555</div>
       </s-collapsible>
     </s-box>
   </div>
@@ -24,16 +39,23 @@ import SButton from '../../../src/components/SButton/Index.vue'
 import SCollapsible from '../../../src/components/SCollapsible/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
-import SourceCode from '../SourceCode/Index.vue'
+// import SourceCode from '../SourceCode/Index.vue'
 
 export default {
   name: 'SCollapsibleExample',
 
-  components: { SButton, SCollapsible, SBox, STitle, SourceCode },
+  components: {
+    SButton,
+    SCollapsible,
+    SBox,
+    STitle,
+    // SourceCode
+  },
 
   data () {
     return {
-      isOpened: true,
+      isOpened1: false,
+      isOpened2: false,
       content: 'initial content!'
     }
   },
