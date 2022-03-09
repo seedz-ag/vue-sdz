@@ -25,6 +25,31 @@
       />
     </s-box>
 
+    <s-title size="title-1">Table (dynamic)</s-title>
+    <s-box>
+      <s-table
+        paginable
+        selectable
+
+        :cols="cols2"
+        :rows="tableRows2"
+        :page="page"
+        :per-page="perPage"
+        :sortable="['name', 'sagacity']"
+        :actions="[{ label: 'Editar' }, { label: 'Remover' }]"
+
+        @next="page++"
+        @previous="page--"
+        @change:page="v => page = v"
+
+        @sort="sort"
+        @action="action"
+        @change:per-page="v => perPage = v"
+
+        @selected="v => selecteds = v"
+      />
+    </s-box>
+
     <s-title size="title-1">Table (scoped)</s-title>
     <s-box>
       <s-table :cols="cols" :rows="tableRows">
@@ -63,6 +88,8 @@ export default {
     return {
       cols,
       rows,
+      cols2: [],
+      rows2: [],
       page: 1,
       perPage: 10,
       search: '',
@@ -70,11 +97,32 @@ export default {
     }
   },
 
+  created () {
+    const myInit = { method: 'GET', headers: new Headers() }
+    const query = 'SELECT * FROM integration-data-inspection'
+
+    fetch(`https://sdz-int-panel-8579.dev.seedz.ag/inspection?query=${query}`, myInit)
+      .then((response) => response.json())
+      .then((data) => {
+        const cols = Object.keys(data?.[0] || {}).map((key) => ({ text: key, row: key }))
+        const rows = data
+
+        this.cols2 = cols
+        this.rows2 = rows
+      })
+  },
+
   computed: {
     tableRows () {
       if (!this.search) return this.rows
 
       return findByInclusive(this.rows, this.search, 'name')
+    },
+
+    tableRows2 () {
+      if (!this.search) return this.rows2
+
+      return findByInclusive(this.rows2, this.search, 'name')
     }
   },
 
@@ -107,6 +155,7 @@ export default {
 
 <style lang="scss">
 .s-table-example {
+  width: 100%;
   height: 600px;
 }
 </style>
