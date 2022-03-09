@@ -4,7 +4,7 @@
       <filters v-if="searchable" label="Filtrar por: " :search="search" v-on="$listeners" />
     </slot>
 
-    <div v-if="rows.length" class="table-container">
+    <div class="table-container">
       <table class="table">
         <thead class="thead">
           <tr class="tr-col">
@@ -40,7 +40,7 @@
           </tr>
         </thead>
 
-        <tbody class="tbody">
+        <tbody v-if="rows.length" class="tbody">
           <tr
             v-for="(row, index) in dataRows"
 
@@ -108,55 +108,55 @@
           </tr>
         </tbody>
 
-        <slot name="tfoot">
-          <div v-if="paginable" class="tfoot">
-            <div class="per-page">
-              Linhas por página: {{ perPage }}
-
-              <s-icon ref="target" icon="sdz-chevron-up" @click.native="showPages = true" />
-
-              <s-popover
-                v-if="showPages"
-
-                class="popover"
-
-                align="center"
-                position="top"
-
-                :arrow-spacing="10"
-                :target="$refs['target']"
-
-                @handler="showPages = false"
-              >
-                <div
-                  v-for="n in [100, 75, 50, 25, 10]"
-                  :key="n"
-                  @click="changePerPage(n)"
-                >
-                  Mostrar {{ n }}
-                </div>
-              </s-popover>
-            </div>
-
-            <pagination
-              :rows="rows"
-              :page="page"
-              :per-page="perPage"
-
-              v-on="$listeners"
-            />
-          </div>
-        </slot>
+        <div v-else class="empty">
+          <slot name="empty">EMPTY STATE</slot>
+        </div>
       </table>
     </div>
 
-    <div v-else>
-      EMPTY STATE
-    </div>
+    <slot name="tfoot">
+      <tfoot v-if="paginable" class="tfoot">
+        <div class="per-page">
+          Linhas por página: {{ perPage }}
+
+          <s-icon ref="target" icon="sdz-chevron-up" @click.native="showPages = true" />
+
+          <s-popover
+            v-if="showPages"
+
+            class="popover"
+
+            align="center"
+            position="top"
+
+            :arrow-spacing="10"
+            :target="$refs['target']"
+
+            @handler="showPages = false"
+          >
+            <div
+              v-for="n in [100, 75, 50, 25, 10]"
+              :key="n"
+              @click="changePerPage(n)"
+            >
+              Mostrar {{ n }}
+            </div>
+          </s-popover>
+        </div>
+
+        <pagination
+          :rows="rows"
+          :page="page"
+          :per-page="perPage"
+
+          v-on="$listeners"
+        />
+      </tfoot>
+    </slot>
   </div>
 
   <div v-else class="empty-state">
-    <slot name="empty">
+    <slot name="invalid">
       error: invalid table!
     </slot>
   </div>
@@ -265,7 +265,7 @@ export default {
     },
 
     getPerPage (data) {
-      return data.slice((this.page - 1) * (this.perPage + 1), (this.perPage + 1) * this.page)
+      return data.slice((this.page - 1) * this.perPage, this.perPage * this.page)
     },
 
     classTrRow (row) {
@@ -305,129 +305,123 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-.s-table > .table-container {
-  @mixin table-config {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-  }
+.s-table {
+  & > .table-container {
+    overflow-x: scroll;
 
-  & > .table {
-    width: 100%;
-    position: relative;
-
-    & > .thead {
-      @include table-config;
-
+    & > .table {
       width: 100%;
-      border-bottom: 1px solid color(base, light);
+      position: relative;
 
-      & > .tr-col {
-        background-color: color(neutral, base);
-        border-top: 1px solid color(base, light);
+      & > .thead {
+        table-layout: fixed;
+        display: table-row-group;
 
-        & > .th-col-selectable { width: 30px; }
+        & > .tr-col {
+          & > .th-col-selectable { width: 30px; }
 
-        & > .th-col {
-          padding: 15px;
-          min-width: 100px;
+          & > .th-col {
+            padding: 15px;
+            min-width: 100px;
 
-          & > .td-col-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            & > .label {
-              margin-right: 10px;
-              font-size: $font-size-xxxs;
-              font-weight: $font-weight-bold;
-            }
-
-            & > .icon { cursor: pointer; }
-
-            // & > .icon-sortable-all { cursor: pointer; }
-            // & > .icon-sortable-one { cursor: pointer; }
-          }
-        }
-
-        & > .actions {
-          width: 10px;
-        }
-      }
-    }
-
-    & > .tbody {
-      overflow-y: scroll;
-
-      & > .tr-row {
-        position: relative;
-        @include table-config;
-
-        // margin: 5px;
-        border-bottom: 1px solid color(base, light);
-
-        & > .td-row {
-          padding: 10px 0;
-          text-align: center;
-          font-size: $font-size-xxs;
-        }
-
-        & > .actions {
-          width: 30px;
-          cursor: pointer;
-
-          & > .popover {
-            & > .action {
+            & > .td-col-container {
               display: flex;
               align-items: center;
               justify-content: center;
 
-              cursor: pointer;
-              padding: 15px 30px;
-
-              &:hover {
-                color: color(primary, base);
-                background: color(neutral, light);
+              & > .label {
+                margin-right: 10px;
+                font-size: $font-size-xxxs;
+                font-weight: $font-weight-bold;
               }
 
-              & > .label { margin-left: 10px; }
+              & > .icon { cursor: pointer; }
+
+              // & > .icon-sortable-all { cursor: pointer; }
+              // & > .icon-sortable-one { cursor: pointer; }
+            }
+          }
+
+          & > .actions { width: 10px; }
+        }
+      }
+
+      & > .tbody {
+        // flex: 1;
+        // display: block;
+        // overflow-y: auto;
+
+        & > .tr-row {
+          width: unset;
+          position: unset;
+          display: table-row;
+
+          // margin: 5px;
+          border-bottom: 1px solid color(base, light);
+
+          & > .td-row {
+            padding: 10px 0;
+            text-align: center;
+            font-size: $font-size-xxs;
+          }
+
+          & > .actions {
+            width: 30px;
+            cursor: pointer;
+
+            & > .popover {
+              & > .action {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                cursor: pointer;
+                padding: 15px 30px;
+
+                &:hover {
+                  color: color(primary, base);
+                  background: color(neutral, light);
+                }
+
+                & > .label { margin-left: 10px; }
+              }
+            }
+          }
+
+          & > .selectable {
+            width: 30px;
+
+            &:first-child {
+              background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+              background-repeat: no-repeat;
+              background-size: 20px 100%;
             }
           }
         }
 
-        & > .selectable {
-          width: 30px;
-
-          &:first-child {
-            background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-            background-repeat: no-repeat;
-            background-size: 20px 100%;
-          }
-        }
+        & > .--is-active-row { background: color(neutral, light); }
       }
-
-      & > .--is-active-row { background: color(neutral, light); }
     }
+  }
 
-    & > .tfoot {
-      display: flex;
-      justify-content: space-between;
+  & > .tfoot {
+    display: flex;
+    justify-content: space-between;
 
-      margin-top: 30px;
+    margin-top: 30px;
 
-      & > .per-page {
-        color: color(base, light);
-        font-size: $font-size-xxs;
-        font-weight: $font-weight-medium;
+    & > .per-page {
+      color: color(base, light);
+      font-size: $font-size-xxs;
+      font-weight: $font-weight-medium;
 
-        & > .popover > div {
-          padding: 10px;
-          cursor: pointer;
+      & > .popover > div {
+        padding: 10px;
+        cursor: pointer;
 
-          &:hover {
-            color: color(primary, base);
-            background: color(neutral, light);
-          }
+        &:hover {
+          color: color(primary, base);
+          background: color(neutral, light);
         }
       }
     }
