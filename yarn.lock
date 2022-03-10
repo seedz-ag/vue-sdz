@@ -10439,10 +10439,10 @@ vue-coe-image@^0.2.3:
   resolved "https://registry.yarnpkg.com/vue-coe-image/-/vue-coe-image-0.2.3.tgz#b5fa0279339f54b741eddc1314340f178f374c9f"
   integrity sha512-EkTgbFjssdXtT2Wa4APvmw7cqgsd3UfIe2iPsDDfTWN/IFrtGNYiIkAh+EH3G4RF2ftLdaATBdtEzDXV2NiQFg==
 
-vue-coerousel@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vue-coerousel/-/vue-coerousel-1.0.1.tgz#ca4b300ea654e560fcfcf38e9741d88fa0d47155"
-  integrity sha512-/JdYavUNZAhRB2UrR+H2cb1qNIkCOC2fUwgKqlS55JdvIh5pQqO35m4mRNbDzSm9J26N3KUK8jB6z5YZnzjwNw==
+vue-coerousel@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue-coerousel/-/vue-coerousel-1.0.5.tgz#abe932af689dace0cad7977847e19900b4f0f06f"
+  integrity sha512-SULpd88IwCMyP54HypovKaSuDKNh7QUiE7DnzKLOm84nsHH/13FUE4gQzamR/dW06Xh/FWJHYXWuoUmxiF43Lw==
 
 vue-demi@^0.12.0:
   version "0.12.1"
