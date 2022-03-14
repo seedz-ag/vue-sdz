@@ -134,25 +134,19 @@ export default {
     },
 
     listeners () {
-      return {
-        ...this.$listeners,
+      const emitInput = (ev) => {
+        const targetValue = typeof (ev.target || {}).value === 'string'
+          ? (ev.target || {}).value
+          : ev
 
-        input: e => {
-          const v = e?.target?.value
+        const value = this.isMoney
+          ? ev
+          : this.raw ? convertToRaw(targetValue) : targetValue
 
-          this.$emit('input', this.isMoney
-            ? e
-            : this.raw ? convertToRaw(v) : v)
-        },
-
-        focus: e => {
-          this.$emit('focus', e)
-        },
-
-        blur: e => {
-          this.$emit('blur', e)
-        }
+        if (value !== this.value) this.$emit('input', value)
       }
+
+      return { ...this.$listeners, input: emitInput, update: emitInput }
     },
 
     inputAttrs () {
