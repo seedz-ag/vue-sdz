@@ -21,11 +21,6 @@ describe('SFeedbacks', () => {
   test('is instantiated', () => {
     expect(cmp.exists()).toBeTruthy()
   })
-  
-
-  test("has the expected html structure", () => {
-    expect(cmp.element).toMatchSnapshot();
-  })
 
   test('check count messages', () => {
 
