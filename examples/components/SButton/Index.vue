@@ -5,11 +5,11 @@
     <source-code file="SButtonExample" comp="SButton">Example</source-code>
 
     <s-title size="title-2">Stats</s-title>
-
     <s-box>
       <div class="flex-inline">
         <s-button primary>primary</s-button>
-        <s-button grey>Secondary</s-button>
+        <s-button success>primary</s-button>
+        <s-button error>primary</s-button>
         <s-button loading>loading</s-button>
         <s-button disabled>disabled</s-button>
         <s-button link>link button</s-button>
@@ -53,32 +53,10 @@
 
     <pre-code :code="code4" />
 
-    <s-title size="title-2">Enhancers</s-title>
-    <s-box>
-      <s-button icon="sdz-check">icon</s-button>
+    <s-title size="title-2">Transparent + outlined + white</s-title>
+    <s-box class="transparent-box">
+      <s-button transparent outlined white>icon</s-button>
     </s-box>
-
-    <pre-code :code="code5" />
-
-    <s-title size="title-2">Button Group</s-title>
-    <p class="subtitle">
-      Button Group é um conjunto de botões onde uma das ações é a mais prioritária, isso fica visualmente evidente através dos seus diferentes pesos.
-    </p>
-    <p class="subtitle">
-      Não utilizar o botão primário mais de uma vez.
-    </p>
-    <p class="subtitle">
-      Regras de aplicação:
-    </p>
-
-    <s-box>
-      <div class="flex-inline">
-        <s-button outlined>Cancelar</s-button>
-        <s-button primary>Salvar</s-button>
-      </div>
-    </s-box>
-
-    <pre-code :code="code6" />
   </div>
 </template>
 
@@ -91,9 +69,9 @@ import PreCode from '../PreCode/Index.vue'
 
 export default {
   components: { SButton, SBox, STitle, SourceCode, PreCode },
-  data(){
-    return{
-      code1:`<div class="flex-inline">
+  data () {
+    return {
+      code1: `<div class="flex-inline">
         <s-button primary>primary</s-button>
         <s-button grey>Secondary</s-button>
         <s-button loading>loading</s-button>
@@ -104,22 +82,17 @@ export default {
       <div class="flex-line">
         <s-button full-width>full-width</s-button>
       </div>`,
-      code2:`<s-button small>small</s-button>
+      code2: `<s-button small>small</s-button>
       <s-button default>default</s-button>
       <s-button large>large</s-button>`,
-      code3:`<s-button outlined>outlined</s-button>
+      code3: `<s-button outlined>outlined</s-button>
       <s-button outlined disabled>outlined disabled</s-button>
       <s-button outlined icon="sdz-check">outlined icon</s-button>
       <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>`,
-      code4:`<s-button rounded>outlined</s-button>
+      code4: `<s-button rounded>outlined</s-button>
       <s-button rounded disabled>rounded disabled</s-button>
       <s-button rounded icon="sdz-check">rounded icon</s-button>
       <s-button rounded icon="sdz-check" disabled>rounded disabled icon</s-button>`,
-      code5:'<s-button icon="sdz-check">icon</s-button>',
-      code6:`<div class="flex-inline">
-        <s-button outlined>Cancelar</s-button>
-        <s-button primary>Salvar</s-button>
-      </div>`
     }
   }
 }
@@ -128,6 +101,7 @@ export default {
 <style lang="scss">
 .s-button-example {
   & > .s-button { margin-bottom: 30px; }
+  & > .transparent-box { background-image: url('https://i.picsum.photos/id/1026/200/300.jpg?hmac=Thvj4aJ_VnAGT6DKAcy1yTs100zlstJTyImDWphGDFI'); }
 }
 
 .flex-inline .c-link.s-button{
