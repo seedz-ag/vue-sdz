@@ -339,8 +339,8 @@ export default {
     border: 1px solid color(neutral, base);
 
     & > .text { color: color(neutral, base); }
-    &:hover { background: color(neutral, dark); }
-    &:active { background: color(neutral, dark); }
+    &:hover { background: none !important; }
+    &:active { background: none !important; }
   }
 
   // loading transitions
