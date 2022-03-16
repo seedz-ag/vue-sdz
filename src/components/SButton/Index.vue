@@ -77,7 +77,7 @@ export default {
 
     dark: Boolean,
 
-    grey: Boolean,
+    white: Boolean,
 
     error: Boolean,
 
@@ -87,7 +87,9 @@ export default {
 
     rounded: Boolean,
 
-    loading: Boolean
+    loading: Boolean,
+
+    transparent: Boolean
   },
 
   computed: {
@@ -95,18 +97,18 @@ export default {
       return [ 's-button',
         {
           '--link': this.link,
-          '--grey': this.grey,
+          '--dark': this.dark,
           '--small': this.small,
           '--large': this.large,
           '--error': this.error,
-          '--dark': this.dark,
-          // '--primary': this.primary,
+          '--white': this.white,
           '--success': this.success,
           '--rounded': this.rounded,
           '--loading': this.loading,
           '--disabled': this.disabled,
           '--outlined': this.outlined,
           '--full-width': this.fullWidth,
+          '--transparent': this.transparent,
           '--icon-only': !this.$slots.default,
           '--has-icon': this.icon && this.$slots.default
         }
@@ -142,41 +144,9 @@ export default {
               opacity .3s,
               background .3s;
 
-  &::before { background: color(primary, base); }
   &:hover { background: color(primary, light); }
   &:active { background: color(primary, dark); }
-
-  // &::before {
-  //   content: '';
-  //   display: block;
-
-  //   position: absolute;
-  //   left: 50%;
-  //   top: calc(50% + 4px);
-
-  //   width: 93%;
-  //   height: 75%;
-
-  //   filter: blur(8px);
-  //   opacity: $opacity-intense;
-  //   transition: filter .3s, opacity .3s;
-  //   transform: translateX(-50%) translateY(-50%) translateZ(-1px);
-  // }
-
-  // &::after {
-  //   content: '';
-  //   display: block;
-
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-
-  //   width: 100%;
-  //   height: 100%;
-
-  //   opacity: 0;
-  //   transition: opacity .3s;
-  // }
+  &::before { background: color(primary, base); }
 
   &:hover {
     &::before {
@@ -188,12 +158,6 @@ export default {
   }
 
   &:active::before, &::after { display: none; }
-
-  & > .icon {
-    flex-shrink: 0;
-    transition: filter .3s;
-    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, .3));
-  }
 
   &.--has-icon {
     & > .text { margin-left: 15px; }
@@ -306,120 +270,46 @@ export default {
     & > .text { font-size: $font-size-sm; }
   }
 
-  &.--grey {
-    background: color(neutral, light);
-
-    &::before { background: color(neutral, light); }
-    &:hover { background: color(neutral, medium); }
-    &:active { background: color(neutral, dark) !important; }
-  }
-
-  // &.--primary {
-  //   background: color(primary, base);
-
-  //   &::before { background: color(primary, base); }
-  //   &:hover { background: color(primary, light); }
-  //   &:active { background: map-get($primary-color, base-48) !important; }
-  // }
-
-  &.--success {
-    background: color(positive, base);
-
-    &::before { background: color(positive, base); }
-    &:hover { background: color(positive, medium); }
-    &:active { background: color(positive, dark) !important; }
-  }
-
-  &.--error {
-    background: color(negative, base);
-
-    &::before { background: color(negative, base); }
-    &:hover { background: color(negative, medium); }
-    &:active { background: color(negative, dark) !important; }
-  }
-
-  &.--full-width { width: 100%; }
-
-  &.--outlined {
-    opacity: 1;
-    background: color(neutral, base);
-    border: 1px solid color(primary, base);
-
-    &.--has-icon {
-      & > .icon { color: color(primary, base); }
-    }
-
-    &.--disabled {
-      background: color(neutral, base);
-      border-color: color(neutral, light);
-
-      & > .text { color: color(neutral, light); }
-      & > .icon {
-        color: color(neutral, dark);
-        //background-clip: text;
-        //background: color(neutral, dark);
-        //-webkit-background-clip: text;
-      }
-    }
-
-    &::before, &::after { display: none; }
-
-    & > .icon { filter: unset; }
-    & > .text { color: color(primary, base); }
-    & > .loader {}
-
-    &:hover { background: color(neutral, light); }
-    &:active { background: color(neutral, medium); }
-  }
-
-&.--rounded {
-    opacity: 1;
-    background: color(neutral, base);
-    border: 1px solid color(primary, base);
-    border-radius: 50px;
-
-    &.--has-icon {
-      & > .icon { color: color(primary, base); }
-    }
-
-    &.--disabled {
-      background: color(neutral, base);
-      border-color: color(neutral, light);
-
-      & > .text { color: color(neutral, light); }
-      & > .icon {
-        color: color(neutral, dark);
-        //background-clip: text;
-        //background: color(neutral, dark);
-        //-webkit-background-clip: text;
-      }
-    }
-
-    &::before, &::after { display: none; }
-
-    & > .icon { filter: unset; }
-    & > .text { color: color(primary, base); }
-    & > .loader {}
-
-    &:hover { background: color(neutral, light); }
-    &:active { background: color(neutral, medium); }
+  &.--full-width {
+    width: 100%;
   }
 
   &.--disabled {
     user-select: none;
     pointer-events: none;
-    // cursor: not-allowed;
     background: color(neutral, dark);
-    border-color: color(neutral, light);
+    border-color: color(neutral, dark);
 
-    &::before, &::after { opacity: 0; }
-
-    & > .icon {}
+    & > .icon { color: color(neutral, base); }
 
     & > .text {
       text-shadow: unset;
+      color: color(neutral, base);
     }
   }
+
+  &.--outlined {
+    background: color(neutral, base);
+    border: 1px solid color(primary, base);
+
+    & > .text { color: color(primary, base); }
+
+    &.--disabled {
+      border-color: color(neutral, dark);
+
+      & > .icon { color: color(neutral, base); }
+      & > .text { color: color(neutral, dark); }
+    }
+
+    &:hover { background: color(neutral, light); }
+    &:active { background: color(neutral, medium); }
+  }
+
+  &.--rounded {
+    border-radius: 50px;
+  }
+
+  &.--transparent { background: transparent !important; }
 
   &.--loading {
     pointer-events: none;
@@ -427,6 +317,30 @@ export default {
 
     & > .text, .icon { visibility: hidden; }
     // & > .loader > .loader > path { fill: white; }
+  }
+
+  &.--success {
+    background: color(positive, base);
+
+    &::before { background: color(positive, base); }
+    &:hover { background: color(positive, medium); }
+    &:active { background: color(positive, dark); }
+  }
+
+  &.--error {
+    background: color(negative, base);
+
+    &::before { background: color(negative, base); }
+    &:hover { background: color(negative, medium); }
+    &:active { background: color(negative, dark); }
+  }
+
+  &.--white {
+    border: 1px solid color(neutral, base);
+
+    & > .text { color: color(neutral, base); }
+    &:hover { background: color(neutral, dark); }
+    &:active { background: color(neutral, dark); }
   }
 
   // loading transitions
