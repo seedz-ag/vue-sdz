@@ -130,7 +130,14 @@ export default {
         'sdz-bar-code',
         'sdz-arrow-left',
         'sdz-archive',
-        'sdz-store'
+        'sdz-store',
+        'sdz-menu',
+        'sdz-send',
+        'sdz-plus',
+        'sdz-minus',
+        'sdz-edit',
+        'sdz-external-link',
+        'sdz-dashboard',
       ]
     }
   }
