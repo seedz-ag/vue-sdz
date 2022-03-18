@@ -77,7 +77,7 @@
     "@vue/composition-api": "^1.4.6",
     "@vuelidate/core": "^2.0.0-alpha.34",
     "@vuelidate/validators": "^2.0.0-alpha.26",
-    "sdz-icons": "^0.0.5",
+    "sdz-icons": "^0.0.6",
     "v-money": "^0.8.1",
     "vue-coe-feedback": "^0.1.5",
     "vue-coe-image": "^0.2.3",
