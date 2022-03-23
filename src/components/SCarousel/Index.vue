@@ -36,10 +36,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./src/styles/_index.scss";
+
 .s-carousel {
   & > .controller {
     cursor: pointer;
     background: #FFFFFF;
+    border-color: color(primary, base);
+
+    & > .icon { color: color(primary, base); }
 
     & > .previous {
       position: absolute;
@@ -58,11 +63,12 @@ export default {
     }
   }
 
-  & > .previous {
-    left: -60px;
-  }
-  & > .next {
-    right: -60px;
-  }
+  & > .pagination > .-active { background: color(primary, base); }
+
+  & > .previous { left: -60px; }
+  & > .next { right: -60px; }
+
+  &.--is-first-page > .previous { display: none; }
+  &.--is-last-page > .next { display: none; }
 }
 </style>
