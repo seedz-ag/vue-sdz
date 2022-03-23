@@ -13,6 +13,7 @@
 <script>
 import 'vue-coerousel/dist/vue-coerousel.css'
 import { Carousel, CarouselItem } from 'vue-coerousel'
+// import { Carousel, CarouselItem } from 'vue-coerousel/dist/vue-coerousel.js'
 
 import SIcon from '../SIcon/Index.vue'
 
@@ -63,8 +64,5 @@ export default {
   & > .next {
     right: -60px;
   }
-
-
-  & > .wrapper { background: transparent; }
 }
 </style>
