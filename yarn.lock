@@ -1815,9 +1815,9 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*", "@types/node@>=12":
-  version "17.0.22"
-  resolved "https://registry.npmjs.org/@types/node/-/node-17.0.22.tgz#38b6c4b9b2f3ed9f2e376cce42a298fb2375251e"
-  integrity sha512-8FwbVoG4fy+ykY86XCAclKZDORttqE5/s7dyWZKLXTdv3vRy5HozBEinG5IqhvPXXzIZEcTVbuHlQEI6iuwcmw==
+  version "17.0.23"
+  resolved "https://registry.npmjs.org/@types/node/-/node-17.0.23.tgz#3b41a6e643589ac6442bdbd7a4a3ded62f33f7da"
+  integrity sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==
 
 "@types/node@^14.14.31":
   version "14.18.12"
@@ -10095,10 +10095,10 @@ vue-coe-image@^0.2.3:
   resolved "https://registry.npmjs.org/vue-coe-image/-/vue-coe-image-0.2.3.tgz#b5fa0279339f54b741eddc1314340f178f374c9f"
   integrity sha512-EkTgbFjssdXtT2Wa4APvmw7cqgsd3UfIe2iPsDDfTWN/IFrtGNYiIkAh+EH3G4RF2ftLdaATBdtEzDXV2NiQFg==
 
-vue-coerousel@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.npmjs.org/vue-coerousel/-/vue-coerousel-1.0.12.tgz#422c8f9d32861cf28088c48f17cf0fe9d80285b7"
-  integrity sha512-sSSeDytFJXmx2lUr4BoR+9dl+964dfxA7jj7zakO9zfb9J1iosE4eYddc5jWJaNOQ3P+iM+n3XE4/qtg3CCxGw==
+vue-coerousel@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.npmjs.org/vue-coerousel/-/vue-coerousel-1.0.14.tgz#1f5a4f8e61d17162d61cc6c9496c4b6255a83bad"
+  integrity sha512-vY3U7wbHicYIVc9q8ew5g6YXjQ+1v7mpOKh9sV+FTTb3aBrWtJLgLBrOyXqt8FEoFrX1EQnXE9uIjVihHxwMJg==
 
 vue-demi@^0.12.0:
   version "0.12.4"
