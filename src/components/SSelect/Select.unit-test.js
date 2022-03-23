@@ -23,11 +23,11 @@ describe('SSelect', () => {
   test('is instantiated', () => {
     expect(cmp.exists()).toBeTruthy()
   })
-  
 
-  test("has the expected html structure", () => {
-    expect(cmp.element).toMatchSnapshot();
-  })
+
+  // test("has the expected html structure", () => {
+  //   expect(cmp.element).toMatchSnapshot();
+  // })
 
   test('label', () => {
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="s-collapsible">
-    <div class="header" @click="$emit('toggle', !isOpened)">
-      <slot v-if="!noHeader" name="header">X</slot>
+  <div class="s-collapsible" @click="$emit('toggle', !isOpened)">
+    <div v-if="!noHeader" class="header">
+      <slot name="header">X</slot>
     </div>
 
     <div ref="wrapper" class="wrapper" :style="{
@@ -28,12 +28,10 @@ export default {
 
   mounted () {
     const target = this.$refs.wrapper
-    const config = { childList: true, subtree: true }
+    const config = { childList: true, subtree: true, attributes: true }
     const callback = elements => elements.forEach(({ target }) => {
-      setTimeout(() => {
-        this.$emit('target', target)
-        this.contentHeight = target.scrollHeight
-      }, 999)
+      this.$emit('target', target)
+      this.contentHeight = target.scrollHeight
     })
 
     this.observer = new MutationObserver(callback)

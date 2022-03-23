@@ -16,6 +16,16 @@
       </s-collapsible>
     </s-box>
 
+    <s-title size="title-1">Collapse (no header)</s-title>
+    <s-box class="flex-inline flex-center">
+      <s-button outlined @click="increased()">increase content</s-button>
+
+      <s-button @click.native="isOpened3 = !isOpened3">toggle</s-button>
+      <s-collapsible no-header :is-opened="isOpened3">
+        <div v-html="content" />
+      </s-collapsible>
+    </s-box>
+
     <s-title size="title-1">Collapse Without Header</s-title>
     <s-box class="flex-inline flex-center">
       <s-button outlined @click="increased()">increase content</s-button>
@@ -56,6 +66,7 @@ export default {
     return {
       isOpened1: false,
       isOpened2: false,
+      isOpened3: false,
       content: 'initial content!'
     }
   },
