@@ -16,11 +16,11 @@ export default {
   name: 'SFormBuilderField',
 
   components: {
-    SInput: () => import('../SInput/Index.vue'),
-    SSelect: () => import('../SSelect/Index.vue'),
-    SSwitch: () => import('../SSwitch/Index.vue'),
-    SCheckbox: () => import('../SCheckbox/Index.vue'),
-    SRadiobox: () => import('../SRadiobox/Index.vue')
+    SInput: () => import('../SInput/Index.vue').then(d => d.default),
+    SSelect: () => import('../SSelect/Index.vue').then(d => d.default),
+    SSwitch: () => import('../SSwitch/Index.vue').then(d => d.default),
+    SCheckbox: () => import('../SCheckbox/Index.vue').then(d => d.default),
+    SRadiobox: () => import('../SRadiobox/Index.vue').then(d => d.default)
   },
 
   props: {
