@@ -193,7 +193,6 @@ $icon-position: 8px;
     &.--has-icon { text-indent: 35px; }
     &.--is-rounded { border-radius: 50px; }
     &.--has-right-icon { padding-right: 40px; }
-    &.--is-textarea { padding-top: 15px; height: unset; }
   }
 
   & > .label {
@@ -206,6 +205,12 @@ $icon-position: 8px;
     font-size: $font-size-xxs;
     font-family: $font-family;
     transition: font-size .3s, transform .3s;
+  }
+
+  &.--is-textarea > .input {
+    height: unset;
+    padding: 10px;
+    text-indent: 0;
   }
 
   &.--small > .input { height: 35px; }
@@ -265,19 +270,6 @@ $icon-position: 8px;
     & > .input { border-color: color(neutral, medium); }
     & > .label { color: color(neutral, medium); }
   }
-
-  // &.--validation {
-  //   // display: block;
-
-  //   & > .input {
-  //     box-shadow: none;
-  //     padding-right: 50px;
-  //     color: color(negative, base);
-  //     border-color: color(negative, base) !important;
-  //   }
-
-  //   & > .label { font-weight: 500; color: color(negative, base) !important; }
-  // }
 
   &:focus-within {
     & > .input { border-color: color(primary, base); }
