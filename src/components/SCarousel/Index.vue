@@ -41,8 +41,8 @@ export default {
 .s-carousel {
   & > .controller {
     cursor: pointer;
-    background: #FFFFFF;
     border-color: color(primary, base);
+    background-color: color(neutral, base);
 
     & > .icon { color: color(primary, base); }
 
