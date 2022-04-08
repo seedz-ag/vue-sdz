@@ -4,7 +4,7 @@ $primary-color:  #1E7A75;
 $secondary-color:  #46BC8F;
 $highlight-color:  #FBD700;
 $base-color: #202B36;
-$neutral-color: #FAFCFE;
+$neutral-color: #F5F7F9;
 $positive-color: #2BB673;
 $negative-color: #EB5757;
 
@@ -68,7 +68,7 @@ $palettes:(
   ),
 
   neutral:(
-    base:  getRGB(var(--neutral-color-r), var(--neutral-color-g), var(--neutral-color-b)),
+    base:   unquote('#FFFFFF !important'),
     light: generateColor(var(--neutral-color-r), var(--neutral-color-g), var(--neutral-color-b), 1,'D'),
     medium: generateColor(var(--neutral-color-r), var(--neutral-color-g), var(--neutral-color-b), 5,'D'),
     dark:   generateColor(var(--neutral-color-r), var(--neutral-color-g), var(--neutral-color-b), 10,'D')
