@@ -30,11 +30,15 @@
       <s-table
         paginable
         selectable
+        :show-per-page="false"
 
         :cols="cols2"
         :rows="tableRows2"
+
         :page="page"
         :per-page="perPage"
+        :total-pages="totalPages"
+
         :sortable="['name', 'sagacity']"
         :actions="[{ label: 'Editar' }, { label: 'Remover' }]"
 
@@ -90,6 +94,7 @@ export default {
       rows,
       cols2: [],
       rows2: [],
+      totalPages: null,
       page: 1,
       perPage: 10,
       search: '',
@@ -97,19 +102,11 @@ export default {
     }
   },
 
-  created () {
-    const myInit = { method: 'GET', headers: new Headers() }
-    const query = 'SELECT * FROM integration-data-inspection'
-
-    fetch(`https://sdz-int-panel-8579.dev.seedz.ag/inspection?query=${query}`, myInit)
-      .then((response) => response.json())
-      .then((data) => {
-        const cols = Object.keys(data?.[0] || {}).map((key) => ({ text: key, row: key }))
-        const rows = data
-
-        this.cols2 = cols
-        this.rows2 = rows
-      })
+  watch: {
+    page: {
+      immediate: true,
+      handler: 'getDataTable'
+    }
   },
 
   computed: {
@@ -127,6 +124,21 @@ export default {
   },
 
   methods: {
+    getDataTable (page = 1) {
+      const myInit = { method: 'GET', headers: new Headers() }
+
+      fetch(`https://mocki.io/v1/a2f5d112-cb71-4a3b-9941-089fe0e4b8f3?page=${page}`, myInit)
+        .then(response => response.json())
+        .then(data => {
+          const cols = Object.keys(data.data[0])
+          const rows = data.data
+
+          this.cols2 = cols.map(col => ({ text: col, row: col }))
+          this.rows2 = rows
+          this.totalPages = data.recordsTotal
+        })
+    },
+
     synchronizeSearch (value) {
       this.search = value
     },
