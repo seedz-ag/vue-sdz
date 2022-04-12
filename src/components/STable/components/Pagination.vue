@@ -9,7 +9,7 @@
           @input="v => $emit('change:page', v)"
         />
 
-        / {{ rows.length }}
+        / {{ totalPages }}
 
         <s-icon
           size="23"
@@ -45,6 +45,8 @@ export default {
   components: { SIcon, SInput },
 
   props: {
+    totalPages: Number,
+
     page: [Number, String],
 
     perPage: [Number, String],
@@ -58,7 +60,7 @@ export default {
     },
 
     canGo () {
-      return +this.page < Math.ceil(this.rows.length / this.perPage)
+      return +this.page < Math.ceil(this.totalPages)
     }
   }
 }
