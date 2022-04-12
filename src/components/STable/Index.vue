@@ -115,8 +115,8 @@
     </div>
 
     <slot name="tfoot">
-      <tfoot v-if="paginable" class="tfoot">
-        <div class="per-page">
+      <tfoot v-if="paginable" :class="['tfoot', { '--show-per-page': showPerPage }]">
+        <div v-if="showPerPage" class="per-page">
           Linhas por página: {{ perPage }}
 
           <s-icon ref="target" icon="sdz-chevron-up" @click.native="showPages = true" />
@@ -149,6 +149,7 @@
           :page="page"
           :per-page="perPage"
 
+          v-bind="$attrs"
           v-on="$listeners"
         />
       </tfoot>
@@ -207,6 +208,11 @@ export default {
 
     searchable: Boolean,
 
+    showPerPage: {
+      type: Boolean,
+      default: true
+    },
+
     page: {
       type: [Number, String],
       validator: (page) => !!page,
@@ -217,7 +223,7 @@ export default {
       type: [Number, String],
       validator: limit => limit > 2,
       default: 10
-    },
+    }
   },
 
   data () {
@@ -322,7 +328,7 @@ export default {
 
           & > .th-col {
             padding: 15px;
-            min-width: 100px;
+            min-width: 150px;
 
             & > .td-col-container {
               display: flex;
@@ -406,9 +412,10 @@ export default {
 
   & > .tfoot {
     display: flex;
-    justify-content: space-between;
-
     margin-top: 30px;
+
+    justify-content: end;
+    &.--show-per-page { justify-content: space-between; }
 
     & > .per-page {
       color: color(base, light);
