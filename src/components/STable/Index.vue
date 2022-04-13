@@ -351,7 +351,7 @@ export default {
           display: table-row;
 
           // margin: 5px;
-          border-bottom: 1px solid color(base, light);
+          border-bottom: 1px solid color(neutral, dark);
 
           & > .td-row {
             padding: 10px 0;
