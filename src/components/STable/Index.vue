@@ -42,7 +42,7 @@
 
         <tbody v-if="rows.length" class="tbody">
           <tr
-            v-for="(row, index) in dataRows"
+            v-for="(row, index) in internalRows"
 
             :key="index"
             :class="classTrRow(index)"
@@ -257,21 +257,9 @@ export default {
     }, {})
   },
 
-  computed: {
-    dataRows () {
-      if (!this.paginable) return this.internalRows
-
-      return this.getPerPage(this.internalRows)
-    }
-  },
-
   methods: {
     setRows () {
       this.internalRows = this.rows
-    },
-
-    getPerPage (data) {
-      return data.slice((this.page - 1) * this.perPage, this.perPage * this.page)
     },
 
     classTrRow (row) {
@@ -302,7 +290,7 @@ export default {
     sort (row) {
       this.assortment[row] = this.assortment[row] === 'increase' ? 'decrease' : 'increase'
 
-      this.internalRows = this.getPerPage(this.internalRows).sort(toggleOrder(row, this.assortment[row]))
+      this.internalRows = this.internalRows.sort(toggleOrder(row, this.assortment[row]))
     }
   }
 }
