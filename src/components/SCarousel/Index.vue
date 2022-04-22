@@ -39,6 +39,13 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-carousel {
+  &.--has-controllers {
+    padding: 40px;
+
+    & > .previous { left: -10px !important; }
+    & > .next { right: -10px !important; }
+  }
+
   & > .controller {
     cursor: pointer;
     border-color: color(primary, base);
