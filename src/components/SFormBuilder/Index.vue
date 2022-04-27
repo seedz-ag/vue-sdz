@@ -25,7 +25,7 @@
       </template>
     </div>
 
-    <slot name="actions">
+    <slot name="actions" :$v="$v">
       <div class="actions">
         <s-button>Cancelar</s-button>
 
@@ -64,6 +64,10 @@ export default {
 
   created () {
     this.form = transformBy(this.fields, 'value', false)
+
+    setTimeout(() => {
+      console.log('dasd', this.$v)
+    }, 1000)
   },
 
   validations () {
