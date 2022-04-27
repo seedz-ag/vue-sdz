@@ -14,13 +14,13 @@
 
             <slot name="col" :cols="cols">
               <th
-                v-for="({ text, row, sortable }, index) in cols"
+                v-for="({ text, row, sortable, align = 'center' }, index) in cols"
                 :key="index"
 
                 class="th-col"
               >
                 <slot name="icon-sortable">
-                  <div class="td-col-container">
+                  <div class="td-col-container" :style="{ 'justify-content': setAlignment('col', align) }">
                     <span class="label">{{ text }}</span>
 
                     <s-icon
@@ -61,6 +61,7 @@
 
                 :key="fieldIndex"
                 :cols="cols"
+                :style="{ 'text-align': setAlignment('row', field.align || 'center') }"
 
                 class="td-row"
 
@@ -266,6 +267,13 @@ export default {
       return ['tr-row', { '--is-active-row': row === this.hoverLine }]
     },
 
+    setAlignment (type, align) {
+      if (align === 'right') return type === 'col' ? 'flex-end' : 'right'
+      if (align === 'left') return type === 'col' ? 'flex-start' : 'left'
+
+      return 'center'
+    },
+
     changePerPage (page) {
       this.showPages = false
       this.$emit('change:page', 1)
@@ -354,7 +362,7 @@ export default {
           border-bottom: 1px solid color(neutral, dark);
 
           & > .td-row {
-            padding: 10px 0;
+            padding: 10px 15px;
             text-align: center;
             font-size: $font-size-xxs;
           }
