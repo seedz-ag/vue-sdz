@@ -163,10 +163,6 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & > .header { transition: height .6s ease-in-out; z-index:10 }
-
-  &:not(.--is-opened) {}
-
   & > .content {
     height: 100%;
     display: flex;
@@ -177,7 +173,6 @@ export default {
     background: color(primary, base);
 
     & > .wrapper {
-
       width: 100%;
 
       display: flex;
