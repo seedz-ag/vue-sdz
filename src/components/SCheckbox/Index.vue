@@ -65,10 +65,10 @@ export default {
     cursor: pointer;
     transition: border-width .1s ease;
 
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     border-radius: $border-radius-sm;
-    border-color: color(neutral, light);
+    border-color: color(neutral, dark);
 
     background-color: color(neutral, base);
 
@@ -79,6 +79,7 @@ export default {
 
     & > .icon {
       font-size: 18px;
+      margin-top: 3px;
       color: transparent;
       opacity: $opacity-light;
       font-weight: $font-weight-bold;
@@ -115,7 +116,8 @@ export default {
   }
 
   &.--is-disabled {
-    & > .check { border-color: color(neutral, dark); }
+    & > .text { color : color(neutral, dark); }
+    & > .check { border-color: color(neutral, light); }
     & > .input:checked + .check { background-color: color(neutral, dark); }
   }
 
