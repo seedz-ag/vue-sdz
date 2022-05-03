@@ -61,7 +61,7 @@
 
                 :key="fieldIndex"
                 :cols="cols"
-                :style="{ 'text-align': setAlignment('row', field.align || 'center') }"
+                :style="{ 'text-align': setAlignment('row', row.align || 'center') }"
 
                 class="td-row"
 
