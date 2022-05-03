@@ -133,8 +133,8 @@ export default {
           const cols = Object.keys(data.data[0])
           const rows = data.data
 
-          this.cols2 = cols.map(col => ({ text: col, row: col }))
-          this.rows2 = rows
+          this.cols2 = cols.map(col => ({ text: col, row: col, align: 'left' }))
+          this.rows2 = rows.map(row => ({ ...row, align: 'left' }))
           this.totalPages = data.recordsTotal
         })
     },
