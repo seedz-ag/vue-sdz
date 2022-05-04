@@ -25,7 +25,7 @@ export default {
 
   data () {
     return {
-      code:'<s-stepper :step="activeStep" :items="items" @select="newStep => activeStep = newStep" />',
+      code: '<s-stepper :step="activeStep" :items="items" @select="newStep => activeStep = newStep" />',
       activeStep: 2,
       items: [
         { label: 'item 1', icon: 'sdz-dollar-sign', disabled: false },
