@@ -64,10 +64,6 @@ export default {
 
   created () {
     this.form = transformBy(this.fields, 'value', false)
-
-    setTimeout(() => {
-      console.log('dasd', this.$v)
-    }, 1000)
   },
 
   validations () {

@@ -1,5 +1,7 @@
 // import { required } from 'vuelidate/lib/validators/index.js'
-import { required, minLength, email } from '@vuelidate/validators'
+import { required, minLength, email, helpers } from '@vuelidate/validators'
+
+const myRequired = helpers.withMessage('Campo obrigatório.', required)
 
 export default [
   {
@@ -9,7 +11,7 @@ export default [
     label: 'name',
     placeholder: 'name',
     value: '1111',
-    validate: { required, minLength: minLength(5) }
+    validate: { required: myRequired, minLength: minLength(5) }
   },
 
   {
