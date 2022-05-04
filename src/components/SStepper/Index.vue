@@ -1,7 +1,5 @@
 <template>
   <div class="s-stepper">
-    <div class="tracker" />
-
     <ul class="stepper">
       <li
         v-for="(item, stepIndex) in items"
@@ -74,48 +72,29 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-stepper {
-  & > .tracker {
-    position: relative;
-
-    &::after {
-      content: '';
-      z-index: -2;
-
-      height: 2px;
-      width: calc(100% - 20%);
-
-      top: 15px;
-      left: 10%;
-      position: absolute;
-
-      background: color(base, light);
-    }
-  }
+  max-width: 1000px;
+  margin: 2rem auto 0;
 
   & > .stepper {
     @keyframes bounce {
       from { width: 0%; }
-      to { width: 100%; }
+      to { width: calc(100% - clamp(1.5rem, 4vw, 1.6rem) - calc(clamp(0.25rem, 2vw, 0.5rem) * 2)); }
     }
 
-    margin: 0;
-    width: 100%;
     display: flex;
     counter-reset: step;
-    align-items: baseline;
-    justify-content: space-between;
 
     & > .step {
-      width: 100%;
-      font-size: 12px;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
       text-align: center;
-      list-style-type: none;
 
       & > .content {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: -75px;
 
         & > label {
           font-size: 12px;
@@ -124,28 +103,33 @@ export default {
       }
 
       &::before {
-        width: 30px;
-        height: 30px;
-
+        --size: 3rem;
+        content: '';
         display: block;
+        width: clamp(1.5rem, 4vw, 1.6rem);
+        height: clamp(1.5rem, 4vw, 1.6rem);
+        border-radius: 50%;
+        background-color: color(neutral, base);
+        margin: 0 auto 1rem;
+
+        border-width: 2px;
+        border-style: solid;
+        transition: border-color .3s ease-in-out;
 
         content: counter(step);
         counter-increment: step;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-width: 2px;
-        border-radius: 50%;
-        border-style: solid;
-
-        margin: 0 auto -55px auto;
-        background-color: color(neutral, base);
-        transition: border-color .3s ease-in-out;
       }
 
-      &:first-child:after { content: none; }
+      &:not(:last-child):after {
+        content: '';
+        position: relative;
+        top: calc(clamp(1.5rem, 4vw, 1.6rem) / 2);
+        width: calc(100% - clamp(1.5rem, 4vw, 1.6rem) - calc(clamp(0.25rem, 2vw, 0.5rem) * 2));
+        left: calc(50% + calc(clamp(1.5rem, 4vw, 1.6rem) / 2 + clamp(0.25rem, 2vw, 0.5rem)));
+        height: 2px;
+        background-color: #e0e0e0;
+        order: -1;
+      }
     }
 
     .--is-active {
@@ -156,16 +140,6 @@ export default {
       }
 
       &::after {
-        content: '';
-        z-index: -1;
-
-        width: 100%;
-        height: 3px;
-
-        top: 14px;
-        left: -50%;
-        position: absolute;
-
         background-color: color(primary, base);
         transition: color .3s ease-in-out,
         border-width .3s ease-in-out,
@@ -183,8 +157,8 @@ export default {
       & > .content { color: gray !important; }
 
       &::before {
-        // color: color(neutral, light) !important;
-        // border-color: color(neutral, light) !important;
+        // color: color(neutral, medium) !important;
+        // border-color: color(neutral, medium) !important;
         color: gray !important;
         border-color: gray !important;
       }

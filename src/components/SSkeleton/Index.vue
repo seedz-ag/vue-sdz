@@ -40,17 +40,17 @@ export default {
   computed: {
     cardStyles () {
       return {
-        width: this.size?`${this.size}%`:'100%',
+        width: this.size ? `${this.size}%` : '100%',
       }
     },
     getHeight () {
-      return{
-        height: this.rows?`${this.rows*20}px`:'20px'
+      return {
+        height: this.rows ? `${this.rows * 20}px` : '20px'
       }
     },
     getSkeleton () {
       return {
-        borderRadius: this.round?'100%':'$border-radius-sm'
+        borderRadius: this.round ? '100%' : '$border-radius-sm'
       }
     }
   }
