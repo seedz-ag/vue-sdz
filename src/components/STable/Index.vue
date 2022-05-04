@@ -14,13 +14,13 @@
 
             <slot name="col" :cols="cols">
               <th
-                v-for="({ text, row, sortable }, index) in cols"
+                v-for="({ text, row, sortable, align = 'center' }, index) in cols"
                 :key="index"
 
                 class="th-col"
               >
                 <slot name="icon-sortable">
-                  <div class="td-col-container">
+                  <div class="td-col-container" :style="{ 'justify-content': setAlignment('col', align) }">
                     <span class="label">{{ text }}</span>
 
                     <s-icon
@@ -42,7 +42,7 @@
 
         <tbody v-if="rows.length" class="tbody">
           <tr
-            v-for="(row, index) in dataRows"
+            v-for="(row, index) in internalRows"
 
             :key="index"
             :class="classTrRow(index)"
@@ -61,6 +61,7 @@
 
                 :key="fieldIndex"
                 :cols="cols"
+                :style="{ 'text-align': setAlignment('row', row.align || 'center') }"
 
                 class="td-row"
 
@@ -115,8 +116,8 @@
     </div>
 
     <slot name="tfoot">
-      <tfoot v-if="paginable" class="tfoot">
-        <div class="per-page">
+      <tfoot v-if="paginable" :class="['tfoot', { '--show-per-page': showPerPage }]">
+        <div v-if="showPerPage" class="per-page">
           Linhas por página: {{ perPage }}
 
           <s-icon ref="target" icon="sdz-chevron-up" @click.native="showPages = true" />
@@ -149,6 +150,7 @@
           :page="page"
           :per-page="perPage"
 
+          v-bind="$attrs"
           v-on="$listeners"
         />
       </tfoot>
@@ -207,6 +209,11 @@ export default {
 
     searchable: Boolean,
 
+    showPerPage: {
+      type: Boolean,
+      default: true
+    },
+
     page: {
       type: [Number, String],
       validator: (page) => !!page,
@@ -217,7 +224,7 @@ export default {
       type: [Number, String],
       validator: limit => limit > 2,
       default: 10
-    },
+    }
   },
 
   data () {
@@ -251,25 +258,20 @@ export default {
     }, {})
   },
 
-  computed: {
-    dataRows () {
-      if (!this.paginable) return this.internalRows
-
-      return this.getPerPage(this.internalRows)
-    }
-  },
-
   methods: {
     setRows () {
       this.internalRows = this.rows
     },
 
-    getPerPage (data) {
-      return data.slice((this.page - 1) * this.perPage, this.perPage * this.page)
-    },
-
     classTrRow (row) {
       return ['tr-row', { '--is-active-row': row === this.hoverLine }]
+    },
+
+    setAlignment (type, align) {
+      if (align === 'right') return type === 'col' ? 'flex-end' : 'right'
+      if (align === 'left') return type === 'col' ? 'flex-start' : 'left'
+
+      return 'center'
     },
 
     changePerPage (page) {
@@ -296,7 +298,7 @@ export default {
     sort (row) {
       this.assortment[row] = this.assortment[row] === 'increase' ? 'decrease' : 'increase'
 
-      this.internalRows = this.getPerPage(this.internalRows).sort(toggleOrder(row, this.assortment[row]))
+      this.internalRows = this.internalRows.sort(toggleOrder(row, this.assortment[row]))
     }
   }
 }
@@ -322,7 +324,7 @@ export default {
 
           & > .th-col {
             padding: 15px;
-            min-width: 100px;
+            min-width: 150px;
 
             & > .td-col-container {
               display: flex;
@@ -357,10 +359,10 @@ export default {
           display: table-row;
 
           // margin: 5px;
-          border-bottom: 1px solid color(base, light);
+          border-bottom: 1px solid color(neutral, dark);
 
           & > .td-row {
-            padding: 10px 0;
+            padding: 10px 15px;
             text-align: center;
             font-size: $font-size-xxs;
           }
@@ -406,9 +408,10 @@ export default {
 
   & > .tfoot {
     display: flex;
-    justify-content: space-between;
-
     margin-top: 30px;
+
+    justify-content: end;
+    &.--show-per-page { justify-content: space-between; }
 
     & > .per-page {
       color: color(base, light);

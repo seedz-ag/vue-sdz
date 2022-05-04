@@ -18,60 +18,9 @@ export default {
 @import "./src/styles/_index.scss";
 
 .s-header {
-  position: sticky;
   top: 0;
+  position: sticky;
 
-  background-color: color(neutral, base);
-
-  & > .wrapper {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    padding: 0 15px;
-    border-radius: 10px 10px;
-    box-shadow: 0px 6px 17px -12px color(base, base);
-    -webkit-box-shadow: 0px 6px 17px -12px color(base, base);
-
-    & > .logo {
-      width: 100%;
-      max-width: 225px;
-      flex-direction: row;
-      display: flex;
-
-      & > img {
-        height: 100%;
-      }
-    }
-
-    & > .search {
-      width: 50%;
-
-      & > .s-input {
-        margin-top: 0px;
-        height: 40px;
-      }
-    }
-
-    & > .icons {
-      display: flex;
-      justify-content: flex-end;
-      width: 30%;
-
-      & > .s-icon {
-        cursor: pointer;
-        color: color(primary, base);
-        font-size: 25px !important;
-        margin-right: 15px;
-        margin-top: 5px;
-
-        &:last-child {
-          margin-right: 0px;
-        }
-      }
-    }
-  }
+  & > .wrapper { z-index: $z-index-1; }
 }
 </style>

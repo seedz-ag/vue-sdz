@@ -25,7 +25,7 @@
       </template>
     </div>
 
-    <slot name="actions">
+    <slot name="actions" :$v="$v">
       <div class="actions">
         <s-button>Cancelar</s-button>
 
@@ -40,7 +40,7 @@ import Field from './Field.vue'
 import SButton from '../SButton/Index.vue'
 import transformBy from './transformBy.js'
 
-// import useVuelidate from '@vuelidate/core'
+import useVuelidate from '@vuelidate/core'
 
 export default {
   name: 'SFormBuilder',
@@ -54,7 +54,7 @@ export default {
     }
   },
 
-  // setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
+  setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
 
   data () {
     return {

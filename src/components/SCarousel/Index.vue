@@ -13,6 +13,7 @@
 <script>
 import 'vue-coerousel/dist/vue-coerousel.css'
 import { Carousel, CarouselItem } from 'vue-coerousel'
+// import { Carousel, CarouselItem } from 'vue-coerousel/dist/vue-coerousel.js'
 
 import SIcon from '../SIcon/Index.vue'
 
@@ -35,10 +36,22 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./src/styles/_index.scss";
+
 .s-carousel {
+  &.--has-controllers {
+    padding: 40px;
+
+    & > .previous { left: -10px !important; }
+    & > .next { right: -10px !important; }
+  }
+
   & > .controller {
     cursor: pointer;
-    background: #FFFFFF;
+    border-color: color(primary, base);
+    background-color: color(neutral, base);
+
+    & > .icon { color: color(primary, base); }
 
     & > .previous {
       position: absolute;
@@ -57,14 +70,12 @@ export default {
     }
   }
 
-  & > .previous {
-    left: -60px;
-  }
-  & > .next {
-    right: -60px;
-  }
+  & > .pagination > .-active { background: color(primary, base); }
 
+  & > .previous { left: -60px; }
+  & > .next { right: -60px; }
 
-  & > .wrapper { background: transparent; }
+  &.--is-first-page > .previous { display: none; }
+  &.--is-last-page > .next { display: none; }
 }
 </style>

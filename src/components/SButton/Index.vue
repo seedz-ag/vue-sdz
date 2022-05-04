@@ -133,6 +133,7 @@ export default {
   outline: none;
   cursor: pointer;
   padding: 0 40px;
+  text-align: center;
   transform-style: preserve-3d;
   background: color(primary, base);
 

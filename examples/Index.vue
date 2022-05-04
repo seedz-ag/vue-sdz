@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <s-header :class="classes" is-opened :height="isOpened ? 70 : 0">
+    <s-header :class="classes" is-opened :height="isOpened ? 70 : 50">
       <div class="logo">
         <img src="../src/assets/images/logo.svg">
       </div>
@@ -79,7 +79,7 @@ export default {
           child: [
             { name: 'Button', redirect: '/vue-sdz/components/button' },
             { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
-            // { name: 'FormBuilder', redirect: '/vue-sdz/components/formbuilder' },
+            { name: 'FormBuilder', redirect: '/vue-sdz/components/formbuilder' },
             { name: 'Input', redirect: '/vue-sdz/components/input' },
             { name: 'Link', redirect: '/vue-sdz/components/link' },
             { name: 'Password', redirect: '/vue-sdz/components/password' },
@@ -163,10 +163,6 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & > .header { transition: height .6s ease-in-out; z-index:10 }
-
-  &:not(.--is-opened) {}
-
   & > .content {
     height: 100%;
     display: flex;
@@ -177,7 +173,16 @@ export default {
     background: color(primary, base);
 
     & > .wrapper {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
       justify-content: space-between;
+
+      padding: 0 15px;
+      border-radius: 10px 10px;
+      box-shadow: 0px 6px 17px -12px color(base, base);
+      -webkit-box-shadow: 0px 6px 17px -12px color(base, base);
 
       & > .logo{
         max-width: 250px;
@@ -209,6 +214,8 @@ export default {
         & > s-button {
           color: white;
           cursor: pointer;
+
+          & > .text { color: color(neutral, base) }
         }
 
         & > s-button:not(:last-child) {
