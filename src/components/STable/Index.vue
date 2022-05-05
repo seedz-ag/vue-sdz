@@ -67,7 +67,7 @@
 
                 v-bind="$attrs"
               >
-                <span class="row">{{ row[field] }}</span>
+                <span v-if="field !== 'align'" class="row">{{ row[field] }}</span>
               </td>
             </slot>
 
