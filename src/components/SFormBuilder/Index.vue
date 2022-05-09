@@ -95,7 +95,12 @@ export default {
     display: flex;
     margin-bottom: 20px;
 
-    & > .s-select { margin-top: 0; }
+    & > .s-select {
+      margin-top: 0;
+      display: flex;
+      justify-content: end;
+      flex-direction: column;
+    }
 
     & > * {
       width: 100%;
