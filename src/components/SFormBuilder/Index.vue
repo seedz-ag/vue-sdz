@@ -6,7 +6,7 @@
           <field
             :key="groupIndex"
             :$v="$v"
-            :field="groupField"
+            :field="getField(groupField)"
             :value="form[groupField.name]"
 
             @input="value => emit(groupField.name, value)"
@@ -17,7 +17,7 @@
       <template v-else>
         <field
           :$v="$v"
-          :field="field"
+          :field="getField(field)"
           :value="form[field.name]"
 
           @input="value => emit(field.name, value)"
@@ -73,6 +73,13 @@ export default {
   },
 
   methods: {
+    getField (field) {
+      return {
+        ...field,
+        onInput: () => field?.onInput?.({ form: this.form, field })
+      }
+    },
+
     emit (field, value) {
       this.form[field] = value
       this.$emit('synchronize', { field, value })
