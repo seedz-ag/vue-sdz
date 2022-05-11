@@ -20,7 +20,7 @@
                 class="th-col"
               >
                 <slot name="icon-sortable">
-                  <div class="td-col-container" :style="{ 'justify-content': setAlignment('col', align) }">
+                  <div class="td-col-container" :style="{ 'justify-content': setAlignment('col', align || 'left') }">
                     <span class="label">{{ text }}</span>
 
                     <s-icon
@@ -61,7 +61,7 @@
 
                 :key="fieldIndex"
                 :cols="cols"
-                :style="{ 'text-align': setAlignment('row', row.align || 'center') }"
+                :style="{ 'text-align': setAlignment('row', row.align || 'left') }"
 
                 class="td-row"
 
