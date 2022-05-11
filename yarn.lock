@@ -9988,6 +9988,11 @@ util.promisify@^1.0.0:
     has-symbols "^1.0.1"
     object.getownpropertydescriptors "^2.1.1"
 
+utils-sdz@^0.0.7:
+  version "0.0.7"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/utils-sdz/-/utils-sdz-0.0.7.tgz#a79677c1d3c14c875eb5674602060051f9a721f8"
+  integrity sha1-p5Z3wdPBTIdetWdGAgYAUfmnIfg=
+
 uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.npmjs.org/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
