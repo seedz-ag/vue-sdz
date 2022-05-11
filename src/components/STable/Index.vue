@@ -14,13 +14,13 @@
 
             <slot name="col" :cols="cols">
               <th
-                v-for="({ text, row, sortable, align = 'center' }, index) in cols"
+                v-for="({ text, row, sortable, align = 'left' }, index) in cols"
                 :key="index"
 
                 class="th-col"
               >
                 <slot name="icon-sortable">
-                  <div class="td-col-container" :style="{ 'justify-content': setAlignment('col', align || 'left') }">
+                  <div class="td-col-container" :style="{ 'justify-content': setAlignment('col', align) }">
                     <span class="label">{{ text }}</span>
 
                     <s-icon
