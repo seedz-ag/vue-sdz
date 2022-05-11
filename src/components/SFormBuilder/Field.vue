@@ -1,8 +1,8 @@
 <template>
   <component
     :is="field.component"
-    :validation="getValidation(field.name)"
     :items="field.items"
+    :validation="getValidation(field.name)"
 
     v-bind="bindings(field)"
     v-on="$listeners"
@@ -46,7 +46,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
