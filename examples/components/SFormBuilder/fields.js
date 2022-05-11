@@ -61,6 +61,7 @@ export default [
       placeholder: 'Positive',
       positive: true,
       value: true,
+      onInput: ({ form, field }) => {},
       validate: { required }
     },
     {
