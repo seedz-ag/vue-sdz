@@ -6,15 +6,13 @@
 
       :checked="value"
       :disabled="disabled"
-
-      @input="ev => $emit('input', ev.target.checked)"
     >
 
-    <span class="check">
+    <span class="check" @click="emit">
       <i class="icon sdz-check" />
     </span>
 
-    <span class="text">{{ label }}</span>
+    <span class="text" @click="emit">{{ label }}</span>
   </label>
 </template>
 
@@ -42,6 +40,13 @@ export default {
         '--is-negative': this.negative,
         '--is-disabled': this.disabled
       }]
+    }
+  },
+
+  methods: {
+    emit () {
+      this.$attrs.onInput?.()
+      this.$emit('input', !this.value)
     }
   }
 }
