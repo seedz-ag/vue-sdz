@@ -25,7 +25,7 @@
       </template>
     </div>
 
-    <slot name="actions" :$v="$v">
+    <slot name="actions" :$v="$v" :$resetData="resetData">
       <div class="actions">
         <s-button>Cancelar</s-button>
 
@@ -62,8 +62,12 @@ export default {
     }
   },
 
-  created () {
-    this.form = transformBy(this.fields, 'value', false)
+  watch: {
+    fields: {
+      deep: true,
+      immediate: true,
+      handler: 'setForm'
+    }
   },
 
   validations () {
@@ -73,6 +77,10 @@ export default {
   },
 
   methods: {
+    setForm () {
+      this.form = transformBy(this.fields, 'value', false)
+    },
+
     getField (field) {
       return {
         ...field,
@@ -83,6 +91,11 @@ export default {
     emit (field, value) {
       this.form[field] = value
       this.$emit('synchronize', { field, value })
+    },
+
+    resetData () {
+      this.form = {}
+      this.setForm()
     },
 
     async submit () {
