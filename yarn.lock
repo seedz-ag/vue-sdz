@@ -10100,10 +10100,10 @@ vue-coe-image@^0.2.3:
   resolved "https://registry.npmjs.org/vue-coe-image/-/vue-coe-image-0.2.3.tgz#b5fa0279339f54b741eddc1314340f178f374c9f"
   integrity sha512-EkTgbFjssdXtT2Wa4APvmw7cqgsd3UfIe2iPsDDfTWN/IFrtGNYiIkAh+EH3G4RF2ftLdaATBdtEzDXV2NiQFg==
 
-vue-coerousel@^1.0.16:
-  version "1.0.16"
-  resolved "https://registry.npmmirror.com/vue-coerousel/-/vue-coerousel-1.0.16.tgz#e3b15257a5004ff98670e530e74385fb5a883b15"
-  integrity sha512-22f+xFKlWqju59zDUr2BrDU6L3zc0uQygGxdxfl9RSsfXkT06M8rGvgG3sdfEUblFLz4J5wkpOLbVoqRoe07Zw==
+vue-coerousel@^1.0.17:
+  version "1.0.17"
+  resolved "https://registry.npmmirror.com/vue-coerousel/-/vue-coerousel-1.0.17.tgz#a504702ebb59e477bd362b52aa3c2db3833f4424"
+  integrity sha512-n73dAmyTtfiA6U+Dr/QSMdmIdt5reRcDZfvm/XHQgN9k+vFlKJQY1AyZ5NAm2EnE5+Ub++Igh5EiMS6d8GdYFA==
 
 vue-demi@^0.12.0:
   version "0.12.4"
