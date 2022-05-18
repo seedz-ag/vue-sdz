@@ -77,13 +77,13 @@ export default {
     &.--is-negative {
       background-color: color(negative, dark);
 
-      & > .message-container > .message, .highlighted { color: $neutral-color; }
+      & > .message-container > .message, .highlighted { color: color(neutral, dark); }
     }
 
     &.--is-positive {
       background-color: color(primary, light);
 
-      & > .message-container > .message, .highlighted  { color: $neutral-color; }
+      & > .message-container > .message, .highlighted  { color: color(neutral, dark); }
     }
 
     &:last-child { margin-bottom: 20px; }
@@ -92,6 +92,9 @@ export default {
       display: flex;
       align-items: center;
       flex-direction: column;
+
+      // overwrite package style
+      margin: 0 !important;
 
       font-weight: unset;
       color: color(primary, base);
