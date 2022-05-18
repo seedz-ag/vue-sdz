@@ -16,7 +16,8 @@
           <!-- v-if="!validation" -->
           <input
             ref="searchable"
-            :class="['input', { '-placeholder': selected === placeholder || !selected }]"
+            :placeholder="placeholder"
+            :class="['input', { '--placeholder': !value && !searchQuery && placeholder }]"
             :value="searchableValue"
             @keydown.self.down.prevent="pointerForward"
             @keydown.self.up.prevent="pointerBackward"
@@ -25,7 +26,7 @@
             @keyup.esc.passive="escHandler"
             @focus="focused = clearOnSelect"
             @blur="focused = false"
-            @input="search"
+            @input="onSearch"
           >
         </div>
 
@@ -94,11 +95,11 @@ export default {
 
     items: { type: Array, required: true },
 
-    placeholder: { type: String, default: 'Selecione uma opção' },
+    placeholder: String,
 
-    optionSelectPlaceholder: { type: String, default: 'Press enter to select' },
+    optionSelectPlaceholder: String,
 
-    optionUnselectPlaceholder: { type: String, default: 'Press enter to unselect' },
+    optionUnselectPlaceholder: String,
 
     required: Boolean,
 
@@ -256,6 +257,10 @@ export default {
       ]
     },
 
+    onSearch (ev) {
+      this.searchQuery = ev.target.value
+    },
+
     openingHandler () {
       this.isOpened = !this.isOpened
 
@@ -371,15 +376,15 @@ export default {
         }
 
         & > .input {
-          width: 150px;
+          width: 100%;
           border: unset;
           outline: none;
           font-size: $font-size-xxs;
           color: color(base, base);
 
-          &.-placeholder {
+          &.--placeholder {
             font-size: $font-size-xxs;
-            color: color(base, light) !important;
+            color: color(base, light);
           }
         }
       }
@@ -462,9 +467,9 @@ export default {
     }
   }
 
-  &.--is-focused > .select > .field > .selections > .input {
-    border-bottom: 2px solid color(primary, base);
-  }
+  // &.--is-focused > .select > .field > .selections > .input {
+  //   border-bottom: 2px solid color(primary, base);
+  // }
 
   &.--is-disabled {
     cursor: default;
