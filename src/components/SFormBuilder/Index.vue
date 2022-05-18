@@ -25,7 +25,7 @@
       </template>
     </div>
 
-    <slot name="actions" :$v="$v" :$resetData="resetData">
+    <slot name="actions" :$v="$v" :$resetData="setForm">
       <div class="actions">
         <s-button>Cancelar</s-button>
 
@@ -42,6 +42,12 @@ import transformBy from './transformBy.js'
 
 import useVuelidate from '@vuelidate/core'
 
+function initForm () {
+  return {
+    form: {}
+  }
+}
+
 export default {
   name: 'SFormBuilder',
 
@@ -56,11 +62,7 @@ export default {
 
   setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
 
-  data () {
-    return {
-      form: {}
-    }
-  },
+  data: initForm,
 
   watch: {
     fields: {
@@ -91,11 +93,6 @@ export default {
     emit (field, value) {
       this.form[field] = value
       this.$emit('synchronize', { field, value })
-    },
-
-    resetData () {
-      this.form = {}
-      this.setForm()
     },
 
     async submit () {

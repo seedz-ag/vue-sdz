@@ -24,15 +24,16 @@ export default {
 
   methods: {
     synchronize (data) {
-      console.log(data)
+      // console.log(data)
     },
 
     async submit ($v, $resetData) {
-      $v.$touch()
+      $v.form.$touch()
 
-      if ($v.$error) return this.$emit('errors', this.form)
-
-      this.$emit('submit', this.form)
+      if ($v.form.$error) {
+        console.log('erroooo')
+        return
+      }
 
       $resetData()
       this.$nextTick(() => { $v.$reset() })
