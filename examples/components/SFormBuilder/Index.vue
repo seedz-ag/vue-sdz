@@ -1,8 +1,8 @@
 <template>
   <div class="s-form-builder-example">
     <s-form-builder :fields="fields" @synchronize="synchronize">
-      <div class="actions" slot="actions" slot-scope="{ $v }">
-        <s-button @click="submit($v)">Salvar</s-button>
+      <div class="actions" slot="actions" slot-scope="{ $v, $resetData }">
+        <s-button @click="submit($v, $resetData)">Salvar</s-button>
       </div>
     </s-form-builder>
   </div>
@@ -27,12 +27,15 @@ export default {
       console.log(data)
     },
 
-    async submit ($v) {
+    async submit ($v, $resetData) {
       $v.$touch()
 
       if ($v.$error) return this.$emit('errors', this.form)
 
       this.$emit('submit', this.form)
+
+      $resetData()
+      this.$nextTick(() => { $v.$reset() })
     }
   }
 }
