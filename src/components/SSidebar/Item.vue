@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../src/styles/_index.scss";
+@import "./src/styles/_index.scss";
 
 %sidebar-item {
   margin: 5px 10px;
