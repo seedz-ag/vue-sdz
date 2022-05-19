@@ -117,7 +117,7 @@ export default {
           name: 'Extented',
           icon: 'sdz-globe',
           child: [
-            { name: 'Icon', redirect: '/vue-sdz/components/icon' }
+            { name: 'Icons', redirect: '/vue-sdz/components/icon' }
           ]
         }
       ]
@@ -167,6 +167,38 @@ export default {
     height: 100%;
     display: flex;
     // transition: margin-top .6s ease;
+
+     & > .s-sidebar {
+      background: color(neutral, light);
+      box-shadow: unset;
+
+      & > .s-sidebar-item > .item > .content > .name, & > .s-sidebar-item > .item > .content > .icon {
+        color: color(base, light);
+        font-weight: bold;
+      }
+
+      & > .s-sidebar-item > .item.--is-active-item {
+        background-color: color(neutral, light) !important;
+      }
+
+      & > .s-sidebar-item.--is-opened > .item.--is-active-item {
+        background-color: color(neutral, light) !important;
+
+        & > .s-collapsible > .wrapper > .item-child > .content > .name {
+          color: color(neutral, base);
+        }
+
+        & > .item.--is-active-item {
+          & > .content > .name {
+            color: color(base, medium) !important;
+          }
+
+          & > .s-collapsible > .wrapper > .item-child > .content > .name {
+            color: color(base, medium) !important;
+          }
+        }
+      }
+    }
   }
 
   & > .s-header{
@@ -222,24 +254,6 @@ export default {
           margin-right: 35px;
         }
       }
-    }
-  }
-
-  & > .content > .s-sidebar {
-    background: color(neutral, light);
-    box-shadow: unset;
-
-    & > .s-sidebar-item.--is-opened > .item.--is-active-item, & > .s-sidebar-item > .item.--is-active-item {
-      background-color: color(neutral, light) !important;
-
-      & > .content > .name, & > .s-collapsible > .wrapper > .item-child > .content > .name {
-        color: color(base, medium);
-      }
-    }
-
-    & > .s-sidebar-item > .item > .content > .name, & > .s-sidebar-item > .item > .content > .icon {
-      color: color(base, light);
-      font-weight: bold;
     }
   }
 }
