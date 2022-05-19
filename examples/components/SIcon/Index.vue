@@ -23,6 +23,22 @@
     </s-box>
 
     <pre-code :code="code" />
+
+    <s-title size="title-1">Icons - Integração</s-title>
+
+    <p class="subtitle">
+      Essa categoria foi criada, para que possamos segmentar nossos icons entre "geral" e "temáticos". Aqui o tema é icones ligados ao sistema de Integração.
+    </p>
+
+    <s-box>
+      <div class="box-icons flex-inline">
+        <div v-for="icon2 in icons2" :key="icon2" class="icons">
+          <s-icon :icon="icon2" size="40" />
+
+          <span>{{ icon2 }}</span>
+        </div>
+      </div>
+    </s-box>
   </div>
 </template>
 
@@ -138,6 +154,17 @@ export default {
         'sdz-edit',
         'sdz-external-link',
         'sdz-dashboard',
+        'sdz-grid',
+        'sdz-list',
+        'sdz-maximize',
+        'sdz-minimize',
+      ],
+
+      icons2: [
+        'sdz-agent',
+        'sdz-api',
+        'sdz-sftp',
+        'sdz-webserve'
       ]
     }
   }
@@ -145,6 +172,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .s-icon-example {
   display: flex;
   flex-direction: column;

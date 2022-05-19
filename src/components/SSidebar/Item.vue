@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./src/styles/_index.scss";
+@import "../src/styles/_index.scss";
 
 %sidebar-item {
   margin: 5px 10px;
@@ -107,7 +107,7 @@ export default {
 
     & > .icon {
       margin-right: 30px;
-      color: white;
+      // color: white;
 
       &:last-child{
         margin-right: 0px;
@@ -116,7 +116,7 @@ export default {
 
     & > .name {
       width: 100%;
-      color: white;
+      // color: white;
       font-size: 14px;
       font-weight: 400;
       font-family: Roboto, sans-serif;
