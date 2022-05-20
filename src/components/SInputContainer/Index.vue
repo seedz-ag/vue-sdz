@@ -12,7 +12,7 @@
     <s-icon v-if="rightIcon" v-bind="$attrs" class="right-icon" />
 
     <transition name="fade">
-      <div v-if="validation" class="validation">
+      <div v-if="hasValidation" class="validation">
         <p class="message">{{ validationMessage }}</p>
       </div>
     </transition>
@@ -21,6 +21,16 @@
 
 <script>
 import SIcon from '../SIcon/Index.vue'
+// import { isValid } from 'utils-sdz'
+
+function isValid (value) {
+  if (Array.isArray(value)) return !!value.length
+  if (typeof value === 'object') return !!Object.keys(value).length
+  if (typeof value === 'string') return !!value.length
+  if (typeof value === 'number') return !!value
+
+  return !!value
+}
 
 export default {
   name: 'SInputContainer',
@@ -43,12 +53,16 @@ export default {
     classes () {
       return [ 's-input-container', {
         '--label': this.label,
-        '--validation': this.validation
+        '--validation': this.hasValidation
       }]
     },
 
+    hasValidation () {
+      return isValid(this.validation)
+    },
+
     validationMessage () {
-      if (Array.isArray(this.validation)) return this.validation[0]
+      if (Array.isArray(this.validation)) return this.validation?.[0] || ''
 
       return this.validation
     }
