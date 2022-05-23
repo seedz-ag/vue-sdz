@@ -86,6 +86,7 @@ export default {
   &.--label { margin-top: 30px; }
 
   &.--validation > .input { border-color: color(negative, base); }
+  &.--validation > .select > .field { border-color: color(negative, base); }
 
   & > .validation {
     bottom: -18px;
