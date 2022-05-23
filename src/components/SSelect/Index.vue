@@ -341,7 +341,7 @@ export default {
                   border-color .3s ease-in-out,
                   box-shadow .3s ease-in-out;
 
-      &:hover,
+      // &:hover,
       &:active,
       &:focus {
         border-color: color(primary, base);
