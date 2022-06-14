@@ -21,6 +21,7 @@
 
 <script>
 import SIcon from '../SIcon/Index.vue'
+
 // import { isValid } from 'utils-sdz'
 
 function isValid (value) {
@@ -77,10 +78,7 @@ export default {
   position: relative;
 
   & > .label {
-    font-size: $font-size-xxxs;
-    padding: { right: 10px; bottom: 5px; }
-
-    & > .required { color: color(negative, base); margin-top: 5px; }
+    & > .required { color: color(negative, base); margin-right: 5px; }
   }
 
   &.--label { margin-top: 30px; }

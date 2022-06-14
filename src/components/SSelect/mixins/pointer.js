@@ -15,7 +15,7 @@ const pointer = {
     },
 
     pointerForward () {
-      if (this.pointer < this.items.length - 1) this.pointer++
+      if (this.pointer < this.options.length - 1) this.pointer++
     },
 
     pointerBackward () {
@@ -23,9 +23,11 @@ const pointer = {
     },
 
     addPointerElement ({ key } = 'Enter') {
-      if (this.items.length > 0 && key === 'Enter') {
-        this.selected = this.pointer
+      if (this.options?.length && key === 'Enter') {
+        const index = this.pointer
+        const option = this.options.find((_, i) => i === index)
 
+        this.selected = { option, index }
         this.$nextTick(() => this.outside())
       }
     }

@@ -1,32 +1,35 @@
 <template>
-  <!-- :validation="error || validation" -->
   <s-input-container v-bind="$attrs" :class="containerClasses">
     <div class="select">
       <div class="field" :tabindex="tabindex" @click.capture="openingHandler" v-click-outside="outside">
+        <!-- if multiple === true  -->
         <div class="selections">
           <span
-            v-for="(option, index) in selecteds"
+            v-for="(option, index) in values"
             :key="index"
             class="selected"
-            @click="removeSelected(index)"
+            @click.stop="removeSelected(index)"
           >
-            {{ selecteds[index] }}
+            {{ values[index] }}
           </span>
 
-          <!-- v-if="!validation" -->
+          <!--
+            @focus="focused = true"
+            @blur="focused = false"
+          -->
           <input
             ref="searchable"
+
             :placeholder="placeholder"
             :class="['input', { '--placeholder': !value && !searchQuery && placeholder }]"
-            :value="searchableValue"
-            @keydown.self.down.prevent="pointerForward"
-            @keydown.self.up.prevent="pointerBackward"
-            @keydown.enter.tab.stop.self="addPointerElement"
-            @keydown.tab.stop.self="escHandler"
-            @keyup.esc.passive="escHandler"
-            @focus="focused = clearOnSelect"
-            @blur="focused = false"
+            :value="searchQuery || value[displayBy]"
+
             @input="onSearch"
+            @keyup.esc.passive="escHandler"
+            @keydown.tab.stop.self="escHandler"
+            @keydown.self.up.prevent="pointerBackward"
+            @keydown.self.down.prevent="pointerForward"
+            @keydown.enter.tab.stop.self="addPointerElement"
           >
         </div>
 
@@ -35,7 +38,6 @@
 
       <div class="items">
         <slot :options="options" name="options">
-          <!-- :is-opened="!!(isOpened && options.length) && !validation" -->
           <s-collapsible
             no-header
 
@@ -51,12 +53,13 @@
 
               aria-hidden="true"
 
-              @click.stop="selected = index"
+              @click.stop="selected = { option, index }"
               @mouseenter.self="pointerSet(index)"
             >
               <slot :option="option" name="option">
                 <div class="option-container">
-                  <span class="text">{{ displayBy && option[displayBy] || option }}</span>
+                  <span class="text">{{ option[displayBy] }}</span>
+
                   <span class="disclaimer">
                     {{ !isSelected(option, index) ? optionSelectPlaceholder : optionUnselectPlaceholder }}
                   </span>
@@ -89,48 +92,46 @@ export default {
   mixins: [ Pointer, Searchable ],
 
   props: {
-    tabindex: { type: Number, default: 0 },
-
-    value: [String, Object, Number, Array],
+    value: [ Object, Array ],
 
     items: { type: Array, required: true },
 
+    tabindex: { type: Number, default: 0 },
+
+    trackBy: { type: String, required: true },
+
+    displayBy: { type: String, required: true },
+
+    multiple: Boolean,
+
+    disabled: Boolean,
+
     placeholder: String,
+
+    hideSelected: Boolean,
 
     optionSelectPlaceholder: String,
 
     optionUnselectPlaceholder: String,
 
-    required: Boolean,
-
-    display: String,
-
-    displayBy: String,
-
-    // validation: String,
-
-    multiple: Boolean,
-
-    hideSelected: Boolean,
-
-    clearOnSelect: { type: Boolean, default: true },
-
-    disabled: Boolean
+    // clearOnSelect: { type: Boolean, default: true }
   },
 
   data () {
     return {
-      contentHeight: null,
-      focused: false,
+      // focused: false,
       isOpened: false,
+      contentHeight: null
     }
   },
 
   computed: {
     error () {
-      if (!this.items.some(item => this.displayBy && typeof item === 'object')) return 'You need to set displayBy.'
+      if (!this.trackBy) return 'You need to set trackBy.'
 
       if (this.multiple && !Array.isArray(this.value)) return 'Value must be a array'
+
+      if (!this.items.some(item => typeof item === 'object')) return 'You need to set displayBy.'
 
       return ''
     },
@@ -140,109 +141,64 @@ export default {
         {
           '--is-opened': this.isOpened,
           '--is-disabled': this.disabled,
-          // '--has-error': this.error || this.validation,
-          '--is-focused': this.focused || this.searchQuery,
-          '--is-empty-search': this.searchQuery && !this.options.length
+          // '--is-focused': this.focused || this.searchQuery,
+          '--is-empty-search': this.searchQuery && !this.options?.length
         }
       ]
     },
 
-    selecteds () {
-      if (!this.multiple || (this.value && !this.value.length)) return []
+    // multiple = true
+    values () {
+      if (!this.multiple || !this.value?.length) return []
 
-      const defaultValue = this.value.filter(value => !!this.items.find(item => item !== value))
+      return this.value.map(value => value[this.displayBy])
+    },
 
-      return defaultValue.map(value => (this.display && value[this.display]) || value)
+    // multiple = false
+    options () {
+      if (this.error) return []
+      if (!this.searchQuery) return this.items
+
+      return this.items.filter(data => {
+        const item = data[this.displayBy]
+
+        return typeof item === 'string'
+          ? matches(this.searchQuery.toLowerCase(), item.toLowerCase())
+          : matches(this.searchQuery.toString().toLowerCase(), item.toString().toLowerCase())
+      })
     },
 
     selected: {
       get () {
         if (this.disabled) return []
-        if (this.multiple) return this.selecteds
+        if (this.multiple) return this.values
 
-        const value = this.items
-          .find(v => v === (Array.isArray(this.value) && this.value && this.displayBy && this.value[this.displayBy]) || this.value)
+        const hasValue = this.items.find(v => v === this.value[this.displayBy])
 
-        if (!value) return 'Opção inválida'
+        if (!hasValue) return 'Opção inválida'
 
-        if (this.displayBy && value[this.displayBy]) {
-          return value[this.displayBy]
-            ? value[this.displayBy]
-            : process.env.NODE_ENV === 'development' ? 'error: displayBy prop does not exist' : ''
-        }
+        if (!hasValue[this.displayBy]) return process.env.NODE_ENV !== 'development'
+          ? ''
+          : 'error: displayBy prop does not exist'
+
         return this.value
       },
 
-      set (index) {
+      set ({ option, index }) {
         // invalid search
-        if (index < 0) {
-          this.outside()
-          return
+        if (index < 0) return this.outside()
+
+        if (!this.options?.length) return
+
+        if (!this.multiple) {
+          return this.emitInput(this.isSelected(option) ? {} : option)
         }
 
-        // remove
-        if (typeof index !== 'number') {
-          this.$emit('input', index)
-          this.outside()
-          return
+        if (!this.isSelected(option)) {
+          return this.emitInput([ ...this.value, option ])
         }
 
-        const options = this.hideSelected && !this.searchQuery
-          ? this.hideSelecteds
-          : !this.searchQuery ? this.items : this.options
-
-        if (!options.length) return false
-
-        const tracked = (options && this.display && options[index][this.display]) || options[index]
-
-        if (this.multiple) {
-          const value = v => ((this.display && v[this.display]) || v).toString()
-
-          const exists = v => value(v) === tracked.toString()
-          const alreadyExist = this.value.find(exists)
-
-          if (!alreadyExist) {
-            this.outside()
-
-            this.$emit('input', [ ...this.value, options[index] ])
-          } else {
-            this.outside()
-
-            const repeated = v => value(v) !== tracked.toString()
-            const afterRemove = this.value.filter(repeated)
-
-            this.$emit('input', afterRemove)
-          }
-        } else {
-          this.outside()
-          this.$emit('input', tracked)
-        }
-      }
-    },
-
-    hideSelecteds () {
-      if (this.multiple && Array.isArray(this.value) && this.display) {
-        return this.items.filter(item => !this.selecteds.includes(item[this.display]))
-      }
-
-      return []
-    },
-
-    options () {
-      if (this.error) return []
-
-      const items = (this.hideSelected && this.hideSelecteds) || this.items
-
-      if (this.searchQuery) {
-        return items.filter(item => {
-          const _item = (this.displayBy && item[this.displayBy]) || item
-
-          return typeof _item === 'string'
-            ? matches(this.searchQuery.toLowerCase(), _item.toLowerCase())
-            : matches(this.searchQuery.toString().toLowerCase(), _item.toString().toLowerCase())
-        })
-      } else {
-        return items
+        this.emitInput(this.value.filter(value => !this.isEqual(value, option)))
       }
     }
   },
@@ -251,14 +207,10 @@ export default {
     itemClasses (option, index) {
       return ['item',
         {
-          '-active': index === this.pointer,
-          '-selected': this.isSelected(option, index)
+          '--active': index === this.pointer,
+          '--selected': this.isSelected(option)
         }
       ]
-    },
-
-    onSearch (ev) {
-      this.searchQuery = ev.target.value
     },
 
     openingHandler () {
@@ -271,24 +223,25 @@ export default {
       if (this.isOpened) this.outside()
     },
 
-    removeSelected (index) {
-      const afterRemove = this.value.filter(v => v !== this.value[index])
+    emitInput (payload) {
+      this.outside()
+      this.$emit('input', payload)
+    },
 
-      this.selected = afterRemove
+    removeSelected (index) {
+      this.emitInput(this.value.filter((_, _index) => !Object.is(_index, index)))
+    },
+
+    isEqual (v1, v2) {
+      return v1?.[this.trackBy] === v2?.[this.trackBy]
     },
 
     isSelected (option) {
-      if (!this.selected) return false
-
-      const _option = (this.display && option[this.display]) || option
-
       if (this.multiple) {
-        const _selected = v => ((this.display && v[this.display]) || v).toString() === _option.toString()
-
-        return this.value.find(v => _selected(v))
+        return this.value.some(v => this.isEqual(v, option))
       }
 
-      return _option === this.value
+      return this.isEqual(this.value, option)
     },
 
     outside () {
@@ -316,11 +269,9 @@ export default {
 
 .s-select {
   width: 100%;
-  // position: unset;
 
   & > .select {
-    width: 100%;
-    position: relative;
+    margin-top: 10px;
 
     & > .field {
       width: 100%;
@@ -332,7 +283,7 @@ export default {
 
       min-height: 50px;
       font-size: $font-size-xs;
-      background-color: white;
+      background-color: color(neutral, base);
 
       border-radius: $border-radius-sm;
       border: 1px solid color(base, light);
@@ -379,8 +330,8 @@ export default {
           width: 100%;
           border: unset;
           outline: none;
-          font-size: $font-size-xxs;
           color: color(base, base);
+          font-size: $font-size-xxs;
 
           &.--placeholder {
             font-size: $font-size-xxs;
@@ -396,12 +347,12 @@ export default {
     }
 
     & > .items {
-      width: 100%;
-      max-height: 300px;
-      margin-top: 12px;
       z-index: 0;
+      width: 100%;
+      margin-top: 12px;
+      max-height: 300px;
       border-radius: $border-radius-sm;
-      background-color: white;
+      background-color: color(neutral, base);
 
       position: absolute;
       left: 0;
@@ -410,19 +361,19 @@ export default {
       box-shadow:none;
 
       & > .s-collapsible > .wrapper {
-
         box-shadow: $shadow-2;
         transition: opacity .3s ease-in-out,
                     height .3s ease-in-out !important;
         border-radius: 8px;
+
         & > .item {
           display: flex;
           cursor: pointer;
           min-height: 50px;
           align-items: center;
 
-          &.-selected { font-weight: 700; }
-          &.-active { background-color: color(primary, base); }
+          &.--selected { font-weight: 700; }
+          &.--active { background-color: color(primary, base); }
 
           &:last-child {
             border-bottom-left-radius: 5px;
@@ -445,11 +396,11 @@ export default {
   }
 
   & > .label {
-    font-size: 14px;
-    font-weight: 500;
     pointer-events: none;
     color: color(base, base);
+    font-size: $font-size-xs;
     font-family: $font-family;
+    font-weight: $font-weight-regular;
     transition: font-size .3s, transform .3s;
   }
 
