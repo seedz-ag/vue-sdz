@@ -171,7 +171,7 @@ export default {
     selected: {
       get () {
         if (this.disabled) return []
-        if (this.multiple) return this.optionsWithMult
+        if (this.multiple) return this.values
 
         const hasValue = this.items.find(v => v === this.value[this.displayBy])
 
