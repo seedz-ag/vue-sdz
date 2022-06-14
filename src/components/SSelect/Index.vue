@@ -127,6 +127,8 @@ export default {
 
   computed: {
     error () {
+      if (!this.trackBy) return 'You need to set trackBy.'
+
       if (this.multiple && !Array.isArray(this.value)) return 'Value must be a array'
 
       if (!this.items.some(item => typeof item === 'object')) return 'You need to set displayBy.'
