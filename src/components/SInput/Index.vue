@@ -170,7 +170,6 @@ $icon-position: 8px;
 
 .s-input {
   display: flex;
-  // flex-direction: column;
 
   & > .input {
     outline: 0;
@@ -196,14 +195,14 @@ $icon-position: 8px;
   }
 
   & > .label {
-    top: -25px;
+    top: -30px;
     position: absolute;
 
-    font-weight: 500;
     pointer-events: none;
     color: color(base, base);
-    font-size: $font-size-xxs;
+    font-size: $font-size-xs;
     font-family: $font-family;
+    font-weight: $font-weight-regular;
     transition: font-size .3s, transform .3s;
   }
 
