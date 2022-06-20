@@ -74,7 +74,7 @@
     }
   },
   "dependencies": {
-    "@vue/composition-api": "^1.4.6",
+    "@vue/composition-api": "^1.6.2",
     "@vuelidate/core": "^2.0.0-alpha.34",
     "@vuelidate/validators": "^2.0.0-alpha.26",
     "sdz-icons": "^0.0.7",
