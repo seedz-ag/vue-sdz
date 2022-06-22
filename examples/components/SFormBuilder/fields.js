@@ -144,7 +144,7 @@ export default [
     component: 'SSelect',
     label: 'cities',
     placeholder: 'cities',
-    display: 'name',
+    trackBy: 'id',
     displayBy: 'name',
     value: { name: 'sp', id: 2 },
     items: [ { name: 'rj', id: 1 }, { name: 'sp', id: 2 } ]
