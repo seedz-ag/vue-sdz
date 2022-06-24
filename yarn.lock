@@ -10459,6 +10459,11 @@ vue-demi@^0.12.0:
   resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.12.4.tgz"
   integrity sha512-ztPDkFt0TSUdoq1ZI6oD730vgztBkiByhUW7L1cOTebiSBqSYfSQgnhYakYigBkyAybqCTH7h44yZuDJf2xILQ==
 
+vue-demi@^0.13.1:
+  version "0.13.1"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-demi/-/vue-demi-0.13.1.tgz#7604904c88be338418a10abbc94d5b8caa14cb8c"
+  integrity sha1-dgSQTIi+M4QYoQq7yU1bjKoUy4w=
+
 vue-eslint-parser@^7.10.0:
   version "7.11.0"
   resolved "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-7.11.0.tgz"

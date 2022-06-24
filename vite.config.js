@@ -11,6 +11,10 @@ export default defineConfig({
     outDir: path.join(__dirname, 'docs')
   },
 
+  optimizeDeps: {
+    exclude: ['vue-demi']
+  },
+
   plugins: [  createVuePlugin() ],
 
   server: { port: 8080 }
