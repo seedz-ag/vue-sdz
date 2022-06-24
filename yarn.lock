@@ -2049,6 +2049,11 @@
     sass "^1.18.0"
     stylus "^0.54.5"
 
+"@vue/composition-api@^1.6.3":
+  version "1.6.3"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/composition-api/-/composition-api-1.6.3.tgz#3b1486608f1682e8bc03c71e1fd58013b0b7a093"
+  integrity sha1-OxSGYI8Wgui8A8ceH9WAE7C3oJM=
+
 "@vue/reactivity-transform@3.2.27":
   version "3.2.27"
   resolved "https://registry.npmjs.org/@vue/reactivity-transform/-/reactivity-transform-3.2.27.tgz"
