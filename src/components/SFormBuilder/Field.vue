@@ -36,12 +36,22 @@ export default {
     },
 
     getValidation (field) {
+
       const infoField = this.$v.form?.[field]
 
-      const getRule = rule => infoField?.[rule]
-      const getMessage = rule => getRule(rule)?.$invalid && getRule(rule)?.$message
+      console.log(infoField)
+      console.log(infoField?.$error)
 
-      return rules.map(getMessage).filter(Boolean)
+      if (!infoField?.required) return ['campo obrigatório.']
+      if (!infoField?.minLength) return ['campo pequeno.']
+
+
+      // const infoField = this.$v.form?.[field]
+
+      // const getRule = rule => infoField?.[rule]
+      // const getMessage = rule => getRule(rule)?.$invalid && getRule(rule)?.$message
+
+      // return rules.map(getMessage).filter(Boolean)
     }
   }
 }

@@ -10551,6 +10551,11 @@ vue@^2.6.14:
   resolved "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
 
+vuelidate@^0.7.7:
+  version "0.7.7"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vuelidate/-/vuelidate-0.7.7.tgz#5df3930a63ddecf56fde7bdacea9dbaf0c9bf899"
+  integrity sha1-XfOTCmPd7PVv3nvazqnbrwyb+Jk=
+
 vuex@^3.0.1, vuex@^3.6.2:
   version "3.6.2"
   resolved "https://registry.npmjs.org/vuex/-/vuex-3.6.2.tgz"

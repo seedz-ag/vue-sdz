@@ -40,7 +40,9 @@ import Field from './Field.vue'
 import SButton from '../SButton/Index.vue'
 import transformBy from './transformBy.js'
 
-import useVuelidate from '@vuelidate/core'
+// import useVuelidate from '@vuelidate/core'
+
+import { validationMixin } from 'vuelidate'
 
 function initForm () {
   return {
@@ -53,6 +55,8 @@ export default {
 
   components: { SButton, Field },
 
+  mixins: [validationMixin],
+
   props: {
     fields: {
       type: Array,
@@ -60,7 +64,7 @@ export default {
     }
   },
 
-  setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
+  // setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
 
   data: initForm,
 
