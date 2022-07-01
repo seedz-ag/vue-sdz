@@ -105,6 +105,7 @@ export default {
             { name: 'Feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'Modal', redirect: '/vue-sdz/components/modal' },
             { name: 'Pagination', redirect: '/vue-sdz/components/pagination' },
+            { name: 'Pin', redirect: '/vue-sdz/components/pin' },
             { name: 'Popover', redirect: '/vue-sdz/components/popover' },
             { name: 'Progress bar', redirect: '/vue-sdz/components/progressbar' },
             { name: 'Spinner', redirect: '/vue-sdz/components/loader' },
