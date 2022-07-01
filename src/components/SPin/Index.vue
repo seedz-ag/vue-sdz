@@ -59,26 +59,18 @@ export default {
     onInput (e, i) {
       const value = +e.data
       const index = +i // fix: default index is a string
-      const isLastPosition = (this.size - 1) ===  index
-      // const isInputDeleteType = e.inputType === 'deleteContentBackward'
+      const isInputDeleteType = ['deleteContentBackward', 'deleteContentForward'].includes(e.inputType)
+      const isRemovalOrInvalid = isInputDeleteType || isNaN(value)
 
-      this.cells[index] = ''
-
-      if (this.cells[index] && isLastPosition || !value) {
-        const el = this.getRef(index)
-
-        el.value = ''
-        this.cells[index] = ''
-        return
-      }
-
+      const el = this.getRef(index)
+      el.value = ''
       this.$forceUpdate()
-
-      this.cells[index] = value
+      this.cells[index] = isRemovalOrInvalid ? '' : value
+      this.$emit('update', this.cells)
 
       if (this.focusedIndex === this.size - 1) return
 
-      this.onFocus(index + 1)
+      this.onFocus(isRemovalOrInvalid ? index : index + 1)
     },
 
     onKeyDown ({ keyCode }) {
