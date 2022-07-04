@@ -1,6 +1,6 @@
 <template>
   <div class="s-drawer">
-    <div :class="classes" :style="{ '--width': width + 'px' }">
+    <div :class="classes" :style="{ '--width': width }">
       <slot />
     </div>
 
@@ -24,7 +24,7 @@ export default {
       validator: direction => ['top', 'bottom', 'left', 'right'].includes(direction)
     },
     isOpened: { type: Boolean, required: true },
-    width: { type: [Number, String], default: 240 }
+    width: { type: [String], default: '240px' }
   },
 
   computed: {
