@@ -266,8 +266,10 @@ $icon-position: 8px;
 
   &.--is-disabled {
     cursor: default;
-    & > .input { border-color: color(neutral, medium); }
-    & > .label { color: color(neutral, medium); }
+    & > .input {
+      border-color: color(neutral, dark);
+      background-color: color(neutral, light);
+    }
   }
 
   &:focus-within {

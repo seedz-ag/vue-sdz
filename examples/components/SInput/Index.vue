@@ -29,6 +29,7 @@
       <s-input placeholder="Input without label" />
 
       <s-input
+        label="disabled"
         disabled="disabled"
         placeholder="Disabled input"
       />
