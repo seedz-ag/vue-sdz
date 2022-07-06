@@ -15,6 +15,8 @@ import rules from './rules.js'
 export default {
   name: 'SFormBuilderField',
 
+  // .then(...) motivation:
+  // https://github.com/vuejs/vue/issues/11656
   components: {
     SInput: () => import('../SInput/Index.vue').then(d => d.default),
     SSelect: () => import('../SSelect/Index.vue').then(d => d.default),
