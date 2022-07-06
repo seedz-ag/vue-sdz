@@ -28,6 +28,7 @@ export default [
   [
     {
       name: 'nome2',
+      width: '25%',
       component: 'SInput',
       label: 'Nome2',
       placeholder: 'Nome2',
@@ -36,6 +37,7 @@ export default [
     },
     {
       name: 'email1',
+      width: '25%',
       component: 'SInput',
       label: 'E-mail1',
       placeholder: 'E-mail1',
@@ -45,6 +47,7 @@ export default [
     },
     {
       name: 'nome3',
+      width: '50%',
       component: 'SInput',
       label: 'Nome3',
       placeholder: 'Nome3',
