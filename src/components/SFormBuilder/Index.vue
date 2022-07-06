@@ -9,6 +9,7 @@
             :field="getField(groupField)"
             :value="form[groupField.name]"
 
+            v-on="$listeners"
             @input="value => emit(groupField.name, value)"
           />
         </template>
@@ -20,6 +21,7 @@
           :field="getField(field)"
           :value="form[field.name]"
 
+          v-on="$listeners"
           @input="value => emit(field.name, value)"
         />
       </template>
@@ -86,6 +88,7 @@ export default {
     getField (field) {
       return {
         ...field,
+        onClick: () => field?.onClick.call(this),
         onInput: () => field?.onInput?.({ form: this.form, field })
       }
     },
@@ -115,8 +118,8 @@ export default {
     & > .s-select {
       margin-top: 0;
       display: flex;
-      justify-content: end;
       flex-direction: column;
+      justify-content: flex-end;
     }
 
     & > * {

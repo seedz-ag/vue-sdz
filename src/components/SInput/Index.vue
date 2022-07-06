@@ -25,6 +25,8 @@
 
       v-bind="$attrs"
       v-on="$listeners"
+
+      @click="onClick"
     >
       {{ button }}
     </s-button>
@@ -104,7 +106,9 @@ export default {
 
     raw: Boolean,
 
-    positiveOnly: Boolean
+    positiveOnly: Boolean,
+
+    onClick: Function
   },
 
   computed: {
