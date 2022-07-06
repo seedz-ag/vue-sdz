@@ -3,6 +3,7 @@
     :is="field.component"
     :items="field.items"
     :validation="getValidation(field.name)"
+    :style="{ 'width': field.width || '100%' }"
 
     v-bind="bindings(field)"
     v-on="$listeners"
