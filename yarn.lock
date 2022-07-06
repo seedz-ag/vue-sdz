@@ -2049,7 +2049,7 @@
     sass "^1.18.0"
     stylus "^0.54.5"
 
-"@vue/composition-api@^1.6.3":
+"@vue/composition-api@1.6.3":
   version "1.6.3"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/composition-api/-/composition-api-1.6.3.tgz#3b1486608f1682e8bc03c71e1fd58013b0b7a093"
   integrity sha1-OxSGYI8Wgui8A8ceH9WAE7C3oJM=
@@ -2079,17 +2079,17 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vuelidate/core@^2.0.0-alpha.34":
-  version "2.0.0-alpha.35"
-  resolved "https://registry.npmjs.org/@vuelidate/core/-/core-2.0.0-alpha.35.tgz"
-  integrity sha512-BSGQElu5lyI0GzqehFzUWy7GXhEUC7Z8oEpdxgCyGGN5gOFlAQ5Zr4dDFzfIOhU4jik3CfPHK+i+Juqg2OCKNw==
+"@vuelidate/core@2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vuelidate/core/-/core-2.0.0-alpha.34.tgz#4a2ce2ae18c8ffadb76b296b2c7c0e10a2f48a37"
+  integrity sha1-SizirhjI/623aylrLHwOEKL0ijc=
   dependencies:
     vue-demi "^0.12.0"
 
-"@vuelidate/validators@^2.0.0-alpha.26":
-  version "2.0.0-alpha.27"
-  resolved "https://registry.npmjs.org/@vuelidate/validators/-/validators-2.0.0-alpha.27.tgz"
-  integrity sha512-omCUVP+gr2kKBMQwdKsOYPWYk/Fu92K93LRnl8Vk856UudNlb89wCreh0/Q8DpVEOisLljI3T7026QCo9eSq4Q==
+"@vuelidate/validators@2.0.0-alpha.26":
+  version "2.0.0-alpha.26"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vuelidate/validators/-/validators-2.0.0-alpha.26.tgz#dbea8d44b7607ac0b4dced36ea3e4641f1617942"
+  integrity sha1-2+qNRLdgesC03O026j5GQfFheUI=
   dependencies:
     vue-demi "^0.12.0"
 
@@ -10459,11 +10459,6 @@ vue-demi@^0.12.0:
   resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.12.4.tgz"
   integrity sha512-ztPDkFt0TSUdoq1ZI6oD730vgztBkiByhUW7L1cOTebiSBqSYfSQgnhYakYigBkyAybqCTH7h44yZuDJf2xILQ==
 
-vue-demi@^0.13.1:
-  version "0.13.1"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-demi/-/vue-demi-0.13.1.tgz#7604904c88be338418a10abbc94d5b8caa14cb8c"
-  integrity sha1-dgSQTIi+M4QYoQq7yU1bjKoUy4w=
-
 vue-eslint-parser@^7.10.0:
   version "7.11.0"
   resolved "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-7.11.0.tgz"
@@ -10528,10 +10523,10 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.6.14:
+vue-template-compiler@2.6.14:
   version "2.6.14"
-  resolved "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.6.14.tgz"
-  integrity sha512-ODQS1SyMbjKoO1JBJZojSw6FE4qnh9rIpUZn2EUT86FKizx9uH5z6uXiIrm4/Nb/gwxTi/o17ZDEGWAXHvtC7g==
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-template-compiler/-/vue-template-compiler-2.6.14.tgz#a2f0e7d985670d42c9c9ee0d044fed7690f4f763"
+  integrity sha1-ovDn2YVnDULJye4NBE/tdpD092M=
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -10546,10 +10541,10 @@ vue-the-mask@^0.11.1:
   resolved "https://registry.npmjs.org/vue-the-mask/-/vue-the-mask-0.11.1.tgz"
   integrity sha512-UquSfnSWejD0zAfcD+3jJ1chUAkOAyoxya9Lxh9acCRtrlmGcAIvd0cQYraWqKenbuZJUdum+S174atv2AuEHQ==
 
-vue@^2.6.14:
+vue@2.6.14:
   version "2.6.14"
-  resolved "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
-  integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=
 
 vuex@^3.0.1, vuex@^3.6.2:
   version "3.6.2"

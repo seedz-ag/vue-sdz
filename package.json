@@ -1,6 +1,6 @@
 {
   "name": "vue-sdz",
-  "version": "0.1.09",
+  "version": "0.1.11",
   "main": "dist/js/bundle.cjs.js",
   "module": "dist/js/bundle.esm.js",
   "private": false,
@@ -59,11 +59,11 @@
     "simple-code-editor": "^1.1.1",
     "vite": "^2.5.7",
     "vite-plugin-vue2": "^1.8.2",
-    "vue": "^2.6.14",
+    "vue": "2.6.14",
     "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.8",
     "vue-router": "^3.5.3",
-    "vue-template-compiler": "^2.6.14",
+    "vue-template-compiler": "2.6.14",
     "vuex": "^3.6.2"
   },
   "license": "MIT",
@@ -74,16 +74,15 @@
     }
   },
   "dependencies": {
-    "@vue/composition-api": "^1.6.3",
-    "@vuelidate/core": "^2.0.0-alpha.34",
-    "@vuelidate/validators": "^2.0.0-alpha.26",
+    "@vue/composition-api": "1.6.3",
+    "@vuelidate/core": "2.0.0-alpha.34",
+    "@vuelidate/validators": "2.0.0-alpha.26",
     "sdz-icons": "^0.0.7",
     "utils-sdz": "^0.0.9",
     "v-money": "^0.8.1",
     "vue-coe-feedback": "^0.1.5",
     "vue-coe-image": "^0.2.3",
     "vue-coerousel": "^1.0.17",
-    "vue-demi": "^0.13.1",
     "vue-the-mask": "^0.11.1"
   }
 }
