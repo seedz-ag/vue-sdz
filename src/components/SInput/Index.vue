@@ -47,8 +47,8 @@ export default {
   components: {
     Money,
     SInputContainer,
-    SIcon: () => import('../SIcon/Index.vue'),
-    SButton: () => import('../SButton/Index.vue')
+    SIcon: () => import('../SIcon/Index.vue').then(d => d.default),
+    SButton: () => import('../SButton/Index.vue').then(d => d.default)
   },
 
   directives: {
