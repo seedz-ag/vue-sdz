@@ -19,6 +19,7 @@ export default {
     SInput: () => import('../SInput/Index.vue').then(d => d.default),
     SSelect: () => import('../SSelect/Index.vue').then(d => d.default),
     SSwitch: () => import('../SSwitch/Index.vue').then(d => d.default),
+    SButton: () => import('../SButton/Index.vue').then(d => d.default),
     SCheckbox: () => import('../SCheckbox/Index.vue').then(d => d.default),
     SRadiobox: () => import('../SRadiobox/Index.vue').then(d => d.default)
   },
