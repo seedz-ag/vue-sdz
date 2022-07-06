@@ -410,7 +410,7 @@ export default {
     display: flex;
     margin-top: 30px;
 
-    justify-content: end;
+    justify-content: flex-end;
     &.--show-per-page { justify-content: space-between; }
 
     & > .per-page {
