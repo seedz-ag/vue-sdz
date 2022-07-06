@@ -15,14 +15,17 @@ export default [
   },
 
   {
-    name: 'button',
+    name: 'inputBtn',
     button: 'editar',
     buttonIcon: 'sdz-star',
     component: 'SInput',
-    label: 'button',
-    placeholder: 'button',
+    label: 'inputBtn',
+    placeholder: 'inputBtn',
     value: '',
-    validate: { required }
+    validate: { required },
+    onClick () {
+      this.$emit('click:input-btn')
+    },
   },
 
   [

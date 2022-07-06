@@ -1,6 +1,6 @@
 <template>
   <div class="s-form-builder-example">
-    <s-form-builder :fields="fields" @synchronize="synchronize">
+    <s-form-builder :fields="fields" @synchronize="synchronize" @click:input-btn="onInputBtn">
       <div class="actions" slot="actions" slot-scope="{ $v, $resetData }">
         <s-button @click="submit($v, $resetData)">Salvar</s-button>
       </div>
@@ -25,6 +25,10 @@ export default {
   methods: {
     synchronize (data) {
       // console.log(data)
+    },
+
+    onInputBtn () {
+      console.log('onInputBtn')
     },
 
     async submit ($v, $resetData) {
