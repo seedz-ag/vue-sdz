@@ -25,7 +25,7 @@
       </template>
     </div>
 
-    <slot name="actions" :$v="$v" :$resetData="setForm">
+    <slot name="actions" :$v="$v" :$form="form" :$resetData="setForm">
       <div class="actions">
         <s-button>Cancelar</s-button>
 
