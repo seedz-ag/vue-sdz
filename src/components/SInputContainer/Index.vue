@@ -1,10 +1,11 @@
 <template>
   <div :class="classes" v-bind="$attrs">
     <label v-if="label" class="label">
-      <span v-if="required" class="required">*</span>
-
       <s-icon v-if="leftIcon" :icon="leftIcon" class="left-icon" />
+
       <span v-else class="text">{{ label }}</span>
+
+      <span v-if="required" class="required"> *</span>
     </label>
 
     <slot />
