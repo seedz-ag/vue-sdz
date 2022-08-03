@@ -1,3 +1,9 @@
-<svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0.28125 8C0.28125 8.26522 0.386607 8.51957 0.574143 8.70711L7.57414 15.7071C7.96467 16.0976 8.59783 16.0976 8.98836 15.7071C9.37888 15.3166 9.37888 14.6834 8.98836 14.2929L2.69546 8L8.98836 1.70711C9.37888 1.31658 9.37888 0.683418 8.98836 0.292893C8.59783 -0.097631 7.96467 -0.097631 7.57414 0.292893L0.574143 7.29289C0.386607 7.48043 0.28125 7.73478 0.28125 8Z" fill="#202B36"/>
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>.cls-1{fill:none;stroke:#212121;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style>
+  </defs>
+
+  <g id="chevron-down">
+    <polyline class="cls-1" points="15.5 5 8.5 12 15.5 19"/>
+  </g>
 </svg>
