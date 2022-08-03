@@ -1,0 +1,1 @@
+var t=function(){var e=this,r=e.$createElement,a=e._self._c||r;return a("svg",e._g({attrs:{id:"Layer_3","data-name":"Layer 3",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24"}},e.$listeners),[a("defs"),a("path",{staticClass:"cls-1",attrs:{d:"M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"}})])},s={render:t};export{s as default};
