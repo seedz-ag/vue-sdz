@@ -1,13 +1,40 @@
 <template>
-  <i
+  <component
+    :is="`sdz-${icon}`"
     :class="classes"
-    :style="{ 'font-size': size + 'px' }"
+    :width="size"
+    :height="size"
+    :view-box="`0 0 ${size} ${size}`"
+
+    v-bind="$attrs"
+    v-on="$listeners"
   />
 </template>
 
 <script>
+const loadIcons = data => data.reduce((acc, icon) => {
+  acc[`sdz-${icon}`] = () => import(`../../assets/icons/${icon}.svg`)
+
+  return acc
+}, {})
+
+const paths = import.meta.importGlob('../../assets/icons/*.svg')
+
+const files = Object
+  .keys(paths)
+  .map(path => path
+    .split('/')
+    .at(-1)
+    .split('.')
+    .shift()
+  )
+
+console.log('icons: ',loadIcons(files))
+
 export default {
   name: 'SIcon',
+
+  components: { ...loadIcons(files) },
 
   props: {
     icon: {
@@ -17,7 +44,7 @@ export default {
 
     size: {
       type: [String, Number],
-      default: 20
+      default: 50
     },
 
     disabled: Boolean,
@@ -30,8 +57,7 @@ export default {
   computed: {
     classes () {
       return [
-        `s-icon icon ${this.icon}`,
-
+        's-icon',
         {
           '--disabled': this.disabled,
           '--primary': this.primaryColor,
@@ -40,12 +66,6 @@ export default {
       ]
     }
   }
-
-  // methods: {
-  //   getImage () {
-  //     return new URL(`../../assets/icons/${this.icon}.svg`, import.meta.url).href
-  //   }
-  // }
 }
 </script>
 
