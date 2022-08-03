@@ -1,6 +1,6 @@
 <template>
   <component
-    :is="`sdz-${icon}`"
+    :is="icon"
     :class="classes"
     :width="size"
     :height="size"
