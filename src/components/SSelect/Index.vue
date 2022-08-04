@@ -82,7 +82,7 @@ import Searchable from './mixins/searchable'
 
 import clickOutside from '../../directives/clickOutside'
 
-import matches from '../../helpers/matches/index.js'
+import utils from 'utils-sdz'
 
 export default {
   components: { SCollapsible, SInputContainer },
@@ -163,8 +163,8 @@ export default {
         const item = data[this.displayBy]
 
         return typeof item === 'string'
-          ? matches(this.searchQuery.toLowerCase(), item.toLowerCase())
-          : matches(this.searchQuery.toString().toLowerCase(), item.toString().toLowerCase())
+          ? utils.matches(this.searchQuery.toLowerCase(), item.toLowerCase())
+          : utils.matches(this.searchQuery.toString().toLowerCase(), item.toString().toLowerCase())
       })
     },
 
