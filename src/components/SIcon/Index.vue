@@ -44,7 +44,7 @@ export default {
 
     size: {
       type: [String, Number],
-      default: 50
+      default: 24
     },
 
     disabled: Boolean,
@@ -76,13 +76,21 @@ export default {
   display: inline-block;
 
   &.--disabled {
-    color: color(neutral, dark);;
-    //background-clip: text;
-    //background: color(neutral, dark);
-    //-webkit-background-clip: text;
+    fill: color(neutral, dark);
+
+    & > * { stroke: color(neutral, dark); }
   }
 
-  &.--primary { color: color(primary, base); }
-  &.--secondary { color: color(secondary, base); }
+  &.--primary {
+    fill: color(primary, base);
+
+    & > * { stroke: color(primary, base); }
+  }
+
+  &.--secondary {
+    fill: color(secondary, base);
+
+    & > * { stroke: color(secondary, base); }
+  }
 }
 </style>
