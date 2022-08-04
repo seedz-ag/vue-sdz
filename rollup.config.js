@@ -5,7 +5,7 @@ import commonjs from '@rollup/plugin-commonjs'
 const config = {
   inlineDynamicImports: true,
 
-  external: ['vue', '@vue/composition-api'],
+  external: ['vue'],
 
   input: 'src/index.js',
 
@@ -20,13 +20,7 @@ const config = {
     }
   ],
 
-  plugins: [
-    commonjs(),
-
-    vue({ css: false }),
-
-    scss({ output: 'dist/css/bundle.css' })
-  ]
+  plugins: [ commonjs(), vue(), scss() ]
 }
 
 export default config

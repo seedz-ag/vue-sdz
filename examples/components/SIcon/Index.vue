@@ -8,34 +8,10 @@
 
     <s-box>
       <div class="box-icons flex-inline">
-        <div class="icons">
-          <s-icon disabled icon="sdz-key" size="40" /> <span>disabled</span>
-        </div>
-
-        <br>
-
         <div v-for="icon in icons" :key="icon" class="icons">
-          <s-icon :icon="icon" size="40" />
+          <s-icon :icon="`sdz-${icon}`" />
 
           <span>{{ icon }}</span>
-        </div>
-      </div>
-    </s-box>
-
-    <pre-code :code="code" />
-
-    <s-title size="title-1">Icons - Integração</s-title>
-
-    <p class="subtitle">
-      Essa categoria foi criada, para que possamos segmentar nossos icons entre "geral" e "temáticos". Aqui o tema é icones ligados ao sistema de Integração.
-    </p>
-
-    <s-box>
-      <div class="box-icons flex-inline">
-        <div v-for="icon2 in icons2" :key="icon2" class="icons">
-          <s-icon :icon="icon2" size="40" />
-
-          <span>{{ icon2 }}</span>
         </div>
       </div>
     </s-box>
@@ -43,129 +19,26 @@
 </template>
 
 <script>
-import '../../../node_modules/sdz-icons/index.css'
 import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
-import PreCode from '../PreCode/Index.vue'
+
+const paths = import.meta.importGlob('../../../src/assets/icons/*.svg')
+const icons = Object
+  .keys(paths)
+  .map(path => path
+    .split('/')
+    .at(-1)
+    .split('.')
+    .shift()
+  )
 
 export default {
-  components: { SIcon, SBox, STitle, PreCode },
+  components: { SIcon, SBox, STitle },
 
   data () {
     return {
-      code: '<s-icon :icon="sdz-zeedz" size="40" />',
-      icons: [
-        'sdz-alert-triangle',
-        'sdz-zoom-out',
-        'sdz-zoom-in',
-        'sdz-zendesk',
-        'sdz-zeedz',
-        'sdz-youtube',
-        'sdz-whatsapp',
-        'sdz-users',
-        'sdz-user',
-        'sdz-upload-cloud',
-        'sdz-upload',
-        'sdz-unlock',
-        'sdz-truck',
-        'sdz-triple-dots-v',
-        'sdz-television',
-        'sdz-suitcase',
-        'sdz-star',
-        'sdz-smartphone',
-        'sdz-sliders',
-        'sdz-slash',
-        'sdz-shield-off',
-        'sdz-shield',
-        'sdz-share_1',
-        'sdz-share',
-        'sdz-seedz',
-        'sdz-search',
-        'sdz-scan-bar-code',
-        'sdz-rotate-cw',
-        'sdz-repeat',
-        'sdz-refresh-ccw',
-        'sdz-printer',
-        'sdz-picture',
-        'sdz-percent',
-        'sdz-painting-roller',
-        'sdz-package',
-        'sdz-more-vertical',
-        'sdz-more-horizzontal',
-        'sdz-monitor',
-        'sdz-minus-circle',
-        'sdz-megaphone',
-        'sdz-map-pin',
-        'sdz-map',
-        'sdz-mail',
-        'sdz-log-out',
-        'sdz-log-in',
-        'sdz-login',
-        'sdz-lock',
-        'sdz-linkedin',
-        'sdz-link',
-        'sdz-life-buoy',
-        'sdz-laptop',
-        'sdz-key',
-        'sdz-instagram',
-        'sdz-info',
-        'sdz-home',
-        'sdz-help-circle',
-        'sdz-heart',
-        'sdz-globe',
-        'sdz-gear',
-        'sdz-folder',
-        'sdz-filter',
-        'sdz-file-text',
-        'sdz-facebook',
-        'sdz-eye-off',
-        'sdz-eye',
-        'sdz-download-cloud',
-        'sdz-download_1',
-        'sdz-download',
-        'sdz-dollar-sign',
-        'sdz-divide',
-        'sdz-crossair',
-        'sdz-credit-card',
-        'sdz-copy',
-        'sdz-close',
-        'sdz-clock',
-        'sdz-chevron-up',
-        'sdz-chevron-right',
-        'sdz-chevron-left',
-        'sdz-chevron-down',
-        'sdz-check-circle',
-        'sdz-check',
-        'sdz-chat',
-        'sdz-cart',
-        'sdz-calendar',
-        'sdz-box',
-        'sdz-book-open',
-        'sdz-bell',
-        'sdz-bar-code',
-        'sdz-arrow-left',
-        'sdz-archive',
-        'sdz-store',
-        'sdz-menu',
-        'sdz-send',
-        'sdz-plus',
-        'sdz-minus',
-        'sdz-edit',
-        'sdz-external-link',
-        'sdz-dashboard',
-        'sdz-grid',
-        'sdz-list',
-        'sdz-maximize',
-        'sdz-minimize',
-      ],
-
-      icons2: [
-        'sdz-agent',
-        'sdz-api',
-        'sdz-sftp',
-        'sdz-webserve'
-      ]
+      icons: icons
     }
   }
 }
@@ -190,8 +63,8 @@ export default {
         display: flex;
         align-items: center;
         width: 33%;
+        padding: 10px;
 
-        & > .s-icon { padding: 10px;}
         & > span { margin-left: 10px; }
       }
     }

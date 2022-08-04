@@ -28,11 +28,11 @@ export default {
       code: '<s-stepper :step="activeStep" :items="items" @select="newStep => activeStep = newStep" />',
       activeStep: 2,
       items: [
-        { label: 'item 1', icon: 'sdz-dollar-sign', disabled: false },
-        { label: 'item 2', icon: 'sdz-link', disabled: false },
-        { label: 'item 3', icon: 'sdz-shield', disabled: false },
-        { label: 'item 4', icon: 'sdz-shield-off', disabled: true },
-        { label: 'item 5', icon: 'sdz-cart', disabled: false }
+        { label: 'item 1', icon: 'dollar-sign', disabled: false },
+        { label: 'item 2', icon: 'link', disabled: false },
+        { label: 'item 3', icon: 'shield', disabled: false },
+        { label: 'item 4', icon: 'shield-off', disabled: true },
+        { label: 'item 5', icon: 'cart', disabled: false }
       ]
     }
   }
