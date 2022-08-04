@@ -8,19 +8,11 @@
 
     <s-box>
       <div class="box-icons flex-inline">
-        archive: <s-icon icon="sdz-archive" size="40" />
-
-        <!-- <div class="icons">
-          <s-icon disabled icon="sdz-key" size="40" /> <span>disabled</span>
-        </div> -->
-
-        <br>
-
-        <!-- <div v-for="icon in icons" :key="icon" class="icons">
-          <s-icon :icon="icon" size="40" />
+        <div v-for="icon in icons" :key="icon" class="icons">
+          <s-icon :icon="`sdz-${icon}`" />
 
           <span>{{ icon }}</span>
-        </div> -->
+        </div>
       </div>
     </s-box>
   </div>
@@ -31,7 +23,7 @@ import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 
-const paths = import.meta.importGlob('../../assets/icons/*.svg')
+const paths = import.meta.importGlob('../../../src/assets/icons/*.svg')
 const icons = Object
   .keys(paths)
   .map(path => path
@@ -71,8 +63,8 @@ export default {
         display: flex;
         align-items: center;
         width: 33%;
+        padding: 10px;
 
-        & > .s-icon { padding: 10px;}
         & > span { margin-left: 10px; }
       }
     }
