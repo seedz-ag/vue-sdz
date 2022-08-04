@@ -73,7 +73,7 @@
 
 <script>
 import STable from '../../../src/components/STable/Index.vue'
-import findByInclusive from '../../../src/helpers/findByInclusive'
+// import findByInclusive from '../../../src/helpers/findByInclusive'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 
@@ -113,13 +113,15 @@ export default {
     tableRows () {
       if (!this.search) return this.rows
 
-      return findByInclusive(this.rows, this.search, 'name')
+      return this.rows
+      // return findByInclusive(this.rows, this.search, 'name')
     },
 
     tableRows2 () {
       if (!this.search) return this.rows2
 
-      return findByInclusive(this.rows2, this.search, 'name')
+      return this.rows
+      // return findByInclusive(this.rows2, this.search, 'name')
     }
   },
 
