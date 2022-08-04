@@ -273,7 +273,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.16.10", "@babel/parser@^7.16.4", "@babel/parser@^7.18.6", "@babel/parser@^7.18.9", "@babel/parser@^7.4.3", "@babel/parser@^7.6.0", "@babel/parser@^7.7.0", "@babel/parser@^7.9.6":
+"@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.16.10", "@babel/parser@^7.18.6", "@babel/parser@^7.18.9", "@babel/parser@^7.4.3", "@babel/parser@^7.6.0", "@babel/parser@^7.7.0", "@babel/parser@^7.9.6":
   version "7.18.9"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@babel/parser/-/parser-7.18.9.tgz#f2dde0c682ccc264a9a8595efd030a5cc8fd2539"
   integrity sha1-8t3gxoLMwmSpqFle/QMKXMj9JTk=
@@ -2071,48 +2071,6 @@
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
-"@vue/compiler-core@3.2.37":
-  version "3.2.37"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/compiler-core/-/compiler-core-3.2.37.tgz#b3c42e04c0e0f2c496ff1784e543fbefe91e215a"
-  integrity sha1-s8QuBMDg8sSW/xeE5UP77+keIVo=
-  dependencies:
-    "@babel/parser" "^7.16.4"
-    "@vue/shared" "3.2.37"
-    estree-walker "^2.0.2"
-    source-map "^0.6.1"
-
-"@vue/compiler-dom@3.2.37":
-  version "3.2.37"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/compiler-dom/-/compiler-dom-3.2.37.tgz#10d2427a789e7c707c872da9d678c82a0c6582b5"
-  integrity sha1-ENJCeniefHB8hy2p1njIKgxlgrU=
-  dependencies:
-    "@vue/compiler-core" "3.2.37"
-    "@vue/shared" "3.2.37"
-
-"@vue/compiler-sfc@^3.2.20":
-  version "3.2.37"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/compiler-sfc/-/compiler-sfc-3.2.37.tgz#3103af3da2f40286edcd85ea495dcb35bc7f5ff4"
-  integrity sha1-MQOvPaL0AobtzYXqSV3LNbx/X/Q=
-  dependencies:
-    "@babel/parser" "^7.16.4"
-    "@vue/compiler-core" "3.2.37"
-    "@vue/compiler-dom" "3.2.37"
-    "@vue/compiler-ssr" "3.2.37"
-    "@vue/reactivity-transform" "3.2.37"
-    "@vue/shared" "3.2.37"
-    estree-walker "^2.0.2"
-    magic-string "^0.25.7"
-    postcss "^8.1.10"
-    source-map "^0.6.1"
-
-"@vue/compiler-ssr@3.2.37":
-  version "3.2.37"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/compiler-ssr/-/compiler-ssr-3.2.37.tgz#4899d19f3a5fafd61524a9d1aee8eb0505313cff"
-  integrity sha1-SJnRnzpfr9YVJKnRrujrBQUxPP8=
-  dependencies:
-    "@vue/compiler-dom" "3.2.37"
-    "@vue/shared" "3.2.37"
-
 "@vue/component-compiler-utils@^3.0.0", "@vue/component-compiler-utils@^3.1.0", "@vue/component-compiler-utils@^3.2.0", "@vue/component-compiler-utils@^3.2.2":
   version "3.3.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/component-compiler-utils/-/component-compiler-utils-3.3.0.tgz#f9f5fb53464b0c37b2c8d2f3fbfe44df60f61dc9"
@@ -2149,22 +2107,6 @@
   version "1.7.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/composition-api/-/composition-api-1.7.0.tgz#26fae79e5023fc6c9dfd99ca5d3d357e1c5b9c60"
   integrity sha1-JvrnnlAj/Gyd/ZnKXT01fhxbnGA=
-
-"@vue/reactivity-transform@3.2.37":
-  version "3.2.37"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/reactivity-transform/-/reactivity-transform-3.2.37.tgz#0caa47c4344df4ae59f5a05dde2a8758829f8eca"
-  integrity sha1-DKpHxDRN9K5Z9aBd3iqHWIKfjso=
-  dependencies:
-    "@babel/parser" "^7.16.4"
-    "@vue/compiler-core" "3.2.37"
-    "@vue/shared" "3.2.37"
-    estree-walker "^2.0.2"
-    magic-string "^0.25.7"
-
-"@vue/shared@3.2.37":
-  version "3.2.37"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/shared/-/shared-3.2.37.tgz#8e6adc3f2759af52f0e85863dfb0b711ecc5c702"
-  integrity sha1-jmrcPydZr1Lw6Fhj37C3EezFxwI=
 
 "@vue/test-utils@^1.0.0-beta.25", "@vue/test-utils@^1.2.2":
   version "1.3.0"
@@ -4440,7 +4382,7 @@ estree-walker@^1.0.1:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/estree-walker/-/estree-walker-1.0.1.tgz#31bc5d612c96b704106b477e6dd5d8aa138cb700"
   integrity sha1-MbxdYSyWtwQQa0d+bdXYqhOMtwA=
 
-estree-walker@^2.0.1, estree-walker@^2.0.2:
+estree-walker@^2.0.1:
   version "2.0.2"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=
@@ -8347,7 +8289,7 @@ postcss@^7.0.36:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postcss@^8.1.10, postcss@^8.4.13, postcss@^8.4.7:
+postcss@^8.4.13, postcss@^8.4.7:
   version "8.4.14"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/postcss/-/postcss-8.4.14.tgz#ee9274d5622b4858c1007a74d76e42e56fd21caf"
   integrity sha1-7pJ01WIrSFjBAHp0125C5W/SHK8=
@@ -9738,7 +9680,7 @@ svg-tags@^1.0.0:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
   integrity sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
 
-svgo@^2.7.0, svgo@^2.8.0:
+svgo@^2.8.0:
   version "2.8.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/svgo/-/svgo-2.8.0.tgz#4ff80cce6710dc2795f0c7c74101e6764cfccd24"
   integrity sha1-T/gMzmcQ3CeV8MfHQQHmdkz8zSQ=
@@ -10321,14 +10263,6 @@ vite-plugin-vue2@^1.8.2:
     slash "^3.0.0"
     source-map "^0.7.3"
     vue-template-es2015-compiler "^1.9.1"
-
-vite-svg-loader@^3.4.0:
-  version "3.4.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vite-svg-loader/-/vite-svg-loader-3.4.0.tgz#4638827fe86b85ecfcea1ad61dd972c351d5befd"
-  integrity sha1-RjiCf+hrhez86hrWHdlyw1HVvv0=
-  dependencies:
-    "@vue/compiler-sfc" "^3.2.20"
-    svgo "^2.7.0"
 
 vite@^2.5.7:
   version "2.9.14"

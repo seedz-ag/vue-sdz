@@ -58,7 +58,6 @@
     "vite-plugin-glob": "^0.3.2",
     "vite-plugin-vue2": "^1.8.2",
     "vite-plugin-vue2-svg": "^0.3.0",
-    "vite-svg-loader": "^3.4.0",
     "vue": "2.6.14",
     "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.8",
