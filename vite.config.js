@@ -13,11 +13,18 @@ export default defineConfig({
     outDir: path.join(__dirname, 'docs')
   },
 
-  optimizeDeps: {
-    exclude: ['vue-demi']
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    },
   },
 
+  // optimizeDeps: {
+  //   exclude: ['vue-demi']
+  // },
+
   plugins: [
+
     GlobPlugin(),
     createVuePlugin(),
     createSvgPlugin()
