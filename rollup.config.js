@@ -6,7 +6,7 @@ import copy from 'rollup-plugin-copy-assets'
 import commonjs from '@rollup/plugin-commonjs'
 
 const config = {
-  // inlineDynamicImports: true,
+  inlineDynamicImports: true,
 
   external: ['vue'],
 
@@ -19,10 +19,10 @@ const config = {
     // },
     {
       format: 'esm',
-      // file: 'dist/js/bundle.esm.js',
-      dir: 'dist',
-      preserveModules: true,
-      preserveModulesRoot: 'src'
+      file: 'dist/js/bundle.esm.js',
+      // dir: 'dist',
+      // preserveModules: true,
+      // preserveModulesRoot: 'src'
     }
   ],
 

@@ -18,7 +18,7 @@ const loadIcons = data => data.reduce((acc, icon) => {
   return acc
 }, {})
 
-const paths = import.meta.importGlob('../../assets/icons/*.svg')
+const paths = import.meta.importGlob('@/assets/icons/*.svg')
 
 const files = Object
   .keys(paths)
@@ -28,8 +28,6 @@ const files = Object
     .split('.')
     .shift()
   )
-
-console.log('icons: ',loadIcons(files))
 
 export default {
   name: 'SIcon',
