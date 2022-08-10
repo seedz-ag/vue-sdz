@@ -24,7 +24,6 @@ export default defineConfig({
   // },
 
   plugins: [
-
     GlobPlugin(),
     createVuePlugin(),
     createSvgPlugin()
