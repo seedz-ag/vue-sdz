@@ -1,10 +1,9 @@
 <template>
   <component
-    :is="icon"
+    :is="`icon-mdi:${icon}`"
     :class="classes"
     :width="size"
     :height="size"
-    :view-box="`0 0 ${size} ${size}`"
 
     v-bind="$attrs"
     v-on="$listeners"
@@ -12,27 +11,8 @@
 </template>
 
 <script>
-const loadIcons = data => data.reduce((acc, icon) => {
-  acc[`sdz-${icon}`] = () => import(`../../assets/icons/${icon}.svg`)
-
-  return acc
-}, {})
-
-const paths = import.meta.importGlob('@/assets/icons/*.svg')
-
-const files = Object
-  .keys(paths)
-  .map(path => path
-    .split('/')
-    .at(-1)
-    .split('.')
-    .shift()
-  )
-
 export default {
   name: 'SIcon',
-
-  components: { ...loadIcons(files) },
 
   props: {
     icon: {

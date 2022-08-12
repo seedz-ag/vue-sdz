@@ -7,39 +7,30 @@
     </p>
 
     <s-box>
-      <div class="box-icons flex-inline">
+      <icon-mdi:facebook />
+      <icon-mdi:instagram />
+      <icon-twitch />
+      <!-- <div class="box-icons flex-inline">
         <div v-for="icon in icons" :key="icon" class="icons">
           <s-icon :icon="`sdz-${icon}`" />
 
           <span>{{ icon }}</span>
         </div>
-      </div>
+      </div> -->
     </s-box>
   </div>
 </template>
 
 <script>
-import SIcon from '../../../src/components/SIcon/Index.vue'
+// import SIcon from '../../../src/components/SIcon/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
 
-const paths = import.meta.importGlob('../../../src/assets/icons/*.svg')
-const icons = Object
-  .keys(paths)
-  .map(path => path
-    .split('/')
-    .at(-1)
-    .split('.')
-    .shift()
-  )
-
 export default {
-  components: { SIcon, SBox, STitle },
-
-  data () {
-    return {
-      icons: icons
-    }
+  components: {
+    SBox,
+    STitle,
+    IconTwitch: () => import('~icons/mdi/twitch')
   }
 }
 </script>
