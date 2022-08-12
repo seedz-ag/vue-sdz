@@ -4,6 +4,13 @@
   "main": "dist/js/bundle.cjs.js",
   "module": "dist/js/bundle.esm.js",
   "private": false,
+  "license": "MIT",
+  "repository": "https://github.com/seedz-ag/vue-sdz",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-coenvencional"
+    }
+  },
   "lint-staged": {
     "*.{js,vue}": [
       "eslint --ignore-pattern 'docs/*' --cache --fix",
@@ -21,6 +28,16 @@
     "test-components": "jest 'src/components'",
     "test-e2e:run": "cypress run",
     "test-e2e:open": "cypress open 'tests/e2e/integration/**/*'"
+  },
+  "dependencies": {
+    "@vuelidate/core": "2.0.0-alpha.34",
+    "@vuelidate/validators": "2.0.0-alpha.26",
+    "utils-sdz": "^0.0.12",
+    "v-money": "^0.8.1",
+    "vue-coe-feedback": "^0.1.5",
+    "vue-coe-image": "^0.2.3",
+    "vue-coerousel": "^1.0.17",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -55,32 +72,17 @@
     "rollup-plugin-vue": "5.0.0",
     "sass": "^1.36.0",
     "sass-loader": "10",
-    "vite": "^2.5.7",
     "vite-plugin-glob": "^0.3.2",
-    "vite-plugin-vue2": "^1.8.2",
-    "vite-plugin-vue2-svg": "^0.3.0",
-    "vue": "2.6.14",
+    "vue": "2.7.0",
     "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.8",
     "vue-router": "^3.5.3",
-    "vue-template-compiler": "2.6.14",
-    "vuex": "^3.6.2"
-  },
-  "license": "MIT",
-  "repository": "https://github.com/seedz-ag/vue-sdz",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-coenvencional"
-    }
-  },
-  "dependencies": {
-    "@vuelidate/core": "2.0.0-alpha.34",
-    "@vuelidate/validators": "2.0.0-alpha.26",
-    "utils-sdz": "^0.0.12",
-    "v-money": "^0.8.1",
-    "vue-coe-feedback": "^0.1.5",
-    "vue-coe-image": "^0.2.3",
-    "vue-coerousel": "^1.0.17",
-    "vue-the-mask": "^0.11.1"
+    "vue-template-compiler": "2.7.0",
+    "vuex": "^3.6.2",
+    "@iconify-json/mdi": "^1.1.30",
+    "unplugin-icons": "^0.14.8",
+    "unplugin-vue-components": "^0.22.4",
+    "vite": "^3.0.0",
+    "vite-plugin-vue2": "^2.0.2"
   }
 }
