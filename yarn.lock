@@ -19,19 +19,6 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@antfu/install-pkg@^0.1.0":
-  version "0.1.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@antfu/install-pkg/-/install-pkg-0.1.0.tgz#8d8c61820cbc32e5c37d82d515485ad3ee9bd052"
-  integrity sha1-jYxhggy8MuXDfYLVFUha0+6b0FI=
-  dependencies:
-    execa "^5.1.1"
-    find-up "^5.0.0"
-
-"@antfu/utils@^0.5.0", "@antfu/utils@^0.5.2":
-  version "0.5.2"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@antfu/utils/-/utils-0.5.2.tgz#8c2d931ff927be0ebe740169874a3d4004ab414b"
-  integrity sha1-jC2TH/knvg6+dAFph0o9QASrQUs=
-
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -1308,30 +1295,6 @@
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha1-tSBSnsIdjllFoYUd/Rwy6U45/0U=
 
-"@iconify-json/mdi@^1.1.30":
-  version "1.1.30"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@iconify-json/mdi/-/mdi-1.1.30.tgz#405a2b79e551f26ae907ec98cf8348159eeccd50"
-  integrity sha1-QForeeVR8mrpB+yYz4NIFZ7szVA=
-  dependencies:
-    "@iconify/types" "*"
-
-"@iconify/types@*", "@iconify/types@^1.1.0":
-  version "1.1.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@iconify/types/-/types-1.1.0.tgz#dc15fc988b1b3fd558dd140a24ede7e0aac11280"
-  integrity sha1-3BX8mIsbP9VY3RQKJO3n4KrBEoA=
-
-"@iconify/utils@^1.0.33":
-  version "1.0.33"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@iconify/utils/-/utils-1.0.33.tgz#9952ecae79e3b1685b83c58159c1d48959f6105a"
-  integrity sha1-mVLsrnnjsWhbg8WBWcHUiVn2EFo=
-  dependencies:
-    "@antfu/install-pkg" "^0.1.0"
-    "@antfu/utils" "^0.5.0"
-    "@iconify/types" "^1.1.0"
-    debug "^4.3.4"
-    kolorist "^1.5.1"
-    local-pkg "^0.4.1"
-
 "@iconify/vue2@^1.2.1":
   version "1.2.1"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@iconify/vue2/-/vue2-1.2.1.tgz#f858bcfe8554970cca6d8f4c7a7e8015c7933fbb"
@@ -2264,7 +2227,7 @@ acorn@^7.1.0, acorn@^7.1.1, acorn@^7.4.0:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha1-/q7SVZc9LndVW4PbwIhRpsY1IPo=
 
-acorn@^8.2.4, acorn@^8.4.1, acorn@^8.7.1, acorn@^8.8.0:
+acorn@^8.2.4, acorn@^8.4.1, acorn@^8.7.1:
   version "8.8.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
   integrity sha1-iMAYdiBDXH9gFYA/VTna4Fqdvqg=
@@ -3109,7 +3072,7 @@ check-more-types@^2.24.0:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/check-more-types/-/check-more-types-2.24.0.tgz#1420ffb10fd444dcfc79b43891bbfffd32a84600"
   integrity sha1-FCD/sQ/URNz8ebQ4kbv//TKoRgA=
 
-"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.3:
+"chokidar@>=3.0.0 <4.0.0":
   version "3.5.3"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha1-HPN8hwe5Mr0a8a4iwEMuKs0ZA70=
@@ -7044,11 +7007,6 @@ klona@^2.0.4:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/klona/-/klona-2.0.5.tgz#d166574d90076395d9963aa7a928fabb8d76afbc"
   integrity sha1-0WZXTZAHY5XZljqnqSj6u412r7w=
 
-kolorist@^1.5.1:
-  version "1.5.1"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/kolorist/-/kolorist-1.5.1.tgz#c3d66dc4fabde4f6b7faa6efda84c00491f9e52b"
-  integrity sha1-w9ZtxPq95Pa3+qbv2oTABJH55Ss=
-
 launch-editor@^2.2.1:
   version "2.5.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/launch-editor/-/launch-editor-2.5.0.tgz#d646fcc15ed8589b998950cad1102827d9dcadce"
@@ -7180,11 +7138,6 @@ loader-utils@^2.0.0:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
     json5 "^2.1.2"
-
-local-pkg@^0.4.1, local-pkg@^0.4.2:
-  version "0.4.2"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/local-pkg/-/local-pkg-0.4.2.tgz#13107310b77e74a0e513147a131a2ba288176c2f"
-  integrity sha1-ExBzELd+dKDlExR6ExoroogXbC8=
 
 locate-path@^3.0.0:
   version "3.0.0"
@@ -7339,7 +7292,7 @@ magic-string@^0.25.2, magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.8"
 
-magic-string@^0.26.1, magic-string@^0.26.2:
+magic-string@^0.26.1:
   version "0.26.2"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/magic-string/-/magic-string-0.26.2.tgz#5331700e4158cd6befda738bb6b0c7b93c0d4432"
   integrity sha1-UzFwDkFYzWvv2nOLtrDHuTwNRDI=
@@ -7518,7 +7471,7 @@ minimatch@^3.0.4, minimatch@^3.1.1:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^5.0.1, minimatch@^5.1.0:
+minimatch@^5.0.1:
   version "5.1.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/minimatch/-/minimatch-5.1.0.tgz#1717b464f4971b144f6aabe8f2d0b8e4511e09c7"
   integrity sha1-Fxe0ZPSXGxRPaqvo8tC45FEeCcc=
@@ -10107,55 +10060,6 @@ universalify@^2.0.0:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=
 
-unplugin-icons@^0.14.8:
-  version "0.14.8"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/unplugin-icons/-/unplugin-icons-0.14.8.tgz#0711f4a941fd6fc1308b8ddd33e316c3cd1f2546"
-  integrity sha1-BxH0qUH9b8Ewi43dM+MWw80fJUY=
-  dependencies:
-    "@antfu/install-pkg" "^0.1.0"
-    "@antfu/utils" "^0.5.2"
-    "@iconify/utils" "^1.0.33"
-    debug "^4.3.4"
-    kolorist "^1.5.1"
-    local-pkg "^0.4.2"
-    unplugin "^0.8.0"
-
-unplugin-vue-components@^0.22.4:
-  version "0.22.4"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/unplugin-vue-components/-/unplugin-vue-components-0.22.4.tgz#774a96339368f3b8436fa7c20e059d9fee42c983"
-  integrity sha1-d0qWM5No87hDb6fCDgWdn+5CyYM=
-  dependencies:
-    "@antfu/utils" "^0.5.2"
-    "@rollup/pluginutils" "^4.2.1"
-    chokidar "^3.5.3"
-    debug "^4.3.4"
-    fast-glob "^3.2.11"
-    local-pkg "^0.4.2"
-    magic-string "^0.26.2"
-    minimatch "^5.1.0"
-    resolve "^1.22.1"
-    unplugin "^0.9.0"
-
-unplugin@^0.8.0:
-  version "0.8.1"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/unplugin/-/unplugin-0.8.1.tgz#4517b6a8ec3d944e838f9c346921d9777cd159e1"
-  integrity sha1-RRe2qOw9lE6Dj5w0aSHZd3zRWeE=
-  dependencies:
-    acorn "^8.8.0"
-    chokidar "^3.5.3"
-    webpack-sources "^3.2.3"
-    webpack-virtual-modules "^0.4.4"
-
-unplugin@^0.9.0:
-  version "0.9.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/unplugin/-/unplugin-0.9.0.tgz#ebad287d61aa1b1f16de60feea74e8dd12224819"
-  integrity sha1-660ofWGqGx8W3mD+6nTo3RIiSBk=
-  dependencies:
-    acorn "^8.8.0"
-    chokidar "^3.5.3"
-    webpack-sources "^3.2.3"
-    webpack-virtual-modules "^0.4.4"
-
 unset-value@^1.0.0:
   version "1.0.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/unset-value/-/unset-value-1.0.0.tgz#8376873f7d2335179ffb1e6fc3a8ed0dfc8ab559"
@@ -10524,16 +10428,6 @@ webidl-conversions@^6.1.0:
   version "6.1.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/webidl-conversions/-/webidl-conversions-6.1.0.tgz#9111b4d7ea80acd40f5270d666621afa78b69514"
   integrity sha1-kRG01+qArNQPUnDWZmIa+ni2lRQ=
-
-webpack-sources@^3.2.3:
-  version "3.2.3"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
-  integrity sha1-LU2quEUf1LJAzCcFX/agwszqDN4=
-
-webpack-virtual-modules@^0.4.4:
-  version "0.4.4"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/webpack-virtual-modules/-/webpack-virtual-modules-0.4.4.tgz#a19fcf371923c59c4712d63d7d194b1e4d8262cc"
-  integrity sha1-oZ/PNxkjxZxHEtY9fRlLHk2CYsw=
 
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   version "1.0.5"
