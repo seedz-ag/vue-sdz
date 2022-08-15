@@ -45,10 +45,12 @@ export default {
       />`,
       activeTab: 'seumadruga',
       tabs: [
-        { name: 'Chaves', value: 'chaves', icon: 'share' },
-        { name: 'Seu Madruga', value: 'seumadruga', icon: 'divide' },
-        { name: 'Nhonho', value: 'nhonho', icon: 'key', disabled: true },
-        { name: 'Quico', value: 'quico', icon: 'key' }
+        { name: 'Chaves', value: 'chaves', icon: 'ant-design:tool-outlined' },
+        { name: 'Seu Madruga', value: 'seumadruga', icon: 'ant-design:tool-outlined' },
+        { name: 'Nhonho', value: 'nhonho', icon: 'ant-design:tool-outlined', disabled: true },
+        { name: 'Quico', value: 'quico', icon: 'ant-design:tool-outlined' },
+        { name: 'Dona florinda', value: 'donaflorinda', icon: 'ant-design:tool-outlined' },
+        { name: 'Chiquinha', value: 'Chiquinha', icon: 'ant-design:tool-outlined' }
       ]
     }
   }
