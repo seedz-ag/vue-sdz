@@ -24,8 +24,8 @@
     </p>
 
     <s-box class="flex-inline flex-center">
-      <s-badge dot><s-icon icon="sdz-bell" /></s-badge>
-      <s-badge content="3"><s-icon icon="sdz-cart" /></s-badge>
+      <s-badge dot><s-icon icon="bell" /></s-badge>
+      <s-badge content="3"><s-icon icon="cart" /></s-badge>
 
       <s-badge dot>testando</s-badge>
       <s-badge content="3">testando</s-badge>
@@ -44,11 +44,11 @@ import PreCode from '../PreCode/Index.vue'
 
 export default {
   components: { SBadge, SIcon, SBox, STitle, PreCode },
-  data(){
-    return{
-      code:`
-      <s-badge dot><s-icon icon="sdz-bell" /></s-badge>
-      <s-badge content="3"><s-icon icon="sdz-cart" /></s-badge>
+  data () {
+    return {
+      code: `
+      <s-badge dot><s-icon icon="bell" /></s-badge>
+      <s-badge content="3"><s-icon icon="cart" /></s-badge>
 
       <s-badge dot>testando</s-badge>
       <s-badge content="3">testando</s-badge>`

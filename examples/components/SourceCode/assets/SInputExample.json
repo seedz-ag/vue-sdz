@@ -81,10 +81,10 @@
           "values":[""],
           "default":"",
           "value":"",
-          "placeholder":"sdz-search",
+          "placeholder":"search",
           "type":"string",
           "description":"Adiciona um icone dentro do input lado esquerdo"
-         
+
         },
         {
           "name":"is-money",

@@ -45,7 +45,7 @@
         "values":[""],
         "default":"",
         "value":"",
-        "placeholder":"sdz-check",
+        "placeholder":"check",
         "type":"string",
         "description":"Adiciona um icone no link lado esquerdo"
       },
@@ -67,7 +67,7 @@
         "type":"boolean",
         "description":"Para fundo escuro, altera a cor do link"
       }
-      
+
   ],
   "value":""
 }

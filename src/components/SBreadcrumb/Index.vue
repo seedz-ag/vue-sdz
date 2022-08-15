@@ -6,7 +6,7 @@
           {{ text }}
         </a>
         <span v-else>{{ text }}</span>
-        <s-icon v-if="!isLast(index)" icon="sdz-chevron-right" size="14" />
+        <s-icon v-if="!isLast(index)" icon="chevron-right" size="14" />
       </li>
     </ul>
   </div>
@@ -32,9 +32,9 @@ export default {
   },
 
   methods: {
-    isLast(index){
-      const position = this.items.length - 1;
-      return position === index;
+    isLast (index) {
+      const position = this.items.length - 1
+      return position === index
     }
   }
 }

@@ -1,6 +1,7 @@
 <template>
-  <component
-    :is="`icon-mdi:${icon}`"
+  <!-- https://docs.iconify.design/icon-components/vue2/dimensions.html -->
+  <icon
+    :icon="icon"
     :class="classes"
     :width="size"
     :height="size"
@@ -11,8 +12,15 @@
 </template>
 
 <script>
+// https://github.com/antfu/unplugin-icons/issues/5
+// unplugin-icon limitation: designed to be used statically
+// because of that it had to be combined with @iconify/vue2
+import { listIcons , Icon } from '@iconify/vue2'
+
 export default {
   name: 'SIcon',
+
+  components: { Icon },
 
   props: {
     icon: {
@@ -30,6 +38,10 @@ export default {
     primaryColor: Boolean,
 
     secondaryColor: Boolean
+  },
+
+  created () {
+    console.log(listIcons())
   },
 
   computed: {

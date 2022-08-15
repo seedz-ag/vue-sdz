@@ -7,12 +7,9 @@
     </p>
 
     <s-box>
-      <icon-mdi:facebook />
-      <icon-mdi:instagram />
-      <icon-twitch />
       <!-- <div class="box-icons flex-inline">
         <div v-for="icon in icons" :key="icon" class="icons">
-          <s-icon :icon="`sdz-${icon}`" />
+          <s-icon :icon="`${icon}`" />
 
           <span>{{ icon }}</span>
         </div>
@@ -30,7 +27,7 @@ export default {
   components: {
     SBox,
     STitle,
-    IconTwitch: () => import('~icons/mdi/twitch')
+    // SIcon
   }
 }
 </script>

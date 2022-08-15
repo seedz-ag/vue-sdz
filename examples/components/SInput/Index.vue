@@ -24,7 +24,7 @@
     <s-box>
       <s-input label="Default" />
 
-      <s-input label="With Button" button="Alterar" button-icon="sdz-check" outlined />
+      <s-input label="With Button" button="Alterar" button-icon="check" outlined />
 
       <s-input placeholder="Input without label" />
 
@@ -118,7 +118,15 @@
     <s-box>
       <s-input
         round
-        icon="sdz-search"
+        icon="carbon:search"
+        :value="inputSearch"
+        :placeholder="'Search'"
+        @input="value => inputSearch = value"
+      />
+
+      <s-input
+        round
+        right-icon="carbon:search"
         :value="inputSearch"
         :placeholder="'Search'"
         @input="value => inputSearch = value"
@@ -209,7 +217,7 @@ export default {
       />`,
       code5: `<s-input
         round
-        icon="sdz-search"
+        icon="search"
         :value="inputSearch"
         :placeholder="'Search'"
         @input="value => inputSearch = value"

@@ -195,7 +195,6 @@ $icon-position: 8px;
 
     &.--has-icon { text-indent: 35px; }
     &.--is-rounded { border-radius: 50px; }
-    &.--has-right-icon { padding-right: 40px; }
   }
 
   & > .label {
@@ -232,9 +231,8 @@ $icon-position: 8px;
     }
   }
 
-  &.--has-icon {
-    & > .input { padding-left: 10px; }
-  }
+  &.--has-icon > .input { padding-left: 25px; }
+  &.--has-right-icon > .input { padding-right: 40px; }
 
   & > .left-icon, & > .right-icon {
     top: 50%;

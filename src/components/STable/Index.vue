@@ -27,7 +27,7 @@
                       v-if="sortable"
 
                       size="16"
-                      :icon="assortment[row] === 'increase' ? 'sdz-chevron-up' : 'sdz-chevron-down'"
+                      :icon="assortment[row] === 'increase' ? 'chevron-up' : 'chevron-down'"
 
                       @click.native="sort(row)"
                     />
@@ -77,7 +77,7 @@
 
                 ref="action"
                 size="25"
-                icon="sdz-more-horizzontal"
+                icon="more-horizzontal"
 
                 @click.native.stop="activeAction = index"
               />
@@ -120,7 +120,7 @@
         <div v-if="showPerPage" class="per-page">
           Linhas por página: {{ perPage }}
 
-          <s-icon ref="target" icon="sdz-chevron-up" @click.native="showPages = true" />
+          <s-icon ref="target" icon="chevron-up" @click.native="showPages = true" />
 
           <s-popover
             v-if="showPages"

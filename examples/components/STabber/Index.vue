@@ -30,7 +30,7 @@ export default {
 
   data () {
     return {
-      code:`
+      code: `
       <s-tabber
         :tabs="tabs"
         :active-tab="activeTab"
@@ -45,10 +45,10 @@ export default {
       />`,
       activeTab: 'seumadruga',
       tabs: [
-        { name: 'Chaves', value: 'chaves', icon: 'sdz-share' },
-        { name: 'Seu Madruga', value: 'seumadruga', icon: 'sdz-divide' },
-        { name: 'Nhonho', value: 'nhonho', icon: 'sdz-key', disabled: true },
-        { name: 'Quico', value: 'quico', icon: 'sdz-key' }
+        { name: 'Chaves', value: 'chaves', icon: 'share' },
+        { name: 'Seu Madruga', value: 'seumadruga', icon: 'divide' },
+        { name: 'Nhonho', value: 'nhonho', icon: 'key', disabled: true },
+        { name: 'Quico', value: 'quico', icon: 'key' }
       ]
     }
   }
