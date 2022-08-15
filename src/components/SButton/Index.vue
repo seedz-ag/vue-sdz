@@ -165,7 +165,7 @@ export default {
     & > .icon {
       position: absolute;
       left: 20px;
-      color: color(neutral, base);
+      // color: color(neutral, base);
     }
   }
 
