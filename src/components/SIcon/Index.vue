@@ -40,10 +40,6 @@ export default {
     secondaryColor: Boolean
   },
 
-  created () {
-    console.log(listIcons())
-  },
-
   computed: {
     classes () {
       return [
