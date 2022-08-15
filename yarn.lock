@@ -1332,6 +1332,11 @@
     kolorist "^1.5.1"
     local-pkg "^0.4.1"
 
+"@iconify/vue2@^1.2.1":
+  version "1.2.1"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@iconify/vue2/-/vue2-1.2.1.tgz#f858bcfe8554970cca6d8f4c7a7e8015c7933fbb"
+  integrity sha1-+Fi8/oVUlwzKbY9Men6AFceTP7s=
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -10215,7 +10220,7 @@ util.promisify@^1.0.0:
 
 utils-sdz@^0.0.12:
   version "0.0.12"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/utils-sdz/-/utils-sdz-0.0.12.tgz#f1fbf5fe7dd118a6da294f2821a71c8cdf60cb47"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/utils-sdz/-/utils-0.0.12.tgz#f1fbf5fe7dd118a6da294f2821a71c8cdf60cb47"
   integrity sha1-8fv1/n3RGKbaKU8oIaccjN9gy0c=
 
 uuid@^3.3.2:
