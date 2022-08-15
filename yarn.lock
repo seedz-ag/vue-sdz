@@ -278,7 +278,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.17.9", "@babel/parser@^7.18.10", "@babel/parser@^7.18.11", "@babel/parser@^7.18.4", "@babel/parser@^7.4.3", "@babel/parser@^7.6.0", "@babel/parser@^7.7.0", "@babel/parser@^7.9.6":
+"@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.17.9", "@babel/parser@^7.18.10", "@babel/parser@^7.18.11", "@babel/parser@^7.4.3", "@babel/parser@^7.6.0", "@babel/parser@^7.7.0", "@babel/parser@^7.9.6":
   version "7.18.11"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@babel/parser/-/parser-7.18.11.tgz#68bb07ab3d380affa9a3f96728df07969645d2d9"
   integrity sha1-aLsHqz04Cv+po/lnKN8HlpZF0tk=
@@ -2089,15 +2089,6 @@
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
-"@vue/compiler-sfc@2.7.0":
-  version "2.7.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/compiler-sfc/-/compiler-sfc-2.7.0.tgz#1c203e85290688e10ed3e70b151b9a2f8acab9c1"
-  integrity sha1-HCA+hSkGiOEO0+cLFRuaL4rKucE=
-  dependencies:
-    "@babel/parser" "^7.18.4"
-    postcss "^8.4.14"
-    source-map "^0.6.1"
-
 "@vue/component-compiler-utils@^3.0.0", "@vue/component-compiler-utils@^3.1.0", "@vue/component-compiler-utils@^3.3.0":
   version "3.3.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/component-compiler-utils/-/component-compiler-utils-3.3.0.tgz#f9f5fb53464b0c37b2c8d2f3fbfe44df60f61dc9"
@@ -3578,11 +3569,6 @@ cssstyle@^2.0.0, cssstyle@^2.3.0:
   integrity sha1-/2ZaDdvcMYZLCWR/NBY0Q9kLCFI=
   dependencies:
     cssom "~0.3.6"
-
-csstype@^3.1.0:
-  version "3.1.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/csstype/-/csstype-3.1.0.tgz#4ddcac3718d787cf9df0d1b7d15033925c8f29f2"
-  integrity sha1-TdysNxjXh8+d8NG30VAzklyPKfI=
 
 cypress-rollup-preprocessor@^0.6.2:
   version "0.6.2"
@@ -5190,7 +5176,7 @@ hash-sum@^2.0.0:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/hash-sum/-/hash-sum-2.0.0.tgz#81d01bb5de8ea4a214ad5d6ead1b523460b0b45a"
   integrity sha1-gdAbtd6OpKIUrV1urRtSNGCwtFo=
 
-he@^1.2.0:
+he@^1.1.0:
   version "1.2.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
@@ -8266,7 +8252,7 @@ postcss@^7.0.36:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postcss@^8.4.14, postcss@^8.4.16, postcss@^8.4.7:
+postcss@^8.4.16, postcss@^8.4.7:
   version "8.4.16"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/postcss/-/postcss-8.4.16.tgz#33a1d675fac39941f5f445db0de4db2b6e01d43c"
   integrity sha1-M6HWdfrDmUH19EXbDeTbK24B1Dw=
@@ -10264,11 +10250,6 @@ vue-demi@^0.12.0:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-demi/-/vue-demi-0.12.5.tgz#8eeed566a7d86eb090209a11723f887d28aeb2d1"
   integrity sha1-ju7VZqfYbrCQIJoRcj+IfSiustE=
 
-vue-demi@^0.13.7:
-  version "0.13.7"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-demi/-/vue-demi-0.13.7.tgz#5ae380b15c13be556ac4a0da0a48450c98a01d4b"
-  integrity sha1-WuOAsVwTvlVqxKDaCkhFDJigHUs=
-
 vue-eslint-parser@^7.10.0:
   version "7.11.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-eslint-parser/-/vue-eslint-parser-7.11.0.tgz#214b5dea961007fcffb2ee65b8912307628d0daf"
@@ -10351,13 +10332,13 @@ vue-template-babel-compiler@^1.2.0:
     "@babel/types" "^7.14.5"
     deepmerge "^4.2.2"
 
-vue-template-compiler@2.7.0:
-  version "2.7.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-template-compiler/-/vue-template-compiler-2.7.0.tgz#b8ec6b9eb8ca99f20534ac75f0f374d3e48347cf"
-  integrity sha1-uOxrnrjKmfIFNKx18PN00+SDR88=
+vue-template-compiler@2.6.14:
+  version "2.6.14"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-template-compiler/-/vue-template-compiler-2.6.14.tgz#a2f0e7d985670d42c9c9ee0d044fed7690f4f763"
+  integrity sha1-ovDn2YVnDULJye4NBE/tdpD092M=
   dependencies:
     de-indent "^1.0.2"
-    he "^1.2.0"
+    he "^1.1.0"
 
 vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
@@ -10369,13 +10350,10 @@ vue-the-mask@^0.11.1:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-the-mask/-/vue-the-mask-0.11.1.tgz#91ee01008354ae57bccc79bb61b65f32d971d9d5"
   integrity sha1-ke4BAINUrle8zHm7YbZfMtlx2dU=
 
-vue@2.7.0:
-  version "2.7.0"
-  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue/-/vue-2.7.0.tgz#9542552e0460563feff11727949f8964e2501bed"
-  integrity sha1-lUJVLgRgVj/v8RcnlJ+JZOJQG+0=
-  dependencies:
-    "@vue/compiler-sfc" "2.7.0"
-    csstype "^3.1.0"
+vue@2.6.14:
+  version "2.6.14"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=
 
 vuex@^3.0.1, vuex@^3.6.2:
   version "3.6.2"
