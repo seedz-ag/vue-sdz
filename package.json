@@ -49,7 +49,6 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@vue/cli-plugin-unit-jest": "^4.5.13",
-    "@vue/composition-api": "^1.7.0",
     "@vue/test-utils": "^1.2.2",
     "autoprefixer": "^10.3.4",
     "babel-core": "^7.0.0-bridge.0",
@@ -76,12 +75,14 @@
     "vite": "^3.0.0",
     "vite-plugin-glob": "^0.3.2",
     "vite-plugin-vue2": "^2.0.2",
-    "vue": "2.7.0",
-    "vue-demi": "^0.13.7",
+    "vue": "2.6.14",
     "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.8",
     "vue-router": "^3.5.3",
-    "vue-template-compiler": "2.7.0",
+    "vue-template-compiler": "2.6.14",
     "vuex": "^3.6.2"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.7.0"
   }
 }
