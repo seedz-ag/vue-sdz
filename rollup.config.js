@@ -2,7 +2,6 @@ import path from 'path'
 import vue from 'rollup-plugin-vue'
 import scss from 'rollup-plugin-scss'
 import alias from '@rollup/plugin-alias'
-import copy from 'rollup-plugin-copy-assets'
 import commonjs from '@rollup/plugin-commonjs'
 
 const config = {
@@ -13,16 +12,13 @@ const config = {
   input: 'src/index.js',
 
   output: [
-    // {
-    //   format: 'cjs',
-    //   file: 'dist/js/bundle.cjs.js'
-    // },
+    {
+      format: 'cjs',
+      file: 'dist/js/bundle.cjs.js'
+    },
     {
       format: 'esm',
       file: 'dist/js/bundle.esm.js',
-      // dir: 'dist',
-      // preserveModules: true,
-      // preserveModulesRoot: 'src'
     }
   ],
 
@@ -34,8 +30,7 @@ const config = {
     }),
     commonjs(),
     vue(),
-    scss(),
-    copy({ assets: ['src/assets'] })
+    scss()
   ]
 }
 

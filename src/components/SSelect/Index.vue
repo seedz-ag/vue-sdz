@@ -33,7 +33,7 @@
           >
         </div>
 
-        <i class="icon sdz-chevron-down" />
+        <i class="icon chevron-down" />
       </div>
 
       <div class="items">

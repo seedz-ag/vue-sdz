@@ -1,10 +1,10 @@
 <template>
-  <component
-    :is="icon"
+  <!-- https://docs.iconify.design/icon-components/vue2/dimensions.html -->
+  <icon
+    :icon="icon"
     :class="classes"
     :width="size"
     :height="size"
-    :view-box="`0 0 ${size} ${size}`"
 
     v-bind="$attrs"
     v-on="$listeners"
@@ -12,27 +12,15 @@
 </template>
 
 <script>
-const loadIcons = data => data.reduce((acc, icon) => {
-  acc[`sdz-${icon}`] = () => import(`../../assets/icons/${icon}.svg`)
-
-  return acc
-}, {})
-
-const paths = import.meta.importGlob('@/assets/icons/*.svg')
-
-const files = Object
-  .keys(paths)
-  .map(path => path
-    .split('/')
-    .at(-1)
-    .split('.')
-    .shift()
-  )
+// https://github.com/antfu/unplugin-icons/issues/5
+// unplugin-icon limitation: designed to be used statically
+// because of that it had to be combined with @iconify/vue2
+import { listIcons , Icon } from '@iconify/vue2'
 
 export default {
   name: 'SIcon',
 
-  components: { ...loadIcons(files) },
+  components: { Icon },
 
   props: {
     icon: {

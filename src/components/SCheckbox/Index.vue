@@ -9,7 +9,7 @@
     >
 
     <span class="check" @click="emit">
-      <i class="icon sdz-check" />
+      <i class="icon check" />
     </span>
 
     <span class="text" @click="emit">{{ label }}</span>

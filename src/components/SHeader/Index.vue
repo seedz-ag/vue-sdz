@@ -20,7 +20,6 @@ export default {
 .s-header {
   top: 0;
   position: sticky;
-
-  & > .wrapper { z-index: $z-index-1; }
+  z-index: $z-index-1;
 }
 </style>

@@ -1,8 +1,12 @@
 import path from 'path'
+
 import { defineConfig } from 'vite'
 import GlobPlugin from 'vite-plugin-glob'
 import { createVuePlugin } from 'vite-plugin-vue2'
-import { createSvgPlugin } from 'vite-plugin-vue2-svg'
+
+// import Icons from 'unplugin-icons/vite'
+// import IconsResolver from 'unplugin-icons/resolver'
+// import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig({
   base: 'https://seedz-ag.github.io/vue-sdz/',
@@ -24,10 +28,18 @@ export default defineConfig({
   // },
 
   plugins: [
-
-    GlobPlugin(),
     createVuePlugin(),
-    createSvgPlugin()
+    GlobPlugin(),
+
+    // Components({
+    //   resolvers: [
+    //     IconsResolver({
+    //       prefix: 'icon',
+    //       enabledCollections: ['mdi']
+    //     })
+    //   ]
+    // }),
+    // Icons({ compiler: 'vue2', autoInstall: false })
   ],
 
   server: { port: 8080 }

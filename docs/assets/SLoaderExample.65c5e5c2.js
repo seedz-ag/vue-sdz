@@ -1,0 +1,1 @@
+const t="",o="",s=[],e={name:"vue-sdz",as:"{ SLoader }"},n=[],p="",a={title:t,subtitle:o,imports:s,component:e,props:n,value:p};export{e as component,a as default,s as imports,n as props,o as subtitle,t as title,p as value};

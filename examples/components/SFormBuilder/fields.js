@@ -6,7 +6,7 @@ const myRequired = helpers.withMessage('Campo obrigatório.', required)
 export default [
   {
     name: 'name',
-    icon: 'sdz-star',
+    icon: 'star',
     component: 'SInput',
     label: 'name',
     placeholder: 'name',
@@ -17,7 +17,7 @@ export default [
   {
     name: 'inputBtn',
     button: 'editar',
-    buttonIcon: 'sdz-star',
+    buttonIcon: 'star',
     component: 'SInput',
     label: 'inputBtn',
     placeholder: 'inputBtn',

@@ -37,8 +37,8 @@
     <s-box class="flex-inline">
       <s-button outlined>outlined</s-button>
       <s-button outlined disabled>outlined disabled</s-button>
-      <s-button outlined icon="sdz-check">outlined icon</s-button>
-      <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>
+      <s-button outlined icon="ant-design:tool-outlined">outlined icon</s-button>
+      <s-button outlined icon="ant-design:tool-outlined" disabled>outlined disabled icon</s-button>
     </s-box>
 
     <pre-code :code="code3" />
@@ -47,8 +47,8 @@
     <s-box class="flex-inline">
       <s-button rounded>outlined</s-button>
       <s-button rounded disabled>rounded disabled</s-button>
-      <s-button rounded icon="sdz-check">rounded icon</s-button>
-      <s-button rounded icon="sdz-check" disabled>rounded disabled icon</s-button>
+      <s-button rounded icon="ant-design:tool-outlined">rounded icon</s-button>
+      <s-button rounded icon="ant-design:tool-outlined" disabled>rounded disabled icon</s-button>
     </s-box>
 
     <pre-code :code="code4" />
@@ -87,12 +87,12 @@ export default {
       <s-button large>large</s-button>`,
       code3: `<s-button outlined>outlined</s-button>
       <s-button outlined disabled>outlined disabled</s-button>
-      <s-button outlined icon="sdz-check">outlined icon</s-button>
-      <s-button outlined icon="sdz-check" disabled>outlined disabled icon</s-button>`,
+      <s-button outlined icon="check">outlined icon</s-button>
+      <s-button outlined icon="check" disabled>outlined disabled icon</s-button>`,
       code4: `<s-button rounded>outlined</s-button>
       <s-button rounded disabled>rounded disabled</s-button>
-      <s-button rounded icon="sdz-check">rounded icon</s-button>
-      <s-button rounded icon="sdz-check" disabled>rounded disabled icon</s-button>`,
+      <s-button rounded icon="check">rounded icon</s-button>
+      <s-button rounded icon="check" disabled>rounded disabled icon</s-button>`,
     }
   }
 }

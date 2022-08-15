@@ -4,7 +4,7 @@
       <div class="content" @click="onActiveItem(item, index)">
         <s-icon v-if="item.icon" :icon="item.icon" class="icon" />
         <span class="name">{{ item.name }}</span>
-        <s-icon v-if="item.child" icon="sdz-chevron-up" class="action" />
+        <s-icon v-if="item.child" icon="chevron-up" class="action" />
       </div>
 
       <s-collapsible no-header :is-opened="activeItem === index">

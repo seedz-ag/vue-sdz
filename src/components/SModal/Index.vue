@@ -11,7 +11,7 @@
 
           <div class="actions">
             <slot name="actions" />
-            <s-icon icon="sdz-close" :disabled="disabled" primary-color @click.native="$emit('close')" />
+            <s-icon icon="close" :disabled="disabled" primary-color @click.native="$emit('close')" />
           </div>
         </div>
 

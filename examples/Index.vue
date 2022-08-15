@@ -8,7 +8,7 @@
       <div class="search">
         <s-input
           round
-          icon="sdz-search"
+          icon="carbon:search"
           :value="inputSearch"
           :placeholder="'Search'"
           @input="value => inputSearch = value"
@@ -51,12 +51,12 @@ export default {
       items: [
         {
           name: 'Getting Started',
-          icon: 'sdz-star',
+          icon: 'akar-icons:star',
           redirect: '/vue-sdz/getting-started'
         },
         {
           name: 'Styles',
-          icon: 'sdz-painting-roller',
+          icon: 'clarity:paint-roller-line',
           child: [
             { name: 'Breakpoints', redirect: '/vue-sdz/styles/breakpoints' },
             { name: 'Colors', redirect: '/vue-sdz/styles/palettes' },
@@ -65,7 +65,7 @@ export default {
         },
         {
           name: 'Content',
-          icon: 'sdz-archive',
+          icon: 'bytesize:archive',
           child: [
             { name: 'Grid', redirect: '/vue-sdz/components/grid' },
             { name: 'Image', redirect: '/vue-sdz/components/image' },
@@ -75,7 +75,7 @@ export default {
         },
         {
           name: 'Forms',
-          icon: 'sdz-file-text',
+          icon: 'ant-design:file-text-outlined',
           child: [
             { name: 'Button', redirect: '/vue-sdz/components/button' },
             { name: 'Checkbox', redirect: '/vue-sdz/components/checkbox' },
@@ -92,7 +92,7 @@ export default {
         },
         {
           name: 'Components',
-          icon: 'sdz-box',
+          icon: 'akar-icons:shipping-box-01',
           child: [
             { name: 'Alert', redirect: '/vue-sdz/components/alert' },
             { name: 'Avatar', redirect: '/vue-sdz/components/avatar' },
@@ -116,7 +116,7 @@ export default {
         },
         {
           name: 'Extented',
-          icon: 'sdz-globe',
+          icon: 'akar-icons:globe',
           child: [
             { name: 'Icons', redirect: '/vue-sdz/components/icon' }
           ]

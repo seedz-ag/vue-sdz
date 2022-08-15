@@ -17,7 +17,7 @@
         <s-button
           v-if="dismissible"
           grey
-          icon="sdz-close"
+          icon="close"
           class="button"
           @click="$emit('close', feedback)"
         />

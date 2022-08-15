@@ -10,10 +10,10 @@
       <!-- @focusout="showCategories = false" -->
       <span class="category">{{ selectedCategory || categories[0] }}</span>
 
-      <s-icon :class="{ '--is-opened': showCategories }" size="15" icon="sdz-chevron-down" />
+      <s-icon :class="{ '--is-opened': showCategories }" icon="mdi:chevron-down" />
     </div>
 
-    <s-input icon="sdz-search" v-bind="$attrs" v-on="$listeners" />
+    <s-input icon="search" v-bind="$attrs" v-on="$listeners" />
 
     <s-popover
       v-if="showCategories"

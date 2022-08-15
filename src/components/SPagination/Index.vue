@@ -4,7 +4,7 @@
       <div class="pages">
         <s-icon
           class="previous"
-          icon="sdz-chevron-up"
+          icon="chevron-up"
           :disabled="page === 1"
           @click.native="changePage(page, 'previous')"
         />
@@ -13,7 +13,7 @@
           :is="num === '...' ? 's-icon' : 's-button'"
           v-for="(num, index) in pages"
           :key="index"
-          :icon="num === '...' ? 'sdz-more-horizzontal' : ''"
+          :icon="num === '...' ? 'more-horizzontal' : ''"
           :class="['page', (num === '...') ? 'page-icon' : '', { '--is-active': num === page }]"
           @click="changePage(num, 'set')"
         >
@@ -22,7 +22,7 @@
 
         <s-icon
           class="next"
-          icon="sdz-chevron-up"
+          icon="chevron-up"
           :disabled="page === +totalPage"
           @click.native="changePage(page, 'next')"
         />
@@ -59,36 +59,36 @@ export default {
   },
   computed: {
     pages () {
-      
-      if(this.totalPage < 7)
+
+      if (this.totalPage < 7)
         return Array.from({ length: this.totalPage }, (xs, i) => ( i + 1 ))
 
-      let limit = (this.page>=this.totalPage-2)?6:7;
+      let limit = (this.page >= this.totalPage - 2) ? 6 : 7
 
       return Array.from({ length: limit }, (xs, i) => {
 
-        if(this.page > 3){
+        if (this.page > 3) {
           if ((i + 1) === 2) return '...'
 
           if ((i + 1) === 3) {
-            if(this.page == (this.totalPage - 1)) return this.page-2
-            if(this.page == this.totalPage) return this.page-3
-            return this.page-1
+            if (this.page == (this.totalPage - 1)) return this.page - 2
+            if (this.page == this.totalPage) return this.page - 3
+            return this.page - 1
           }
 
           if ((i + 1) === 4) {
-            if(this.page == (this.totalPage - 1)) return this.page-1
-            if(this.page == this.totalPage) return this.page-2
+            if (this.page == (this.totalPage - 1)) return this.page - 1
+            if (this.page == this.totalPage) return this.page - 2
             return this.page
           }
 
           if ((i + 1) === 5) {
-            if(this.page == (this.totalPage - 1)) return this.page
-            if(this.page == this.totalPage) return this.page-1
-            return this.page+1
+            if (this.page == (this.totalPage - 1)) return this.page
+            if (this.page == this.totalPage) return this.page - 1
+            return this.page + 1
           }
         }
-        
+
         if ((i + 1) === limit - 1 && this.page <= (this.totalPage - 3)) return '...'
 
         if ((i + 1) === limit) return parseInt(this.totalPage)
@@ -170,7 +170,7 @@ export default {
       }
     }
 
-    & > .s-icon.sdz-more-horizzontal{
+    & > .s-icon.more-horizzontal{
       padding-top: 10px;
     }
 
