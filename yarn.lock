@@ -10264,6 +10264,11 @@ vue-demi@^0.12.0:
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-demi/-/vue-demi-0.12.5.tgz#8eeed566a7d86eb090209a11723f887d28aeb2d1"
   integrity sha1-ju7VZqfYbrCQIJoRcj+IfSiustE=
 
+vue-demi@^0.13.7:
+  version "0.13.7"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-demi/-/vue-demi-0.13.7.tgz#5ae380b15c13be556ac4a0da0a48450c98a01d4b"
+  integrity sha1-WuOAsVwTvlVqxKDaCkhFDJigHUs=
+
 vue-eslint-parser@^7.10.0:
   version "7.11.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/vue-eslint-parser/-/vue-eslint-parser-7.11.0.tgz#214b5dea961007fcffb2ee65b8912307628d0daf"
