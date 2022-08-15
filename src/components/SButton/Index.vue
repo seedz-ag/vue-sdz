@@ -198,7 +198,7 @@ export default {
   }
 
   &.--link {
-    display: inline-flex;
+    display: block;
     padding: 0;
     width: auto;
     height: auto;

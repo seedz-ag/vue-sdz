@@ -31,11 +31,11 @@
       <br>
       <s-button link to="https://www.google.com">link route</s-button>
       <br>
-      <s-button link icon="check" secondary-icon-color to="https://www.google.com">link icon</s-button>
+      <s-button link icon="ant-design:tool-outlined" secondary-icon-color to="https://www.google.com">link icon</s-button>
       <br>
       <s-button link disabled>link disabled</s-button>
       <br>
-      <s-button link icon="check" disabled>link icon disabled</s-button>
+      <s-button link icon="ant-design:tool-outlined" disabled>link icon disabled</s-button>
     </s-box>
 
     <pre-code :code="code1" />
@@ -45,7 +45,7 @@
       <br>
       <s-button dark link to="https://www.google.com">link route</s-button>
       <br>
-      <s-button dark link icon="check" secondary-icon-color to="https://www.google.com">link icon</s-button>
+      <s-button dark link icon="ant-design:tool-outlined" secondary-icon-color to="https://www.google.com">link icon</s-button>
     </s-box>
 
     <pre-code :code="code2" />
@@ -67,16 +67,16 @@ export default {
 
       <s-button link to="https://www.google.com">link route</s-button>
 
-      <s-button link icon="check" secondary-icon-color to="https://www.google.com">link icon</s-button>
+      <s-button link icon="ant-design:tool-outlined" secondary-icon-color to="https://www.google.com">link icon</s-button>
 
       <s-button link disabled>link disabled</s-button>
 
-      <s-button link icon="check" disabled>link icon disabled</s-button>`,
+      <s-button link icon="ant-design:tool-outlined" disabled>link icon disabled</s-button>`,
       code2: `<s-button dark link external to="https://www.google.com">link external</s-button>
 
       <s-button dark link to="https://www.google.com">link route</s-button>
 
-      <s-button dark link icon="check" secondary-icon-color to="https://www.google.com">link icon</s-button>`
+      <s-button dark link icon="ant-design:tool-outlined" secondary-icon-color to="https://www.google.com">link icon</s-button>`
     }
   }
 }
