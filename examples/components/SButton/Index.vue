@@ -1,6 +1,24 @@
 <template>
   <div class="s-button-example">
-    <s-title size="title-1">Buttons</s-title>
+    <s-title size="title-1">Button</s-title>
+
+    <p class="subtitle">
+      Botões são usados principalmente para executar ações e/ou navegar pela interface dos produtos. Possuem maior peso que um link.
+    </p>
+
+    <s-title size="title-2">Quando Usar</s-title>
+
+    <p class="subtitle">
+      Geralmente são aplicados para ações ou decisões importante para a pessoa usuária;
+    </p>
+
+    <p class="subtitle">
+      Podem ser ultilizados em alguns componentes como: Modais, Cards e Formulários;
+    </p>
+
+    <p class="subtitle">
+      Icones devem pegar a cor natida do label do botão.
+    </p>
 
     <source-code file="SButtonExample" comp="SButton">Example</source-code>
 
