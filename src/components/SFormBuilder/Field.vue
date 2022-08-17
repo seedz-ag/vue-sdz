@@ -4,9 +4,10 @@
     :items="field.items"
     :validation="getValidation(field.name)"
     :style="{ 'width': field.width || '100%' }"
+    :value="form[field.name]"
 
-    v-bind="bindings(field)"
-    v-on="$listeners"
+    v-bind="bindings"
+    v-on="listeners"
   />
 </template>
 
@@ -29,22 +30,33 @@ export default {
 
   props: {
     $v: Object,
+    form: Object,
     field: [Array, Object]
   },
 
-  // created () {
-  //   if (!this.field?.onInput) return
+  computed: {
+    bindings () {
+      const { value, ...propsField } = this.field
 
-  //   this.$on('input', this.field.onInput)
-  // },
-
-  methods: {
-    bindings (field) {
-      const { value, ...propsField } = field
-
-      return { ...this.$attrs, ...propsField }
+      return {
+        ...this.$attrs,
+        ...propsField,
+        value: this.form[this.field.name]
+      }
     },
 
+    listeners () {
+      return {
+        ...this.$listeners,
+        input: value => {
+          this.field?.onInput()
+          this.$listeners.input(value)
+        }
+      }
+    }
+  },
+
+  methods: {
     getValidation (field) {
       const infoField = this.$v.form?.[field]
 

@@ -6,6 +6,7 @@
           <field
             :key="groupIndex"
             :$v="$v"
+            :form="form"
             :field="getField(groupField)"
             :value="form[groupField.name]"
 
@@ -18,6 +19,7 @@
       <template v-else>
         <field
           :$v="$v"
+          :form="form"
           :field="getField(field)"
           :value="form[field.name]"
 
@@ -83,25 +85,13 @@ export default {
   methods: {
     setForm () {
       this.form = transformBy(this.fields, 'value', false)
-
-      // const events = this.fields.reduce((acc, row) => {
-      //   const event = Array.isArray(row)
-      //     ? row.filter(rows => rows.onInput)
-      //     : [ row.onInput ? row : null ]
-
-      //   acc = [ ...acc, ...event.filter(Boolean) ]
-
-      //   return acc
-      // }, [])
-
-      // events.forEach(event => this.$on('kkkkkkk', () => event.onInput))
     },
 
     getField (field) {
       return {
         ...field,
-        onClick: () => field?.onClick.call(this),
-        onInput: () => field?.onInput?.({ form: this.form, field })
+        onInput: () => field?.onInput?.apply(this, [{ form: this.form, field }]),
+        onClick: () => field?.onClick?.apply(this, [{ form: this.form, field }])
       }
     },
 
