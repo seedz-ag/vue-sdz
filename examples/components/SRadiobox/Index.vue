@@ -19,26 +19,24 @@
 
     <s-title size="title-2">Default</s-title>
     <s-box>
-      <s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
-      <s-radiobox id="nao" label="Default Radiobox" name="dafault" value="não" v-model="data0" />
-      <br>
-      <s-radiobox label="Checked Radiobox" v-model="data2" />
+      <s-radiobox id="1" label="Radio Choose 1" name="dafault" value="1" v-model="data0" />
+      <s-radiobox id="2" label="Radio Choose 2" name="dafault" value="2" v-model="data0" />
     </s-box>
 
     <pre-code :code="code1" />
 
-    <s-title size="title-2">Stats</s-title>
+    <s-title size="title-2">Error State</s-title>
     <s-box>
-      <s-radiobox label="Positive" v-model="data3" />
-      <br>
-      <s-radiobox label="Negative" negative v-model="data4" />
+      <s-radiobox label="Negative unchecked" negative name="negative" value="1" v-model="data1" />
+      <s-radiobox label="Negative checked" negative name="negative" checked value="2" v-model="data1" />
     </s-box>
 
     <pre-code :code="code2" />
 
     <s-title size="title-2">Disabled</s-title>
     <s-box>
-      <s-radiobox label="disabled" disabled v-model="data5" />
+      <s-radiobox label="disabled" disabled value="1" name="disabled" v-model="data2" />
+      <s-radiobox label="disabled" disabled value="2" name=" disabled" v-model="data2" />
     </s-box>
 
     <pre-code :code="code3" />
@@ -58,17 +56,14 @@ export default {
   data () {
     return {
       data0: false,
-      data1: true,
-      data2: true,
-      data3: true,
-      data4: true,
-      data5: true,
-      code1:`<s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
-      <s-radiobox id="nao" label="Default Radiobox" name="dafault" value="não" v-model="data0" />
-      <s-radiobox label="Checked Radiobox" v-model="data2" />`,
-      code2:`<s-radiobox label="Positive" v-model="data3" />
-      <s-radiobox label="Negative" negative v-model="data4" />`,
-      code3:'<s-radiobox label="disabled" disabled v-model="data5" />'
+      data1: false,
+      data2: false,
+
+      code1: `<s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
+      <s-radiobox id="nao" label="Default Radiobox" name="dafault" value="não" v-model="data0" />`,
+      code2: `<s-radiobox label="Neutral" v-model="data1" />
+      <s-radiobox label="Negative" negative v-model="data1" />`,
+      code3: '<s-radiobox label="disabled" disabled v-model="data5" />'
     }
   }
 }
