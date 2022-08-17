@@ -83,6 +83,18 @@ export default {
   methods: {
     setForm () {
       this.form = transformBy(this.fields, 'value', false)
+
+      // const events = this.fields.reduce((acc, row) => {
+      //   const event = Array.isArray(row)
+      //     ? row.filter(rows => rows.onInput)
+      //     : [ row.onInput ? row : null ]
+
+      //   acc = [ ...acc, ...event.filter(Boolean) ]
+
+      //   return acc
+      // }, [])
+
+      // events.forEach(event => this.$on('kkkkkkk', () => event.onInput))
     },
 
     getField (field) {

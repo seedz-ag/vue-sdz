@@ -32,6 +32,12 @@ export default {
     field: [Array, Object]
   },
 
+  // created () {
+  //   if (!this.field?.onInput) return
+
+  //   this.$on('input', this.field.onInput)
+  // },
+
   methods: {
     bindings (field) {
       const { value, ...propsField } = field
