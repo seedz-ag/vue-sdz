@@ -1,5 +1,5 @@
 <template>
-  <div ref="shadowed" :class="classes">
+  <div :class="classes" :style="containerHeight">
     <slot />
   </div>
 </template>
@@ -10,61 +10,80 @@ export default {
 
   props: {
     target: String,
-
-    hasUpperShadow: {
-      type: Boolean,
-      default: true
-    },
-    hasBottomShadow: {
-      type: Boolean,
-      default: true
-    }
+    hasUpperShadow: { type: Boolean },
+    hasBottomShadow: { type: Boolean },
+    hasLeftShadow: { type: Boolean },
+    hasRightShadow: {  type: Boolean  }
   },
 
   data () {
     return {
+      element: null,
       observer: null,
       upperShadow: false,
-      bottomShadow: false
+      bottomShadow: false,
+      leftShadow: false,
+      rightShadow: false
     }
   },
 
-  mounted () {
-    this.setShadow()
-    this.initObservers()
+  watch: {
+    element: { immediate: true, handler: 'init' }
   },
 
   computed: {
     classes () {
-      return ['shadowed', {
-        '-upper-shadow': this.hasUpperShadow && this.upperShadow,
-        '-bottom-shadow': this.hasBottomShadow && this.bottomShadow
+      return ['s-shadowed', {
+        '--is-upper-shadow': this.hasUpperShadow && this.upperShadow,
+        '--is-bottom-shadow': this.hasBottomShadow && this.bottomShadow,
+        '--is-left-shadow': this.hasLeftShadow && this.leftShadow,
+        '--is-right-shadow': this.hasRightShadow && this.rightShadow
       }]
     },
 
-    element () {
-      if (this.target) return document.querySelector(this.target)
+    containerHeight () {
+      const scrollBarHeight = 17
+      const clientHeight = this.element?.clientHeight || 0
 
-      return this.$slots.default[0]?.elm
+      return { '--height': clientHeight + scrollBarHeight + 'px' }
     }
   },
 
   methods: {
+    init () {
+      this.setElement()
+      if (!this.element) return
+
+      this.setShadow()
+      this.setObservers()
+    },
+
+    setElement () {
+      this.element = this.target
+        ? document.querySelector(this.target)
+        : this.$slots?.default?.[0]?.elm
+    },
+
     setShadow () {
       if (!this.element) return
 
-      const { scrollTop, scrollHeight, clientHeight } = this.element
+      const {
+        scrollTop, scrollHeight, clientHeight,
+        scrollLeft, scrollWidth, clientWidth
+      } = this.element
 
-      if (this.hasUpperShadow) this.upperShadow = !!scrollTop
+      const maxScrollLeft = scrollWidth - clientWidth
 
-      if (this.hasBottomShadow) {
-        this.bottomShadow = scrollHeight > (clientHeight + scrollTop)
-      }
+      this.leftShadow = this.hasLeftShadow && scrollLeft !== 0
+      this.rightShadow = this.hasRightShadow && scrollLeft !== maxScrollLeft
+
+      this.upperShadow = this.hasUpperShadow && !!scrollTop
+      this.bottomShadow = this.hasBottomShadow && scrollHeight > (clientHeight + scrollTop)
     },
 
-    initObservers () {
+    setObservers () {
       this.observer = new MutationObserver(this.setShadow)
-      this.observer.observe(this.element, { childList: true })
+      this.observer.observe(this.element, { childList: true, subtree: true })
 
       this.element.addEventListener('scroll', this.setShadow)
     }
@@ -80,36 +99,56 @@ export default {
 <style lang="scss" scoped>
 @import "./src/styles/_index.scss";
 
-$shadow-size: 100px;
 $shadow-color1: rgba(243, 244, 246, 0);
 $shadow-color2: #F3F4F6;
-$background: linear-gradient(0deg, $shadow-color1 0%, $shadow-color2 100%);
 
 %shadow {
   opacity: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
   content: "";
-  display: block;
   position: absolute;
-  height: $shadow-size;
-  width: calc(100% - 7px);
+  z-index: $z-index-1;
   pointer-events: none;
-  background: $background;
-  transition: opacity 0.3s;
+  transition: opacity .5s ease-in-out;
 }
 
-.shadowed {
+.s-shadowed {
   position: relative;
+
+  &::after { transform: scaleY(-1); }
   &::before, &::after { @extend %shadow; }
 
-  &::before { top: 0 }
-  &::after { bottom: 0; transform: scaleY(-1); }
+  &.--is-bottom-shadow::after { bottom: 0; }
 
-  &.-upper-shadow::before,
-  &.-bottom-shadow::after { opacity: 1; }
+  &.--is-upper-shadow::before,
+  &.--is-bottom-shadow::after {
+    background: linear-gradient(0deg, $shadow-color1 0%, $shadow-color2 100%);
+  }
 
-  &.-bottom-shadow::after { bottom: 0; }
+  &.--is-left-shadow::before {
+    background: linear-gradient(to left, $shadow-color1 0%, $shadow-color2 100%);
+  }
+
+  &.--is-right-shadow::after {
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, $shadow-color1 0%, $shadow-color2 100%);
+  }
+
+  &.--is-left-shadow::before,
+  &.--is-right-shadow::after,
+  &.--is-upper-shadow::before,
+  &.--is-bottom-shadow::after { opacity: 1; }
+
+  &.--is-left-shadow::before,
+  &.--is-right-shadow::after {
+    width: 100px;
+    height: var(--height);
+  }
+
+  &.--is-upper-shadow::before,
+  &.--is-bottom-shadow::after {
+    width: 100%;
+    height: 50px;
+  }
 }
 </style>

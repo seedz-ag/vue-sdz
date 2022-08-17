@@ -27,7 +27,7 @@
                       v-if="sortable"
 
                       size="16"
-                      :icon="assortment[row] === 'increase' ? 'chevron-up' : 'chevron-down'"
+                      :icon="assortment[row] === 'increase' ? 'charm:chevron-up' : 'charm:chevron-down'"
 
                       @click.native="sort(row)"
                     />
@@ -77,7 +77,7 @@
 
                 ref="action"
                 size="25"
-                icon="more-horizzontal"
+                icon="akar-icons:more-horizontal"
 
                 @click.native.stop="activeAction = index"
               />
@@ -120,7 +120,7 @@
         <div v-if="showPerPage" class="per-page">
           Linhas por página: {{ perPage }}
 
-          <s-icon ref="target" icon="chevron-up" @click.native="showPages = true" />
+          <s-icon ref="target" icon="charm:chevron-up" @click.native="showPages = true" />
 
           <s-popover
             v-if="showPages"
@@ -414,9 +414,14 @@ export default {
     &.--show-per-page { justify-content: space-between; }
 
     & > .per-page {
+      display: flex;
+      align-items: center;
+
       color: color(base, light);
       font-size: $font-size-xxs;
       font-weight: $font-weight-medium;
+
+      & > .s-icon { margin-left: 10px; }
 
       & > .popover > div {
         padding: 10px;
