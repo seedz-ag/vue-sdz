@@ -7,7 +7,7 @@
       :checked="value"
       :disabled="disabled"
       :name="name"
-      
+
       @change="$emit('change', value)"
     >
 
@@ -37,7 +37,7 @@ export default {
     negative: Boolean,
 
     disabled: Boolean,
-    
+
     name: String
   },
 
@@ -72,16 +72,14 @@ export default {
     cursor: pointer;
     transition: border-width .1s ease;
 
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
+    border-color: color(base, light);
     border-radius: $border-radius-circular;
-    border-color: color(neutral, light);
-
-    background-color: color(neutral, base);
 
     &:hover {
       border-width: 2px;
-      border-color: color(positive, base);
+      border-color: color(base, light);
     }
   }
 
@@ -98,11 +96,11 @@ export default {
 
     border-width: 7px;
     border-style: solid;
-    border-color: color(primary, base);
+    border-color: color(primary, light);
   }
 
   &.--is-checked {
-    & > .radio { border-color: color(positive, base); }
+    & > .radio { border-color: color(base, light); }
   }
 
   &.--is-negative {
@@ -111,8 +109,8 @@ export default {
   }
 
   &.--is-disabled {
-    & > .radio { border-color: color(neutral, light); }
-    & > .input:checked + .radio { background-color: color(neutral, light); }
+    & > .radio { border-color: color(neutral, dark); }
+    & > .input:checked + .radio { border-color: color(neutral, dark);}
   }
 
   @keyframes check {
