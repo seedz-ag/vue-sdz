@@ -3,6 +3,7 @@
     <s-title size="title-1">Carousel</s-title>
     <s-box>
       <s-carousel
+        has-shadow
         controllers
         :items="items"
         :per-page="2"
@@ -32,7 +33,7 @@ export default {
 
   data () {
     return {
-      code:`<s-carousel
+      code: `<s-carousel
         controllers
         :items="items"
         :per-page="2"
