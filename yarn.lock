@@ -2121,6 +2121,11 @@
     sass "^1.18.0"
     stylus "^0.54.5"
 
+"@vue/composition-api@^1.7.0":
+  version "1.7.0"
+  resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/composition-api/-/composition-api-1.7.0.tgz#26fae79e5023fc6c9dfd99ca5d3d357e1c5b9c60"
+  integrity sha1-JvrnnlAj/Gyd/ZnKXT01fhxbnGA=
+
 "@vue/test-utils@^1.0.0-beta.25", "@vue/test-utils@^1.2.2":
   version "1.3.0"
   resolved "https://pkgs.dev.azure.com/Seedz/_packaging/seedz/npm/registry/@vue/test-utils/-/test-utils-1.3.0.tgz#d563decdcd9c68a7bca151d4179a2bfd6d5c3e15"

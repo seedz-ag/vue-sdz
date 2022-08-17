@@ -37,8 +37,8 @@
     "v-money": "^0.8.1",
     "vue-coe-feedback": "^0.1.5",
     "vue-coe-image": "^0.2.3",
-    "vue-the-mask": "^0.11.1",
-    "vue-coerousel": "^1.0.19"
+    "vue-coerousel": "^1.0.19",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -49,6 +49,7 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@vue/cli-plugin-unit-jest": "^4.5.13",
+    "@vue/composition-api": "^1.7.0",
     "@vue/test-utils": "^1.2.2",
     "autoprefixer": "^10.3.4",
     "babel-core": "^7.0.0-bridge.0",
