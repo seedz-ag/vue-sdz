@@ -4,7 +4,7 @@
       class="input"
       type="radio"
 
-      :checked="value"
+      :checked="isChecked"
       :disabled="disabled"
       :name="name"
 
@@ -38,18 +38,22 @@ export default {
 
     disabled: Boolean,
 
-    name: String
+    name: String,
   },
 
   computed: {
     classes () {
       return ['s-radiobox', {
-        '--is-checked': this.value,
+        '--is-checked': this.value === this.$attrs.checked ? true : false,
         '--is-negative': this.negative,
         '--is-disabled': this.disabled
       }]
+    },
+
+    isChecked () {
+      return this.value === this.$attrs.checked ? true : false
     }
-  }
+  },
 }
 </script>
 
