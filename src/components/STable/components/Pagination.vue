@@ -14,7 +14,7 @@
         <s-icon
           size="23"
           class="previous"
-          icon="chevron-left"
+          icon="charm:chevron-left"
 
           :disabled="!canBack"
 
@@ -24,7 +24,7 @@
         <s-icon
           size="23"
           class="next"
-          icon="chevron-right"
+          icon="charm:chevron-right"
 
           :disabled="!canGo"
 

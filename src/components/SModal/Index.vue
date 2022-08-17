@@ -247,7 +247,7 @@ export default {
 
         margin-left: auto;
 
-        & > .icon { cursor: pointer; }
+        & > .s-icon { cursor: pointer; }
 
         & > a:not(:last-child),
         & > button:not(:last-child) { margin-right: 10px; }
