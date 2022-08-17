@@ -44,14 +44,14 @@ export default {
   computed: {
     classes () {
       return ['s-radiobox', {
-        '--is-checked': this.value === this.$attrs.checked ? true : false,
+        // '--is-checked': this.value === this.$attrs.checked,
         '--is-negative': this.negative,
         '--is-disabled': this.disabled
       }]
     },
 
     isChecked () {
-      return this.value === this.$attrs.checked ? true : false
+      return this.value === this.$attrs.checked
     }
   },
 }
