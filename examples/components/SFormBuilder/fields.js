@@ -11,6 +11,9 @@ export default [
     label: 'name',
     placeholder: 'name',
     value: '1111',
+    onInput ({ field }) {
+      this.$set(this.form, 'nome2', 'cuuuuuuu')
+    },
     validate: { required: myRequired, minLength: minLength(5) }
   },
 
@@ -23,7 +26,7 @@ export default [
     placeholder: 'inputBtn',
     value: '',
     validate: { required },
-    onClick () {
+    onClick ({ field }) {
       this.$emit('click:input-btn')
     },
   },
@@ -36,6 +39,9 @@ export default [
       label: 'Nome2',
       placeholder: 'Nome2',
       value: '',
+      onInput: ({ field }) => {
+        console.log('222222', field)
+      },
       validate: { required }
     },
     {
@@ -67,7 +73,6 @@ export default [
       placeholder: 'Positive',
       positive: true,
       value: true,
-      onInput: ({ form, field }) => {},
       validate: { required }
     },
     {
@@ -145,14 +150,29 @@ export default [
     },
   ],
 
-  {
-    name: 'cities',
-    component: 'SSelect',
-    label: 'cities',
-    placeholder: 'cities',
-    trackBy: 'id',
-    displayBy: 'name',
-    value: { name: 'sp', id: 2 },
-    items: [ { name: 'rj', id: 1 }, { name: 'sp', id: 2 } ]
-  }
+  [
+    {
+      name: 'states',
+      component: 'SSelect',
+      label: 'states',
+      placeholder: 'states',
+      trackBy: 'id',
+      displayBy: 'name',
+      value: { name: 'sp', id: 2 },
+      onInput ({ field }) {
+        this.$set(this.form, 'cities', { name: 'cf', id: 2 })
+      },
+      items: [ { name: 'rj', id: 1 }, { name: 'sp', id: 2 } ]
+    },
+    {
+      name: 'cities',
+      component: 'SSelect',
+      label: 'cities',
+      placeholder: 'cities',
+      trackBy: 'id',
+      displayBy: 'name',
+      value: {},
+      items: [ { name: 'bzs', id: 1 }, { name: 'cf', id: 2 } ]
+    }
+  ]
 ]
