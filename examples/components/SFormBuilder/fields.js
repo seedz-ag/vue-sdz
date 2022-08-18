@@ -12,7 +12,7 @@ export default [
     placeholder: 'name',
     value: '1111',
     onInput ({ field }) {
-      this.$set(this.form, 'nome2', 'cuuuuuuu')
+      this.$set(this.form, 'nome2', 'dynamic text')
     },
     validate: { required: myRequired, minLength: minLength(5) }
   },

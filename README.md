@@ -33,7 +33,7 @@ Vue.use(VueSdz)
 
 ## Documentation
 
-Head on to the Vue Seedz Framework official website: [https://github.io/vue-sdz](https://github.io/vue-sdz)
+Head on to the Vue Seedz Framework official website: [https://seedz-ag.github.io/vue-sdz/](https://seedz-ag.github.io/vue-sdz/)
 
 
 ## License
