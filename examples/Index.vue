@@ -164,6 +164,8 @@ export default {
   display: flex;
   flex-direction: column;
 
+  overflow: hidden;
+
   & > .content {
     height: 100%;
     display: flex;
