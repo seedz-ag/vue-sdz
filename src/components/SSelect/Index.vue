@@ -33,7 +33,7 @@
           >
         </div>
 
-        <i class="icon chevron-down" />
+        <s-icon class="icon" icon="mdi:chevron-down" />
       </div>
 
       <div class="items">
@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import SIcon from '../SIcon/Index.vue'
 import SCollapsible from '../SCollapsible/Index.vue'
 import SInputContainer from '../SInputContainer/Index.vue'
 
@@ -85,7 +86,7 @@ import clickOutside from '../../directives/clickOutside'
 import utils from 'utils-sdz'
 
 export default {
-  components: { SCollapsible, SInputContainer },
+  components: { SIcon, SCollapsible, SInputContainer },
 
   directives: clickOutside,
 

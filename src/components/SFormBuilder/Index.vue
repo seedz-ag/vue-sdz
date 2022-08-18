@@ -6,6 +6,7 @@
           <field
             :key="groupIndex"
             :$v="$v"
+            :form="form"
             :field="getField(groupField)"
             :value="form[groupField.name]"
 
@@ -18,6 +19,7 @@
       <template v-else>
         <field
           :$v="$v"
+          :form="form"
           :field="getField(field)"
           :value="form[field.name]"
 
@@ -88,8 +90,8 @@ export default {
     getField (field) {
       return {
         ...field,
-        onClick: () => field?.onClick.call(this),
-        onInput: () => field?.onInput?.({ form: this.form, field })
+        onInput: () => field?.onInput?.apply(this, [{ form: this.form, field }]),
+        onClick: () => field?.onClick?.apply(this, [{ form: this.form, field }])
       }
     },
 
