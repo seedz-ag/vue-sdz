@@ -44,7 +44,6 @@ export default {
   computed: {
     classes () {
       return ['s-radiobox', {
-        // '--is-checked': this.value === this.$attrs.checked,
         '--is-negative': this.negative,
         '--is-disabled': this.disabled
       }]
@@ -103,18 +102,14 @@ export default {
     border-color: color(primary, light);
   }
 
-  &.--is-checked {
-    & > .radio { border-color: color(base, light); }
-  }
-
   &.--is-negative {
     & > .radio { border-color: color(negative, base); }
-    & > .input:checked + .radio { border: color(negative, base) 7px solid; }
+    & > .input:checked + .radio { border-color: color(negative, base); border: 7px solid;}
   }
 
   &.--is-disabled {
-    & > .radio { border-color: color(neutral, dark); }
-    & > .input:checked + .radio { border-color: color(neutral, dark);}
+    & > .radio { border-color: color(neutral, dark); cursor: not-allowed;}
+    & > .input:checked + .radio { border-color: color(neutral, dark); cursor: not-allowed;}
   }
 
   @keyframes check {
