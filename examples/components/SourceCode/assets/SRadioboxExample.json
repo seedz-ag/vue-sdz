@@ -21,7 +21,7 @@
           "placeholder":"",
           "type":"boolean",
           "description":"Desabilita o radiobox"
-      },     
+      },
       {
         "name":"negative",
         "values":["true","false"],
@@ -52,13 +52,13 @@
     {
       "name":"value",
       "values":[""],
-      "default":"sim",
+      "default":"",
       "value":"",
       "type":"string",
       "placeholder":"",
-      "description":"Valor do radiobox"
+      "description":"Valor do radiobox (obrigatório)"
   }
-      
+
   ],
   "value":""
 }

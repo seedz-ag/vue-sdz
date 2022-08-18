@@ -65,11 +65,18 @@ export default {
       data2: 'error-2',
       data3: 'disabled-2',
 
-      code1: `<s-radiobox id="sim" label="Default Radiobox" name="dafault" value="sim" v-model="data0" />
-      <s-radiobox id="nao" label="Default Radiobox" name="dafault" value="não" v-model="data0" />`,
-      code2: `<s-radiobox label="Neutral" v-model="data1" />
-      <s-radiobox label="Negative" negative v-model="data1" />`,
-      code3: '<s-radiobox label="disabled" disabled v-model="data5" />'
+      code1: `
+        <s-radiobox id="1" label="Radio sem check default 1" name="dafault" value="default-1" v-model="data0" />
+        <s-radiobox id="2" label="Radio sem check default 2" name="dafault" value="default-2" v-model="data0" />
+      `,
+      code2: `
+        <s-radiobox label="Negative unchecked" negative name="negative" value="error-1" v-model="data2" />
+        <s-radiobox label="Negative checked" negative name="negative" value="error-2" v-model="data2" />
+      `,
+      code3: `
+        <s-radiobox label="Disabled" disabled value="disabled-1" name="disabled" v-model="data3" />
+        <s-radiobox label="Disabled Checked" disabled value="disabled-2" name=" disabled" v-model="data3" />
+      `
     }
   }
 }
