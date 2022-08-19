@@ -4,10 +4,10 @@
       class="input"
       type="radio"
 
-      :checked="value"
+      :checked="isChecked"
       :disabled="disabled"
       :name="name"
-      
+
       @change="$emit('change', value)"
     >
 
@@ -37,19 +37,22 @@ export default {
     negative: Boolean,
 
     disabled: Boolean,
-    
-    name: String
+
+    name: String,
   },
 
   computed: {
     classes () {
       return ['s-radiobox', {
-        '--is-checked': this.value,
         '--is-negative': this.negative,
         '--is-disabled': this.disabled
       }]
+    },
+
+    isChecked () {
+      return this.value === this.$attrs.checked
     }
-  }
+  },
 }
 </script>
 
@@ -72,16 +75,14 @@ export default {
     cursor: pointer;
     transition: border-width .1s ease;
 
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
+    border-color: color(base, light);
     border-radius: $border-radius-circular;
-    border-color: color(neutral, light);
-
-    background-color: color(neutral, base);
 
     &:hover {
       border-width: 2px;
-      border-color: color(positive, base);
+      border-color: color(base, light);
     }
   }
 
@@ -98,21 +99,17 @@ export default {
 
     border-width: 7px;
     border-style: solid;
-    border-color: color(primary, base);
-  }
-
-  &.--is-checked {
-    & > .radio { border-color: color(positive, base); }
+    border-color: color(primary, light);
   }
 
   &.--is-negative {
     & > .radio { border-color: color(negative, base); }
-    & > .input:checked + .radio { border: color(negative, base) 7px solid; }
+    & > .input:checked + .radio { border-color: color(negative, base); border: 7px solid;}
   }
 
   &.--is-disabled {
-    & > .radio { border-color: color(neutral, light); }
-    & > .input:checked + .radio { background-color: color(neutral, light); }
+    & > .radio { border-color: color(neutral, dark); cursor: not-allowed;}
+    & > .input:checked + .radio { border-color: color(neutral, dark); cursor: not-allowed;}
   }
 
   @keyframes check {

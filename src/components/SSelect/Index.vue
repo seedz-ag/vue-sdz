@@ -33,7 +33,6 @@
           >
         </div>
 
-        <!-- <i class="icon chevron-down" /> -->
         <s-icon class="icon" icon="mdi:chevron-down" />
       </div>
 

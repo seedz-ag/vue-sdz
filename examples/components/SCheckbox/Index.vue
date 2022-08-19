@@ -65,11 +65,11 @@ export default {
       data2: true,
       data3: true,
       data4: true,
-      code1:`<s-checkbox label="Default Checkbox" v-model="data0" />
+      code1: `<s-checkbox label="Default Checkbox" v-model="data0" />
       <s-checkbox label="Checked Checkbox" v-model="data1" />`,
-      code2:`<s-checkbox label="Positive" v-model="data2" />
+      code2: `<s-checkbox label="Positive" v-model="data2" />
       <s-checkbox label="Negative" negative v-model="data3" />`,
-      code3:'<s-checkbox label="disabled" disabled v-model="data4" />'
+      code3: '<s-checkbox label="disabled" disabled v-model="data4" />'
     }
   }
 }
