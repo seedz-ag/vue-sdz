@@ -178,7 +178,7 @@ $icon-position: 8px;
   & > .input {
     outline: 0;
     width: 100%;
-    height: 50px;
+    height: 36px;
     font-size: 14px;
     text-indent: 20px;
 
@@ -215,9 +215,9 @@ $icon-position: 8px;
     text-indent: 0;
   }
 
-  &.--small > .input { height: 35px; }
+  &.--small > .input { height: 28px; }
 
-  &.--larger > .input { height: 60px; }
+  &.--larger > .input { height: 52px; }
 
   &.--has-button {
     & > .input {
