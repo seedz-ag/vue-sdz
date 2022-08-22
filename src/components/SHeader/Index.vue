@@ -19,7 +19,8 @@ export default {
 
 .s-header {
   top: 0;
-  position: sticky;
+  width: 100%;
+  position: fixed;
   z-index: $z-index-1;
 }
 </style>

@@ -101,6 +101,7 @@ export default {
             { name: 'Card', redirect: '/vue-sdz/components/card' },
             { name: 'Carousel', redirect: '/vue-sdz/components/carousel' },
             { name: 'Collapse', redirect: '/vue-sdz/components/collapsible' },
+            { name: 'Container', redirect: '/vue-sdz/components/container' },
             { name: 'Drawer', redirect: '/vue-sdz/components/drawer' },
             { name: 'Feedbacks', redirect: '/vue-sdz/components/feedbacks' },
             { name: 'Modal', redirect: '/vue-sdz/components/modal' },
@@ -169,11 +170,17 @@ export default {
   & > .content {
     height: 100%;
     display: flex;
+    padding-top: 70px;
     // transition: margin-top .6s ease;
 
      & > .s-sidebar {
       background: color(neutral, light);
       box-shadow: unset;
+      overflow: auto;
+
+      height: auto;
+      margin-top: -20px;
+      padding-top: 20px;
 
       & > .s-sidebar-item > .item > .content > .name, & > .s-sidebar-item > .item > .content > .icon {
         color: color(base, light);
@@ -258,25 +265,6 @@ export default {
         }
       }
     }
-  }
-}
-
-
-.container {
-  width: 100%;
-  height: 100%;
-
-  padding: 50px;
-  // margin: 0 auto;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  & > div{
-    max-width:800px;
   }
 }
 
