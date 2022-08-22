@@ -174,6 +174,7 @@ $icon-position: 8px;
 
 .s-input {
   display: flex;
+  flex-direction: column;
 
   & > .input {
     outline: 0;
@@ -198,8 +199,9 @@ $icon-position: 8px;
   }
 
   & > .label {
-    top: -30px;
-    position: absolute;
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
 
     pointer-events: none;
     color: color(base, base);
@@ -245,8 +247,6 @@ $icon-position: 8px;
 
   & > .right-icon { right: $icon-position; }
   & > .left-icon { left: $icon-position; }
-
-  // &:not(.--is-float-label) { margin-top: 30px; }
 
   &.--is-float-label {
     & > label {
