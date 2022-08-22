@@ -82,7 +82,7 @@ export default {
     & > .required { color: color(negative, base); margin-right: 5px; }
   }
 
-  &.--label { margin-top: 30px; }
+  // &.--label { margin-top: 30px; }
 
   &.--validation > .input { border-color: color(negative, base); }
   &.--validation > .select > .field { border-color: color(negative, base); }
