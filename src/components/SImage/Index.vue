@@ -23,7 +23,7 @@ export default {
 <style lang="scss">
 @import "./src/styles/_index.scss";
 
-.s-image {
-
+.s-image > img {
+  @-moz-document url-prefix() { filter: unset; }
 }
 </style>
