@@ -93,6 +93,10 @@ export default {
   mixins: [ Pointer, Searchable ],
 
   props: {
+    larger: Boolean,
+
+    small: Boolean,
+
     value: [ Object, Array ],
 
     items: { type: Array, required: true },
@@ -142,6 +146,8 @@ export default {
         {
           '--is-opened': this.isOpened,
           '--is-disabled': this.disabled,
+          '--is-larger': this.larger,
+          '--is-small': this.small,
           // '--is-focused': this.focused || this.searchQuery,
           '--is-empty-search': this.searchQuery && !this.options?.length
         }
@@ -282,7 +288,7 @@ export default {
       align-items: center;
       justify-content: space-between;
 
-      min-height: 50px;
+      min-height: 36px;
       font-size: $font-size-xs;
       background-color: color(neutral, base);
 
@@ -404,6 +410,10 @@ export default {
     font-weight: $font-weight-regular;
     transition: font-size .3s, transform .3s;
   }
+
+  &.--small > .input { height: 28px; }
+
+  &.--larger > .input { height: 52px; }
 
   &.--is-opened {
     & > .select {
