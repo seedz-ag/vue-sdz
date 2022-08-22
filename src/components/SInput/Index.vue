@@ -204,7 +204,7 @@ $icon-position: 8px;
 
     display: block;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
     pointer-events: none;
     color: color(base, base);
