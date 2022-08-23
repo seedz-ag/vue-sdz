@@ -126,9 +126,9 @@ export default {
   align-items: center;
   justify-content: center;
 
-  height: 50px;
+  height: 36px;
   min-width: 50px;
-  min-height: 50px;
+  min-height: 36px;
 
   outline: none;
   cursor: pointer;
@@ -173,7 +173,7 @@ export default {
     flex: 1;
     color: color(neutral, base);
     white-space: nowrap;
-    font-size: $font-size-xs;
+    font-size: 16px;
 
     transition: color 300ms ease, opacity .3s;
 
@@ -256,19 +256,15 @@ export default {
   }
 
   &.--small {
-    height: 35px;
+    height: 28px;
     min-width: 35px;
-    min-height: 35px;
-
-    & > .text { font-size: $font-size-xxs; }
+    min-height: 28px;
   }
 
   &.--large {
-    height: 60px;
+    height: 52px;
     min-width: 60px;
-    min-height: 60px;
-
-    & > .text { font-size: $font-size-sm; }
+    min-height: 52px;
   }
 
   &.--full-width {
