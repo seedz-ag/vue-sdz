@@ -148,6 +148,7 @@ export default {
           '--is-disabled': this.disabled,
           '--is-larger': this.larger,
           '--is-small': this.small,
+          '--is-multiple': this.multiple,
           // '--is-focused': this.focused || this.searchQuery,
           '--is-empty-search': this.searchQuery && !this.options?.length
         }
@@ -288,7 +289,7 @@ export default {
       align-items: center;
       justify-content: space-between;
 
-      min-height: 36px;
+      height: 36px;
       font-size: $font-size-xs;
       background-color: color(neutral, base);
 
@@ -411,9 +412,11 @@ export default {
     transition: font-size .3s, transform .3s;
   }
 
-  &.--small > .input { height: 28px; }
+  &.--is-small > .select > .field { height: 28px; }
 
-  &.--larger > .input { height: 52px; }
+  &.--is-larger > .select > .field { height: 52px; }
+
+  &.--is-multiple > .select > .field { height: unset; }
 
   &.--is-opened {
     & > .select {
@@ -429,10 +432,6 @@ export default {
     }
   }
 
-  // &.--is-focused > .select > .field > .selections > .input {
-  //   border-bottom: 2px solid color(primary, base);
-  // }
-
   &.--is-disabled {
     cursor: default;
     pointer-events: none;
@@ -440,7 +439,6 @@ export default {
     & > .label { color: color(neutral, dark); }
 
     & > .select > .field {
-     // border-color: color(neutral, dark);
       border-color: #E1E2E4;
       background-color: #F5F7F9;
       pointer-events: none;
