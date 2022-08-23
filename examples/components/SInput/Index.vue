@@ -21,6 +21,7 @@
     <source-code file="SInputExample" comp="SInput" />
 
     <s-title size="title-2">Stats</s-title>
+
     <s-box>
       <s-input label="Default" />
 
