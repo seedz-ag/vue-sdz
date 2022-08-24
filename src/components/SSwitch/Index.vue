@@ -10,9 +10,7 @@
       @input="ev => $emit('input', ev.target.checked)"
     >
 
-    <span class="switch">
-      
-    </span>
+    <span class="switch" />
 
     <span class="text">{{ label }}</span>
   </label>
@@ -89,7 +87,7 @@ export default {
     width: 16px;
     left: 4px;
     bottom: 4px;
-    background-color: color(base, base);
+    background-color: color(base, light);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: $border-radius-circular;
@@ -117,8 +115,21 @@ export default {
   }
 
   &.--is-disabled {
-    & > .switch { border-color: color(neutral, light); }
-    & > .input:checked + .switch { background-color: color(neutral, light); }
+    cursor: not-allowed;
+
+    & > .switch {
+      border-color: color(neutral, dark);
+      cursor: not-allowed;
+
+      &:before {
+        background-color: color(neutral, dark);
+      }
+    }
+
+    & > .input:checked + .switch {
+      background-color: color(neutral, dark);
+      border-color: color(neutral, dark);
+    }
   }
 
   @keyframes check {
