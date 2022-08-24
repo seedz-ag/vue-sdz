@@ -29,6 +29,8 @@
     <s-title size="title-2">Disabled</s-title>
     <s-box>
       <s-switch label="disabled" disabled />
+      <br>
+      <s-switch label="disabled" disabled v-model="data2" />
     </s-box>
 
     <pre-code :code="code2" />
@@ -52,9 +54,9 @@ export default {
       data1: true,
       data2: true,
       data3: true,
-      code1:`<s-switch label="Default Switch" v-model="data0" />
+      code1: `<s-switch label="Default Switch" v-model="data0" />
 <s-switch label="Checked Switch" v-model="data2" />`,
-      code2:'<s-switch label="disabled" disabled />'
+      code2: '<s-switch label="disabled" disabled />'
     }
   }
 }
