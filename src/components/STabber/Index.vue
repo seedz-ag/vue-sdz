@@ -71,9 +71,12 @@ export default {
   }
 
   & > .wrapper > .inner > .carousel-item > .tab {
+    width: 100%;
+    padding-bottom: 10px;
+
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
+    justify-content: center;
 
     & > .icon {
       margin-right: 10px;

@@ -170,7 +170,6 @@ export default {
   & > .content {
     height: 100%;
     display: flex;
-    padding-top: 70px;
     // transition: margin-top .6s ease;
 
      & > .s-sidebar {
