@@ -222,9 +222,15 @@ $icon-position: 8px;
   &.--larger > .input { height: 52px; }
 
   &.--has-button {
+    flex-direction: row;
+    flex-wrap: wrap;
+
     & > .input {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+      width: 1%;
+      -webkit-box-flex: 1;
+      flex: 1 1 auto;
     }
 
     & > .s-button {
