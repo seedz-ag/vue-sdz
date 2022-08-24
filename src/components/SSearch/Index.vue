@@ -89,7 +89,7 @@ export default {
     display: flex;
     align-items: center;
 
-    height: 50px;
+    height: 36px;
     padding: 15px;
     cursor: pointer;
 
@@ -106,7 +106,7 @@ export default {
       content: '';
 
       right: 0;
-      top: 10px;
+      top: 2px;
       position: absolute;
 
       height: 30px;
@@ -162,7 +162,7 @@ export default {
     & > .categories {
       & > .category {
         cursor: pointer;
-        padding: 15px 25px;
+        padding: 10px 25px;
 
         &:hover { background: color(neutral, light); }
         &:not(:last-child) { border-bottom: 1px solid color(base, light); }
