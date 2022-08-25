@@ -99,17 +99,15 @@ export default {
     font-size: $font-size-xs;
   }
 
+  &.--is-negative > .check {
+    border-color: color(negative, base);
+  }
+
+
   &.--is-checked {
     & > .check {
-      border-color: color(positive, base);
-      background-color: color(positive, base);
-    }
-
-    &.--is-negative {
-      & > .check {
-        border-color: color(negative, base);
-        background-color: color(negative, base);
-      }
+      border-color: color(primary, base);
+      background-color: color(primary, base);
     }
 
     &.--is-disabled {
