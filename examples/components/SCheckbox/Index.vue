@@ -32,16 +32,14 @@
 
     <s-title size="title-2">Stats</s-title>
     <s-box>
-      <s-checkbox label="Positive" v-model="data2" />
-      <br>
-      <s-checkbox label="Negative" negative v-model="data3" />
+      <s-checkbox label="Error" negative v-model="data2" />
     </s-box>
 
     <pre-code :code="code2" />
 
     <s-title size="title-2">Disabled</s-title>
     <s-box>
-      <s-checkbox label="disabled" disabled v-model="data4" />
+      <s-checkbox label="Disabled" disabled v-model="data3" />
     </s-box>
 
     <pre-code :code="code3" />
@@ -62,13 +60,11 @@ export default {
     return {
       data0: false,
       data1: true,
-      data2: true,
+      data2: false,
       data3: true,
-      data4: true,
       code1: `<s-checkbox label="Default Checkbox" v-model="data0" />
       <s-checkbox label="Checked Checkbox" v-model="data1" />`,
-      code2: `<s-checkbox label="Positive" v-model="data2" />
-      <s-checkbox label="Negative" negative v-model="data3" />`,
+      code2: '<s-checkbox label="Error" negative v-model="data2" />',
       code3: '<s-checkbox label="disabled" disabled v-model="data4" />'
     }
   }
