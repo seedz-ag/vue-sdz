@@ -94,6 +94,7 @@ export default {
   }
 
   & > .text {
+    margin-top: 2px;
     margin-left: 8px;
     font-size: $font-size-xs;
   }
