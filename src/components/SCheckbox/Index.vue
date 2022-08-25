@@ -9,7 +9,7 @@
     >
 
     <span class="check" @click="emit">
-      <i class="icon check" />
+      <s-icon class="icon" icon="bi:check-lg" />
     </span>
 
     <span class="text" @click="emit">{{ label }}</span>
@@ -17,8 +17,12 @@
 </template>
 
 <script>
+import SIcon from '../SIcon/Index.vue'
+
 export default {
   name: 'SCheckbox',
+
+  components: { SIcon },
 
   props: {
     value: {
@@ -79,9 +83,6 @@ export default {
     background-color: color(neutral, base);
 
     & > .icon {
-      font-size: 18px;
-      margin-top: 3px;
-
       opacity: 1;
       transform: scale(0);
       color: color(neutral, base);
@@ -89,7 +90,6 @@ export default {
 
       color: transparent;
       opacity: $opacity-light;
-      font-weight: $font-weight-bold;
       transition: opacity .3s .1s ease-in-out;
     }
   }
