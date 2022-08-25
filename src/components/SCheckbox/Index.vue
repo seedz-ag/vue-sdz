@@ -83,9 +83,6 @@ export default {
     background-color: color(neutral, base);
 
     & > .icon {
-      font-size: 18px;
-      font-weight: bold;
-
       opacity: 1;
       transform: scale(0);
       color: color(neutral, base);
@@ -93,7 +90,6 @@ export default {
 
       color: transparent;
       opacity: $opacity-light;
-      font-weight: $font-weight-bold;
       transition: opacity .3s .1s ease-in-out;
     }
   }
