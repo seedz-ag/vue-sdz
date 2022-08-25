@@ -4,7 +4,9 @@
       <div class="pages">
         <s-icon
           class="previous"
-          icon="chevron-up"
+          icon="fa6-solid:chevron-left"
+          :width="20"
+          :height="20"
           :disabled="page === 1"
           @click.native="changePage(page, 'previous')"
         />
@@ -13,7 +15,7 @@
           :is="num === '...' ? 's-icon' : 's-button'"
           v-for="(num, index) in pages"
           :key="index"
-          :icon="num === '...' ? 'more-horizzontal' : ''"
+          :icon="num === '...' ? 'akar-icons:more-horizontal' : ''"
           :class="['page', (num === '...') ? 'page-icon' : '', { '--is-active': num === page }]"
           @click="changePage(num, 'set')"
         >
@@ -22,7 +24,9 @@
 
         <s-icon
           class="next"
-          icon="chevron-up"
+          icon="fa6-solid:chevron-right"
+          :width="20"
+          :height="20"
           :disabled="page === +totalPage"
           @click.native="changePage(page, 'next')"
         />
@@ -132,8 +136,6 @@ export default {
     & > .previous {
       cursor: pointer;
       padding-right: 10px;
-      transform: rotate(-90deg);
-      margin-top: -10px;
     }
 
     & > .page {
@@ -183,8 +185,6 @@ export default {
     & > .next {
       cursor: pointer;
       padding-left: 10px;
-      transform: rotate(90deg);
-      margin-top: -10px;
     }
   }
 }
