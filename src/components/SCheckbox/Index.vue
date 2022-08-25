@@ -77,7 +77,7 @@ export default {
     border-width: 2px;
     border-style: solid;
     border-radius: $border-radius-sm;
-    border-color: color(neutral, dark);
+    border-color: color(base, light);
 
     transition: background-color .6s ease;
     background-color: color(neutral, base);
@@ -104,7 +104,6 @@ export default {
   &.--is-negative > .check {
     border-color: color(negative, base);
   }
-
 
   &.--is-checked {
     & > .check {
