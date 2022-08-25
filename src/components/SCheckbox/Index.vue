@@ -91,11 +91,13 @@ export default {
       color: transparent;
       opacity: $opacity-light;
       transition: opacity .3s .1s ease-in-out;
+      margin-left: -2px;
     }
   }
 
   & > .text {
-    margin-left: 10px;
+    margin-top: 2px;
+    margin-left: 8px;
     font-size: $font-size-xs;
   }
 
