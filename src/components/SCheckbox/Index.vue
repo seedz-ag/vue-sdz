@@ -76,7 +76,7 @@ export default {
 
     border-width: 2px;
     border-style: solid;
-    border-radius: $border-radius-md;
+    border-radius: $border-radius-sm;
     border-color: color(base, light);
 
     transition: background-color .6s ease;
