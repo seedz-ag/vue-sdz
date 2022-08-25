@@ -77,7 +77,7 @@ export default {
     border-width: 2px;
     border-style: solid;
     border-radius: $border-radius-sm;
-    border-color: color(neutral, dark);
+    border-color: color(base, light);
 
     transition: background-color .6s ease;
     background-color: color(neutral, base);
@@ -91,25 +91,24 @@ export default {
       color: transparent;
       opacity: $opacity-light;
       transition: opacity .3s .1s ease-in-out;
+      margin-left: -2px;
     }
   }
 
   & > .text {
-    margin-left: 10px;
+    margin-top: 2px;
+    margin-left: 8px;
     font-size: $font-size-xs;
+  }
+
+  &.--is-negative > .check {
+    border-color: color(negative, base);
   }
 
   &.--is-checked {
     & > .check {
-      border-color: color(positive, base);
-      background-color: color(positive, base);
-    }
-
-    &.--is-negative {
-      & > .check {
-        border-color: color(negative, base);
-        background-color: color(negative, base);
-      }
+      border-color: color(primary, base);
+      background-color: color(primary, base);
     }
 
     &.--is-disabled {
