@@ -186,7 +186,7 @@ $icon-position: 8px;
     border-width: 1px;
     border-style: solid;
     border-image-slice: 1;
-    border-radius: $border-radius-sm;
+    border-radius: $border-radius-md;
     border-image-source: color(base, light);
 
     transition: color .3s, border-color .3s;

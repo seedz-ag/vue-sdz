@@ -293,7 +293,7 @@ export default {
       font-size: $font-size-xs;
       background-color: color(neutral, base);
 
-      border-radius: $border-radius-sm;
+      border-radius: $border-radius-md;
       border: 1px solid color(base, light);
 
       transition: border-radius .3s ease-in-out,
@@ -322,7 +322,7 @@ export default {
           cursor: pointer;
           max-height: 30px;
           color: $neutral-color;
-          border-radius: $border-radius-sm;
+          border-radius: $border-radius-md;
           background-color: color(primary, base);
           padding: { left: 10px; right: 35px; top: 2px; bottom: 2px; }
 
@@ -359,7 +359,7 @@ export default {
       width: 100%;
       margin-top: 12px;
       max-height: 300px;
-      border-radius: $border-radius-sm;
+      border-radius: $border-radius-md;
       background-color: color(neutral, base);
 
       position: absolute;
@@ -450,14 +450,14 @@ export default {
 
   &.--has-error > .select > .field {
     border-bottom: 2px solid color(primary, base);
-    border-bottom-left-radius: $border-radius-sm;
-    border-bottom-right-radius: $border-radius-sm;
+    border-bottom-left-radius: $border-radius-md;
+    border-bottom-right-radius: $border-radius-md;
   }
 
   &.--is-empty-search > .select > .field {
     border-bottom: 2px solid color(primary, base);
-    border-bottom-left-radius: $border-radius-sm;
-    border-bottom-right-radius: $border-radius-sm;
+    border-bottom-left-radius: $border-radius-md;
+    border-bottom-right-radius: $border-radius-md;
   }
 }
 </style>

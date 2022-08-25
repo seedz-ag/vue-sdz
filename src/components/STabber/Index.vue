@@ -105,7 +105,7 @@ export default {
 
         width: 100%;
         opacity: 0.6;
-        border-radius: $border-radius-sm;
+        border-radius: $border-radius-md;
         transition: border-bottom .3s, opacity .3s;
         border-bottom: 2px solid color(positive, base);
       }

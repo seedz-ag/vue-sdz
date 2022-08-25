@@ -14,7 +14,7 @@ export default {
   name: 'SSkeleton',
 
   props: {
-  
+
 
     /**
      * Skeleton width in percentage.
@@ -50,7 +50,7 @@ export default {
     },
     getSkeleton () {
       return {
-        borderRadius: this.round ? '100%' : '$border-radius-sm'
+        borderRadius: this.round ? '100%' : '$border-radius-md'
       }
     }
   }
@@ -72,10 +72,10 @@ export default {
     transition: box-shadow .15s ease-out;
     box-sizing: inherit;
     margin-bottom: 16px;
-    
+
 
     .skeleton-background{
-      border-radius: $border-radius-sm;
+      border-radius: $border-radius-md;
       min-height: 1.5em;
       background-color: rgba(36,27,39,.05);
       background-image: linear-gradient(100deg,rgba(45,35,46,0),rgba(45,35,46,.1) 20%,rgba(45,35,46,0) 40%);

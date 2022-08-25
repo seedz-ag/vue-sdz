@@ -43,7 +43,7 @@ export default {
 .s-alert {
   padding: 16px;
   text-align: center;
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius-md;
 
   & > .header {
     padding-bottom: 5px;
