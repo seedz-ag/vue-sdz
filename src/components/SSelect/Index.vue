@@ -279,8 +279,8 @@ export default {
   width: 100%;
 
   & > .select {
-    margin-top: 10px;
-
+    margin-top: 8px;
+    
     & > .field {
       width: 100%;
       position: relative;
