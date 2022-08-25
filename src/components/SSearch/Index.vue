@@ -95,7 +95,7 @@ export default {
 
     border-width: 1px;
     border-style: solid;
-    border-radius: $border-radius-sm;
+    border-radius: $border-radius-md;
     border-color: color(base, light);
 
     border-right: none;

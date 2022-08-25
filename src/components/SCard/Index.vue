@@ -44,7 +44,7 @@ export default {
     cardStyles () {
       return {
         background: this.backgroundColor,
-        borderLeft: this.borderColor?`4px solid ${this.borderColor}`:'none'
+        borderLeft: this.borderColor ? `4px solid ${this.borderColor}` : 'none'
       }
     },
 
@@ -66,9 +66,9 @@ export default {
   position: relative;
   box-shadow: $shadow-1;
   transition: all .3s ease;
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius-md;
   padding: 16px;
-  
+
   &:hover { box-shadow: $shadow-2; }
 
   &::before {
@@ -81,8 +81,8 @@ export default {
     height: 100%;
     min-width: 4px;
     width: 4px;
-    border-top-left-radius: $border-radius-sm;
-    border-bottom-left-radius: $border-radius-sm;
+    border-top-left-radius: $border-radius-md;
+    border-bottom-left-radius: $border-radius-md;
   }
 
   &.-no-hover:hover { box-shadow: $shadow-1; }

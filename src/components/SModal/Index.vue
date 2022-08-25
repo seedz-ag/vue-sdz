@@ -215,7 +215,7 @@ export default {
     &.-scroll-shadow { background: #FFF; }
 
     &:not(.-fullscreen) {
-      border-radius: $border-radius-md;
+      border-radius: $border-radius-lg;
 
       @include responsive(tablet, desktop) {
         width: 100%;

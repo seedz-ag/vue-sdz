@@ -138,7 +138,7 @@ export default {
   background: color(primary, base);
 
   border: $border-radius-none;
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius-md;
 
   transition: border .3s,
               border .3s,
