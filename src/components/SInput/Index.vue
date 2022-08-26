@@ -201,7 +201,7 @@ $icon-position: 8px;
   & > .label {
     display: block;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 
     pointer-events: none;
     color: color(base, base);
