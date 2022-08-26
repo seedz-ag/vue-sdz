@@ -7,7 +7,7 @@ import commonjs from '@rollup/plugin-commonjs'
 const config = {
   inlineDynamicImports: true,
 
-  external: ['vue'],
+  external: ['vue', '@vue/composition-api'],
 
   input: 'src/index.js',
 
