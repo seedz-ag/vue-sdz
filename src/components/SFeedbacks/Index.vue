@@ -17,7 +17,7 @@
         <s-button
           v-if="dismissible"
           grey
-          icon="close"
+          icon="eva:close-fill"
           class="button"
           @click="$emit('close', feedback)"
         />
