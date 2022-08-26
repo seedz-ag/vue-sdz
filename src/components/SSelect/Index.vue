@@ -436,15 +436,13 @@ export default {
     cursor: default;
     pointer-events: none;
 
-    & > .label { color: color(neutral, dark); }
-
     & > .select > .field {
-      border-color: #E1E2E4;
-      background-color: #F5F7F9;
+      border-color: color(neutral, dark);
+      background-color: color(neutral, light);
       pointer-events: none;
 
-      & > .icon { color: color(base, dark); }
-      & > .selections > .input { background-color: transparent; color: color(neutral, dark); }
+      & > .icon { color: color(base, light); }
+      & > .selections > .input { background-color: transparent; color: color(base, light); }
     }
   }
 

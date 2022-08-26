@@ -86,6 +86,48 @@
         />
       </div>
     </s-box>
+
+    <s-title size="title-2">Disabled</s-title>
+    <s-box class="sizing flex-inline">
+      <div>
+        <s-select
+          label="Simple"
+          display-by="name"
+          track-by="slug"
+          placeholder="Selecione uma opção"
+          :items="items"
+          disabled
+          clear-on-select
+          small
+          v-model="data1"
+        />
+      </div>
+      <div>
+        <s-select
+          label="Simple"
+          display-by="name"
+          track-by="slug"
+          placeholder="Selecione uma opção"
+          disabled
+          :items="items"
+          clear-on-select
+          v-model="data1"
+        />
+      </div>
+      <div>
+        <s-select
+          label="Simple"
+          display-by="name"
+          track-by="slug"
+          placeholder="Selecione uma opção"
+          disabled
+          :items="items"
+          clear-on-select
+          larger
+          v-model="data1"
+        />
+      </div>
+    </s-box>
   </div>
 </template>
 
@@ -122,6 +164,8 @@ export default {
 
 <style lang="scss">
 .s-select-example {
+  padding-bottom: 40px;
+
   & > .s-box {
     & > .s-select { margin-bottom: 60px; }
 
