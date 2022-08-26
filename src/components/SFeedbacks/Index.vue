@@ -73,6 +73,7 @@ export default {
     margin-left: 20px;
     min-height: 60px;
     box-shadow: -1px -1px 4px 0 rgba(0,0,0,0.2);
+    background: color(base, light);
 
     &.--is-negative {
       background-color: color(negative, dark);
@@ -93,17 +94,15 @@ export default {
       align-items: center;
       flex-direction: column;
 
-      // overwrite package style
       margin: 0 !important;
 
       font-weight: unset;
-      color: color(primary, base);
+      color: color(neutral, base);
 
       & > .message { font-weight: $font-weight-bold; }
       & > .highlighted { font-weight: $font-weight-regular; }
     }
 
-    // override s-button
     & > .button {
       width: 30px;
       margin-right: 15px;
