@@ -1,5 +1,5 @@
 // import { required } from 'vuelidate/lib/validators/index.js'
-import { required, minLength, email, helpers } from '@vuelidate/validators'
+import { required, minLength, email, helpers, sameAs } from '@vuelidate/validators'
 
 const myRequired = helpers.withMessage('Campo obrigatório.', required)
 
@@ -12,7 +12,7 @@ export default [
     placeholder: 'name',
     value: '1111',
     onInput ({ field }) {
-      this.$set(this.form, 'nome2', 'dynamic text')
+      // this.$set(this.form, 'nome2', 'dynamic text')
     },
     validate: { required: myRequired, minLength: minLength(5) }
   },
@@ -39,7 +39,7 @@ export default [
       label: 'Nome2',
       placeholder: 'Nome2',
       value: '',
-      onInput: ({ field }) => {
+      onInput ({ field }) {
         console.log('222222', field)
       },
       validate: { required }
@@ -128,6 +128,30 @@ export default [
     placeholder: 'phone',
     value: '',
     mask: '(##) ####-####'
+  },
+
+  {
+    name: 'password',
+    component: 'SInput',
+    label: 'password',
+    placeholder: 'password',
+    value: '',
+    validate: { required: myRequired }
+  },
+
+  {
+    name: 'confirmPassword',
+    component: 'SInput',
+    label: 'confirmPassword',
+    placeholder: 'confirmPassword',
+    value: '',
+    customValidate: {
+      sameAs: 'password'
+    },
+    validate: {
+      required: myRequired,
+      // sameAs: sameAs(this?.form?.password)
+    }
   },
 
   [
