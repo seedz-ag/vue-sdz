@@ -1,5 +1,11 @@
 <template>
   <div class="s-form-builder-example">
+    <!--
+      proposal
+
+      :same-as="[
+        { field: 'confirmPassword', equalTo: 'password' }
+      ]" -->
     <s-form-builder
       :fields="fields"
 
@@ -23,13 +29,13 @@ export default {
 
   data () {
     return {
-      fields: fields
+      fields
     }
   },
 
   methods: {
     synchronize (data) {
-      console.log('synchronize', data)
+      // console.log('synchronize', data)
     },
 
     onInputBtn () {
