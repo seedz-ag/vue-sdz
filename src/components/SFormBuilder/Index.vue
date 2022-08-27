@@ -45,6 +45,7 @@ import SButton from '../SButton/Index.vue'
 import transformBy from './transformBy.js'
 
 import useVuelidate from '@vuelidate/core'
+// import { sameAs } from '@vuelidate/validators'
 
 function initForm () {
   return {
@@ -61,7 +62,9 @@ export default {
     fields: {
       type: Array,
       required: true
-    }
+    },
+
+    // sameAs: Array
   },
 
   setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
@@ -77,8 +80,25 @@ export default {
   },
 
   validations () {
+    const validations = transformBy(this.fields, 'validate', true)
+
+    // Proposal
+    // --------------------------------------------------------------
+    // const sameAsValidations = this.sameAs?.reduce((acc, item) => {
+    //   return {
+    //     ...acc,
+    //     [item.field]: {
+    //       ...validations[item.field],
+    //       sameAs: sameAs(this.form[item.equalTo])
+    //     }
+    //   }
+    // }, Object.create(null))
+
     return {
-      form: transformBy(this.fields, 'validate', true)
+      form: {
+        ...validations,
+        // ...sameAsValidations
+      }
     }
   },
 
@@ -88,8 +108,11 @@ export default {
     },
 
     getField (field) {
+      const sameAs = { sameAs: this.form[field.name] === this.form[field?.customValidate?.sameAs] }
+
       return {
         ...field,
+        ...(field?.customValidate ? { customValidate: sameAs } : {}),
         onInput: () => field?.onInput?.apply(this, [{ form: this.form, field }]),
         onClick: () => field?.onClick?.apply(this, [{ form: this.form, field }])
       }
@@ -101,9 +124,9 @@ export default {
     },
 
     async submit () {
-      this.$v.$touch()
+      this.$v?.$touch()
 
-      if (this.$v.$error) return this.$emit('errors', this.form)
+      if (this.$v?.$error) return this.$emit('errors', this.form)
 
       this.$emit('submit', this.form)
     }
