@@ -13,6 +13,7 @@
 
 <script>
 import rules from './rules.js'
+import customMessages from './customMessages.js'
 
 export default {
   name: 'SFormBuilderField',
@@ -49,8 +50,8 @@ export default {
       return {
         ...this.$listeners,
         input: value => {
-          this.field?.onInput()
-          this.$listeners.input(value)
+          this.$listeners.input(value),
+          this.field?.onInput?.call(this, { form: this.form, field: this.field })
         }
       }
     }
@@ -62,8 +63,14 @@ export default {
 
       const getRule = rule => infoField?.[rule]
       const getMessage = rule => getRule(rule)?.$invalid && getRule(rule)?.$message
+      const errorMsg = rules.map(getMessage).filter(Boolean)
+      const customErrorMsg = infoField?.$anyDirty && !this.field?.customValidate?.sameAs ? [customMessages.sameAs] : []
 
-      return rules.map(getMessage).filter(Boolean)
+      const hascustomValidate = Object.keys(this.field?.customValidate || {}).length
+
+      if (hascustomValidate && customErrorMsg.length && !errorMsg.length) return customErrorMsg
+
+      return errorMsg
     }
   }
 }
