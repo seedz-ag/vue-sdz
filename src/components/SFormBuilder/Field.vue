@@ -59,7 +59,7 @@ export default {
 
   methods: {
     getValidation (field) {
-      const infoField = this.$v.form?.[field]
+      const infoField = this.$v?.form?.[field]
 
       const getRule = rule => infoField?.[rule]
       const getMessage = rule => getRule(rule)?.$invalid && getRule(rule)?.$message

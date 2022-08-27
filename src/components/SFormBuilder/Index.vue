@@ -124,9 +124,9 @@ export default {
     },
 
     async submit () {
-      this.$v.$touch()
+      this.$v?.$touch()
 
-      if (this.$v.$error) return this.$emit('errors', this.form)
+      if (this.$v?.$error) return this.$emit('errors', this.form)
 
       this.$emit('submit', this.form)
     }
