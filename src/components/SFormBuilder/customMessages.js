@@ -1,3 +1,3 @@
 export default {
-  sameAs: 'The value must be equal to the other value'
+  sameAs: 'O valor deve ser igual ao outro valor'
 }
