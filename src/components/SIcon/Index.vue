@@ -15,7 +15,7 @@
 // https://github.com/antfu/unplugin-icons/issues/5
 // unplugin-icon limitation: designed to be used statically
 // because of that it had to be combined with @iconify/vue2
-import { listIcons , Icon } from '@iconify/vue2'
+import { Icon } from '@iconify/vue2'
 
 export default {
   name: 'SIcon',
