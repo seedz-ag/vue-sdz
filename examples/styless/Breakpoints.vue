@@ -44,7 +44,7 @@ export default {
 
   data () {
     return {
-      code1:`
+      code1: `
         @include mobile { ... }
         @include tablet { ... }
         @include desktop { ... }
