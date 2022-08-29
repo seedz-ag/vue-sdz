@@ -24,12 +24,20 @@
           :value="form[field.name]"
 
           v-on="$listeners"
+          @sync:error="onSyncError"
           @input="value => emit(field.name, value)"
         />
       </template>
     </div>
 
-    <slot name="actions" :$v="$v" :$form="form" :$resetData="setForm">
+    <slot
+      name="actions"
+      :$v="$v"
+      :$form="form"
+      :$resetData="setForm"
+      :$has-errors="hasCustomErrors"
+      :$hasCustomErrors="hasCustomErrors"
+    >
       <div class="actions">
         <s-button>Cancelar</s-button>
 
@@ -45,10 +53,12 @@ import SButton from '../SButton/Index.vue'
 import transformBy from './transformBy.js'
 
 import useVuelidate from '@vuelidate/core'
+// import { sameAs } from '@vuelidate/validators'
 
 function initForm () {
   return {
-    form: {}
+    form: {},
+    errors: {}
   }
 }
 
@@ -61,7 +71,9 @@ export default {
     fields: {
       type: Array,
       required: true
-    }
+    },
+
+    // sameAs: Array
   },
 
   setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
@@ -77,21 +89,57 @@ export default {
   },
 
   validations () {
+    const validations = transformBy(this.fields, 'validate', true)
+
+    // Proposal
+    // --------------------------------------------------------------
+    // const sameAsValidations = this.sameAs?.reduce((acc, item) => {
+    //   return {
+    //     ...acc,
+    //     [item.field]: {
+    //       ...validations[item.field],
+    //       sameAs: sameAs(this.form[item.equalTo])
+    //     }
+    //   }
+    // }, Object.create(null))
+
     return {
-      form: transformBy(this.fields, 'validate', true)
+      form: {
+        ...validations,
+        // ...sameAsValidations
+      }
+    }
+  },
+
+  computed: {
+    hasCustomErrors () {
+      const errors = { ...this.errors }
+
+      return Object.values(errors).every(Boolean)
     }
   },
 
   methods: {
     setForm () {
       this.form = transformBy(this.fields, 'value', false)
+      this.errors = transformBy(this.fields, 'value', false)
     },
 
     getField (field) {
+      const sameAs = { sameAs: this.form[field.name] === this.form[field?.customValidate?.sameAs] }
+
       return {
         ...field,
+        ...(field?.customValidate ? { customValidate: sameAs } : {}),
         onInput: () => field?.onInput?.apply(this, [{ form: this.form, field }]),
         onClick: () => field?.onClick?.apply(this, [{ form: this.form, field }])
+      }
+    },
+
+    onSyncError (error) {
+      this.errors = {
+        // ...this.errors,
+        ...error
       }
     },
 
@@ -101,9 +149,9 @@ export default {
     },
 
     async submit () {
-      this.$v.$touch()
+      this.$v?.$touch()
 
-      if (this.$v.$error) return this.$emit('errors', this.form)
+      if (this.$v?.$error || this.hasCustomErrors) return this.$emit('errors', this.form)
 
       this.$emit('submit', this.form)
     }
