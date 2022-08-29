@@ -2,7 +2,7 @@
   <component
     :is="field.component"
     :items="field.items"
-    :validation="getValidation(field.name)"
+    :validation="validationMsg"
     :style="{ 'width': field.width || '100%' }"
     :value="form[field.name]"
 
@@ -35,6 +35,14 @@ export default {
     field: [Array, Object]
   },
 
+  watch: {
+    hasCustomError: {
+      handler () {
+        this.$emit('sync:error', { [this.field.name]: this.hasCustomError ? this.customErrorMsg : '' })
+      }
+    }
+  },
+
   computed: {
     bindings () {
       const { value, ...propsField } = this.field
@@ -54,23 +62,33 @@ export default {
           this.field?.onInput?.call(this, { form: this.form, field: this.field })
         }
       }
-    }
-  },
+    },
 
-  methods: {
-    getValidation (field) {
-      const infoField = this.$v?.form?.[field]
+    infoField () {
+      return this.$v?.form?.[this.field?.name]
+    },
 
-      const getRule = rule => infoField?.[rule]
+    errorMsg () {
+      const getRule = rule => this.infoField?.[rule]
       const getMessage = rule => getRule(rule)?.$invalid && getRule(rule)?.$message
-      const errorMsg = rules.map(getMessage).filter(Boolean)
-      const customErrorMsg = infoField?.$anyDirty && !this.field?.customValidate?.sameAs ? [customMessages.sameAs] : []
 
-      const hascustomValidate = Object.keys(this.field?.customValidate || {}).length
+      return rules.map(getMessage).filter(Boolean)
+    },
 
-      if (hascustomValidate && customErrorMsg.length && !errorMsg.length) return customErrorMsg
+    customErrorMsg () {
+      return this.infoField?.$anyDirty && !this.field?.customValidate?.sameAs ? [customMessages.sameAs] : []
+    },
 
-      return errorMsg
+    hasCustomValidation () {
+      return !!(Object.keys(this.field?.customValidate || {}).length)
+    },
+
+    hasCustomError () {
+      return !!(this.hasCustomValidation && this.customErrorMsg.length && !this.errorMsg.length)
+    },
+
+    validationMsg () {
+      return this.hasCustomError ? this.customErrorMsg : this.errorMsg
     }
   }
 }
