@@ -12,8 +12,8 @@
       @synchronize="synchronize"
       @click:input-btn="onInputBtn"
     >
-      <div class="actions" slot="actions" slot-scope="{ $v, $resetData }">
-        <s-button @click="submit($v, $resetData)">Salvar</s-button>
+      <div class="actions" slot="actions" slot-scope="{ $v, $hasErrors, $resetData }">
+        <s-button @click="submit($v, $hasErrors, $resetData)">Salvar</s-button>
       </div>
     </s-form-builder>
   </div>
@@ -42,13 +42,10 @@ export default {
       console.log('onInputBtn')
     },
 
-    async submit ($v, $resetData) {
+    async submit ($v, $hasErrors, $resetData) {
       $v.form.$touch()
 
-      if ($v.form.$error) {
-        console.log('erroooo')
-        return
-      }
+      if ($v.form.$error || $hasErrors) return
 
       $resetData()
       this.$nextTick(() => { $v.$reset() })

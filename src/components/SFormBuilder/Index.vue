@@ -24,12 +24,20 @@
           :value="form[field.name]"
 
           v-on="$listeners"
+          @sync:error="onSyncError"
           @input="value => emit(field.name, value)"
         />
       </template>
     </div>
 
-    <slot name="actions" :$v="$v" :$form="form" :$resetData="setForm">
+    <slot
+      name="actions"
+      :$v="$v"
+      :$form="form"
+      :$resetData="setForm"
+      :$has-errors="hasCustomErrors"
+      :$hasCustomErrors="hasCustomErrors"
+    >
       <div class="actions">
         <s-button>Cancelar</s-button>
 
@@ -49,7 +57,8 @@ import useVuelidate from '@vuelidate/core'
 
 function initForm () {
   return {
-    form: {}
+    form: {},
+    errors: {}
   }
 }
 
@@ -102,9 +111,18 @@ export default {
     }
   },
 
+  computed: {
+    hasCustomErrors () {
+      const errors = { ...this.errors }
+
+      return Object.values(errors).every(Boolean)
+    }
+  },
+
   methods: {
     setForm () {
       this.form = transformBy(this.fields, 'value', false)
+      this.errors = transformBy(this.fields, 'value', false)
     },
 
     getField (field) {
@@ -118,6 +136,13 @@ export default {
       }
     },
 
+    onSyncError (error) {
+      this.errors = {
+        // ...this.errors,
+        ...error
+      }
+    },
+
     emit (field, value) {
       this.form[field] = value
       this.$emit('synchronize', { field, value })
@@ -126,7 +151,7 @@ export default {
     async submit () {
       this.$v?.$touch()
 
-      if (this.$v?.$error) return this.$emit('errors', this.form)
+      if (this.$v?.$error || this.hasCustomErrors) return this.$emit('errors', this.form)
 
       this.$emit('submit', this.form)
     }
