@@ -34,9 +34,8 @@
       name="actions"
       :$v="$v"
       :$form="form"
-      :$resetData="setForm"
-      :$has-errors="hasCustomErrors"
-      :$hasCustomErrors="hasCustomErrors"
+      :$errors="hasErrors"
+      :$reset-data="setForm"
     >
       <div class="actions">
         <s-button>Cancelar</s-button>
@@ -80,12 +79,16 @@ export default {
 
   data: initForm,
 
-  watch: {
-    fields: {
-      deep: true,
-      immediate: true,
-      handler: 'setForm'
-    }
+  // watch: {
+  //   fields: {
+  //     deep: true,
+  //     immediate: true,
+  //     handler: 'setForm'
+  //   }
+  // },
+
+  created () {
+    this.setForm()
   },
 
   validations () {
@@ -112,6 +115,10 @@ export default {
   },
 
   computed: {
+    hasErrors () {
+      return () => (this.$v.form.$error || this.hasCustomErrors)
+    },
+
     hasCustomErrors () {
       const errors = { ...this.errors }
 
@@ -149,9 +156,9 @@ export default {
     },
 
     async submit () {
-      this.$v?.$touch()
+      this.$v?.form?.$touch()
 
-      if (this.$v?.$error || this.hasCustomErrors) return this.$emit('errors', this.form)
+      if (this.hasErrors) return this.$emit('errors', this.form)
 
       this.$emit('submit', this.form)
     }
