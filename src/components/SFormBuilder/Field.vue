@@ -38,7 +38,9 @@ export default {
   watch: {
     hasCustomError: {
       handler () {
-        this.$emit('sync:error', { [this.field.name]: this.hasCustomError ? this.customErrorMsg : '' })
+        const errorMsg = this.hasCustomError ? this.customErrorMsg : ''
+
+        this.$emit('sync:error', { [this.field.name]: errorMsg })
       }
     }
   },
