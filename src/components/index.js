@@ -27,3 +27,5 @@ export { default as STabber } from './STabber/Index.vue'
 export { default as SPagination } from './SPagination/Index.vue'
 export { default as SSkeleton } from './SSkeleton/Index.vue'
 export { default as SStepper } from './SStepper/Index.vue'
+export { default as SRadioGroup } from './SRadioGroup/Index.vue'
+

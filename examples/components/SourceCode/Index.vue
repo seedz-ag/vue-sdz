@@ -21,8 +21,8 @@
 
             <div v-if="prop.type=='boolean'">
               <label>{{ prop.name }}</label>
-              <s-radiobox :name="prop.name" label="Sim" value="true" @change="e => prop.value = e" />
-              <s-radiobox :name="prop.name" label="Não" value="false" @change="e => prop.value = e" />
+              <!-- <s-radio-group :name="prop.name" label="Sim" value="true" @change="e => prop.value = e" />
+              <s-radio-group :name="prop.name" label="Não" value="false" @change="e => prop.value = e" /> -->
             </div>
 
             <div v-if="prop.values.length>1 && prop.type!='boolean'">
@@ -66,8 +66,8 @@
     </source-code-container>
 
 
-    <!--<CodeEditor :read_only="false" 
-                :wrap_code="true" 
+    <!--<CodeEditor :read_only="false"
+                :wrap_code="true"
                 :value="code"
                 :display_language="false"
                 v-model="code"
@@ -82,7 +82,7 @@
 import SourceCodeContainer from './components/SourceCodeContainer.vue'
 import SInput from '../../../src/components/SInput/Index.vue'
 import SSelect from '../../../src/components/SSelect/Index.vue'
-import SRadiobox from '../../../src/components/SRadiobox/Index.vue'
+import SRadioGroup from '../../../src/components/SRadioGroup/Index.vue'
 import PreCode from '../PreCode/Index.vue'
 
 export default {
@@ -91,81 +91,81 @@ export default {
     //CodeEditor,
     SourceCodeContainer,
     SInput,
-    SRadiobox,
+    SRadioGroup,
     SSelect,
     PreCode
   },
-  props:{
-    file: {type: String, required: true},
-    comp: {type: String, required: true}
+  props: {
+    file: { type: String, required: true },
+    comp: { type: String, required: true }
   },
-  data() {
-    return{
-      structure: {title:'',subtitle:'',props:[],imports:[]},
-      tab:'prop'
+  data () {
+    return {
+      structure: { title: '',subtitle: '',props: [],imports: [] },
+      tab: 'prop'
     }
   },
-  created() {
+  created () {
     this.loader().then(res => {
-      this.structure = JSON.parse(JSON.stringify(res));
+      this.structure = JSON.parse(JSON.stringify(res))
     })
   },
-  computed:{
-    code() {
+  computed: {
+    code () {
       let value = ''
-      
-      value +=`<template>\n\t<${this.renderName(true)}\n`;
+
+      value += `<template>\n\t<${this.renderName(true)}\n`
       //colocar redulce
       this.structure.props.map(e => {
-        e.value = e.value||e.default
-        if(e.value){
+        e.value = e.value || e.default
+        if (e.value) {
           let p = this.renderValueProp(e.type, e.value)
-          if(e.type == 'prop')
+          if (e.type == 'prop')
             value += `\t\t${p}\n`
-          else if(p!='false')
+          else if (p != 'false')
             value += `\t\t${e.name}=${p}\n`
         }
       })
- 
-      value += '\t/>\n</template>';
+
+      value += '\t/>\n</template>'
 
       value += this.getScripts()
 
-      return value;
+      return value
     },
     currentComponent () {
       if (!this.comp) return ''
       return () => import('../../../src/components/' + this.comp + '/Index.vue')
     },
-    loader() {
-      if(!this.file)return ''
-      return () => import(`./assets/${this.file}.json`);
+    loader () {
+      if (!this.file) return ''
+      return () => import(`./assets/${this.file}.json`)
     },
-    getObject() {
+    getObject () {
 
-      let data = {items:[]}
+      let data = { items: [] }
 
       this.structure.props.map(p => {
-        p.value = p.value||p.default
-        if(!p.value) return data
-        if(p.type != 'prop'){
-          if(p.type != 'boolean')
-            return data[p.name] = (p.type=='array') ? JSON.parse(p.value) : p.value
-          if(p.value == 'true')
+        p.value = p.value || p.default
+        if (!p.value) return data
+        if (p.type != 'prop') {
+          if (p.type != 'boolean')
+            return data[p.name] = (p.type == 'array') ? JSON.parse(p.value) : p.value
+          if (p.value == 'true')
             return data[p.name] = true
         }
         const isSelectInput = typeof p.value !== 'string'
         let key = (isSelectInput) ? p.value.slug : p.value
-        if(key)
+        if (key)
           data[key] = true
       })
 
       return data
     }
   },
-  
+
   methods: {
-    getScripts() {
+    getScripts () {
       let value = '\n\n<script>\n'
       this.structure.imports.map( i => {
         value += `\timport ${i.as || i.name} from '${i.name}';\n`
@@ -175,21 +175,21 @@ export default {
 
       value += `\n\texport default {\n\t\tname: 'Example',\n\t\tcomponents: {
       \t\t\t${this.renderName(true)}
-      \t\t}\n\t}\n<${'/'}script>`;
-    
-      return value;
+      \t\t}\n\t}\n<${'/'}script>`
+
+      return value
     },
 
-    renderValueProp(type, value){
-      if(type == 'string'||type == 'array') return `"${value}"`;
-      if(type == 'object') return `{${value}}`;
-      return String(value);
+    renderValueProp (type, value) {
+      if (type == 'string' || type == 'array') return `"${value}"`
+      if (type == 'object') return `{${value}}`
+      return String(value)
     },
-    renderName(clear){
-      return this.structure.component 
+    renderName (clear) {
+      return this.structure.component
         ? (this.structure.component.as
-          ?((clear)?this.structure.component.as.replace(/[^a-zA-Z]/g,'').trim():this.structure.component.as)
-          :this.structure.component.name):
+          ? ((clear) ? this.structure.component.as.replace(/[^a-zA-Z]/g,'').trim() : this.structure.component.as)
+          : this.structure.component.name) :
         ''
     }
   }
@@ -216,7 +216,7 @@ export default {
     }
 
     & > .tabprop{
-      display: flex;  
+      display: flex;
       flex-wrap: wrap;
       width: 100%;
       justify-content:space-around;
@@ -226,7 +226,7 @@ export default {
         text-align: left;
       }
     }
-    
+
     & > .tabapi > .table-api{
       width:100%;
       background-color:#FFF;
@@ -253,7 +253,7 @@ export default {
         & > tr:nth-child(even) {
           background-color: rgba(0,0,0,0.04);
         }
-        
+
       }
     }
   }
