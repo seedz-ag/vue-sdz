@@ -81,28 +81,26 @@ export default [
       label: 'Negative',
       placeholder: 'Negative',
       negative: true,
-      value: true,
+      value: false,
       validate: { required }
     }
   ],
 
   [
     {
-      name: 'radiobox',
-      component: 'SRadiobox',
-      id: 'sim',
-      label: 'radiobox',
-      placeholder: 'radiobox',
-      value: 'sim'
+      name: 'radioGroup',
+      label: 'radioGroup',
+      component: 'SRadioGroup',
+      row: true,
+      options: [
+        { id: 1, label: '111', value: '111' },
+        { id: 2, label: '222', value: '222', disabled: true },
+        { id: 3, label: '333', value: '333' },
+        { id: 4, label: '444', value: '444' },
+      ],
+      value: '222'
     },
-    {
-      name: 'radiobox',
-      component: 'SRadiobox',
-      id: 'nao',
-      label: 'radiobox',
-      placeholder: 'radiobox',
-      value: 'nao'
-    }
+
   ],
 
   {
