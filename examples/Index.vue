@@ -83,7 +83,7 @@ export default {
             { name: 'Input', redirect: '/vue-sdz/components/input' },
             { name: 'Link', redirect: '/vue-sdz/components/link' },
             { name: 'Password', redirect: '/vue-sdz/components/password' },
-            { name: 'Radiobox', redirect: '/vue-sdz/components/radiobox' },
+            { name: 'RadioGroup', redirect: '/vue-sdz/components/radiogroup' },
             { name: 'Search', redirect: '/vue-sdz/components/search' },
             { name: 'Select', redirect: '/vue-sdz/components/select' },
             { name: 'Switch', redirect: '/vue-sdz/components/switch' },

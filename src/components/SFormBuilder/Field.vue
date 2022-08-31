@@ -26,7 +26,7 @@ export default {
     SSwitch: () => import('../SSwitch/Index.vue').then(d => d.default),
     SButton: () => import('../SButton/Index.vue').then(d => d.default),
     SCheckbox: () => import('../SCheckbox/Index.vue').then(d => d.default),
-    SRadiobox: () => import('../SRadiobox/Index.vue').then(d => d.default)
+    SRadioGroup: () => import('../SRadioGroup/Index.vue').then(d => d.default)
   },
 
   props: {
@@ -61,6 +61,7 @@ export default {
         ...this.$listeners,
         input: value => {
           this.$listeners.input(value),
+          // this.field?.onClick?.call(this, { form: this.form, field: this.field })
           this.field?.onInput?.call(this, { form: this.form, field: this.field })
         }
       }
