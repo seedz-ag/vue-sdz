@@ -1,6 +1,6 @@
 <template>
-  <div class="s-collapsible" @click="$emit('toggle', !isOpened)">
-    <div v-if="!noHeader" class="header">
+  <div :ref="randomRef" class="s-collapsible">
+    <div v-if="!noHeader" class="header" @click="$emit('toggle', !isOpened)">
       <slot name="header">X</slot>
     </div>
 
@@ -21,6 +21,7 @@ export default {
   props: {
     height: Number,
     noHeader: Boolean,
+    outsideClosable: Boolean,
     isOpened: { type: Boolean, required: true }
   },
 
@@ -28,6 +29,7 @@ export default {
 
   mounted () {
     const target = this.$refs.wrapper
+
     const config = { childList: true, subtree: true, attributes: true }
     const callback = elements => elements.forEach(({ target }) => {
       this.$emit('target', target)
@@ -38,10 +40,29 @@ export default {
     this.observer.observe(target, config)
 
     this.contentHeight = target.scrollHeight
+
+    document.addEventListener('click', this.clickOutside)
+  },
+
+  computed: {
+    randomRef () {
+      return Math.floor(Math.random() * 1000)
+    }
+  },
+
+  methods: {
+    contains (e) {
+      return this.$refs[this.randomRef]?.contains(e?.target)
+    },
+
+    clickOutside (e) {
+      if (!this.contains(e) && this.outsideClosable) this.$emit('toggle', false)
+    }
   },
 
   beforeDestroy () {
     if (this.observer) this.observer.disconnect()
+    document.removeEventListener('click', this.clickOutside)
   }
 }
 </script>
