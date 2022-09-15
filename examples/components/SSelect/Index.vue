@@ -29,7 +29,7 @@
         placeholder="Selecione uma opção"
         :items="items"
         required
-        clear-on-select
+        :clear-on-select="false"
         v-model="data1"
       />
 
@@ -40,6 +40,7 @@
         placeholder="Selecione uma opção"
         multiple
         hide-selected
+        :clear-on-select="false"
         :items="items"
         v-model="data3"
       />

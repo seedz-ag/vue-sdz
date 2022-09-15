@@ -9,7 +9,7 @@
     <s-box class="flex-inline flex-center">
       <s-button outlined @click="increased()">increase content</s-button>
 
-      <s-collapsible :is-opened="isOpened1" @toggle="v => isOpened1 = v">
+      <s-collapsible outside-closable :is-opened="isOpened1" @toggle="v => isOpened1 = v">
         <s-button class="header" slot="header">header toggle</s-button>
 
         <div v-html="content" />
