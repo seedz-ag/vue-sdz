@@ -119,7 +119,7 @@ export default {
 
     optionUnselectPlaceholder: String,
 
-    // clearOnSelect: { type: Boolean, default: true }
+    clearOnSelect: { type: Boolean, default: true }
   },
 
   data () {
@@ -193,20 +193,19 @@ export default {
       },
 
       set ({ option, index }) {
-        // invalid search
-        if (index < 0) return this.outside()
-
         if (!this.options?.length) return
+        if (index < 0) return this.outside() // invalid search
 
-        if (!this.multiple) {
-          return this.emitInput(this.isSelected(option) ? {} : option)
+        const types = {
+          'simple-selected': () => this.clearOnSelect ? {} : option,
+          'simple-not-selected': () => option,
+          'multiple-selected': () => this.value.filter(value => !this.clearOnSelect || !this.isEqual(value, option)),
+          'multiple-not-selected': () => [ ...this.value, option ]
         }
 
-        if (!this.isSelected(option)) {
-          return this.emitInput([ ...this.value, option ])
-        }
+        const type = this.getPayloadType(option)
 
-        this.emitInput(this.value.filter(value => !this.isEqual(value, option)))
+        this.emit(types[type]())
       }
     }
   },
@@ -231,13 +230,23 @@ export default {
       if (this.isOpened) this.outside()
     },
 
-    emitInput (payload) {
+    getPayloadType (option) {
+      if (this.multiple) return this.isSelected(option)
+        ? 'multiple-selected'
+        : 'multiple-not-selected'
+
+      if (this.isSelected(option)) return 'simple-selected'
+
+      return 'simple-not-selected'
+    },
+
+    emit (payload) {
       this.outside()
       this.$emit('input', payload)
     },
 
     removeSelected (index) {
-      this.emitInput(this.value.filter((_, _index) => !Object.is(_index, index)))
+      this.emit(this.value.filter((_, _index) => !Object.is(_index, index)))
     },
 
     isEqual (v1, v2) {
@@ -280,7 +289,7 @@ export default {
 
   & > .select {
     margin-top: 8px;
-    
+
     & > .field {
       width: 100%;
       position: relative;
@@ -379,6 +388,7 @@ export default {
           cursor: pointer;
           min-height: 50px;
           align-items: center;
+          background-color: color(neutral, base);
 
           &.--selected { font-weight: 700; }
           &.--active { background-color: color(primary, base); }
