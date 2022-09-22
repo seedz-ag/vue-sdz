@@ -198,9 +198,9 @@ export default {
   }
 
   &.--link {
-    display: block;
+    display: inline-block;
     padding: 0;
-    width: auto;
+    width: fit-content;
     height: auto;
     min-width: auto;
     min-height: auto;
