@@ -110,7 +110,7 @@
         </tbody>
 
         <div v-else class="empty">
-          <slot name="empty">EMPTY STATE</slot>
+          <slot name="empty">{{ emptyLabel }}</slot>
         </div>
       </table>
     </div>
@@ -208,6 +208,11 @@ export default {
     selectable: Boolean,
 
     searchable: Boolean,
+
+    emptyLabel: {
+      type: String,
+      default: 'EMPTY STATE'
+    },
 
     showPerPage: {
       type: Boolean,
