@@ -198,9 +198,8 @@ export default {
   }
 
   &.--link {
-    display: block;
     padding: 0;
-    width: auto;
+    width: fit-content;
     height: auto;
     min-width: auto;
     min-height: auto;
@@ -221,7 +220,7 @@ export default {
        // background-clip: text;
         //background: color(base, light);
         //-webkit-background-clip: text;
-        font-weight: 500;
+        font-weight: 600;
         // https://codyhouse.co/nuggets/text-gradients
       }
     }
@@ -237,7 +236,7 @@ export default {
 
     & > .text {
       color: color(primary, base);
-      font-weight: 500;
+      font-weight: 600;
 
       &:hover, &:active {
         text-decoration: underline;

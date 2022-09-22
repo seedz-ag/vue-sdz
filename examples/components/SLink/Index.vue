@@ -87,6 +87,7 @@ export default {
 
 .s-button-example {
   & > .s-button { margin-bottom: 30px; }
+  & > .flex-center { align-items: center; }
 }
 
 .flex-inline .c-link.s-button{
