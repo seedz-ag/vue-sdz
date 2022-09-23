@@ -308,6 +308,10 @@ export default {
     &.--has-icon > .icon {
       color: color(primary, base);
     }
+
+    &.--loading {
+      background: color(neutral, base);
+    }
   }
 
   &.--rounded {
@@ -318,7 +322,7 @@ export default {
 
   &.--loading {
     pointer-events: none;
-    background: color(neutral, light);
+    background: color(neutral, dark);
 
     & > .text, .icon { visibility: hidden; }
     // & > .loader > .loader > path { fill: white; }

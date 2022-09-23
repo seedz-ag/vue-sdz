@@ -39,6 +39,7 @@
       <s-button outlined disabled>outlined disabled</s-button>
       <s-button outlined icon="ant-design:tool-outlined">outlined icon</s-button>
       <s-button outlined icon="ant-design:tool-outlined" disabled>outlined disabled icon</s-button>
+      <s-button outlined loading>loading</s-button>
     </s-box>
 
     <pre-code :code="code3" />
@@ -49,6 +50,7 @@
       <s-button rounded disabled>rounded disabled</s-button>
       <s-button rounded icon="ant-design:tool-outlined">rounded icon</s-button>
       <s-button rounded icon="ant-design:tool-outlined" disabled>rounded disabled icon</s-button>
+      <s-button rounded loading>loading</s-button>
     </s-box>
 
     <pre-code :code="code4" />
