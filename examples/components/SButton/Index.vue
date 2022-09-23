@@ -56,8 +56,11 @@
     <pre-code :code="code4" />
 
     <s-title size="title-2">Transparent + outlined + white</s-title>
-    <s-box class="transparent-box">
+    <s-box class="transparent-box flex-inline">
       <s-button transparent outlined white>icon</s-button>
+      <s-button transparent outlined icon="ant-design:tool-outlined" white>icon</s-button>
+      <s-button transparent outlined loading>loading</s-button>
+      <s-button transparent outlined disabled>disabled</s-button>
     </s-box>
   </div>
 </template>

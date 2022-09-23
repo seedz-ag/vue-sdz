@@ -318,7 +318,21 @@ export default {
     border-radius: 50px;
   }
 
-  &.--transparent { background: transparent !important; }
+  &.--transparent {
+    background: transparent !important;
+
+    &.--has-icon > .icon { color: color(neutral, base); }
+
+    &.--loading {
+      background: transparent !important;
+      border-color: color(base, medium) ;
+    }
+
+    &.--disabled {
+      border-color: color(base,medium);
+      color: color(base,medium);
+    }
+  }
 
   &.--loading {
     pointer-events: none;
