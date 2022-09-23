@@ -165,7 +165,7 @@ export default {
     & > .icon {
       position: absolute;
       left: 20px;
-      // color: color(neutral, base);
+      color: color(neutral, base);
     }
   }
 
@@ -276,11 +276,13 @@ export default {
     background: color(neutral, dark);
     border-color: color(neutral, dark);
 
-    & > .icon { color: color(neutral, base); }
-
     & > .text {
       text-shadow: unset;
-      color: color(neutral, base);
+      color: color(base, light);
+    }
+
+    &.--has-icon > .icon {
+      color: color(base, light);
     }
   }
 
@@ -291,25 +293,50 @@ export default {
     & > .text { color: color(primary, base); }
 
     &.--disabled {
-      border-color: color(neutral, dark);
+      border-color: color(base, light);
 
-      & > .icon { color: color(neutral, base); }
-      & > .text { color: color(neutral, dark); }
+      & > .text { color: color(base, light); }
+
+      &.--has-icon > .icon {
+        color: color(base, light);
+      }
     }
 
     &:hover { background: color(neutral, light); }
     &:active { background: color(neutral, medium); }
+
+    &.--has-icon > .icon {
+      color: color(primary, base);
+    }
+
+    &.--loading {
+      background: color(neutral, base);
+    }
   }
 
   &.--rounded {
     border-radius: 50px;
   }
 
-  &.--transparent { background: transparent !important; }
+  &.--transparent {
+    background: transparent !important;
+
+    &.--has-icon > .icon { color: color(neutral, base); }
+
+    &.--loading {
+      background: transparent !important;
+      border-color: color(base, medium) ;
+    }
+
+    &.--disabled {
+      border-color: color(base,medium);
+      color: color(base,medium);
+    }
+  }
 
   &.--loading {
     pointer-events: none;
-    background: color(neutral, light);
+    background: color(neutral, dark);
 
     & > .text, .icon { visibility: hidden; }
     // & > .loader > .loader > path { fill: white; }
