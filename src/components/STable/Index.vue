@@ -110,7 +110,7 @@
         </tbody>
 
         <div v-else class="empty">
-          <slot name="empty">EMPTY STATE</slot>
+          <slot name="empty">{{ emptyLabel }}</slot>
         </div>
       </table>
     </div>
@@ -224,6 +224,11 @@ export default {
       type: [Number, String],
       validator: limit => limit > 2,
       default: 10
+    },
+
+    emptyLabel: {
+      type: String,
+      default: 'EMPTY STATE'
     }
   },
 
