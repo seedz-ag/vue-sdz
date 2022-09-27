@@ -2,7 +2,7 @@
   <component
     :is="field.component"
     :items="field.items"
-    :validation="validationMsg"
+    :validation="errorMsg"
     :style="{ 'width': field.width || '100%' }"
     :value="form[field.name]"
 
@@ -13,7 +13,7 @@
 
 <script>
 import rules from './rules.js'
-import customMessages from './customMessages.js'
+import customRules from './customRules.js'
 
 export default {
   name: 'SFormBuilderField',
@@ -37,10 +37,10 @@ export default {
 
   watch: {
     hasCustomError: {
-      handler () {
-        const errorMsg = this.hasCustomError ? this.customErrorMsg : ''
+      handler (v) {
+        const msg = this.customErrorMsg?.[0] || ''
 
-        this.$emit('sync:error', { [this.field.name]: errorMsg })
+        this.$emit('sync:error', { [this.field.name]: msg })
       }
     }
   },
@@ -67,31 +67,34 @@ export default {
       }
     },
 
-    infoField () {
-      return this.$v?.form?.[this.field?.name]
-    },
-
-    errorMsg () {
-      const getRule = rule => this.infoField?.[rule]
+    libErrorMsg () {
+      const infoField = this.$v?.form?.[this.field?.name]
+      const getRule = rule => infoField?.[rule]
       const getMessage = rule => getRule(rule)?.$invalid && getRule(rule)?.$message
 
       return rules.map(getMessage).filter(Boolean)
     },
 
     customErrorMsg () {
-      return this.infoField?.$anyDirty && !this.field?.customValidate?.sameAs ? [customMessages.sameAs] : []
-    },
+      const infoField = this.$v?.form?.[this.field?.name]
 
-    hasCustomValidation () {
-      return !!(Object.keys(this.field?.customValidate || {}).length)
+      if (!infoField?.$anyDirty) return []
+      if (!this.field?.customValidate) return []
+
+      return Object
+        .entries(this.field?.customValidate)
+        .map(([ fn, value ]) => customRules[fn](this.form, this.field, value))
+        .filter(Boolean)
     },
 
     hasCustomError () {
-      return !!(this.hasCustomValidation && this.customErrorMsg.length && !this.errorMsg.length)
+      return !!this.customErrorMsg?.length
     },
 
-    validationMsg () {
-      return this.hasCustomError ? this.customErrorMsg : this.errorMsg
+    errorMsg () {
+      if (this.libErrorMsg.length) return this.libErrorMsg
+
+      return this.customErrorMsg
     }
   }
 }

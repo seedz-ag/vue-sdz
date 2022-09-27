@@ -12,6 +12,7 @@
 
             v-on="$listeners"
             @input="value => emit(groupField.name, value)"
+            @sync:error="value => syncError(groupField.name, value[groupField.name])"
           />
         </template>
       </template>
@@ -24,8 +25,8 @@
           :value="form[field.name]"
 
           v-on="$listeners"
-          @sync:error="onSyncError"
           @input="value => emit(field.name, value)"
+          @sync:error="value => syncError(field.name, value[field.name])"
         />
       </template>
     </div>
@@ -54,13 +55,6 @@ import transformBy from './transformBy.js'
 import useVuelidate from '@vuelidate/core'
 // import { sameAs } from '@vuelidate/validators'
 
-function initForm () {
-  return {
-    form: {},
-    errors: {}
-  }
-}
-
 export default {
   name: 'SFormBuilder',
 
@@ -77,7 +71,12 @@ export default {
 
   setup: () => ({ $v: useVuelidate({ $lazy: true, $autoDirty: true }) }),
 
-  data: initForm,
+  data () {
+    return {
+      form: {},
+      customErrors: {}
+    }
+  },
 
   // watch: {
   //   fields: {
@@ -116,43 +115,53 @@ export default {
 
   computed: {
     hasErrors () {
-      return () => (this.$v.form.$error || this.hasCustomErrors)
+      return () => (this.hasLibErrors || this.hasCustomErrors)
+    },
+
+    hasLibErrors () {
+      if (!Object.keys(this.libErrors).length) return false
+
+      return Object.values(this.libErrors).every(Boolean)
     },
 
     hasCustomErrors () {
-      const errors = { ...this.errors }
+      if (!Object.keys(this.customErrors).length) return false
 
-      return Object.values(errors).every(Boolean)
+      return Object.values(this.customErrors).every(Boolean)
+    },
+
+    libErrors () {
+      return this.$v.$errors.reduce((acc, item) => {
+        acc[item.$property] = item.$message
+
+        return acc
+      }, {})
     }
   },
 
   methods: {
     setForm () {
       this.form = transformBy(this.fields, 'value', false)
-      this.errors = transformBy(this.fields, 'value', false)
     },
 
     getField (field) {
-      const sameAs = { sameAs: this.form[field.name] === this.form[field?.customValidate?.sameAs] }
+      // const sameAs = { sameAs: this.form[field.name] === this.form[field?.customValidate?.sameAs] }
 
       return {
         ...field,
-        ...(field?.customValidate ? { customValidate: sameAs } : {}),
+        // ...(field?.customValidate ? { customValidate: sameAs } : {}),
         onInput: () => field?.onInput?.apply(this, [{ form: this.form, field }]),
         onClick: () => field?.onClick?.apply(this, [{ form: this.form, field }])
       }
     },
 
-    onSyncError (error) {
-      this.errors = {
-        // ...this.errors,
-        ...error
-      }
+    emit (field, value) {
+      this.$set(this.form, field, value)
+      this.$emit('synchronize', { field, value })
     },
 
-    emit (field, value) {
-      this.form[field] = value
-      this.$emit('synchronize', { field, value })
+    syncError (field, value) {
+      this.$set(this.customErrors, field, value)
     },
 
     async submit () {
