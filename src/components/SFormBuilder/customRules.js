@@ -9,7 +9,7 @@ function notSameAs (form, field, value) {
 }
 
 function isEqual (form, field, value) {
-  return form[field.name] === value ? '' : 'cuuuuuuuuu'
+  return form[field.name] === value ? '' : customMessages.isEqual
 }
 
 export default {
