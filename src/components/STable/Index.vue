@@ -209,11 +209,6 @@ export default {
 
     searchable: Boolean,
 
-    emptyLabel: {
-      type: String,
-      default: 'EMPTY STATE'
-    },
-
     showPerPage: {
       type: Boolean,
       default: true
@@ -229,6 +224,11 @@ export default {
       type: [Number, String],
       validator: limit => limit > 2,
       default: 10
+    },
+
+    emptyLabel: {
+      type: String,
+      default: 'EMPTY STATE'
     }
   },
 
