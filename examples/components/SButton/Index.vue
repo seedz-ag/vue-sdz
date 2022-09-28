@@ -56,12 +56,20 @@
     <pre-code :code="code4" />
 
     <s-title size="title-2">Transparent + outlined + white</s-title>
+    <s-box class="black-box flex-inline">
+      <s-button transparent outlined white>icon</s-button>
+      <s-button transparent outlined icon="ant-design:tool-outlined" white>icon</s-button>
+      <s-button transparent outlined loading>loading</s-button>
+      <s-button transparent outlined disabled>disabled</s-button>
+    </s-box>
     <s-box class="transparent-box flex-inline">
       <s-button transparent outlined white>icon</s-button>
       <s-button transparent outlined icon="ant-design:tool-outlined" white>icon</s-button>
       <s-button transparent outlined loading>loading</s-button>
       <s-button transparent outlined disabled>disabled</s-button>
     </s-box>
+
+    <pre-code :code="code5" />
   </div>
 </template>
 
@@ -98,15 +106,23 @@ export default {
       <s-button rounded disabled>rounded disabled</s-button>
       <s-button rounded icon="check">rounded icon</s-button>
       <s-button rounded icon="check" disabled>rounded disabled icon</s-button>`,
+
+      code5: `<s-button transparent outlined white>icon</s-button>
+      <s-button transparent outlined icon="ant-design:tool-outlined" white>icon</s-button>
+      <s-button transparent outlined loading>loading</s-button>
+      <s-button transparent outlined disabled>disabled</s-button>`,
     }
   }
 }
 </script>
 
 <style lang="scss">
+@import "./src/styles/_index.scss";
+
 .s-button-example {
   & > .s-button { margin-bottom: 30px; }
   & > .transparent-box { background-image: url('https://i.picsum.photos/id/1026/200/300.jpg?hmac=Thvj4aJ_VnAGT6DKAcy1yTs100zlstJTyImDWphGDFI'); }
+  & > .black-box { background-color: color(base, dark) }
 }
 
 .flex-inline .c-link.s-button{
