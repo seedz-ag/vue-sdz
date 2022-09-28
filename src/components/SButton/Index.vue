@@ -150,11 +150,7 @@ export default {
   &::before { background: color(primary, base); }
 
   &:hover {
-    &::before {
-      opacity: 1;
-      // filter: blur(14px);
-    }
-
+    &::before { opacity: 1; }
     &::after { opacity: 0.1; }
   }
 
