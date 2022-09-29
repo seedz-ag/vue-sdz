@@ -41,6 +41,16 @@
         <div class="item">55555</div>
       </s-collapsible>
     </s-box>
+
+    <s-title size="title-1">Collapse (outsideClosable)</s-title>
+    <s-box class="flex-inline flex-center">
+      <s-button outlined @click="increased()">increase content</s-button>
+
+      <s-button @click.native="isOpened4 = !isOpened4">toggle</s-button>
+      <s-collapsible outside-closable :is-opened="isOpened4">
+        <div v-html="content" />
+      </s-collapsible>
+    </s-box>
   </div>
 </template>
 
@@ -67,6 +77,7 @@ export default {
       isOpened1: false,
       isOpened2: false,
       isOpened3: false,
+      isOpened4: false,
       content: 'initial content!'
     }
   },
