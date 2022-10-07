@@ -30,6 +30,8 @@
       <s-table
         paginable
         selectable
+
+        :loading="isLoading"
         :show-per-page="false"
 
         :cols="cols2"
@@ -98,6 +100,7 @@ export default {
       page: 1,
       perPage: 10,
       search: '',
+      isLoading: false,
       selecteds: []
     }
   },
@@ -126,19 +129,21 @@ export default {
   },
 
   methods: {
-    getDataTable (page = 1) {
+    async getDataTable (page = 1) {
+      this.isLoading = true
+
       const myInit = { method: 'GET', headers: new Headers() }
 
-      fetch(`https://mocki.io/v1/a2f5d112-cb71-4a3b-9941-089fe0e4b8f3?page=${page}`, myInit)
-        .then(response => response.json())
-        .then(data => {
-          const cols = Object.keys(data.data[0])
-          const rows = data.data
+      const response = await fetch(`https://mocki.io/v1/a2f5d112-cb71-4a3b-9941-089fe0e4b8f3?page=${page}`, myInit)
+      const data = await response.json()
+      const cols = Object.keys(data.data[0])
+      const rows = data.data
 
-          this.cols2 = cols.map(col => ({ text: col, row: col, align: 'left' }))
-          this.rows2 = rows.map(row => ({ ...row, align: 'left' }))
-          this.totalPages = data.recordsTotal
-        })
+      this.cols2 = cols.map(col => ({ text: col, row: col, align: 'left' }))
+      this.rows2 = rows.map(row => ({ ...row, align: 'left' }))
+      this.totalPages = data.recordsTotal
+
+      this.isLoading = false
     },
 
     synchronizeSearch (value) {
