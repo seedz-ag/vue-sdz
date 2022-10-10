@@ -266,7 +266,7 @@ export default {
   },
 
   created () {
-    this.internalRows = this.rows
+    // this.internalRows = this.rows
 
     this.assortment = this.cols.reduce((acc, item) => {
       if (!item.sortable) return acc
@@ -279,7 +279,10 @@ export default {
 
   methods: {
     setRows () {
-      this.internalRows = this.rows
+      const colsName = this.cols.map(col => col.row)
+      const objFilter = (data = {}, keys = []) => JSON.parse(JSON.stringify(data, keys))
+
+      this.internalRows = this.rows.map(row => objFilter(row, colsName))
     },
 
     classTrRow (row) {
