@@ -17,7 +17,7 @@
     </p>
 
     <s-box class="flex-inline flex-center">
-      <s-avatar size="p"><s-icon width="20" height="18" icon="mingcute:user-1-line" /></s-avatar>
+      <s-avatar size="p"><s-icon :width="20" :height="18" icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar><s-icon icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar size="g"><s-icon icon="mingcute:user-1-line" /></s-avatar>
     </s-box>
@@ -39,7 +39,7 @@
     <pre-code :code="code2" />
 
     <s-box class="flex-inline flex-center dark">
-      <s-avatar size="p" color="dark"><s-icon width="20" height="18" icon="mingcute:user-1-line" /></s-avatar>
+      <s-avatar size="p" color="dark"><s-icon :width="20" :height="18" icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar size="m" color="dark"><s-icon icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar size="g" color="dark"><s-icon icon="mingcute:user-1-line" /></s-avatar>
     </s-box>
@@ -62,7 +62,7 @@ export default {
   data () {
     return {
       code1: `
-      <s-avatar size="p"><s-icon width="20" height="18" icon="mingcute:user-1-line" /></s-avatar>
+      <s-avatar size="p"><s-icon :width="20" :height="18" icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar><s-icon icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar size="g"><s-icon icon="mingcute:user-1-line" /></s-avatar>`,
       code2: `
@@ -76,7 +76,7 @@ export default {
         <s-image :src="src" fallback="https://i.ytimg.com/vi/Yt9t9e9gmmw/maxresdefault.jpg" />
       </s-avatar>`,
       code3: `
-      <s-avatar size="p" color="dark"><s-icon width="20" height="18" icon="mingcute:user-1-line" /></s-avatar>
+      <s-avatar size="p" color="dark"><s-icon :width="20" :height="18" icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar size="m" color="dark"><s-icon icon="mingcute:user-1-line" /></s-avatar>
       <s-avatar size="g" color="dark"><s-icon icon="mingcute:user-1-line" /></s-avatar>`,
       src: '../src/assets/images/avatar-example.png'
