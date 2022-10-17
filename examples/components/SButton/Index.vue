@@ -7,16 +7,18 @@
     <s-title size="title-2">Stats</s-title>
     <s-box>
       <div class="flex-inline">
-        <s-button primary>primary</s-button>
-        <s-button success>primary</s-button>
-        <s-button error>primary</s-button>
-        <s-button loading>loading</s-button>
-        <s-button disabled>disabled</s-button>
-        <s-button link>link button</s-button>
+        <s-button>Default</s-button>
+        <s-button primary>Primary</s-button>
+        <!-- <s-button success>primary</s-button>
+        <s-button error>primary</s-button> -->
+        <s-button primary icon="ant-design:tool-outlined">Icon</s-button>
+        <s-button primary loading>Loading</s-button>
+        <s-button disabled>Disabled</s-button>
+        <s-button link>Link Button</s-button>
       </div>
       <br><br>
       <div class="flex-line">
-        <s-button full-width>full-width</s-button>
+        <s-button primary full-width>full-width</s-button>
       </div>
     </s-box>
 
@@ -25,9 +27,9 @@
     <s-title size="title-2">Sizes</s-title>
 
     <s-box class="flex-inline">
-      <s-button small>small</s-button>
-      <s-button default>default</s-button>
-      <s-button large>large</s-button>
+      <s-button primary small>small</s-button>
+      <s-button primary default>default</s-button>
+      <s-button primary large>large</s-button>
     </s-box>
 
     <pre-code :code="code2" />
@@ -46,27 +48,23 @@
 
     <s-title size="title-2">Rounded</s-title>
     <s-box class="flex-inline">
-      <s-button rounded>outlined</s-button>
-      <s-button rounded disabled>rounded disabled</s-button>
-      <s-button rounded icon="ant-design:tool-outlined">rounded icon</s-button>
-      <s-button rounded icon="ant-design:tool-outlined" disabled>rounded disabled icon</s-button>
-      <s-button rounded loading>loading</s-button>
+      <s-button outlined rounded>outlined</s-button>
+      <s-button primary rounded disabled>rounded disabled</s-button>
+      <s-button primary rounded icon="ant-design:tool-outlined">rounded icon</s-button>
+      <s-button primary rounded icon="ant-design:tool-outlined" disabled>rounded disabled icon</s-button>
+      <s-button primary rounded loading>loading</s-button>
     </s-box>
 
     <pre-code :code="code4" />
 
-    <s-title size="title-2">Transparent + outlined + white</s-title>
+    <s-title size="title-2">White Mode</s-title>
     <s-box class="black-box flex-inline">
-      <s-button transparent outlined white>icon</s-button>
-      <s-button transparent outlined icon="ant-design:tool-outlined" white>icon</s-button>
-      <s-button transparent outlined loading>loading</s-button>
-      <s-button transparent outlined disabled>disabled</s-button>
-    </s-box>
-    <s-box class="transparent-box flex-inline">
-      <s-button transparent outlined white>icon</s-button>
-      <s-button transparent outlined icon="ant-design:tool-outlined" white>icon</s-button>
-      <s-button transparent outlined loading>loading</s-button>
-      <s-button transparent outlined disabled>disabled</s-button>
+      <s-button link white>Link white</s-button>
+      <s-button white>White Mode</s-button>
+      <s-button white disabled>White disabled</s-button>
+      <s-button white icon="ant-design:tool-outlined">White icon</s-button>
+      <s-button white icon="ant-design:tool-outlined" disabled>White disabled icon</s-button>
+      <s-button white loading />
     </s-box>
 
     <pre-code :code="code5" />
@@ -84,17 +82,14 @@ export default {
   components: { SButton, SBox, STitle, SourceCode, PreCode },
   data () {
     return {
-      code1: `<div class="flex-inline">
-        <s-button primary>primary</s-button>
-        <s-button grey>Secondary</s-button>
-        <s-button loading>loading</s-button>
-        <s-button disabled>disabled</s-button>
-        <s-button link>link button</s-button>
-      </div>
-
-      <div class="flex-line">
-        <s-button full-width>full-width</s-button>
-      </div>`,
+      code1: `
+        <s-button>Default</s-button>
+        <s-button primary>Primary</s-button>
+        <s-button primary loading>Loading</s-button>
+        <s-button primary disabled>Disabled</s-button>
+        <s-button primary link>Link Button</s-button>
+        <s-button primary full-width>Full Width</s-button>
+      `,
       code2: `<s-button small>small</s-button>
       <s-button default>default</s-button>
       <s-button large>large</s-button>`,
@@ -106,11 +101,14 @@ export default {
       <s-button rounded disabled>rounded disabled</s-button>
       <s-button rounded icon="check">rounded icon</s-button>
       <s-button rounded icon="check" disabled>rounded disabled icon</s-button>`,
-
-      code5: `<s-button transparent outlined white>icon</s-button>
-      <s-button transparent outlined icon="ant-design:tool-outlined" white>icon</s-button>
-      <s-button transparent outlined loading>loading</s-button>
-      <s-button transparent outlined disabled>disabled</s-button>`,
+      code5: `
+        <s-button link white>Link white</s-button>
+        <s-button white>White Mode</s-button>
+        <s-button white disabled>White disabled</s-button>
+        <s-button white icon="ant-design:tool-outlined">White icon</s-button>
+        <s-button white icon="ant-design:tool-outlined" disabled>White disabled icon</s-button>
+        <s-button white loading></s-button>
+      `,
     }
   }
 }
