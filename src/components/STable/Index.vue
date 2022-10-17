@@ -40,7 +40,17 @@
           </tr>
         </thead>
 
-        <tbody v-if="rows.length" class="tbody">
+        <tr v-if="loading" class="loader">
+          <td>
+            <slot name="loader">
+              <div class="content">
+                <s-loader />
+              </div>
+            </slot>
+          </td>
+        </tr>
+
+        <tbody v-else-if="rows.length" class="tbody">
           <tr
             v-for="(row, index) in internalRows"
 
@@ -157,7 +167,7 @@
     </slot>
   </div>
 
-  <div v-else class="empty-state">
+  <div v-else class="invalid">
     <slot name="invalid">
       error: invalid table!
     </slot>
@@ -165,6 +175,7 @@
 </template>
 
 <script>
+import SLoader from '../SLoader/Index.vue'
 import SPopover from '../SPopover/Index.vue'
 import Pagination from './components/Pagination.vue'
 // import SCheckbox from '../SCheckbox/Index.vue'
@@ -178,6 +189,7 @@ export default {
   name: 'STable',
 
   components: {
+    SLoader,
     SPopover,
     Pagination,
     // Filters,
@@ -202,6 +214,8 @@ export default {
       type: Array,
       default: () => []
     },
+
+    loading: Boolean,
 
     paginable: Boolean,
 
@@ -314,11 +328,12 @@ export default {
 
 .s-table {
   & > .table-container {
+    position: relative;
     overflow-x: scroll;
 
     & > .table {
       width: 100%;
-      position: relative;
+      // position: relative;
 
       & > .thead {
         table-layout: fixed;
@@ -350,6 +365,19 @@ export default {
           }
 
           & > .actions { width: 10px; }
+        }
+      }
+
+      & > .loader {
+        & > td {
+          padding: 100px 0;
+
+          & > .content {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
         }
       }
 

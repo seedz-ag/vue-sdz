@@ -238,6 +238,7 @@ export default {
       border-color: color(neutral, dark);
 
       & > .text { color: color(neutral, dark); }
+      &.--has-icon > .icon { color: color(neutral, dark); }
     }
 
     &:active {
@@ -245,6 +246,7 @@ export default {
       border-color: color(base, light);
 
       & > .text { color: color(base, light); }
+      &.--has-icon > .icon { color: color(base, light); }
     }
   }
 

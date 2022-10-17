@@ -64,7 +64,7 @@
       <s-button white disabled>White disabled</s-button>
       <s-button white icon="ant-design:tool-outlined">White icon</s-button>
       <s-button white icon="ant-design:tool-outlined" disabled>White disabled icon</s-button>
-      <s-button white loading />
+      <s-button white loading>loading</s-button>
     </s-box>
 
     <pre-code :code="code5" />

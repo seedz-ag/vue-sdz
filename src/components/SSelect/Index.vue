@@ -181,14 +181,6 @@ export default {
         if (this.disabled) return []
         if (this.multiple) return this.values
 
-        const hasValue = this.items.find(v => v === this.value[this.displayBy])
-
-        if (!hasValue) return 'Opção inválida'
-
-        if (!hasValue[this.displayBy]) return process.env.NODE_ENV !== 'development'
-          ? ''
-          : 'error: displayBy prop does not exist'
-
         return this.value
       },
 

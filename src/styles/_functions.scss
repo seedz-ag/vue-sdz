@@ -11,27 +11,27 @@
       }
 
       @warn "unknown opacity `#{$opacity}` in color";
-      @return null;        
+      @return null;
   }
-  
+
   @warn "unknown color `#{$color}` in palette";
   @return null;
 }
 
 @function dark($variable, $opacity) {
-  @return unquote('linear-gradient(to top, rgba(0, 0, 0, '+ $opacity +'), rgba(0, 0, 0, ' + $opacity + ')), ' + $variable + ' !important');
+  @return unquote('linear-gradient(to top, rgba(0, 0, 0, #{$opacity}), rgba(0, 0, 0, #{$opacity})), #{$variable} !important');
 }
 
 @function light($variable, $opacity) {
-  @return unquote('linear-gradient(to top, rgba(255, 255, 255, '+ $opacity +'), rgba(255, 255, 255, ' + $opacity + ')), ' + $variable + ' !important');
+  @return unquote('linear-gradient(to top, rgba(255, 255, 255, #{$opacity}), rgba(255, 255, 255, #{$opacity})), #{$variable} !important');
 }
 
 @function getRGB($r, $g, $b){
-  @return unquote('rgb('+$r + ','+ $g + ','+ $b +') !important');
+  @return unquote('rgb(#{$r}, #{$g}, #{$b}) !important');
 }
 
 @function generateColor($r, $g, $b, $opacity, $type) {
- 
+
   $alpha: calc($opacity/100);
   $color: 0;
 
