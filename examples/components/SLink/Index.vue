@@ -26,6 +26,11 @@
 
     <source-code file="SLinkExample" comp="SButton" />
 
+    <s-box>
+      <s-button link>Link Button</s-button>
+      <s-button link white>Link white</s-button>
+    </s-box>
+
     <s-box class="flex-line flex-center">
       <s-button link external to="https://www.google.com">link external</s-button>
       <br>
