@@ -117,7 +117,7 @@ export default {
   min-height: 36px;
 
   cursor: pointer;
-  padding: 0 40px;
+  padding: 0 16px;
   text-align: center;
   transform-style: preserve-3d;
   background: transparent;
@@ -136,10 +136,9 @@ export default {
   }
 
   &.--has-icon {
-    & > .text { margin-left: 15px; }
+    & > .text { margin-left: 8px; }
     & > .icon {
-      position: absolute;
-      left: 20px;
+      left: 16px;
       color: color(neutral, base);
     }
   }
