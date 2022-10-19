@@ -27,7 +27,8 @@
     <source-code file="SLinkExample" comp="SButton" />
 
     <s-box>
-      <s-button link>Link Button</s-button>
+      lalalalala teste meu deus lorem ipsum lorem <s-button link>Link Button</s-button> santa maria de mãe de deus, lorem opsum lorem lorem tchananinas dolor simet,
+      the power of christ compeus you
       <s-button link white>Link white</s-button>
     </s-box>
 
