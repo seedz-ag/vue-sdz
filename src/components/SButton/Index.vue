@@ -249,6 +249,8 @@ export default {
     background: transparent !important;
     border: unset !important;
     display: inline-block;
+    height: unset;
+    min-height: unset;
 
     &.--disabled {
       background: transparent !important;
@@ -283,7 +285,21 @@ export default {
       & > .text {
         color: color(neutral, base);
 
-        &:hover, &:active { text-decoration-color: color(neutral, base); }
+        &:hover, &:active {
+          text-decoration-color: color(neutral, base);
+        }
+      }
+
+      &:hover, &:active {
+        color: color(neutral, base);
+      }
+
+      & > .icon, & > .s-icon.--secondary {
+        color: color(neutral, base);
+
+        &:hover, &:active {
+          color: color(neutral, base);
+        }
       }
     }
 
