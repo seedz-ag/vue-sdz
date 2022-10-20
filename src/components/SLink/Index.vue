@@ -2,7 +2,7 @@
   <component
     :is="type"
     :to="to || null"
-    :href="external && to"
+    :href="to"
     :target="external && '_blank'"
 
     v-bind="$attrs"

@@ -12,7 +12,6 @@
         <s-button primary icon="ant-design:tool-outlined">Icon</s-button>
         <s-button primary loading>Loading</s-button>
         <s-button disabled>Disabled</s-button>
-        <s-button link>Link Button</s-button>
       </div>
       <br><br>
       <div class="flex-line">
@@ -57,7 +56,6 @@
 
     <s-title size="title-2">White Mode</s-title>
     <s-box class="black-box flex-inline">
-      <s-button link white>Link white</s-button>
       <s-button white>White Mode</s-button>
       <s-button white disabled>White disabled</s-button>
       <s-button white icon="ant-design:tool-outlined">White icon</s-button>
@@ -86,7 +84,6 @@ export default {
         <s-button primary icon="ant-design:tool-outlined">Icon</s-button>
         <s-button primary loading>Loading</s-button>
         <s-button disabled>Disabled</s-button>
-        <s-button link>Link Button</s-button>
         <s-button primary full-width>full-width</s-button>
       `,
       code2: `
@@ -109,7 +106,6 @@ export default {
         <s-button primary rounded loading>loading</s-button>
       `,
       code5: `
-        <s-button link white>Link white</s-button>
         <s-button white>White Mode</s-button>
         <s-button white disabled>White disabled</s-button>
         <s-button white icon="ant-design:tool-outlined">White icon</s-button>

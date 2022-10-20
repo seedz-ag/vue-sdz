@@ -26,26 +26,29 @@
 
     <source-code file="SLinkExample" comp="SButton" />
 
+    <s-title size="title-2">Application</s-title>
+    <s-box>
+      Lorem ipsum dolor sit amet, consectetur <s-button link>Link Button</s-button> elit. Ut id molestie sem. Aenean ac elementum nisl, id ullamcorper ipsum. In malesuada feugiat ante, et <s-button link>Link Button</s-button> lectus pellentesque quis. Nulla odio massa, suscipit et enim eget, cursus auctor ex. Cras quis viverra diam. Phasellus cursus tristique mattis. Ut viverra enim nec nisl efficitur posuere.
+    </s-box>
+
+    <s-title size="title-2">Default</s-title>
     <s-box class="flex-line flex-center">
       <s-button link external to="https://www.google.com">link external</s-button>
       <br>
       <s-button link to="https://www.google.com">link route</s-button>
       <br>
       <s-button link icon="ant-design:tool-outlined" secondary-icon-color to="https://www.google.com">link icon</s-button>
-      <br>
-      <s-button link disabled>link disabled</s-button>
-      <br>
-      <s-button link icon="ant-design:tool-outlined" disabled>link icon disabled</s-button>
     </s-box>
 
     <pre-code :code="code1" />
 
+    <s-title size="title-2">White Mode</s-title>
     <s-box class="flex-line flex-center box-dark">
-      <s-button dark link external to="https://www.google.com">link external</s-button>
+      <s-button white link external to="https://www.google.com">link external</s-button>
       <br>
-      <s-button dark link to="https://www.google.com">link route</s-button>
+      <s-button white link to="https://www.google.com">link route</s-button>
       <br>
-      <s-button dark link icon="ant-design:tool-outlined" secondary-icon-color to="https://www.google.com">link icon</s-button>
+      <s-button white link icon="ant-design:tool-outlined" secondary-icon-color to="https://www.google.com">link icon</s-button>
     </s-box>
 
     <pre-code :code="code2" />

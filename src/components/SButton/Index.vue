@@ -130,11 +130,6 @@ export default {
               opacity .3s,
               background .3s;
 
-  &:hover {
-    &::before { opacity: 1; }
-    &::after { opacity: 0.1; }
-  }
-
   &.--has-icon {
     & > .text { margin-left: 8px; }
     & > .icon {
@@ -253,6 +248,9 @@ export default {
     padding: 0;
     background: transparent !important;
     border: unset !important;
+    display: inline-block;
+    height: unset;
+    min-height: unset;
 
     &.--disabled {
       background: transparent !important;
@@ -287,7 +285,21 @@ export default {
       & > .text {
         color: color(neutral, base);
 
-        &:hover, &:active { text-decoration-color: color(neutral, base); }
+        &:hover, &:active {
+          text-decoration-color: color(neutral, base);
+        }
+      }
+
+      &:hover, &:active {
+        color: color(neutral, base);
+      }
+
+      & > .icon, & > .s-icon.--secondary {
+        color: color(neutral, base);
+
+        &:hover, &:active {
+          color: color(neutral, base);
+        }
       }
     }
 
