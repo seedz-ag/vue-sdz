@@ -60,35 +60,20 @@ export default {
     },
 
     primaryIconColor: Boolean,
-
     secondaryIconColor: Boolean,
-
     small: Boolean,
-
     large: Boolean,
-
     fullWidth: Boolean,
-
     disabled: Boolean,
-
-    // primary: Boolean,
-
+    primary: Boolean,
     success: Boolean,
-
     dark: Boolean,
-
     white: Boolean,
-
     error: Boolean,
-
     link: Boolean,
-
     outlined: Boolean,
-
     rounded: Boolean,
-
     loading: Boolean,
-
     transparent: Boolean
   },
 
@@ -96,6 +81,7 @@ export default {
     classes () {
       return [ 's-button',
         {
+          '--primary': this.primary,
           '--link': this.link,
           '--dark': this.dark,
           '--small': this.small,
@@ -130,12 +116,11 @@ export default {
   min-width: 50px;
   min-height: 36px;
 
-  outline: none;
   cursor: pointer;
-  padding: 0 40px;
+  padding: 0 16px;
   text-align: center;
   transform-style: preserve-3d;
-  background: color(primary, base);
+  background: transparent;
 
   border: $border-radius-none;
   border-radius: $border-radius-md;
@@ -145,33 +130,22 @@ export default {
               opacity .3s,
               background .3s;
 
-  &:hover { background: color(primary, light); }
-  &:active { background: color(primary, dark); }
-  &::before { background: color(primary, base); }
-
   &:hover {
-    &::before {
-      opacity: 1;
-      // filter: blur(14px);
-    }
-
+    &::before { opacity: 1; }
     &::after { opacity: 0.1; }
   }
 
-  &:active::before, &::after { display: none; }
-
   &.--has-icon {
-    & > .text { margin-left: 15px; }
+    & > .text { margin-left: 8px; }
     & > .icon {
-      position: absolute;
-      left: 20px;
+      left: 16px;
       color: color(neutral, base);
     }
   }
 
   & > .text {
     flex: 1;
-    color: color(neutral, base);
+    color: color(primary, base);
     white-space: nowrap;
     font-size: 16px;
 
@@ -179,14 +153,32 @@ export default {
 
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+
+    &:hover { color: color(primary, medium); }
+    &:active { color: color(primary, dark); }
   }
 
-  & > .loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex: 1;
+  &.--primary {
+    background: color(primary, base);
+
+    &:hover { background: color(primary, medium); }
+    &:active { background: color(primary, dark); }
+    &::before { background: color(primary, base); }
+
+    &:active::before, &::after { display: none; }
+
+    & > .text { color: color(neutral, base); }
+
+    &.--has-icon > .icon { color: color(neutral, base); }
+
+    &.--loading { background: color(neutral, dark); }
+
+    &.--disabled {
+      border-color: color(base, light);
+
+      & > .text { color: color(base, light); }
+      &.--has-icon > .icon { color: color(base, light); }
+    }
   }
 
   &.--icon-only {
@@ -197,29 +189,80 @@ export default {
     border-radius: $border-radius-circular;
   }
 
+  &.--disabled {
+    user-select: none;
+    pointer-events: none;
+    background: color(neutral, dark);
+    border-color: color(neutral, dark);
+
+    & > .text {
+      text-shadow: unset;
+      color: color(base, light);
+    }
+
+    &.--has-icon > .icon { color: color(base, light); }
+  }
+
+  & > .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex: 1;
+  }
+
+  &.--loading {
+    pointer-events: none;
+
+    & > .text, .icon { visibility: hidden; }
+  }
+
+  &.--white {
+    border: 1px solid color(neutral, base);
+
+    & > .text { color: color(neutral, base); }
+
+    &.--disabled {
+      border-color: color(base, medium);
+      background: transparent !important;
+
+      & > .text { color: color(base, medium); }
+      &.--has-icon > .icon { color: color(base, medium); }
+    }
+
+    &.--loading { border-color: color(base, medium); }
+
+    &:hover  {
+      background: none !important;
+      border-color: color(neutral, dark);
+
+      & > .text { color: color(neutral, dark); }
+      &.--has-icon > .icon { color: color(neutral, dark); }
+    }
+
+    &:active {
+      background: none !important;
+      border-color: color(base, light);
+
+      & > .text { color: color(base, light); }
+      &.--has-icon > .icon { color: color(base, light); }
+    }
+  }
+
   &.--link {
     padding: 0;
-    width: fit-content;
-    height: auto;
-    min-width: auto;
-    min-height: auto;
     background: transparent !important;
+    border: unset !important;
 
     &.--disabled {
       background: transparent !important;
 
       & > .icon {
         color: color(neutral, dark);
-        //background-clip: text;
-        //background: color(neutral, dark);
-        //-webkit-background-clip: text;
       }
 
       & > .text {
         color: color(base, light);
-       // background-clip: text;
-        //background: color(base, light);
-        //-webkit-background-clip: text;
         font-weight: 600;
         // https://codyhouse.co/nuggets/text-gradients
       }
@@ -228,10 +271,6 @@ export default {
     & > .icon {
       position: unset;
       color: color(primary, base);
-    }
-
-    &.--dark > .icon {
-      color: color(neutral, base);
     }
 
     & > .text {
@@ -244,13 +283,45 @@ export default {
       }
     }
 
-    &.--dark > .text {
-      color: color(neutral, base);
+    &.--white {
+      & > .text {
+        color: color(neutral, base);
 
-      &:hover, &:active {
-        text-decoration: underline;
-        text-decoration-color: color(neutral, base);
+        &:hover, &:active { text-decoration-color: color(neutral, base); }
       }
+    }
+
+  }
+
+  &.--outlined {
+    background: color(neutral, base);
+    border: 1px solid color(primary, base);
+
+    & > .text { color: color(primary, base); }
+
+    &.--has-icon > .icon { color: color(primary, base); }
+
+    &.--loading { border-color: color(base, light); }
+
+    &.--disabled {
+      border-color: color(base, light);
+
+      & > .text { color: color(base, light); }
+      &.--has-icon > .icon { color: color(base, light); }
+    }
+
+    &:hover {
+      border-color: color(primary, medium);
+
+      & > .text { color: color(primary, medium); }
+      &.--has-icon > .icon { color: color(primary, medium); }
+    }
+
+    &:active {
+      border-color: color(primary, dark);
+
+      & > .text { color: color(primary, dark); }
+      &.--has-icon > .icon { color: color(primary, dark); }
     }
   }
 
@@ -270,107 +341,13 @@ export default {
     width: 100%;
   }
 
-  &.--disabled {
-    user-select: none;
-    pointer-events: none;
-    background: color(neutral, dark);
-    border-color: color(neutral, dark);
-
-    & > .text {
-      text-shadow: unset;
-      color: color(base, light);
-    }
-
-    &.--has-icon > .icon {
-      color: color(base, light);
-    }
-  }
-
-  &.--outlined {
-    background: color(neutral, base);
-    border: 1px solid color(primary, base);
-
-    & > .text { color: color(primary, base); }
-
-    &.--disabled {
-      border-color: color(base, light);
-
-      & > .text { color: color(base, light); }
-
-      &.--has-icon > .icon {
-        color: color(base, light);
-      }
-    }
-
-    &:hover { background: color(neutral, light); }
-    &:active { background: color(neutral, medium); }
-
-    &.--has-icon > .icon {
-      color: color(primary, base);
-    }
-
-    &.--loading {
-      background: color(neutral, base);
-    }
-  }
-
   &.--rounded {
     border-radius: 50px;
   }
 
-  &.--transparent {
-    background: transparent !important;
-
-    &.--has-icon > .icon { color: color(neutral, base); }
-
-    &.--loading {
-      background: transparent !important;
-      border-color: color(base, medium) ;
-    }
-
-    &.--disabled {
-      border-color: color(base,medium);
-      color: color(base,medium);
-    }
-  }
-
-  &.--loading {
-    pointer-events: none;
-    background: color(neutral, dark);
-
-    & > .text, .icon { visibility: hidden; }
-    // & > .loader > .loader > path { fill: white; }
-  }
-
-  &.--success {
-    background: color(positive, base);
-
-    &::before { background: color(positive, base); }
-    &:hover { background: color(positive, medium); }
-    &:active { background: color(positive, dark); }
-  }
-
-  &.--error {
-    background: color(negative, base);
-
-    &::before { background: color(negative, base); }
-    &:hover { background: color(negative, medium); }
-    &:active { background: color(negative, dark); }
-  }
-
-  &.--white {
-    border: 1px solid color(neutral, base);
-
-    & > .text { color: color(neutral, base); }
-    &:hover { background: none !important; }
-    &:active { background: none !important; }
-  }
-
   // loading transitions
   & > .loading-enter-active { transition: opacity .1s .1s; }
-
   & > .loading-leave-active { transition: opacity .1s; }
-
   & > .loading-enter,
   & > .loading-leave-to { opacity: 0; }
 }
