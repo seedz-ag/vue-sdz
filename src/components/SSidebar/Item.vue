@@ -4,7 +4,7 @@
       <div class="content" @click="onActiveItem(item, index)">
         <s-icon v-if="item.icon" :icon="item.icon" class="icon" />
         <span class="name">{{ item.name }}</span>
-        <s-icon v-if="item.child" icon="chevron-up" class="action" />
+        <s-icon v-if="item.child" icon="akar-icons:chevron-up" class="action" />
       </div>
 
       <s-collapsible no-header :is-opened="activeItem === index">
@@ -122,7 +122,7 @@ export default {
       font-family: Roboto, sans-serif;
     }
 
-    & > .action { transition: transform .3s ease-in-out; }
+    & > .action { transition: transform .3s ease-in-out; color: color(base, light);}
   }
   &:hover{
     background-color: rgba(0,0,0,0.1);
@@ -149,7 +149,7 @@ export default {
           @extend %sidebar-item;
         }
 
-        & > .--is-active-child { background-color: #299d8d; }
+        & > .--is-active-child { background-color: color(primary, base); }
       }
     }
 
@@ -162,7 +162,7 @@ export default {
 
   & > .--is-disabled {
     cursor: not-allowed;
-    background-color: #868e96;
+    background-color: color(base, light);
   }
 }
 </style>
