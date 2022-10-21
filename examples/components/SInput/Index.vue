@@ -22,7 +22,7 @@
 
     <s-title size="title-2">Stats</s-title>
 
-    <s-box>
+    <s-box class="multiple-examples">
       <s-input label="Default" />
 
       <s-input label="With Button" button="Alterar" button-icon="check" outlined />
@@ -90,7 +90,7 @@
       CNPJ: 00.000.000/0000-00<br>
       Telefone: (00) 00000-0000<br>
     </p>
-    <s-box>
+    <s-box class="multiple-examples">
       <s-input
         raw
         label="CPF"
@@ -116,7 +116,7 @@
     <pre-code :code="code4" />
 
     <s-title size="title-2">Enhancers</s-title>
-    <s-box>
+    <s-box class="multiple-examples">
       <s-input
         round
         icon="carbon:search"
@@ -236,7 +236,13 @@ export default {
 
 <style lang="scss">
 .s-input-example{
-  & > .s-box > div { margin-top: 45px; }
+  & > .s-box.multiple-examples > div:not(:last-child) { margin-bottom: 45px; }
   & > .sizing.flex-inline > .box > .s-input-container { margin-right: 30px; }
+}
+
+.flex-inline {
+  & > .s-input-container {
+    margin-right: 15px;
+  }
 }
 </style>
