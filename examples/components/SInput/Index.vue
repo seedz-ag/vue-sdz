@@ -72,18 +72,6 @@
 
     <pre-code :code="code2" />
 
-    <s-title size="title-2">Rounded</s-title>
-    <s-box>
-      <s-input
-        label="rounded"
-        round
-        :value="inputRounded"
-        @input="value => inputRounded = value"
-      />
-    </s-box>
-
-    <pre-code :code="code3" />
-
     <s-title size="title-2">Masked Input</s-title>
     <p class="subtitle">
       CPF: 000.000.000-00<br>
@@ -189,12 +177,6 @@ export default {
       <s-input
         label="Larger"
         larger
-      />`,
-      code3: `<s-input
-        label="rounded"
-        round
-        :value="inputRounded"
-        @input="value => inputRounded = value"
       />`,
       code4: `<s-input
         raw
