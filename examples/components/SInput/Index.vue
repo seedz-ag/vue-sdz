@@ -22,7 +22,7 @@
 
     <s-title size="title-2">Stats</s-title>
 
-    <s-box>
+    <s-box class="multiple-examples">
       <s-input label="Default" />
 
       <s-input label="With Button" button="Alterar" button-icon="check" outlined />
@@ -72,25 +72,13 @@
 
     <pre-code :code="code2" />
 
-    <s-title size="title-2">Rounded</s-title>
-    <s-box>
-      <s-input
-        label="rounded"
-        round
-        :value="inputRounded"
-        @input="value => inputRounded = value"
-      />
-    </s-box>
-
-    <pre-code :code="code3" />
-
     <s-title size="title-2">Masked Input</s-title>
     <p class="subtitle">
       CPF: 000.000.000-00<br>
       CNPJ: 00.000.000/0000-00<br>
       Telefone: (00) 00000-0000<br>
     </p>
-    <s-box>
+    <s-box class="multiple-examples">
       <s-input
         raw
         label="CPF"
@@ -116,7 +104,7 @@
     <pre-code :code="code4" />
 
     <s-title size="title-2">Enhancers</s-title>
-    <s-box>
+    <s-box class="multiple-examples">
       <s-input
         round
         icon="carbon:search"
@@ -190,12 +178,6 @@ export default {
         label="Larger"
         larger
       />`,
-      code3: `<s-input
-        label="rounded"
-        round
-        :value="inputRounded"
-        @input="value => inputRounded = value"
-      />`,
       code4: `<s-input
         raw
         label="CPF"
@@ -236,7 +218,13 @@ export default {
 
 <style lang="scss">
 .s-input-example{
-  & > .s-box > div { margin-top: 45px; }
+  & > .s-box.multiple-examples > div:not(:last-child) { margin-bottom: 45px; }
   & > .sizing.flex-inline > .box > .s-input-container { margin-right: 30px; }
+}
+
+.flex-inline {
+  & > .s-input-container {
+    margin-right: 15px;
+  }
 }
 </style>
