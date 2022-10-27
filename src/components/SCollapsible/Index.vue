@@ -52,7 +52,6 @@ export default {
     },
 
     clickOutside (e) {
-      console.log(this.contains(e))
       if (!this.contains(e) && this.outsideClosable) this.$emit('toggle', false)
     }
   },
