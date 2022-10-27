@@ -1,24 +1,12 @@
 <template>
   <div :class="classes">
-    <label
-      v-for="(option, index) in options"
-
-      :key="index"
-      :for="option.id"
-
-      :class="getClasses(option)"
-
-      @click="!option.disabled && emit(option.value)"
-    >
+    <label v-for="(option, index) in options" :key="index" :class="getClasses(option)">
       <input
-        :id="option.id"
-
         type="radio"
         class="input"
 
         :value="option.value"
         :disabled="option.disabled"
-
         :checked="option.value === value"
 
         @input="e => !option.disabled && $emit('input', e.target.value)"
@@ -37,7 +25,7 @@ export default {
 
   model: {
     prop: 'checked',
-    event: 'change'
+    event: 'input'
   },
 
   props: {
@@ -55,9 +43,7 @@ export default {
 
   computed: {
     classes () {
-      return ['s-radio-group', {
-        '--is-row': this.row
-      }]
+      return ['s-radio-group', { '--is-row': this.row }]
     }
   },
 
@@ -149,7 +135,7 @@ export default {
   }
 
   &.--is-row {
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     flex-direction: row;
 
     & > .s-radio {

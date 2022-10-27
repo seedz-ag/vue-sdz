@@ -20,6 +20,11 @@
     <s-title size="title-2">Default</s-title> -->
 
     <s-radio-group :value="activeRadio" :options="options" @input="activeRadio = $event" />
+    <br>
+    <br>
+    <br>
+    <br>
+    <s-radio-group row :value="activeRadio2" :options="options2" @input="activeRadio2 = $event" />
     <!-- <s-radio-group row :value="activeRadio" :options="options" @input="onInput" /> -->
 
     <!-- <s-box>
@@ -68,9 +73,16 @@ export default {
   data () {
     return {
       activeRadio: '111',
+      activeRadio2: '111',
       options: [
         { id: 1, label: '111', value: '111' },
-        { id: 2, label: '222', value: '222', disabled: true },
+        { id: 2, label: '222', value: '222' },
+        { id: 3, label: '333', value: '333' },
+        { id: 4, label: '444', value: '444' },
+      ],
+      options2: [
+        { id: 1, label: '111', value: '111' },
+        { id: 2, label: '222', value: '222' },
         { id: 3, label: '333', value: '333' },
         { id: 4, label: '444', value: '444' },
       ]

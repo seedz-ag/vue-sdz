@@ -1,10 +1,10 @@
 <template>
-  <div :ref="randomRef" class="s-collapsible">
-    <div v-if="!noHeader" class="header" @click="$emit('toggle', !isOpened)">
+  <div class="s-collapsible">
+    <div v-if="!noHeader" class="header" @click.stop="$emit('toggle', !isOpened)">
       <slot name="header">X</slot>
     </div>
 
-    <div ref="wrapper" class="wrapper" :style="{
+    <div :ref="randomRef" class="wrapper" :style="{
       opacity: +isOpened,
       height: isOpened ? (height || contentHeight) + 'px' : 0
     }"
@@ -28,7 +28,7 @@ export default {
   data: () => ({ observer: null, contentHeight: 0 }),
 
   mounted () {
-    const target = this.$refs.wrapper
+    const target = this.$refs?.[this.randomRef]
 
     const config = { childList: true, subtree: true, attributes: true }
     const callback = elements => elements.forEach(({ target }) => {
