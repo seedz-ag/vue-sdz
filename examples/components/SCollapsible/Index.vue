@@ -83,7 +83,6 @@ export default {
       isOpened4: false,
       btnCount: 1,
       btns: [1],
-      // content: 'content..........................',
       items: [
         { slug: 'item 1', name: 'name item 1' },
         { slug: 'item 2', name: 'name item 2' },
@@ -105,14 +104,11 @@ export default {
     increased () {
       this.btnCount++
       this.btns.push(this.btnCount)
-      // this.content = this.content + 'content..........................'
     },
 
     decrease () {
       this.btns = this.btns.filter(b => b !== this.btnCount)
       this.btnCount--
-      // console.log(this.content.split('content..........................'))
-      // this.content = this.content.split('content..........................').slice(0, -1)
     }
   }
 }
