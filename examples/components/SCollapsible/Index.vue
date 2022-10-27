@@ -96,10 +96,6 @@ export default {
     }
   },
 
-  created () {
-
-  },
-
   methods: {
     increased () {
       this.btnCount++
