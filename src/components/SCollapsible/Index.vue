@@ -4,13 +4,17 @@
       <slot name="header">X</slot>
     </div>
 
-    <div :ref="randomRef" class="wrapper" :style="{
-      opacity: +isOpened,
-      height: isOpened ? (height || contentHeight) + 'px' : 0
-    }"
+    <transition
+      name="collapsible"
+      @enter="start"
+      @after-enter="end"
+      @before-leave="start"
+      @after-leave="end"
     >
-      <slot />
-    </div>
+      <div v-show="isOpened" :ref="randomRef" class="wrapper">
+        <slot />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -19,28 +23,12 @@ export default {
   name: 'SCollapsible',
 
   props: {
-    height: Number,
     noHeader: Boolean,
     outsideClosable: Boolean,
     isOpened: { type: Boolean, required: true }
   },
 
-  data: () => ({ observer: null, contentHeight: 0 }),
-
   mounted () {
-    const target = this.$refs?.[this.randomRef]
-
-    const config = { childList: true, subtree: true, attributes: true }
-    const callback = elements => elements.forEach(({ target }) => {
-      this.$emit('target', target)
-      this.contentHeight = target.scrollHeight
-    })
-
-    this.observer = new MutationObserver(callback)
-    this.observer.observe(target, config)
-
-    this.contentHeight = target.scrollHeight
-
     document.addEventListener('click', this.clickOutside)
   },
 
@@ -51,6 +39,14 @@ export default {
   },
 
   methods: {
+    start (el) {
+      el.style.height = el.scrollHeight + 'px'
+    },
+
+    end (el) {
+      el.style.height = ''
+    },
+
     contains (e) {
       return this.$refs[this.randomRef]?.contains(e?.target)
     },
@@ -61,7 +57,6 @@ export default {
   },
 
   beforeDestroy () {
-    if (this.observer) this.observer.disconnect()
     document.removeEventListener('click', this.clickOutside)
   }
 }
@@ -73,5 +68,18 @@ export default {
     overflow: hidden;
     transition: opacity .3s ease-in, height .3s ease-in-out !important;
   }
+}
+
+.collapsible-enter-active,
+.collapsible-leave-active {
+  will-change: height, opacity;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.collapsible-enter,
+.collapsible-leave-to {
+  height: 0 !important;
+  opacity: 0;
 }
 </style>

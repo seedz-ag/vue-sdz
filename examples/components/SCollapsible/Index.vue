@@ -7,24 +7,13 @@
 
     <s-title size="title-1">Collapse</s-title>
     <s-box class="flex-inline flex-center">
+      <s-button outlined @click="decrease()">decrease content</s-button>
       <s-button outlined @click="increased()">increase content</s-button>
 
       <s-collapsible :is-opened="isOpened1" @toggle="v => isOpened1 = v">
         <s-button primary class="header" slot="header">header toggle</s-button>
 
-        <div class="content">
-          <s-select
-            label="Simple"
-            display-by="name"
-            track-by="slug"
-            placeholder="Selecione uma opção"
-            :items="items"
-            required
-            :clear-on-select="false"
-            v-model="data1"
-          />
-          <!-- <div v-html="content" /> -->
-        </div>
+        <s-button v-for="btn in btns" :key="btn">{{ btn }}</s-button>
       </s-collapsible>
     </s-box>
 
@@ -68,7 +57,7 @@
 
 <script>
 import SButton from '../../../src/components/SButton/Index.vue'
-import SSelect from '../../../src/components/SSelect/Index.vue'
+// import SSelect from '../../../src/components/SSelect/Index.vue'
 import SCollapsible from '../../../src/components/SCollapsible/Index.vue'
 import SBox from '../../commons/box.vue'
 import STitle from '../../commons/title.vue'
@@ -79,7 +68,7 @@ export default {
 
   components: {
     SButton,
-    SSelect,
+    // SSelect,
     SCollapsible,
     SBox,
     STitle,
@@ -92,7 +81,8 @@ export default {
       isOpened2: false,
       isOpened3: false,
       isOpened4: false,
-      content: 'initial content!',
+      btnCount: 1,
+      btns: [1],
       items: [
         { slug: 'item 1', name: 'name item 1' },
         { slug: 'item 2', name: 'name item 2' },
@@ -108,7 +98,13 @@ export default {
 
   methods: {
     increased () {
-      this.content = this.content + '<br /> dynamic content...'
+      this.btnCount++
+      this.btns.push(this.btnCount)
+    },
+
+    decrease () {
+      this.btns = this.btns.filter(b => b !== this.btnCount)
+      this.btnCount--
     }
   }
 }
@@ -125,6 +121,8 @@ export default {
 
     & > .s-collapsible > .wrapper {
       margin-top: 5px;
+      flex-wrap: nowrap;
+      width: 145px;
       border: 1px solid black;
     }
   }
