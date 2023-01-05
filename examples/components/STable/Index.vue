@@ -25,7 +25,7 @@
       />
     </s-box>
 
-    <s-title size="title-1">Table (dynamic)</s-title>
+    <!-- <s-title size="title-1">Table (dynamic)</s-title>
     <s-box>
       <s-table
         paginable
@@ -54,7 +54,7 @@
 
         @selected="v => selecteds = v"
       />
-    </s-box>
+    </s-box> -->
 
     <s-title size="title-1">Table (scoped)</s-title>
     <s-box>
