@@ -98,7 +98,10 @@ export default [
         { id: 3, label: '333', value: '333' },
         { id: 4, label: '444', value: '444' },
       ],
-      value: '222'
+      value: '222',
+      onInput ({ field, form, value }) {
+        field = value
+      },
     },
 
   ],

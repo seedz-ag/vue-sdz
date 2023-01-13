@@ -1,6 +1,11 @@
 <template>
   <div :class="classes">
-    <label v-for="(option, index) in options" :key="index" :class="getClasses(option)">
+    <label
+      v-for="(option, index) in options"
+      :key="index"
+      :class="getClasses(option)"
+      @click="!option.disabled && emit(option)"
+    >
       <input
         type="radio"
         class="input"
@@ -8,8 +13,6 @@
         :value="option.value"
         :disabled="option.disabled"
         :checked="option.value === value"
-
-        @input="e => !option.disabled && $emit('input', e.target.value)"
       >
 
       <span class="radio" />
@@ -55,9 +58,10 @@ export default {
       }]
     },
 
-    emit (value) {
-      this.$attrs.onInput?.()
-      this.$emit('input', value)
+    emit (option) {
+      console.log('1', option.value)
+      this.$attrs.onInput?.(option.value)
+      this.$emit('input', option.value)
     }
   }
 }
