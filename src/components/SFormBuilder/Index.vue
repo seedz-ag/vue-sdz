@@ -7,7 +7,7 @@
             :key="groupIndex"
             :$v="$v"
             :form="form"
-            :field="getField(groupField)"
+            :field="getField(groupField, form[groupField.name])"
             :value="form[groupField.name]"
 
             v-on="$listeners"
@@ -21,7 +21,7 @@
         <field
           :$v="$v"
           :form="form"
-          :field="getField(field)"
+          :field="getField(field, form[field.name])"
           :value="form[field.name]"
 
           v-on="$listeners"
@@ -144,14 +144,14 @@ export default {
       this.form = transformBy(this.fields, 'value', false)
     },
 
-    getField (field) {
+    getField (field, value) {
       // const sameAs = { sameAs: this.form[field.name] === this.form[field?.customValidate?.sameAs] }
 
       return {
         ...field,
         // ...(field?.customValidate ? { customValidate: sameAs } : {}),
-        onInput: () => field?.onInput?.apply(this, [{ form: this.form, field }]),
-        onClick: () => field?.onClick?.apply(this, [{ form: this.form, field }])
+        onInput: () => field?.onInput?.apply(this, [{ form: this.form, field, value }]),
+        onClick: () => field?.onClick?.apply(this, [{ form: this.form, field, value }])
       }
     },
 
