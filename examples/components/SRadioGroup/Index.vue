@@ -19,12 +19,12 @@
 
     <s-title size="title-2">Default</s-title> -->
 
-    <s-radio-group :value="activeRadio" :options="options" @input="activeRadio = $event" />
+    <s-radio-group label="Radio Group 1" required :value="activeRadio" :options="options" @input="activeRadio = $event" />
     <br>
     <br>
     <br>
     <br>
-    <s-radio-group row :value="activeRadio2" :options="options2" @input="activeRadio2 = $event" />
+    <s-radio-group label="Radio Group 2 [row]" row :value="activeRadio2" :options="options2" @input="activeRadio2 = $event" />
     <!-- <s-radio-group row :value="activeRadio" :options="options" @input="onInput" /> -->
 
     <!-- <s-box>
