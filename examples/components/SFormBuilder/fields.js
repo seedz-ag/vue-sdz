@@ -88,10 +88,31 @@ export default [
 
   [
     {
-      name: 'radioGroup',
-      label: 'radioGroup',
+      name: 'radioGroup1',
+      label: 'Label Radio Group 1',
       component: 'SRadioGroup',
       row: true,
+      options: [
+        { id: 1, label: '111', value: '111' },
+        { id: 2, label: '222', value: '222', disabled: true },
+        { id: 3, label: '333', value: '333' },
+        { id: 4, label: '444', value: '444' },
+      ],
+      value: '222',
+      onInput ({ field, form, value }) {
+        field = value
+      },
+      validate: { required },
+      required: true,
+    },
+
+  ],
+
+  [
+    {
+      name: 'radioGroup2',
+      label: 'Label Radio Group 2',
+      component: 'SRadioGroup',
       options: [
         { id: 1, label: '111', value: '111' },
         { id: 2, label: '222', value: '222', disabled: true },
