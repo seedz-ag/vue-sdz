@@ -105,6 +105,8 @@ export default {
 
     trackBy: { type: String, required: true },
 
+    disabledBy: { type: String },
+
     displayBy: { type: String, required: true },
 
     multiple: Boolean,
@@ -207,7 +209,8 @@ export default {
       return ['item',
         {
           '--active': index === this.pointer,
-          '--selected': this.isSelected(option)
+          '--selected': this.isSelected(option),
+          '--disabled': option[this.disabledBy]
         }
       ]
     },
@@ -384,6 +387,11 @@ export default {
 
           &.--selected { font-weight: 700; }
           &.--active { background-color: color(primary, base); }
+          &.--disabled {
+            pointer-events: none;
+            background-color: color(neutral, base);
+            color: color(base, light)
+          }
 
           &:last-child {
             border-bottom-left-radius: 5px;
