@@ -83,13 +83,17 @@
 
             <td class="actions">
               <s-icon
-                v-show="actions.length && hoverLine === index"
+                v-show="(actions.length && hoverLine === index) || (actions.length && (getIsXsMobile() || getIsMobile()))"
 
                 ref="action"
                 size="25"
                 icon="akar-icons:more-horizontal"
 
                 @click.native.stop="activeAction = index"
+              />
+              <div
+                v-show="actions.length && hoverLine !== index"
+                class="actions-hide"
               />
 
               <s-popover
@@ -184,6 +188,7 @@ import Pagination from './components/Pagination.vue'
 import toggleOrder from './helpers/sort.js'
 import warnings from './mixins/warnings'
 // import sortable from './mixins/sortable'
+import setupResponsive from '@/mixins/setupResponsive'
 
 export default {
   name: 'STable',
@@ -197,7 +202,7 @@ export default {
     SIcon: () => import('../SIcon/Index.vue').then(c => c.default)
   },
 
-  mixins: [ warnings ],
+  mixins: [ warnings, setupResponsive ],
 
   props: {
     cols: {
@@ -403,6 +408,10 @@ export default {
           & > .actions {
             width: 30px;
             cursor: pointer;
+
+            & > .actions-hide {
+              width: 30px;
+            }
 
             & > .popover {
               & > .action {
