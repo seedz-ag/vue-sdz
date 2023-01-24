@@ -28,6 +28,7 @@
         track-by="slug"
         placeholder="Selecione uma opção"
         :items="items"
+        disabled-by="disabled"
         required
         :clear-on-select="false"
         v-model="data1"
@@ -42,6 +43,7 @@
         hide-selected
         :clear-on-select="false"
         :items="items"
+        disabled-by="disabled"
         v-model="data3"
       />
     </s-box>
@@ -55,6 +57,7 @@
           track-by="slug"
           placeholder="Selecione uma opção"
           :items="items"
+          disabled-by="disabled"
           required
           clear-on-select
           small
@@ -68,6 +71,7 @@
           track-by="slug"
           placeholder="Selecione uma opção"
           :items="items"
+          disabled-by="disabled"
           required
           clear-on-select
           v-model="data1"
@@ -97,6 +101,7 @@
           track-by="slug"
           placeholder="Selecione uma opção"
           :items="items"
+          disabled-by="disabled"
           disabled
           clear-on-select
           small
@@ -111,6 +116,7 @@
           placeholder="Selecione uma opção"
           disabled
           :items="items"
+          disabled-by="disabled"
           clear-on-select
           v-model="data1"
         />
@@ -123,6 +129,7 @@
           placeholder="Selecione uma opção"
           disabled
           :items="items"
+          disabled-by="disabled"
           clear-on-select
           larger
           v-model="data1"
@@ -151,9 +158,9 @@ export default {
       items: [
         { slug: 'item 1', name: 'name item 1' },
         { slug: 'item 2', name: 'name item 2' },
-        { slug: 'item 22', name: 'name item 22' },
+        { slug: 'item 22', name: 'name item 22', disabled: true },
         { slug: 'item 3', name: 'name item 3' },
-        { slug: 'item 4', name: 'name item 4' },
+        { slug: 'item 4', name: 'name item 4', disabled: true },
         { slug: 'item 5', name: 'name item 5' },
         { slug: 'item 6', name: 'name item 6' },
       ],

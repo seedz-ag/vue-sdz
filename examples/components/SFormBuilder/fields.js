@@ -204,11 +204,12 @@ export default [
       placeholder: 'states',
       trackBy: 'id',
       displayBy: 'name',
+      disabledBy: 'disabled',
       value: { name: 'sp', id: 2 },
       onInput ({ field }) {
         this.$set(this.form, 'cities', { name: 'cf', id: 2 })
       },
-      items: [ { name: 'rj', id: 1 }, { name: 'sp', id: 2 } ]
+      items: [ { name: 'rj', id: 1 }, { name: 'sp', id: 2 }, { name: 'mg', id: 3, disabled: true } ]
     },
     {
       name: 'cities',
@@ -217,8 +218,9 @@ export default [
       placeholder: 'cities',
       trackBy: 'id',
       displayBy: 'name',
+      disabledBy: 'disabled',
       value: {},
-      items: [ { name: 'bzs', id: 1 }, { name: 'cf', id: 2 } ]
+      items: [ { name: 'bzs', id: 1 }, { name: 'cf', id: 2 }, { name: 'Serra Negra', id: 3, disabled: true } ]
     }
   ]
 ]
