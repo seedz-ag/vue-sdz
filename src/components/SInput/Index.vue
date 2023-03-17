@@ -150,7 +150,9 @@ export default {
         if (value !== this.value) this.$emit('input', value)
       }
 
-      return { ...this.$listeners, input: emitInput, update: emitInput }
+      const customListeners = { input: emitInput, update: emitInput }
+
+      return !this.isMoney ? customListeners : { ...customListeners, ...this.$listeners }
     },
 
     inputAttrs () {
