@@ -32,7 +32,7 @@
   "dependencies": {
     "@iconify/vue2": "^1.2.1",
     "@vuelidate/core": "2.0.0-alpha.34",
-    "@vuelidate/validators": "2.0.0-alpha.26",
+    "@vuelidate/validators": "2.0.0",
     "utils-sdz": "^0.0.12",
     "v-money": "^0.8.1",
     "vue-coe-calendar": "^0.2.2",
